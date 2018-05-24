@@ -43,7 +43,7 @@
         }
         ?>
     <div class="mav-sec-btn-wrapper">
-        <?php mavf_button('Đến trang Dịch Vụ',get_page_link(22)); ?>        
+        <?php mavf_button('Đến trang Dịch Vụ',get_page_link(22)); ?>
     </div>
 </section>
 
@@ -58,7 +58,7 @@
                 'number_of_posts_display'   => 4,
                 'categories'                => array(4,5)
             );
-    
+
             echo '<div class="mav-sec-content">';
             mavf_post_carousel($mavArgs);
             echo '</div>';
@@ -66,7 +66,7 @@
     ?>
     <div class="mav-sec-btn-wrapper">
         <!-- <span class="mav-btn-solid">Xem đầy đủ</span> -->
-        <?php mavf_button('Đến trang Cập Nhật',get_page_link(7)); ?>        
+        <?php mavf_button('Đến trang Cập Nhật',get_page_link(7)); ?>
     </div>
 </section>
 
@@ -95,5 +95,5 @@
 <script>
     // mavf_type_writer('','.mav-type-writer','',40,false,3000);
     // mavf_type_multi('','|','.mav-type-writer','',40,1000);
-    
+
 </script>
