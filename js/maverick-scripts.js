@@ -217,17 +217,6 @@ if (typeof mavf_go_back_button === 'function') {
 }
 
 /*
- * Post Carousel
- */
-// if (typeof mavf_post_carousel === 'function') {
-//     const mavArgs = {
-//         mavCarouselClass : '.mav-post-carousel',
-//         mavItemClass     : '.mav-card-wrapper'
-//     };
-//     mavf_post_carousel(mavArgs);
-// }
-
-/*
  * Reset header menu on window resize
  */
 window.addEventListener('resize', mavf_window_resize_events);
