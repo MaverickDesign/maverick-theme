@@ -1,0 +1,206 @@
+%mav-flex-column, .mav-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%mav-flex-row, .mav-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.mav-flex-center {
+    @extend %mav-flex-row;
+    justify-content: center;
+}
+
+.mav-flex-center-all {
+    @extend %mav-flex-row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grids */
+@media #{$mav-desktop} {
+    @for $columns from 1 to 15 {
+        .#{$mavNameSpace}-grid-col-#{$columns} {
+            grid-template-columns: repeat($columns, 1fr)!important;
+        }
+    }
+}
+
+/* Generals */
+
+.mav-hide {
+    display: none!important;
+}
+
+.mav-hide-on {
+    &-phone {
+        @media #{$mav-phone} {
+            display: none!important;
+        }
+    }
+    &-tablet {
+        @media #{$mav-tablet} {
+            display: none!important;
+        }
+    }
+    &-mobile {
+        @media #{$mav-mobile} {
+            display: none!important;
+        }
+    }
+    &-desktop {
+        @media #{$mav-desktop} {
+            display: none!important;
+        }
+    }
+}
+
+/*
+ * Margins & Paddings
+ */
+@each $direction in top,bottom,left,right {
+    .#{$mavNameSpace}-margin-#{$direction} {
+        margin-#{$direction}: var(--mav-gutter)!important;
+    }
+    .#{$mavNameSpace}-padding-#{$direction} {
+        padding-#{$direction}: var(--mav-gutter)!important;
+    }
+    @each $size in xl,lg,sm,xs {
+        .#{$mavNameSpace}-margin-#{$direction}-#{$size} {
+            margin-#{$direction}: var(--mav-gutter-#{$size})!important;
+        }
+        .#{$mavNameSpace}-padding-#{$direction}-#{$size} {
+            padding-#{$direction}: var(--mav-gutter-#{$size})!important;
+        }
+    }
+}
+
+.mav-site-width {
+    margin: 0 auto;
+    @media #{$mav-desktop} {
+        max-width: var(--mav-site-width);
+    }
+}
+.mav-pg-ctn {
+    @extend .mav-site-width;
+    padding: var(--mav-gutter);
+}
+
+.mav-pg-header {
+    @media #{$mav-mobile} {
+        position: sticky;
+        width: 100%;
+        top: 0;
+        z-index: $mav-layer-top;
+    }
+}
+
+/*
+ * Page Footer
+ */
+.mav-pg-footer {
+    background: $mav-color-footer-background;
+    color: $mav-color-text-dark-primary;
+}
+
+.mav-footer-copyright-wrapper {
+    padding: var(--mav-gutter) 0;
+    background: map-get($mav-color,'secondary');
+}
+
+.mav-post-index-wrapper {
+    margin: var(--mav-gutter);
+    @media #{$mav-tablet} {
+        margin: var(--mav-gutter-lg);
+    }
+    @media #{$mav-desktop} {
+        margin: var(--mav-gutter-lg) var(--mav-gutter);
+    }
+}
+
+.mav-post-index-ctn {
+    display: grid;
+    // grid-template-columns: 1fr;
+    grid-gap: var(--mav-gutter);
+    @media #{$mav-tablet} {
+        align-content: start;
+        grid-template-columns: repeat(2,1fr);
+    }
+    @media #{$mav-desktop} {
+        // align-content: start;
+    }
+}
+
+.mav-has-sidebar {
+    @media #{$mav-desktop} {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        max-width: var(--mav-site-width);
+        margin: 0 auto;
+    }
+}
+
+/*
+ * Paginate navigation
+ */
+
+.mav-paginate-links-ctn {
+    @extend .mav-flex-row;
+    flex-wrap: wrap;
+    margin-top: var(--mav-gutter);
+    padding: var(--mav-gutter);
+    background: #fff;
+    justify-content: center;
+    .page-numbers {
+        padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
+        margin-right: var(--mav-gutter-sm);
+        text-decoration: none;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .prev, .next {
+        font-weight: bold;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .prev {
+        &:before {
+            content: '\f053';
+            @extend %mav-font-awesome;
+            margin-right: var(--mav-gutter-xs);
+        }
+    }
+    .next {
+        &:after {
+            content: '\f054';
+            @extend %mav-font-awesome;
+            margin-left: var(--mav-gutter-xs);
+        }
+    }
+    .current {
+        font-weight: bold;
+        background: var(--mav-brand-color-primary);
+        @include text-contrast($mav-color-brand-primary);
+    }
+    a {
+        &:hover {
+            box-shadow: inset 0 -4px var(--mav-brand-color-primary);
+        }
+    }
+}
+
+.mav-sec-home {
+    padding: var(--mav-gutter-xl) 0;
+    &:nth-child(odd) {
+        background: darken($mav-color-background,1.5%);
+    }
+    .mav-sec-content {
+        margin: var(--mav-gutter-lg) auto;
+        @media #{$mav-desktop} {
+            margin: var(--mav-gutter-lg) auto;
+        }
+    }
+}

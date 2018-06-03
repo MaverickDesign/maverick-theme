@@ -1,0 +1,9 @@
+.mav-post-grid-wrapper {
+    max-width: $mav-site-width;
+    margin: 0 auto;
+    .mav-post-grid-ctn {
+        display: grid;
+        grid-gap: var(--mav-gutter);
+        margin: 0 var(--mav-gutter);
+    }
+}

@@ -1,0 +1,185 @@
+$mavNameSpace: 'mav';
+
+$mav-layer-top:          1000;
+$mav-layer-overlay:       100;
+$mav-layer-image:          10;
+$mav-layer-content:         0;
+$mav-layer-background:    -10;
+$mav-layer-under:        -100;
+$mav-layer-bottom:      -1000;
+
+:fullscreen {
+    width: 100%;
+    height: 100%;
+}
+:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+/* Font Stacks */
+
+// Available weights: 100, 300, 400, 500, 700, 900
+
+$font-roboto: 'Roboto', Arial, sans-serif;
+$font-roboto-cond: 'Roboto Condensed', Arial, sans-serif;
+$font-roboto-slab: 'Roboto Slab', serif;
+$font-awesome: 'Font Awesome 5 Free';
+$font-alfa-slab-one: "Alfa Slab One", cursive;
+
+/*
+ * THEME COLORS
+ */
+
+/* BRAND COLORS */
+
+$maverick: rgb(179,23,5);
+// $maverick: rgb(194,47,35);
+$camnangluat: rgb(91,144,63);
+
+/* THEME COLORS */
+
+$mav-color-brand-primary: $maverick;
+$mav-color-brand-accent : complement($mav-color-brand-primary);
+
+$mav-color-text-primary  : #222;
+$mav-color-text-secondary: #666;
+$mav-color-text-hint     : #888;
+
+$mav-color-text-dark-primary  : #fafafa;
+$mav-color-text-dark-secondary: #ddd;
+$mav-color-text-dark-hint     : #aaa;
+
+$mav-color-border: #ddd;
+
+$mav-color-highlight: yellow;
+$mav-color: (
+    primary:    $mav-color-brand-primary,
+    secondary:  $mav-color-brand-accent,
+    tertiary:   orange,
+    text: (
+        primary:    $mav-color-text-primary,
+        secondary:  $mav-color-text-dark-secondary,
+        hint:       $mav-color-text-hint
+    )
+);
+
+$mav-color-header-background: transparent;
+$mav-color-footer-background: #222;
+
+$mav-color-header-menu-background: map-get($mav-color, primary);
+/*
+* MEDIA QUERIES
+*/
+
+$mav-phone:   "only screen and (max-width: 480px)";
+$mav-tablet:  "only screen and (min-width: 768px) and (max-width: 1023px)";
+$mav-mobile:  "only screen and (max-width: 1023px)";
+$mav-desktop: "only screen and (min-width: 1024px)";
+
+/*
+ * CSS Variables
+ */
+
+$mav-site-width: 1680px;
+$mav-page-margin: 25px;
+$mav-gutter: 20px;
+$mav-spacing: 20px;
+$mav-site-color-background: #fafafa;
+$mav-color-background: #fafafa;
+
+:root {
+    /* Layouts */
+    --mav-margin: #{$mav-spacing};
+    --mav-margin-xl: calc(var(--mav-margin) * 4);
+    --mav-margin-lg: calc(var(--mav-margin) * 2);
+    --mav-margin-sm: calc(var(--mav-margin) / 2);
+    --mav-margin-xs: calc(var(--mav-margin) / 4);
+
+    --mav-padding: #{$mav-spacing};
+    --mav-padding-xl: calc(var(--mav-padding) * 4);
+    --mav-padding-lg: calc(var(--mav-padding) * 2);
+    --mav-padding-sm: calc(var(--mav-padding) / 2);
+    --mav-padding-xs: calc(var(--mav-padding) / 4);
+
+    --mav-gutter: #{$mav-gutter};
+    --mav-gutter-xl: calc(var(--mav-gutter) * 4);
+    --mav-gutter-lg: calc(var(--mav-gutter) * 2);
+    --mav-gutter-sm: calc(var(--mav-gutter) / 2);
+    --mav-gutter-xs: calc(var(--mav-gutter) / 4);
+
+    /* Typography */
+    --mav-font-size: 16px;
+    --mav-font-body: var(--mav-font-size);
+    --mav-font-intro: calc(var(--mav-font-size) * 1.3);
+    --mav-font-title: calc(var(--mav-font-size) * 2.6);
+
+    --mav-color-body: #{$mav-color-text-primary};
+
+    --mav-color-body-text-primary:      #{$mav-color-text-primary};
+    --mav-color-body-text-secondary:    #{$mav-color-text-secondary};
+
+    --mav-brand-color-primary:  #{$mav-color-brand-primary};
+    --mav-color-primary:        #{$mav-color-brand-primary};
+    --mav-color-accent:         #{$mav-color-brand-accent};
+
+    --mav-site-bg-color:        #{$mav-site-color-background};
+    --mav-site-header-color:    #{$mav-color-brand-primary};
+
+    @media #{$mav-desktop} {
+        --mav-site-width: #{$mav-site-width};
+    }
+}
+
+%mav-transition {
+    transition: all .3s ease;
+}
+
+%mav-transition-default {
+    transition: all .3s ease;
+}
+
+%mav-hover-element {
+    background: $mav-color-brand-primary;
+    @include text-contrast($mav-color-brand-primary);
+}
+
+/*
+ * Keyframe animations
+ */
+
+@keyframes mav-brand-color-transition {
+    0% {
+        background-color: $mav-color-brand-primary;
+    }
+    50% {
+        background-color: $mav-color-brand-accent;
+    }
+    100% {
+        background-color: $mav-color-brand-primary;
+    }
+}
+
+@keyframes mav-brand-color-transition-reversed {
+    0% {
+        background-color: $mav-color-brand-accent;
+    }
+    50% {
+        background-color: $mav-color-brand-primary;
+    }
+    100% {
+        background-color: $mav-color-brand-accent;
+    }
+}
+
+@keyframes mav-brand-color-dark {
+    0% {
+        background-color: $mav-color-brand-primary;
+    }
+    50% {
+        background-color: darken($mav-color-brand-primary, 10%);
+    }
+    100% {
+        background-color: $mav-color-brand-primary;
+    }
+}

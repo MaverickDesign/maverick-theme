@@ -1,0 +1,22 @@
+.mav-site-breadcrumbs-ctn {
+    background: $mav-color-background;
+    box-shadow: 0 1px $mav-color-border;
+}
+.mav-breadcrumbs {
+    display: flex;
+    max-width: var(--mav-site-width);
+    margin: 0 auto;
+    padding: var(--mav-gutter) $mav-page-margin;
+    li {
+        margin-right: var(--mav-gutter-xs);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+        &:hover{
+            @extend %mav-hyperlink-text;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.mav-tool-tip {
+    opacity: 0;
+    position: fixed;
+    z-index: $mav-layer-top;
+    padding: var(--mav-gutter-sm);
+    border-radius: 4px;
+    background: rgba($mav-color-brand-accent,.9);
+    font-size: .8rem;
+    @include text-contrast($mav-color-brand-accent);
+    transition: opacity .3s ease;
+}
+
+.mav-type-writter-temp {
+    &:after {
+        content: '_';
+        margin-left: .25ch;
+    }
+}
+
+.mav-date {
+    margin-right: 1ch;
+    &:last-child{
+        margin-right: 0;
+    }
+    span[data-type] {
+        font-weight: bold;
+    }
+}
+
+.mav-message-box-wrapper {
+    @extend %mav-flex-row;
+    justify-content: space-between;
+    align-items: center;
+    background: $mav-color-brand-accent;
+    span {
+        padding: var(--mav-gutter-sm);
+        @include text-contrast($mav-color-brand-accent);
+        &.mav-btn-close {
+            cursor: pointer;
+            @extend %mav-transition-default;
+            &:hover {
+                @extend %mav-hover-element;
+            }
+        }
+    }
+    @media #{$mav-desktop} {
+        max-width: var(--mav-site-width);
+        margin: 0 auto;
+    }
+    @media #{$mav-mobile} {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+    }
+}

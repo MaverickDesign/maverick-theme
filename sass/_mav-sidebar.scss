@@ -1,0 +1,156 @@
+.mav-site-sidebar-ctn {
+    display: grid;
+    grid-row-gap: var(--mav-gutter);
+    align-content: start;
+    margin: var(--mav-gutter-lg) 0;
+    padding: 0 var(--mav-gutter);
+    box-shadow: inset 1px 0 $mav-color-border;
+    a {
+        text-decoration: none;
+        &:hover {
+            // text-decoration: underline;
+            box-shadow: inset 0 -1px map-get($mav-color,'secondary');
+        }
+    }
+    aside {
+        margin-bottom: var(--mav-gutter);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        h3 {
+            display: inline-block;
+            margin-bottom: var(--mav-gutter);
+            padding-bottom: var(--mav-gutter-xs);
+            box-shadow: inset 0 -4px map-get($mav-color,'primary');
+            color: $mav-color-text-primary;
+        }
+    }
+
+    .widget_recent_entries {
+        ul {
+            li {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: var(--mav-gutter-xs);
+                @extend .mav-font-sm;
+                font-weight: 300;
+                &:last-child {
+                    margin-bottom: 0
+                }
+                &:before {
+                    content: '\f15b';
+                    position: absolute;
+                    margin-right: var(--mav-gutter-sm);
+                    @extend %mav-font-awesome;
+                    color: $mav-color-text-hint;
+                }
+                a {
+                    margin-left: 1.5em;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .widget_categories {
+        ul {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            li {
+                &:before {
+                    @extend %mav-font-awesome;
+                    content: '\f07b';
+                    margin-right: var(--mav-gutter-sm);
+                    color: $mav-color-text-hint;
+                }
+            }
+            a {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .widget_calendar {
+        .calendar_wrap {
+            background: #fff;
+            padding: var(--mav-gutter);
+            border: 1px solid $mav-color-border;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            text-align: center;
+        }
+        td#prev {
+            text-align: left;
+        }
+        td#next {
+            text-align: right;
+        }
+        a {
+            font-weight: bold;
+        }
+    }
+    /*
+     * Tag Cloud Widget
+     */
+    .tagcloud {
+        display: flex;
+        flex-wrap: wrap;
+        padding: var(--mav-gutter);
+        border: 1px solid $mav-color-border;
+        background: #fff;
+        align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            padding: var(--mav-gutter-sm);
+            margin-right: var(--mav-gutter-sm);
+            line-height: .5em;
+            color: $mav-color-text-secondary;
+            border: 1px solid $mav-color-border;
+            border-radius: 6px;
+            margin-bottom: var(--mav-gutter-sm);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .tag-link-count {
+            margin-left: var(--mav-gutter-xs);
+            font-weight: 400;
+            color: $mav-color-text-primary;
+        }
+    }
+    .widget_archive {
+        ul {
+            @extend .mav-flex-column;
+            // @extend .mav-font-sm;
+            li {
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .widget_search {
+        form.search-form {
+            display: flex;
+            label {
+                width: 100%;
+                display: flex;
+                span.screen-reader-text {
+                    display: none;
+                }
+                input {
+                    width: 100%;
+                }
+            }
+            .search-submit {
+                @extend .mav-btn-solid;
+                border-radius: 0;
+            }
+        }
+    }
+}

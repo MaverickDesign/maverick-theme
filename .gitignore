@@ -1,1 +1,4 @@
 maverick-theme-workspace.code-workspace
+js/vendor/jquery-3.3.1.min.js
+webfonts
+.vscode/settings.json

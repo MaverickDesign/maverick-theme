@@ -8,9 +8,14 @@
 <!-- Page content starts here -->
 
 <main id="mavid-page-main-content">
-    <section id="mavid-sec-page-title" class="mav-sec-page-title" <?php mavf_post_thumbnail_url();?>>
+    <section>
         <?php
-            the_title('<h1 class="mav-page-title">','</h1>');
+            if ( have_posts() ) {
+                while ( have_posts() ) {
+                    the_post();
+                    get_template_part( 'template-parts/single', get_post_format() );
+                }
+            }
         ?>
     </section>
 </main>

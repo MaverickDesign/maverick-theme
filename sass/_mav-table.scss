@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+    caption {
+        margin-bottom: var(--mav-gutter);
+        font-weight: bold;
+    }
+    thead {
+        font-weight: bold;
+        box-shadow: inset 0 -2px $mav-color-border;
+    }
+    tbody {
+        tr {
+            box-shadow: inset 0 -1px $mav-color-border;
+            &:last-child {
+                box-shadow: none;
+            }
+        }
+        td {
+            padding: var(--mav-gutter-xs);
+        }
+    }
+    tfoot {
+        font-weight: bold;
+    }
+}

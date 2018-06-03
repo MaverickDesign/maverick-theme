@@ -1,0 +1,87 @@
+.mav-carousel {
+    position: relative;
+    @extend .mav-flex-center-all;
+    width: 100%;
+    max-width: $mav-site-width;
+    margin: 0 auto;
+    overflow: hidden;
+    .mav-carousel-nav-wrapper {
+        @extend .mav-flex-center-all;
+        min-width: var(--mav-gutter-lg);
+        min-height: var(--mav-gutter-lg);
+        margin: 0 var(--mav-gutter);
+        @media #{$mav-phone} {
+            margin: 0 var(--mav-gutter-sm);
+        }
+        .mav-carousel-nav {
+            position: relative;
+            @extend .mav-flex-center-all;
+            width: var(--mav-gutter-lg);
+            height: var(--mav-gutter-lg);
+            background: $mav-color-brand-primary;
+
+            font-size: 1.5rem;
+            color: $mav-color-text-dark-primary;
+
+            @extend %mav-transition;
+            &:hover {
+                border-radius: 50%;
+                animation: mav-brand-color-transition 4s infinite;
+            }
+            &:before, &:after {
+                @extend %mav-font-awesome;
+                @extend %mav-transition;
+            }
+            &[data-direction="prev"] {
+                &:before {
+                    content: '\f053';
+                }
+                &:hover {
+                    &:before {
+                        transform: translateX(-4px);
+                    }
+                }
+            }
+            &[data-direction="next"] {
+                &:after {
+                    content: '\f054';
+                }
+                &:hover {
+                    &:after {
+                        transform: translateX(4px);
+                    }
+                }
+            }
+        }
+    }
+    .mav-carousel-wrapper {
+        position: relative;
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        .mav-carousel-ctn {
+            position: relative;
+            display: flex;
+            width: 100%;
+            @extend %mav-transition;
+            .mav-carousel-item {
+                flex: 0 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:last-child {
+                    margin-right: 0!important;
+                }
+            }
+        }
+    }
+}
+
+.mav-carousel {
+    .mav-card-wrapper {
+        box-shadow: none;
+    }
+    .mav-card-post {
+        box-shadow: none;
+    }
+}
