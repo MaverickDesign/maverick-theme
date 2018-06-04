@@ -54,15 +54,6 @@ function mavfToggleMobileMenu(){
 document.querySelector('.mav-mobile-menu-icon').addEventListener('click', mavfToggleMobileMenu);
 
 /*
- * Toggle Site Search
- */
-document.querySelector('.mav-site-search-icon').addEventListener('click', function(){
-    document.querySelector('.mav-site-search-wrapper').classList.toggle('mav-collapse');
-    this.classList.toggle('fa-search');
-    this.classList.toggle('fa-times');
-});
-
-/*
  * Page Load Functions
  */
 function mavfOnloadFunctions() {
@@ -70,6 +61,15 @@ function mavfOnloadFunctions() {
 }
 
 window.onload = mavfOnloadFunctions;
+
+/*
+ * Toggle Site Search
+ */
+document.querySelector('.mav-site-search-icon').addEventListener('click', function(){
+    document.querySelector('.mav-site-search-wrapper').classList.toggle('mav-collapse');
+    this.classList.toggle('fa-search');
+    this.classList.toggle('fa-times');
+});
 
 /*
  * Tool Tip
@@ -237,10 +237,13 @@ if (typeof mavf_carousel === 'function') {
     mavf_carousel();
 }
 
-function mavf_close_btn(mavBTNClass='.mav-btn-close',mavCloseElement = '.mavjs-close'){
-    document.querySelectorAll(mavBTNClass).forEach(function(e){
+/*
+ * Close button
+ */
+function mavf_close_btn(mavButtonClass='.mav-btn-close',mavElementToClose = '.mavjs-close'){
+    document.querySelectorAll(mavButtonClass).forEach(function(e){
         e.addEventListener('click', function(){
-            this.closest(mavCloseElement).remove();
+            this.closest(mavElementToClose).remove();
         });
     });
 }

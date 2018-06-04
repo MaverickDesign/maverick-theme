@@ -44,34 +44,34 @@
     ?>
 </head>
 <body>
-    <div id="fb-root"></div>
+    <!-- <div id="fb-root"></div>
     <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=115651558903215&autoLogAppEvents=1';
     fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));</script> -->
 
     <header id="mavid-page-header" class="mav-pg-header">
         <section class="mav-site-search-wrapper">
             <div class="mav-site-search-ctn">
                 <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
                     <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Nhập từ khóa cần tìm...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Tìm theo từ khóa', 'label' ) ?>" class="mav-search-input"/>
-                    <button type="submit" title="Tìm kiếm" class="mav-btn-solid"><i class="fas fa-search"></i></button>
+                    <button type="submit" title="<?php __('Tìm kiếm','mavericktheme'); ?>" class="mav-btn-solid"><i class="fas fa-search"></i></button>
                 </form>
             </div>
         </section>
         <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
             <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars"></button>
-            <div id="mavid-site-logo">
-                <a href="<?php  bloginfo( 'url' );?>" title="Về trang chủ">
+            <div id="mavid-site-logo" class="mav-site-logo-wrapper">
+                <a href="<?php  bloginfo( 'url' );?>" title="Về trang chủ" class="mav-site-logo-ctn">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0" alt="">
                 </a>
             </div>
             <div class="mav-flex-row">
-                <div id="mavid-header-socials" class="mav-header-socials-ctn">
-                    <div class="mav-header-socials-wrapper">
+                <div id="mavid-header-socials" class="mav-header-socials-wrapper">
+                    <div class="mav-header-socials-ctn">
                         <?php mavf_social_links(); ?>
                     </div>
                 </div>
