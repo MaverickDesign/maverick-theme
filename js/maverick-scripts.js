@@ -1,66 +1,30 @@
+'use strict';
 /*
- * Mobile Menu Checker
- */
-function mavf_mobile_menu_checker() {
+ * Sticky Logo
+ **/
 
-    const mavWindowWidth = window.innerWidth;
-    const mavWindowHeight = window.innerHeight;
-
-    const mavHeaderMenuContainer = document.querySelector('.mav-header-menu-ctn');
-    const mavPageMain = document.querySelector('#mavid-page-main-content');
-    const mavHeaderHeight = document.querySelector('.mav-header-logo-ctn').offsetHeight;
-
-    if (mavWindowWidth > 1023) {
-
-        /* Show header menu */
-        mavHeaderMenuContainer.classList.remove('mav-hide-on-mobile');
-
-        /* Reset page main content top padding */
-        mavPageMain.style.paddingTop = null;
-        // document.querySelector('#mavid-sec-header-menu').removeAttribute('style' , `padding-top`);
-        document.querySelector('#mavid-sec-header-menu').style.paddingTop = 0;
-
-    } else {
-
-        /* Hide menu on mobile devices */
-        mavHeaderMenuContainer.classList.add('mav-hide-on-mobile');
-
-        /* Set mobile menu max height */
-        let mavMenuMaxHeight = mavWindowHeight - mavHeaderHeight;
-        document.querySelector('.mav-header-menu').setAttribute('style' , `max-height: ${mavMenuMaxHeight}px`);
-
-        /* Replace mobile menu icon */
-        let mavMenuIcon = document.querySelector('.mav-mobile-menu-icon');
-        mavMenuIcon.classList.remove('fa-times');
-        mavMenuIcon.classList.add('fa-bars');
-
+(function(){
+    let mavStickyLogo = document.querySelector('.mav-sticky-logo');
+    if (mavStickyLogo == null) {
+        return;
     }
-}
-
-/*
- * Toggle mobile menu
- */
-function mavfReplaceMobileMenuIcon() {
-    let mavMenuIcon = document.querySelector('.mav-mobile-menu-icon')
-    mavMenuIcon.classList.toggle('fa-bars');
-    mavMenuIcon.classList.toggle('fa-times');
-}
-
-function mavfToggleMobileMenu(){
-    document.querySelector('.mav-header-menu-ctn').classList.toggle('mav-hide-on-mobile');
-    mavfReplaceMobileMenuIcon();
-}
-
-document.querySelector('.mav-mobile-menu-icon').addEventListener('click', mavfToggleMobileMenu);
+    addMultipleListeners(window,['scroll','resize'],function(){
+        const mavHeaderSection = document.querySelector('#mavid-sec-header-menu');
+        if (mavHeaderSection.offsetTop > 80) {
+            mavStickyLogo.classList.add('show-logo');
+        } else {
+            mavStickyLogo.classList.remove('show-logo');
+        }
+    },false);
+})();
 
 /*
  * Page Load Functions
  */
-function mavfOnloadFunctions() {
-    mavf_mobile_menu_checker();
-}
+// function mavfOnloadFunctions() {
+// }
 
-window.onload = mavfOnloadFunctions;
+// window.onload = mavfOnloadFunctions;
 
 /*
  * Toggle Site Search
@@ -108,7 +72,8 @@ if (mavToolTips.length > 0) {
         });
     });
 
-    document.onmousemove = mavDisplayToolTip;
+    // document.onmousemove = mavDisplayToolTip;
+
     function mavDisplayToolTip(e){
         let mavWindowW = window.innerWidth;
         let mavWindowH = window.innerHeight;
@@ -129,39 +94,17 @@ if (mavToolTips.length > 0) {
 }
 
 /*
- * Sticky Logo
- **/
-
-function mavf_sticky_logo(){
-    let mavStickyLogo = document.querySelector('.mav-sticky-logo');
-    if (mavStickyLogo == null) {
-        return;
-    }
-    const mavHeaderSection = document.querySelector('#mavid-sec-header-menu');
-    addMultipleListeners(window,['scroll','resize'],function(){
-        if (mavHeaderSection.offsetTop > 80) {
-            mavStickyLogo.classList.add('show-logo');
-        } else {
-            mavStickyLogo.classList.remove('show-logo');
-        }
-    },false);
-}
-mavf_sticky_logo();
-
-/*
  * Hide Empty Paginate Links
  **/
 
-function mavHideEmptyPaginate(){
+(function mavHideEmptyPaginate(){
     let mavPaginateLinks = document.getElementById('mavid-paginate-links');
-    if (mavPaginateLinks == null) {
-        return;
+    if (mavPaginateLinks !== null) {
+        if (mavPaginateLinks.innerText == '') {
+                mavPaginateLinks.style.opacity = 0;
+        }
     }
-    if (mavPaginateLinks.innerText == '') {
-            mavPaginateLinks.style.opacity = 0;
-    }
-}
-mavHideEmptyPaginate();
+})();
 
 /*
  * Scroll to Top button
@@ -170,6 +113,7 @@ mavHideEmptyPaginate();
  * mavClass: button class
  * mavTitle: button hover title
  */
+
 function mavf_btn_scroll_to_top(mavEle = 'span', mavClass = 'mav-btn-top', mavTitle = 'Lên đầu trang'){
     let mavElement = document.createElement(mavEle);
     mavElement.classList.add(mavClass);
@@ -189,12 +133,17 @@ function mavf_btn_scroll_to_top(mavEle = 'span', mavClass = 'mav-btn-top', mavTi
 
     function mavf_show_btn_to_top(){
         if (window.pageYOffset > 200) {
+            mavButtonTop.style.visibility = 'visible';
             mavButtonTop.style.opacity = 1;
+            return;
         } else {
             mavButtonTop.style.opacity = 0;
+            mavButtonTop.style.visibility = 'hidden';
+            return;
         }
     }
 }
+
 if (typeof mavf_btn_scroll_to_top === 'function') {
     mavf_btn_scroll_to_top('span','mav-btn-top','Lên đầu trang');
 }
@@ -217,14 +166,6 @@ if (typeof mavf_go_back_button === 'function') {
 }
 
 /*
- * Reset header menu on window resize
- */
-window.addEventListener('resize', mavf_window_resize_events);
-function mavf_window_resize_events(){
-    mavf_mobile_menu_checker();
-}
-
-/*
  * Start Sliders
  */
 if (typeof mavf_slider === 'function') {
@@ -240,11 +181,39 @@ if (typeof mavf_carousel === 'function') {
 /*
  * Close button
  */
-function mavf_close_btn(mavButtonClass='.mav-btn-close',mavElementToClose = '.mavjs-close'){
+(function mavf_close_btn(mavButtonClass='.mav-btn-close',mavElementToClose = '.mavjs-close'){
     document.querySelectorAll(mavButtonClass).forEach(function(e){
         e.addEventListener('click', function(){
             this.closest(mavElementToClose).remove();
         });
     });
-}
-mavf_close_btn();
+})();
+
+/*
+ * Contact Form
+ */
+(function mavf_contact_form(){
+    const mavContactForm = document.querySelector('#mavid-contact-form');
+    if (mavContactForm) {
+        mavContactForm.addEventListener('submit',function(e){
+            e.preventDefault();
+            console.log('Form submited.');
+            console.log(this);
+
+            const mavFormName = this.querySelector('#mavid-form-name').value;
+            console.log(mavFormName);
+
+            const mavFormEmail = this.querySelector('#mavid-form-email').value;
+            console.log(mavFormEmail);
+
+            const mavFormPhone = this.querySelector('#mavid-form-phone').value;
+            console.log(mavFormPhone);
+
+            const mavFormMessage = this.querySelector('#mavid-form-message').value;
+            console.log(mavFormMessage);
+
+            const mavFormAjaxUrl = this.dataset.url;
+            console.log(mavFormAjaxUrl);
+        });
+    }
+})();

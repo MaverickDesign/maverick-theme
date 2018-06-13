@@ -3,6 +3,7 @@
  * @package mavericktheme
  */
 ?>
+
 <?php get_header(); ?>
 <!-- Page content starts here -->
 <main id="mavid-page-main-content">
@@ -27,7 +28,7 @@
 
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="<?php echo get_page_link(22); ?>" class="mav-sec-title"><h2>Các dịch vụ</h2></a>
+        <a href="<?php echo get_page_link(22); ?>" class="mav-sec-title"><h2><?php _e('Các dịch vụ','mavericktheme'); ?></h2></a>
     </div>
     <?php
         if (function_exists(mavf_post_feature)) {
@@ -50,7 +51,7 @@
 
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="<?php echo get_page_link(7); ?>" class="mav-sec-title"><h2>Cập nhật</h2></a>
+        <a href="<?php echo get_page_link(7); ?>" class="mav-sec-title"><h2><?php _e('Cập nhật','mavericktheme'); ?></h2></a>
     </div>
     <?php
         if (function_exists(mavf_carousel)){
@@ -72,7 +73,7 @@
 
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="" class="mav-sec-title"><h2>Sản Phẩm</h2></a>
+        <a href="" class="mav-sec-title"><h2><?php _e('Sản Phẩm','mavericktheme'); ?></h2></a>
     </div>
     <?php
         if (function_exists(mavf_carousel)){
@@ -95,7 +96,7 @@
 
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="" class="mav-sec-title"><h2>Khách hàng</h2></a>
+        <a href="" class="mav-sec-title"><h2><?php _e('Khách hàng','mavericktheme'); ?></h2></a>
     </div>
     <?php
         if (function_exists(mavf_post_grid)){
@@ -118,7 +119,7 @@
 
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="<?php echo get_page_link(11); ?>" class="mav-sec-title"><h2>Liên hệ</h2></a>
+        <a href="<?php echo get_page_link(11); ?>" class="mav-sec-title"><h2><?php _e( 'Liên hệ' , 'mavericktheme' );?></h2></a>
     </div>
     <?php
         if (function_exists(mavf_google_map)) {

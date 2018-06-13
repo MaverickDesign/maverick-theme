@@ -10,11 +10,15 @@ define( "TEMPLATE_DIR", get_template_directory() );
 /* Remove Generator Meta Tag */
 remove_action( 'wp_head', 'wp_generator' );
 
+require_once TEMPLATE_DIR . '/vendor/Mobile_Detect.php';
+
 require TEMPLATE_DIR. '/inc/admin/mav-admin-functions.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-theme-supports.php';
 
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-styles.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
+
+require TEMPLATE_DIR. '/inc/mav-walker-nav.php';
 
 require TEMPLATE_DIR. '/inc/mav-breadcrumbs.php';
 

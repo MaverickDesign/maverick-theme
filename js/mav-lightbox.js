@@ -32,19 +32,24 @@ function mavf_lightbox(mavArgs = {
             // Append lightbox to the DOM
             document.body.appendChild(mavLightbox);
 
-            const mavContent = `
-            <div class="mav-lightbox-ctn">
-                <nav data-direction="prev" data-collection="${mavCollectionID}" class="mav-lightbox-nav"></nav>
-                <figure class="mav-lightbox-image-ctn">
-                    <img src="" data-current="" data-max="${mavGalleryItems.length}" title="" class="mav-lightbox-image">
-                </figure>
-                <nav data-direction="next" data-collection="${mavCollectionID}" class="mav-lightbox-nav"></nav>
-            </div>
+            const mavLightboxNavPrev = (mavGalleryItems.length > 1) ? `<nav data-direction="prev" data-collection="${mavCollectionID}" class="mav-lightbox-nav"></nav>` : '';
+            const mavLightboxNavNext = (mavGalleryItems.length > 1) ? `<nav data-direction="next" data-collection="${mavCollectionID}" class="mav-lightbox-nav"></nav>` : '';
+            const mavLightboxThumbnails = (mavGalleryItems.length > 1) ? `
             <div class="mav-lightbox-thumbnail-wrapper">
                 <div data-collection="${mavCollectionID}" class="mav-lightbox-thumbnail-ctn">
                 </div>
             </div>
-            <div class="mav-lightbox-close">&times;</div>
+            ` : '';
+            const mavContent = `
+            <div class="mav-lightbox-ctn">
+                ${mavLightboxNavPrev}
+                <figure class="mav-lightbox-image-ctn">
+                    <img src="" data-current="" data-max="${mavGalleryItems.length}" title="" class="mav-lightbox-image">
+                </figure>
+                ${mavLightboxNavNext}
+            </div>
+            ${mavLightboxThumbnails}
+            <div class="mav-lightbox-close" title="Click to close">&times;</div>
             `;
             mavLightbox.innerHTML  = mavContent;
 
@@ -102,7 +107,9 @@ function mavf_lightbox(mavArgs = {
                     mavCloneItem.addEventListener('click',mavf_lightbox);
 
                     // Append to thumbnail list
-                    mavLightbox.querySelector('.mav-lightbox-thumbnail-ctn').appendChild(mavCloneItem);
+                    if (mavGalleryItems.length > 1){
+                        mavLightbox.querySelector('.mav-lightbox-thumbnail-ctn').appendChild(mavCloneItem);
+                    }
                 }
             }
 

@@ -13,27 +13,33 @@
             the_title('<h1 class="mav-page-title">','</h1>');
         ?>
     </section>
-    <section class="mav-pg-ctn">
+    <section class="mav-pg-ctn mav-contact-form-wrapper">
         <div class="mav-contact-form-ctn">
             <h2 class="mav-margin-bottom-lg mav-text-center">Gửi thông tin liên hệ</h2>
-            <form action="" class="mav-contact-form">
+            <form id="mavid-contact-form" action="#" class="mav-contact-form" method="POST" data-url="<?php echo admin_url('admin-ajax.php')?>">
                 <input  type="text"
+                        id="mavid-form-name"
+                        name="name"
                         placeholder="Tên"
                         data-tooltip="Họ &amp; Tên đầy đủ"
                 >
                 <span class="mav-form-hint"><i class="fas fa-info-circle mav-margin-right-xs"></i>Thông tin phải có. Bạn nên nhập họ &amp; tên đầy đủ để chúng tôi thuận tiện xưng hô.</span>
                 <input  type="email"
+                        id="mavid-form-email"
+                        name="email"
                         placeholder="Email"
                         data-tooltip="Địa chỉ email"
                 >
                 <span class="mav-form-hint"><i class="fas fa-info-circle mav-margin-right-xs"></i>Thông tin phải có. Địa chỉ email của bạn để chúng tôi có thể gửi thư trả lời.</span>
                 <input  type="phone"
+                        id="mavid-form-phone"
+                        name="phone"
                         placeholder="Số điện thoại"
                         data-tooltip="Số điện thoại liên lạc"
                 >
                 <span class="mav-form-hint">Số điện thoại của bạn để chúng tôi tiện liên lạc trực tiếp</span>
-                <textarea name="" id="" cols="100%" rows="10vw" placeholder="Nội dung liên hệ"></textarea>
-                <button type="submit" class="mav-btn-solid">Gửi nội dung</button>
+                <textarea name="message" id="mavid-form-message" cols="100%" rows="10vw" placeholder="Nội dung liên hệ"></textarea>
+                <button id="mavid-form-submit" type="submit" class="mav-btn-solid">Gửi nội dung</button>
             </form>
         </div>
         <div class="mav-contact-socials-wrapper">

@@ -35,8 +35,8 @@
             }
         ?>
     </header>
-    <section id="mavid-post-content" class="mav-post-content-wrapper mav-margin-bottom">
-        <div class="mav-pg-ctn mav-post-content-ctn mav-post-content">
+    <section id="mavid-post-content" class="mav-post-content-wrapper<?php if (is_attachment()) {echo ' mav-post-attachment-wrapper';} ?>">
+        <div class="mav-pg-ctn mav-post-content-ctn mav-post-content<?php if (is_attachment()) {echo ' mav-post-attachment-ctn';} ?>">
             <?php the_content(); ?>
         </div>
     </section>

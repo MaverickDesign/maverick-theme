@@ -7,14 +7,14 @@
  * Theme Support - Post Formats
  */
 $mavSavedValue = get_option('mav_setting_post_format');
-$mavPostFormats = array( 'aside' , 
-						 'gallery' , 
-						 'link' , 
-						 'image' , 
-						 'quote' , 
-						 'status' , 
-						 'video' , 
-						 'audio' , 
+$mavPostFormats = array( 'aside' ,
+						 'gallery' ,
+						 'link' ,
+						 'image' ,
+						 'quote' ,
+						 'status' ,
+						 'video' ,
+						 'audio' ,
 						 'chat' );
 $mavOutput = array();
 
@@ -97,3 +97,31 @@ add_action( 'widgets_init', 'mavf_register_sidebars' );
 // }
 
 // add_action('after_setup_theme' , 'mavf_mobile_detect');
+
+function mavf_mobile_detect(){
+    $mavDeviceDetect = new Mobile_Detect;
+    $mavDevice = 'desktop';
+
+    if ( $mavDeviceDetect->isMobile() ) {
+        $mavDevice = 'mobile';
+    }
+    if ( $mavDeviceDetect->isTablet() ) {
+        $mavDevice = 'tablet';
+    }
+    return $mavDevice;
+}
+
+/**
+ * Test local SMTP Mail Server
+ * Note: Remove this function in production site
+ */
+
+function mailtrap($phpmailer) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host = 'smtp.mailtrap.io';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Port = 2525;
+    $phpmailer->Username = '413cfbd302af9e';
+    $phpmailer->Password = '1ba3c17307cb25';
+  }
+add_action('phpmailer_init', 'mailtrap');

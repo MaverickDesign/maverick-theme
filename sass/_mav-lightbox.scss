@@ -71,6 +71,7 @@
         }
         .mav-lightbox-image-ctn {
             @extend .mav-flex-center-all;
+            width: 100%;
             padding: var(--mav-gutter-xs);
             background: rgba(0,0,0,.99);
             margin: 0 var(--mav-gutter-xs);
@@ -79,6 +80,7 @@
                 max-height: 80vh;
                 max-width: 80vw;
                 &:hover {
+                    transform: scale(1);
                     animation: none;
                 }
             }

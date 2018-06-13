@@ -48,3 +48,10 @@
 @import "mav-lightbox";
 
 @import "mav-post-feature";
+
+img {
+    @extend %mav-transition;
+    &:hover {
+        transform: scale(1.025);
+    }
+}

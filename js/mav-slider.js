@@ -1,11 +1,11 @@
-/* 
+/*
  * Maverick's Slider
  * Version: 1.0
  **/
 
 console.log('Maverick\'s Slider loaded.');
 
-/* 
+/*
  * mavSliderId: ID of the container
  * mavSlideContainerClass : slider wrapper inside the container
  */
@@ -18,10 +18,10 @@ function mavf_slider(mavArgs = {
     const mavSliders = document.querySelectorAll('.mav-slider');
 
     if (mavSliders) {
-        mavSliders.forEach(function(e){
+        for (const mavSlider of mavSliders){
 
-            const mavTheSliderObj = e;
-            const mavTheSliderId  = e.id;
+            const mavTheSliderObj = mavSlider;
+            const mavTheSliderId  = mavSlider.id;
             const mavUnique = mavTheSliderObj.dataset.unique;
 
             if (!mavTheSliderObj) {
@@ -45,7 +45,7 @@ function mavf_slider(mavArgs = {
                 function mavRemoveFirstSlideClass() {
                     mavAllSlides.forEach(function(el){
                         el.classList.remove('mav-first-slide');
-                    });    
+                    });
                 }
 
                 /* Add click event to all slides */
@@ -108,7 +108,7 @@ function mavf_slider(mavArgs = {
                         ipnut.classList.remove('mav-active-slide');
                     });
                 }
-            
+
                 const mavNavDots = mavSliderCSSNav.querySelectorAll('.mav-nav-dot');
 
                 function mavf_remove_active_dot(){
@@ -123,7 +123,7 @@ function mavf_slider(mavArgs = {
                         mavf_remove_active_slide();
                         mavf_remove_active_dot();
                         navdot.target.classList.add('mav-active-dot');
-                        
+
                         let mavInputId = navdot.target.dataset.input;
                         mavTheSliderObj.querySelector('#'+mavInputId).classList.add('mav-current-slide');
 
@@ -142,12 +142,12 @@ function mavf_slider(mavArgs = {
 
                         const mavSlideNumber = navdot.target.dataset.number;
                         mavTheSliderObj.querySelector(`#mavid-dot-${mavSlideNumber}-${mavUnique}`).classList.add('mav-active-dot');
-                        
+
                         const mavInputId = navdot.target.dataset.input;
                         mavTheSliderObj.querySelector(`#${mavInputId}`).classList.add('mav-current-slide');
-                        
+
                         const mavContainerId = navdot.target.dataset.container;
-                        mavTheSliderObj.querySelector(`#${mavContainerId}`).classList.add('mav-active-slide');        
+                        mavTheSliderObj.querySelector(`#${mavContainerId}`).classList.add('mav-active-slide');
                     });
                 });
 
@@ -166,45 +166,45 @@ function mavf_slider(mavArgs = {
                         mavCurrent++;
                     }
                 }
-                /* 
+                /*
                 * Pause and Resume Slider
                 */
                 const mavSliderArea = mavTheSliderObj;
-                
+
                 mavSliderArea.addEventListener('mouseover', function(){
                     clearInterval(mavStartSliderType2);
                 });
 
                 mavSliderArea.addEventListener('mouseleave', function(){
                     mavCurrent = Number(mavTheSliderObj.querySelector('.mav-current-slide').dataset.number);
-                    mavStartSliderType2 = setInterval(mavf_Slider_Type_2, mavInterval);                    
+                    mavStartSliderType2 = setInterval(mavf_Slider_Type_2, mavInterval);
                 });
             }
 
-            /* 
+            /*
             * Slider Type 3
             */
             if ( mavSliderType == 3 ) {
-                console.log('Slider type ' + mavSliderType + ' started.');        
+                console.log('Slider type ' + mavSliderType + ' started.');
                 // Important: Adjust the class to slide container
                 let mavSlideContainer = mavTheSliderObj.querySelector('.'+mavSlideContainerClass);
-                
+
                 let mavSliderType3 = setInterval(mavf_Slide_Show, mavInterval);
-                
+
                 function mavf_Slide_Show(){
                     let mavAllSlides = mavSlideContainer.querySelectorAll('.mav-slide');
                     mavTemp = mavSlideContainer.removeChild(mavAllSlides[0]);
                     mavSlideContainer.appendChild(mavTemp);
                 }
-                
+
                 mavTheSliderObj.addEventListener('mouseover', function(){
                     clearInterval(mavSliderType3);
                 });
-                
+
                 mavTheSliderObj.addEventListener('mouseleave', function(){
                     mavSliderType3 = setInterval(mavf_Slide_Show, mavInterval);
                 });
             }
-        });
+        };
     }
 }

@@ -3,6 +3,11 @@
  * @package mavericktheme
  */
 ?>
+<?php
+    if (function_exists(mavf_mobile_detect)) {
+        $mavDevice = mavf_mobile_detect();
+    }
+?>
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>">
 <head>
@@ -43,7 +48,7 @@
     wp_head();
     ?>
 </head>
-<body>
+<body data-device="<?php echo $mavDevice?>">
     <!-- <div id="fb-root"></div>
     <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -54,7 +59,7 @@
     }(document, 'script', 'facebook-jssdk'));</script> -->
 
     <header id="mavid-page-header" class="mav-pg-header">
-        <section class="mav-site-search-wrapper">
+        <section id="mavid-sec-site-search" class="mav-site-search-wrapper">
             <div class="mav-site-search-ctn">
                 <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
                     <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Nhập từ khóa cần tìm...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Tìm theo từ khóa', 'label' ) ?>" class="mav-search-input"/>
@@ -63,7 +68,7 @@
             </div>
         </section>
         <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
-            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars"></button>
+            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close"></button>
             <div id="mavid-site-logo" class="mav-site-logo-wrapper">
                 <a href="<?php  bloginfo( 'url' );?>" title="Về trang chủ" class="mav-site-logo-ctn">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0" alt="">
@@ -79,21 +84,22 @@
             </div>
         </section>
     </header>
+
     <?php
     /*
     * Header Menu
     **/
     if (current_theme_supports('menus')): ?>
-        <section id="mavid-sec-header-menu" class="mav-sec-header-menu">
+        <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
             <div class="mav-site-width mav-sticky-logo-wrapper">
                 <div id="mavid-site-logo" class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
-                    <a href="<?php  bloginfo( 'url' );?>" title="Về trang chủ" class="mav-sticky-logo">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/maverick-logo-svg.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0" alt="">
+                    <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','mavericktheme')?>" class="mav-sticky-logo">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/maverick-logo-svg.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0" alt="">
                     </a>
                 </div>
             </div>
-            <div class="mav-header-menu-ctn mav-hide-on-mobile">
-                <nav id="mavid-header-menu" class="mav-header-menu">
+            <div class="mav-header-menu-wrapper">
+                <nav class="mav-header-menu-ctn">
                     <?php
                     $mavMenuArgs = array(
                         'theme_location' => 'primary_menu',
@@ -109,15 +115,16 @@
                         'after' => '',
                         'link_before' => '',
                         'link_after' => '',
-                        'items_wrap' => '<ul>%3$s</u>',
+                        'items_wrap' => '<ul id="mavid-header-menu" class="mav-header-menu">%3$s</u>',
                         'depth' => 0,
-                        'walker' => ''
+                        'walker' => new Mav_Walker_Nav_Primary()
                     );
                     wp_nav_menu( $mavMenuArgs ); ?>
                 </nav>
             </div>
         </section>
     <?php endif; ?>
+
     <?php
 		/*
 		 * Breadcrumb Section

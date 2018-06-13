@@ -5,17 +5,16 @@ form {
     }
 }
 .mav-site-search-ctn {
-    width: 100%;    
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .mav-site-search-wrapper {
-    
     height: auto;
     max-height: 0;
     overflow: hidden;
-    background: $mav-color-brand-accent;    
+    background: $mav-color-brand-accent;
     @extend %mav-transition;
     @media #{$mav-mobile} {
         background: darken($mav-color-brand-accent,5%);
@@ -24,13 +23,12 @@ form {
 
 .mav-collapse {
     max-height: 10vh;
-    @extend %mav-transition;    
+    @extend %mav-transition;
 }
-
-
 
 .mav-site-search-icon {
     cursor: pointer;
+    font-size: 1.25rem;
     @media #{$mav-desktop} {
         margin-left: var(--mav-margin-lg);
     }
@@ -113,9 +111,9 @@ form {
 
 .mav-contact-form-ctn {
     background: white;
-    margin: var(--mav-gutter-lg) auto;    
+    margin: var(--mav-gutter-lg) auto;
     padding: var(--mav-gutter-lg);
-    border: 1px solid $mav-color-border;    
+    border: 1px solid $mav-color-border;
     @media #{$mav-desktop} {
         max-width: 75%;
     }
@@ -127,8 +125,8 @@ form {
     grid-gap: var(--mav-gutter-sm);
     input,textarea {
         display: block;
-        font-family: $font-roboto;    
-        font-size: 1rem;        
+        font-family: $font-roboto;
+        font-size: 1rem;
         background: transparent;
         border: none;
         box-shadow: inset 0 -1px $mav-color-border;
@@ -145,7 +143,7 @@ form {
         padding: var(--mav-gutter-sm);
         resize: none;
         box-shadow: none;
-        margin-bottom: var(--mav-gutter);        
+        margin-bottom: var(--mav-gutter);
     }
     .mav-form-hint {
         font-size: .75rem;

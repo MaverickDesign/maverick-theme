@@ -5,5 +5,8 @@
         display: grid;
         grid-gap: var(--mav-gutter);
         margin: 0 var(--mav-gutter);
+        @media #{$mav-phone} {
+            grid-template-columns: 1fr!important;
+        }
     }
 }

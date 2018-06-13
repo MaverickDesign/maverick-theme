@@ -299,3 +299,7 @@ article.sticky {
 .mav-related-posts-ctn {
     margin: var(--mav-gutter-xl) 0;
 }
+
+.mav-post-attachment-wrapper {
+    @extend .mav-flex-center-all;
+}

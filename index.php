@@ -9,7 +9,7 @@
 <main id="mavid-page-main-content">
 <?php
     if (is_home() && function_exists(mavf_slider)):
-        echo '<section class="mav-hide-on-phone mav-margin-bottom-lg">';
+        echo '<section class="mav-margin-top-lg mav-margin-bottom-lg mav-hide-on-phone">';
             $mavArgs = array (
                 'slider_type'       => 3,
                 'height'            => '30vh',
