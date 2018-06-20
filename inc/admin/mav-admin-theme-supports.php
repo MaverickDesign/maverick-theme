@@ -49,7 +49,8 @@ add_theme_support( 'custom-logo' , array(
 	'width' => 80,
 	'height' => 80,
 	'flex-width' => false,
-	'flex-height' => false,'header-text' => array(
+	'flex-height' => false,
+	'header-text' => array(
 		'site-title',
 		'site-description' ),
 	) );

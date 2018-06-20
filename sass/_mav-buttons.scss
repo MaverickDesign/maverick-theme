@@ -2,6 +2,7 @@ button {
     margin: 0;
     padding: 0;
     border: none;
+
     background: transparent;
     color: inherit;
 }
@@ -9,17 +10,23 @@ button {
 %mav-btn {
     display: flex;
     justify-content: center;
+
     padding: var(--mav-padding-sm) var(--mav-padding);
+
     border: 1px solid var(--mav-brand-color-primary);
     border-radius: 4px;
+
     background: transparent;
+
     font-size: .85rem;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .075rem;
+
     cursor: pointer;
+
     @extend %mav-transition;
 }
 
@@ -34,21 +41,21 @@ button {
 
 .mav-btn-solid {
     @extend %mav-btn;
-    background: var(--mav-brand-color-primary);
     @include text-contrast($mav-color-brand-primary);
+    background: var(--mav-brand-color-primary);
     &:hover {
-        background: darken($mav-color-brand-primary,5%);
         @include text-contrast($mav-color-brand-primary);
+        background: darken($mav-color-brand-primary,5%);
         animation-delay: 1s;
-        animation: mav-brand-color-dark 3s infinite;
+        animation: mav-brand-color-dark 2s infinite;
     }
 }
 
 .mav-btn {
     &-close {
         &:before {
-            content: '\f410';
             @extend %mav-font-awesome;
+            content: '\f410';
         }
     }
 }
@@ -82,6 +89,7 @@ button {
         }
     }
 }
+
 .mav-btn-top {
     visibility: hidden;
     bottom: 15%;
@@ -89,6 +97,7 @@ button {
         bottom: 17.5%;
     }
 }
+
 .mav-btn-back {
     opacity: 1;
     bottom: 10%;
@@ -105,9 +114,4 @@ button {
         opacity: 0;
         visibility: hidden;
     }
-}
-
-.mav-sec-btn-wrapper {
-    display: flex;
-    justify-content: center;
 }

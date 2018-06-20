@@ -20,6 +20,11 @@
 }
 
 /* Grids */
+
+.mav-grid {
+    display: grid;
+}
+
 @media #{$mav-desktop} {
     @for $columns from 1 to 15 {
         .#{$mavNameSpace}-grid-col-#{$columns} {
@@ -83,6 +88,7 @@
         max-width: var(--mav-site-width);
     }
 }
+
 .mav-pg-ctn {
     @extend .mav-site-width;
     padding: var(--mav-gutter);

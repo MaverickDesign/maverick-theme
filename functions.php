@@ -10,7 +10,14 @@ define( "TEMPLATE_DIR", get_template_directory() );
 /* Remove Generator Meta Tag */
 remove_action( 'wp_head', 'wp_generator' );
 
+/*
+ * Vendors
+ */
 require_once TEMPLATE_DIR . '/vendor/Mobile_Detect.php';
+
+/*
+ * Admin
+ */
 
 require TEMPLATE_DIR. '/inc/admin/mav-admin-functions.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-theme-supports.php';
@@ -18,18 +25,25 @@ require TEMPLATE_DIR. '/inc/admin/mav-admin-theme-supports.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-styles.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
 
+/*
+ * Theme Functions
+ */
+
 require TEMPLATE_DIR. '/inc/mav-walker-nav.php';
 
 require TEMPLATE_DIR. '/inc/mav-breadcrumbs.php';
 
+require TEMPLATE_DIR. '/inc/mav-ajax-load-posts.php';
+
 require TEMPLATE_DIR.'/inc/mav-social-accounts.php';
 
 require TEMPLATE_DIR.'/inc/mav-slider.php';
+
 require TEMPLATE_DIR.'/inc/mav-carousel.php';
 
 require TEMPLATE_DIR. '/inc/mav-post-grid.php';
+
 require TEMPLATE_DIR. '/inc/mav-post-feature.php';
-// require get_template_directory() . '/inc/mav-post-carousel.php';
 
 require TEMPLATE_DIR. '/inc/mav-google-map.php';
 
@@ -159,7 +173,7 @@ function mavf_unique($mavLength = 0, $mavExp = s){
 
     if ($mavLength > 0) {
         $mavStringLength = strlen($mavString);
-        $mavReturn = substr($mavString, 0 , $mavStringLength - ($mavStringLength - $mavLength) );
+        $mavReturn = substr($mavString, floor(rand(0,10)) , $mavStringLength - ($mavStringLength - $mavLength) );
     } else {
         $mavReturn = $mavString;
     }

@@ -4,9 +4,14 @@
  */
 
 function mavf_admin_theme_config_options() {
+
+	add_settings_section( 'mavsec_theme_config_theme_support', 'Theme Supports', 'mavf_theme_config_theme_support', 'mav_admin_page_theme_config' );
+
+	// Post formats
 	register_setting('mavog_theme_config' , 'mav_setting_post_format');
     add_settings_field( 'mavid_theme_config_theme_support_post_format', 'Post Formats', 'mavf_theme_config_theme_support_post_format', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
 
+	// Grid system
     register_setting( 'mavog_theme_config', 'mav_setting_grid_system' );
     add_settings_field( 'mavid_theme_config_grid_system', 'Grid System', 'mavf_theme_config_grid_system', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
 
@@ -22,7 +27,21 @@ function mavf_admin_theme_config_options() {
 	register_setting('mavog_theme_config' , 'mav_setting_en_url');
 	add_settings_field( 'mavid_theme_config_en_url', 'English Site URL', 'mavf_theme_config_en_url', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
 
-    add_settings_section( 'mavsec_theme_config_theme_support', 'Theme Supports', 'mavf_theme_config_theme_support', 'mav_admin_page_theme_config' );
+	/*
+	 * Theme settings
+	 */
+    add_settings_section( 'mavsec_theme_config_theme_setting', 'Theme Settings', 'mavf_theme_config_theme_setting', 'mav_admin_page_theme_config' );
+
+	// Load more post via Ajax
+	register_setting('mavog_theme_config' , 'mav_setting_ajax_load_posts');
+	add_settings_field('mavid_theme_setting_ajax_load_posts', 'Ajax loading Blog Page', 'mavf_theme_config_ajax_load_posts', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_setting');
+	// Show sidebar
+	register_setting('mavog_theme_config' , 'mav_setting_blog_page_sidebar');
+	add_settings_field('mavid_theme_setting_blog_page_sidebar', 'Show Sidebar', 'mavf_theme_config_blog_page_sidebar', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_setting');
+
+	register_setting('mavog_theme_config' , 'mav_setting_blog_page_columns');
+	add_settings_field('mavid_theme_setting_blog_page_columns', 'Columns', 'mavf_theme_config_blog_page_columns', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_setting');
+
 } // mavf_admin_theme_config_options
 
 add_action( 'admin_init' , 'mavf_admin_theme_config_options' );
@@ -116,7 +135,7 @@ function mavf_theme_config_theme_language() {
 function mavf_theme_config_duo_language() {
     $mavSavedValue = esc_attr( get_option('mav_setting_duo_language') );
 	$mavChecked = ( @$mavSavedValue == 1 ? 'checked' : '');
-	echo '<label><input type="checkbox" id="mavid-duo-language" name="mav_setting_duo_language" value="1" '.$mavChecked.'/></labe;>';
+	echo '<label><input type="checkbox" id="mavid-duo-language" name="mav_setting_duo_language" value="1" '.$mavChecked.'/></label>';
 }
 
 function mavf_theme_config_vi_url() {
@@ -127,4 +146,30 @@ function mavf_theme_config_vi_url() {
 function mavf_theme_config_en_url() {
 	$mavSavedValue = esc_attr( get_option('mav_setting_en_url') );
     printf( '<input type="text" name="mav_setting_en_url" value="%s" placeholder="English Site URL"/>', $mavSavedValue );
+}
+
+/*
+ * Theme Setting Functions
+ */
+
+function mavf_theme_config_theme_setting() {
+	_e('Modify theme settings' , 'mavericktheme');
+}
+
+function mavf_theme_config_ajax_load_posts() {
+	$mavSavedValue = esc_attr( get_option('mav_setting_ajax_load_posts') );
+	$mavChecked = ( @$mavSavedValue == 1 ? 'checked' : '');
+	echo '<label><input type="checkbox" id="mavid-ajax-load-posts" name="mav_setting_ajax_load_posts" value="1" '.$mavChecked.'/></label>';
+}
+
+function mavf_theme_config_blog_page_sidebar() {
+	$mavSavedValue = esc_attr( get_option('mav_setting_blog_page_sidebar') );
+	$mavChecked = ( @$mavSavedValue == 1 ? 'checked' : '');
+	echo '<label><input type="checkbox" id="mavid-blog-page-sidebar" name="mav_setting_blog_page_sidebar" value="1" '.$mavChecked.'/></label>';
+}
+
+function mavf_theme_config_blog_page_columns() {
+	$mavSavedValue = esc_attr( get_option('mav_setting_blog_page_columns') );
+	printf( '<input type="text" name="mav_setting_blog_page_columns" value="%s" placeholder="from 1 to 4"/>', $mavSavedValue );
+	printf('<span class="mav-admin-desc">%1$s</span>',__('Choose columns layout on Blog page (from 1 to 4)','mavericktheme'));
 }

@@ -44,7 +44,7 @@
             echo '</div>';
         }
         ?>
-    <div class="mav-sec-btn-wrapper">
+    <div class="mav-flex-center-all">
         <?php mavf_button('Đến trang Dịch Vụ',get_page_link(22)); ?>
     </div>
 </section>
@@ -66,7 +66,7 @@
             echo '</div>';
         }
     ?>
-    <div class="mav-sec-btn-wrapper">
+    <div class="mav-flex-center-all">
         <?php mavf_button('Đến trang Cập Nhật',get_page_link(7)); ?>
     </div>
 </section>
@@ -89,7 +89,7 @@
             echo '</div>';
         }
     ?>
-    <div class="mav-sec-btn-wrapper">
+    <div class="mav-flex-center-all">
         <?php mavf_button('Đến trang Sản Phẩm',get_page_link(214)); ?>
     </div>
 </section>
@@ -112,7 +112,7 @@
             echo '</div>';
         }
     ?>
-    <div class="mav-sec-btn-wrapper">
+    <div class="mav-flex-center-all">
         <?php mavf_button('Đến trang Khách hàng',get_page_link(216)); ?>
     </div>
 </section>
@@ -128,7 +128,7 @@
             echo '</div>';
         }
     ?>
-    <div class="mav-sec-btn-wrapper">
+    <div class="mav-flex-center-all">
         <?php mavf_button('Đến trang Liên Hệ',get_page_link(11)); ?>
     </div>
 </section>

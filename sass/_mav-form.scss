@@ -4,6 +4,13 @@ form {
         padding: var(--mav-padding-sm);
     }
 }
+
+.mav-form {
+    input {
+        box-shadow: inset 0 -2px $mav-color-brand-primary;
+    }
+}
+
 .mav-site-search-ctn {
     width: 100%;
     display: flex;
@@ -41,9 +48,6 @@ form {
         max-width: $mav-site-width;
         button ,input {
             border: none;
-            &:focus {
-                // outline: none;
-            }
         }
         input {
             background: #fafafa;
@@ -124,16 +128,17 @@ form {
     display: grid;
     grid-gap: var(--mav-gutter-sm);
     input,textarea {
-        display: block;
+        display: flex;
         font-family: $font-roboto;
         font-size: 1rem;
         background: transparent;
         border: none;
         box-shadow: inset 0 -1px $mav-color-border;
         &:focus {
+            outline: none;
             background: white;
+            box-shadow: inset 0 -2px $mav-color-brand-primary;
             + .mav-form-hint {
-                // max-height: 100vh;
                 opacity: 1;
             }
         }
@@ -146,10 +151,10 @@ form {
         margin-bottom: var(--mav-gutter);
     }
     .mav-form-hint {
+        margin-bottom: var(--mav-gutter);
+        opacity: 0;
         font-size: .75rem;
         color: $mav-color-text-hint;
-        opacity: 0;
         @extend %mav-transition;
-        margin-bottom: var(--mav-gutter);
     }
 }

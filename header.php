@@ -62,15 +62,15 @@
         <section id="mavid-sec-site-search" class="mav-site-search-wrapper">
             <div class="mav-site-search-ctn">
                 <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-                    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Nhập từ khóa cần tìm...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Tìm theo từ khóa', 'label' ) ?>" class="mav-search-input"/>
-                    <button type="submit" title="<?php __('Tìm kiếm','mavericktheme'); ?>" class="mav-btn-solid"><i class="fas fa-search"></i></button>
+                    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( __('Nhập từ khóa cần tìm...','mavericktheme'), 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( __('Tìm theo từ khóa','mavericktheme'), 'label' ) ?>" class="mav-search-input"/>
+                    <button type="submit" title="<?php _e('Tìm kiếm','mavericktheme'); ?>" class="mav-btn-solid"><i class="fas fa-search"></i></button>
                 </form>
             </div>
         </section>
         <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
-            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close"></button>
+            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','mavericktheme'); ?>"></button>
             <div id="mavid-site-logo" class="mav-site-logo-wrapper">
-                <a href="<?php  bloginfo( 'url' );?>" title="Về trang chủ" class="mav-site-logo-ctn">
+                <a href="<?php  bloginfo( 'url' );?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0" alt="">
                 </a>
             </div>
@@ -80,7 +80,7 @@
                         <?php mavf_social_links(); ?>
                     </div>
                 </div>
-                <button class="mav-site-search-icon fas fa-search" title="Tìm kiếm nội dung"></button>
+                <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','mavericktheme'); ?>"></button>
             </div>
         </section>
     </header>

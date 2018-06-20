@@ -13,7 +13,7 @@ function mavf_header_menu(){
     // const mavFirstLevelSubMenus = document.querySelectorAll('.mav-sub-menu[data-lvl="1"]');
 
     for (const mavSubmenuIcon of mavSubmenuIcons) {
-        if (mavSubmenuIcon.dataset.lvl == 2) {
+        if (mavSubmenuIcon.dataset.lvl == 2 || window.innerWidth < 1024) {
             mavSubmenuIcon.setAttribute('title','Click to expand');
         }
         // Add click event

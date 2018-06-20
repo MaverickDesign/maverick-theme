@@ -22,7 +22,7 @@ function mavf_post_carousel($mavArgs) {
         'post_status'       => 'publish',
         'posts_per_page'    => $mavNumberOfPosts,
         'post__not_in'      => get_option("sticky_posts"),
-        'category__in'      => $mavCategories
+        'category__in'      => $mavCategories,
     );
 
     $mavQuery = new WP_Query($mavQueryArgs);

@@ -2,19 +2,17 @@
 /*
     @package mavericktheme
 */
-?>
+echo '<section class="mav-admin-wrapper">';
+    printf('<h1>%1$s</h1>',__('Theme Config','mavericktheme'));
+    printf('<p>%1$s</p>',__('Customize Theme Config','mavericktheme'));
 
-<h1>Theme Config</h1>
-<p>Customize Theme Config</p>
+    settings_errors();
 
-<?php settings_errors(); ?>
+    printf('<form action="options.php" method="POST">');
 
-<form action="options.php" method="POST">
-    <?php
-        // option group name
         settings_fields( 'mavog_theme_config' );
-        // which admin page
         do_settings_sections( 'mav_admin_page_theme_config' );
-        submit_button( 'Save Changes', 'primary', 'mavb_submit' );
-    ?>
-</form>
+
+        submit_button( __('Save changes','mavericktheme'), 'primary', 'mavb_submit' );
+    echo '</form>';
+echo '</section>';

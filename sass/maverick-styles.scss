@@ -55,3 +55,11 @@ img {
         transform: scale(1.025);
     }
 }
+
+.mav-blog-sticky-post-wrapper {
+    @extend .mav-pg-ctn;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20%,33%));
+    grid-gap: var(--mav-gutter);
+    justify-content: center;
+}

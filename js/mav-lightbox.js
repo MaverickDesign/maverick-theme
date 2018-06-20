@@ -1,14 +1,14 @@
 function mavf_lightbox(mavArgs = {
     mavGalleryClass: '.gallery'
 }){
+    // Define Image pattern
+    const mavImagePattern = /\.(jpg)|(png)|(svg)|(gif)$/i;
 
     // Select all galleries on the page
     const mavGalleries = document.querySelectorAll(mavArgs.mavGalleryClass);
 
-    // Define Image pattern
-    const mavImagePattern = /\.(jpg)|(png)|(svg)|(gif)$/i;
-
     if (mavGalleries.length > 0) {
+
         for (const mavGallery of mavGalleries) {
 
             // Generate collection ID
@@ -33,13 +33,16 @@ function mavf_lightbox(mavArgs = {
             document.body.appendChild(mavLightbox);
 
             const mavLightboxNavPrev = (mavGalleryItems.length > 1) ? `<nav data-direction="prev" data-collection="${mavCollectionID}" class="mav-lightbox-nav"></nav>` : '';
+
             const mavLightboxNavNext = (mavGalleryItems.length > 1) ? `<nav data-direction="next" data-collection="${mavCollectionID}" class="mav-lightbox-nav"></nav>` : '';
+
             const mavLightboxThumbnails = (mavGalleryItems.length > 1) ? `
             <div class="mav-lightbox-thumbnail-wrapper">
                 <div data-collection="${mavCollectionID}" class="mav-lightbox-thumbnail-ctn">
                 </div>
             </div>
             ` : '';
+
             const mavContent = `
             <div class="mav-lightbox-ctn">
                 ${mavLightboxNavPrev}
@@ -51,6 +54,7 @@ function mavf_lightbox(mavArgs = {
             ${mavLightboxThumbnails}
             <div class="mav-lightbox-close" title="Click to close">&times;</div>
             `;
+
             mavLightbox.innerHTML  = mavContent;
 
             mavLightbox.addEventListener('click',mavf_close_lightbox);
@@ -62,7 +66,7 @@ function mavf_lightbox(mavArgs = {
                 mavLightbox.classList.add('mav-hide');
                 mavLightbox.classList.remove('mav-lightbox-current');
 
-                document.webkitExitFullscreen();
+                // document.webkitExitFullscreen();
             }
 
             let i = 1;
@@ -147,7 +151,7 @@ function mavf_lightbox(mavArgs = {
             mavLightbox.classList.add('mav-lightbox-current');
 
             // Go fullscreen mode
-            document.body.webkitRequestFullScreen();
+            // document.body.webkitRequestFullScreen();
 
             const mavLightboxImage = mavLightbox.querySelector('.mav-lightbox-image');
 

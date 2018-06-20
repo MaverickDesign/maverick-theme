@@ -1,14 +1,19 @@
-.mav-post-content-ctn {
-    // margin-bottom: var(--mav-gutter-lg);
-}
-
 .mav-post {
     display: grid;
     background: white;
     &-header {
         text-align: center;
     }
-
+    &-title {
+        margin: var(--mav-gutter-lg) var(--mav-gutter);
+        @media #{$mav-phone} {
+            font-weight: 600;
+            text-align: left;
+        }
+    }
+    /*
+     * Post feature image
+     */
     &-feature-image {
         height: 40vw;
         background-position: center!important;
@@ -16,20 +21,23 @@
         @media #{$mav-desktop} {
             height: 25vw;
             background-attachment: fixed!important;
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.33);
         }
     }
-
+    &-info-wrapper {
+        @extend .mav-site-width;
+    }
     &-info-ctn {
-        display: flex;
-        // padding-top: var(--mav-gutter);
+        margin: var(--mav-gutter);
+        padding-bottom: var(--mav-gutter);
         box-shadow: 0 1px $mav-color-border;
-        margin-bottom: var(--mav-gutter);
         @media #{$mav-mobile} {
             flex-wrap: wrap;
             justify-content: center;
         }
         span {
             margin-right: var(--mav-gutter);
+            white-space: nowrap;
             &:last-child {
                 margin-right: 0;
             }
@@ -59,19 +67,22 @@
             flex-direction: column;
         }
         a {
-            // @include text-contrast($mav-color-brand-accent);
             color: $mav-color-text-dark-primary;
             font-weight: 400;
             text-decoration: none;
-            padding-bottom: var(--mav-gutter-sm);
+            padding: var(--mav-gutter-sm);
+            border: 1px solid $mav-color-border;
+            border-radius: 4px;
             @extend %mav-transition;
             &:hover {
-                box-shadow: inset 0 -4px darken($mav-color-brand-primary,0%);
+                background: $mav-color-brand-primary;
+                border-color: $mav-color-brand-primary;
             }
             &:before, &:after {
                 @extend %mav-font-awesome;
             }
             @media #{$mav-phone} {
+                width: 100%;
                 margin-bottom: var(--mav-gutter-sm);
                 &:last-child {
                     margin-bottom: 0;
@@ -128,7 +139,6 @@
             content: '\f292';
             @extend %mav-font-awesome;
             margin-right: var(--mav-gutter-xs);
-            // color: inherit;
         }
     }
 }
@@ -169,17 +179,42 @@
  */
 
 .mav-post-content {
+    /*
+     * Headings
+     */
     h1,h2,h3,h4,h5,h6 {
         margin-bottom: 1em;
     }
+    /*
+     * Body
+     */
     p {
         color: $mav-color-text-secondary;
         margin-bottom: 1.5em;
+        /* Dropcap style */
+        &:first-child {
+            &:first-letter{
+                float: left;
+                font-family: $font-roboto-slab;
+                font-size: 5rem;
+                line-height: 60px;
+                padding-top: var(--mav-gutter-xs);
+                padding-right: var(--mav-gutter-xs);
+            }
+        }
         &:last-child {
             margin-bottom: 0;
         }
+        &.attachment {
+            /* Wordpress class */
+            @extend .mav-flex-center-all;
+        }
     }
+    /*
+     * Images
+     */
     img {
+        column-span: all;
         height: auto;
         max-width: 100%;
         max-height: 75vh;
@@ -188,41 +223,50 @@
             margin: 0 auto;
         }
     }
-
+    /*
+    * Block Quote
+    */
     blockquote {
         display: flex;
         justify-content: center;
         margin: var(--mav-gutter-lg) auto;
-        border-radius: 6px;
-        background: $mav-color-background;
-        @media #{$mav-tablet} {
-            max-width: 75vw;
-        }
-        @media #{$mav-desktop} {
-            max-width: 50vw;
+        column-span: all;
+        max-width: 50vw;
+        background: rgba($mav-color-brand-accent,.1);
+        box-shadow: inset var(--mav-gutter-xs) 0 $mav-color-brand-accent;
+        @media #{$mav-phone} {
+            max-width: 90vw;
         }
         p {
-            padding: var(--mav-gutter-sm);
+            position: relative;
+            padding: var(--mav-gutter);
             font-family: $font-roboto-slab;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 300;
             text-align: center;
             color: $mav-color-text-primary;
+            &:first-child {
+                &:first-letter{
+                    float: none;
+                    font-family: inherit;
+                    font-size: inherit;
+                    line-height: inherit;
+                    padding-top: 0;
+                    padding-right: 0;
+                }
+            }
             &:before, &:after {
                 display: inline-block;
-                position: relative;
                 @extend %mav-font-awesome;
                 color: darken($mav-color-brand-accent,0%);
             }
             &:before {
                 content: '\f10d';
-                // top: -0.25em;
-                left: -0.5em;
+                margin-right: var(--mav-gutter-sm);
             }
             &:after {
                 content: '\f10e';
-                // bottom: -0.25em;
-                right: -0.5em;
+                margin-left: var(--mav-gutter-sm);
             }
         }
         span.mav-quote-author {
@@ -236,8 +280,6 @@
 /*
  * Sticky post
  */
-
-$mav-color-gradient-brand: linear-gradient(to right, $mav-color-brand-primary 0%, $mav-color-brand-accent 100%);
 
 article.sticky {
     .mav-card-post-header {
@@ -267,12 +309,15 @@ article.sticky {
  */
 
 .gallery {
+    position: relative;
     display: grid;
-    grid-gap: var(--mav-gutter);
-    padding: var(--mav-gutter);
+    grid-gap: var(--mav-gutter-lg);
+    margin: var(--mav-gutter) auto;
+    padding: var(--mav-gutter-lg);
     justify-content: center;
     justify-items: center;
     box-shadow: 0 0 1px $mav-color-border;
+    column-span: all;
     @media #{$mav-mobile} {
         grid-template-columns: repeat(2,1fr);
     }
@@ -280,7 +325,7 @@ article.sticky {
         grid-template-columns: repeat(3,1fr);
     }
     @media #{$mav-desktop} {
-        grid-template-columns: repeat(auto-fill,minmax(10%,auto));
+        grid-template-columns: repeat(auto-fit,minmax(10%,auto));
     }
     .gallery-item {
         @extend .mav-flex-center-all;
@@ -292,8 +337,7 @@ article.sticky {
  * Related Posts
  */
 
-
- .mav-related-posts-wrapper {
+.mav-related-posts-wrapper {
     margin: var(--mav-gutter-xl) auto;
 }
 .mav-related-posts-ctn {

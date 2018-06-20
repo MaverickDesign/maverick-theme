@@ -183,3 +183,5 @@ $mav-color-background: #fafafa;
         background-color: $mav-color-brand-primary;
     }
 }
+
+$mav-color-gradient-brand: linear-gradient(to right, $mav-color-brand-primary 0%, $mav-color-brand-accent 100%);

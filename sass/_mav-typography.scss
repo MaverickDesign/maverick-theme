@@ -164,11 +164,13 @@ ul {
 
 .mav-sec-title {
     padding: 0 var(--mav-gutter) var(--mav-gutter-sm) var(--mav-gutter);
-    box-shadow: inset 0 -3px $mav-color-border;
+    box-shadow: inset 0 -3px $mav-color-brand-primary;
 
     border-radius: var(--mav-gutter-sm);
     border: 1px solid transparent;
 
+    font-weight: 300;
+    font-size: 1.25rem;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -178,8 +180,6 @@ ul {
         max-width: 80%;
     }
     &:hover {
-    }
-    h1,h2,h3,h4,h5,h6 {
-        font-weight: 400;
+        box-shadow: inset 0 -4px $mav-color-brand-accent;
     }
 }
