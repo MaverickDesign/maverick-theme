@@ -147,7 +147,7 @@ table {
 body {
   background: var(--mav-site-bg-color); }
 
-.mav-paginate-links-ctn .prev:before, .mav-paginate-links-ctn .next:after, .mav-btn-close:before, .mav-btn-top:before, .mav-btn-back:before, .mav-contact[data-type]:before, .mav-header-menu-ctn ul li.menu-item-home a:before, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-site-sidebar-ctn .widget_recent_entries ul li:before, .mav-site-sidebar-ctn .widget_categories ul li:before, .mav-post-info-ctn span:before, .mav-post-navigation a:before, .mav-post-navigation a:after, .mav-post-tag-list a:before, .mav-post-info-category:before, .mav-post-info-date:before, .mav-post-info-author:before, .mav-post-content blockquote p:before, .mav-post-content blockquote p:after, article.sticky .mav-card-post-header:before, .mav-slider-type-2-ctn .mav-slide .slide-prev, .mav-slider-type-2-ctn .mav-slide .slide-next, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after {
+.mav-paginate-links-ctn .prev:before, .mav-paginate-links-ctn .next:after, .mav-btn-close:before, .mav-btn-top:before, .mav-btn-back:before, .mav-contact[data-type]:before, .mav-header-menu-ctn ul li.menu-item-home a:before, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-site-sidebar-ctn .widget_recent_entries ul li:before, .mav-site-sidebar-ctn .widget_categories ul li:before, .mav-post-info-ctn span:before, .mav-post-navigation a:before, .mav-post-navigation a:after, .mav-post-tag-list a:before, .mav-post-info:before, .mav-post-content blockquote p:before, .mav-post-content blockquote p:after, article.sticky .mav-card-post-header:before, .mav-slider-type-2-ctn .mav-slide .slide-prev, .mav-slider-type-2-ctn .mav-slide .slide-next, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -267,18 +267,24 @@ ul li ul li {
   .mav-sec-title:hover {
     box-shadow: inset 0 -4px #05a1b3; }
 
+.mav-link[data-link="external"] {
+  color: #428bca;
+  text-decoration: none; }
+  .mav-link[data-link="external"]:hover {
+    text-decoration: underline; }
+
 .mav-footer-socials-wrapper .mav-footer-socials-ctn, .mav-header-menu-ctn ul, .mav-header-menu-ctn ul li, .mav-header-menu-ctn ul li ul.mav-sub-menu li, .mav-footer-menu ul, .mav-flex-column, .mav-header-menu-ctn ul li ul.mav-sub-menu, .mav-footer-menu ul li ul, .mav-site-sidebar-ctn .widget_archive ul {
   display: flex;
   flex-direction: column; }
 
-.mav-flex-center, .mav-flex-center-all, .mav-btn-top, .mav-btn-back, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-post-content p.attachment, article.sticky .mav-card-post-header:before, .gallery .gallery-item, .mav-post-attachment-wrapper, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .slide-prev, .mav-slider-type-2-ctn .mav-slide .slide-next, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-message-box-wrapper, .mav-header-logo-ctn, .mav-flex-row, .mav-paginate-links-ctn, .mav-post-navigation, .mav-post-tag-list {
+.mav-flex-center, .mav-flex-center-all, .mav-btn-top, .mav-btn-back, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-post-content p.attachment, article.sticky .mav-card-post-header:before, .gallery .gallery-item, .mav-post-attachment-wrapper, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .slide-prev, .mav-slider-type-2-ctn .mav-slide .slide-next, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-items-grid-item-ctn, .mav-message-box-wrapper, .mav-header-logo-ctn, .mav-flex-row, .mav-paginate-links-ctn, .mav-post-navigation, .mav-post-tag-list {
   display: flex;
   flex-direction: row; }
 
 .mav-flex-center {
   justify-content: center; }
 
-.mav-flex-center-all, .mav-btn-top, .mav-btn-back, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-post-content p.attachment, article.sticky .mav-card-post-header:before, .gallery .gallery-item, .mav-post-attachment-wrapper, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .slide-prev, .mav-slider-type-2-ctn .mav-slide .slide-next, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper {
+.mav-flex-center-all, .mav-btn-top, .mav-btn-back, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-post-content p.attachment, article.sticky .mav-card-post-header:before, .gallery .gallery-item, .mav-post-attachment-wrapper, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .slide-prev, .mav-slider-type-2-ctn .mav-slide .slide-next, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-items-grid-item-ctn {
   justify-content: center;
   align-items: center; }
 
@@ -468,13 +474,13 @@ ul li ul li {
 .mav-padding-right-xs {
   padding-right: var(--mav-gutter-xs) !important; }
 
-.mav-site-width, .mav-pg-ctn, .mav-header-logo-ctn, .mav-blog-sticky-post-wrapper, .mav-post-info-wrapper {
+.mav-site-width, .mav-pg-ctn, .mav-header-logo-ctn, .mav-post-info-wrapper {
   margin: 0 auto; }
   @media only screen and (min-width: 1024px) {
-    .mav-site-width, .mav-pg-ctn, .mav-header-logo-ctn, .mav-blog-sticky-post-wrapper, .mav-post-info-wrapper {
+    .mav-site-width, .mav-pg-ctn, .mav-header-logo-ctn, .mav-post-info-wrapper {
       max-width: var(--mav-site-width); } }
 
-.mav-pg-ctn, .mav-header-logo-ctn, .mav-blog-sticky-post-wrapper {
+.mav-pg-ctn, .mav-header-logo-ctn {
   padding: var(--mav-gutter); }
 
 @media only screen and (max-width: 1023px) {
@@ -1369,17 +1375,17 @@ form#mavid-site-search {
       content: '\f292';
       margin-right: var(--mav-gutter-xs); }
 
-.mav-post-info-category a, .mav-post-info-date a, .mav-post-info-author a {
+.mav-post-info a {
   text-decoration: none; }
-.mav-post-info-category:before, .mav-post-info-date:before, .mav-post-info-author:before {
+.mav-post-info:before {
   margin-right: .5em;
   font-size: inherit;
   color: #888; }
-.mav-post-info-category:before {
+.mav-post-info[data-type="category"]:before {
   content: '\f15c'; }
-.mav-post-info-date:before {
+.mav-post-info[data-type="date"]:before {
   content: '\f073'; }
-.mav-post-info-author:before {
+.mav-post-info[data-type="author"]:before {
   content: '\f2bd'; }
 
 /*
@@ -1404,13 +1410,6 @@ form#mavid-site-search {
     color: #666;
     margin-bottom: 1.5em;
     /* Dropcap style */ }
-    .mav-post-content p:first-child:first-letter {
-      float: left;
-      font-family: "Roboto Slab", serif;
-      font-size: 5rem;
-      line-height: 60px;
-      padding-top: var(--mav-gutter-xs);
-      padding-right: var(--mav-gutter-xs); }
     .mav-post-content p:last-child {
       margin-bottom: 0; }
     .mav-post-content p.attachment {
@@ -1488,10 +1487,10 @@ article.sticky .mav-card-post-thumbnail {
   position: relative;
   display: grid;
   grid-gap: var(--mav-gutter-lg);
-  margin: var(--mav-gutter) auto;
-  padding: var(--mav-gutter-lg);
   justify-content: center;
   justify-items: center;
+  margin: var(--mav-gutter) auto;
+  padding: var(--mav-gutter-lg);
   box-shadow: 0 0 1px #ddd;
   column-span: all; }
   @media only screen and (max-width: 1023px) {
@@ -1597,22 +1596,20 @@ article.sticky .mav-card-post-thumbnail {
     overflow: hidden; }
     .mav-slider-type-2-ctn .mav-slide:hover .mav-slide-post-title-ctn {
       opacity: 1;
-      transition: all .6s ease;
-      transform: translateY(0%); }
+      transition: all .3s ease; }
     .mav-slider-type-2-ctn .mav-slide.mav-active-slide {
       z-index: 9;
       opacity: 1; }
     .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn {
       opacity: 0;
-      position: absolute;
+      width: 100%;
+      height: 100%;
       padding: var(--mav-gutter);
       border-radius: var(--mav-gutter-sm);
-      background: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 0 50px black;
+      background: rgba(0, 0, 0, 0.4);
       color: #fafafa;
       font-family: "Roboto Slab", serif;
-      letter-spacing: 2px;
-      transform: translateY(-75%); }
+      letter-spacing: 2px; }
       @media only screen and (min-width: 768px) and (max-width: 1023px) {
         .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn {
           font-size: 1.5rem; } }
@@ -1655,13 +1652,13 @@ article.sticky .mav-card-post-thumbnail {
     opacity: 1; }
   .mav-slider-type-2-ctn .mav-slider-nav {
     position: absolute;
-    width: 100%;
-    bottom: var(--mav-gutter-sm);
-    z-index: 100;
+    bottom: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20px, 40px));
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 2rem));
     justify-content: center;
-    padding: var(--mav-gutter-sm) 0; }
+    width: 100%;
+    padding: var(--mav-gutter-sm) 0;
+    z-index: 100; }
   .mav-slider-type-2-ctn .mav-nav-dot {
     position: relative;
     height: 1rem;
@@ -1965,5 +1962,32 @@ img:hover {
   grid-template-columns: repeat(auto-fill, minmax(20%, 33%));
   grid-gap: var(--mav-gutter);
   justify-content: center; }
+
+/*
+ * Items Grid
+ */
+.mav-items-grid-ctn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); }
+  @media only screen and (max-width: 480px) {
+    .mav-items-grid-ctn {
+      grid-template-columns: repeat(1, 1fr) !important; } }
+
+.mav-items-grid-item-ctn {
+  flex-direction: column;
+  padding: var(--mav-gutter-lg);
+  border-left: 1px solid #ddd; }
+  .mav-items-grid-item-ctn[data-row="top"] {
+    border-bottom: 1px solid #ddd; }
+  .mav-items-grid-item-ctn[data-row="middle"] {
+    border-bottom: 1px solid #ddd; }
+  .mav-items-grid-item-ctn[data-column="left"] {
+    border-left: 0; }
+  @media only screen and (max-width: 480px) {
+    .mav-items-grid-item-ctn {
+      border: 0px !important;
+      border-bottom: 1px solid #ddd !important; }
+      .mav-items-grid-item-ctn:last-child {
+        border-bottom: 0 !important; } }
 
 /*# sourceMappingURL=maverick-styles.css.map */

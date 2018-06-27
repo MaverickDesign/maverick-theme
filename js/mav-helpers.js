@@ -24,15 +24,32 @@ function mavf_make_id(mavLength = 6) {
   return text;
 }
 
-function go_full_screen(){
-  var elem = document.documentElement;
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    elem.msRequestFullscreen();
-  } else if (elem.mozRequestFullScreen) {
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) {
-    elem.webkitRequestFullscreen();
+function mavf_test(){
+  const text = 'Test';
+  return text;
+}
+
+function mavf_close_btn(mavButtonClass='.mav-btn-close', mavElementToClose = '.mavjs-close'){
+
+  const mavCloseButtons = document.querySelectorAll(mavButtonClass);
+
+  for (mavCloseButton of mavCloseButtons) {
+      mavCloseButton.addEventListener('click', function(){
+      this.closest(mavElementToClose).remove();
+      });
   }
+}
+mavf_close_btn();
+
+function go_full_screen(){
+    var elem = document.documentElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    }
 }

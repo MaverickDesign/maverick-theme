@@ -47,6 +47,10 @@ require TEMPLATE_DIR. '/inc/mav-post-feature.php';
 
 require TEMPLATE_DIR. '/inc/mav-google-map.php';
 
+require TEMPLATE_DIR. '/inc/mav-items-grid.php';
+
+require TEMPLATE_DIR. '/inc/mav-ajax-form.php';
+
 /*
  * Functions
  */
@@ -117,7 +121,7 @@ function mavf_message_box($mavMessage = 'Thông báo',$mavCloseJS = true) {
         $mavCloseClass = ' mavjs-close';
     }
     printf(
-        sprintf('<div aria-hidden="true" class="mav-message-box-ctn%1$s">',
+        sprintf('<div aria-hidden="true" class="mav-margin-top mav-margin-bottom mav-message-box-ctn%1$s">',
         $mavCloseClass)
     );
         echo '<div class="mav-message-box-wrapper">';
@@ -155,17 +159,21 @@ function my_theme_archive_title( $title ) {
 }
 add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
 
-/*
+/**
  * Button
  */
 
 function mavf_button($mavText,$mavLink = '', $mavStyle = 'mav-btn-solid') {
-    printf(sprintf('<div class="mav-btn-ctn">'));
-    printf(sprintf('<a href="%2$s" title="%1$s" style="text-decoration: none;"><button class="%3$s">%1$s</button></a>',$mavText,$mavLink,$mavStyle));
-    printf(sprintf('</div>'));
+    printf('<div class="mav-btn-ctn">');
+    printf('<a href="%2$s" title="%1$s" style="text-decoration: none;"><button class="%3$s">%1$s</button></a>',$mavText,$mavLink,$mavStyle);
+    printf('</div>');
 };
 
-function mavf_unique($mavLength = 0, $mavExp = s){
+/**
+ * Make unique string
+ */
+
+function mavf_unique($mavLength = 0, $mavExp = 's'){
 
     $mavNonce = wp_create_nonce(date($mavExp));
 

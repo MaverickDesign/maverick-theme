@@ -15,19 +15,21 @@
             <div id="mavid-post-info" class="mav-post-info-wrapper">
                 <div class="mav-post-info-ctn">
                 <?php
-                    $mavSingleCat = function_exists(mavf_get_single_category) ? mavf_get_single_category() : '';
+                    $mavSingleCat = function_exists('mavf_get_single_category') ? mavf_get_single_category() : '';
+
                     printf(
-                        '<span class="mav-post-info-category" title="%2$s %1$s">%1$s</span>',
+                        '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
                         $mavSingleCat,
-                        __('Xem các bài chuyên mục','mavericktheme')
+                        __('Xem các bài chuyên mục','mavericktheme'),
+                        mavf_single_category()
                     );
                     printf('
-                        <span class="mav-post-info-date" title="%2$s">%1$s</span>',
+                        <span class="mav-post-info" title="%2$s" data-type="date">%1$s</span>',
                         get_the_date(),
                         __('Ngày đăng','mavericktheme')
                     );
                     printf('
-                        <span class="mav-post-info-author" title="%2$s">%1$s</span>',
+                        <span class="mav-post-info" title="%2$s" data-type="author">%1$s</span>',
                         get_the_author(),
                         __('Tác giả','mavericktheme')
                     );

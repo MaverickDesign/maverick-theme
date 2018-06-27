@@ -1,14 +1,17 @@
 <?php
-/*
+/**
  * @package mavericktheme
  */
 ?>
 
 <?php get_header(); ?>
+
 <!-- Page content starts here -->
 <main id="mavid-page-main-content">
+
+<!-- Hero Slider -->
 <?php
-    if (function_exists(mavf_slider)) {
+    if (function_exists('mavf_slider')) {
         $mavArgs = array (
             // 'slider_type'       => 2,
             // 'slider_id'         => 'mavid-slider-1',
@@ -23,15 +26,17 @@
         );
         mavf_slider($mavArgs);
     }
-
 ?>
 
+<!-- Section -->
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="<?php echo get_page_link(22); ?>" class="mav-sec-title"><h2><?php _e('Các dịch vụ','mavericktheme'); ?></h2></a>
+        <a href="<?php echo get_page_link(22); ?>" class="mav-sec-title">
+            <h2><?php _e('Các dịch vụ','mavericktheme'); ?></h2>
+        </a>
     </div>
     <?php
-        if (function_exists(mavf_post_feature)) {
+        if (function_exists('mavf_post_feature')) {
             $mavArgs = array(
                 // 'type'              => 1,
                 'number_of_posts'   => 2,
@@ -45,16 +50,17 @@
         }
         ?>
     <div class="mav-flex-center-all">
-        <?php mavf_button('Đến trang Dịch Vụ',get_page_link(22)); ?>
+        <?php mavf_button(__('Đến trang Dịch Vụ','mavericktheme'),get_page_link(22)); ?>
     </div>
 </section>
 
+<!-- Section -->
 <section class="mav-sec-home">
     <div class="mav-flex-center">
         <a href="<?php echo get_page_link(7); ?>" class="mav-sec-title"><h2><?php _e('Cập nhật','mavericktheme'); ?></h2></a>
     </div>
     <?php
-        if (function_exists(mavf_carousel)){
+        if (function_exists('mavf_carousel')){
             $mavArgs = array(
                 'number_of_posts'           => 8,
                 'number_of_posts_display'   => 4,
@@ -67,16 +73,19 @@
         }
     ?>
     <div class="mav-flex-center-all">
-        <?php mavf_button('Đến trang Cập Nhật',get_page_link(7)); ?>
+        <?php mavf_button(__('Đến trang Cập Nhật','mavericktheme'),get_page_link(7)); ?>
     </div>
 </section>
 
+<!-- Section -->
 <section class="mav-sec-home">
     <div class="mav-flex-center">
-        <a href="" class="mav-sec-title"><h2><?php _e('Sản Phẩm','mavericktheme'); ?></h2></a>
+        <a href="" class="mav-sec-title">
+            <h2><?php _e('Sản Phẩm','mavericktheme'); ?></h2>
+        </a>
     </div>
     <?php
-        if (function_exists(mavf_carousel)){
+        if (function_exists('mavf_carousel')){
             $mavArgs = array(
                 'post_type'         => 'post',
                 'number_of_posts'   => 7,
@@ -90,16 +99,17 @@
         }
     ?>
     <div class="mav-flex-center-all">
-        <?php mavf_button('Đến trang Sản Phẩm',get_page_link(214)); ?>
+        <?php mavf_button(__('Đến trang Sản Phẩm','mavericktheme'),get_page_link(214)); ?>
     </div>
 </section>
 
+<!-- Section -->
 <section class="mav-sec-home">
     <div class="mav-flex-center">
         <a href="" class="mav-sec-title"><h2><?php _e('Khách hàng','mavericktheme'); ?></h2></a>
     </div>
     <?php
-        if (function_exists(mavf_post_grid)){
+        if (function_exists('mavf_post_grid')){
             $mavArgs = array(
                 'post_type'         => 'post',
                 'number_of_posts'   => 6,
@@ -113,23 +123,24 @@
         }
     ?>
     <div class="mav-flex-center-all">
-        <?php mavf_button('Đến trang Khách hàng',get_page_link(216)); ?>
+        <?php mavf_button(__('Đến trang Khách hàng','mavericktheme'),get_page_link(216)); ?>
     </div>
 </section>
 
+<!-- Section -->
 <section class="mav-sec-home">
     <div class="mav-flex-center">
         <a href="<?php echo get_page_link(11); ?>" class="mav-sec-title"><h2><?php _e( 'Liên hệ' , 'mavericktheme' );?></h2></a>
     </div>
     <?php
-        if (function_exists(mavf_google_map)) {
+        if (function_exists('mavf_google_map')) {
             echo '<div class="mav-sec-content">';
                 mavf_google_map(array('height' => '50vh'));
             echo '</div>';
         }
     ?>
     <div class="mav-flex-center-all">
-        <?php mavf_button('Đến trang Liên Hệ',get_page_link(11)); ?>
+        <?php mavf_button(__('Đến trang Liên Hệ','mavericktheme'),get_page_link(11)); ?>
     </div>
 </section>
 

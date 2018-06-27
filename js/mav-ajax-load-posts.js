@@ -1,9 +1,11 @@
 const mavLoadMorePostButton = document.querySelector('.mavjs-ajax-load-posts');
-if (mavLoadMorePostButton) {
+
+if (mavLoadMorePostButton != undefined) {
     mavLoadMorePostButton.addEventListener('click',function(e){
         e.preventDefault();
         // Load more button
         // const mavLoadMorePostButton = this;
+
         // Get WordPress Ajax Url
         const mavAjaxUrl = this.dataset.ajaxUrl;
         // Get action callback
@@ -21,7 +23,7 @@ if (mavLoadMorePostButton) {
             },
             body: mavArgs
         })
-        .then((mavRespone) => mavRespone.text())
+        .then(mavRespone => mavRespone.text())
         .then(function(mavResponeData){
             if (mavResponeData != 0) {
                 document.querySelector('.mavjs-posts-container').innerHTML += mavResponeData;
@@ -30,31 +32,6 @@ if (mavLoadMorePostButton) {
                 mavLoadMorePostButton.classList.add('mav-hide');
             }
         })
-        .catch((err)=>console.log(err))
+        .catch(err => console.log(err));
     });
 }
-
-// const xhr = new XMLHttpRequest();
-
-// xhr.open('POST', mavAjaxUrl, true);
-
-// Set request header
-// xhr.setRequestHeader('Content-type' , 'application/x-www-form-urlencoded');
-
-// Ajax
-// xhr.onload = function(){
-//     if (this.status == 200) {
-//         if (this.responseText != 0) {
-//             document.querySelector('.mavjs-posts-container').innerHTML += this.responseText;
-//             mavLoadMorePostButton.dataset.currentPage = Number(mavCurrentPage) + 1;
-//         } else {
-//             mavLoadMorePostButton.classList.add('mav-hide');
-//         }
-//     }
-//     if (this.status == 400 ) {
-//         console.log(this.responseText);
-//     }
-// }
-
-// Send ajax call
-// xhr.send(mavArgs);

@@ -1,11 +1,11 @@
 <?php
-/*
+/**
  * @package mavericktheme
  */
 
 function mavf_carousel($mavArgs){
 
-    if (function_exists(mavf_unique)) {
+    if (function_exists('mavf_unique')) {
         $mavUniqueNumber = mavf_unique(rand(4,16));
     } else {
         $mavUniqueNumber = wp_create_nonce(time());

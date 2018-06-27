@@ -161,7 +161,9 @@ function mavf_lightbox(mavArgs = {
     }
 
     function mavf_lightbox_slide_image() {
+
         event.stopPropagation();
+
         const mavCollectionID = this.dataset.collection;
 
         const mavLightbox = document.querySelector(`#mavid-lightbox-${mavCollectionID}`);

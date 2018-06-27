@@ -144,30 +144,26 @@
 }
 
 .mav-post-info {
-    &-category,
-    &-date,
-    &-author {
-        a {
-            text-decoration: none;
-        }
-        &:before {
-            @extend %mav-font-awesome;
-            margin-right: .5em;
-            font-size: inherit;
-            color: $mav-color-text-hint;
-        }
+    a {
+        text-decoration: none;
     }
-    &-category {
+    &:before {
+        @extend %mav-font-awesome;
+        margin-right: .5em;
+        font-size: inherit;
+        color: $mav-color-text-hint;
+    }
+    &[data-type="category"] {
         &:before {
             content: '\f15c';
         }
     }
-    &-date {
+    &[data-type="date"] {
         &:before {
             content: '\f073';
         }
     }
-    &-author {
+    &[data-type="author"] {
         &:before {
             content: '\f2bd';
         }
@@ -192,16 +188,16 @@
         color: $mav-color-text-secondary;
         margin-bottom: 1.5em;
         /* Dropcap style */
-        &:first-child {
-            &:first-letter{
-                float: left;
-                font-family: $font-roboto-slab;
-                font-size: 5rem;
-                line-height: 60px;
-                padding-top: var(--mav-gutter-xs);
-                padding-right: var(--mav-gutter-xs);
-            }
-        }
+        // &:first-child {
+        //     &:first-letter{
+        //         float: left;
+        //         font-family: $font-roboto-slab;
+        //         font-size: 5rem;
+        //         line-height: 60px;
+        //         padding-top: var(--mav-gutter-xs);
+        //         padding-right: var(--mav-gutter-xs);
+        //     }
+        // }
         &:last-child {
             margin-bottom: 0;
         }
@@ -312,10 +308,10 @@ article.sticky {
     position: relative;
     display: grid;
     grid-gap: var(--mav-gutter-lg);
-    margin: var(--mav-gutter) auto;
-    padding: var(--mav-gutter-lg);
     justify-content: center;
     justify-items: center;
+    margin: var(--mav-gutter) auto;
+    padding: var(--mav-gutter-lg);
     box-shadow: 0 0 1px $mav-color-border;
     column-span: all;
     @media #{$mav-mobile} {

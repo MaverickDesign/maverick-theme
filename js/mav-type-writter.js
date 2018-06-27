@@ -1,11 +1,11 @@
-/* 
+/*
  * Maverick's Multi Type Writer
  * version: 1.0
  */
 
 console.log('Maverick\'s Multi Type Writter loaded.');
 
-/* 
+/*
  * Function: mavf_type_writer
  * Args:
  * - mavContentClass: the content element
@@ -14,6 +14,7 @@ console.log('Maverick\'s Multi Type Writter loaded.');
  * - mavReverse: true of false
  * - mavDelay: Delay between dipslay and reverse
  */
+
 function mavf_type_writer(mavContent,mavContentClass,mavSplit,mavInterval,mavReverse,mavDelay){
 
     let mavElements = document.querySelectorAll(mavContentClass);
@@ -33,15 +34,15 @@ function mavf_type_writer(mavContent,mavContentClass,mavSplit,mavInterval,mavRev
         } else {
             mavArray = mavContent.split(mavSplit);
         }
-    
+
         let mavArrayLength = mavArray.length;
         let i=0;
         let mavDone = false;
         let mavSpacing = mavSplit;
-    
+
         mavElement.innerHTML = '';
         mavElement.classList.add('mav-type-writter-temp');
-    
+
         function mavTyping(){
             if ( i < mavArrayLength ) {
                 mavElement.innerHTML += mavArray[i]+mavSpacing;
@@ -52,11 +53,11 @@ function mavf_type_writer(mavContent,mavContentClass,mavSplit,mavInterval,mavRev
                 mavElement.classList.remove('mav-type-writter-temp');
                 if (mavReverse == true && mavDone == true) {
                     function mavPopStr(){
-                        mavElement.classList.add('mav-type-writter-temp');    
+                        mavElement.classList.add('mav-type-writter-temp');
                         let mavContent = mavElement.innerHTML;
                         if ( mavContent.length > 0 ) {
                             mavElement.innerHTML = mavContent.slice(0,mavContent.length - 1);
-                            setTimeout(mavPopStr,mavInterval);                
+                            setTimeout(mavPopStr,mavInterval);
                         } else {
                             mavElement.innerHTML = '&nbsp;';
                             mavElement.classList.remove('mav-type-writter-temp');
@@ -70,7 +71,7 @@ function mavf_type_writer(mavContent,mavContentClass,mavSplit,mavInterval,mavRev
             }
         }
         if (isVisible(mavElement)) {
-            mavTyping();        
+            mavTyping();
         }
     });
 }
@@ -113,7 +114,7 @@ function mavf_type_multi(mavContent, mavDivider, mavContentClass, mavSplit, mavI
 function isVisible (ele) {
     const { top, bottom } = ele.getBoundingClientRect();
     const vHeight = (window.innerHeight || document.documentElement.clientHeight);
-  
+
     return (
       (top > 0 || bottom > 0) &&
       top < vHeight

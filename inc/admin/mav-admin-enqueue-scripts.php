@@ -29,6 +29,8 @@ function mavf_enqueue_scripts() {
 	 * Ajax load posts
 	 */
 	wp_enqueue_script('maverick-theme-ajax-load-posts',		THEME_DIR . '/js/mav-ajax-load-posts.js',	false,				'1.0.0',	true);
+
+	wp_enqueue_script('maverick-theme-ajax-form',		THEME_DIR . '/js/mav-ajax-form.js',	false,				'1.0.0',	true);
 	/*
 	 * Maverick Theme Scripts
 	 */

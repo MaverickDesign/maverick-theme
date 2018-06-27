@@ -4,7 +4,7 @@
  */
 ?>
 <?php
-    if (function_exists(mavf_mobile_detect)) {
+    if (function_exists('mavf_mobile_detect')) {
         $mavDevice = mavf_mobile_detect();
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package mavericktheme
  */
 
@@ -13,9 +13,11 @@ function mavf_ajax_load_posts(){
         $mavNewPage = $_POST['page'] + 1;
     }
     $mavArgs = array(
-        'post_type'     => 'post',
-        'post_status'   => 'publish',
-        'paged'         => $mavNewPage,
+        'post_type'             => 'post',
+        'post_status'           => 'publish',
+        'paged'                 => $mavNewPage,
+        'post__not_in'          => get_option( 'sticky_posts' ),
+        'ignore_sticky_posts'   => true
     );
 
     $mavQuery = new WP_Query( $mavArgs );

@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package mavericktheme
  */
 ?>
@@ -12,15 +12,15 @@
     /*
      * Hero slider
      */
-    if (is_home() && function_exists(mavf_slider)):
-        echo '<section id="mavid-sec-hero-slider" class="mav-pg-ctn mav-hide-on-phone">';
-            $mavArgs = array (
-                'slider_type'       => 3,
-                'height'            => '30vh',
-            );
-            mavf_slider($mavArgs);
-        echo '</section>';
-    endif;
+    // if (is_home() && function_exists('mavf_slider')):
+    //     echo '<section id="mavid-sec-hero-slider" class="mav-margin-top mav-margin-bottom mav-hide-on-phone">';
+    //         $mavArgs = array (
+    //             'slider_type'       => 3,
+    //             'height'            => '30vh',
+    //         );
+    //         mavf_slider($mavArgs);
+    //     echo '</section>';
+    // endif;
 
     /*
      * Main Post Loop
@@ -40,7 +40,7 @@
         $mavStickyQuery = new WP_Query( $mavStickyArgs );
 
         if ($mavStickyQuery->have_posts()) {
-            echo '<section class="mav-blog-sticky-post-wrapper">';
+            echo '<section class="mav-margin-top-lg mav-blog-sticky-post-wrapper">';
                 while ($mavStickyQuery->have_posts()) {
                     $mavStickyQuery->the_post();
                     get_template_part( 'template-parts/content', get_post_format() );
@@ -59,14 +59,15 @@
         $mavArgs = array (
             'post_type' => 'post',
             'post_status'   => 'publish',
-            'ignore_sticky_posts' => true
+            'post__not_in' => $mavStickyPosts,
+            'ignore_sticky_posts' => 1
         );
 
         $mavQuery = new WP_Query( $mavArgs );
 
         if ($mavQuery->have_posts()) {
             printf('<section id="mavid-post-index" class="mav-post-index-wrapper">');
-                /*
+                /**
                  * Note: "mavjs-posts-container" class is for ajax function, do not remove
                  */
                 printf('<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">', esc_attr(get_option('mav_setting_blog_page_columns')));
@@ -75,19 +76,21 @@
                         // Get post template
                         get_template_part( 'template-parts/content', get_post_format() );
                     }
-                    wp_reset_query();
+                        wp_reset_query();
                 echo '</div>';
+
+                /* Post Navigation */
                 if (esc_attr(get_option('mav_setting_ajax_load_posts'))) {
-                    /*
-                        * Ajax load more posts
-                        */
+                    /**
+                     * Ajax load more posts
+                     */
                     echo '<div class="mav-margin-top">';
                     printf('<a class="mav-btn mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">Load more</a>',admin_url('admin-ajax.php'));
                     echo '</div>';
                 } else {
-                    /*
-                        * Post paginate links
-                        */
+                    /**
+                     * Post paginate links
+                     */
                     echo '<div id="mavid-paginate-links" class="mav-paginate-links-wrapper">';
                         echo '<div class="mav-paginate-links-ctn">';
                                 $mavArgs = array(

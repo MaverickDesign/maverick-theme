@@ -1,6 +1,9 @@
 <?php
+/*
+ * @package mavericktheme
+ */
 
-function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-breadcrumbs', $mav_home_title='Trang chủ') {
+function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-breadcrumbs', $mav_home_title='') {
 
     // Settings
     $separator          = '<span class="fas fa-angle-right"></span>';
@@ -17,15 +20,17 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
     if ( !is_front_page() ) {
 
         // Build the breadcrumbs
-        printf(sprintf('<ul id="%1$s" class="%2$s">', $mav_breadcrumb_id, $mav_breadcrumb_class));
+        printf('<ul id="%1$s" class="%2$s">', $mav_breadcrumb_id, $mav_breadcrumb_class);
 
         // Home page
-        echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '"><span class="fas fa-home mav-fa-icon"></span><strong>' . $home_title . '</strong></a></li>';
-        echo '<li class="separator separator-home"> ' . $separator . ' </li>';
+        printf('<li class="item-home"><a class="bread-link bread-home" href="%1$s" title="%2$s"><span class="fas fa-home"></span><strong>%2$s</strong></a></li>',
+        get_home_url(), $home_title
+        );
+        printf('<li class="separator separator-home"> %1$s </li>', $separator);
 
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
 
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</strong></li>';
+            printf('<li class="item-current item-archive"><strong class="bread-current bread-archive">%1$s</strong></li>', post_type_archive_title($prefix, false));
 
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
 
@@ -38,13 +43,13 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
 
-                echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
-                echo '<li class="separator"> ' . $separator . ' </li>';
+                printf('<li class="item-cat item-custom-post-type-%1$s"><a class="bread-cat bread-custom-post-type-%1$s" href="%2$s" title="%3$s">%3$s</a></li>', $post_type, $post_type_archive, $post_type_object->labels->name);
+                printf('<li class="separator"> %1$s </li>',$separator);
 
             }
 
             $custom_tax_name = get_queried_object()->name;
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . $custom_tax_name . '</strong></li>';
+            printf('<li class="item-current item-archive"><strong class="bread-current bread-archive">%1$s</strong></li>',$custom_tax_name);
 
         } else if ( is_single() ) {
 
@@ -56,9 +61,8 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
 
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
-
-                echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
-                echo '<li class="separator"> ' . $separator . ' </li>';
+                printf('<li class="item-cat item-custom-post-type-%1$s"><a class="bread-cat bread-custom-post-type-%1$s" href="%2$s" title="%3$s">%3$s</a></li>', $post_type, $post_type_archive, $post_type_object->labels->name );
+                printf('<li class="separator"> %1$s </li>',$separator);
 
             }
 
@@ -105,7 +109,7 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
             } else if(!empty($cat_id)) {
 
                 echo '<li class="item-cat item-cat-' . $cat_id . ' item-cat-' . $cat_nicename . '"><a class="bread-cat bread-cat-' . $cat_id . ' bread-cat-' . $cat_nicename . '" href="' . $cat_link . '" title="' . $cat_name . '">' . $cat_name . '</a></li>';
-                echo '<li class="separator"> ' . $separator . ' </li>';
+                printf('<li class="separator"> %1$s </li>',$separator);
                 echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
             } else {
@@ -215,12 +219,12 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
         } else if ( is_search() ) {
 
             // Search results page
-            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Kết quả tìm kiếm: ' . get_search_query() . '">Kết quả tìm kiếm: ' . get_search_query() . '</strong></li>';
+            printf('<li class="item-current item-current-%1$s"><strong class="bread-current bread-current-%1$s" title="%2$s">%2$s %1$s</strong></li>', get_search_query(), __('Kết quả tìm kiếm: ','mavericktheme') );
 
         } elseif ( is_404() ) {
 
             // 404 page
-            echo '<li>' . 'Không tìm thấy kết quả' . '</li>';
+            printf('<li>%1$s</li>',__('Không tìm thấy kết quả','mavericktheme'));
         }
 
         echo '</ul>';

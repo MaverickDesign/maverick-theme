@@ -4,7 +4,7 @@
  */
 
 function mavf_slider($mavArgs) {
-    if (function_exists(mavf_unique)) {
+    if (function_exists('mavf_unique')) {
         $mavUniqueNumber = mavf_unique(rand(6,12));
     } else {
         $mavUniqueNumber = wp_create_nonce(time());
@@ -64,17 +64,10 @@ function mavf_slider($mavArgs) {
 
     if ($mavQuery->have_posts()):
         printf(
-            sprintf('<section id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
-            $mavSliderId,
-            $mavInterval,
-            $mavSliderType,
-            $mavUniqueNumber,
-            $mavSliderHeight)
+            '<section id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
+            $mavSliderId, $mavInterval, $mavSliderType, $mavUniqueNumber, $mavSliderHeight
         );
-        printf(
-            sprintf('<div class="mav-slider-container %1$s">',
-            $mavSliderContainer)
-        );
+        printf('<div class="mav-slider-container %1$s">',$mavSliderContainer);
 
         $i = 1;
 
@@ -91,10 +84,15 @@ function mavf_slider($mavArgs) {
 
                 ( $i == 1 ? $mavFirstSlide = ' mav-first-slide' : $mavFirstSlide = '' );
 
-                printf(sprintf('<div class="mav-slide mav-slide-number-%2$s %3$s" data-slide="%2$s" %1$s>',
-                $mavImageUrl,$i,$mavFirstSlide));
-                printf(sprintf('<a href="%1$s" class="mav-slide-title">%2$s</a>',get_the_permalink(),get_the_title()));
-                printf('</div>');
+                printf(
+                    '<div class="mav-slide mav-slide-number-%2$s %3$s" data-slide="%2$s" %1$s>',
+                    $mavImageUrl, $i, $mavFirstSlide
+                );
+                printf(
+                    '<a href="%1$s" class="mav-slide-title">%2$s</a>',
+                    get_the_permalink(),get_the_title()
+                );
+                echo '</div>';
                 $i++;
             endwhile;
 
@@ -117,21 +115,19 @@ function mavf_slider($mavArgs) {
                     $mavActiveSlide = '';
                 }
 
-                printf(sprintf('<input id="mavid-slide-%1$s-%4$s" type="radio" name="slides" data-number="%1$s" class="mav-slide-input%3$s" %2$s>',
-                $i,
-                $mavChecked,
-                $mavCurrentSlide,
-                $mavRandomNumber));
+                printf(
+                    '<input id="mavid-slide-%1$s-%4$s" type="radio" name="slides" data-number="%1$s" class="mav-slide-input%3$s" %2$s>',
+                    $i, $mavChecked, $mavCurrentSlide, $mavRandomNumber
+                );
 
                 if (function_exists('mavf_get_post_thumbnail_url')) {
                     $mavImageUrl = mavf_get_post_thumbnail_url('large');
                 }
 
-                printf(sprintf('<div id="mavid-slide-ctn-%1$s-%4$s" data-slide="%1$s" data-number="%1$s" class="mav-slide%3$s" %2$s>',
-                $i,
-                $mavImageUrl,
-                $mavActiveSlide,
-                $mavRandomNumber));
+                printf(
+                    '<div id="mavid-slide-ctn-%1$s-%4$s" data-slide="%1$s" data-number="%1$s" class="mav-slide%3$s" %2$s>',
+                    $i, $mavImageUrl, $mavActiveSlide, $mavRandomNumber
+                );
 
                 $mavPrevSlide = $i - 1;
                 if ($mavPrevSlide < 1) {
@@ -139,13 +135,17 @@ function mavf_slider($mavArgs) {
                 }
 
                 // Previous nav
-                printf(sprintf('<label for="mavid-slide-%1$s-%2$s" data-input="mavid-slide-%1$s-%2$s" data-container="mavid-slide-ctn-%1$s-%2$s" data-number="%1$s" class="mav-slide-nav slide-prev"></label>',
-                $mavPrevSlide,
-                $mavRandomNumber));
+                printf(
+                    '<label for="mavid-slide-%1$s-%2$s" data-input="mavid-slide-%1$s-%2$s" data-container="mavid-slide-ctn-%1$s-%2$s" data-number="%1$s" class="mav-slide-nav slide-prev"></label>',
+                    $mavPrevSlide, $mavRandomNumber
+                );
 
                 if ($mavDisplayTitle) {
                     echo '<div class="mav-slide-post-title-ctn">';
-                        printf(sprintf('<a href="%2$s" title="Xem %1$s">%1$s</a>',get_the_title(),get_the_permalink()));
+                        printf(
+                            '<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',
+                            get_the_title(), get_the_permalink()
+                        );
                     echo '</div>';
                 }
 
@@ -155,17 +155,20 @@ function mavf_slider($mavArgs) {
                 }
 
                 // Next nav
-                printf(sprintf('<label for="mavid-slide-%1$s-%2$s" data-input="mavid-slide-%1$s-%2$s" data-container="mavid-slide-ctn-%1$s-%2$s" data-number="%1$s" class="mav-slide-nav slide-next"></label>',
-                $mavNextSlide,
-                $mavRandomNumber));
+                printf(
+                    '<label for="mavid-slide-%1$s-%2$s" data-input="mavid-slide-%1$s-%2$s" data-container="mavid-slide-ctn-%1$s-%2$s" data-number="%1$s" class="mav-slide-nav slide-next"></label>',
+                    $mavNextSlide, $mavRandomNumber
+                );
                 echo '</div>';
 
                 $i++;
             endwhile;
 
             // Nav dots
-            printf(sprintf('<div id="mavid-slider-css-nav-%1$s" class="mav-slider-nav">',
-            $mavRandomNumber));
+            printf(
+                '<div id="mavid-slider-css-nav-%1$s" class="mav-slider-nav">',
+                $mavRandomNumber
+            );
                 for ($j = 1 ; $j <= $mavNumberOfSlides ; $j++) {
                     if ($j==1){
                         $mavActiveDot = ' mav-active-dot';
@@ -186,20 +189,36 @@ function mavf_slider($mavArgs) {
         if ($mavSliderType == 3) {
             while ($mavQuery->have_posts()):
                 $mavQuery->the_post();
+
+                $mavTitle = get_the_title();
+                $mavPermalink = get_the_permalink();
+
                 if (function_exists('mavf_get_post_thumbnail_url')) {
                     $mavImageUrl = mavf_get_post_thumbnail_url('large');
                 }
-                printf(sprintf('<div id="mavid-slide-type-3-%2$s" data-number="%2$s" class="mav-slide" %1$s>', $mavImageUrl,$i));
-                printf(sprintf('<div id="mavid-slide-type-3-title-%1$s" data-number="%1$s" class="mav-slide-title-ctn mav-hide-on-mobile">',$i));
-                printf(sprintf('<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',get_the_title(),get_the_permalink()));
+                printf(
+                    '<div id="mavid-slide-type-3-%2$s" data-number="%2$s" class="mav-slide" %1$s>',
+                    $mavImageUrl, $i
+                );
+                printf(
+                    '<div id="mavid-slide-type-3-title-%1$s" data-number="%1$s" class="mav-slide-title-ctn mav-hide-on-mobile">',
+                    $i
+                );
+                printf(
+                    '<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',
+                    $mavTitle, $mavPermalink
+                );
                 echo '</div>';
-                printf(sprintf('<div class="mav-slide-title-ctn mav-hide-on-desktop"><a href="%2$s" title="Xem %1$s" class="mav-btn-solid">Xem chi tiết</a></div>',get_the_title(),get_the_permalink()));
+                printf(
+                    '<div class="mav-slide-title-ctn mav-hide-on-desktop"><a href="%2$s" title="Xem %1$s" class="mav-btn-solid">Xem chi tiết</a></div>',
+                    $mavTitle, $mavPermalink
+                );
                 echo '</div>';
                 $i++;
             endwhile;
         } // Slider Type 3
-        printf(sprintf('</div>'));
-        printf('</section>');
+        echo '</div>';
+        echo '</section>';
     endif;
     wp_reset_postdata();
 }
