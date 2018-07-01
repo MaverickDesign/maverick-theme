@@ -24,23 +24,6 @@ function mavf_make_id(mavLength = 6) {
   return text;
 }
 
-function mavf_test(){
-  const text = 'Test';
-  return text;
-}
-
-function mavf_close_btn(mavButtonClass='.mav-btn-close', mavElementToClose = '.mavjs-close'){
-
-  const mavCloseButtons = document.querySelectorAll(mavButtonClass);
-
-  for (mavCloseButton of mavCloseButtons) {
-      mavCloseButton.addEventListener('click', function(){
-      this.closest(mavElementToClose).remove();
-      });
-  }
-}
-mavf_close_btn();
-
 function go_full_screen(){
     var elem = document.documentElement;
     if (elem.requestFullscreen) {

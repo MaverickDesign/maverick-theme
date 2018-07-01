@@ -208,3 +208,10 @@ function mavf_slider(mavArgs = {
         };
     }
 }
+
+/*
+ * Start Sliders
+ */
+if (typeof mavf_slider === 'function') {
+    mavf_slider();
+}

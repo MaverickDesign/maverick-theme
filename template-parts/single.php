@@ -95,7 +95,7 @@ if ( !empty($categories) && $categories[0]->count > 2 ): ?>
         <?php
             // Check if total post is greater than number of post to display
             $mavNumberOfPostsDisplay = 4 ? $categories[0]->count > 4 : $categories[0]->count;
-            if (function_exists(mavf_carousel)){
+            if (function_exists('mavf_carousel')){
                 $mavArgs = array(
                     'number_of_posts'           => 6,
                     'number_of_posts_display'   => $mavNumberOfPostsDisplay,
@@ -111,7 +111,7 @@ if ( !empty($categories) && $categories[0]->count > 2 ): ?>
         <div class="mav-site-width mav-flex-center">
             <?php
                 printf('
-                <a href="%1$s" class="mav-btn-solid" title="%3$s %2$s">%4$s</a>',
+                <a href="%1$s" class="mav-btn-primary" title="%3$s %2$s">%4$s</a>',
                 esc_url( get_category_link( $categories[0]->term_id ) ),
                 esc_html( $categories[0]->name ),
                 __('Xem tất cả bài trong chuyên mục','mavericktheme'),

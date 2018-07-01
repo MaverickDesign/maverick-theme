@@ -49,7 +49,6 @@ if (mavForms != undefined) {
                             // Reenable submit button
                             mavSubmitBtn.disabled = false;
                         }
-                        mavf_close_btn();
                     }
                 }
                 xhr.send(mavFormData);

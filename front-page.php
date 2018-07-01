@@ -48,7 +48,7 @@
                 mavf_post_feature($mavArgs);
             echo '</div>';
         }
-        ?>
+    ?>
     <div class="mav-flex-center-all">
         <?php mavf_button(__('Đến trang Dịch Vụ','mavericktheme'),get_page_link(22)); ?>
     </div>
@@ -144,8 +144,6 @@
     </div>
 </section>
 
-<!-- <p class="mav-count-down" data-expired="01/16/2019"></p>
-<p class="mav-count-down" data-expired="06/28/2018"></p> -->
 </main>
 <!-- Page content ends here -->
 <?php get_footer(); ?>

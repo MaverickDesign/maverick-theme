@@ -14,7 +14,7 @@ button {
     padding: var(--mav-padding-sm) var(--mav-padding);
 
     border: 1px solid var(--mav-brand-color-primary);
-    border-radius: 4px;
+    // border-radius: 4px;
 
     background: transparent;
 
@@ -57,6 +57,16 @@ button {
             @extend %mav-font-awesome;
             content: '\f410';
         }
+    }
+}
+
+.mav-btn {
+    &-primary {
+        @extend .mav-btn-solid;
+        padding: var(--mav-padding);
+    }
+    &-secondary {
+        @extend .mav-btn;
     }
 }
 

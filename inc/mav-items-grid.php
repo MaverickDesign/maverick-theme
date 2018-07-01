@@ -22,7 +22,7 @@ function mavf_items_grid($mavArgs) {
     // Calculate last row items
     $mavLastRowItems = $mavTotalItems - (($mavNumberOfRow-1)*$mavColumns);
 
-    $mavRow = 'top';
+    $mavRow = 'top-single';
 
     // Start ul element
     printf(
@@ -63,7 +63,7 @@ function mavf_items_grid($mavArgs) {
             );
             foreach ($mavItems['items'][$i] as $key => $value) {
                 printf('
-                    <div data-type="%1$s">%2$s</div>
+                    <div data-type="%1$s" class="mav-text-center">%2$s</div>
                     ', $key, $value
                 );
             }

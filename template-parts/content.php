@@ -29,7 +29,7 @@
                 /* Only display on post index page */
                 // if ( is_home() ) {
                     echo '<div class="mav-card-post-excerpt">';
-                    the_excerpt();
+                        the_excerpt();
                     echo '</div>';
                 // }
             ?>
@@ -37,7 +37,7 @@
         <!-- Post footer -->
         <footer class="mav-card-post-footer">
             <?php
-                printf('<a href="%1$s" title="%2$s" class="mav-btn-solid">%2$s</a>',get_the_permalink(),__('Xem chi tiết','mavericktheme'));
+                printf('<a href="%1$s" title="%2$s" class="mav-btn-secondary">%2$s</a>',get_the_permalink(),__('Xem chi tiết','mavericktheme'));
             ?>
         </footer>
     </article>

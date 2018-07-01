@@ -1,4 +1,5 @@
 'use strict';
+
 /*
  * Sticky Logo
  **/
@@ -19,21 +20,15 @@
 })();
 
 /*
- * Page Load Functions
- */
-// function mavfOnloadFunctions() {
-// }
-
-// window.onload = mavfOnloadFunctions;
-
-/*
  * Toggle Site Search
  */
-document.querySelector('.mav-site-search-icon').addEventListener('click', function(){
-    document.querySelector('.mav-site-search-wrapper').classList.toggle('mav-collapse');
-    this.classList.toggle('fa-search');
-    this.classList.toggle('fa-times');
-});
+(function(){
+    document.querySelector('.mav-site-search-icon').addEventListener('click', function(){
+        document.querySelector('.mav-site-search-wrapper').classList.toggle('mav-collapse');
+        this.classList.toggle('fa-search');
+        this.classList.toggle('fa-times');
+    });
+})();
 
 /*
  * Tool Tip
@@ -165,15 +160,107 @@ if (typeof mavf_go_back_button === 'function') {
     }
 }
 
-/*
- * Start Sliders
+(function mavf_smooth_scroll(){
+    const mavScrolls = document.querySelectorAll('[data-scroll]');
+    for (const mavScroll of mavScrolls){
+        mavScroll.addEventListener('click',function(){
+            const mavScrollTo = document.getElementById(this.dataset.scroll);
+            const mavBehavior = this.dataset.behavior ? this.dataset.behavior : 'smooth';
+            window.scrollTo({
+                top: mavScrollTo.offsetTop,
+                behavior: mavBehavior
+            });
+        });
+    }
+})();
+
+/**
+ * Accordion
  */
-if (typeof mavf_slider === 'function') {
-    mavf_slider();
+
+ // (function mavf_accordion(){
+//     const mavTriggers = document.querySelectorAll('.mav-accordion-trigger');
+//     console.log('mavTriggers: ', mavTriggers);
+//     for (const mavTrigger of mavTriggers){
+//         mavTrigger.setAttribute('title','Click to open');
+//         mavTrigger.addEventListener('click',function(){
+//             this.dataset.state = (this.dataset.state == 'close') ? 'open' : 'close';
+//             if (this.dataset.state == 'close') {
+//                 this.setAttribute('title','Click to open');
+//             } else {
+//                 this.setAttribute('title','Click to close');
+//             }
+//         });
+//     }
+// })();
+
+function mavf_accordion(e){
+    const mavTrigger = e;
+    // mavTrigger.setAttribute('title','Click to expand');
+    mavTrigger.dataset.state = (mavTrigger.dataset.state == 'close') ? 'open' : 'close';
+    if (mavTrigger.dataset.state == 'close') {
+        mavTrigger.setAttribute('title','Click to expand');
+    } else {
+        mavTrigger.setAttribute('title','Click to close');
+    }
 }
-/*
- * Start Carousels
+
+/**
+ * Close Button
  */
-if (typeof mavf_carousel === 'function') {
-    mavf_carousel();
+function mavf_close_btn(mavElement, mavElementToClose = '.mavjs-close'){
+    mavElement.closest(mavElementToClose).remove();
 }
+
+/**
+ * Modal Box
+ */
+
+function mavf_create_modal_box(mavArgs= {
+    header      : '<p class="mav-modal-title">Modal Header</p>',
+    body        : '<p>Modal Body</p>',
+    footer      : '<p>Modal Footer</p>',
+    headerClass : 'mav-modal-header',
+    bodyClass   : 'mav-modal-body',
+    footerClass : 'mav-modal-footer'
+}){
+    const mavModal = document.createElement('div');
+    mavModal.classList = 'mav-modal mavjs-close';
+    mavModal.innerHTML = `
+    <div class="mav-modal-box">
+        <header class="${mavArgs.headerClass}">
+            ${mavArgs.header}
+        </header>
+        <div class="${mavArgs.bodyClass}">
+            ${mavArgs.body}
+        </div>
+        <footer class="${mavArgs.footerClass}">
+            ${mavArgs.footer}
+        </footer>
+    </div>
+    <span class="mav-modal-close mav-btn-close" title="Click to close"></span>
+    `;
+    document.body.appendChild(mavModal);
+}
+
+/**
+ * Click events on body element
+ */
+
+(function mavf_body_click_events(){
+    document.body.addEventListener('click',function(e){
+        const mavTarget = e.target;
+        /**
+         * Accordion
+         */
+        if (mavTarget.classList.contains('mav-accordion-trigger')){
+            mavf_accordion(mavTarget);
+        }
+        /**
+         * Close Button
+         */
+        if (mavTarget.classList.contains('mav-btn-close')){
+            mavf_close_btn(mavTarget);
+        }
+    })
+})();

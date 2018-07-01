@@ -241,3 +241,10 @@ function mavf_carousel(mavArgs = {
         console.log('No carousel found.');
     }
 }
+
+/*
+ * Start Carousels
+ */
+if (typeof mavf_carousel === 'function') {
+    mavf_carousel();
+}

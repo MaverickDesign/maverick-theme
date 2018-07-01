@@ -1,8 +1,109 @@
 console.log(`Maverick's Count Down loaded.`);
 
+function mavf_count_down_2(mavArgs = {
+    expired: '',
+    display: ['d','h','m','s'],
+    class : '.mavjs-countdown',
+    units : {
+        d: 'ngày',
+        h: 'giờ',
+        m: 'phút',
+        s: 'giây',
+    },
+    style: 'mav-countdown',
+    message: ''
+}){
+    const mavCountDowns = document.querySelectorAll(mavArgs.class);
+    console.log('mavCountDowns: ', mavCountDowns);
+    for (const mavCountDown of mavCountDowns){
+        // Get expired date
+        const mavExpired = mavArgs.expired != '' ? mavArgs.expired : mavCountDown.dataset.expired;
+        console.log('mavExpired: ', mavExpired);
+
+        if (mavExpired != undefined) {
+            const mavExpDate = new Date(mavExpired).getTime();
+            let mavCountDownStart = setInterval(function(){
+                // Get current time
+                let mavNow = new Date().getTime();
+                // Calculate time remain
+                let mavRemain = mavExpDate - mavNow;
+                // Convert to Days
+                let mavDays     = Math.floor( mavRemain / (1000 * 60 * 60 * 24));
+                // Convert to Hour
+                let mavHours    = Math.floor((mavRemain % (1000 * 60 * 60 * 24))    / (1000 * 60 * 60));
+                // Convert to Minutes
+                let mavMinutes  = Math.floor((mavRemain % (1000 * 60 * 60))         / (1000 * 60));
+                // Convert to Seconds
+                let mavSeconds  = Math.floor((mavRemain % (1000 * 60))              / 1000);
+
+                let mavOutput       = '';
+
+                if (mavArgs.display && mavArgs.display.length > 0) {
+                    for (i=0; i < mavArgs.display.length; i++){
+                        mavOutput += `<div class="${mavArgs.style}" data-type="container">`;
+                        switch (mavArgs.display[i]) {
+                            // Day
+                            case 'd':
+                                let mavOutputDay    = `
+                                    <span class="${mavArgs.style}" data-type="number">${mavDays}</span>
+                                    <span class="${mavArgs.style}" data-type="unit "data-unit="day">${mavArgs.units.d}</span>
+                                `;
+                                mavOutput += mavOutputDay;
+                            break;
+
+                            // Hour
+                            case 'h':
+                                let mavOutputHour    = `
+                                    <span class="${mavArgs.style}" data-type="number">${mavHours}</span>
+                                    <span class="${mavArgs.style}" data-type="unit "data-unit="hour">${mavArgs.units.h}</span>
+                                `;
+                                mavOutput += mavOutputHour;
+                            break;
+
+                            // Minute
+                            case 'm':
+                                let mavOutputMinute    = `
+                                    <span class="${mavArgs.style}" data-type="number">${mavMinutes}</span>
+                                    <span class="${mavArgs.style}" data-type="unit "data-unit="minute">${mavArgs.units.m}</span>
+                                `;
+                                mavOutput += mavOutputMinute;
+                            break;
+
+                            // Second
+                            case 's':
+                                let mavOutputSecond    = `
+                                    <span class="${mavArgs.style}" data-type="number">${mavSeconds}</span>
+                                    <span class="${mavArgs.style}" data-type="unit "data-unit="second">${mavArgs.units.s}</span>
+                                `;
+                                mavOutput += mavOutputSecond;
+                            break;
+                        }
+                        mavOutput += '</div>'
+                    }
+                }
+                // Output to DOM
+                mavCountDown.innerHTML = mavOutput;
+                // On Expiration
+                if (mavRemain <= 0) {
+                    clearInterval(mavCountDownStart);
+                    if (mavArgs.message) {
+                        mavCountDown.innerHTML = mavArgs.message;
+                    } else {
+                        mavCountDown.innerHTML = 'Expired.';
+                    }
+                    return;
+                }
+            }, 1000);
+        } else {
+            return;
+        }
+    }
+}
+mavf_count_down_2();
+
 function mavf_count_down(mavDate, mavClass, mavOutput, mavExpMessage){
 
-    let mavElements = document.querySelectorAll(mavClass);
+    const mavElements = document.querySelectorAll(mavClass);
 
     mavElements.forEach(function(e){
 
@@ -14,14 +115,14 @@ function mavf_count_down(mavDate, mavClass, mavOutput, mavExpMessage){
             if (mavDate !== '') {
                 mavCountDownDate = new Date(mavDate).getTime();
             } else if ( mavElement.dataset.expired ) {
-                mavCountDownDate = new Date(mavElement.dataset.expired).getTime();            
-            } else {     
+                mavCountDownDate = new Date(mavElement.dataset.expired).getTime();
+            } else {
                 return false;
             }
         } else {
             return false;
         }
-        
+
         let mavCountDown = setInterval(function(){
             let mavNow = new Date().getTime();
             let mavRemain = mavCountDownDate - mavNow;
@@ -48,18 +149,18 @@ function mavf_count_down(mavDate, mavClass, mavOutput, mavExpMessage){
                         break;
 
                         case 'm':
-                        mavString += mavMinute;                        
+                        mavString += mavMinute;
                         break;
 
                         case 's':
-                        mavString += mavSecond;  
+                        mavString += mavSecond;
                         break;
                     }
                 }
             } else {
                 mavString = mavDay + mavHour + mavMinute + mavSecond;
             }
-        
+
             mavElement.innerHTML = mavString;
 
             if (mavRemain < 0) {
@@ -74,7 +175,7 @@ function mavf_count_down(mavDate, mavClass, mavOutput, mavExpMessage){
 }
 // Run the code
 if (typeof mavf_count_down === 'function'){
-    mavf_count_down('','.mav-count-down');
+    // mavf_count_down('','.mav-count-down');
 }
 
 function mavf_clock(mavClass){

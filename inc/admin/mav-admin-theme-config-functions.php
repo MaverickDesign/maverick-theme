@@ -11,6 +11,10 @@ function mavf_admin_theme_config_options() {
 	register_setting('mavog_theme_config' , 'mav_setting_post_format');
     add_settings_field( 'mavid_theme_config_theme_support_post_format', 'Post Formats', 'mavf_theme_config_theme_support_post_format', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
 
+	register_setting( 'mavog_theme_config', 'mav_setting_custom_post_type' );
+	add_settings_field( 'mavid_theme_config_theme_support_custom_post_type' , 'Custom Post Types', 'mavf_theme_config_theme_support_custom_post_type' , 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
+
+
 	// Grid system
     register_setting( 'mavog_theme_config', 'mav_setting_grid_system' );
     add_settings_field( 'mavid_theme_config_grid_system', 'Grid System', 'mavf_theme_config_grid_system', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
@@ -63,10 +67,27 @@ function mavf_theme_config_theme_support_post_format() {
 	$mavOutput = '';
 	foreach ($mavPostFormats as $mavPostFormat) {
 		$mavChecked = ( @$mavSavedValue[$mavPostFormat] == 1 ? 'checked' : '');
-		$mavOutput .= '<label><input type="checkbox" id="post-format-'.$mavPostFormat.'" name="mav_setting_post_format['.$mavPostFormat.']" value="1" '.$mavChecked.'/> '.$mavPostFormat.'</label><br>';
+		$mavOutput .= '<label><input type="checkbox" id="mavid-post-format-'.$mavPostFormat.'" name="mav_setting_post_format['.$mavPostFormat.']" value="1" '.$mavChecked.'/> '.ucfirst($mavPostFormat).'</label><br>';
 	}
 	echo $mavOutput;
-} //mavf_theme_config_theme_support_post_format
+}
+
+/**
+ * Custom Post Types
+ */
+function mavf_theme_config_theme_support_custom_post_type(){
+	$mavSavedValue = get_option('mav_setting_custom_post_type');
+	$mavCustomPostTypes = array (
+		'testimonial',
+		'subscriber'
+	);
+	$mavOutput = '';
+	foreach ($mavCustomPostTypes as $mavCustomPostType) {
+		$mavChecked = ( @$mavSavedValue[$mavCustomPostType] == 1 ? 'checked' : '');
+		$mavOutput .= '<label><input type="checkbox" id="mavid-custom-post-type-'.$mavCustomPostType.'" name="mav_setting_custom_post_type['.$mavCustomPostType.']" value="1" '.$mavChecked.'/> '.ucfirst($mavCustomPostType).'</label><br>';
+	}
+	echo $mavOutput;
+}
 
 /**
  * Grid System

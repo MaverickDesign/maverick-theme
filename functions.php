@@ -25,6 +25,8 @@ require TEMPLATE_DIR. '/inc/admin/mav-admin-theme-supports.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-styles.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
 
+require TEMPLATE_DIR. '/inc/admin/mav-admin-cpt.php';
+
 /*
  * Theme Functions
  */
@@ -163,7 +165,7 @@ add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
  * Button
  */
 
-function mavf_button($mavText,$mavLink = '', $mavStyle = 'mav-btn-solid') {
+function mavf_button($mavText,$mavLink = '', $mavStyle = 'mav-btn-primary') {
     printf('<div class="mav-btn-ctn">');
     printf('<a href="%2$s" title="%1$s" style="text-decoration: none;"><button class="%3$s">%1$s</button></a>',$mavText,$mavLink,$mavStyle);
     printf('</div>');

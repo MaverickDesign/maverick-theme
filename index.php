@@ -9,24 +9,7 @@
 <main id="mavid-page-main-content">
 <?php
 
-    /*
-     * Hero slider
-     */
-    // if (is_home() && function_exists('mavf_slider')):
-    //     echo '<section id="mavid-sec-hero-slider" class="mav-margin-top mav-margin-bottom mav-hide-on-phone">';
-    //         $mavArgs = array (
-    //             'slider_type'       => 3,
-    //             'height'            => '30vh',
-    //         );
-    //         mavf_slider($mavArgs);
-    //     echo '</section>';
-    // endif;
-
-    /*
-     * Main Post Loop
-     */
-
-    /*
+    /**
      * Sticky posts section
      */
     $mavStickyPosts = get_option( 'sticky_posts' );
@@ -49,6 +32,10 @@
             echo '</section>';
         }
     }
+
+    /**
+     * Main Post Loop
+     */
 
     // Get user setting to show sidebar in blog page
     $mavSidebar = esc_attr(get_option('mav_setting_blog_page_sidebar'));
@@ -79,13 +66,13 @@
                         wp_reset_query();
                 echo '</div>';
 
-                /* Post Navigation */
+                // Post Navigation
                 if (esc_attr(get_option('mav_setting_ajax_load_posts'))) {
                     /**
                      * Ajax load more posts
                      */
                     echo '<div class="mav-margin-top">';
-                    printf('<a class="mav-btn mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">Load more</a>',admin_url('admin-ajax.php'));
+                    printf('<a class="mav-btn-primary mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</a>',admin_url('admin-ajax.php'),__('Xem thêm','mavericktheme'));
                     echo '</div>';
                 } else {
                     /**
