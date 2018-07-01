@@ -54,7 +54,8 @@
   --mav-color-primary: #b31705;
   --mav-color-accent: #05a1b3;
   --mav-site-bg-color: #fafafa;
-  --mav-site-header-color: #b31705; }
+  --mav-site-header-color: #b31705;
+  --mav-site-footer-color: #222; }
   @media only screen and (min-width: 1024px) {
     :root {
       --mav-site-width: 1680px; } }

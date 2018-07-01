@@ -107,13 +107,13 @@
  * Page Footer
  */
 .mav-pg-footer {
-    background: $mav-color-footer-background;
+    background: var(--mav-site-footer-color);
     color: $mav-color-text-dark-primary;
 }
 
 .mav-footer-copyright-wrapper {
     padding: var(--mav-gutter) 0;
-    background: map-get($mav-color,'secondary');
+    background: var(--mav-color-accent);
 }
 
 .mav-post-index-wrapper {

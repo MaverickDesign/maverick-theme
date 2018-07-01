@@ -128,6 +128,7 @@ $mav-color-background: #fafafa;
 
     --mav-site-bg-color:        #{$mav-site-color-background};
     --mav-site-header-color:    #{$mav-color-brand-primary};
+    --mav-site-footer-color:    #{$mav-color-footer-background};
 
     @media #{$mav-desktop} {
         --mav-site-width: #{$mav-site-width};
