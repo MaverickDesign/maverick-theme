@@ -170,9 +170,6 @@ ul {
     @media #{$mav-phone} {
         max-width: 80%;
     }
-    &:hover {
-        // box-shadow: inset 0 -4px $mav-color-brand-accent;
-    }
 }
 
 .mav-link {

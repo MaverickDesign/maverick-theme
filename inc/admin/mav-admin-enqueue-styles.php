@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  @package mavericktheme
  */
 
@@ -15,7 +15,7 @@ function mavf_enqueue_styles() {
 	wp_enqueue_style('mavcss-font-awesome', get_template_directory_uri() . '/css/fontawesome-all.css' , array() , '5.0.13' , 'all');
 
     /* Main Maverick Theme CSS */
-	wp_enqueue_style('mavcss-maverick-theme-styles' , get_template_directory_uri() . '/css/maverick-styles.css' , array() , '1.0.0' , 'all');    
+	wp_enqueue_style('mavcss-maverick-theme-styles' , get_template_directory_uri() . '/css/maverick-styles.css' , array() , '1.0.0' , 'all');
 }
 
 add_action( 'wp_enqueue_scripts' , 'mavf_enqueue_styles');

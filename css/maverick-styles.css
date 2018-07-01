@@ -102,6 +102,7 @@ table {
   --mav-color-body-text-primary: #222;
   --mav-color-body-text-secondary: #666;
   --mav-brand-color-primary: #b31705;
+  --mav-brand-color-accent: #05a1b3;
   --mav-color-primary: #b31705;
   --mav-color-accent: #05a1b3;
   --mav-site-bg-color: #fafafa;
@@ -872,8 +873,7 @@ form#mavid-site-search {
   padding-bottom: var(--mav-gutter-sm); }
   @media only screen and (max-width: 1023px) {
     .mav-header-logo-ctn {
-      background: #05a1b3;
-      background: rgba(5, 161, 179, 0.95);
+      background: var(--mav-color-accent);
       color: white; } }
 
 .mav-mobile-menu-icon {

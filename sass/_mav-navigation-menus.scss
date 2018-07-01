@@ -19,8 +19,7 @@
     padding-top: var(--mav-gutter-sm);
     padding-bottom: var(--mav-gutter-sm);
     @media #{$mav-mobile} {
-        background: $mav-color-brand-accent;
-        background: transparentize($mav-color-brand-accent,.05);
+        background: var(--mav-color-accent);
         @include text-contrast($mav-color-brand-accent);
     }
 }
