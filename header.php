@@ -70,8 +70,15 @@
         <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
             <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','mavericktheme'); ?>"></button>
             <div id="mavid-site-logo" class="mav-site-logo-wrapper">
-                <a href="<?php  bloginfo( 'url' );?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0" alt="">
+                <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
+                    <?php
+                        $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
+                        if ($mavBrandLogo) {
+                            echo "<img src=\"$mavBrandLogo;\">";
+                        } else {
+                            echo '<img src="'.get_template_directory_uri().'/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
+                        }
+                    ?>
                 </a>
             </div>
             <div class="mav-flex-row">

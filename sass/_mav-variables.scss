@@ -8,24 +8,24 @@ $mav-layer-background:    -10;
 $mav-layer-under:        -100;
 $mav-layer-bottom:      -1000;
 
-:fullscreen {
-    width: 100%;
-    height: 100%;
-}
-:-webkit-full-screen {
-    width: 100%;
-    height: 100%;
-}
+// :fullscreen {
+//     width: 100%;
+//     height: 100%;
+// }
+// :-webkit-full-screen {
+//     width: 100%;
+//     height: 100%;
+// }
 
 /* Font Stacks */
 
 // Available weights: 100, 300, 400, 500, 700, 900
 
-$font-roboto: 'Roboto', Arial, sans-serif;
-$font-roboto-cond: 'Roboto Condensed', Arial, sans-serif;
-$font-roboto-slab: 'Roboto Slab', serif;
-$font-awesome: 'Font Awesome 5 Free';
-$font-alfa-slab-one: "Alfa Slab One", cursive;
+$font-roboto        : 'Roboto', Arial, sans-serif;
+$font-roboto-cond   : 'Roboto Condensed', Arial, sans-serif;
+$font-roboto-slab   : 'Roboto Slab', serif;
+$font-awesome       : 'Font Awesome 5 Free';
+$font-alfa-slab-one : "Alfa Slab One", cursive;
 
 /*
  * THEME COLORS
@@ -35,33 +35,36 @@ $font-alfa-slab-one: "Alfa Slab One", cursive;
 
 $maverick: rgb(179,23,5);
 // $maverick: rgb(194,47,35);
-$camnangluat: rgb(91,144,63);
+// $camnangluat: rgb(91,144,63);
 
 /* THEME COLORS */
 
-$mav-color-brand-primary: $maverick;
-$mav-color-brand-accent : complement($mav-color-brand-primary);
+$mav-color-brand-primary    : $maverick;
+$mav-color-brand-accent     : complement($mav-color-brand-primary);
+$mav-color-primary          : $maverick;
+$mav-color-accent           : complement($mav-color-brand-primary);
 
-$mav-color-text-primary  : #222;
-$mav-color-text-secondary: #666;
-$mav-color-text-hint     : #888;
+$mav-color-text-primary     : #222;
+$mav-color-text-secondary   : #666;
+$mav-color-text-hint        : #888;
 
-$mav-color-text-dark-primary  : #fafafa;
-$mav-color-text-dark-secondary: #ddd;
-$mav-color-text-dark-hint     : #aaa;
+$mav-color-text-primary-dark  : #fafafa;
+$mav-color-text-secondary-dark: #ddd;
+$mav-color-text-hint-dark     : #aaa;
 
 $mav-color-text-link: rgba($mav-color-brand-accent,.2);
 
 $mav-color-border: #ddd;
 
 $mav-color-highlight: yellow;
+
 $mav-color: (
     primary:    $mav-color-brand-primary,
     secondary:  $mav-color-brand-accent,
     tertiary:   orange,
     text: (
         primary:    $mav-color-text-primary,
-        secondary:  $mav-color-text-dark-secondary,
+        secondary:  $mav-color-text-secondary-dark,
         hint:       $mav-color-text-hint
     )
 );
@@ -91,18 +94,20 @@ $mav-site-color-background: #fafafa;
 $mav-color-background: #fafafa;
 
 :root {
-    /* Layouts */
-    --mav-margin: #{$mav-spacing};
-    --mav-margin-xl: calc(var(--mav-margin) * 4);
-    --mav-margin-lg: calc(var(--mav-margin) * 2);
-    --mav-margin-sm: calc(var(--mav-margin) / 2);
-    --mav-margin-xs: calc(var(--mav-margin) / 4);
+    /**
+     * Layouts
+     */
+    // --mav-margin: #{$mav-spacing};
+    // --mav-margin-xl: calc(var(--mav-margin) * 4);
+    // --mav-margin-lg: calc(var(--mav-margin) * 2);
+    // --mav-margin-sm: calc(var(--mav-margin) / 2);
+    // --mav-margin-xs: calc(var(--mav-margin) / 4);
 
-    --mav-padding: #{$mav-spacing};
-    --mav-padding-xl: calc(var(--mav-padding) * 4);
-    --mav-padding-lg: calc(var(--mav-padding) * 2);
-    --mav-padding-sm: calc(var(--mav-padding) / 2);
-    --mav-padding-xs: calc(var(--mav-padding) / 4);
+    // --mav-padding: #{$mav-spacing};
+    // --mav-padding-xl: calc(var(--mav-padding) * 4);
+    // --mav-padding-lg: calc(var(--mav-padding) * 2);
+    // --mav-padding-sm: calc(var(--mav-padding) / 2);
+    // --mav-padding-xs: calc(var(--mav-padding) / 4);
 
     --mav-gutter: #{$mav-gutter};
     --mav-gutter-xl: calc(var(--mav-gutter) * 4);
@@ -110,27 +115,42 @@ $mav-color-background: #fafafa;
     --mav-gutter-sm: calc(var(--mav-gutter) / 2);
     --mav-gutter-xs: calc(var(--mav-gutter) / 4);
 
-    /* Typography */
+    /**
+     * Colors
+     */
+    // Brand colors
+    // Primary
+     --mav-brand-color-primary      : #{$mav-color-brand-primary};
+     --mav-color-primary            : #{$mav-color-brand-primary};
+    //  Accent
+     --mav-brand-color-accent       : #{$mav-color-brand-accent};
+     --mav-color-accent             : #{$mav-color-brand-accent};
+    // Site background
+     --mav-color-site-background    : #{$mav-site-color-background};
+    //  Header background
+     --mav-color-site-header        : #{$mav-color-brand-primary};
+    //  Footer background
+     --mav-color-site-footer        : var(--mav-color-accent);
+
+     --mav-color-off-white          : rgb(252,252,252);
+
+    /**
+     * Typography
+     */
     --mav-font-size: 16px;
     --mav-font-body: var(--mav-font-size);
     --mav-font-intro: calc(var(--mav-font-size) * 1.3);
     --mav-font-title: calc(var(--mav-font-size) * 2.6);
 
+    --mav-color-text-primary:          #{$mav-color-text-primary};
+    --mav-color-text-secondary:        #{$mav-color-text-secondary};
+    --mav-color-text-primary-dark:     #{$mav-color-text-primary-dark};
+    --mav-color-text-secondary-dark:   #{$mav-color-text-secondary-dark};
+
     --mav-color-body: #{$mav-color-text-primary};
 
-    --mav-color-body-text-primary:      #{$mav-color-text-primary};
-    --mav-color-body-text-secondary:    #{$mav-color-text-secondary};
-
-    --mav-brand-color-primary:  #{$mav-color-brand-primary};
-    --mav-brand-color-accent:   #{$mav-color-brand-accent};
-    --mav-color-primary:        #{$mav-color-brand-primary};
-    --mav-color-accent:         #{$mav-color-brand-accent};
-
-    --mav-site-bg-color:        #{$mav-site-color-background};
-    --mav-site-header-color:    #{$mav-color-brand-primary};
-    --mav-site-footer-color:    #{$mav-color-footer-background};
-
     @media #{$mav-desktop} {
+        // Site width for desktop
         --mav-site-width: #{$mav-site-width};
     }
 }
@@ -139,13 +159,9 @@ $mav-color-background: #fafafa;
     transition: all .3s ease;
 }
 
-%mav-transition-default {
-    transition: all .3s ease;
-}
-
 %mav-hover-element {
-    background: $mav-color-brand-primary;
-    @include text-contrast($mav-color-brand-primary);
+    background: var(--mav-color-primary);
+    @include text-contrast($mav-color-primary);
 }
 
 /*
@@ -154,38 +170,39 @@ $mav-color-background: #fafafa;
 
 @keyframes mav-brand-color-transition {
     0% {
-        background-color: $mav-color-brand-primary;
+        background-color: var(--mav-color-primary);
     }
     50% {
-        background-color: $mav-color-brand-accent;
+        background-color: var(--mav-color-accent);
     }
     100% {
-        background-color: $mav-color-brand-primary;
+        background-color: var(--mav-color-primary);
     }
 }
 
 @keyframes mav-brand-color-transition-reversed {
     0% {
-        background-color: $mav-color-brand-accent;
+        background-color: var(--mav-color-accent);
     }
     50% {
-        background-color: $mav-color-brand-primary;
+        background-color: var(--mav-color-primary);
     }
     100% {
-        background-color: $mav-color-brand-accent;
+        background-color: var(--mav-color-accent);
     }
 }
 
 @keyframes mav-brand-color-dark {
     0% {
-        background-color: $mav-color-brand-primary;
+        background-color: var(--mav-color-primary);
     }
     50% {
-        background-color: darken($mav-color-brand-primary, 10%);
+        // background-color: darken($mav-color-brand-primary, 10%);
+        // background-color: #{'rgba(var(--mav-color-primary),1)'};
     }
     100% {
-        background-color: $mav-color-brand-primary;
+        background-color: var(--mav-color-primary);
     }
 }
 
-$mav-color-gradient-brand: linear-gradient(to right, $mav-color-brand-primary 0%, $mav-color-brand-accent 100%);
+$mav-color-gradient-brand: linear-gradient(to right, var(--mav-color-primary) 0%, var(--mav-color-accent) 100%);

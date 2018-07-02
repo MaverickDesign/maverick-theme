@@ -51,7 +51,7 @@
     footer {
         padding: var(--mav-gutter-lg) 0;
         background: $mav-color-brand-accent;
-        color: $mav-color-text-dark-secondary;
+        color: $mav-color-text-secondary-dark;
         .mav-post-footer-ctn {
             display: grid;
             grid-gap: var(--mav-gutter);
@@ -67,7 +67,7 @@
             flex-direction: column;
         }
         a {
-            color: $mav-color-text-dark-primary;
+            color: $mav-color-text-primary-dark;
             font-weight: 400;
             text-decoration: none;
             padding: var(--mav-gutter-sm);
@@ -134,7 +134,7 @@
         text-transform: lowercase;
         line-height: .5;
         text-decoration: none;
-        color: $mav-color-text-dark-primary;
+        color: $mav-color-text-primary-dark;
         &:before {
             content: '\f292';
             @extend %mav-font-awesome;
@@ -290,7 +290,7 @@ article.sticky {
             padding: var(--mav-gutter-sm);
             border-radius: 50%;
             background: $mav-color-brand-primary;
-            color: $mav-color-text-dark-primary;
+            color: $mav-color-text-primary-dark;
             animation: mav-brand-color-transition 2s infinite;
             transform: translate(var(--mav-gutter-sm),var(--mav-gutter-sm));
         }

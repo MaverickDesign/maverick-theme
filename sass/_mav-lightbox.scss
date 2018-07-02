@@ -34,10 +34,10 @@
             @extend .mav-flex-center-all;
             position: relative;
             font-size: 1.5rem;
-            color: $mav-color-text-dark-primary;
+            color: $mav-color-text-primary-dark;
             &:before, &:after {
                 @extend %mav-font-awesome;
-                color: $mav-color-text-dark-secondary;
+                color: $mav-color-text-secondary-dark;
                 @extend %mav-transition;
             }
             &[data-direction="prev"] {
@@ -69,11 +69,17 @@
                 }
             }
         }
+        /**
+         * Lightbox image container
+         */
         .mav-lightbox-image-ctn {
             @extend .mav-flex-center-all;
             width: 100%;
             padding: var(--mav-gutter-xs);
             margin: 0 var(--mav-gutter-xs);
+            /**
+             * Lightbox image
+             */
             .mav-lightbox-image {
                 object-fit: cover;
                 max-height: 80vh;
@@ -85,12 +91,18 @@
             }
         }
     }
+    /**
+     * Lightbox thumbnail wrapper
+     */
     .mav-lightbox-thumbnail-wrapper {
         @extend .mav-flex-center-all;
         padding: var(--mav-gutter);
         @media #{$mav-phone} {
             display: none;
         }
+        /**
+         * Lightbox thumbnail container
+         */
         .mav-lightbox-thumbnail-ctn {
             display: grid;
             grid-template-columns: repeat(auto-fit,5vh);
@@ -98,6 +110,9 @@
             align-items: center;
             grid-gap: var(--mav-gutter-sm);
             width: 100%;
+            /**
+             * Lightbox Thumbnail
+             */
             .mav-lightbox-thumbnail {
                 position: relative;
                 display: block;

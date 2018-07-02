@@ -267,7 +267,7 @@
     <section id="mavid-sec-button" class="mav-sec-theme-page">
         <header class="mav-sec-title-wrapper">
             <div class="mav-sec-title-ctn mav-flex-center-all">
-                <h2 class="mav-sec-title">Typography</h2>
+                <h2 class="mav-sec-title">Buttons</h2>
             </div>
         </header>
         <div class="mav-pg-ctn mav-margin-bottom-lg mav-grid mav-grid-col-2">

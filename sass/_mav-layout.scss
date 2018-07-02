@@ -67,21 +67,22 @@
  */
 @each $direction in top,bottom,left,right {
     .#{$mavNameSpace}-margin-#{$direction} {
-        margin-#{$direction}: var(--mav-gutter)!important;
+        margin-#{$direction}: var(--mav-gutter);
     }
     .#{$mavNameSpace}-padding-#{$direction} {
-        padding-#{$direction}: var(--mav-gutter)!important;
+        padding-#{$direction}: var(--mav-gutter);
     }
     @each $size in xl,lg,sm,xs {
         .#{$mavNameSpace}-margin-#{$direction}-#{$size} {
-            margin-#{$direction}: var(--mav-gutter-#{$size})!important;
+            margin-#{$direction}: var(--mav-gutter-#{$size});
         }
         .#{$mavNameSpace}-padding-#{$direction}-#{$size} {
-            padding-#{$direction}: var(--mav-gutter-#{$size})!important;
+            padding-#{$direction}: var(--mav-gutter-#{$size});
         }
     }
 }
 
+// Site width
 .mav-site-width {
     margin: 0 auto;
     @media #{$mav-desktop} {
@@ -89,6 +90,7 @@
     }
 }
 
+// Page container
 .mav-pg-ctn {
     @extend .mav-site-width;
     padding: var(--mav-gutter);
@@ -107,13 +109,14 @@
  * Page Footer
  */
 .mav-pg-footer {
-    background: var(--mav-site-footer-color);
-    color: $mav-color-text-dark-primary;
+    background: var(--mav-color-site-footer);
+    color: var(--mav-color-text-primary-dark);
 }
 
 .mav-footer-copyright-wrapper {
     padding: var(--mav-gutter) 0;
-    background: var(--mav-color-accent);
+    background: #222;
+    color: var(--mav-color-text-primary-dark);
 }
 
 .mav-post-index-wrapper {
@@ -128,14 +131,10 @@
 
 .mav-post-index-ctn {
     display: grid;
-    // grid-template-columns: 1fr;
     grid-gap: var(--mav-gutter);
     @media #{$mav-tablet} {
         align-content: start;
         grid-template-columns: repeat(2,1fr);
-    }
-    @media #{$mav-desktop} {
-        // align-content: start;
     }
 }
 
@@ -174,43 +173,82 @@
     }
     .prev {
         &:before {
-            content: '\f053';
             @extend %mav-font-awesome;
+            content: '\f053';
             margin-right: var(--mav-gutter-xs);
         }
     }
     .next {
         &:after {
-            content: '\f054';
             @extend %mav-font-awesome;
+            content: '\f054';
             margin-left: var(--mav-gutter-xs);
         }
     }
     .current {
+        background: var(--mav-color-primary);
+        @include text-contrast($mav-color-primary);
         font-weight: bold;
-        background: var(--mav-brand-color-primary);
-        @include text-contrast($mav-color-brand-primary);
     }
     a {
         &:hover {
-            box-shadow: inset 0 -4px var(--mav-brand-color-primary);
+            box-shadow: inset 0 -4px var(--mav-color-primary);
         }
     }
 }
 
 .mav-sec-home {
     padding: var(--mav-gutter-xl) 0;
+    background: var(--mav-color-site-background);
     &:nth-child(odd) {
         background: darken($mav-color-background,1.5%);
     }
     .mav-sec-content {
         margin: var(--mav-gutter-lg) auto;
-        @media #{$mav-desktop} {
-            margin: var(--mav-gutter-lg) auto;
-        }
     }
 }
 
 .mav-sec-title-wrapper {
     margin-bottom: var(--mav-gutter-lg);
+}
+
+/**
+ * Footer Social
+ */
+.mav-footer-socials-wrapper {
+    color: initial;
+    background: var(--mav-color-off-white);
+    padding: var(--mav-gutter-sm) 0;
+    .mav-footer-socials-ctn {
+        @extend %mav-flex-column;
+        align-items: center;
+        font-size: 1.25rem;
+        span {
+            text-align: center;
+        }
+        .mav-social-links {
+            display: grid;
+            grid-gap: var(--mav-gutter-sm);
+            grid-template-columns: repeat(auto-fit,70px);
+            justify-content: center;
+            width: 100%;
+            margin-top: var(--mav-gutter);
+            .mav-social-icon {
+                justify-self: center;
+                @extend .mav-flex-center-all;
+                width: 60px;
+                height: 60px;
+                padding: var(--mav-gutter-sm);
+                border: 2px solid var(--mav-color-accent);
+                @extend %mav-transition;
+                &:hover {
+                    border-radius: 50%;
+                    @extend %mav-hyperlink-obj-accent;
+                }
+            }
+            @media #{$mav-phone} {
+                grid-template-columns: repeat(auto-fit,minmax(15%,20%));
+            }
+        }
+    }
 }

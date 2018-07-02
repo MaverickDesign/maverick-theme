@@ -11,10 +11,9 @@ button {
     display: flex;
     justify-content: center;
 
-    padding: var(--mav-padding-sm) var(--mav-padding);
+    padding: var(--mav-gutter-sm) var(--mav-gutter);
 
-    border: 1px solid var(--mav-brand-color-primary);
-    // border-radius: 4px;
+    border: 1px solid var(--mav-color-primary);
 
     background: transparent;
 
@@ -34,36 +33,42 @@ button {
     @extend %mav-btn;
     @extend %mav-transition;
     &:hover {
-        @include text-contrast($mav-color-brand-primary);
-        background: var(--mav-brand-color-primary);
+        @include text-contrast($mav-color-primary);
+        background: var(--mav-color-primary);
+        border-radius: 6px;
     }
 }
 
 .mav-btn-solid {
     @extend %mav-btn;
-    @include text-contrast($mav-color-brand-primary);
-    background: var(--mav-brand-color-primary);
+    @include text-contrast($mav-color-primary);
+    background: var(--mav-color-primary);
     &:hover {
-        @include text-contrast($mav-color-brand-primary);
-        background: darken($mav-color-brand-primary,5%);
-        animation-delay: 1s;
-        animation: mav-brand-color-dark 2s infinite;
+        border-radius: 8px;
+        background: transparent;
+        color: var(--mav-color-text-primary);
     }
 }
 
 .mav-btn {
     &-close {
-        &:before {
-            @extend %mav-font-awesome;
-            content: '\f410';
+        &:after {
+            // @extend %mav-font-awesome;
+            // content: '\f410';
+            content: "×";
+            font-size: 2rem;
         }
     }
 }
 
+/**
+ * Theme Buttons
+ */
+
 .mav-btn {
     &-primary {
         @extend .mav-btn-solid;
-        padding: var(--mav-padding);
+        padding: var(--mav-gutter);
     }
     &-secondary {
         @extend .mav-btn;
@@ -76,7 +81,7 @@ button {
     height: 40px;
     right: 20px;
     @extend .mav-flex-center-all;
-    background: rgba($mav-color-brand-accent,.8);
+    background: var(--mav-color-accent);
     animation: mav-brand-color-transition 5s infinite;
     border-radius: 50%;
     opacity: 0;
@@ -89,11 +94,11 @@ button {
         @extend %mav-font-awesome;
         content: '\f0aa';
         font-size: 1.5rem;
-        @include text-contrast($mav-color-brand-accent);
+        @include text-contrast($mav-color-accent);
         @extend %mav-transition;
     }
     &:hover {
-        background: rgba($mav-color-brand-primary,.8);
+        background: var(--mav-color-primary);
         &:before {
             transform: translateY(-2px);
         }

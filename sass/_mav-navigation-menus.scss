@@ -10,6 +10,7 @@
         }
     }
 }
+
 .mav-header-logo-ctn {
     @extend .mav-pg-ctn;
     @extend %mav-flex-row;
@@ -60,45 +61,7 @@
     }
 }
 
-.mav-footer-socials-wrapper {
-    color: initial;
-    background: white;
-    padding: var(--mav-gutter-sm) 0;
-    .mav-footer-socials-ctn {
-        @extend %mav-flex-column;
-        align-items: center;
-        font-size: 1.25rem;
-        span {
-            text-align: center;
-        }
-        .mav-social-links {
-            display: grid;
-            grid-gap: var(--mav-gutter-sm);
-            grid-template-columns: repeat(auto-fit,70px);
-            justify-content: center;
-            width: 100%;
-            margin-top: var(--mav-gutter);
-            .mav-social-icon {
-                justify-self: center;
-                @extend .mav-flex-center-all;
-                width: 60px;
-                height: 60px;
-                padding: var(--mav-gutter-sm);
-                border: 2px solid $mav-color-brand-accent;
-                border-radius: 50%;
-                @extend %mav-transition;
-                &:hover {
-                    @extend %mav-hyperlink-obj-accent;
-                }
-            }
-            @media #{$mav-phone} {
-                grid-template-columns: repeat(auto-fit,minmax(15%,20%));
-            }
-        }
-    }
-}
-
-/*
+/**
  * Header Menu
  */
 
@@ -106,7 +69,7 @@
     display: block;
     position: fixed; // for mobile menu
     width: 100%;
-    background: $mav-color-header-menu-background;
+    background: var(--mav-color-primary);
     z-index: $mav-layer-top;
     @media #{$mav-desktop} {
         position: sticky;
@@ -155,7 +118,8 @@
         margin: 0;
         @media #{$mav-desktop} {
             flex-direction: row;
-            background: rgba($mav-color-header-menu-background,.95);
+            // background: rgba($mav-color-header-menu-background,.95);
+            background: var(--mav-color-primary);
         }
         li {
             @extend %mav-flex-column;
@@ -167,7 +131,7 @@
             @extend %mav-transition;
             @media #{$mav-desktop} {
                 &:hover {
-                    background: lighten(rgba($mav-color-header-menu-background,.95),5%);
+                    // background: lighten(rgba($mav-color-header-menu-background,.95),5%);
                     .mav-submenu-icon[data-lvl="1"] {
                         &:after {
                             transform: rotate(180deg);
@@ -199,7 +163,7 @@
                     text-transform: initial;
                 }
                 @media #{$mav-mobile} {
-                    background: darken(rgba($mav-color-header-menu-background,.95),10%);
+                    // background: darken(rgba($mav-color-header-menu-background,.95),10%);
                 }
                 @media #{$mav-desktop} {
                     box-shadow: none;
@@ -208,7 +172,7 @@
                     border-radius: 0 0 5px 5px;
                 }
                 ul { // lvl_3
-                    background: darken(rgba($mav-color-header-menu-background,.95),15%);
+                    // background: darken(rgba($mav-color-header-menu-background,.95),15%);
                     @media #{$mav-desktop} {
                         position: relative;
                         margin-top: 0;
@@ -289,9 +253,9 @@
 /*
  * Footer Menu
  */
-
+.mav-footer-menu-wrapper {
+}
 .mav-footer-menu-ctn {
-    margin: var(--mav-gutter-lg) auto;
 }
 
 .mav-footer-menu {
@@ -303,11 +267,11 @@
             list-style: none;
             a {
                 font-weight: 600;
-                color: inherit;
-                box-shadow: inset 0 -4px var(--mav-color-primary);
+                color: var(--mav-text-color-secondary-dark);
                 text-decoration: none;
                 &:hover {
-                    color: #fafafa;
+                    box-shadow: inset 0 -4px var(--mav-color-primary);
+                    // color: var(--mav-text-color-primary-dark);
                 }
             }
             ul { // lvl_2
@@ -315,7 +279,6 @@
                 margin-top: var(--mav-gutter);
                 li {
                     a {
-                        color: #888;
                         font-size: .9rem;
                         font-weight: initial;
                         box-shadow: none;
@@ -327,7 +290,6 @@
                     margin-left: var(--mav-gutter);
                     li {
                         a {
-                            color: #aaa;
                             font-size: .8rem;
                         }
                     }
