@@ -9,7 +9,7 @@
             <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
                 <div class="mav-pg-ctn mav-footer-socials-ctn">
                     <?php
-                        printf('<span><strong>%1$s</strong> %2$s</span>',
+                        printf('<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
                             get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','mavericktheme')
                         );
                         mavf_social_links();

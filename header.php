@@ -4,6 +4,7 @@
  */
 ?>
 <?php
+    $mavDevice = '';
     if (function_exists('mavf_mobile_detect')) {
         $mavDevice = mavf_mobile_detect();
     }
@@ -24,6 +25,17 @@
             }
         ?>
     </title>
+
+    <!-- Facebook Open Graph Data -->
+    <meta property="og:url"           content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<?php single_post_title(); ?>" />
+    <meta property="og:description"   content="Your description" />
+    <?php if(has_post_thumbnail($post->ID)): ?>
+    <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" />
+    <?php endif; ?>
+    <!-- End of Facebook Open Graph Data -->
+
     <?php
     /*
      * Google Analytics
@@ -49,14 +61,26 @@
     ?>
 </head>
 <body data-device="<?php echo $mavDevice?>">
+    <!-- Facebook Script -->
     <!-- <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=115651558903215&autoLogAppEvents=1';
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script> -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '115651558903215',
+            xfbml      : true,
+            version    : 'v3.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script> -->
+    <!-- End of Facebook Script -->
 
     <header id="mavid-page-header" class="mav-pg-header">
         <section id="mavid-sec-site-search" class="mav-site-search-wrapper">
@@ -99,9 +123,16 @@
     if (current_theme_supports('menus')): ?>
         <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
             <div class="mav-site-width mav-sticky-logo-wrapper">
-                <div id="mavid-site-logo" class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
+                <div class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
                     <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','mavericktheme')?>" class="mav-sticky-logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/maverick-logo-svg.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0" alt="">
+                        <?php
+                            $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
+                            if ($mavBrandLogo) {
+                                echo "<img id=\"mavid-sticky-logo\" src=\"$mavBrandLogo;\">";
+                            } else {
+                                echo '<img id="mavid-sticky-logo" src="'.get_template_directory_uri().'/assets/maverick-logo-svg.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';
+                            }
+                        ?>
                     </a>
                 </div>
             </div>

@@ -10,8 +10,6 @@ function mavf_header_menu(){
     const mavHeaderBreadcrumbs  = document.querySelector('.mav-site-breadcrumbs-ctn');
     const mavPageMainContent    = document.querySelector('#mavid-page-main-content');
 
-    // const mavFirstLevelSubMenus = document.querySelectorAll('.mav-sub-menu[data-lvl="1"]');
-
     for (const mavSubmenuIcon of mavSubmenuIcons) {
         if (mavSubmenuIcon.dataset.lvl == 2 || window.innerWidth < 1024) {
             mavSubmenuIcon.setAttribute('title','Click to expand');
@@ -22,8 +20,10 @@ function mavf_header_menu(){
             if (window.innerWidth < 1024 || this.dataset.lvl == 2) {
                 if (this.dataset.state == 'close') {
                     this.dataset.state = 'open'
+                    this.setAttribute('title','Click to close');
                 } else {
                     this.dataset.state = 'close'
+                    this.setAttribute('title','Click to expand');
                 }
                 const mavSubMenu = this.parentElement.nextElementSibling;
 
@@ -45,7 +45,6 @@ function mavf_header_menu(){
             this.classList.add('fa-bars');
             this.classList.remove('fa-times');
         }
-        // console.log(this);
     });
 
     function mavf_resize(){

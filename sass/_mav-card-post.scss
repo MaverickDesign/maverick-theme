@@ -5,11 +5,11 @@
     position: relative;
     width: 100%;
     box-shadow: 0px 0px 1px $mav-color-border;
-    @media #{$mav-phone} {
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+    // @media #{$mav-phone} {
+    //     &:last-child {
+    //         margin-bottom: 0;
+    //     }
+    // }
 }
 
 .mav-card-post {
@@ -27,6 +27,7 @@
     }
     &-header {
         display: flex;
+        position: relative;
         overflow: hidden;
         box-shadow: 0 1px $mav-color-border;
     }
@@ -69,6 +70,8 @@
             text-decoration: none;
         }
         .mav-card-post-title {
+            font-weight: 400;
+            color: var(--mav-color-text-primary);
             @media #{$mav-phone} {
                 font-size: 1.25rem;
             }
@@ -78,6 +81,7 @@
             padding: 0 var(--mav-gutter);
             height: 5em;
             overflow: hidden;
+            color: var(--mav-color-text-secondary);
             &:after {
                 position: absolute;
                 display: block;

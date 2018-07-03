@@ -1,0 +1,40 @@
+/**
+ * Footer Social Links
+ */
+
+ .mav-footer-socials-wrapper {
+    color: initial;
+    background: var(--mav-color-off-white);
+    padding: var(--mav-gutter) 0;
+    .mav-footer-socials-ctn {
+        @extend %mav-flex-column;
+        align-items: center;
+        span {
+            text-align: center;
+        }
+        .mav-social-links {
+            display: grid;
+            grid-gap: var(--mav-gutter-sm);
+            grid-template-columns: repeat(auto-fit,minmax(60px,80px));
+            justify-content: center;
+            width: 100%;
+            margin-top: var(--mav-gutter);
+            .mav-social-icon {
+                justify-self: center;
+                @extend .mav-flex-center-all;
+                min-width: 60px;
+                min-height: 60px;
+                border: 2px solid var(--mav-color-accent);
+                @extend %mav-transition;
+                &:hover {
+                    border-radius: 50%;
+                    @extend %mav-link-obj-accent;
+                }
+            }
+            @media #{$mav-phone} {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}

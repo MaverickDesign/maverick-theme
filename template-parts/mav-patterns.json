@@ -1,0 +1,12 @@
+{
+    "patterns" : [
+        {
+            "pattern" : "/(lorem ipsum)/i",
+            "replace" : "<strong>$0</strong>"
+        },
+        {
+            "pattern" : "/(phần mềm)/i",
+            "replace" : "<strong>$0</strong>"
+        }
+    ]
+}

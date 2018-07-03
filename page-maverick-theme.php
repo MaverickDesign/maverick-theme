@@ -1,5 +1,5 @@
 <?php
-/*
+/**
     @package mavericktheme
 */
 ?>
@@ -24,11 +24,11 @@
         </header>
         <div class="mav-pg-ctn mav-post-content-wrapper">
             <div class="mav-post-content">
-                <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong>Maverick Theme</strong>) là một bộ giao diện hoàn toàn MIỄN PHÍ dành cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (Content Management System - CMS) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng 30% số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
-                <p><strong>Maverick Theme</strong> được phát triển mới hoàn toàn bởi <strong>Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: HTML5, CSS3, Javascript ES6+ và PHP 7.0+.</p>
-                <p><strong>Maverick Theme</strong> tương thích hoàn toàn với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
-                <p>Dù MIỄN PHÍ nhưng <strong>Maverick Theme</strong> hoàn toàn có thể đáp ứng đầy đủ các nhu cầu cơ bản của một website chuyên về nội dung.</p>
-                <p>Trang này giới thiệu các tính năng nổi bật của <strong>Maverick Theme</strong>.</p>
+                <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là Maverick Theme) là một bộ giao diện hoàn toàn MIỄN PHÍ dành cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (Content Management System - CMS) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng 30% số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
+                <p>Maverick Theme được phát triển mới hoàn toàn bởi Maverick Design theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: HTML5, CSS3, Javascript ES6+ và PHP 7.0+.</p>
+                <p>Maverick Theme tương thích hoàn toàn với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
+                <p>Dù MIỄN PHÍ nhưng Maverick Theme hoàn toàn có thể đáp ứng đầy đủ các nhu cầu cơ bản của một website chuyên về nội dung.</p>
+                <p>Trang này giới thiệu các tính năng nổi bật của Maverick Theme.</p>
             </div>
         </div>
     </section>

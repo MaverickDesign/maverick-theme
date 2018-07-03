@@ -4,12 +4,12 @@
 /*
  * Text Contrast
  */
-/* Font Stacks */
-/*
+/**
+ * Font Stacks
+ */
+/**
  * THEME COLORS
  */
-/* BRAND COLORS */
-/* THEME COLORS */
 /*
 * MEDIA QUERIES
 */
@@ -35,6 +35,8 @@
   --mav-color-site-background: #fafafa;
   --mav-color-site-header: #b31705;
   --mav-color-site-footer: var(--mav-color-accent);
+  --mav-color-header-menu-background: #b31705;
+  --mav-color-header-menu-background-hover: #05a1b3;
   --mav-color-off-white: rgb(252,252,252);
   /**
    * Typography
@@ -43,11 +45,11 @@
   --mav-font-body: var(--mav-font-size);
   --mav-font-intro: calc(var(--mav-font-size) * 1.3);
   --mav-font-title: calc(var(--mav-font-size) * 2.6);
-  --mav-color-text-primary: #222;
-  --mav-color-text-secondary: #666;
+  --mav-color-text-primary: #32373c;
+  --mav-color-text-secondary: #82878C;
   --mav-color-text-primary-dark: #fafafa;
   --mav-color-text-secondary-dark: #ddd;
-  --mav-color-body: #222; }
+  --mav-color-body: #32373c; }
   @media only screen and (min-width: 1024px) {
     :root {
       --mav-site-width: 1680px; } }

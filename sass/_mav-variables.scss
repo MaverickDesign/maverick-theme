@@ -17,7 +17,9 @@ $mav-layer-bottom:      -1000;
 //     height: 100%;
 // }
 
-/* Font Stacks */
+/**
+ * Font Stacks
+ */
 
 // Available weights: 100, 300, 400, 500, 700, 900
 
@@ -27,25 +29,25 @@ $font-roboto-slab   : 'Roboto Slab', serif;
 $font-awesome       : 'Font Awesome 5 Free';
 $font-alfa-slab-one : "Alfa Slab One", cursive;
 
-/*
+/**
  * THEME COLORS
  */
 
-/* BRAND COLORS */
+// BRAND COLORS
 
 $maverick: rgb(179,23,5);
 // $maverick: rgb(194,47,35);
 // $camnangluat: rgb(91,144,63);
 
-/* THEME COLORS */
+// THEME COLORS
 
 $mav-color-brand-primary    : $maverick;
 $mav-color-brand-accent     : complement($mav-color-brand-primary);
 $mav-color-primary          : $maverick;
 $mav-color-accent           : complement($mav-color-brand-primary);
 
-$mav-color-text-primary     : #222;
-$mav-color-text-secondary   : #666;
+$mav-color-text-primary     : #32373c;
+$mav-color-text-secondary   : #82878C;
 $mav-color-text-hint        : #888;
 
 $mav-color-text-primary-dark  : #fafafa;
@@ -69,10 +71,14 @@ $mav-color: (
     )
 );
 
+$mav-color-site-background: #fafafa;
+
 $mav-color-header-background: transparent;
 $mav-color-footer-background: #222;
 
-$mav-color-header-menu-background: map-get($mav-color, primary);
+$mav-color-header-menu-background       : $mav-color-primary;
+$mav-color-header-menu-background-hover : $mav-color-accent;
+
 /*
 * MEDIA QUERIES
 */
@@ -126,11 +132,14 @@ $mav-color-background: #fafafa;
      --mav-brand-color-accent       : #{$mav-color-brand-accent};
      --mav-color-accent             : #{$mav-color-brand-accent};
     // Site background
-     --mav-color-site-background    : #{$mav-site-color-background};
+     --mav-color-site-background    : #{$mav-color-site-background};
     //  Header background
      --mav-color-site-header        : #{$mav-color-brand-primary};
     //  Footer background
      --mav-color-site-footer        : var(--mav-color-accent);
+
+     --mav-color-header-menu-background         : #{$mav-color-header-menu-background};
+     --mav-color-header-menu-background-hover   : #{$mav-color-header-menu-background-hover};
 
      --mav-color-off-white          : rgb(252,252,252);
 

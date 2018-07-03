@@ -5,12 +5,20 @@
  **/
 
 (function(){
-    let mavStickyLogo = document.querySelector('.mav-sticky-logo');
-    if (mavStickyLogo == null) {
+    const mavStickyLogo = document.querySelector('.mav-sticky-logo');
+    const mavStickyLogoImg = document.querySelector('#mavid-sticky-logo');
+
+    if (mavStickyLogo == null && mavStickyLogoImg == null) {
         return;
     }
+
+    const mavHeaderSection = document.querySelector('#mavid-sec-header-menu');
+
+    // Set sticky logo height
+    mavStickyLogoImg.setAttribute('height',mavHeaderSection.offsetHeight+'px');
+
     addMultipleListeners(window,['scroll','resize'],function(){
-        const mavHeaderSection = document.querySelector('#mavid-sec-header-menu');
+        console.log('mavHeaderSection: ', mavHeaderSection.offsetHeight);
         if (mavHeaderSection.offsetTop > 80) {
             mavStickyLogo.classList.add('show-logo');
         } else {
@@ -244,6 +252,13 @@ function mavf_create_modal_box(mavArgs= {
 }
 
 /**
+ * Remove mobile container
+ */
+function mavf_remove_mobile_container(e){
+    e.classList.remove('mav-mobile-ctn');
+}
+
+/**
  * Click events on body element
  */
 
@@ -261,6 +276,12 @@ function mavf_create_modal_box(mavArgs= {
          */
         if (mavTarget.classList.contains('mav-btn-close')){
             mavf_close_btn(mavTarget);
+        }
+        /**
+         * Remove mobile container
+         */
+        if (mavTarget.classList.contains('mav-mobile-ctn')){
+            mavf_remove_mobile_container(mavTarget);
         }
     })
 })();

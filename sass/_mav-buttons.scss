@@ -52,6 +52,7 @@ button {
 
 .mav-btn {
     &-close {
+        cursor: pointer;
         &:after {
             // @extend %mav-font-awesome;
             // content: '\f410';

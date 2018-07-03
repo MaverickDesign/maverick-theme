@@ -16,7 +16,7 @@
     a {
         text-decoration: none;
         &:hover{
-            @extend %mav-hyperlink-text;
+            @extend %mav-link-text;
         }
     }
 }

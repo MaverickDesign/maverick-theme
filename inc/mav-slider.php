@@ -53,10 +53,10 @@ function mavf_slider($mavArgs) {
         'ignore_sticky_posts'   => true,
         'category__in'          => $mavCategories,
         'meta_query'            => array(
-                                array(
-                                    'key'        => '_thumbnail_id',
-                                    'compare'    => 'EXISTS'
-                                )
+                                    array(
+                                        'key'        => '_thumbnail_id',
+                                        'compare'    => 'EXISTS'
+                                    )
                                 )
     );
 
@@ -71,8 +71,8 @@ function mavf_slider($mavArgs) {
 
         $i = 1;
 
-        /*
-         * Slider Type 1
+        /**
+         * Type 1
          */
         if ($mavSliderType == 1) {
             while ($mavQuery->have_posts()):
@@ -98,8 +98,8 @@ function mavf_slider($mavArgs) {
 
         } // Slider Type 1
 
-        /*
-         * Slider Type 2
+        /**
+         * Type 2
          */
         if ($mavSliderType == 2) {
             $mavRandomNumber = $mavUniqueNumber;
@@ -143,7 +143,7 @@ function mavf_slider($mavArgs) {
                 if ($mavDisplayTitle) {
                     echo '<div class="mav-slide-post-title-ctn">';
                         printf(
-                            '<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',
+                            '<a href="%2$s" title="Xem %1$s"><h2 class="mav-slider-title">%1$s</h2></a>',
                             get_the_title(), get_the_permalink()
                         );
                     echo '</div>';
@@ -183,8 +183,8 @@ function mavf_slider($mavArgs) {
             echo '</div>';
         } // slider Type 2
 
-        /*
-         * Slider Type 3
+        /**
+         * Type 3
          */
         if ($mavSliderType == 3) {
             while ($mavQuery->have_posts()):

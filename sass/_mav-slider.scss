@@ -86,14 +86,13 @@
         background-repeat: no-repeat!important;
         background-size: cover!important;
         background-position: center!important;
-        opacity: 0;
         transition: all .6s;
         overflow: hidden;
+        opacity: 0;
         &:hover {
             .mav-slide-post-title-ctn {
                 opacity: 1;
                 transition: all .3s ease;
-                // transform: translateY(0%);
             }
         }
         &.mav-active-slide {
@@ -101,35 +100,30 @@
             opacity: 1;
         }
         .mav-slide-post-title-ctn {
-            opacity: 0;
-            // position: absolute;
+            position: relative;
             width: 100%;
             height: 100%;
             @extend .mav-flex-center-all;
-            padding: var(--mav-gutter);
-            border-radius: var(--mav-gutter-sm);
-            background: rgba(black,.4);
-            // box-shadow: 0 0 50px black;
+            background: rgba(black,.5);
 
-            color: $mav-color-text-primary-dark;
+            color: var(--mav-color-text-primary-dark);
             font-family: $font-roboto-slab;
             letter-spacing: 2px;
-
-            // transform: translateY(-20%);
             @extend %mav-transition;
-            @media #{$mav-tablet} {
-                font-size: 1.5rem;
-            }
             @media #{$mav-desktop} {
-                font-size: 3rem;
-                font-weight: 600;
+                opacity: 0;
                 padding: var(--mav-gutter);
             }
             a {
                 text-decoration: none;
+            }
+            .mav-slider-title {
+                text-align: center;
+                max-width: 50vw;
+                color: white;
                 @extend %mav-transition;
                 &:hover {
-                    color: white;
+                    transform: scale(1.1);
                 }
             }
         }

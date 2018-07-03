@@ -2,31 +2,31 @@
     "items" : [
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-slider\" title=\"Chuyển đến phần Slider\">Slider</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-slider\" title=\"Chuyển đến phần Slider\">Slider</p>"
         },
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-post-carousel\" title=\"Chuyển đến phần Post Carousel\">Post Carousel</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-post-carousel\" title=\"Chuyển đến phần Post Carousel\">Post Carousel</p>"
         },
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-post-featured\" title=\"Chuyển đến phần Featured Post\">Featured Post</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-post-featured\" title=\"Chuyển đến phần Featured Post\">Featured Post</p>"
         },
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-post-grid\" title=\"Chuyển đến phần Post Grid\">Post Grid</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-post-grid\" title=\"Chuyển đến phần Post Grid\">Post Grid</p>"
         },
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-countdown\" title=\"Chuyển đến phần Countdown Timer\">Countdown Timer</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-countdown\" title=\"Chuyển đến phần Countdown Timer\">Countdown Timer</p>"
         },
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-lightbox\" title=\"Chuyển đến phần Lightbox Gallery\">Lightbox Gallery</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-lightbox\" title=\"Chuyển đến phần Lightbox Gallery\">Lightbox Gallery</p>"
         },
         {
             "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<h3 data-scroll=\"mavid-sec-google-map\" title=\"Chuyển đến phần Google Map\">Google Map</h3>"
+            "title" : "<p data-scroll=\"mavid-sec-google-map\" title=\"Chuyển đến phần Google Map\">Google Map</p>"
         }
     ]
 }

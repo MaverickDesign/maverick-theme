@@ -19,6 +19,13 @@
     align-items: center;
 }
 
+@mixin mav-flex-center-all {
+    display: flex;
+    // flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Grids */
 
 .mav-grid {
@@ -210,45 +217,4 @@
 
 .mav-sec-title-wrapper {
     margin-bottom: var(--mav-gutter-lg);
-}
-
-/**
- * Footer Social
- */
-.mav-footer-socials-wrapper {
-    color: initial;
-    background: var(--mav-color-off-white);
-    padding: var(--mav-gutter-sm) 0;
-    .mav-footer-socials-ctn {
-        @extend %mav-flex-column;
-        align-items: center;
-        font-size: 1.25rem;
-        span {
-            text-align: center;
-        }
-        .mav-social-links {
-            display: grid;
-            grid-gap: var(--mav-gutter-sm);
-            grid-template-columns: repeat(auto-fit,70px);
-            justify-content: center;
-            width: 100%;
-            margin-top: var(--mav-gutter);
-            .mav-social-icon {
-                justify-self: center;
-                @extend .mav-flex-center-all;
-                width: 60px;
-                height: 60px;
-                padding: var(--mav-gutter-sm);
-                border: 2px solid var(--mav-color-accent);
-                @extend %mav-transition;
-                &:hover {
-                    border-radius: 50%;
-                    @extend %mav-hyperlink-obj-accent;
-                }
-            }
-            @media #{$mav-phone} {
-                grid-template-columns: repeat(auto-fit,minmax(15%,20%));
-            }
-        }
-    }
 }

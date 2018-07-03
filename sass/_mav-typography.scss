@@ -3,6 +3,11 @@
     font-weight: 900;
 }
 
+@mixin mav-font-awesome {
+    font-family: $font-awesome;
+    font-weight: 900;
+}
+
 %mav-font-awesome-line {
     font-family: $font-awesome;
 }
@@ -26,6 +31,7 @@ body {
     font-family: $font-roboto;
     font-size: var(--mav-font-size);
     line-height: 1.5;
+    color: var(--mav-color-text-secondary);
 }
 
 @each $mavSuffix, $mavSize in (xs: .75, sm: .8, lg: 1.2, xl: 1.25) {
@@ -42,7 +48,7 @@ strong {
     font-weight: 600;
 }
 
-%mav-hyperlink {
+%mav-link {
     &-obj {
         background: $mav-color-brand-primary;
         @include text-contrast($mav-color-brand-primary);
@@ -67,6 +73,7 @@ strong {
  */
 
 h1,h2,h3,h4,h5,h6 {
+    color: var(--mav-color-text-primary);
     a {
         color: inherit;
         text-decoration: none;

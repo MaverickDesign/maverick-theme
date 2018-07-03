@@ -1,5 +1,5 @@
 <?php
-/*
+/**
     @package mavericktheme
 */
 
@@ -26,7 +26,7 @@ function mavf_items_grid($mavArgs) {
 
     // Start ul element
     printf(
-        '<ul class="%1$s" style="grid-template-columns: repeat(%2$s,1fr);">',
+        '<ul class="%1$s mav-mobile-ctn" style="grid-template-columns: repeat(%2$s,1fr);">',
         $mavUlClass, $mavColumns
     );
 

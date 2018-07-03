@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package mavericktheme
  */
 ?>
@@ -45,9 +45,18 @@
     </header>
     <section id="mavid-post-content" class="mav-post-content-wrapper<?php if (is_attachment()) {echo ' mav-post-attachment-wrapper';} ?>">
         <div class="mav-pg-ctn mav-post-content-ctn mav-post-content<?php if (is_attachment()) {echo ' mav-post-attachment-ctn';} ?>">
-            <?php the_content(); ?>
+            <?php
+                if (function_exists('mavf_post_content_modifier')) {
+                    mavf_post_content_modifier(THEME_DIR.'/template-parts/mav-patterns.json');
+                }
+                the_content();
+            ?>
         </div>
     </section>
+    <div class="fb-share-button"
+    data-href="<?php echo get_the_permalink(); ?>"
+    data-layout="button_count">
+    </div>
     <footer id="mavid-post-footer" class="mav-post-footer-wrapper mav-post-footer">
         <div class="mav-pg-ctn mav-post-footer-ctn">
             <?php if (has_tag()): ?>
@@ -74,9 +83,10 @@
         </div>
     </footer>
 </article>
+
 <?php
 /*
- * Related Articles
+ * Related articles
  */
 
 $categories = get_the_category();

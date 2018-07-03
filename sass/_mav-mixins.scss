@@ -13,3 +13,11 @@
         color: darken($n, 65%);
     }
 }
+
+@mixin mav-background-gradient($mavDirection,$mavColor) {
+    background: linear-gradient(to $mavDirection, $mavColor 0%,rgba(0,0,0,0) 100%);
+}
+
+@mixin mav-transition(){
+    transition: all .3s ease;
+}
