@@ -35,8 +35,8 @@
   --mav-color-site-background: #fafafa;
   --mav-color-site-header: #b31705;
   --mav-color-site-footer: var(--mav-color-accent);
-  --mav-color-header-menu-background: #b31705;
-  --mav-color-header-menu-background-hover: #05a1b3;
+  --mav-color-header-menu-background: var(--mav-color-primary);
+  --mav-color-header-menu-background-hover: var(--mav-color-accent);
   --mav-color-off-white: rgb(252,252,252);
   /**
    * Typography

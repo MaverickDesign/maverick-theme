@@ -50,20 +50,20 @@ strong {
 
 %mav-link {
     &-obj {
-        background: $mav-color-brand-primary;
-        @include text-contrast($mav-color-brand-primary);
+        background: var(--mav-color-primary);
+        @include text-contrast($mav-color-primary);
         &-accent {
-            background: $mav-color-brand-accent;
-            @include text-contrast($mav-color-brand-accent);
+            background: var(--mav-color-accent);
+            @include text-contrast($mav-color-accent);
         }
         &-bg {
-            background: $mav-color-background;
+            background: var(--mav-color-background);
         }
     }
     &-text {
         text-decoration: none;
         &-accent {
-            color: $mav-color-brand-accent;
+            color: var(--mav-color-accent);
         }
     }
 }
@@ -162,7 +162,7 @@ ul {
 
 .mav-sec-title {
     padding: 0 var(--mav-gutter) var(--mav-gutter-sm) var(--mav-gutter);
-    box-shadow: inset 0 -3px $mav-color-brand-primary;
+    box-shadow: inset 0 -3px var(--mav-color-primary);
 
     border-radius: var(--mav-gutter-sm);
     border: 1px solid transparent;
@@ -207,7 +207,7 @@ ul {
             @extend %mav-font-awesome;
             content: '\f0c1';
             margin-right: .25em;
-            color: $mav-color-brand-accent;
+            color: var(--mav-color-accent);
         }
     }
 }

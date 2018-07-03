@@ -87,8 +87,8 @@ table {
   --mav-color-site-background: #fafafa;
   --mav-color-site-header: #b31705;
   --mav-color-site-footer: var(--mav-color-accent);
-  --mav-color-header-menu-background: #b31705;
-  --mav-color-header-menu-background-hover: #05a1b3;
+  --mav-color-header-menu-background: var(--mav-color-primary);
+  --mav-color-header-menu-background-hover: var(--mav-color-accent);
   --mav-color-off-white: rgb(252,252,252);
   /**
    * Typography
@@ -179,12 +179,12 @@ strong {
   font-weight: 600; }
 
   .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon:hover {
-    background: #05a1b3;
+    background: var(--mav-color-accent);
     color: white; }
 .mav-breadcrumbs a:hover {
   text-decoration: none; }
   .mav-header-socials-wrapper .mav-header-socials-ctn .mav-social-links li a:hover {
-    color: #05a1b3; }
+    color: var(--mav-color-accent); }
 
 /*
  * Headings
@@ -246,7 +246,7 @@ ul li ul li {
 
 .mav-sec-title {
   padding: 0 var(--mav-gutter) var(--mav-gutter-sm) var(--mav-gutter);
-  box-shadow: inset 0 -3px #b31705;
+  box-shadow: inset 0 -3px var(--mav-color-primary);
   border-radius: var(--mav-gutter-sm);
   border: 1px solid transparent;
   font-weight: 300;
@@ -281,7 +281,7 @@ ul li ul li {
   .mav-link[data-link="external"]:before {
     content: '\f0c1';
     margin-right: .25em;
-    color: #05a1b3; }
+    color: var(--mav-color-accent); }
 
 .mav-footer-socials-wrapper .mav-footer-socials-ctn, .mav-header-menu-ctn ul, .mav-header-menu-ctn ul li, .mav-header-menu-ctn ul li ul.mav-sub-menu li, .mav-footer-menu ul, .mav-flex-column, .mav-site-sidebar-ctn .widget_archive ul, .mav-header-menu-ctn ul li ul.mav-sub-menu, .mav-footer-menu ul li ul {
   display: flex;

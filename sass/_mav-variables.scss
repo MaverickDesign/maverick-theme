@@ -138,8 +138,8 @@ $mav-color-background: #fafafa;
     //  Footer background
      --mav-color-site-footer        : var(--mav-color-accent);
 
-     --mav-color-header-menu-background         : #{$mav-color-header-menu-background};
-     --mav-color-header-menu-background-hover   : #{$mav-color-header-menu-background-hover};
+     --mav-color-header-menu-background         : var(--mav-color-primary);
+     --mav-color-header-menu-background-hover   : var(--mav-color-accent);
 
      --mav-color-off-white          : rgb(252,252,252);
 
