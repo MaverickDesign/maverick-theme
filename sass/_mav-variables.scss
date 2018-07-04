@@ -1,3 +1,11 @@
+/**
+ * Color code
+ */
+
+$mavGray25: #404040;
+$mavGray50: #7f7f7f;
+$mavGray75: #bfbfbf ;
+
 $mavNameSpace: 'mav';
 
 $mav-layer-top:          1000;
@@ -139,9 +147,12 @@ $mav-color-background: #fafafa;
      --mav-color-site-footer        : var(--mav-color-accent);
 
      --mav-color-header-menu-background         : var(--mav-color-primary);
-     --mav-color-header-menu-background-hover   : var(--mav-color-accent);
+    //  --mav-color-header-menu-background-hover   : var(--mav-color-accent);
+     --mav-color-header-menu-background-hover   : #{$mavGray25};
 
-     --mav-color-off-white          : rgb(252,252,252);
+     --mav-color-border: #{$mav-color-border};
+
+     --mav-color-off-white          : WhiteSmoke;
 
     /**
      * Typography

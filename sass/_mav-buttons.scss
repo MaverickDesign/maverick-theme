@@ -35,7 +35,6 @@ button {
     &:hover {
         @include text-contrast($mav-color-primary);
         background: var(--mav-color-primary);
-        border-radius: 6px;
     }
 }
 
@@ -44,7 +43,6 @@ button {
     @include text-contrast($mav-color-primary);
     background: var(--mav-color-primary);
     &:hover {
-        border-radius: 8px;
         background: transparent;
         color: var(--mav-color-text-primary);
     }

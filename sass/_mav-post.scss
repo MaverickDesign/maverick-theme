@@ -58,8 +58,8 @@
 
     footer {
         padding: var(--mav-gutter-lg) 0;
-        background: $mav-color-brand-accent;
-        color: $mav-color-text-secondary-dark;
+        background: var(--mav-color-accent);
+        color: var(--mav-color-text-secondary-dark);
         .mav-post-footer-ctn {
             display: grid;
             grid-gap: var(--mav-gutter);
@@ -75,16 +75,16 @@
             flex-direction: column;
         }
         a {
-            color: $mav-color-text-primary-dark;
+            color: var(--mav-color-text-primary-dark);
             font-weight: 400;
             text-decoration: none;
             padding: var(--mav-gutter-sm);
-            border: 1px solid $mav-color-border;
+            border: 1px solid var(--mav-color-border);
             border-radius: 4px;
             @extend %mav-transition;
             &:hover {
-                background: $mav-color-brand-primary;
-                border-color: $mav-color-brand-primary;
+                background: var(--mav-color-primary);
+                border-color: var(--mav-color-primary);
             }
             &:before, &:after {
                 @extend %mav-font-awesome;
@@ -123,14 +123,14 @@
         margin-right: var(--mav-gutter-sm);
         margin-bottom: var(--mav-gutter-sm);
         padding: var(--mav-gutter-sm);
-        border: 1px solid $mav-color-border;
+        border: 1px solid var(--mav-color-border);
         border-radius: 4px;
         @extend %mav-transition;
         &:hover {
-            background: map-get($mav-color, 'primary' );
-            border-color: map-get($mav-color, 'primary' );
+            background: var(--mav-color-primary);
+            border-color: var(--mav-color-primary);
             a {
-                @include text-contrast(map-get($mav-color, 'primary' ));
+                @include text-contrast($mav-color-primary);
             }
         }
         &:last-child {
@@ -142,7 +142,7 @@
         text-transform: lowercase;
         line-height: .5;
         text-decoration: none;
-        color: $mav-color-text-primary-dark;
+        color: var(--mav-color-text-primary-dark);
         &:before {
             content: '\f292';
             @extend %mav-font-awesome;
@@ -159,7 +159,7 @@
         @extend %mav-font-awesome;
         margin-right: .5em;
         font-size: inherit;
-        color: $mav-color-text-hint;
+        color: var(--mav-color-text-hint);
     }
     &[data-type="category"] {
         &:before {
@@ -192,23 +192,12 @@
     h1,h2,h3,h4,h5,h6 {
         margin-bottom: 1em;
     }
-    /*
+    /**
      * Body
      */
     p {
-        color: $mav-color-text-secondary;
-        margin-bottom: 1.5em;
-        /* Dropcap style */
-        // &:first-child {
-        //     &:first-letter{
-        //         float: left;
-        //         font-family: $font-roboto-slab;
-        //         font-size: 5rem;
-        //         line-height: 60px;
-        //         padding-top: var(--mav-gutter-xs);
-        //         padding-right: var(--mav-gutter-xs);
-        //     }
-        // }
+        color: var(--mav-color-text-secondary);
+        margin-bottom: 1em;
         &:last-child {
             margin-bottom: 0;
         }
@@ -217,7 +206,7 @@
             @extend .mav-flex-center-all;
         }
     }
-    /*
+    /**
      * Images
      */
     img {
@@ -239,8 +228,8 @@
         margin: var(--mav-gutter-lg) auto;
         column-span: all;
         max-width: 50vw;
-        background: rgba($mav-color-brand-accent,.1);
-        box-shadow: inset var(--mav-gutter-xs) 0 $mav-color-brand-accent;
+        background: var(--mav-color-site-background);
+        box-shadow: inset var(--mav-gutter-xs) 0 var(--mav-color-accent);
         @media #{$mav-phone} {
             max-width: 90vw;
         }
@@ -265,7 +254,7 @@
             &:before, &:after {
                 display: inline-block;
                 @extend %mav-font-awesome;
-                color: darken($mav-color-brand-accent,0%);
+                color: var(--mav-color-accent);
             }
             &:before {
                 content: '\f10d';
@@ -277,7 +266,7 @@
             }
         }
         span.mav-quote-author {
-            color: $mav-color-text-secondary;
+            color: var(--mav-color-text-secondary);
             font-weight: 400;
             white-space: nowrap;
         }
