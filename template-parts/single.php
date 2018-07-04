@@ -53,10 +53,6 @@
             ?>
         </div>
     </section>
-    <div class="fb-share-button"
-    data-href="<?php echo get_the_permalink(); ?>"
-    data-layout="button_count">
-    </div>
     <footer id="mavid-post-footer" class="mav-post-footer-wrapper mav-post-footer">
         <div class="mav-pg-ctn mav-post-footer-ctn">
             <?php if (has_tag()): ?>
@@ -64,22 +60,26 @@
                     <div class="mav-post-tags-ctn">
                         <?php
                         printf('<h4>%1$s</h4>',__('Thẻ liên kết','mavericktheme'));
-                        the_tags( '<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>' );
+                        the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
                         ?>
                     </div>
                 </div>
             <?php endif; ?>
-            <div class="mav-post-navigation-wrapper">
-                <div class="mav-post-navigation-ctn">
-                <?php
-                    printf('<h4>%1$s</h4>', __('Các bài viết khác','mavericktheme'));
-                    echo '<nav class="mav-post-navigation">';
-                        previous_post_link('%link', '%title');
-                        next_post_link('%link', '%title');
-                    echo '</nav>';
-                ?>
+            <?php
+                $mavCountPost = wp_count_posts();
+                if ($mavCountPost->publish > 1): ?>
+                <div class="mav-post-navigation-wrapper">
+                    <div class="mav-post-navigation-ctn">
+                    <?php
+                        printf('<h4>%1$s</h4>', __('Các bài viết khác','mavericktheme'));
+                        echo '<nav class="mav-post-navigation">';
+                            previous_post_link('%link', '%title');
+                            next_post_link('%link', '%title');
+                        echo '</nav>';
+                    ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </footer>
 </article>

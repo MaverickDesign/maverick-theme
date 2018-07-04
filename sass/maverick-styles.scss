@@ -52,10 +52,3 @@
 @import "mav-navigation-menus";
 
 @import "mav-misc";
-
-img {
-    @extend %mav-transition;
-    &:hover {
-        transform: scale(1.025);
-    }
-}
