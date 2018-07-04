@@ -3,22 +3,36 @@
     @package mavericktheme
 */
 
-define( "THEME_DIR", get_template_directory_uri() );
+// Use for HTML sources
 // Eg: http://localhost/maverick.vn/wp-content/themes/maverick-theme
-define( "TEMPLATE_DIR", get_template_directory() );
+define( "THEME_DIR", get_template_directory_uri() );
+// Use for PHP sources
 // Eg: D:\_Projects\www\maverick.vn/wp-content/themes/maverick-theme
+define( "TEMPLATE_DIR", get_template_directory() );
 
 /* Remove Generator Meta Tag */
 remove_action( 'wp_head', 'wp_generator' );
 
-/*
+/**
  * Vendors
  */
 if (file_exists(TEMPLATE_DIR . '/vendor/Mobile_Detect.php')) {
     require_once TEMPLATE_DIR . '/vendor/Mobile_Detect.php';
+    function mavf_mobile_detect(){
+        $mavDeviceDetect = new Mobile_Detect;
+        $mavDevice = 'desktop';
+
+        if ( $mavDeviceDetect->isMobile() ) {
+            $mavDevice = 'mobile';
+        }
+        if ( $mavDeviceDetect->isTablet() ) {
+            $mavDevice = 'tablet';
+        }
+        return $mavDevice;
+    }
 }
 
-/*
+/**
  * Admin
  */
 

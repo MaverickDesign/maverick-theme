@@ -92,26 +92,6 @@ function mavf_register_sidebars() {
 
 add_action( 'widgets_init', 'mavf_register_sidebars' );
 
-// function mavf_mobile_detect() {
-// 	global $mavMobileDetect;
-// 	$mavMobileDetect = new Mobile_Detect;
-// }
-
-// add_action('after_setup_theme' , 'mavf_mobile_detect');
-
-function mavf_mobile_detect(){
-    $mavDeviceDetect = new Mobile_Detect;
-    $mavDevice = 'desktop';
-
-    if ( $mavDeviceDetect->isMobile() ) {
-        $mavDevice = 'mobile';
-    }
-    if ( $mavDeviceDetect->isTablet() ) {
-        $mavDevice = 'tablet';
-    }
-    return $mavDevice;
-}
-
 /**
  * Test local SMTP Mail Server
  * Note: Remove this function in production site
