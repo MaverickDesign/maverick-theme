@@ -75,10 +75,8 @@ button {
 }
 
 .mav-btn-top, .mav-btn-back {
-    position: fixed;
     width: 40px;
     height: 40px;
-    right: 20px;
     @extend .mav-flex-center-all;
     background: var(--mav-color-accent);
     animation: mav-brand-color-transition 5s infinite;
@@ -86,9 +84,6 @@ button {
     opacity: 0;
     z-index: $mav-layer-top;
     @extend %mav-transition;
-    @media #{$mav-desktop} {
-        bottom: 20%;
-    }
     &:before {
         @extend %mav-font-awesome;
         content: '\f0aa';
@@ -106,15 +101,10 @@ button {
 
 .mav-btn-top {
     visibility: hidden;
-    bottom: 15%;
-    @media #{$mav-phone} {
-        bottom: 17.5%;
-    }
 }
 
 .mav-btn-back {
     opacity: 1;
-    bottom: 10%;
     animation: mav-brand-color-transition-reversed 5s infinite;
     &:before {
         content: '\f0a8';

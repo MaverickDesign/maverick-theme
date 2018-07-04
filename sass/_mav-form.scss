@@ -11,21 +11,25 @@ form {
     }
 }
 
-.mav-site-search-ctn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+/**
+ * Site search form
+ */
 
 .mav-site-search-wrapper {
     height: auto;
     max-height: 0;
     overflow: hidden;
-    background: $mav-color-brand-accent;
+    background: var(--mav-color-accent);
     @extend %mav-transition;
     @media #{$mav-mobile} {
-        background: darken($mav-color-brand-accent,5%);
+        background: var(--mav-color-primary);
     }
+}
+
+.mav-site-search-ctn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .mav-collapse {

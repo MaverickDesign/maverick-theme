@@ -1,8 +1,8 @@
 'use strict';
 
-/*
+/**
  * Sticky Logo
- **/
+ */
 
 (function(){
     const mavStickyLogo = document.querySelector('.mav-sticky-logo');
@@ -18,7 +18,6 @@
     mavStickyLogoImg.setAttribute('height',mavHeaderSection.offsetHeight+'px');
 
     addMultipleListeners(window,['scroll','resize'],function(){
-        console.log('mavHeaderSection: ', mavHeaderSection.offsetHeight);
         if (mavHeaderSection.offsetTop > 80) {
             mavStickyLogo.classList.add('show-logo');
         } else {
@@ -38,9 +37,9 @@
     });
 })();
 
-/*
+/**
  * Tool Tip
- **/
+ */
 
 let mavToolTips = document.querySelectorAll('[data-tooltip]');
 
@@ -96,9 +95,9 @@ if (mavToolTips.length > 0) {
     }
 }
 
-/*
+/**
  * Hide Empty Paginate Links
- **/
+ */
 
 (function mavHideEmptyPaginate(){
     let mavPaginateLinks = document.getElementById('mavid-paginate-links');
@@ -109,7 +108,13 @@ if (mavToolTips.length > 0) {
     }
 })();
 
-/*
+(function mavf_create_bottom_container(){
+    const mavBottomContainer = document.createElement('div');
+    mavBottomContainer.classList.add('mav-bottom-container');
+    document.body.appendChild(mavBottomContainer);
+})();
+
+/**
  * Scroll to Top button
  * Args:
  * mavEle: Element to create
@@ -121,7 +126,11 @@ function mavf_btn_scroll_to_top(mavEle = 'span', mavClass = 'mav-btn-top', mavTi
     let mavElement = document.createElement(mavEle);
     mavElement.classList.add(mavClass);
     mavElement.setAttribute('title',mavTitle);
-    document.body.appendChild(mavElement);
+    const mavContainer = document.querySelector('.mav-bottom-container');
+    if (mavContainer === undefined) {
+        return;
+    }
+    mavContainer.appendChild(mavElement);
 
     const mavButtonTop = document.querySelector('.'+mavClass);
 
@@ -155,7 +164,11 @@ function mavf_go_back_button(mavEle = 'span', mavClass = 'mav-btn-back', mavTitl
     const mavElement = document.createElement(mavEle);
     mavElement.classList.add(mavClass);
     mavElement.setAttribute('title',mavTitle);
-    document.body.appendChild(mavElement);
+    const mavContainer = document.querySelector('.mav-bottom-container');
+    if (mavContainer === undefined) {
+        return;
+    }
+    mavContainer.insertBefore(mavElement, mavContainer.childNodes[0]);
 
     const mavButtonBack = document.querySelector('.'+mavClass);
     mavButtonBack.addEventListener('click',function(){
@@ -167,20 +180,6 @@ if (typeof mavf_go_back_button === 'function') {
         mavf_go_back_button();
     }
 }
-
-(function mavf_smooth_scroll(){
-    const mavScrolls = document.querySelectorAll('[data-scroll]');
-    for (const mavScroll of mavScrolls){
-        mavScroll.addEventListener('click',function(){
-            const mavScrollTo = document.getElementById(this.dataset.scroll);
-            const mavBehavior = this.dataset.behavior ? this.dataset.behavior : 'smooth';
-            window.scrollTo({
-                top: mavScrollTo.offsetTop,
-                behavior: mavBehavior
-            });
-        });
-    }
-})();
 
 /**
  * Accordion
@@ -258,6 +257,30 @@ function mavf_remove_mobile_container(e){
     e.classList.remove('mav-mobile-ctn');
 }
 
+// (function mavf_smooth_scroll(){
+//     const mavScrolls = document.querySelectorAll('[data-scroll]');
+//     for (const mavScroll of mavScrolls){
+//         mavScroll.addEventListener('click',function(){
+//             const mavScrollTo = document.getElementById(this.dataset.scroll);
+//             const mavBehavior = this.dataset.behavior ? this.dataset.behavior : 'smooth';
+//             window.scrollTo({
+//                 top: mavScrollTo.offsetTop,
+//                 behavior: mavBehavior
+//             });
+//         });
+//     }
+// })();
+
+function mavf_smooth_scroll_2(e) {
+    const mavScrollTo = document.getElementById(e.dataset.scroll);
+    const mavBehavior = e.dataset.behavior ? e.dataset.behavior : 'smooth';
+    window.scrollTo({
+        top: mavScrollTo.offsetTop,
+        behavior: mavBehavior
+    });
+    return;
+}
+
 /**
  * Click events on body element
  */
@@ -282,6 +305,12 @@ function mavf_remove_mobile_container(e){
          */
         if (mavTarget.classList.contains('mav-mobile-ctn')){
             mavf_remove_mobile_container(mavTarget);
+        }
+        /**
+         * Smooth Scrolling
+         */
+        if (mavTarget.dataset.scroll != undefined ){
+            mavf_smooth_scroll_2(mavTarget);
         }
     })
 })();

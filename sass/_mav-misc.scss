@@ -244,3 +244,12 @@
         }
     }
 }
+
+.mav-bottom-container {
+    position: fixed;
+    display: grid;
+    grid-gap: var(--mav-gutter-xs);
+    bottom: 0;
+    right: 0;
+    padding: var(--mav-gutter);
+}

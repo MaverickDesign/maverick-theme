@@ -14,7 +14,9 @@ remove_action( 'wp_head', 'wp_generator' );
 /*
  * Vendors
  */
-require_once TEMPLATE_DIR . '/vendor/Mobile_Detect.php';
+if (file_exists(TEMPLATE_DIR . '/vendor/Mobile_Detect.php')) {
+    require_once TEMPLATE_DIR . '/vendor/Mobile_Detect.php';
+}
 
 /*
  * Admin

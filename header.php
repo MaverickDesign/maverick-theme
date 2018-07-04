@@ -3,12 +3,7 @@
  * @package mavericktheme
  */
 ?>
-<?php
-    $mavDevice = '';
-    if (function_exists('mavf_mobile_detect')) {
-        $mavDevice = mavf_mobile_detect();
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>">
 <head>
@@ -37,29 +32,37 @@
     <!-- End of Facebook Open Graph Data -->
 
     <?php
-    /*
-     * Google Analytics
-     */
-    $mavSavedValue = esc_attr( get_option('mav_setting_google_analytics_id') );
-    if (!empty($mavSavedValue)) : ?>
-        <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        /**
+         * Google Analytics
+         */
+        $mavGA = esc_attr( get_option('mav_setting_google_analytics_id') );
+        if (!empty($mavGA)) : ?>
+            <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', '<?php echo $mavSavedValue ?>', 'auto');
-        ga('send', 'pageview');
-        </script>
-    <?php endif; ?>
-
+            ga('create', '<?php echo $mavGA ?>', 'auto');
+            ga('send', 'pageview');
+            </script>
+        <?php endif; ?>
     <?php
-    /*
-     * Wordpress Heads
-     */
-    wp_head();
+        /**
+         * Wordpress Heads
+         */
+        wp_head();
     ?>
 </head>
+
+<?php
+    /* Detect device */
+    $mavDevice = '';
+    if (function_exists('mavf_mobile_detect')) {
+        $mavDevice = mavf_mobile_detect();
+    }
+?>
+
 <body data-device="<?php echo $mavDevice?>">
     <!-- Facebook Script -->
     <!-- <div id="fb-root"></div>
@@ -83,6 +86,7 @@
     <!-- End of Facebook Script -->
 
     <header id="mavid-page-header" class="mav-pg-header">
+        <!-- Site Search -->
         <section id="mavid-sec-site-search" class="mav-site-search-wrapper">
             <div class="mav-site-search-ctn">
                 <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
@@ -91,6 +95,7 @@
                 </form>
             </div>
         </section>
+        <!-- Header Logo -->
         <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
             <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','mavericktheme'); ?>"></button>
             <div id="mavid-site-logo" class="mav-site-logo-wrapper">
@@ -105,6 +110,7 @@
                     ?>
                 </a>
             </div>
+            <!-- Header Social Links -->
             <div class="mav-flex-row">
                 <div id="mavid-header-socials" class="mav-header-socials-wrapper">
                     <div class="mav-header-socials-ctn">
@@ -117,11 +123,12 @@
     </header>
 
     <?php
-    /*
-    * Header Menu
-    **/
+    /**
+     * Header Menu
+     */
     if (current_theme_supports('menus')): ?>
         <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
+            <!-- Sticky logo -->
             <div class="mav-site-width mav-sticky-logo-wrapper">
                 <div class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
                     <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','mavericktheme')?>" class="mav-sticky-logo">
@@ -136,6 +143,7 @@
                     </a>
                 </div>
             </div>
+            <!-- Header Menu -->
             <div class="mav-header-menu-wrapper">
                 <nav class="mav-header-menu-ctn">
                     <?php
@@ -164,7 +172,7 @@
     <?php endif; ?>
 
     <?php
-		/*
+		/**
 		 * Breadcrumb Section
 		 * Only show up when the device is not phone
 		 */

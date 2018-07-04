@@ -5,9 +5,6 @@
         @media #{$mav-desktop} {
             height: 60px;
         }
-        &:hover{
-            transform: scale(1)!important;
-        }
     }
 }
 
@@ -96,6 +93,7 @@
             transform: translateY(-50%);
             @extend %mav-transition;
             img {
+                padding: var(--mav-gutter-xs);
                 &:hover {
                     transform: scale(1)!important;
                 }
