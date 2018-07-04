@@ -10,7 +10,7 @@
 
 function mavf_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0') {
     printf(
-        'style="background: rgba(%2$s) url(%1$s/assets/maverick-logo-svg.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
+        'style="background: rgba(%2$s) url(%1$s/assets/brand-logo.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
         esc_url(get_template_directory_uri()),$logo_back, $logo_mark, $logo_typo
     );
 };

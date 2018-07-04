@@ -12,10 +12,10 @@
 	 viewBox="0 0 708 709" style="enable-background:new 0 0 708 708;" xml:space="preserve">
 
 <style type="text/css">
-	.mav-back { fill:rgba( <?php echo $mavBack; ?> ); }
+	.mav-back { fill: rgba( <?php echo $mavBack; ?> ); }
 	.mav-back-hollow { opacity: 0; }
-	.mav-mark { fill:rgba( <?php echo $mavMark; ?> ); }
-	.mav-typo { fill:rgba( <?php echo $mavTypo; ?> ); }
+	.mav-mark { fill: rgba( <?php echo $mavMark; ?> ); }
+	.mav-typo { fill: rgba( <?php echo $mavTypo; ?> ); }
 	.mav-text { opacity: 1; }
 </style>
 

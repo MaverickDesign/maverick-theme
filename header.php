@@ -100,7 +100,7 @@
                         if ($mavBrandLogo) {
                             echo "<img src=\"$mavBrandLogo;\">";
                         } else {
-                            echo '<img src="'.get_template_directory_uri().'/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
+                            echo '<img src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
                         }
                     ?>
                 </a>
@@ -130,7 +130,7 @@
                             if ($mavBrandLogo) {
                                 echo "<img id=\"mavid-sticky-logo\" src=\"$mavBrandLogo;\">";
                             } else {
-                                echo '<img id="mavid-sticky-logo" src="'.get_template_directory_uri().'/assets/maverick-logo-svg.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';
+                                echo '<img id="mavid-sticky-logo" src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';
                             }
                         ?>
                     </a>

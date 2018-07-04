@@ -59,7 +59,7 @@
                     if ($mavBrandLogo) {
                         echo "<img src=\"$mavBrandLogo;\" height=80px>";
                     } else {
-                        echo '<img src="'.get_template_directory_uri().'/assets/maverick-logo-svg.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,1" height=80px>';
+                        echo '<img src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,1" height=80px>';
                     }
                 ?>
             </a>
