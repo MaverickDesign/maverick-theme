@@ -2,6 +2,20 @@
 /**
  * @package mavericktheme
  */
+// header("Location: http://www.google.com/"); /* Redirect browser */
+
+/* Make sure that code below does not get executed when we redirect. */
+// exit;
+?>
+
+<?php
+    /* Detect device */
+    $mavDevice = '';
+    if (function_exists('mavf_mobile_detect')) {
+        $mavDevice = mavf_mobile_detect();
+    }
+    /* Site Width */
+    $mavSiteWidth = esc_attr( get_option('mav_setting_grid_system') );
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +34,6 @@
             }
         ?>
     </title>
-
     <!-- Facebook Open Graph Data -->
     <meta property="og:url"           content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
     <meta property="og:type"          content="website" />
@@ -46,44 +59,51 @@
             ga('create', '<?php echo $mavGA ?>', 'auto');
             ga('send', 'pageview');
             </script>
-        <?php endif; ?>
+        <?php endif;
+    ?>
     <?php
         /**
          * Wordpress Heads
          */
         wp_head();
     ?>
+    <style>
+        :root {
+            <?php
+                if (!empty($mavSiteWidth)) {
+                    echo '--mav-site-width: '.$mavSiteWidth.'px';
+                }
+            ?>
+        }
+    </style>
 </head>
 
-<?php
-    /* Detect device */
-    $mavDevice = '';
-    if (function_exists('mavf_mobile_detect')) {
-        $mavDevice = mavf_mobile_detect();
-    }
-?>
-
-<body data-device="<?php echo $mavDevice?>">
-    <!-- Facebook Script -->
-    <!-- <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-            appId      : '115651558903215',
-            xfbml      : true,
-            version    : 'v3.0'
-            });
-            FB.AppEvents.logPageView();
-        };
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script> -->
-    <!-- End of Facebook Script -->
+<body data-device="<?php echo $mavDevice; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
+    <?php
+        $mavFacebookAppID = esc_attr( get_option('mav_setting_facebook_app_id') );
+        if (!empty($mavFacebookAppID)): ?>
+            <!-- Facebook Script -->
+            <div id="fb-root"></div>
+            <script>
+                window.fbAsyncInit = function() {
+                    FB.init({
+                    appId      : '<?php echo $mavFacebookAppID; ?>,
+                    xfbml      : true,
+                    version    : 'v3.0'
+                    });
+                    FB.AppEvents.logPageView();
+                };
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <!-- End of Facebook Script -->
+        <?php endif;
+    ?>
 
     <header id="mavid-page-header" class="mav-pg-header">
         <!-- Site Search -->
@@ -123,60 +143,62 @@
     </header>
 
     <?php
-    /**
-     * Header Menu
-     */
-    if (current_theme_supports('menus')): ?>
-        <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
-            <!-- Sticky logo -->
-            <div class="mav-site-width mav-sticky-logo-wrapper">
-                <div class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
-                    <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','mavericktheme')?>" class="mav-sticky-logo">
-                        <?php
-                            $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
-                            if ($mavBrandLogo) {
-                                echo "<img id=\"mavid-sticky-logo\" src=\"$mavBrandLogo;\">";
-                            } else {
-                                echo '<img id="mavid-sticky-logo" src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';
-                            }
-                        ?>
-                    </a>
+        /**
+         * Header Menu
+         */
+
+        if (current_theme_supports('menus') && has_nav_menu( 'primary_menu')): ?>
+            <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
+                <!-- Sticky logo -->
+                <div class="mav-site-width mav-sticky-logo-wrapper">
+                    <div class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
+                        <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','mavericktheme')?>" class="mav-sticky-logo">
+                            <?php
+                                $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
+                                if ($mavBrandLogo) {
+                                    echo "<img id=\"mavid-sticky-logo\" src=\"$mavBrandLogo;\">";
+                                } else {
+                                    echo '<img id="mavid-sticky-logo" src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';
+                                }
+                            ?>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <!-- Header Menu -->
-            <div class="mav-header-menu-wrapper">
-                <nav class="mav-header-menu-ctn">
-                    <?php
-                    $mavMenuArgs = array(
-                        'theme_location' => 'primary_menu',
-                        'menu' => '',
-                        'container' => false,
-                        'container_class' => '',
-                        'container_id' => '',
-                        'menu_class' => '',
-                        'menu_id' => '',
-                        'echo' => true,
-                        'fallback_cb' => 'wp_page_menu',
-                        'before' => '',
-                        'after' => '',
-                        'link_before' => '',
-                        'link_after' => '',
-                        'items_wrap' => '<ul id="mavid-header-menu" class="mav-header-menu">%3$s</u>',
-                        'depth' => 0,
-                        'walker' => new Mav_Walker_Nav_Primary()
-                    );
-                    wp_nav_menu( $mavMenuArgs ); ?>
-                </nav>
-            </div>
-        </section>
-    <?php endif; ?>
+                <!-- Header Menu -->
+                <div class="mav-header-menu-wrapper">
+                    <nav class="mav-header-menu-ctn">
+                        <?php
+                        $mavMenuArgs = array(
+                            'theme_location' => 'primary_menu',
+                            'menu' => '',
+                            'container' => false,
+                            'container_class' => '',
+                            'container_id' => '',
+                            'menu_class' => '',
+                            'menu_id' => '',
+                            'echo' => true,
+                            'fallback_cb' => 'wp_page_menu',
+                            'before' => '',
+                            'after' => '',
+                            'link_before' => '',
+                            'link_after' => '',
+                            'items_wrap' => '<ul id="mavid-header-menu" class="mav-header-menu">%3$s</u>',
+                            'depth' => 0,
+                            'walker' => new Mav_Walker_Nav_Primary()
+                        );
+                        wp_nav_menu( $mavMenuArgs ); ?>
+                    </nav>
+                </div>
+            </section>
+        <?php endif;
+    ?>
 
     <?php
 		/**
 		 * Breadcrumb Section
 		 * Only show up when the device is not phone
 		 */
-        if (!is_front_page() && !is_home() && !is_attachment()): ?>
+        if (!is_front_page() && !is_home() && !is_attachment() && function_exists('mavf_breadcrumbs')): ?>
             <section id="mavid-site-breadcrumbs" class="mav-site-breadcrumbs-ctn mav-hide-on-mobile">
                 <?php mavf_breadcrumbs(); ?>
             </section>

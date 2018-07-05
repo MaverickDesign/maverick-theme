@@ -98,9 +98,10 @@ function mavf_theme_config_grid_system() {
 	$mavChecked960  = '';
 	$mavChecked1200 = '';
 	$mavChecked1440 = '';
+	$mavChecked1680 = '';
 
     if (empty($mavSavedValue)) {
-        $mavChecked1200 = 'checked';
+        $mavChecked1680 = 'checked';
     }
 
 	switch ($mavSavedValue) {
@@ -113,13 +114,17 @@ function mavf_theme_config_grid_system() {
 		case 1440:
 			$mavChecked1440 = 'checked';
 			break;
+		case 1680:
+			$mavChecked1680 = 'checked';
+			break;
 	}
 
 	echo '
 			<fieldset>
-				<label><input type="radio" name="mav_setting_grid_system" value="960" '.$mavChecked960.'/> 960px - 12 Columns</label><br />
-				<label><input type="radio" name="mav_setting_grid_system" value="1200" '.$mavChecked1200.'/>1200px  - 15 Columns</label><br />
-				<label><input type="radio" name="mav_setting_grid_system" value="1440" '.$mavChecked1440.'/>1440px - 18 Columns</label><br />
+				<label><input type="radio" name="mav_setting_grid_system" value="960" '.$mavChecked960.'/>960px</label><br />
+				<label><input type="radio" name="mav_setting_grid_system" value="1200" '.$mavChecked1200.'/>1200px</label><br />
+				<label><input type="radio" name="mav_setting_grid_system" value="1440" '.$mavChecked1440.'/>1440px</label><br />
+				<label><input type="radio" name="mav_setting_grid_system" value="1680" '.$mavChecked1680.'/>1680px</label><br />
 			</fieldset>
 		  ';
 } // mavf_theme_config_grid_system

@@ -1,13 +1,13 @@
 form {
     display: flex;
     input {
-        padding: var(--mav-padding-sm);
+        padding: var(--mav-gutter-sm);
     }
 }
 
 .mav-form {
     input {
-        box-shadow: inset 0 -2px $mav-color-brand-primary;
+        box-shadow: inset 0 -2px var(--mav-color-primary);
     }
 }
 

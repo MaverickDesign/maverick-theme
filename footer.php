@@ -4,7 +4,7 @@
  */
 ?>
         <footer id="mavid-page-footer" class="mav-pg-footer">
-            <?php if(function_exists('mavf_social_links')): ?>
+            <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
             <!-- Footer Socials -->
             <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
                 <div class="mav-pg-ctn mav-footer-socials-ctn">

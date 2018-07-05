@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package mavericktheme
  */
 
@@ -7,8 +7,8 @@ function mavf_admin_site_setting_options() {
 
     add_settings_section( 'mavsec_site_setting_brand', 'Brand', 'mavf_site_setting_brand', 'mav_admin_page_site_setting' );
 
-    /*
-     BRAND SETTINGS
+    /**
+     * Brand Settings
      */
 
     register_setting( 'mavog_site_setting', 'mav_setting_brand_logo' );
@@ -83,6 +83,13 @@ function mavf_admin_site_setting_options() {
     add_settings_section( 'mavsec_site_setting_hero_slider' , 'Hero Slider' , 'mavf_site_setting_hero_slider' , 'mav_admin_page_site_setting' );
     register_setting( 'mavog_site_setting' , 'mav_setting_hero_slider_id');
     add_settings_field( 'mavid_site_setting_hero_slider_id' , 'Default category ID' , 'mavf_site_setting_hero_slider_id' , 'mav_admin_page_site_setting', 'mavsec_site_setting_hero_slider' );
+
+    // Website maintenance mode
+    add_settings_section( 'mavsec_site_setting_maintenance' , 'Website Maintenance' , 'mavf_site_setting_sec_maintenance' , 'mav_admin_page_site_setting' );
+    register_setting( 'mavog_site_setting', 'mav_setting_maintenance' );
+    add_settings_field( 'mavid_site_setting_maintenance', 'Enable maintenance mode', 'mavf_site_setting_maintenance', 'mav_admin_page_site_setting', 'mavsec_site_setting_maintenance' );
+    add_settings_field( 'mavid_site_setting_maintenance_time', 'Maintenance time', 'mavf_site_setting_maintenance_time', 'mav_admin_page_site_setting', 'mavsec_site_setting_maintenance' );
+
 }
 
 add_action( 'admin_init' , 'mavf_admin_site_setting_options' );
@@ -246,4 +253,19 @@ function mavf_site_setting_hero_slider() {
 function mavf_site_setting_hero_slider_id() {
     $mavSavedValue = esc_attr( get_option('mav_setting_hero_slider_id') );
     printf( '<input type="text" name="mav_setting_hero_slider_id" value="%s" placeholder="Category ID"/>', $mavSavedValue );
+}
+
+function mavf_site_setting_sec_maintenance() {
+
+}
+
+function mavf_site_setting_maintenance() {
+    $mavSavedValue = esc_attr( get_option('mav_setting_maintenance') );
+	$mavChecked = ( @$mavSavedValue == 1 ? 'checked' : '');
+	echo '<label><input type="checkbox" id="mavid-maintenance" name="mav_setting_maintenance" value="1" '.$mavChecked.'/></label>';
+}
+
+function mavf_site_setting_maintenance_time(){
+    $mavSavedValue = esc_attr( get_option('mav_setting_maintenance_time') );
+    printf( '<input type="text" name="mav_setting_maintenance_time" value="%s" placeholder="dd/mm/yyyy"/>', $mavSavedValue );
 }

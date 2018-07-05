@@ -1,6 +1,8 @@
 <?php
 /**
  * @package mavericktheme
+ * Template Name: Maintenance Page
+ * Template Post Type: page
  */
 ?>
 
@@ -49,18 +51,18 @@
     </header>
 
     <main id="mavid-page-main-content">
-        <section class="mav-sec-theme-page mav-flex-center-all">
+        <section class="mav-flex-center-all">
             <?php
                 the_title('<h1>','</h1>');
             ?>
         </section>
-        <section class="mav-pg-ctn mav-sec-theme-page mav-text-center mav-post-content">
+        <section class="mav-pg-ctn mav-text-center mav-post-content">
             <?php
                 the_post();
                 the_content();
             ?>
         </section>
-        <?php if(function_exists('mavf_social_links')): ?>
+        <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
             <!-- Footer Socials -->
             <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
                 <div class="mav-pg-ctn mav-footer-socials-ctn">
@@ -72,8 +74,9 @@
                     ?>
                 </div>
             </section>
-        <?php endif; ?>
-        <section class="mav-sec-theme-page">
+            <?php endif;
+        ?>
+        <section>
             <div class="mav-pg-ctn">
                 <h3 class="mav-text-center"><?php _e('Thời gian dự kiến hoàn tất bảo trì trong','mavericktheme'); ?></h3>
                 <p class="mavjs-countdown mav-countdown-ctn mav-flex-center-all" data-expired="01/16/2019"></p>

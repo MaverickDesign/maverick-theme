@@ -9,6 +9,7 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
     $separator          = '<span class="fas fa-angle-right"></span>';
     $parents      		= '';
     $home_title         = $mav_home_title;
+    $prefix             = '';
 
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
