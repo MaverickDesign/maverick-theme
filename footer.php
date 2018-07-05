@@ -18,37 +18,41 @@
             </section>
             <?php endif; ?>
             <!-- Footer Menu -->
-            <section id="mavid-sec-footer-menu" class="mav-pg-ctn mav-footer-menu-wrapper mav-hide-on-mobile">
-                <div class="mav-footer-menu-ctn">
-                    <nav id="mavid-footer-menu" class="mav-footer-menu">
-                        <?php
-                            /**
-                            * Displays a navigation menu
-                            * @param array $args Arguments
-                            */
-                            $args = array(
-                                'theme_location' => 'secondary_menu',
-                                'menu' => '',
-                                'container' => false,
-                                'container_class' => '',
-                                'container_id' => '',
-                                'menu_class' => '',
-                                'menu_id' => '',
-                                'echo' => true,
-                                'fallback_cb' => 'wp_page_menu',
-                                'before' => '',
-                                'after' => '',
-                                'link_before' => '',
-                                'link_after' => '',
-                                'items_wrap' => '<ul>%3$s</ul>',
-                                'depth' => 0,
-                                'walker' => ''
-                            );
-                            wp_nav_menu( $args );
-                        ?>
-                    </nav>
-                </div>
-            </section>
+            <?php
+                if (current_theme_supports('menus') && has_nav_menu( 'secondary_menu')): ?>
+                    <section id="mavid-sec-footer-menu" class="mav-pg-ctn mav-footer-menu-wrapper mav-hide-on-mobile">
+                        <div class="mav-footer-menu-ctn">
+                            <nav id="mavid-footer-menu" class="mav-footer-menu">
+                                <?php
+                                    /**
+                                    * Displays a navigation menu
+                                    * @param array $args Arguments
+                                    */
+                                    $args = array(
+                                        'theme_location' => 'secondary_menu',
+                                        'menu' => '',
+                                        'container' => false,
+                                        'container_class' => '',
+                                        'container_id' => '',
+                                        'menu_class' => '',
+                                        'menu_id' => '',
+                                        'echo' => true,
+                                        'fallback_cb' => 'wp_page_menu',
+                                        'before' => '',
+                                        'after' => '',
+                                        'link_before' => '',
+                                        'link_after' => '',
+                                        'items_wrap' => '<ul>%3$s</ul>',
+                                        'depth' => 0,
+                                        'walker' => ''
+                                    );
+                                    wp_nav_menu( $args );
+                                ?>
+                            </nav>
+                        </div>
+                    </section>
+                <?php endif;
+            ?>
             <!-- Copyright section -->
             <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
                 <div class="mav-pg-ctn">
