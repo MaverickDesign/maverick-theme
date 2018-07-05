@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package mavericktheme
  * Template Name: Contact Page
  * Template Post Type: page

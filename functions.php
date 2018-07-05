@@ -1,6 +1,6 @@
 <?php
 /**
-    @package mavericktheme
+ * @package mavericktheme
 */
 
 // Use for HTML sources

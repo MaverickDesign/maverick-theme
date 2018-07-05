@@ -3,12 +3,7 @@
  * @package mavericktheme
  */
 ?>
-<?php
-    $mavDevice = '';
-    if (function_exists('mavf_mobile_detect')) {
-        $mavDevice = mavf_mobile_detect();
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>">
 <head>
@@ -26,31 +21,13 @@
         ?>
     </title>
     <?php
-    /*
-     * Google Analytics
-     */
-    $mavSavedValue = esc_attr( get_option('mav_setting_google_analytics_id') );
-    if (!empty($mavSavedValue)) : ?>
-        <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', '<?php echo $mavSavedValue ?>', 'auto');
-        ga('send', 'pageview');
-        </script>
-    <?php endif; ?>
-
-    <?php
         /**
          * Wordpress Heads
          */
         wp_head();
     ?>
 </head>
-<body data-device="<?php echo $mavDevice?>">
-
+<body>
     <header>
         <div class="mav-pg-ctn mav-flex-center-all">
             <a title="<?php bloginfo( 'name' ); ?>">
@@ -59,7 +36,12 @@
                     if ($mavBrandLogo) {
                         echo "<img src=\"$mavBrandLogo;\" height=80px>";
                     } else {
-                        echo '<img src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,1" height=80px>';
+                        if (is_child_theme()){
+                            $mavImgSrc = get_stylesheet_directory_uri();
+                        } else {
+                            $mavImgSrc = get_template_directory_uri();
+                        }
+                        echo '<img src="'.$mavImgSrc.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,1" height=80px>';
                     }
                 ?>
             </a>
