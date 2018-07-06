@@ -29,35 +29,6 @@
     }
 }
 
-.mav-social-links {
-    display: flex;
-    .mav-social-icon {
-        a {
-            text-decoration: none;
-        }
-    }
-}
-
-.mav-header-socials-wrapper {
-    display: none;
-    @media #{$mav-desktop} {
-        display: flex;
-        justify-self: end;
-    }
-    .mav-header-socials-ctn {
-        .mav-social-links {
-            li {
-                padding: 0 var(--mav-gutter-sm);
-                a {
-                    &:hover {
-                        @extend %mav-link-text-accent;
-                    }
-                }
-            }
-        }
-    }
-}
-
 /**
  * Header Menu
  */

@@ -31,10 +31,13 @@ function mavf_count_down_2(mavArgs = {
                 let mavDays     = Math.floor( mavRemain / (1000 * 60 * 60 * 24));
                 // Convert to Hour
                 let mavHours    = Math.floor((mavRemain % (1000 * 60 * 60 * 24))    / (1000 * 60 * 60));
+                mavHours = (mavHours < 10) ? '0'+mavHours : mavHours;
                 // Convert to Minutes
                 let mavMinutes  = Math.floor((mavRemain % (1000 * 60 * 60))         / (1000 * 60));
+                mavMinutes = (mavMinutes < 10) ? '0'+mavMinutes : mavMinutes;
                 // Convert to Seconds
                 let mavSeconds  = Math.floor((mavRemain % (1000 * 60))              / 1000);
+                mavSeconds = (mavSeconds < 10) ? '0'+mavSeconds : mavSeconds;
 
                 let mavOutput       = '';
 
@@ -46,7 +49,7 @@ function mavf_count_down_2(mavArgs = {
                             case 'd':
                                 let mavOutputDay    = `
                                     <span class="${mavArgs.style}" data-type="number">${mavDays}</span>
-                                    <span class="${mavArgs.style}" data-type="unit "data-unit="day">${mavArgs.units.d}</span>
+                                    <span class="${mavArgs.style}" data-type="unit" data-unit="day">${mavArgs.units.d}</span>
                                 `;
                                 mavOutput += mavOutputDay;
                             break;
@@ -55,7 +58,7 @@ function mavf_count_down_2(mavArgs = {
                             case 'h':
                                 let mavOutputHour    = `
                                     <span class="${mavArgs.style}" data-type="number">${mavHours}</span>
-                                    <span class="${mavArgs.style}" data-type="unit "data-unit="hour">${mavArgs.units.h}</span>
+                                    <span class="${mavArgs.style}" data-type="unit" data-unit="hour">${mavArgs.units.h}</span>
                                 `;
                                 mavOutput += mavOutputHour;
                             break;
@@ -64,7 +67,7 @@ function mavf_count_down_2(mavArgs = {
                             case 'm':
                                 let mavOutputMinute    = `
                                     <span class="${mavArgs.style}" data-type="number">${mavMinutes}</span>
-                                    <span class="${mavArgs.style}" data-type="unit "data-unit="minute">${mavArgs.units.m}</span>
+                                    <span class="${mavArgs.style}" data-type="unit" data-unit="minute">${mavArgs.units.m}</span>
                                 `;
                                 mavOutput += mavOutputMinute;
                             break;
@@ -73,7 +76,7 @@ function mavf_count_down_2(mavArgs = {
                             case 's':
                                 let mavOutputSecond    = `
                                     <span class="${mavArgs.style}" data-type="number">${mavSeconds}</span>
-                                    <span class="${mavArgs.style}" data-type="unit "data-unit="second">${mavArgs.units.s}</span>
+                                    <span class="${mavArgs.style}" data-type="unit" data-unit="second">${mavArgs.units.s}</span>
                                 `;
                                 mavOutput += mavOutputSecond;
                             break;

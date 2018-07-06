@@ -132,11 +132,14 @@
             </div>
             <!-- Header Social Links -->
             <div class="mav-flex-row">
-                <div id="mavid-header-socials" class="mav-header-socials-wrapper">
-                    <div class="mav-header-socials-ctn">
-                        <?php mavf_social_links(); ?>
+                <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
+                    <div id="mavid-header-socials" class="mav-header-socials-wrapper mav-margin-right">
+                        <div class="mav-header-socials-ctn">
+                            <?php mavf_social_links(); ?>
+                        </div>
                     </div>
-                </div>
+                    <?php endif;
+                ?>
                 <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','mavericktheme'); ?>"></button>
             </div>
         </section>

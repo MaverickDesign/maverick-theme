@@ -23,7 +23,7 @@
 
 .mav-message-box-wrapper {
     @include mav-flex-center-all;
-    margin: var(--mav-gutter) auto;
+    margin: var(--mav-gutter-sm) 0;
 }
 
 .mav-message-box-ctn {
@@ -31,15 +31,14 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: $mav-color-accent;
+    background: var(--mav-color-off-white);
+    box-shadow: inset 4px 0px var(--mav-color-accent);
     span {
-        padding: var(--mav-gutter-sm);
-        @include text-contrast($mav-color-brand-accent);
+        padding: var(--mav-gutter-sm) var(--mav-gutter);
+        color: var(--mav-color-text-primary);
         &.mav-btn-close {
-            margin-right: var(--mav-gutter-sm);
-            @extend %mav-transition;
             &:hover {
-                @extend %mav-hover-element;
+                color: var(--mav-color-accent);
             }
         }
     }
@@ -50,17 +49,21 @@
 }
 
 .mav-blog-sticky-post-wrapper {
-    display: grid;
-    grid-gap: var(--mav-gutter);
-    justify-content: center;
-    margin: var(--mav-gutter);
-
-    @media #{$mav-tablet} {
-        max-width: $mav-site-width;
-        grid-template-columns: repeat(1,1fr);
-    }
-    @media #{$mav-desktop} {
-        grid-template-columns: repeat(auto-fill,minmax(20%,33%));
+    background: var(--mav-color-off-white);
+    .mav-blog-sticky-post-ctn {
+        max-width: var(--mav-site-width);
+        display: grid;
+        grid-gap: var(--mav-gutter);
+        justify-content: center;
+        padding: var(--mav-gutter);
+        @media #{$mav-tablet} {
+            padding: var(--mav-gutter-lg);
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media #{$mav-desktop} {
+            margin: 0 auto var(--mav-gutter) auto;
+            grid-template-columns: repeat(3,1fr);
+        }
     }
 }
 
@@ -155,11 +158,16 @@
  */
 
 .mav-countdown-ctn {
-    @extend .mav-pg-ctn;
+    padding: var(--mav-gutter);
     .mav-countdown{
         text-align: center;
+        &[data-type="container"] {
+            @include mav-flex-center-all;
+        }
         &[data-type="number"]{
             font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--mav-color-text-primary);
         }
         margin-right: var(--mav-gutter-xs);
     }
@@ -252,4 +260,35 @@
     bottom: 0;
     right: 0;
     padding: var(--mav-gutter);
+}
+
+/**
+ * Maintenance page styles
+ */
+.mav-page-maintenance {
+    display: grid;
+    grid-auto-rows: repeat(3,auto);
+    min-height: 100vh;
+    .mav-page-maintenance-section {
+        padding: var(--mav-gutter-lg) var(--mav-gutter);
+        text-align: center;
+    }
+    .mav-countdown {
+        @media #{$mav-desktop} {
+            @include mav-flex-center-all;
+        }
+        @media #{$mav-tablet} {
+            @include mav-flex-center-all;
+        }
+        &[data-type="number"] {
+            font-size: 2rem;
+            color: var(--mav-color-text-primary);
+        }
+        &[data-type="unit"] {
+            font-weight: 300;
+        }
+    }
+    footer {
+        align-self: end;
+    }
 }

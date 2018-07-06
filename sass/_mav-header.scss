@@ -1,0 +1,31 @@
+.mav-social-links {
+    display: flex;
+    .mav-social-icon {
+        font-size: 1rem;
+        color: var(--mav-color-text-primary);
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.mav-header-socials-wrapper {
+    display: none;
+    @media #{$mav-desktop} {
+        display: flex;
+        justify-self: end;
+    }
+    .mav-header-socials-ctn {
+        .mav-social-links {
+            li {
+                // padding: 0 var(--mav-gutter-sm);
+                margin-right: var(--mav-gutter);
+                a {
+                    &:hover {
+                        @extend %mav-link-text-accent;
+                    }
+                }
+            }
+        }
+    }
+}

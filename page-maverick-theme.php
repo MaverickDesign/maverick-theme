@@ -1,7 +1,7 @@
 <?php
 /**
-    @package mavericktheme
-*/
+ * @package mavericktheme
+ */
 ?>
 
 <?php get_header(); ?>
@@ -229,7 +229,7 @@
             </div>
         </header>
         <div class="mav-pg-ctn mav-margin-bottom-lg">
-            <h2 class="mavjs-countdown mav-countdown-ctn mav-flex-center-all" data-expired="01/16/2019"></h2>
+            <p class="mavjs-countdown mav-countdown-ctn mav-flex-center-all" data-expired="01/16/2019"></p>
         </div>
         <footer class="mav-flex-center-all">
             <?php

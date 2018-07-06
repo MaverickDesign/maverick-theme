@@ -23,12 +23,14 @@
         $mavStickyQuery = new WP_Query( $mavStickyArgs );
 
         if ($mavStickyQuery->have_posts()) {
-            echo '<section class="mav-margin-top-lg mav-blog-sticky-post-wrapper">';
-                while ($mavStickyQuery->have_posts()) {
-                    $mavStickyQuery->the_post();
-                    get_template_part( 'template-parts/content', get_post_format() );
-                }
-                wp_reset_postdata();
+            echo '<section class="mav-blog-sticky-post-wrapper">';
+                echo '<div class="mav-blog-sticky-post-ctn">';
+                    while ($mavStickyQuery->have_posts()) {
+                        $mavStickyQuery->the_post();
+                        get_template_part( 'template-parts/content', get_post_format() );
+                    }
+                    wp_reset_postdata();
+                echo '</div>';
             echo '</section>';
         }
     }

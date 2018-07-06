@@ -84,10 +84,13 @@ function mavf_admin_site_setting_options() {
     register_setting( 'mavog_site_setting' , 'mav_setting_hero_slider_id');
     add_settings_field( 'mavid_site_setting_hero_slider_id' , 'Default category ID' , 'mavf_site_setting_hero_slider_id' , 'mav_admin_page_site_setting', 'mavsec_site_setting_hero_slider' );
 
-    // Website maintenance mode
+    // Website maintenance section
     add_settings_section( 'mavsec_site_setting_maintenance' , 'Website Maintenance' , 'mavf_site_setting_sec_maintenance' , 'mav_admin_page_site_setting' );
+    // Eneable maintenance mode
     register_setting( 'mavog_site_setting', 'mav_setting_maintenance' );
     add_settings_field( 'mavid_site_setting_maintenance', 'Enable maintenance mode', 'mavf_site_setting_maintenance', 'mav_admin_page_site_setting', 'mavsec_site_setting_maintenance' );
+    // Maintenance time
+    register_setting( 'mavog_site_setting', 'mav_setting_maintenance_time' );
     add_settings_field( 'mavid_site_setting_maintenance_time', 'Maintenance time', 'mavf_site_setting_maintenance_time', 'mav_admin_page_site_setting', 'mavsec_site_setting_maintenance' );
 
 }
@@ -252,7 +255,7 @@ function mavf_site_setting_hero_slider() {
 
 function mavf_site_setting_hero_slider_id() {
     $mavSavedValue = esc_attr( get_option('mav_setting_hero_slider_id') );
-    printf( '<input type="text" name="mav_setting_hero_slider_id" value="%s" placeholder="Category ID"/>', $mavSavedValue );
+    printf( '<input type="text" name="mav_setting_hero_slider_id" value="%1$s" placeholder="Category ID"/>', $mavSavedValue );
 }
 
 function mavf_site_setting_sec_maintenance() {
@@ -267,5 +270,5 @@ function mavf_site_setting_maintenance() {
 
 function mavf_site_setting_maintenance_time(){
     $mavSavedValue = esc_attr( get_option('mav_setting_maintenance_time') );
-    printf( '<input type="text" name="mav_setting_maintenance_time" value="%s" placeholder="dd/mm/yyyy"/>', $mavSavedValue );
+    printf( '<input type="text" name="mav_setting_maintenance_time" value="%1$s" placeholder="dd/mm/yyyy"/>', $mavSavedValue );
 }

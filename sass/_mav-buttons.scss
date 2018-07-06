@@ -52,8 +52,6 @@ button {
     &-close {
         cursor: pointer;
         &:after {
-            // @extend %mav-font-awesome;
-            // content: '\f410';
             content: "×";
             font-size: 2rem;
         }

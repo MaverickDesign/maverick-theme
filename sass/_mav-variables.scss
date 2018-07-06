@@ -227,3 +227,7 @@ $mav-color-background: #fafafa;
 }
 
 $mav-color-gradient-brand: linear-gradient(to right, var(--mav-color-primary) 0%, var(--mav-color-accent) 100%);
+
+button {
+    cursor: pointer;
+}

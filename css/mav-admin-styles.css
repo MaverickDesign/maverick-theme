@@ -80,6 +80,9 @@
     background-color: var(--mav-color-primary); }
   100% {
     background-color: var(--mav-color-primary); } }
+button {
+  cursor: pointer; }
+
 .mav-admin-wrapper {
   padding-right: 20px; }
 
