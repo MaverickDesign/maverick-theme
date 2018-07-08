@@ -57,12 +57,13 @@
 
         if ($mavQuery->have_posts()) {
             printf('<section id="mavid-post-index" class="mav-post-index-wrapper">');
+                $mavColumns = (get_option('mav_setting_blog_page_columns')) ? esc_attr(get_option('mav_setting_blog_page_columns')) : '3';
                 /**
                  * Note: "mavjs-posts-container" class is for ajax function, do not remove
                  */
                 printf(
                     '<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
-                    esc_attr(get_option('mav_setting_blog_page_columns'))
+                    $mavColumns)
                 );
                     while ($mavQuery->have_posts()) {
                         $mavQuery->the_post();

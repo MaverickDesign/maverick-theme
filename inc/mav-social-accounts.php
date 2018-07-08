@@ -100,7 +100,7 @@ function mavf_check_social_accounts(){
 	global $youtubeAcc;
 	global $flickrAcc;
 
-	$mavSocialAccounts = [$facebookAcc, $googleplusAcc,$flickrAcc,$linkedinAcc,$instagramAcc,$youtubeAcc,$flickrAcc];
+	$mavSocialAccounts = [$facebookAcc,$googleplusAcc,$twitterAcc,$linkedinAcc,$instagramAcc,$youtubeAcc,$flickrAcc];
 
 	$mavHasAccounts = false;
 
