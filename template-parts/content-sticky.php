@@ -4,7 +4,7 @@
  */
 ?>
 <div class="mav-card-wrapper">
-    <article id="mavid-post-<?php the_ID(); ?>" <?php post_class('mav-card-post'); ?>>
+    <article id="mavid-post-<?php the_ID(); ?>" <?php post_class('mav-card-post sticky'); ?>>
         <!-- Post header -->
         <header class="mav-card-post-header" <?php if (function_exists('mavf_logo_bg')) { mavf_logo_bg('240,240,240,1','0,0,0,0.05','0,0,0,0'); };?>>
             <?php

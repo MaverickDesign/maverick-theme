@@ -39,9 +39,15 @@ form {
 
 .mav-site-search-icon {
     font-size: 1rem;
-    color: var(--mav-color-primary);
+    color: var(--mav-color-text-secondary-dark);
     &:hover {
-        @extend %mav-link-text-accent;
+        color: var(--mav-color-text-primary-dark);
+    }
+    @media #{$mav-desktop} {
+        color: var(--mav-color-text-secondary);
+        &:hover {
+            color: var(--mav-color-text-primary);
+        }
     }
 }
 

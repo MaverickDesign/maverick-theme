@@ -27,7 +27,7 @@
                 echo '<div class="mav-blog-sticky-post-ctn">';
                     while ($mavStickyQuery->have_posts()) {
                         $mavStickyQuery->the_post();
-                        get_template_part( 'template-parts/content', get_post_format() );
+                        get_template_part( 'template-parts/content-sticky', get_post_format() );
                     }
                     wp_reset_postdata();
                 echo '</div>';
@@ -49,7 +49,8 @@
             'post_type' => 'post',
             'post_status'   => 'publish',
             'post__not_in' => $mavStickyPosts,
-            'ignore_sticky_posts' => 1
+            'ignore_sticky_posts' => 1,
+            'paged' =>  get_query_var('paged')
         );
 
         $mavQuery = new WP_Query( $mavArgs );
@@ -59,11 +60,13 @@
                 /**
                  * Note: "mavjs-posts-container" class is for ajax function, do not remove
                  */
-                printf('<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">', esc_attr(get_option('mav_setting_blog_page_columns')));
+                printf(
+                    '<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
+                    esc_attr(get_option('mav_setting_blog_page_columns'))
+                );
                     while ($mavQuery->have_posts()) {
                         $mavQuery->the_post();
-                        // Get post template
-                        get_template_part( 'template-parts/content', get_post_format() );
+                        get_template_part('template-parts/content', get_post_format());
                     }
                         wp_reset_query();
                 echo '</div>';
@@ -96,7 +99,7 @@
             echo '</section>';
         }
 
-    /*
+    /**
      * Sidebar widgets
      */
     if ($mavSidebar) {

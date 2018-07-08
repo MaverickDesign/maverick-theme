@@ -2,7 +2,7 @@
  * Footer Social Links
  */
 
- .mav-footer-socials-wrapper {
+.mav-footer-socials-wrapper {
     color: initial;
     background: var(--mav-color-off-white);
     padding: var(--mav-gutter) 0;
@@ -34,6 +34,55 @@
             @media #{$mav-phone} {
                 display: flex;
                 justify-content: space-around;
+            }
+        }
+    }
+}
+
+/**
+ * Footer Menu
+ */
+ .mav-footer-menu-wrapper {
+    padding: var(--mav-gutter-lg) var(--mav-gutter);
+}
+.mav-footer-menu-ctn {
+}
+
+.mav-footer-menu {
+    ul { // lvl_1
+        display: flex;
+        margin-left: 0;
+        li {
+            margin-right: var(--mav-gutter);
+            list-style: none;
+            line-height: 2;
+            a {
+                font-weight: 600;
+                text-transform: uppercase;
+                color: var(--mav-color-text-secondary-dark);
+                text-decoration: none;
+                letter-spacing: 0.5px;
+                &:hover {
+                    color: var(--mav-color-text-primary-dark);
+                    box-shadow: 0 2px var(--mav-color-border);
+                }
+            }
+            ul { // lvl_2
+                @extend .mav-flex-column;
+                margin-top: var(--mav-gutter);
+                li {
+                    a {
+                        text-transform: unset;
+                        font-weight: initial;
+                    }
+                }
+                ul { // lvl_3
+                    margin: var(--mav-gutter-sm) 0 var(--mav-gutter) var(--mav-gutter);
+                    li {
+                        a {
+                        }
+                    }
+                }
             }
         }
     }

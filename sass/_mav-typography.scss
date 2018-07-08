@@ -187,9 +187,9 @@ ul {
         content: '';
         display: block;
         position: absolute;
-        background: lightgray;
+        background: var(--mav-color-highlight);
         width: 104%;
-        height: .3em;
+        height: .2em;
         bottom: 0;
         left: 0;
         transform: translateX(-2%);
@@ -197,17 +197,16 @@ ul {
         transition: all .1s;
     }
     &:hover {
+        color: var(--mav-color-text-primary);
         &:after {
             height: 100%;
-            background: rgba(lightgray,.75);
         }
     }
     &[data-link="external"] {
         &:before {
             @extend %mav-font-awesome;
             content: '\f0c1';
-            margin-right: .25em;
-            color: var(--mav-color-accent);
+            margin-right: var(--mav-gutter-xs);
         }
     }
 }
