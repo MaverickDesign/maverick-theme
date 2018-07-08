@@ -63,7 +63,7 @@
                  */
                 printf(
                     '<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
-                    $mavColumns)
+                    $mavColumns
                 );
                     while ($mavQuery->have_posts()) {
                         $mavQuery->the_post();
