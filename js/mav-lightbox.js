@@ -66,7 +66,6 @@ function mavf_lightbox(mavArgs = {
                 mavLightbox.classList.add('mav-hide');
                 mavLightbox.classList.remove('mav-lightbox-current');
 
-                // document.webkitExitFullscreen();
             }
 
             let i = 1;
@@ -75,7 +74,6 @@ function mavf_lightbox(mavArgs = {
                 let mavNumber = i++;
 
                 let mavImageUrl = mavGalleryItem.getAttribute('href');
-                // console.log(mavImageUrl);
 
                 // Check if target is image url
                 if (mavImageUrl.search(mavImagePattern) > 0) {
@@ -88,6 +86,10 @@ function mavf_lightbox(mavArgs = {
                     mavGalleryItem.setAttribute('data-url',mavImageUrl);
                     // Set item number
                     mavGalleryItem.setAttribute('data-number',mavNumber);
+                    // Add lightbox data attribute to item
+                    mavGalleryItem.setAttribute('data-lightbox-item','');
+
+                    mavGalleryItem.setAttribute('title','Click to enlarge');
 
                     // Remove href attribute
                     mavGalleryItem.removeAttribute('href');
@@ -150,9 +152,6 @@ function mavf_lightbox(mavArgs = {
             // Add current lightbox class
             mavLightbox.classList.add('mav-lightbox-current');
 
-            // Go fullscreen mode
-            // document.body.webkitRequestFullScreen();
-
             const mavLightboxImage = mavLightbox.querySelector('.mav-lightbox-image');
 
             mavLightboxImage.src = mavImageUrl;
@@ -213,7 +212,6 @@ if (typeof mavf_lightbox === 'function') {
         }
 
         document.addEventListener('keydown',function(event){
-            // console.log(event.which);
             switch (event.keyCode) {
                 // Left arrow key
                 case 37:

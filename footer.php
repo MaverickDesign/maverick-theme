@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 ?>
         <footer id="mavid-page-footer" class="mav-pg-footer">
@@ -10,7 +10,7 @@
                 <div class="mav-pg-ctn mav-footer-socials-ctn">
                     <?php
                         printf('<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                            get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','mavericktheme')
+                            get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','maverick-theme')
                         );
                         mavf_social_links();
                     ?>
@@ -57,9 +57,9 @@
             <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
                 <div class="mav-pg-ctn">
                     <div class="mav-font-sm mav-margin-bottom-sm">
-                        <?php _e('Bản quyền','mavericktheme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của','mavericktheme'); ?> <a href="<?php bloginfo( 'url' );?>" target="_blank"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.','mavericktheme'); ?>
+                        <?php _e('Bản quyền','maverick-theme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của','maverick-theme'); ?> <a href="<?php bloginfo( 'url' );?>" target="_blank"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.','maverick-theme'); ?>
                         </div>
-                    <div class="mav-font-sm"><?php _e('Website xây dựng bằng','mavericktheme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi','mavericktheme'); ?> <a href="http://www.maverick.vn" target="_blank"><strong>Maverick Design</strong></a>.</div>
+                    <div class="mav-font-sm"><?php _e('Website xây dựng bằng','maverick-theme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi','maverick-theme'); ?> <a href="http://www.maverick.vn" target="_blank"><strong>Maverick Design</strong></a>.</div>
                 </div>
             </section>
         </footer>

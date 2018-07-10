@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 ?>
 <?php get_header(); ?>
@@ -30,8 +30,8 @@
                 echo '<div id="mavid-paginate-links" class="mav-paginate-links-wrapper">';
                     echo '<div class="mav-paginate-links-ctn">';
                             $mavArgs = array(
-                                'prev_text'          => __('Trang trước','mavericktheme'),
-                                'next_text'          => __('Trang sau','mavericktheme'),
+                                'prev_text'          => __('Trang trước','maverick-theme'),
+                                'next_text'          => __('Trang sau','maverick-theme'),
                                 'before_page_number' => '',
                                 'after_page_number'  => ''
                             );

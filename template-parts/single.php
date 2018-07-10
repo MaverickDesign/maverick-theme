@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 ?>
 <article id="mavid-post-<?php the_ID(); ?>" class="mav-post">
@@ -20,18 +20,18 @@
                     printf(
                         '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
                         $mavSingleCat,
-                        __('Xem các bài chuyên mục','mavericktheme'),
+                        __('Xem các bài chuyên mục','maverick-theme'),
                         mavf_single_category()
                     );
                     printf('
                         <span class="mav-post-info" title="%2$s" data-type="date">%1$s</span>',
                         get_the_date(),
-                        __('Ngày đăng','mavericktheme')
+                        __('Ngày đăng','maverick-theme')
                     );
                     printf('
                         <span class="mav-post-info" title="%2$s" data-type="author">%1$s</span>',
                         get_the_author(),
-                        __('Tác giả','mavericktheme')
+                        __('Tác giả','maverick-theme')
                     );
                 ?>
                 </div>
@@ -59,7 +59,7 @@
                 <div class="mav-post-tags-wrapper">
                     <div class="mav-post-tags-ctn">
                         <?php
-                        printf('<h4>%1$s</h4>',__('Thẻ liên kết','mavericktheme'));
+                        printf('<h4>%1$s</h4>',__('Thẻ liên kết','maverick-theme'));
                         the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
                         ?>
                     </div>
@@ -71,7 +71,7 @@
                 <div class="mav-post-navigation-wrapper">
                     <div class="mav-post-navigation-ctn">
                     <?php
-                        printf('<h4>%1$s</h4>', __('Các bài viết khác','mavericktheme'));
+                        printf('<h4>%1$s</h4>', __('Các bài viết khác','maverick-theme'));
                         echo '<nav class="mav-post-navigation">';
                             previous_post_link('%link', '%title');
                             next_post_link('%link', '%title');
@@ -97,7 +97,7 @@ if ( !empty($categories) && $categories[0]->count > 2 ): ?>
             <h2 class="mav-sec-title">Cùng chuyên mục
             <?php
                 if (!empty($categories)) {
-                    printf(sprintf('<a href="%1$s" title="%3$s %2$s"><strong class="mav-no-break">%2$s</strong></a>', esc_url(get_category_link($categories[0]->term_id)), esc_html($categories[0]->name),__('Xem tất cả bài trong chuyên mục','mavericktheme')));
+                    printf(sprintf('<a href="%1$s" title="%3$s %2$s"><strong class="mav-no-break">%2$s</strong></a>', esc_url(get_category_link($categories[0]->term_id)), esc_html($categories[0]->name),__('Xem tất cả bài trong chuyên mục','maverick-theme')));
                 }
             ?>
             </h2>
@@ -124,8 +124,8 @@ if ( !empty($categories) && $categories[0]->count > 2 ): ?>
                 <a href="%1$s" class="mav-btn-primary" title="%3$s %2$s">%4$s</a>',
                 esc_url( get_category_link( $categories[0]->term_id ) ),
                 esc_html( $categories[0]->name ),
-                __('Xem tất cả bài trong chuyên mục','mavericktheme'),
-                __('Xem đầy đủ', 'mavericktheme')
+                __('Xem tất cả bài trong chuyên mục','maverick-theme'),
+                __('Xem đầy đủ', 'maverick-theme')
                 );
             ?>
         </div>

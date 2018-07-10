@@ -1,6 +1,6 @@
 <?php
 /*
- * @package mavericktheme
+ * @package maverick-theme
  */
 
 function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-breadcrumbs', $mav_home_title='') {
@@ -220,12 +220,12 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
         } else if ( is_search() ) {
 
             // Search results page
-            printf('<li class="item-current item-current-%1$s"><strong class="bread-current bread-current-%1$s" title="%2$s">%2$s %1$s</strong></li>', get_search_query(), __('Kết quả tìm kiếm: ','mavericktheme') );
+            printf('<li class="item-current item-current-%1$s"><strong class="bread-current bread-current-%1$s" title="%2$s">%2$s %1$s</strong></li>', get_search_query(), __('Kết quả tìm kiếm: ','maverick-theme') );
 
         } elseif ( is_404() ) {
 
             // 404 page
-            printf('<li>%1$s</li>',__('Không tìm thấy kết quả','mavericktheme'));
+            printf('<li>%1$s</li>',__('Không tìm thấy kết quả','maverick-theme'));
         }
 
         echo '</ul>';

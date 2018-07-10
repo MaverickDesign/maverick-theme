@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 ?>
 <?php get_header(); ?>
@@ -78,7 +78,7 @@
                      * Ajax load more posts
                      */
                     echo '<div class="mav-margin-top">';
-                    printf('<a class="mav-btn-primary mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</a>',admin_url('admin-ajax.php'),__('Xem thêm','mavericktheme'));
+                    printf('<a class="mav-btn-primary mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</a>',admin_url('admin-ajax.php'),__('Xem thêm','maverick-theme'));
                     echo '</div>';
                 } else {
                     /**
@@ -88,8 +88,8 @@
                         echo '<div class="mav-paginate-links-ctn">';
                                 $mavArgs = array(
                                     // 'prev_next'          => false,
-                                    'prev_text'          => __('Trang trước','mavericktheme'),
-                                    'next_text'          => __('Trang sau','mavericktheme'),
+                                    'prev_text'          => __('Trang trước','maverick-theme'),
+                                    'next_text'          => __('Trang sau','maverick-theme'),
                                     'before_page_number' => '',
                                     'after_page_number'  => ''
                                 );

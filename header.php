@@ -1,11 +1,7 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
-// header("Location: http://www.google.com/"); /* Redirect browser */
-
-/* Make sure that code below does not get executed when we redirect. */
-// exit;
 ?>
 
 <?php
@@ -14,8 +10,6 @@
     if (function_exists('mavf_mobile_detect')) {
         $mavDevice = mavf_mobile_detect();
     }
-    /* Site Width */
-    $mavSiteWidth = esc_attr( get_option('mav_setting_grid_system') );
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +64,8 @@
     <style>
         :root {
             <?php
+                /* Site Width */
+                $mavSiteWidth = esc_attr(get_option('mav_setting_grid_system'));
                 if (!empty($mavSiteWidth)) {
                     echo '--mav-site-width: '.$mavSiteWidth.'px';
                 }
@@ -110,16 +106,16 @@
         <section id="mavid-sec-site-search" class="mav-site-search-wrapper">
             <div class="mav-site-search-ctn">
                 <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-                    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( __('Nhập từ khóa cần tìm...','mavericktheme'), 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( __('Tìm theo từ khóa','mavericktheme'), 'label' ) ?>" class="mav-search-input"/>
-                    <button type="submit" title="<?php _e('Tìm kiếm','mavericktheme'); ?>" class="mav-btn-solid"><i class="fas fa-search"></i></button>
+                    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( __('Nhập từ khóa cần tìm...','maverick-theme'), 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( __('Tìm theo từ khóa','maverick-theme'), 'label' ) ?>" class="mav-search-input"/>
+                    <button type="submit" title="<?php _e('Tìm kiếm','maverick-theme'); ?>" class="mav-btn-solid"><i class="fas fa-search"></i></button>
                 </form>
             </div>
         </section>
         <!-- Header Logo -->
         <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
-            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','mavericktheme'); ?>"></button>
+            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','maverick-theme'); ?>"></button>
             <div id="mavid-site-logo" class="mav-site-logo-wrapper">
-                <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
+                <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','maverick-theme'); ?>" class="mav-site-logo-ctn">
                     <?php
                         $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
                         if ($mavBrandLogo) {
@@ -140,7 +136,7 @@
                     </div>
                     <?php endif;
                 ?>
-                <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','mavericktheme'); ?>"></button>
+                <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','maverick-theme'); ?>"></button>
             </div>
         </section>
     </header>
@@ -155,7 +151,7 @@
                 <!-- Sticky logo -->
                 <div class="mav-site-width mav-sticky-logo-wrapper">
                     <div class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
-                        <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','mavericktheme')?>" class="mav-sticky-logo">
+                        <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','maverick-theme')?>" class="mav-sticky-logo">
                             <?php
                                 $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
                                 if ($mavBrandLogo) {

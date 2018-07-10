@@ -1,4 +1,4 @@
-console.log(`Maverick's Count Down loaded.`);
+console.log(`Maverick's Countdown loaded.`);
 
 function mavf_count_down_2(mavArgs = {
     expired: '',
@@ -14,11 +14,11 @@ function mavf_count_down_2(mavArgs = {
     message: ''
 }){
     const mavCountDowns = document.querySelectorAll(mavArgs.class);
-    console.log('mavCountDowns: ', mavCountDowns);
+    // console.log('mavCountDowns: ', mavCountDowns);
     for (const mavCountDown of mavCountDowns){
         // Get expired date
         const mavExpired = mavArgs.expired != '' ? mavArgs.expired : mavCountDown.dataset.expired;
-        console.log('mavExpired: ', mavExpired);
+        // console.log('mavExpired: ', mavExpired);
 
         if (mavExpired != undefined) {
             const mavExpDate = new Date(mavExpired).getTime();

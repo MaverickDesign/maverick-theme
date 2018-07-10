@@ -1,0 +1,46 @@
+{
+    "accounts" : [
+        {
+            "option"    : "mav_setting_social_account_facebook",
+            "name"      : "Facebook",
+            "url"       : "http://www.facebook.com/",
+            "icon"      : "fab fa-facebook-f"
+        },
+        {
+            "option"    : "mav_setting_social_account_google_plus",
+            "name"      : "Google+",
+            "url"       : "https://plus.google.com/",
+            "icon"      : "fab fa-google-plus-g"
+        },
+        {
+            "option"    : "mav_setting_social_account_twitter",
+            "name"      : "Twitter",
+            "url"       : "http://www.twitter.com/",
+            "icon"      : "fab fa-twitter"
+        },
+        {
+            "option"    : "mav_setting_social_account_linkedin",
+            "name"      : "LinkedIn",
+            "url"       : "http://www.linkedin.com/in/",
+            "icon"      : "fab fa-linkedin-in"
+        },
+        {
+            "option"    : "mav_setting_social_account_instagram",
+            "name"      : "Instagram",
+            "url"       : "http://www.instagram.com/",
+            "icon"      : "fab fa-instagram"
+        },
+        {
+            "option"    : "mav_setting_social_account_youtube",
+            "name"      : "Youtube",
+            "url"       : "http://www.youtube.com/",
+            "icon"      : "fab fa-youtube"
+        },
+        {
+            "option"    : "mav_setting_social_account_flickr",
+            "name"      : "Flickr",
+            "url"       : "http://www.flickr.com/",
+            "icon"      : "fab fa-flickr"
+        }
+    ]
+}

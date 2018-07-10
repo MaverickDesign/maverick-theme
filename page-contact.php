@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  * Template Name: Contact Page
  * Template Post Type: page
  */

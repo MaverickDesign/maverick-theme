@@ -1,7 +1,7 @@
 <?php
 /**
-    @package mavericktheme
-*/
+ * @package maverick-theme
+ */
 
 function mavf_items_grid($mavArgs) {
 

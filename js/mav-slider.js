@@ -1,13 +1,13 @@
-/*
+/**
  * Maverick's Slider
  * Version: 1.0
- **/
+ */
 
 console.log('Maverick\'s Slider loaded.');
 
-/*
- * mavSliderId: ID of the container
- * mavSlideContainerClass : slider wrapper inside the container
+/**
+ * @args: mavSliderId - ID of the container
+ * @args: mavSlideContainerClass - slider wrapper inside the container
  */
 
 function mavf_slider(mavArgs = {
@@ -17,7 +17,7 @@ function mavf_slider(mavArgs = {
 
     const mavSliders = document.querySelectorAll('.mav-slider');
 
-    if (mavSliders) {
+    if (mavSliders != undefined) {
         for (const mavSlider of mavSliders){
 
             const mavTheSliderObj = mavSlider;
@@ -32,11 +32,11 @@ function mavf_slider(mavArgs = {
             let mavInterval             = mavTheSliderObj.dataset.interval   ? mavTheSliderObj.dataset.interval   : 4000;
             let mavSlideContainerClass  = mavArgs.mavSlideContainerClass     ? mavArgs.mavSlideContainerClass     : `mav-slider-type-${mavSliderType}-ctn`;
 
-            /*
-            * Slider Type 1
-            */
+            /**
+             * Slider Type 1
+             */
             if ( mavSliderType == 1 ) {
-                console.log('Slider type ' + mavSliderType + ' started.');
+                // console.log('Slider type ' + mavSliderType + ' started.');
 
                 //  Select all slides inside a container
                 const mavAllSlides = mavTheSliderObj.querySelectorAll('.mav-slide');
@@ -85,11 +85,11 @@ function mavf_slider(mavArgs = {
                 });
             }
 
-            /*
-            * Slider Type 2
-            */
+            /**
+             * Slider Type 2
+             */
             if ( mavSliderType == 2 ) {
-                console.log('Slider type ' + mavSliderType + ' - ID: ' + mavTheSliderId + ' started.');
+                // console.log('Slider type ' + mavSliderType + ' - ID: ' + mavTheSliderId + ' started.');
 
                 let mavSlideInputs = mavTheSliderObj.querySelectorAll('.mav-slide-input');
 
@@ -131,7 +131,7 @@ function mavf_slider(mavArgs = {
                         mavTheSliderObj.querySelector('#'+mavContainerId).classList.add('mav-active-slide');
                     })
                 });
-
+                // Select slider navs
                 mavSlideNavs = mavTheSliderObj.querySelectorAll('.mav-slide-nav');
                 mavSlideNavs.forEach(function(e){
                     e.addEventListener('click', function(navdot){
@@ -151,9 +151,9 @@ function mavf_slider(mavArgs = {
                     });
                 });
 
-                /*
-                * Start the Slider
-                */
+                /**
+                 * Start the Slider
+                 */
                 let mavStartSliderType2 = setInterval(mavf_Slider_Type_2, mavInterval);
 
                 function mavf_Slider_Type_2() {
@@ -166,26 +166,26 @@ function mavf_slider(mavArgs = {
                         mavCurrent++;
                     }
                 }
-                /*
-                * Pause and Resume Slider
-                */
+                /**
+                 * Pause and Resume Slider
+                 */
                 const mavSliderArea = mavTheSliderObj;
-
+                // Pause slider
                 mavSliderArea.addEventListener('mouseover', function(){
                     clearInterval(mavStartSliderType2);
                 });
-
+                // Resume slider
                 mavSliderArea.addEventListener('mouseleave', function(){
                     mavCurrent = Number(mavTheSliderObj.querySelector('.mav-current-slide').dataset.number);
                     mavStartSliderType2 = setInterval(mavf_Slider_Type_2, mavInterval);
                 });
             }
 
-            /*
-            * Slider Type 3
-            */
+            /**
+             * Slider Type 3
+             */
             if ( mavSliderType == 3 ) {
-                console.log('Slider type ' + mavSliderType + ' started.');
+                // console.log('Slider type ' + mavSliderType + ' started.');
                 // Important: Adjust the class to slide container
                 let mavSlideContainer = mavTheSliderObj.querySelector('.'+mavSlideContainerClass);
 
@@ -196,11 +196,11 @@ function mavf_slider(mavArgs = {
                     mavTemp = mavSlideContainer.removeChild(mavAllSlides[0]);
                     mavSlideContainer.appendChild(mavTemp);
                 }
-
+                // Pause slider
                 mavTheSliderObj.addEventListener('mouseover', function(){
                     clearInterval(mavSliderType3);
                 });
-
+                // Resume slider
                 mavTheSliderObj.addEventListener('mouseleave', function(){
                     mavSliderType3 = setInterval(mavf_Slide_Show, mavInterval);
                 });
@@ -209,7 +209,7 @@ function mavf_slider(mavArgs = {
     }
 }
 
-/*
+/**
  * Start Sliders
  */
 if (typeof mavf_slider === 'function') {

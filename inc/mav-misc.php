@@ -1,7 +1,7 @@
 <?php
 /**
-    @package mavericktheme
-*/
+ * @package maverick-theme
+ */
 
 /**
  * Maverick Logo Background
@@ -84,7 +84,7 @@ function mavf_message_box($mavMessage = 'Thông báo',$mavIcon = 'fa-exclamation
             );
             printf(
                 '<span class="mav-btn-close" title="%1$s"></span>',
-                __('Đóng thông báo','mavericktheme')
+                __('Đóng thông báo','maverick-theme')
             );
         echo '</div>';
     echo '</div>';

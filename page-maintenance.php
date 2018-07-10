@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  * Template Name: Maintenance Page
  * Template Post Type: page
  */
@@ -68,7 +68,7 @@
                 <div class="mav-footer-socials-ctn">
                     <?php
                         printf('<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                            get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','mavericktheme')
+                            get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','maverick-theme')
                         );
                         mavf_social_links();
                     ?>
@@ -81,7 +81,7 @@
             if (!empty($mavMaintenanceTime)): ?>
                 <!-- Maintenance time -->
                 <section id="mavid-sec-maintenance-time" class="mav-page-maintenance-section">
-                    <h3><?php _e('Thời gian dự kiến hoàn tất bảo trì trong','mavericktheme'); ?></h3>
+                    <h3><?php _e('Thời gian dự kiến hoàn tất bảo trì trong','maverick-theme'); ?></h3>
                     <p class="mavjs-countdown mav-countdown-ctn mav-flex-center-all" data-expired="<?php echo $mavMaintenanceTime; ?>"></p>
                 </section>
             <?php endif;
@@ -92,9 +92,9 @@
         <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper mav-flex-center-all">
             <div class="mav-pg-ctn">
                 <div class="mav-font-sm mav-margin-bottom-sm mav-text-center">
-                    <?php _e('Bản quyền','mavericktheme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của','mavericktheme'); ?> <a href="<?php bloginfo( 'url' );?>" target="_blank"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.','mavericktheme'); ?>
+                    <?php _e('Bản quyền','maverick-theme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của','maverick-theme'); ?> <a href="<?php bloginfo( 'url' );?>" target="_blank"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.','maverick-theme'); ?>
                     </div>
-                <div class="mav-font-sm mav-text-center"><?php _e('Website xây dựng bằng','mavericktheme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi','mavericktheme'); ?> <a href="http://www.maverick.vn" target="_blank"><strong>Maverick Design</strong></a>.</div>
+                <div class="mav-font-sm mav-text-center"><?php _e('Website xây dựng bằng','maverick-theme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi','maverick-theme'); ?> <a href="http://www.maverick.vn" target="_blank"><strong>Maverick Design</strong></a>.</div>
             </div>
         </section>
     </footer>

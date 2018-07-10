@@ -1,6 +1,6 @@
 <?php
 /*
- * @package mavericktheme
+ * @package maverick-theme
  */
 
 /*
@@ -26,13 +26,13 @@ if ( !empty($mavSavedValue) ) {
 	add_theme_support('post-formats' , $mavOutput );
 }
 
-/*
+/**
  * Theme Support - Feature Image
  */
 add_theme_support( 'post-thumbnails' );
 
-/*
- * Theme Support - Feature Image
+/**
+ * Theme Support - HTML5
  */
 add_theme_support( 'html5', array(
 	'comment-list',
@@ -42,7 +42,7 @@ add_theme_support( 'html5', array(
 	'caption'
 ) );
 
-/*
+/**
  * Theme Support - Custom Logo
  */
 add_theme_support( 'custom-logo' , array(
@@ -55,19 +55,19 @@ add_theme_support( 'custom-logo' , array(
 		'site-description' ),
 	) );
 
-/*
+/**
  * Theme Support - Navigation Menus
  */
 function mavf_register_nav_menus() {
 	register_nav_menu('primary_menu' , 		'Main menu');
 	register_nav_menu('secondary_menu' , 	'Secondary/Footer menu');
-	register_nav_menu('sticky_menu' , 		'Sticky menu');
-	register_nav_menu('side_menu' , 		'Side menu');
+	// register_nav_menu('sticky_menu' , 		'Sticky menu');
+	// register_nav_menu('side_menu' , 		'Side menu');
 }
 
 add_action('after_setup_theme' , 'mavf_register_nav_menus');
 
-/*
+/**
  * Theme Support - Sidebars
  */
 function mavf_register_sidebars() {
@@ -89,7 +89,6 @@ function mavf_register_sidebars() {
 
 		register_sidebar( $mavMainSidebar );
 }
-
 add_action( 'widgets_init', 'mavf_register_sidebars' );
 
 /**

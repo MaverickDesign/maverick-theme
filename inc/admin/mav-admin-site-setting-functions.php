@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 
 function mavf_admin_site_setting_options() {
@@ -44,29 +44,7 @@ function mavf_admin_site_setting_options() {
     */
     add_settings_section( 'mavsec_site_setting_social_account', 'Social Accounts', 'mavf_site_setting_social_account', 'mav_admin_page_site_setting' );
 
-    /* Facebook account */
-    register_setting( 'mavog_site_setting', 'mav_setting_social_account_facebook' );
-    add_settings_field( 'mavid_site_setting_social_account_facebook', 'Facebook', 'mavf_site_setting_social_account_facebook', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account' );
-
-    /* Google+ account */
-    register_setting( 'mavog_site_setting', 'mav_setting_social_account_google_plus' );
-    add_settings_field( 'mavid_site_setting_social_account_google_plus', 'Google+', 'mavf_site_setting_social_account_google_plus', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account' );
-
-    /* Twitter account */
-    register_setting( 'mavog_site_setting', 'mav_setting_social_account_twitter' );
-    add_settings_field( 'mavid_site_setting_social_account_twitter', 'Twitter', 'mavf_site_setting_social_account_twitter', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account' );
-
-    /* Youtube account */
-    register_setting( 'mavog_site_setting', 'mav_setting_social_account_youtube' );
-    add_settings_field( 'mavid_site_setting_social_account_youtube', 'Youtube', 'mavf_site_setting_social_account_youtube', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account' );
-
-    /* Linkedin account */
-    register_setting( 'mavog_site_setting', 'mav_setting_social_account_linkedin' );
-    add_settings_field( 'mavid_site_setting_social_account_linkedin', 'Linkedin', 'mavf_site_setting_social_account_linkedin', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account' );
-
-    /* Flickr account */
-    register_setting( 'mavog_site_setting', 'mav_setting_social_account_flickr' );
-    add_settings_field( 'mavid_site_setting_social_account_flickr', 'Flickr', 'mavf_site_setting_social_account_flickr', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account' );
+    require_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_social-accounts.php';
 
     /* Facebook App ID */
     add_settings_section( 'mavsec_site_setting_facebook_app', 'Facebook App', 'mavf_site_setting_facebook_app', 'mav_admin_page_site_setting' );
@@ -98,15 +76,15 @@ function mavf_admin_site_setting_options() {
 add_action( 'admin_init' , 'mavf_admin_site_setting_options' );
 
 function mavf_admin_page_site_setting() {
-    require_once get_template_directory() . '/inc/admin/mav-admin-site-setting.php';
+    require_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting.php';
 }
 
-/*
-    BRAND SETTING FUNCTIONS
-*/
+/**
+ * BRAND SETTING FUNCTIONS
+ */
 
 function mavf_site_setting_brand() {
-
+    _e('Enter brand info','maverick-theme');
 }
 
 function mavf_site_setting_brand_logo() {
@@ -169,7 +147,7 @@ function mavf_site_setting_brand_website() {
 */
 
 function mavf_site_setting_google_map() {
-
+    echo 'Enter Google Map settings';
 }
 
 function mavf_site_setting_google_map_uri() {
@@ -182,43 +160,14 @@ function mavf_site_setting_google_map_height() {
     printf( '<input type="text" name="mav_setting_goole_map_height" value="%s" placeholder="Map height in vw"/>', $mavSavedValue );
 }
 
-/*
-    SOCIAL ACCOUNT FUNCTIONS
-*/
+/**
+ * SOCIAL ACCOUNT FUNCTIONS
+ */
 
 function mavf_site_setting_social_account() {
-
+    echo 'Enter social accounts';
 }
 
-function mavf_site_setting_social_account_facebook() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_social_account_facebook') );
-    printf( '<input type="text" name="mav_setting_social_account_facebook" value="%s" placeholder="Facebook account"/>', $mavSavedValue );
-}
-
-function mavf_site_setting_social_account_google_plus() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_social_account_google_plus') );
-    printf( '<input type="text" name="mav_setting_social_account_google_plus" value="%s" placeholder="Google+ account"/>', $mavSavedValue );
-}
-
-function mavf_site_setting_social_account_twitter() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_social_account_twitter') );
-    printf( '<input type="text" name="mav_setting_social_account_twitter" value="%s" placeholder="Twitter account"/>', $mavSavedValue );
-}
-
-function mavf_site_setting_social_account_youtube() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_social_account_youtube') );
-    printf( '<input type="text" name="mav_setting_social_account_youtube" value="%s" placeholder="Youtube account"/>', $mavSavedValue );
-}
-
-function mavf_site_setting_social_account_linkedin() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_social_account_linkedin') );
-    printf( '<input type="text" name="mav_setting_social_account_linkedin" value="%s" placeholder="Linkedin account"/>', $mavSavedValue );
-}
-
-function mavf_site_setting_social_account_flickr() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_social_account_flickr') );
-    printf( '<input type="text" name="mav_setting_social_account_flickr" value="%s" placeholder="Flickr account"/>', $mavSavedValue );
-}
 
 /*
     FACEBOOK APP FUNCTIONS
@@ -245,8 +194,8 @@ function mavf_site_setting_google_analytics_id() {
     printf( '<input type="text" name="mav_setting_google_analytics_id" value="%s" placeholder="Google Analytics ID"/>', $mavSavedValue );
 }
 
-/*
- * HERO SLIDER
+/**
+ * Hero Slider Settings
  */
 
 function mavf_site_setting_hero_slider() {
@@ -258,8 +207,11 @@ function mavf_site_setting_hero_slider_id() {
     printf( '<input type="text" name="mav_setting_hero_slider_id" value="%1$s" placeholder="Category ID"/>', $mavSavedValue );
 }
 
+/**
+ * Website maintenance settings
+ */
 function mavf_site_setting_sec_maintenance() {
-
+    _e('Enter website maintenance setting','maverick-theme');
 }
 
 function mavf_site_setting_maintenance() {

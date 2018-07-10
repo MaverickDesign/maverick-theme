@@ -1,6 +1,6 @@
 <?php
 /*
-    @package mavericktheme
+    @package maverick-theme
 */
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * @package mavericktheme
+ * @package maverick-theme
  */
 
 class Mav_Walker_Nav_Primary extends Walker_Nav_Menu {

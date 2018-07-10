@@ -11,7 +11,7 @@ function mavf_carousel(mavArgs = {
     // If found
     if (mavCarousels.length > 0) {
         for (mavCarousel of mavCarousels) {
-            console.log(`Carousel ID ${mavCarousel.id} started.`);
+            // console.log(`Carousel ID ${mavCarousel.id} started.`);
 
             // Get carousel unique number
             const mavUnique = mavCarousel.dataset.unique;
@@ -238,11 +238,11 @@ function mavf_carousel(mavArgs = {
             }
         }
     } else {
-        console.log('No carousel found.');
+        return;
     }
 }
 
-/*
+/**
  * Start Carousels
  */
 if (typeof mavf_carousel === 'function') {

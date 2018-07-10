@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 
 // For normal users
@@ -27,9 +27,9 @@ function mavf_ajax_form() {
         $mavHeaders .= "Content-type: text/html; charset=iso=8859-1\n";
 
         if (wp_mail($mavTo, $mavSubject, $mavMessage, $mavHeaders)) {
-            mavf_message_box(__('Thông tin liên hệ đã được gửi. Cám ơn bạn đã liên lạc với chung tôi.','mavericktheme'));
+            mavf_message_box(__('Thông tin liên hệ đã được gửi. Cám ơn bạn đã liên lạc với chung tôi.','maverick-theme'));
         } else {
-            mavf_message_box(__('Xảy ra lỗi khi gửi thông tin liên hệ. Vui lòng thử lại.','mavericktheme'));
+            mavf_message_box(__('Xảy ra lỗi khi gửi thông tin liên hệ. Vui lòng thử lại.','maverick-theme'));
         }
     }
     die();

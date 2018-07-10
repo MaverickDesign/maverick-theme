@@ -1,6 +1,6 @@
 <?php
 /*
- * @package mavericktheme
+ * @package maverick-theme
  */
 
 function mavf_post_feature($mavArgs) {
@@ -46,7 +46,7 @@ function mavf_post_feature($mavArgs) {
                                         printf(sprintf('<div class="%1$s">',$mavClassTitleContainer));
                                             printf(sprintf('<h2 class="%1$s">%2$s</h2>',$mavClassTitle,get_the_title()));
                                             printf(sprintf('<div>%1$s</div>',get_the_excerpt()));
-                                            printf(sprintf('<a href="%1$s" class="%3$s" title="%2$s">%2$s</a>',get_the_permalink(),__('Xem chi tiết','mavericktheme'),$mavClassButton));
+                                            printf(sprintf('<a href="%1$s" class="%3$s" title="%2$s">%2$s</a>',get_the_permalink(),__('Xem chi tiết','maverick-theme'),$mavClassButton));
                                         printf('</div>');
                                     printf('</div>');
                                 printf('</div>');

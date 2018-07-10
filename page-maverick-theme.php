@@ -1,6 +1,6 @@
 <?php
 /**
- * @package mavericktheme
+ * @package maverick-theme
  */
 ?>
 
@@ -321,7 +321,7 @@
             </header>
             <div class="mav-sec-content">
                 <?php
-                    mavf_message_box(__('Xảy ra lỗi khi gửi thông tin liên hệ. Vui lòng thử lại.','mavericktheme'));
+                    mavf_message_box(__('Xảy ra lỗi khi gửi thông tin liên hệ. Vui lòng thử lại.','maverick-theme'));
                 ?>
             </div>
             <footer class="mav-flex-center-all">

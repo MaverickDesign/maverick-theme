@@ -1,6 +1,6 @@
 <?php
 /*
-    @package mavericktheme
+    @package maverick-theme
 */
 ?>
 <section id="mavid-site-sidebar" class="mav-site-sidebar-ctn mav-hide-on-mobile">

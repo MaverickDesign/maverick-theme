@@ -35,6 +35,7 @@
             position: relative;
             font-size: 1.5rem;
             color: $mav-color-text-primary-dark;
+            cursor: pointer;
             &:before, &:after {
                 @extend %mav-font-awesome;
                 color: $mav-color-text-secondary-dark;
@@ -114,6 +115,7 @@
              * Lightbox Thumbnail
              */
             .mav-lightbox-thumbnail {
+                cursor: pointer;
                 position: relative;
                 display: block;
                 width: 5vh;
@@ -130,6 +132,18 @@
                     transform: scale(1.1);
                 }
             }
+        }
+    }
+}
+
+[data-lightbox-item] {
+    cursor: pointer;
+    img {
+        @extend %mav-transition;
+    }
+    &:hover {
+        img {
+            transform: scale(1.025);
         }
     }
 }
