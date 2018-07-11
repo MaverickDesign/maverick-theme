@@ -1,0 +1,42 @@
+.mav-accordion-trigger {
+    cursor: pointer;
+    &[data-trigger-icon] {
+        &:after {
+            display: inline-block;
+            margin-left: var(--mav-gutter-sm);
+            @extend %mav-font-awesome;
+            content: '\f078';
+            @extend %mav-transition;
+        }
+    }
+    &[data-trigger-icon="2"] {
+        &:after {
+            content: '\f067';
+        }
+    }
+    &[data-state="close"] {
+        + .mav-accordion-ctn {
+            max-height: 0vh;
+        }
+    }
+    &[data-state="open"] {
+        &[data-trigger-icon] {
+            &:after {
+                transform: rotate(180deg);
+            }
+        }
+        &[data-trigger-icon="2"] {
+            &:after {
+                transform: rotate(45deg);
+            }
+        }
+        + .mav-accordion-ctn {
+            max-height: 100vh;
+        }
+    }
+}
+
+.mav-accordion-ctn {
+    overflow: hidden;
+    @extend %mav-transition;
+}

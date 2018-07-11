@@ -100,12 +100,12 @@
             echo '</section>';
         }
 
-    /**
-     * Sidebar widgets
-     */
-    if ($mavSidebar) {
-        get_sidebar();
-    }
+        /**
+         * Sidebar widgets
+         */
+        if ($mavSidebar) {
+            get_sidebar();
+        }
     echo '</section>';
     ?>
 </main>

@@ -120,39 +120,6 @@
     cursor: pointer;
 }
 
-.mav-accordion-trigger {
-    cursor: pointer;
-    &[data-trigger-icon] {
-        &:after {
-            display: inline-block;
-            margin-left: var(--mav-gutter-xs);
-            @extend %mav-font-awesome;
-            content: '\f078';
-            @extend %mav-transition;
-        }
-    }
-    &[data-state="close"] {
-        + .mav-accordion-ctn {
-            max-height: 0vh;
-        }
-    }
-    &[data-state="open"] {
-        &[data-trigger-icon] {
-            &:after {
-                transform: rotate(180deg);
-            }
-        }
-        + .mav-accordion-ctn {
-            max-height: 100vh;
-        }
-    }
-}
-
-.mav-accordion-ctn {
-    overflow: hidden;
-    @extend %mav-transition;
-}
-
 /**
  * Countdown
  */

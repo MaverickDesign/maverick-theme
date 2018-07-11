@@ -2,12 +2,18 @@ form {
     display: flex;
     input {
         padding: var(--mav-gutter-sm);
+        color: var(--mav-color-text-primary);
     }
+
 }
 
 .mav-form {
     input {
         box-shadow: inset 0 -2px var(--mav-color-primary);
+        padding: var(--mav-gutter-sm) 0;
+    }
+    .mav-form-label {
+        font-weight: 600;
     }
 }
 
@@ -19,10 +25,10 @@ form {
     height: auto;
     max-height: 0;
     overflow: hidden;
-    background: var(--mav-color-accent);
+    background: var(--mav-color-off-white);
     @extend %mav-transition;
     @media #{$mav-mobile} {
-        background: var(--mav-color-primary);
+        // background: var(--mav-color-primary);
     }
 }
 
@@ -33,7 +39,7 @@ form {
 }
 
 .mav-collapse {
-    max-height: 10vh;
+    max-height: 100vh;
     @extend %mav-transition;
 }
 
@@ -54,13 +60,13 @@ form {
 form {
     &#mavid-site-search {
         width: 100%;
-        margin: var(--mav-gutter);
-        max-width: $mav-site-width;
+        padding: var(--mav-gutter);
+        max-width: var(--mav-site-width);
         button ,input {
             border: none;
         }
         input {
-            background: #fafafa;
+            background: white;
             width: 100%;
         }
     }
@@ -77,6 +83,13 @@ form {
 }
 
 .mav-contact {
+    margin-bottom: var(--mav-gutter-sm);
+    &:before {
+        color: var(--mav-color-text-primary);
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
     &[data-type] {
         &:before {
             @extend %mav-font-awesome;
@@ -125,12 +138,9 @@ form {
 
 .mav-contact-form-ctn {
     background: white;
-    margin: var(--mav-gutter-lg) auto;
-    padding: var(--mav-gutter-lg);
-    border: 1px solid $mav-color-border;
-    @media #{$mav-desktop} {
-        max-width: 75%;
-    }
+    // margin: var(--mav-gutter-lg) auto;
+    padding: var(--mav-gutter);
+    border: 1px solid var(--mav-color-border);
 }
 
 .mav-contact-form{
@@ -143,18 +153,18 @@ form {
         font-size: 1rem;
         background: transparent;
         border: none;
-        box-shadow: inset 0 -1px $mav-color-border;
+        box-shadow: inset 0 -1px var(--mav-color-border);
         &:focus {
             outline: none;
             background: white;
-            box-shadow: inset 0 -2px $mav-color-brand-primary;
+            box-shadow: inset 0 -2px var(--mav-color-primary);
             + .mav-form-hint {
                 opacity: 1;
             }
         }
     }
     textarea {
-        border: 1px solid $mav-color-border;
+        border: 1px solid var(--mav-color-border);
         padding: var(--mav-gutter-sm);
         resize: none;
         box-shadow: none;
@@ -164,7 +174,7 @@ form {
         margin-bottom: var(--mav-gutter);
         opacity: 0;
         font-size: .75rem;
-        color: $mav-color-text-hint;
+        color: var(--mav-color-text-hint);
         @extend %mav-transition;
     }
 }

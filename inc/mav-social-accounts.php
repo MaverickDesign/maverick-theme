@@ -54,6 +54,21 @@ function mavf_social_links($mavFull=false, $mavUlClass="mav-social-links", $mavC
 	echo '</ul>';
 }
 
+function mavf_social_links_name(){
+	$mavSocialAccounts = [];
+	// Facebook
+	$facebookAcc 	= esc_attr(get_option('mav_setting_social_account_facebook'));
+	if ( !empty($facebookAcc) ) {
+		array_push($mavSocialAccounts, 'Facebook');
+	}
+	// Google Plus
+	$googleplusAcc 	= esc_attr(get_option('mav_setting_social_account_google_plus'));
+	if ( !empty($googleplusAcc) ) {
+		array_push($mavSocialAccounts, 'Google Plus');
+	}
+	return $mavSocialAccounts;
+}
+
 /**
  * Check social account settings
  */

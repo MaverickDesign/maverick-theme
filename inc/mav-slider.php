@@ -1,15 +1,17 @@
 <?php
-/*
+/**
  * @package maverick-theme
  */
 
 function mavf_slider($mavArgs) {
+
     if (function_exists('mavf_unique')) {
         $mavUniqueNumber = mavf_unique(rand(6,12));
     } else {
         $mavUniqueNumber = wp_create_nonce(time());
     }
-    /*
+
+    /**
      * Default settings
      */
 
@@ -34,13 +36,15 @@ function mavf_slider($mavArgs) {
     // Slider height
     $mavSliderHeight    = isset($mavArgs['height'])             ? 'height: '.$mavArgs['height'].';'  : '';
 
-
+    // Set max slides for slider type 1
     if ( $mavSliderType == 1 && $mavNumberOfSlides > 6 ) {
         $mavNumberOfSlides = 6;
     }
+    // Set max slides for slider type 2
     if ( $mavSliderType == 2 && $mavNumberOfSlides > 10 ) {
         $mavNumberOfSlides = 10;
     }
+    // Set max slides for slider type 3
     if ( $mavSliderType == 3 ) {
         $mavNumberOfSlides = 5;
     }
@@ -96,7 +100,7 @@ function mavf_slider($mavArgs) {
                 $i++;
             endwhile;
 
-        } // Slider Type 1
+        }
 
         /**
          * Type 2
@@ -181,7 +185,7 @@ function mavf_slider($mavArgs) {
                     $mavRandomNumber));
                 }
             echo '</div>';
-        } // slider Type 2
+        }
 
         /**
          * Type 3
@@ -200,23 +204,25 @@ function mavf_slider($mavArgs) {
                     '<div id="mavid-slide-type-3-%2$s" data-number="%2$s" class="mav-slide" %1$s>',
                     $mavImageUrl, $i
                 );
-                printf(
-                    '<div id="mavid-slide-type-3-title-%1$s" data-number="%1$s" class="mav-slide-title-ctn mav-hide-on-mobile">',
-                    $i
-                );
-                printf(
-                    '<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',
-                    $mavTitle, $mavPermalink
-                );
-                echo '</div>';
-                printf(
-                    '<div class="mav-slide-title-ctn mav-hide-on-desktop"><a href="%2$s" title="Xem %1$s" class="mav-btn-solid">Xem chi tiết</a></div>',
-                    $mavTitle, $mavPermalink
-                );
+                    // printf(
+                    //     '<div id="mavid-slide-type-3-title-%1$s" data-number="%1$s" class="mav-slide-title-ctn mav-hide-on-mobile">',
+                    //     $i
+                    // );
+                    //     printf(
+                    //         '<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',
+                    //         $mavTitle, $mavPermalink
+                    //     );
+                    // echo '</div>';
+                    echo '<div class="mav-slide-title-ctn">';
+                        printf(
+                            '<a href="%2$s" title="Xem %1$s" class="mav-btn-secondary">Xem chi tiết</a>',
+                            $mavTitle, $mavPermalink
+                        );
+                    echo '</div>';
                 echo '</div>';
                 $i++;
             endwhile;
-        } // Slider Type 3
+        }
         echo '</div>';
         echo '</section>';
     endif;

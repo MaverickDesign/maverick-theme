@@ -203,12 +203,11 @@ if (typeof mavf_go_back_button === 'function') {
 
 function mavf_accordion(e){
     const mavTrigger = e;
-    // mavTrigger.setAttribute('title','Click to expand');
     mavTrigger.dataset.state = (mavTrigger.dataset.state == 'close') ? 'open' : 'close';
     if (mavTrigger.dataset.state == 'close') {
         mavTrigger.setAttribute('title','Click to expand');
     } else {
-        mavTrigger.setAttribute('title','Click to close');
+        mavTrigger.setAttribute('title','Click to collapse');
     }
 }
 

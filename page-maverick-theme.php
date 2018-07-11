@@ -292,12 +292,22 @@
                 <h2 class="mav-sec-title">Accordion</h2>
             </div>
         </header>
-        <div class="mav-pg-ctn mav-margin-bottom-lg mav-grid mav-grid-col-2">
+        <div class="mav-pg-ctn mav-margin-bottom-lg">
             <aside class="mav-accordion-wrapper">
                 <span class="mav-accordion-trigger" data-trigger-icon data-state="close" title="">The accordion</span>
                 <ul class="mav-accordion-ctn">
-                    <li>1</li>
-                    <li>2</li>
+                    <li>
+                        <aside class="mav-accordion-wrapper">
+                            <span class="mav-accordion-trigger" data-trigger-icon="1" data-state="close">1</span>
+                            <p class="mav-accordion-ctn">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quod tempore sint, dicta repellat minus molestias illo autem, itaque ex earum, laborum reprehenderit vel tenetur minima ratione. Tenetur voluptas, laboriosam reiciendis ipsam suscipit est magnam doloremque officia error itaque deleniti dolor, velit culpa consequatur et aut repudiandae, repellendus quis! Laudantium?</p>
+                        </aside>
+                    </li>
+                    <li>
+                        <aside class="mav-accordion-wrapper">
+                            <span class="mav-accordion-trigger" data-trigger-icon="2" data-state="close">2</span>
+                            <p class="mav-accordion-ctn">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quod tempore sint, dicta repellat minus molestias illo autem, itaque ex earum, laborum reprehenderit vel tenetur minima ratione. Tenetur voluptas, laboriosam reiciendis ipsam suscipit est magnam doloremque officia error itaque deleniti dolor, velit culpa consequatur et aut repudiandae, repellendus quis! Laudantium?</p>
+                        </aside>
+                    </li>
                     <li>3</li>
                     <li>4</li>
                     <li>5</li>
