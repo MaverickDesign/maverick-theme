@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package maverick-theme
  */
 

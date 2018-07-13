@@ -1,4 +1,4 @@
-/*
+/**
  * Maverick's CSS Framework
  * Version: 1.0
  * Author: Đoàn Công Minh
@@ -53,4 +53,9 @@
 
 @import "mav-accordion";
 
+@import "mav-tab-view";
+
 @import "mav-misc";
+
+/* Styles specific for Maverick Theme Page Demo */
+@import "mav-theme-page";

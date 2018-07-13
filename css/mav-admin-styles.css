@@ -35,14 +35,16 @@
   --mav-color-primary: #b31705;
   --mav-brand-color-accent: #05a1b3;
   --mav-color-accent: #05a1b3;
+  --mav-color-black: #464646;
+  --mavc-black: #464646;
+  --mav-color-off-white: WhiteSmoke;
+  --mav-color-highlight: yellow;
   --mav-color-site-background: #fafafa;
   --mav-color-site-header: #b31705;
   --mav-color-site-footer: var(--mav-color-accent);
   --mav-color-header-menu-background: var(--mav-color-primary);
-  --mav-color-header-menu-background-hover: #404040;
+  --mav-color-header-menu-background-hover: var(--mav-color-black);
   --mav-color-border: #ddd;
-  --mav-color-off-white: WhiteSmoke;
-  --mav-color-highlight: yellow;
   /**
    * Typography
    */

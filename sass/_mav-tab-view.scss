@@ -1,0 +1,47 @@
+$mav-tab-border-color: #ddd;
+
+.mav-tab-wrapper {
+    position: relative;
+    max-width: var(--mav-site-width);
+}
+
+.mav-tab-ctn {
+    display: grid;
+    grid-template-columns: repeat(auto,auto);
+}
+
+.mav-tab-trigger {
+    display: flex;
+    justify-content: center;
+    padding: var(--mav-gutter-sm);
+    background: var(--mav-color-off-white);
+    border-color: transparent;
+    border-left-color: darkgray;
+    border-bottom-color: $mav-tab-border-color;
+    border-style: solid;
+    border-width: 2px 1px 1px 1px;
+    font-weight: 600;
+    cursor: pointer;
+    @extend %mav-transition;
+    &:hover {
+        color: var(--mav-color-text-primary);
+    }
+    &[data-state="active"] {
+        background: white;
+        border-color: var(--mav-color-primary) $mav-tab-border-color transparent $mav-tab-border-color!important;
+        + .mav-tab-content-wrapper {
+            opacity: 1;
+            z-index: $mav-layer-overlay;
+        }
+    }
+}
+.mav-tab-content-wrapper {
+    opacity: 0;
+    grid-area: content;
+    padding: var(--mav-gutter);
+    transition: all .1s ease;
+    background: white;
+    border-color: $mav-tab-border-color;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+}

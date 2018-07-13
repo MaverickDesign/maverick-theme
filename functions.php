@@ -33,7 +33,7 @@ if (file_exists(TEMPLATE_DIR . '/vendor/Mobile_Detect.php')) {
 }
 
 /**
- * Admin
+ * Admin Functions
  */
 
 require TEMPLATE_DIR. '/inc/admin/mav-admin-functions.php';
@@ -44,7 +44,7 @@ require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
 
 require TEMPLATE_DIR. '/inc/admin/mav-admin-cpt.php';
 
-/*
+/**
  * Theme Functions
  */
 
@@ -69,6 +69,10 @@ require TEMPLATE_DIR. '/inc/mav-google-map.php';
 require TEMPLATE_DIR. '/inc/mav-items-grid.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-form.php';
+
+require TEMPLATE_DIR. '/inc/mav-post-accordion.php';
+
+require TEMPLATE_DIR. '/inc/mav-tab-view.php';
 
 require TEMPLATE_DIR. '/inc/mav-content-modify.php';
 

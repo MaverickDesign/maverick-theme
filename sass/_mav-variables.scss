@@ -1,12 +1,20 @@
+$mavNameSpace: 'mav';
+
 /**
  * Color code
  */
 
+$mavDark-3  : #1f1f1f;
+$mavDark-2  : #2c2c2c;
+$mavDark-1  : #393939;
+$mavDark    : #464646;
+$mavDark_1  : #525252;
+$mavDark_2  : #5f5f5f;
+$mavDark_3  : #6c6c6c;
+
 $mavGray25: #404040;
 $mavGray50: #7f7f7f;
 $mavGray75: #bfbfbf ;
-
-$mavNameSpace: 'mav';
 
 $mav-layer-top:          1000;
 $mav-layer-overlay:       100;
@@ -140,6 +148,12 @@ $mav-color-background: #fafafa;
     //  Accent
      --mav-brand-color-accent       : #{$mav-color-brand-accent};
      --mav-color-accent             : #{$mav-color-brand-accent};
+
+     --mav-color-black              : #464646;
+     --mavc-black                   : #464646;
+     --mav-color-off-white          : WhiteSmoke;
+     --mav-color-highlight          : #{$mav-color-highlight};
+
     // Site background
      --mav-color-site-background    : #{$mav-color-site-background};
     //  Header background
@@ -149,12 +163,11 @@ $mav-color-background: #fafafa;
 
      --mav-color-header-menu-background         : var(--mav-color-primary);
     //  --mav-color-header-menu-background-hover   : var(--mav-color-accent);
-     --mav-color-header-menu-background-hover   : #{$mavGray25};
+     --mav-color-header-menu-background-hover   : var(--mav-color-black);
 
      --mav-color-border: #{$mav-color-border};
 
-     --mav-color-off-white          : WhiteSmoke;
-     --mav-color-highlight          : #{$mav-color-highlight};
+
 
     /**
      * Typography

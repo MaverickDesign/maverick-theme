@@ -1,9 +1,9 @@
 <?php
-/*
+/**
  * @package maverick-theme
  */
 function mavf_post_carousel($mavArgs) {
-        /*
+        /**
          * Default values
          */
         $mavPostType        = isset($mavArgs['post_type'])                  ? $mavArgs['post_type']                 : 'post';
@@ -18,11 +18,12 @@ function mavf_post_carousel($mavArgs) {
         $mavSlider          = isset($mavArgs['slider'])                     ? $mavArgs['slider']                    : 'true';
 
         $mavQueryArgs = array(
-        'post_type'         => $mavPostType,
-        'post_status'       => 'publish',
-        'posts_per_page'    => $mavNumberOfPosts,
-        'post__not_in'      => get_option("sticky_posts"),
-        'category__in'      => $mavCategories,
+        'post_type'             => $mavPostType,
+        'post_status'           => 'publish',
+        'posts_per_page'        => $mavNumberOfPosts,
+        'post__not_in'          => get_option("sticky_posts"),
+        'ignore_sticky_post'    => true,
+        'category__in'          => $mavCategories,
     );
 
     $mavQuery = new WP_Query($mavQueryArgs);

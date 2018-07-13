@@ -185,25 +185,27 @@ if (typeof mavf_go_back_button === 'function') {
  * Accordion
  */
 
- // (function mavf_accordion(){
-//     const mavTriggers = document.querySelectorAll('.mav-accordion-trigger');
-//     console.log('mavTriggers: ', mavTriggers);
-//     for (const mavTrigger of mavTriggers){
-//         mavTrigger.setAttribute('title','Click to open');
-//         mavTrigger.addEventListener('click',function(){
-//             this.dataset.state = (this.dataset.state == 'close') ? 'open' : 'close';
-//             if (this.dataset.state == 'close') {
-//                 this.setAttribute('title','Click to open');
-//             } else {
-//                 this.setAttribute('title','Click to close');
-//             }
-//         });
-//     }
-// })();
-
 function mavf_accordion(e){
     const mavTrigger = e;
-    mavTrigger.dataset.state = (mavTrigger.dataset.state == 'close') ? 'open' : 'close';
+    // Get trigger current state
+    const mavCurrentState = mavTrigger.dataset.state;
+    // Query accordion collection data
+    const mavCollectionID = mavTrigger.dataset.collection;
+    if (mavCollectionID != undefined) {
+        const mavCollection = mavTrigger.closest(`#mavid-accordion-collection-${mavCollectionID}`);
+        if (mavCollection != undefined) {
+            const mavItems = mavCollection.querySelectorAll('.mav-accordion-trigger');
+            for (const mavItem of mavItems) {
+                mavItem.dataset.state = 'close';
+                mavItem.setAttribute('title','Click to expand');
+            }
+            mavTrigger.dataset.state = (mavCurrentState == 'close') ? 'open' : 'close';
+        } else {
+            mavTrigger.dataset.state = (mavTrigger.dataset.state == 'close') ? 'open' : 'close';
+        }
+    } else {
+        mavTrigger.dataset.state = (mavTrigger.dataset.state == 'close') ? 'open' : 'close';
+    }
     if (mavTrigger.dataset.state == 'close') {
         mavTrigger.setAttribute('title','Click to expand');
     } else {
@@ -256,27 +258,28 @@ function mavf_remove_mobile_container(e){
     e.classList.remove('mav-mobile-ctn');
 }
 
-// (function mavf_smooth_scroll(){
-//     const mavScrolls = document.querySelectorAll('[data-scroll]');
-//     for (const mavScroll of mavScrolls){
-//         mavScroll.addEventListener('click',function(){
-//             const mavScrollTo = document.getElementById(this.dataset.scroll);
-//             const mavBehavior = this.dataset.behavior ? this.dataset.behavior : 'smooth';
-//             window.scrollTo({
-//                 top: mavScrollTo.offsetTop,
-//                 behavior: mavBehavior
-//             });
-//         });
-//     }
-// })();
-
-function mavf_smooth_scroll_2(e) {
+/**
+ * Smooth Scrolling
+ */
+function mavf_smooth_scroll(e) {
     const mavScrollTo = document.getElementById(e.dataset.scroll);
     const mavBehavior = e.dataset.behavior ? e.dataset.behavior : 'smooth';
     window.scrollTo({
         top: mavScrollTo.offsetTop,
         behavior: mavBehavior
     });
+    return;
+}
+
+
+function mavf_tab_view(e){
+    const mavActiveItem = e;
+    const mavItemsContainer = e.parentElement;
+    const mavItems = mavItemsContainer.querySelectorAll('.mav-tab-trigger');
+    for (const mavItem of mavItems) {
+        mavItem.dataset.state = 'inactive';
+    }
+    mavActiveItem.dataset.state = 'active';
     return;
 }
 
@@ -305,11 +308,15 @@ function mavf_smooth_scroll_2(e) {
         if (mavTarget.classList.contains('mav-mobile-ctn')){
             mavf_remove_mobile_container(mavTarget);
         }
+
+        if (mavTarget.classList.contains('mav-tab-trigger')){
+            mavf_tab_view(mavTarget);
+        }
         /**
          * Smooth Scrolling
          */
         if (mavTarget.dataset.scroll != undefined ){
-            mavf_smooth_scroll_2(mavTarget);
+            mavf_smooth_scroll(mavTarget);
         }
     })
 })();
