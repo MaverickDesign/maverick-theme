@@ -70,7 +70,7 @@
                 <aside class="mav-margin-bottom-xl">
                     <h3 class="mav-margin-bottom">Slider Type 1</h3>
                     <?php
-                        mavf_slider(array('slider_type' => 1, 'number_of_slides' => 6));
+                        mavf_slider(array('slider_type' => 1, 'number_of_slides' => 4));
                     ?>
                 </aside>
                 <aside class="mav-margin-bottom-xl">

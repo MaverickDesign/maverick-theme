@@ -1,11 +1,12 @@
 <?php
-/*
+/**
  * @package maverick-theme
  */
+
 function mavf_google_map($mavArgs) {
 
     $mavGoogleMap       = isset($mavArgs['source'])     ? esc_html($mavArgs['source'])  : esc_html(get_option('mav_setting_goole_map_uri'));
-    $mavGoogleMapHeight = isset($mavArgs['height'])     ? $mavArgs['height']            : esc_html(get_option('mav_setting_goole_map_height'));
+    $mavGoogleMapHeight = isset($mavArgs['height'])     ? $mavArgs['height']            : esc_attr(get_option('mav_setting_goole_map_height'));
     $mavMapId           = isset($mavArgs['id'])         ? 'mavid-'.$mavArgs['id']       : '';
     $mavWrapperClass    = isset($mavArgs['wrapper'])    ? $mavArgs['wrapper']           : 'mav-google-map-wrapper';
     $mavContainerClass  = isset($mavArgs['container'])  ? $mavArgs['container']         : 'mav-google-map-ctn';

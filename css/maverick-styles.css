@@ -350,7 +350,8 @@ ul li ul li {
     grid-template-columns: repeat(14, 1fr) !important; } }
 /* Generals */
 .mav-hide {
-  display: none !important; }
+  visibility: hidden;
+  max-height: 0; }
 
 @media only screen and (max-width: 480px) {
   .mav-hide-on-phone {
@@ -540,7 +541,7 @@ ul li ul li {
     max-width: var(--mav-site-width);
     margin: 0 auto; } }
 
-/*
+/**
  * Paginate navigation
  */
 .mav-paginate-links-ctn {
@@ -576,7 +577,10 @@ ul li ul li {
   padding: var(--mav-gutter-xl) 0;
   background: var(--mav-color-site-background); }
   .mav-sec-home:nth-child(odd) {
-    background: #f6f6f6; }
+    background: #f4f4f4; }
+  @media only screen and (max-width: 480px) {
+    .mav-sec-home {
+      padding: var(--mav-gutter-lg) 0; } }
   .mav-sec-home .mav-sec-content {
     margin: var(--mav-gutter-lg) auto; }
 
@@ -694,6 +698,8 @@ button {
 
 form {
   display: flex; }
+  form label {
+    cursor: pointer; }
   form input {
     padding: var(--mav-gutter-sm);
     color: var(--mav-color-text-primary); }
@@ -723,6 +729,7 @@ form {
 
 .mav-site-search-icon {
   font-size: 1rem;
+  width: 1rem;
   color: var(--mav-color-text-secondary-dark); }
   .mav-site-search-icon:hover {
     color: var(--mav-color-text-primary-dark); }
@@ -733,23 +740,24 @@ form {
         color: var(--mav-color-text-primary); } }
 
 form#mavid-site-search {
+  background: white;
   width: 100%;
-  padding: var(--mav-gutter);
+  margin: var(--mav-gutter);
+  padding: var(--mav-gutter-xs);
+  border: 1px solid var(--mav-color-border);
   max-width: var(--mav-site-width); }
   form#mavid-site-search button, form#mavid-site-search input {
     border: none; }
   form#mavid-site-search input {
-    background: white;
     width: 100%; }
+
+.mav-contact-wrapper {
+  margin-bottom: var(--mav-gutter-lg); }
 
 .mav-contact-ctn, .mav-contact-socials-ctn {
   background: white;
-  margin: var(--mav-gutter-lg) auto;
-  padding: var(--mav-gutter-lg);
+  padding: var(--mav-gutter);
   border: 1px solid #ddd; }
-  @media only screen and (min-width: 1024px) {
-    .mav-contact-ctn, .mav-contact-socials-ctn {
-      max-width: 75%; } }
 
 .mav-contact {
   margin-bottom: var(--mav-gutter-sm); }
@@ -783,6 +791,9 @@ form#mavid-site-search {
       background: var(--mav-color-accent);
       color: white; }
 
+.mav-contact-form-wrapper {
+  margin-top: var(--mav-gutter-lg); }
+
 .mav-contact-form-ctn {
   background: white;
   padding: var(--mav-gutter);
@@ -798,13 +809,14 @@ form#mavid-site-search {
     font-size: 1rem;
     background: transparent;
     border: none;
-    box-shadow: inset 0 -1px var(--mav-color-border); }
+    box-shadow: 0 1px var(--mav-color-border); }
     .mav-contact-form input:focus, .mav-contact-form textarea:focus {
       outline: none;
       background: white;
       box-shadow: inset 0 -2px var(--mav-color-primary); }
       .mav-contact-form input:focus + .mav-form-hint, .mav-contact-form textarea:focus + .mav-form-hint {
-        opacity: 1; }
+        opacity: 1;
+        transform: translateY(0%); }
   .mav-contact-form textarea {
     border: 1px solid var(--mav-color-border);
     padding: var(--mav-gutter-sm);
@@ -812,10 +824,12 @@ form#mavid-site-search {
     box-shadow: none;
     margin-bottom: var(--mav-gutter); }
   .mav-contact-form .mav-form-hint {
+    overflow: hidden;
     margin-bottom: var(--mav-gutter);
     opacity: 0;
     font-size: .75rem;
-    color: var(--mav-color-text-hint); }
+    color: var(--mav-color-text-hint);
+    transform: translateY(-100%); }
 
 .mav-card {
   display: grid;
@@ -1308,8 +1322,10 @@ article.sticky .mav-card-post-thumbnail {
   overflow: hidden; }
 
 .mav-slider-type-1-ctn {
+  position: relative;
+  overflow: hidden;
   display: grid;
-  grid-gap: var(--mav-gutter-sm);
+  grid-gap: var(--mav-gutter-xs);
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 33vh 20vw;
   grid-template-areas: "main-display" "thumbnail";
@@ -1333,8 +1349,7 @@ article.sticky .mav-card-post-thumbnail {
       position: absolute;
       bottom: 0;
       opacity: 0;
-      transform: translateY(100%);
-      transition: all .6s ease; }
+      max-height: 0; }
       @media only screen and (max-width: 480px) {
         .mav-slider-type-1-ctn .mav-slide .mav-slide-title {
           top: 0; } }
@@ -1348,23 +1363,23 @@ article.sticky .mav-card-post-thumbnail {
     width: 100%;
     height: 100%;
     filter: grayscale(0);
-    transition: filter .6s ease; }
+    transition: filter .3s ease; }
     .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title {
       width: 100%;
       opacity: 1;
+      max-height: 100%;
       padding: var(--mav-gutter);
       background: rgba(0, 0, 0, 0.75);
       color: var(--mav-color-text-secondary-dark);
       font-size: 1.25rem;
       text-align: center;
-      text-decoration: none;
-      transform: translateY(0%); }
+      text-decoration: none; }
       @media only screen and (min-width: 1024px) {
         .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title {
-          font-size: 2.5rem;
+          font-size: 2rem;
           padding: var(--mav-gutter-sm) var(--mav-gutter-lg); } }
 
-/*
+/**
  * Slider Type 2
  */
 .mav-slider-type-2-wrapper {
@@ -1536,6 +1551,9 @@ article.sticky .mav-card-post-thumbnail {
       transform: translateY(100%); }
       .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn:hover {
         background: rgba(0, 0, 0, 0.85); }
+      @media only screen and (max-width: 480px) {
+        .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn {
+          height: 100%; } }
       .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn a {
         text-decoration: none; }
         .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn a h2 {
@@ -1546,9 +1564,11 @@ article.sticky .mav-card-post-thumbnail {
 .mav-carousel {
   position: relative;
   width: 100%;
-  max-width: 80vw;
   margin: 0 auto;
   overflow: hidden; }
+  @media only screen and (min-width: 1024px) {
+    .mav-carousel {
+      max-width: 80vw; } }
   .mav-carousel .mav-carousel-nav-wrapper {
     min-width: var(--mav-gutter-lg);
     min-height: var(--mav-gutter-lg);

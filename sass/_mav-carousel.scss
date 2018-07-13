@@ -2,9 +2,11 @@
     position: relative;
     @extend .mav-flex-center-all;
     width: 100%;
-    max-width: $mav-site-width;
     margin: 0 auto;
     overflow: hidden;
+    @media #{$mav-desktop} {
+        max-width: $mav-site-width;
+    }
     .mav-carousel-nav-wrapper {
         @extend .mav-flex-center-all;
         min-width: var(--mav-gutter-lg);

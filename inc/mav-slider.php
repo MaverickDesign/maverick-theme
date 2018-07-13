@@ -71,7 +71,8 @@ function mavf_slider($mavArgs) {
             '<section id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
             $mavSliderId, $mavInterval, $mavSliderType, $mavUniqueNumber, $mavSliderHeight
         );
-        printf('<div class="mav-slider-container %1$s">',$mavSliderContainer);
+        $mavElementStyles = ($mavSliderType == 1) ? 'style="grid-template-columns: repeat('.($mavNumberOfSlides-1).',1fr);"' : '';
+        printf('<div class="mav-slider-container %1$s" %2$s>',$mavSliderContainer,$mavElementStyles);
 
         $i = 1;
 

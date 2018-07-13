@@ -21,7 +21,6 @@
 
 @mixin mav-flex-center-all {
     display: flex;
-    // flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -43,7 +42,9 @@
 /* Generals */
 
 .mav-hide {
-    display: none!important;
+    // display: none!important;
+    visibility: hidden;
+    max-height: 0;
 }
 
 .mav-hide-on {
@@ -154,7 +155,7 @@
     }
 }
 
-/*
+/**
  * Paginate navigation
  */
 
@@ -208,7 +209,10 @@
     padding: var(--mav-gutter-xl) 0;
     background: var(--mav-color-site-background);
     &:nth-child(odd) {
-        background: darken($mav-color-background,1.5%);
+        background: darken($mav-color-background,2.5%);
+    }
+    @media #{$mav-phone} {
+        padding: var(--mav-gutter-lg) 0;
     }
     .mav-sec-content {
         margin: var(--mav-gutter-lg) auto;
