@@ -16,51 +16,27 @@ function mavf_cpt(){
      * Testimonial Post Type
      */
 	if (@$mavCPTs['testimonial']) {
-        $mavTestimonialLabels = array(
-            'name'              => __('Testimonial','maverick-theme'),
-            'singular_name'     => __('Testimonial','maverick-theme')
-        );
-        $mavTestimonialArgs = array(
-            'labels'        => $mavTestimonialLabels,
-            'public'        => true,
-            'has_archive'   => true
-        );
-        register_post_type( 'mav_testimonial', $mavTestimonialArgs );
+        require_once TEMPLATE_DIR.'/inc/admin/mav-admin_cpt_testimonial.php';
     }
 
     /**
      * Subscriber Post Type
      */
     if (@$mavCPTs['subscriber']) {
-        $mavSubscriberLabels = array(
-            'name'              => __('Subsciber','maverick-theme'),
-            'singular_name'     => __('Subsciber','maverick-theme')
-        );
-        $mavSubscriberArgs = array(
-            'labels'            => $mavSubscriberLabels,
-            'public'            => true,
-            'has_archive'       => false
-        );
-        register_post_type( 'mav_subscriber', $mavSubscriberArgs );
+        require_once TEMPLATE_DIR.'/inc/admin/mav-admin_cpt_subscriber.php';
     }
 
     /**
      * Portfolio Post Type
      */
 	if (@$mavCPTs['portfolio']) {
-        $mavPortfolioLabels = array(
-            'name'              => __('Portfolio','maverick-theme'),
-            'singular_name'     => __('Portfolio','maverick-theme')
-        );
-        $mavPortfolioArgs = array(
-            'labels'        => $mavPortfolioLabels,
-            'public'        => true,
-            'has_archive'   => true
-        );
-        register_post_type( 'mav_portfolio', $mavPortfolioArgs );
+        require_once TEMPLATE_DIR.'/inc/admin/mav-admin_cpt_portfolio.php';
     }
 
     // Member Post Type
+	if (@$mavCPTs['member']) {
+        require_once TEMPLATE_DIR.'/inc/admin/mav-admin_cpt_member.php';
+    }
 }
 
 add_action('init', 'mavf_cpt');

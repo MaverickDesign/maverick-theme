@@ -26,7 +26,7 @@
     },false);
 })();
 
-/*
+/**
  * Toggle Site Search
  */
 (function(){
@@ -217,7 +217,9 @@ function mavf_accordion(e){
  * Close Button
  */
 function mavf_close_btn(mavElement, mavElementToClose = '.mavjs-close'){
+    // Delete element from the DOM
     mavElement.closest(mavElementToClose).remove();
+    return;
 }
 
 /**
@@ -233,6 +235,7 @@ function mavf_create_modal_box(mavArgs= {
     footerClass : 'mav-modal-footer'
 }){
     const mavModal = document.createElement('div');
+    mavModal.setAttribute('id','mavid-modal');
     mavModal.classList = 'mav-modal mavjs-close';
     mavModal.innerHTML = `
     <div class="mav-modal-box">
@@ -249,6 +252,15 @@ function mavf_create_modal_box(mavArgs= {
     <span class="mav-modal-close mav-btn-close" title="Click to close"></span>
     `;
     document.body.appendChild(mavModal);
+}
+
+function mavf_modal_remove(){
+    const mavModal = document.getElementById('mavid-modal');
+    if (mavModal != undefined) {
+        mavModal.remove();
+        console.log('Modal removed.');
+    }
+    return;
 }
 
 /**
@@ -319,4 +331,14 @@ function mavf_tab_view(e){
             mavf_smooth_scroll(mavTarget);
         }
     })
+})();
+
+(function mavf_document_key(){
+    document.addEventListener('keydown',function(mavKey){
+        switch (mavKey.keyCode) {
+            case 27:
+                mavf_modal_remove();
+            break;
+        }
+    });
 })();

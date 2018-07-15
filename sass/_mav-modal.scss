@@ -1,0 +1,69 @@
+/**
+ * Modal
+ */
+
+ @keyframes mav-show-modal {
+    0%{
+        transform: translateY(-25%);
+        }
+    100%{
+        transform: translateY(0);
+        }
+}
+
+.mav-modal {
+    @extend .mav-flex-center-all;
+    position: fixed;
+    background: rgba(black,.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: $mav-layer-top;
+
+    .mav-modal-box {
+        display: grid;
+        position: relative;
+        background: white;
+        max-width: 95vw;
+        box-shadow: 0 0 50px rgba(black, 1);
+        animation: mav-show-modal 0.4s ease-out;
+        @media #{$mav-desktop} {
+            max-width: 80vw;
+        }
+    }
+
+    .mav-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: var(--mav-gutter-sm) var(--mav-gutter);
+        background: var(--mav-color-primary);
+        color: var(--mav-color-text-primary-dark);
+        font-size: 1.25rem;
+        * {
+            color: inherit;
+            font-size: inherit;
+            letter-spacing: .5px;
+        }
+    }
+
+    .mav-modal-body {
+        padding: var(--mav-gutter);
+    }
+
+    .mav-modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        background: var(--mav-color-off-white);
+        padding: var(--mav-gutter-sm) var(--mav-gutter);
+    }
+
+    .mav-modal-close {
+        position: absolute;
+        top: 0;
+        right: var(--mav-gutter);
+        color: white;
+    }
+}

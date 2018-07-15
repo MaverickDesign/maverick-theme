@@ -140,60 +140,10 @@
     }
 }
 
-
-/**
- * Modal
- */
-
- .mav-modal {
-    @extend .mav-flex-center-all;
-    position: fixed;
-    background: rgba(black,.8);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: $mav-layer-top;
-    @keyframes mav-show-modal {
-        0%{
-            transform: translateY(-25%);
-            }
-        100%{
-            transform: translateY(0);
-            }
-    }
-    .mav-modal-box {
-        display: grid;
-        position: relative;
-        background: white;
-        max-width: 95vw;
-        box-shadow: 0 0 50px rgba(black, 1);
-        animation: mav-show-modal 0.4s ease-out;
-    }
-    .mav-modal-header {
-        position: relative;
-        padding: var(--mav-gutter-sm);
-        background: $mav-color-brand-primary;
-        color: white;
-    }
-    .mav-modal-body {
-        padding: var(--mav-gutter) var(--mav-gutter-sm);
-    }
-    .mav-modal-footer {
-        background: $mav-color-brand-accent;
-        padding: var(--mav-gutter-sm);
-    }
-    .mav-modal-close {
-        position: absolute;
-        top: 0;
-        right: var(--mav-gutter);
-        color: white;
-    }
-}
-
 /**
  * Mobile container
  */
+
 .mav-mobile-ctn {
     @media #{$mav-phone} {
         max-height: 75vh;
@@ -220,6 +170,9 @@
     }
 }
 
+/**
+ * Container for scroll to top button
+ */
 .mav-bottom-container {
     position: fixed;
     display: grid;
@@ -232,6 +185,7 @@
 /**
  * Maintenance page styles
  */
+
 .mav-page-maintenance {
     display: grid;
     grid-auto-rows: repeat(3,auto);
@@ -259,6 +213,10 @@
         align-self: end;
     }
 }
+
+/**
+ * Contact Page Styles
+ */
 
 .mav-page-contact-wrapper {
     display: grid;

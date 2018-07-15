@@ -40,8 +40,8 @@ function mavf_tab_posts($mavArgs) {
                         get_the_title(),$mavActive,$mavFirstItemBorder
                     );
                     echo '<div class="mav-tab-content-wrapper">';
-                        echo '<div class="mav-tab-content-ctn">';
-                        the_content();
+                        echo '<div class="mav-tab-content-ctn mav-post-content">';
+                            the_content();
                         echo '</div>';
                     echo '</div>';
                     $mavFirst = false;

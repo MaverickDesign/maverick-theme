@@ -1,4 +1,4 @@
-/*
+/**
  * Admin styles
  */
 /*
@@ -86,6 +86,11 @@
 button {
   cursor: pointer; }
 
+.mav-grid {
+  display: grid; }
+  .mav-grid[data-grid-gap] {
+    grid-gap: var(--mav-gutter-sm); }
+
 .mav-admin-wrapper {
   padding-right: 20px; }
 
@@ -100,10 +105,16 @@ form .form-table tr {
 form .form-table td {
   display: flex;
   flex-direction: column;
-  width: auto;
-  max-width: 30vw; }
+  width: auto; }
+  @media only screen and (min-width: 1024px) {
+    form .form-table td {
+      max-width: 30vw; } }
 
 .mav-admin-desc {
   font-size: .8rem; }
+
+.mav-range-slider-ctn {
+  display: flex;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=mav-admin-styles.css.map */

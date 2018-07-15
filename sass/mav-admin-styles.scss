@@ -1,12 +1,22 @@
-/*
+/**
  * Admin styles
  */
 
 @import "mav-mixins";
+
 @import "mav-variables";
+
+.mav-grid {
+    display: grid;
+    &[data-grid-gap] {
+        grid-gap: var(--mav-gutter-sm);
+    }
+}
+
 .mav-admin-wrapper {
     padding-right: 20px;
 }
+
 .mav-admin-site-settings-wrapper {
     @media #{$mav-desktop} {
         display: grid;
@@ -25,7 +35,9 @@ form {
             display: flex;
             flex-direction: column;
             width: auto;
-            max-width: 30vw;
+            @media #{$mav-desktop} {
+                max-width: 30vw;
+            }
         }
     }
 }
@@ -34,4 +46,9 @@ form {
     &-desc {
         font-size: .8rem;
     }
+}
+
+.mav-range-slider-ctn{
+    display: flex;
+    justify-content: space-between;
 }

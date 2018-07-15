@@ -1,6 +1,6 @@
 <?php
 /**
- @package maverick-theme
+ * @package maverick-theme
  */
 
 function mavf_enqueue_styles() {

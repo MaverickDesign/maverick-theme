@@ -30,7 +30,7 @@ function mavf_get_post_thumbnail_url($mav_size = 'full') {
     return sprintf('style="background: url(%1$s);"', $featured_img_url);
 }
 
-/*
+/**
  * Custom Excerpt Length
  */
 
@@ -39,7 +39,7 @@ function mavf_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'mavf_custom_excerpt_length', 999 );
 
-/*
+/**
  * Display Single Default Category Link
  */
 
@@ -57,7 +57,7 @@ function mavf_get_single_category() {
     }
 }
 
-/*
+/**
  * Message Box
  */
 

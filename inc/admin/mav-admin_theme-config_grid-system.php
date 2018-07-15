@@ -3,42 +3,31 @@
  * @package maverick-theme
  */
 
-register_setting( 'mavog_theme_config', 'mav_setting_grid_system' );
-add_settings_field( 'mavid_theme_config_grid_system', 'Grid System', 'mavf_theme_config_grid_system', 'mav_admin_page_theme_config', 'mavsec_theme_config_theme_support' );
+register_setting('mavog_theme_config','mav_setting_grid_system' );
+add_settings_field(
+	'mavid_theme_config_grid_system',
+	__('Hệ thống lưới','maverick-theme'),
+	'mavf_theme_config_grid_system',
+	'mav_admin_page_theme_config',
+	'mavsec_theme_config_theme_support'
+);
 
 function mavf_theme_config_grid_system() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_grid_system') );
 
-	$mavChecked960  = '';
-	$mavChecked1200 = '';
-	$mavChecked1440 = '';
-	$mavChecked1680 = '';
+	$mavSavedValue = esc_attr(get_option('mav_setting_grid_system'));
 
-    if (empty($mavSavedValue)) {
-        $mavChecked1680 = 'checked';
-    }
+	$mavGrids = [960,1200,1400,1680];
 
-	switch ($mavSavedValue) {
-		case 960:
-			$mavChecked960 = 'checked';
-			break;
-		case 1200:
-			$mavChecked1200 = 'checked';
-			break;
-		case 1440:
-			$mavChecked1440 = 'checked';
-			break;
-		case 1680:
-			$mavChecked1680 = 'checked';
-			break;
+	echo '<fieldset class="mav-grid">';
+	foreach ($mavGrids as $mavGrid) {
+		$mavChecked = (@$mavSavedValue == $mavGrid) ? 'checked' : '';
+		printf(
+			'<label><input type="radio" name="mav_setting_grid_system" value="%1$d" %2$s>%1$d px</label>',
+			$mavGrid,$mavChecked
+		);
 	}
+	echo '</fieldset>';
 
-	echo '
-			<fieldset>
-				<label><input type="radio" name="mav_setting_grid_system" value="960" '.$mavChecked960.'/>960px</label><br />
-				<label><input type="radio" name="mav_setting_grid_system" value="1200" '.$mavChecked1200.'/>1200px</label><br />
-				<label><input type="radio" name="mav_setting_grid_system" value="1440" '.$mavChecked1440.'/>1440px</label><br />
-				<label><input type="radio" name="mav_setting_grid_system" value="1680" '.$mavChecked1680.'/>1680px</label><br />
-			</fieldset>
-		  ';
+	printf('<span class="mav-admin-desc">%1$s</span>',__('Chiều rộng tối đa của website, đơn vị pixel.','maverick-theme'));
+
 }

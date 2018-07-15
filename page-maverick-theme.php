@@ -337,6 +337,10 @@
             ?>
         </footer>
     </section>
+
+    <?php
+        mavf_post_modal([]);
+    ?>
 </main>
 
 <!-- Page content ends here -->

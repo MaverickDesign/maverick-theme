@@ -72,6 +72,8 @@ require TEMPLATE_DIR. '/inc/mav-ajax-form.php';
 
 require TEMPLATE_DIR. '/inc/mav-post-accordion.php';
 
+require TEMPLATE_DIR. '/inc/mav-post-modal.php';
+
 require TEMPLATE_DIR. '/inc/mav-tab-view.php';
 
 require TEMPLATE_DIR. '/inc/mav-content-modify.php';
