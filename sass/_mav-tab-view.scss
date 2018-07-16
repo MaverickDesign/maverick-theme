@@ -3,6 +3,10 @@ $mav-tab-border-color: #ddd;
 .mav-tab-wrapper {
     position: relative;
     max-width: var(--mav-site-width);
+    overflow-y: hidden;
+    @media #{$mav-phone} {
+        overflow-x: auto;
+    }
 }
 
 .mav-tab-ctn {
@@ -31,7 +35,7 @@ $mav-tab-border-color: #ddd;
         border-color: var(--mav-color-primary) $mav-tab-border-color transparent $mav-tab-border-color!important;
         + .mav-tab-content-wrapper {
             opacity: 1;
-            z-index: $mav-layer-overlay;
+            z-index: $mav-layer-content;
         }
     }
 }
@@ -44,4 +48,5 @@ $mav-tab-border-color: #ddd;
     border-color: $mav-tab-border-color;
     border-style: solid;
     border-width: 0 1px 1px 1px;
+    z-index: -1;
 }

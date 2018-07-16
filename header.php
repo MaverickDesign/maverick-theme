@@ -13,7 +13,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php language_attributes(); ?>">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,9 +127,9 @@
                 </a>
             </div>
             <!-- Header Social Links -->
-            <div class="mav-flex-row">
+            <div class="mav-flex-row mav-header-social-links">
                 <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
-                    <div id="mavid-header-socials" class="mav-header-socials-wrapper mav-margin-right">
+                    <div id="mavid-header-socials" class="mav-header-socials-wrapper">
                         <div class="mav-header-socials-ctn">
                             <?php mavf_social_links(); ?>
                         </div>
@@ -149,8 +149,8 @@
         if (current_theme_supports('menus') && has_nav_menu( 'primary_menu')): ?>
             <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
                 <!-- Sticky logo -->
-                <div class="mav-site-width mav-sticky-logo-wrapper">
-                    <div class="mav-sticky-logo-ctn mav-margin-left mav-hide-on-mobile">
+                <div class="mav-site-width mav-sticky-logo-wrapper mav-hide-on-mobile">
+                    <div class="mav-sticky-logo-ctn">
                         <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','maverick-theme')?>" class="mav-sticky-logo">
                             <?php
                                 $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));

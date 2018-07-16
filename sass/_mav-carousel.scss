@@ -5,13 +5,13 @@
     margin: 0 auto;
     overflow: hidden;
     @media #{$mav-desktop} {
-        max-width: $mav-site-width;
+        max-width: var(--mav-site-width);
     }
     .mav-carousel-nav-wrapper {
         @extend .mav-flex-center-all;
         min-width: var(--mav-gutter-lg);
         min-height: var(--mav-gutter-lg);
-        margin: 0 var(--mav-gutter);
+        // margin: 0 var(--mav-gutter);
         @media #{$mav-phone} {
             margin: 0 var(--mav-gutter-sm);
         }
@@ -61,6 +61,10 @@
         display: flex;
         width: 100%;
         overflow: hidden;
+        margin: 0 var(--mav-gutter);
+        @media #{$mav-phone} {
+            margin: 0 var(--mav-gutter-xs);
+        }
         .mav-carousel-ctn {
             position: relative;
             display: flex;

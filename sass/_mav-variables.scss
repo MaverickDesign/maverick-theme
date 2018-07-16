@@ -4,6 +4,16 @@ $mavNameSpace: 'mav';
  * Color code
  */
 
+$mavBlack: black;
+$mavGray : rgba(black,.5);
+$mavWhite: White;
+
+:root {
+    --mav-black: #{$mavBlack};
+    --mav-gray : #{$mavGray};
+    --mav-white: #{$mavWhite};
+}
+
 $mavDark-3  : #1f1f1f;
 $mavDark-2  : #2c2c2c;
 $mavDark-1  : #393939;
@@ -23,15 +33,6 @@ $mav-layer-content:         0;
 $mav-layer-background:    -10;
 $mav-layer-under:        -100;
 $mav-layer-bottom:      -1000;
-
-// :fullscreen {
-//     width: 100%;
-//     height: 100%;
-// }
-// :-webkit-full-screen {
-//     width: 100%;
-//     height: 100%;
-// }
 
 /**
  * Font Stacks
@@ -95,21 +96,21 @@ $mav-color-footer-background: #222;
 $mav-color-header-menu-background       : $mav-color-primary;
 $mav-color-header-menu-background-hover : $mav-color-accent;
 
-/*
-* MEDIA QUERIES
-*/
+/**
+ * Media Queries
+ */
 
 $mav-phone:   "only screen and (max-width: 480px)";
 $mav-tablet:  "only screen and (min-width: 768px) and (max-width: 1023px)";
 $mav-mobile:  "only screen and (max-width: 1023px)";
 $mav-desktop: "only screen and (min-width: 1024px)";
 
-/*
+/**
  * CSS Variables
  */
 
-// $mav-site-width: 1680px;
-$mav-site-width: 80vw;
+$mav-site-width: 1680px;
+// $mav-site-width: 80vw;
 $mav-page-margin: 25px;
 $mav-gutter: 20px;
 $mav-spacing: 20px;
@@ -199,7 +200,7 @@ $mav-color-background: #fafafa;
     @include text-contrast($mav-color-primary);
 }
 
-/*
+/**
  * Keyframe animations
  */
 

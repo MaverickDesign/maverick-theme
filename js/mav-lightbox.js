@@ -14,7 +14,7 @@ function mavf_lightbox(mavArgs = {
             // Generate collection ID
             const mavCollectionID = mavf_make_id(8);
 
-            // Gallery items
+            // Gallery item links
             const mavGalleryItems =  mavGallery.querySelectorAll('a');
 
             // Create lightbox wrapper
@@ -23,6 +23,8 @@ function mavf_lightbox(mavArgs = {
             // Set lightbox id
             mavLightbox.setAttribute('id',`mavid-lightbox-${mavCollectionID}`);
             mavLightbox.dataset.collection = mavCollectionID;
+            mavLightbox.setAttribute('data-total',mavGalleryItems.length);
+
 
             // Add classes
             mavLightbox.classList.add('mav-lightbox');
@@ -44,6 +46,7 @@ function mavf_lightbox(mavArgs = {
             ` : '';
 
             const mavContent = `
+            <div class="mav-lightbox-header"></div>
             <div class="mav-lightbox-ctn">
                 ${mavLightboxNavPrev}
                 <figure class="mav-lightbox-image-ctn">
@@ -71,6 +74,7 @@ function mavf_lightbox(mavArgs = {
             let i = 1;
 
             for (const mavGalleryItem of mavGalleryItems) {
+
                 let mavNumber = i++;
 
                 let mavImageUrl = mavGalleryItem.getAttribute('href');
@@ -89,6 +93,19 @@ function mavf_lightbox(mavArgs = {
                     // Add lightbox data attribute to item
                     mavGalleryItem.setAttribute('data-lightbox-item','');
 
+                    // Query caption element
+                    const mavGalleryItemClass = mavGalleryItem.closest('.gallery-item');
+                    if (mavGalleryItemClass != undefined) {
+                        var mavCaptionElement = mavGalleryItemClass.querySelector('figcaption');
+                    }
+
+                    let mavCaption = '';
+
+                    if (mavCaptionElement != undefined) {
+                        mavCaption = mavCaptionElement.innerText;
+                        mavGalleryItem.setAttribute('data-caption',mavCaption);
+                    }
+
                     mavGalleryItem.setAttribute('title','Click to enlarge');
 
                     // Remove href attribute
@@ -105,6 +122,10 @@ function mavf_lightbox(mavArgs = {
                     mavCloneItem.setAttribute('data-url',mavImageUrl);
 
                     mavCloneItem.setAttribute('data-number',mavNumber)
+
+                    if (mavCaptionElement != undefined) {
+                        mavCloneItem.setAttribute('data-caption',mavCaption);
+                    }
 
                     mavCloneItem.classList.add('mav-lightbox-thumbnail');
 
@@ -128,7 +149,7 @@ function mavf_lightbox(mavArgs = {
     }
 
     function mavf_lightbox() {
-
+        // console.log(this);
         event.stopPropagation();
 
         // Get collection ID of clicked image
@@ -147,6 +168,23 @@ function mavf_lightbox(mavArgs = {
             // Select the lightbox with collection ID
             const mavLightbox = document.querySelector(`#mavid-lightbox-${mavCollectionID}`);
 
+            // Lightbox Header
+            const mavLightboxHeader = mavLightbox.querySelector('.mav-lightbox-header');
+
+            const mavCaption = this.dataset.caption;
+            const mavTotalItems = mavLightbox.dataset.total;
+            const mavCurrentNumber = this.dataset.number;
+
+            let mavHeaderContent = `
+                <span class="mav-lightbox-number">${mavCurrentNumber}/${mavTotalItems}</span>
+            `;
+
+            mavLightboxHeader.innerHTML = mavHeaderContent;
+
+            if (mavCaption != undefined) {
+                mavLightboxHeader.innerHTML += `<figcaption class="mav-lightbox-caption">${mavCaption}</figcaption>`;
+            }
+
             // Show the lightbox
             mavLightbox.classList.remove('mav-hide');
             // Add current lightbox class
@@ -154,6 +192,7 @@ function mavf_lightbox(mavArgs = {
 
             const mavLightboxImage = mavLightbox.querySelector('.mav-lightbox-image');
 
+            // Change image source
             mavLightboxImage.src = mavImageUrl;
             mavLightboxImage.dataset.number = mavNumber;
         }
@@ -199,7 +238,7 @@ if (typeof mavf_lightbox === 'function') {
 
     if (mavGalleries.length > 0 || mavAttachments.length > 0) {
 
-        console.log(`Maverick's Lightbox loaded.`);
+        // console.log(`Maverick's Lightbox loaded.`);
         if (mavGalleries.length > 0) {
             mavf_lightbox({
                 mavGalleryClass: '.gallery'
@@ -223,10 +262,10 @@ if (typeof mavf_lightbox === 'function') {
                 break;
                 // Esc key
                 case 27:
-                const mavLightbox = document.querySelector('.mav-lightbox-current');
-                if (mavLightbox) {
-                    mavLightbox.querySelector('.mav-lightbox-close').click();
-                }
+                    const mavLightbox = document.querySelector('.mav-lightbox-current');
+                    if (mavLightbox) {
+                        mavLightbox.querySelector('.mav-lightbox-close').click();
+                    }
                 break;
             }
         });

@@ -1,12 +1,12 @@
 .mav-site-breadcrumbs-ctn {
     background: $mav-color-background;
-    box-shadow: 0 1px $mav-color-border;
+    box-shadow: 0 1px var(--mav-color-border);
 }
 .mav-breadcrumbs {
     display: flex;
     max-width: var(--mav-site-width);
     margin: 0 auto;
-    padding: var(--mav-gutter) $mav-page-margin;
+    padding: var(--mav-gutter) 0;
     li {
         margin-right: var(--mav-gutter-xs);
         &:last-child {

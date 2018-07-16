@@ -105,22 +105,6 @@
 }
 
 /**
- * Theme Page Styles
- */
-
-.mav-sec-theme-page {
-    padding-top: var(--mav-gutter-xl);
-    padding-bottom: var(--mav-gutter-xl);
-    &:nth-child(odd) {
-        background: darken($mav-color-background,2.5%);
-    }
-}
-
-[data-scroll] {
-    cursor: pointer;
-}
-
-/**
  * Countdown
  */
 
@@ -211,35 +195,5 @@
     }
     footer {
         align-self: end;
-    }
-}
-
-/**
- * Contact Page Styles
- */
-
-.mav-page-contact-wrapper {
-    display: grid;
-    grid-gap: var(--mav-gutter-lg);
-    @media #{$mav-desktop} {
-        margin: var(--mav-gutter-lg) auto;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "form social"
-        "form map";
-        align-items: stretch;
-        .mav-contact-form-wrapper{
-            display: flex;
-            justify-content: center;
-            grid-area: form;
-            height: 100%;
-        }
-        .mav-contact-socials-wrapper {
-            grid-area: social;
-        }
-        .mav-contact-wrapper {
-            grid-area: map;
-        }
     }
 }

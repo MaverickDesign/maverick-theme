@@ -3,11 +3,12 @@
  * @package maverick-theme
  */
 ?>
+
 <article id="mavid-post-<?php the_ID(); ?>" class="mav-post">
     <header id="mavid-post-header" class="mav-post-header">
         <?php
             if (has_post_thumbnail()): ?>
-                <div id="mavid-post-feature-image" class="mav-post-feature-image" style="background-image: url(<?php echo(get_the_post_thumbnail_url(get_the_ID(),'full'));  ?>)">
+                <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo(get_the_post_thumbnail_url(get_the_ID(),'full'));  ?>)">
                 </div>
             <?php endif;
         ?>
@@ -39,16 +40,16 @@
         <?php endif; ?>
         <?php
             if (is_single() && !is_attachment()) {
-                printf('<div class="mav-site-width"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1><div>', get_the_title());
+                printf('<div class="mav-site-width"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1></div>', get_the_title());
             }
         ?>
     </header>
     <section id="mavid-post-content" class="mav-post-content-wrapper<?php if (is_attachment()) {echo ' mav-post-attachment-wrapper';} ?>">
-        <div class="mav-pg-ctn mav-post-content-ctn mav-post-content<?php if (is_attachment()) {echo ' mav-post-attachment-ctn';} ?>">
+        <div class="mav-post-content-ctn mav-post-content<?php if (is_attachment()) {echo ' mav-post-attachment-ctn';} ?>">
             <?php
-                if (function_exists('mavf_post_content_modifier')) {
-                    mavf_post_content_modifier(THEME_DIR.'/template-parts/mav-patterns.json');
-                }
+                // if (function_exists('mavf_post_content_modifier')) {
+                //     mavf_post_content_modifier(THEME_DIR.'/template-parts/mav-patterns.json');
+                // }
                 the_content();
             ?>
         </div>
@@ -85,7 +86,7 @@
 </article>
 
 <?php
-/*
+/**
  * Related articles
  */
 

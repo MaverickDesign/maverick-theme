@@ -1,0 +1,33 @@
+/**
+ * Maverick WordPress Theme
+ * Page: Contact
+ * Last update: Today
+ */
+
+ .mav-page-contact-wrapper {
+    max-width: var(--mav-site-width);
+    padding: 0 var(--mav-gutter);
+    display: grid;
+    grid-gap: var(--mav-gutter-lg);
+    @media #{$mav-desktop} {
+        margin: var(--mav-gutter-lg) auto;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "form social"
+        "form map";
+        align-items: stretch;
+        .mav-contact-form-wrapper{
+            display: flex;
+            justify-content: center;
+            grid-area: form;
+            height: 100%;
+        }
+        .mav-contact-socials-wrapper {
+            grid-area: social;
+        }
+        .mav-contact-wrapper {
+            grid-area: map;
+        }
+    }
+}

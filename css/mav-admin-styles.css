@@ -13,10 +13,10 @@
 /**
  * THEME COLORS
  */
-/*
-* MEDIA QUERIES
-*/
-/*
+/**
+ * Media Queries
+ */
+/**
  * CSS Variables
  */
 :root {
@@ -59,9 +59,9 @@
   --mav-color-body: #32373c; }
   @media only screen and (min-width: 1024px) {
     :root {
-      --mav-site-width: 80vw; } }
+      --mav-site-width: 1680px; } }
 
-/*
+/**
  * Keyframe animations
  */
 @keyframes mav-brand-color-transition {

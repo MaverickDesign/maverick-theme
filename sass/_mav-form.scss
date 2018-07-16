@@ -30,9 +30,6 @@ form {
     overflow: hidden;
     background: var(--mav-color-off-white);
     @extend %mav-transition;
-    @media #{$mav-mobile} {
-        // background: var(--mav-color-primary);
-    }
 }
 
 .mav-site-search-ctn {
@@ -49,9 +46,12 @@ form {
 .mav-site-search-icon {
     font-size: 1rem;
     width: 1rem;
-    color: var(--mav-color-text-secondary-dark);
+    color: var(--mav-color-text-primary-dark);
     &:hover {
-        color: var(--mav-color-text-primary-dark);
+        color: white;
+    }
+    @media #{$mav-mobile} {
+        transform: translateX(-100%);
     }
     @media #{$mav-desktop} {
         color: var(--mav-color-text-secondary);

@@ -220,6 +220,11 @@
                 <h2 class="mav-sec-title">Lightbox Gallery</h2>
             </div>
         </header>
+        <div class="mav-theme-sec-content">
+            <?php
+                echo do_shortcode('[gallery link="file" columns="3" size="medium" ids="231,232,233,234,235,236"]');
+            ?>
+        </div>
         <footer class="mav-flex-center-all">
             <?php
                 mavf_button('Xem hướng dẫn sử dụng', '#');
@@ -339,7 +344,7 @@
     </section>
 
     <?php
-        mavf_post_modal([]);
+        // mavf_post_modal([]);
     ?>
 </main>
 

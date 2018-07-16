@@ -8,7 +8,7 @@
 <!-- Page content starts here -->
 
 <main id="mavid-page-main-content">
-    <section>
+    <section class="mav-page-wrapper">
         <?php
             if ( have_posts() ) {
                 while ( have_posts() ) {

@@ -1,22 +1,20 @@
 .mav-post {
-    display: grid;
+    // display: grid;
     background: white;
     &-header {
         text-align: center;
     }
     &-title {
-        font-weight: 300;
+        font-weight: 600;
+        font-size: 2rem;
+        text-align: center;
+        padding: var(--mav-gutter-lg) var(--mav-gutter) var(--mav-gutter);
         color: var(--mav-color-text-primary);
         @media #{$mav-desktop} {
-            padding: var(--mav-gutter-xl) var(--mav-gutter);
-        }
-        @media #{$mav-tablet} {
-            padding: var(--mav-gutter-lg) var(--mav-gutter);
-        }
-        @media #{$mav-phone} {
-            padding: var(--mav-gutter);
-            text-align: left;
-            font-weight: 600;
+            max-width: 50vw;
+            margin: 0 auto;
+            padding: var(--mav-gutter-lg) 0;
+            font-size: 3rem;
         }
     }
     /**
@@ -36,8 +34,7 @@
         @extend .mav-site-width;
     }
     &-info-ctn {
-        margin: var(--mav-gutter);
-        padding-bottom: var(--mav-gutter);
+        padding: var(--mav-gutter);
         box-shadow: 0 1px $mav-color-border;
         @media #{$mav-mobile} {
             flex-wrap: wrap;
@@ -57,7 +54,7 @@
     }
 
     footer {
-        padding: var(--mav-gutter-lg) 0;
+        padding: var(--mav-gutter-lg) var(--mav-gutter);
         background: var(--mav-color-accent);
         color: var(--mav-color-text-secondary-dark);
         .mav-post-footer-ctn {
@@ -115,6 +112,14 @@
     }
 }
 
+.mav-post-content-wrapper {
+    padding: var(--mav-gutter) var(--mav-gutter) var(--mav-gutter-xl);
+    .mav-post-content-ctn {
+        max-width: var(--mav-site-width);
+        margin: 0 auto;
+    }
+}
+
 .mav-post-info {
     a {
         text-decoration: none;
@@ -150,8 +155,10 @@
     /**
      * Headings
      */
-    h1,h2,h3,h4,h5,h6 {
-        margin-bottom: 1em;
+    h1,h2,h3 {
+        font-size: 1.5rem;
+        padding: 1em 0;
+        font-weight: 600;
     }
 
     /**
@@ -159,7 +166,8 @@
      */
     p {
         color: var(--mav-color-text-secondary);
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        line-height: 1.6em;
         &:last-child {
             margin-bottom: 0;
         }
@@ -204,7 +212,7 @@
             font-size: 1.75rem;
             font-weight: 300;
             text-align: center;
-            color: $mav-color-text-primary;
+            color: var(--mav-color-text-primary);
             &:first-child {
                 &:first-letter{
                     float: none;
@@ -271,25 +279,50 @@ article.sticky {
 .gallery {
     position: relative;
     display: grid;
-    grid-gap: var(--mav-gutter-lg);
     justify-content: center;
-    justify-items: center;
-    margin: var(--mav-gutter) auto;
-    padding: var(--mav-gutter-lg);
-    box-shadow: 0 0 1px $mav-color-border;
-    column-span: all;
-    @media #{$mav-mobile} {
-        grid-template-columns: repeat(2,1fr);
+    grid-gap: var(--mav-gutter-sm);
+    max-width: var(--mav-site-width);
+    @media #{$mav-phone} {
+        grid-template-columns: repeat(2,1fr)!important;
     }
     @media #{$mav-tablet} {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3,1fr)!important;
     }
     @media #{$mav-desktop} {
-        grid-template-columns: repeat(auto-fit,minmax(10%,auto));
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: var(--mav-gutter);
     }
     .gallery-item {
-        @extend .mav-flex-center-all;
-        flex-direction: column;
+        * {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    figure {
+        position: relative;
+        display: block;
+        a {
+            display: flex;
+        }
+        img {
+            object-fit: cover;
+            border: var(--mav-gutter-sm) solid var(--mav-color-off-white);
+            &:hover {
+                transform: scale(1);
+            }
+        }
+        figcaption {
+            background: var(--mav-color-off-white);
+            padding: var(--mav-gutter-sm);
+            padding-top: 0;
+            text-align: center;
+        }
+    }
+}
+
+@for $columns from 1 to 8 {
+    .gallery-columns-#{$columns} {
+        grid-template-columns: repeat(#{$columns},1fr);
     }
 }
 
@@ -337,8 +370,11 @@ article.sticky {
  */
 
 .mav-related-posts-wrapper {
-    padding: var(--mav-gutter-xl) 0;
+    padding: var(--mav-gutter-xl) var(--mav-gutter-sm);
     background: var(--mav-color-site-background);
+    @media #{$mav-phone} {
+        padding: var(--mav-gutter-lg) 0;
+    }
 }
 
 .mav-post-attachment-wrapper {
