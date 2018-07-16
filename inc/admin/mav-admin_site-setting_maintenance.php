@@ -11,7 +11,7 @@ function mavf_site_setting_sec_maintenance() {
 }
 
 // Eneable maintenance mode
-register_setting( 'mavog_site_setting', 'mav_setting_maintenance' );
+register_setting('mavog_site_setting','mav_setting_maintenance');
 add_settings_field(
     'mavid_site_setting_maintenance',
     __('Kích hoạt chế độ bảo trì','maverick-theme'),

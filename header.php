@@ -17,6 +17,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Data -->
+    <meta property="og:url"           content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<?php single_post_title(); ?>" />
+    <meta property="og:description"   content="Your description" />
+    <?php if(has_post_thumbnail($post->ID)): ?>
+    <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" />
+    <?php endif; ?>
+    <!-- Open Graph Data -->
     <title>
         <?php
             if (!is_front_page()) {
@@ -28,37 +37,26 @@
             }
         ?>
     </title>
-    <!-- Facebook Open Graph Data -->
-    <meta property="og:url"           content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="<?php single_post_title(); ?>" />
-    <meta property="og:description"   content="Your description" />
-    <?php if(has_post_thumbnail($post->ID)): ?>
-    <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" />
-    <?php endif; ?>
-    <!-- End of Facebook Open Graph Data -->
-
     <?php
         /**
          * Google Analytics
          */
-        $mavGA = esc_attr( get_option('mav_setting_google_analytics_id') );
-        if (!empty($mavGA)) : ?>
+        $mavEGA = esc_attr( get_option('mav_setting_enable_google_analytics') );
+        $mavGAID = esc_attr( get_option('mav_setting_google_analytics_id') );
+        if (!empty($mavEGA ) && !empty($mavGAID)) : ?>
             <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            ga('create', '<?php echo $mavGA ?>', 'auto');
-            ga('send', 'pageview');
+                ga('create', '<?php echo $mavGAID ?>', 'auto');
+                ga('send', 'pageview');
             </script>
         <?php endif;
     ?>
     <?php
-        /**
-         * Wordpress Heads
-         */
+        /* Wordpress Heads */
         wp_head();
     ?>
     <style>
@@ -76,14 +74,15 @@
 
 <body data-device="<?php echo $mavDevice; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
     <?php
-        $mavFacebookAppID = esc_attr( get_option('mav_setting_facebook_app_id') );
-        if (!empty($mavFacebookAppID)): ?>
+        $mavEFA  = esc_attr(get_option('mav_setting_enable_facebook_app'));
+        $mavFAID = esc_attr(get_option('mav_setting_facebook_app_id'));
+        if (!empty($mavEFA) && !empty($mavFAID)): ?>
             <!-- Facebook Script -->
             <div id="fb-root"></div>
             <script>
                 window.fbAsyncInit = function() {
                     FB.init({
-                    appId      : '<?php echo $mavFacebookAppID; ?>,
+                    appId      : '<?php echo $mavFAID; ?>,
                     xfbml      : true,
                     version    : 'v3.0'
                     });

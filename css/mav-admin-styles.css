@@ -7,6 +7,11 @@
 /**
  * Color code
  */
+:root {
+  --mav-black: black;
+  --mav-gray: rgba(0, 0, 0, 0.5);
+  --mav-white: White; }
+
 /**
  * Font Stacks
  */
@@ -109,6 +114,12 @@ form .form-table td {
   @media only screen and (min-width: 1024px) {
     form .form-table td {
       max-width: 30vw; } }
+form input[data-visual="short"] {
+  max-width: 25%; }
+form input[data-visual="medium"] {
+  max-width: 50%; }
+form input[data-visual="long"] {
+  max-width: 100%; }
 
 .mav-admin-desc {
   font-size: .8rem; }

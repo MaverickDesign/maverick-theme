@@ -40,6 +40,17 @@ form {
             }
         }
     }
+    input {
+        &[data-visual="short"] {
+            max-width: 25%;
+        }
+        &[data-visual="medium"] {
+            max-width: 50%;
+        }
+        &[data-visual="long"] {
+            max-width: 100%;
+        }
+    }
 }
 
 .mav-admin {
