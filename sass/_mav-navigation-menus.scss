@@ -7,14 +7,16 @@
         }
     }
 }
-
+.mav-header-logo-wrapper {
+    max-width: var(--mav-site-width);
+    margin: auto;
+}
 .mav-header-logo-ctn {
-    @extend .mav-pg-ctn;
     @extend %mav-flex-row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: var(--mav-gutter-sm) 0;
+    padding: var(--mav-gutter-sm) var(--mav-gutter);
     @media #{$mav-mobile} {
         background: var(--mav-color-accent);
         @include text-contrast($mav-color-brand-accent);
@@ -27,7 +29,6 @@
     width: 1rem;
     justify-self: start;
     color: var(--mav-color-text-primary-dark);
-    transform: translateX(100%);
     &:hover {
         color: white;
     }
@@ -55,6 +56,9 @@
 
 // Header sticky logo
 .mav-sticky-logo-wrapper {
+    max-width: var(--mav-site-width);
+    margin: 0 auto;
+    padding: 0 var(--mav-gutter);
     position: sticky;
     top: 0;
     height: 100%;

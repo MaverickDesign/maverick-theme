@@ -27,7 +27,6 @@
     cursor: pointer;
     &[data-trigger-icon] {
         &:before {
-            // display: inline-block;
             margin-right: var(--mav-gutter-sm);
             @extend %mav-font-awesome;
             content: '\f078';
@@ -57,6 +56,11 @@
         }
         + .mav-accordion-ctn-wrapper {
             max-height: 100vh;
+        }
+    }
+    &:hover {
+        &:before {
+            transform: translateY(3px);
         }
     }
 }

@@ -49,5 +49,6 @@ add_settings_field(
 
 function mavf_site_setting_google_map_height() {
     $mavSavedValue = esc_attr( get_option('mav_setting_google_map_height') );
-    printf('<input type="text" name="mav_setting_google_map_height" value="%1$s" placeholder="%2$s"/>', $mavSavedValue, __('Chiều cao bản đồ theo tỉ lệ % chiều ngang màn hình (vw)','maverick-theme'));
+    printf('<input type="text" name="mav_setting_google_map_height" value="%1$s" placeholder="%2$s" data-visual="short"/>', $mavSavedValue, __('e.g. 33','maverick-theme'));
+    printf('<span class="mav-admin-desc">%1$s</a>',__('Chiều cao bản đồ theo tỉ lệ % chiều ngang màn hình (vw)','maverick-theme'));
 }

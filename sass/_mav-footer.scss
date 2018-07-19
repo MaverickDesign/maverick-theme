@@ -1,14 +1,35 @@
 /**
+ * Page Footer
+ */
+ .mav-pg-footer {
+    background: var(--mav-color-site-footer);
+    color: var(--mav-color-text-primary-dark);
+}
+
+.mav-footer-copyright-wrapper {
+    background: var(--mavc-black);
+}
+
+.mav-footer-copyright-ctn {
+    max-width: var(--mav-site-width);
+    margin: 0 auto;
+    padding: var(--mav-gutter);
+    color: var(--mav-color-text-secondary-dark);
+    font-size: var(--mav-font-size-small);
+}
+
+/**
  * Footer Social Links
  */
 
 .mav-footer-socials-wrapper {
-    color: initial;
+    box-shadow: 0px -1px var(--mav-color-border);
     background: var(--mav-color-off-white);
-    padding: var(--mav-gutter) 0;
     .mav-footer-socials-ctn {
+        padding: var(--mav-gutter-lg) var(--mav-gutter);
         @extend %mav-flex-column;
         align-items: center;
+        color: initial;
         span {
             text-align: center;
         }
@@ -20,8 +41,8 @@
             width: 100%;
             margin-top: var(--mav-gutter);
             .mav-social-icon {
-                justify-self: center;
                 @extend .mav-flex-center-all;
+                justify-self: center;
                 min-width: 60px;
                 min-height: 60px;
                 border: 2px solid var(--mav-color-accent);
@@ -96,3 +117,4 @@
         }
     }
 }
+

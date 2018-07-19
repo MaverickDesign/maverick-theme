@@ -111,31 +111,33 @@
             </div>
         </section>
         <!-- Header Logo -->
-        <section id="mavid-sec-header-logo" class="mav-header-logo-ctn">
-            <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','maverick-theme'); ?>"></button>
-            <div id="mavid-site-logo" class="mav-site-logo-wrapper">
-                <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','maverick-theme'); ?>" class="mav-site-logo-ctn">
-                    <?php
-                        $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
-                        if ($mavBrandLogo) {
-                            echo "<img src=\"$mavBrandLogo;\">";
-                        } else {
-                            echo '<img src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
-                        }
-                    ?>
-                </a>
-            </div>
-            <!-- Header Social Links -->
-            <div class="mav-flex-row mav-header-social-links">
-                <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
-                    <div id="mavid-header-socials" class="mav-header-socials-wrapper">
-                        <div class="mav-header-socials-ctn">
-                            <?php mavf_social_links(); ?>
+        <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper">
+            <div class="mav-header-logo-ctn">
+                <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','maverick-theme'); ?>"></button>
+                <div id="mavid-site-logo" class="mav-site-logo-wrapper">
+                    <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','maverick-theme'); ?>" class="mav-site-logo-ctn">
+                        <?php
+                            $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
+                            if ($mavBrandLogo) {
+                                echo "<img src=\"$mavBrandLogo;\">";
+                            } else {
+                                echo '<img src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
+                            }
+                        ?>
+                    </a>
+                </div>
+                <!-- Header Social Links -->
+                <div class="mav-flex-row mav-header-social-links">
+                    <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
+                        <div id="mavid-header-socials" class="mav-header-socials-wrapper">
+                            <div class="mav-header-socials-ctn">
+                                <?php mavf_social_links(); ?>
+                            </div>
                         </div>
-                    </div>
-                    <?php endif;
-                ?>
-                <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','maverick-theme'); ?>"></button>
+                        <?php endif;
+                    ?>
+                    <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','maverick-theme'); ?>"></button>
+                </div>
             </div>
         </section>
     </header>
@@ -148,7 +150,7 @@
         if (current_theme_supports('menus') && has_nav_menu( 'primary_menu')): ?>
             <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
                 <!-- Sticky logo -->
-                <div class="mav-site-width mav-sticky-logo-wrapper mav-hide-on-mobile">
+                <div class="mav-sticky-logo-wrapper mav-hide-on-mobile">
                     <div class="mav-sticky-logo-ctn">
                         <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','maverick-theme')?>" class="mav-sticky-logo">
                             <?php
@@ -197,8 +199,10 @@
 		 * Only show up when the device is not phone
 		 */
         if (!is_front_page() && !is_home() && !is_attachment() && function_exists('mavf_breadcrumbs')): ?>
-            <section id="mavid-site-breadcrumbs" class="mav-site-breadcrumbs-ctn mav-hide-on-mobile">
-                <?php mavf_breadcrumbs(); ?>
+            <section id="mavid-site-breadcrumbs" class="mav-site-breadcrumbs-wrapper mav-hide-on-mobile">
+                <div class="mav-site-breadcrumbs-ctn">
+                    <?php mavf_breadcrumbs(); ?>
+                </div>
             </section>
         <?php endif;
     ?>

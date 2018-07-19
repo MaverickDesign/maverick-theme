@@ -38,5 +38,5 @@ add_settings_field(
 
 function mavf_site_setting_maintenance_time(){
     $mavSavedValue = esc_attr( get_option('mav_setting_maintenance_time') );
-    printf( '<input id="mavid-maintenance-time" type="date" name="mav_setting_maintenance_time" value="%1$s" placeholder="dd/mm/yyyy"/>', $mavSavedValue );
+    printf( '<input id="mavid-maintenance-time" type="date" name="mav_setting_maintenance_time" value="%1$s" placeholder="dd/mm/yyyy" data-visual="short"/>', $mavSavedValue );
 }

@@ -41,9 +41,10 @@ add_settings_field(
 function mavf_site_setting_terms_page_term() {
     $mavSavedValue = esc_attr(get_option('mav_setting_terms_page_term'));
     printf(
-        '<input type="text" name="mav_setting_terms_page_term" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue,__('ID trang Điều Khoản','maverick-theme')
+        '<input type="text" name="mav_setting_terms_page_term" value="%1$s" placeholder="%2$s" data-visual="short"/>',
+        $mavSavedValue,__('e.g. '.rand(100,200).'','maverick-theme')
     );
+    printf('<span class="mav-admin-desc">%1$s</a>',__('ID trang Điều Khoản','maverick-theme'));
 }
 
 register_setting('mavog_site_setting','mav_setting_terms_page_condition');
@@ -58,9 +59,10 @@ add_settings_field(
 function mavf_site_setting_terms_page_condition() {
     $mavSavedValue = esc_attr(get_option('mav_setting_terms_page_condition'));
     printf(
-        '<input type="text" name="mav_setting_terms_page_condition" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue,__('ID trang Điều Kiện','maverick-theme')
+        '<input type="text" name="mav_setting_terms_page_condition" value="%1$s" placeholder="%2$s" data-visual="short"/>',
+        $mavSavedValue,__('e.g. '.rand(100,200).'','maverick-theme')
     );
+    printf('<span class="mav-admin-desc">%1$s</a>',__('ID trang Điều Kiện','maverick-theme'));
 }
 
 register_setting('mavog_site_setting','mav_setting_terms_page_policy');
@@ -76,6 +78,7 @@ function mavf_site_setting_terms_page_policy() {
     $mavSavedValue = esc_attr(get_option('mav_setting_terms_page_policy'));
     printf(
         '<input type="text" name="mav_setting_terms_page_policy" value="%1$s" placeholder="%2$s" data-visual="short"/>',
-        $mavSavedValue,__('ID trang Chính Sách','maverick-theme')
+        $mavSavedValue,__('e.g. '.rand(100,200).'','maverick-theme')
     );
+    printf('<span class="mav-admin-desc">%1$s</a>',__('ID trang Chính Sách','maverick-theme'));
 }

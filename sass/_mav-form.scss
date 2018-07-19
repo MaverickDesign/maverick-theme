@@ -50,9 +50,6 @@ form {
     &:hover {
         color: white;
     }
-    @media #{$mav-mobile} {
-        transform: translateX(-100%);
-    }
     @media #{$mav-desktop} {
         color: var(--mav-color-text-secondary);
         &:hover {
