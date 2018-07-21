@@ -130,7 +130,10 @@
         @extend %mav-font-awesome;
         margin-right: .5em;
         font-size: inherit;
-        color: var(--mav-color-text-hint);
+        color: var(--mav-color-text-secondary);
+    }
+    &:hover{
+        color: var(--mav-color-text-primary);
     }
     &[data-type="category"] {
         &:before {

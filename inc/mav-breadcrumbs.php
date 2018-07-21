@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @package maverick-theme
  */
 
@@ -24,10 +24,10 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
         printf('<ul id="%1$s" class="%2$s">', $mav_breadcrumb_id, $mav_breadcrumb_class);
 
         // Home page
-        printf('<li class="item-home"><a class="bread-link bread-home" href="%1$s" title="%2$s"><span class="fas fa-home"></span><strong>%2$s</strong></a></li>',
-        get_home_url(), $home_title
+        printf('<li class="item-home"><a class="bread-link bread-home" href="%1$s" title="%3$s"><i class="fas fa-home"></i><strong>%2$s</strong></a></li>',
+        get_home_url(), $home_title, __( 'Trở lại trang chủ' , 'maverick-theme' )
         );
-        printf('<li class="separator separator-home"> %1$s </li>', $separator);
+        printf('<li class="separator separator-home">%1$s</li>', $separator);
 
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
 

@@ -210,8 +210,8 @@
 		 * Only show up when the device is not phone
 		 */
         if (!is_front_page() && !is_home() && !is_attachment() && function_exists('mavf_breadcrumbs')): ?>
-            <section id="mavid-site-breadcrumbs" class="mav-site-breadcrumbs-wrapper mav-hide-on-mobile">
-                <div class="mav-site-breadcrumbs-ctn">
+            <section id="mavid-site-breadcrumbs" class="mav-breadcrumbs-wrapper mav-hide-on-mobile">
+                <div class="mav-breadcrumbs-ctn">
                     <?php mavf_breadcrumbs(); ?>
                 </div>
             </section>

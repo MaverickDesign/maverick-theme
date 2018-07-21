@@ -7,7 +7,7 @@ function mavf_header_menu(){
     const mavSubmenuIcons       = mavHeaderMenu.querySelectorAll('.mav-submenu-icon');
     const mavSubMenus           = mavHeaderMenu.querySelectorAll('.mav-sub-menu');
 
-    const mavHeaderBreadcrumbs  = document.querySelector('.mav-site-breadcrumbs-ctn');
+    const mavHeaderBreadcrumbs  = document.querySelector('.mav-breadcrumbs-ctn');
     const mavPageMainContent    = document.querySelector('#mavid-page-main-content');
 
     for (const mavSubmenuIcon of mavSubmenuIcons) {
