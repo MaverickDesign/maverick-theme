@@ -106,11 +106,16 @@
 
 .mav-pg-ctn {
     max-width: var(--mav-site-width);
-    padding: 0 var(--mav-gutter);
     margin: 0 auto;
+    padding: 0 var(--mav-gutter);
     @media #{$mav-phone} {
         padding: 0 var(--mav-gutter-sm);
     }
+}
+
+.mav-pg-width {
+    max-width: var(--mav-site-width);
+    margin: 0 auto;
 }
 
 .mav-pg-header {
@@ -200,23 +205,19 @@
     }
 }
 
-.mav-sec-home {
-    padding: var(--mav-gutter-xl) 0;
-    background: var(--mav-color-site-background);
-    &:nth-child(odd) {
-        background: darken($mav-color-background,2.5%);
-    }
-    @media #{$mav-phone} {
-        padding: var(--mav-gutter-lg) 0;
-    }
-    .mav-sec-content {
-        margin: var(--mav-gutter-lg) auto;
-    }
-}
-
-.mav-sec-title-wrapper {
-    margin-bottom: var(--mav-gutter-lg);
-}
+// .mav-sec-home {
+//     padding: var(--mav-gutter-xl) 0;
+//     background: var(--mav-color-site-background);
+//     &:nth-child(odd) {
+//         background: darken($mav-color-background,2.5%);
+//     }
+//     @media #{$mav-phone} {
+//         padding: var(--mav-gutter-lg) 0;
+//     }
+//     .mav-sec-body-ctn {
+//         margin: var(--mav-gutter-lg) auto;
+//     }
+// }
 
 .mav-sec-wrapper {
     background: var(--mav-color-site-background);
@@ -224,6 +225,7 @@
         background: var(--mav-color-off-white);
     }
 }
+
 .mav-sec-ctn {
     max-width: var(--mav-site-width);
     margin: 0 auto;
@@ -233,18 +235,32 @@
         padding: 0;
     }
 }
+.mav-sec-header-wrapper {
 
-.mav-sec-header {
-    @extend .mav-flex-center-all;
-    padding: var(--mav-gutter-xl) 0 var(--mav-gutter);
-    a {
-        text-decoration: none;
+    .mav-sec-header-ctn {
+        @extend .mav-flex-center-all;
+        padding: var(--mav-gutter-xl) 0 var(--mav-gutter);
+        a {
+            text-decoration: none;
+        }
+    }
+
+}
+
+.mav-sec-title-wrapper {
+    margin-bottom: var(--mav-gutter-lg);
+    .mav-sec-title-ctn {
     }
 }
-.mav-sec-content {
-    padding: var(--mav-gutter-lg) 0;
+
+.mav-sec-body-wrapper {
+    .mav-sec-body-ctn {
+        padding: var(--mav-gutter-lg) 0;
+    }
 }
-.mav-sec-footer {
-    @extend .mav-flex-center-all;
-    padding: var(--mav-gutter) 0 var(--mav-gutter-xl);
+.mav-sec-footer-wrapper {
+    .mav-sec-footer-ctn {
+        @extend .mav-flex-center-all;
+        padding: var(--mav-gutter) 0 var(--mav-gutter-xl);
+    }
 }

@@ -3,7 +3,6 @@
  * @package maverick-theme
  */
 ?>
-
 <?php
     /* Detect device */
     $mavDevice = '';
@@ -12,17 +11,27 @@
     }
 ?>
 
+<?php
+    session_start();
+    if (!isset($_SESSION['mavs_id'])) {
+        $_SESSION['mavs_id']        = mavf_unique(16);
+        $_SESSION['mavs_start']     = $_SERVER['REQUEST_TIME'];
+    }
+    // $mavSessionID = $_SESSION['mavs_id'];
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Open Graph Data -->
     <meta property="og:url"           content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="<?php single_post_title(); ?>" />
     <meta property="og:description"   content="Your description" />
-    <?php if(has_post_thumbnail($post->ID)): ?>
+    <?php if(!is_404() && has_post_thumbnail($post->ID)): ?>
     <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" />
     <?php endif; ?>
     <!-- Open Graph Data -->
@@ -43,7 +52,7 @@
          */
         $mavEGA = esc_attr( get_option('mav_setting_enable_google_analytics') );
         $mavGAID = esc_attr( get_option('mav_setting_google_analytics_id') );
-        if (!empty($mavEGA ) && !empty($mavGAID)) : ?>
+        if ( !empty( $mavEGA ) && !empty( $mavGAID ) ): ?>
             <script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -52,8 +61,8 @@
 
                 ga('create', '<?php echo $mavGAID ?>', 'auto');
                 ga('send', 'pageview');
-            </script>
-        <?php endif;
+            </script> <?php
+        endif;
     ?>
     <?php
         /* Wordpress Heads */
@@ -100,14 +109,16 @@
         <?php endif;
     ?>
 
-    <header id="mavid-page-header" class="mav-pg-header">
+    <header id="mavid-page-header" class="mav-pg-header mav-pg-header-wrapper">
         <!-- Site Search -->
-        <section id="mavid-sec-site-search" class="mav-site-search-wrapper">
-            <div class="mav-site-search-ctn">
-                <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-                    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( __('Nhập từ khóa cần tìm...','maverick-theme'), 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( __('Tìm theo từ khóa','maverick-theme'), 'label' ) ?>" class="mav-search-input"/>
-                    <button type="submit" title="<?php _e('Tìm kiếm','maverick-theme'); ?>" class="mav-btn-solid"><i class="fas fa-search"></i></button>
-                </form>
+        <section id="mavid-sec-site-search" class="mav-sec-wrapper mav-site-search-wrapper">
+            <div class="mav-sec-ctn">
+                <div class="mav-site-search-ctn">
+                    <form id="mavid-site-search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+                        <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( __('Nhập từ khóa cần tìm...','maverick-theme'), 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( __('Tìm theo từ khóa','maverick-theme'), 'label' ) ?>" class="mav-search-input"/>
+                        <button type="submit" title="<?php _e('Tìm kiếm','maverick-theme'); ?>" class="mav-btn-secondary"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
             </div>
         </section>
         <!-- Header Logo -->

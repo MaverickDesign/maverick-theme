@@ -78,6 +78,7 @@ function mavf_slider($mavArgs) {
 
         /**
          * Type 1
+         * ==================================================
          */
         if ($mavSliderType == 1) {
             while ($mavQuery->have_posts()):
@@ -105,6 +106,7 @@ function mavf_slider($mavArgs) {
 
         /**
          * Type 2
+         * ==================================================
          */
         if ($mavSliderType == 2) {
             $mavRandomNumber = $mavUniqueNumber;
@@ -148,8 +150,8 @@ function mavf_slider($mavArgs) {
                 if ($mavDisplayTitle) {
                     echo '<div class="mav-slide-post-title-ctn">';
                         printf(
-                            '<a href="%2$s" title="Xem %1$s"><h2 class="mav-slider-title">%1$s</h2></a>',
-                            get_the_title(), get_the_permalink()
+                            '<a href="%2$s" title="%3$s %1$s"><h2 class="mav-slider-title">%1$s</h2><button class="mav-btn-secondary mav-hide-on-desktop mav-hide-on-tablet">%3$s</button></a>',
+                            get_the_title(), get_the_permalink(),__( 'Xem nội dung' , 'maverick-theme' )
                         );
                     echo '</div>';
                 }
@@ -190,6 +192,7 @@ function mavf_slider($mavArgs) {
 
         /**
          * Type 3
+         * ==================================================
          */
         if ($mavSliderType == 3) {
             while ($mavQuery->have_posts()):

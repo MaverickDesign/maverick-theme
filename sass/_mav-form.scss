@@ -33,6 +33,7 @@ form {
 }
 
 .mav-site-search-ctn {
+    padding: var(--mav-gutter) 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -62,7 +63,6 @@ form {
     &#mavid-site-search {
         background: white;
         width: 100%;
-        margin: var(--mav-gutter);
         padding: var(--mav-gutter-xs);
         border: 1px solid var(--mav-color-border);
         max-width: var(--mav-site-width);

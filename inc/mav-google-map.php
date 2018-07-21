@@ -5,10 +5,6 @@
 
 function mavf_google_map($mavArgs) {
 
-    if (empty(esc_attr(get_option('mav_setting_enable_google_map')))) {
-        return;
-    }
-
     $mavGoogleMap       = isset($mavArgs['source'])     ? esc_html($mavArgs['source'])  : esc_html(get_option('mav_setting_google_map_uri'));
     $mavGoogleMapHeight = isset($mavArgs['height'])     ? $mavArgs['height']            : esc_attr(get_option('mav_setting_google_map_height'));
     $mavMapId           = isset($mavArgs['id'])         ? 'mavid-'.$mavArgs['id']       : '';

@@ -18,7 +18,7 @@ $mav-tab-border-color: #ddd;
     display: flex;
     justify-content: center;
     padding: var(--mav-gutter-sm);
-    background: var(--mav-color-off-white);
+    background: rgba(0,0,0,.025);
     border-color: transparent;
     border-left-color: darkgray;
     border-bottom-color: $mav-tab-border-color;
@@ -29,6 +29,7 @@ $mav-tab-border-color: #ddd;
     @extend %mav-transition;
     &:hover {
         color: var(--mav-color-text-primary);
+        background: rgba($mavBlack,.05);
     }
     &[data-state="active"] {
         background: white;

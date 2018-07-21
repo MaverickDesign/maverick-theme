@@ -32,8 +32,6 @@
             bottom: 0;
             opacity: 0;
             max-height: 0;
-            // transform: translateY(-100%);
-            // transition: all .3s ease;
             @media #{$mav-phone} {
                 top: 0;
             }
@@ -75,7 +73,10 @@
 .mav-slider-type-2-wrapper {
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 100vw;
+    @media #{$mav-tablet} {
+        height: 50vw;
+    }
     @media #{$mav-desktop} {
         height: 30vw;
     }
@@ -86,44 +87,36 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: $mavBlack;
     .mav-slide {
-        z-index: -1;
+        z-index: $mav-layer-background;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%;
-        background: $mav-color-background;
         background-repeat: no-repeat!important;
         background-size: cover!important;
         background-position: center!important;
-        transition: all .6s;
+        transition: opacity .6s linear;
         overflow: hidden;
         opacity: 0;
-        &:hover {
-            .mav-slide-post-title-ctn {
-                opacity: 1;
-                transition: all .3s ease;
-            }
-        }
         &.mav-active-slide {
-            z-index: 9;
+            z-index: $mav-layer-image;
             opacity: 1;
         }
         .mav-slide-post-title-ctn {
-            position: relative;
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            height: 100%;
+            height: 25%;
             @extend .mav-flex-center-all;
-            background: rgba(black,.5);
-
+            background: rgba($mavBlack,.33);
             color: var(--mav-color-text-primary-dark);
-            font-family: $font-roboto-slab;
             letter-spacing: 2px;
-            @extend %mav-transition;
             @media #{$mav-desktop} {
-                opacity: 0;
+                opacity: 1;
                 padding: var(--mav-gutter);
             }
             a {
@@ -131,31 +124,31 @@
             }
             .mav-slider-title {
                 text-align: center;
-                max-width: 50vw;
+                max-width: 75vw;
                 color: white;
                 @extend %mav-transition;
+                @media #{$mav-phone} {
+                    display: none;
+                }
                 &:hover {
-                    transform: scale(1.1);
                 }
             }
         }
         .mav-slide-nav {
-            z-index: $mav-layer-overlay;
+            z-index: $mav-layer-image;
             position: absolute;
-            width: 80px;
+            width: 60px;
             height: 100%;
-            opacity: .5;
+            opacity: .75;
             font-size: 2rem;
             @extend %mav-transition;
+            @extend .mav-flex-center-all;
+            @extend %mav-font-awesome;
+            color: var(--mav-color-text-primary-dark);
+            // cursor: pointer;
             &:hover {
                 opacity: 1;
             }
-        }
-        .slide-prev, .slide-next {
-            @extend .mav-flex-center-all;
-            @extend %mav-font-awesome;
-            color: $mav-color-text-primary-dark;
-            cursor: pointer;
         }
         .slide-prev {
             left: 0;
@@ -181,13 +174,12 @@
     }
     input.mav-slide-input:checked {
         + .mav-slide {
-            opacity: 1;
+            // opacity: 1;
         }
     }
     .mav-slider-nav {
         position: absolute;
         bottom: 0;
-
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(1rem,2rem));
         justify-content: center;
@@ -195,9 +187,11 @@
         width: 100%;
         padding: var(--mav-gutter-sm) 0;
 
-        z-index: $mav-layer-overlay;
+        z-index: $mav-layer-image;
+
     }
     .mav-nav-dot {
+        cursor: pointer;
         position: relative;
         height: 1rem;
         width: 1rem;
@@ -214,7 +208,7 @@
     }
 }
 
-/*
+/**
  * Slider Type 3
  */
 

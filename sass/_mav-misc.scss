@@ -105,26 +105,6 @@
 }
 
 /**
- * Countdown
- */
-
-.mav-countdown-ctn {
-    padding: var(--mav-gutter);
-    .mav-countdown{
-        text-align: center;
-        &[data-type="container"] {
-            @include mav-flex-center-all;
-        }
-        &[data-type="number"]{
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: var(--mav-color-text-primary);
-        }
-        margin-right: var(--mav-gutter-xs);
-    }
-}
-
-/**
  * Mobile container
  */
 
@@ -164,6 +144,7 @@
     bottom: 0;
     right: 0;
     padding: var(--mav-gutter);
+    z-index: $mav-layer-top;
 }
 
 /**

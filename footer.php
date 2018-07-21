@@ -70,5 +70,19 @@
         /* Wordpress Footer Functions */
         wp_footer();
     ?>
+    <?php
+        /* For Debug Only */
+        printf(
+            '<div id="mavid-session-info" data-id="%1$s" data-start="%2$s" class="mav-hide">',
+            $_SESSION['mavs_id'], $_SESSION['mavs_start']
+        );
+            printf('<p>Session ID: %1$s</p>', $_SESSION['mavs_id']);
+            printf('<p>Session start: %1$s</p>', date('Y/m/d H:i:s',$_SESSION['mavs_start']));
+            echo 'Now is: '.date('Y/m/d H:i:s',$_SERVER['REQUEST_TIME']);
+            echo '<br>';
+            $mavDuration = $_SERVER['REQUEST_TIME'] - $_SESSION['mavs_start'];
+            echo 'Session last: '.date('H:i:s',$mavDuration);
+        echo '</div>';
+    ?>
     </body>
 </html>

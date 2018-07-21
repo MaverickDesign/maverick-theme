@@ -1,3 +1,9 @@
+.mav-btn-ctn {
+    a {
+        text-decoration: none;
+    }
+}
+
 button {
     margin: 0;
     padding: 0;
@@ -10,6 +16,7 @@ button {
 %mav-btn {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     padding: var(--mav-gutter-sm) var(--mav-gutter);
 
@@ -80,7 +87,6 @@ button {
     animation: mav-brand-color-transition 5s infinite;
     border-radius: 50%;
     opacity: 0;
-    z-index: $mav-layer-top;
     @extend %mav-transition;
     &:before {
         @extend %mav-font-awesome;

@@ -5,7 +5,7 @@
 ?>
 <div class="mav-card-wrapper">
     <div class="mav-card-ctn">
-        <article id="mavid-post-<?php the_ID(); ?>" <?php post_class( 'mav-card-post' ); ?> data-id="<?php the_ID(); ?>">
+        <article id="mavid-post-<?php the_ID(); ?>" <?php post_class( 'mav-card-post' ); ?> data-post-id="<?php the_ID(); ?>">
             <!-- Post header -->
             <header class="mav-card-post-header" <?php if ( function_exists( 'mavf_logo_bg' ) ) { mavf_logo_bg('240,240,240,1','0,0,0,0.05','0,0,0,0'); };?>>
                 <?php

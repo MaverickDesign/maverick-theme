@@ -10,7 +10,6 @@ function mavf_admin_theme_config_options() {
 	 */
 	require_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_theme-supports.php';
 
-
 	// Post formats
 	require_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_post-format.php';
 
@@ -41,6 +40,9 @@ function mavf_admin_theme_config_options() {
 
 	// Blog page columns
 	require_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_blog-page-columns.php';
+
+	require_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_breadcrumbs.php';
+
 }
 
 add_action( 'admin_init' , 'mavf_admin_theme_config_options' );

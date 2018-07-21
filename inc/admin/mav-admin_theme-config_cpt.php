@@ -28,7 +28,7 @@ add_settings_field(
 // Callback function
 function mavf_theme_config_theme_support_custom_post_type(){
 
-	$mavSavedValue = get_option('mav_setting_custom_post_type');
+	$mavSavedValue = esc_attr( get_option( 'mav_setting_custom_post_type' ) );
 
 	$mavCustomPostTypes = array (
 		'testimonial',
