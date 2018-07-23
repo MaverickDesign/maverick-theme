@@ -9,6 +9,7 @@
     overflow: hidden;
     transition: max-height .3s ease;
     padding-left: var(--mav-gutter);
+    padding-right: var(--mav-gutter);
 }
 
 .mav-accordion-ctn {
@@ -23,8 +24,14 @@
 .mav-accordion-trigger {
     position: relative;
     display: flex;
+    align-items: center;
     width: 100%;
     cursor: pointer;
+    .mav-btn-close {
+        position: absolute;
+        right: 0;
+        transform: translateX(-100%);
+    }
     &[data-trigger-icon] {
         &:before {
             margin-right: var(--mav-gutter-sm);
@@ -44,16 +51,16 @@
         }
     }
     &[data-state="open"] {
-        &[data-trigger-icon] {
-            &:before {
-                transform: rotate(180deg);
-            }
-        }
-        &[data-trigger-icon="2"] {
-            &:before {
-                transform: rotate(45deg);
-            }
-        }
+        // &[data-trigger-icon] {
+        //     &:before {
+        //         transform: rotate(180deg);
+        //     }
+        // }
+        // &[data-trigger-icon="2"] {
+        //     &:before {
+        //         transform: rotate(45deg);
+        //     }
+        // }
         + .mav-accordion-ctn-wrapper {
             max-height: 100vh;
         }
@@ -63,5 +70,38 @@
             transform: translateY(3px);
         }
     }
+    &[data-faq][data-question] {
+        font-weight: 300;
+        color: var(--mav-color-text-primary);
+        font-size: 1.25rem;
+        border: 1px solid var(--mav-color-border);
+        padding: var(--mav-gutter-sm);
+        background: white;
+        @extend %mav-transition;
+        &:before {
+            font-size: 1rem;
+            display: inline-flex;
+            justify-content: center;
+            width: 1em;
+            display: inline-flex;
+            content: '\f128';
+            @include text-contrast($mav-color-accent);
+            background: var(--mav-color-accent);
+            padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
+            border-radius: 25%;
+        }
+        &[data-state="open"] {
+            border-color: transparent transparent var(--mav-color-border) transparent;
+            padding-left: var(--mav-gutter);
+            // box-shadow: -5px 0px var(--mav-color-primary);
+            &:before {
+                content: '\f12a';
+                background: var(--mav-color-primary);
+            }
+        }
+        + .mav-accordion-ctn-wrapper {
+            background: white;
+            box-shadow: -5px 0px var(--mav-color-primary);
+        }
+    }
 }
-

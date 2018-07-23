@@ -34,6 +34,7 @@
     &-info-ctn {
         padding: var(--mav-gutter);
         box-shadow: 0 1px $mav-color-border;
+        margin: 0 var(--mav-gutter);
         @media #{$mav-mobile} {
             flex-wrap: wrap;
             justify-content: center;
@@ -115,7 +116,7 @@
 
 .mav-post-content-wrapper {
     background: white!important;
-    padding: var(--mav-gutter) var(--mav-gutter) var(--mav-gutter-xl);
+    padding: var(--mav-gutter) 0 var(--mav-gutter-lg);
     .mav-post-content-ctn {
         max-width: var(--mav-site-width);
         margin: 0 auto;
@@ -123,6 +124,7 @@
 }
 
 .mav-post-info {
+    font-weight: bold;
     a {
         text-decoration: none;
     }

@@ -67,7 +67,7 @@
 /**
  * Footer Menu
  */
- .mav-footer-menu-wrapper {
+.mav-footer-menu-wrapper {
     padding: var(--mav-gutter-lg) var(--mav-gutter);
 }
 .mav-footer-menu-ctn {
@@ -78,9 +78,9 @@
         display: flex;
         margin-left: 0;
         li {
-            margin-right: var(--mav-gutter);
             list-style: none;
             line-height: 2;
+            margin-right: var(--mav-gutter-lg);
             a {
                 display: inline-block;
                 font-weight: 600;
@@ -97,6 +97,7 @@
                 @extend .mav-flex-column;
                 margin-top: var(--mav-gutter);
                 li {
+                    margin-right: 0;
                     a {
                         text-transform: unset;
                         font-weight: initial;

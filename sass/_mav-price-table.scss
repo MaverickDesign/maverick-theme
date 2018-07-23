@@ -1,0 +1,101 @@
+.mav-price-table {
+    &-wrapper {
+        overflow: hidden;
+    }
+    &-ctn {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
+        grid-gap: var(--mav-gutter-sm);
+        justify-content: center;
+        align-items: end;
+        @media #{$mav-phone} {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.mav-price-table {
+    overflow: hidden;
+    display: grid;
+    text-align: center;
+    color: var(--mav-color-text-secondary);
+    // Highlight table
+    border: 2px solid var(--mav-color-accent);
+    &[data-size="big"] {
+        position: relative;
+        box-shadow: 0 0 25px var(--mav-color-border);
+        z-index: $mav-layer-overlay;
+        border-color: var(--mav-color-primary);
+        > [data-row="header"] {
+            background: var(--mav-color-primary);
+            padding: var(--mav-gutter-lg) var(--mav-gutter);
+        }
+        > [data-row="footer"] {
+            // padding: var(--mav-gutter-lg) var(--mav-gutter);
+        }
+    }
+    // Legend table
+    &[data-size="legend"] {
+        border-color: transparent;
+        @media #{$mav-mobile} {
+            display: none;
+        }
+        > [data-row="header"], [data-row="footer"] {
+            background: transparent;
+        }
+        .mav-price-table-row {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.mav-price-table-row {
+    @extend .mav-flex-center-all;
+    padding: var(--mav-gutter);
+    box-shadow: inset 0 -1px 0px var(--mav-color-border);
+    background: white;
+    &:last-child {
+        box-shadow: none;
+    }
+    &[data-row="header"] {
+        background: var(--mav-color-accent);
+        color: var(--mav-color-text-primary-dark);
+        h3 {
+            color: inherit;
+        }
+    }
+    &[data-row="price"] {
+        flex-direction: column;
+        .mav-price {
+            font-size: 3em;
+            font-weight: 900;
+            color: var(--mav-color-text-primary);
+            @media #{$mav-phone} {
+                font-size: 1em;
+            }
+        }
+        .mav-price-unit {
+            text-transform: uppercase;
+            font-size: .75rem;
+            font-weight: 300;
+            padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
+            border: 1px solid var(--mav-color-border);
+            border-radius: 10%;
+        }
+    }
+    &[data-row="footer"] {
+        // box-shadow: 0 2px var(--mav-color-border);
+    }
+    &[data-row="checked"] {
+        &:before {
+            @extend %mav-font-awesome;
+            content: '\f00c';
+        }
+    }
+    &[data-row="unchecked"] {
+        &:before {
+            @extend %mav-font-awesome;
+            content: '\f00d';
+        }
+    }
+}

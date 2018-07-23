@@ -34,13 +34,13 @@ function mavf_tab_posts($mavArgs) {
                 $i = 1;
                 while ($mavQuery->have_posts()):
                     $mavQuery->the_post();
-                    $mavActive      = $mavFirst ? 'active' : 'inactive';
+                    $mavActive = $mavFirst ? 'active' : 'inactive';
                     $mavFirstItemBorder = $mavFirst ? 'style="border-left-color: transparent;"' : '';
                     printf(
-                        '<div id="mavid-tab-trigger-%4$s" class="mav-tab-trigger" data-state="%2$s" %3$s>%1$s</div>',
+                        '<div id="mavid-tab-trigger-%4$s" class="mav-tab-trigger" data-state="%2$s" %3$s><p class="mav-tab-trigger-title mav-hide-on-phone">%1$s</p></div>',
                         get_the_title(),$mavActive,$mavFirstItemBorder,$i
                     );
-                    echo '<div class="mav-tab-content-wrapper">';
+                    printf('<div class="mav-tab-content-wrapper" data-state="%1$s">',$mavActive);
                         echo '<div class="mav-tab-content-ctn mav-post-content">';
                             the_content();
                         echo '</div>';

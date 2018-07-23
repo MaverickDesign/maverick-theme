@@ -3,10 +3,10 @@
  * @package maverick-theme
  */
 ?>
-<div class="mav-card-wrapper">
-    <div class="mav-card-ctn">
+<div class="mav-card-wrapper" data-post-id="<?php the_ID(); ?>">
+    <div class="mav-card-ctn" data-post-id="<?php the_ID(); ?>">
         <article id="mavid-post-<?php the_ID(); ?>" <?php post_class( 'mav-card-post' ); ?> data-post-id="<?php the_ID(); ?>">
-            <!-- Post header -->
+            <!-- Card header -->
             <header class="mav-card-post-header" <?php if ( function_exists( 'mavf_logo_bg' ) ) { mavf_logo_bg('240,240,240,1','0,0,0,0.05','0,0,0,0'); };?>>
                 <?php
                     if (has_post_thumbnail()): ?>
@@ -14,7 +14,7 @@
                     <?php endif;
                 ?>
             </header>
-            <!-- Post content -->
+            <!-- Card content -->
             <div class="mav-card-post-content">
                 <?php
                     echo '<header>';
@@ -35,11 +35,11 @@
                     }
                 ?>
             </div>
-            <!-- Post footer -->
+            <!-- Card footer -->
             <footer class="mav-card-post-footer">
                 <?php
                     printf(
-                        '<a href="%1$s" title="%2$s" class="mav-btn-secondary">%2$s</a>',
+                        '<a href="%1$s" title="%2$s" class="mav-btn-wrapper"><button class="mav-btn-primary" data-full-width>%2$s</button></a>',
                         get_the_permalink(),__('Xem chi tiết','maverick-theme')
                     );
                 ?>

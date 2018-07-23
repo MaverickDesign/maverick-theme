@@ -78,7 +78,7 @@
                      * Ajax load more posts
                      */
                     echo '<div class="mav-margin-top">';
-                    printf('<a class="mav-btn-primary mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</a>',admin_url('admin-ajax.php'),__('Xem thêm','maverick-theme'));
+                        printf('<button class="mav-btn-cta mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',admin_url('admin-ajax.php'),__('Xem thêm','maverick-theme'));
                     echo '</div>';
                 } else {
                     /**

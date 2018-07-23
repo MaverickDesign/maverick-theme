@@ -321,9 +321,7 @@
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <div class="mav-countdown-wrapper">
-                                    <div class="mav-countdown-ctn">
-                                        <p class="mavjs-countdown" data-expired="01/16/2019"></p>
-                                    </div>
+                                    <div class="mavjs-countdown mav-countdown-ctn" data-expired="01/16/2019"></div>
                                 </div>
                             </div>
                         </div>
@@ -356,7 +354,9 @@
                                         <?php
                                             $mavArgs = array(
                                                 'number_of_posts'   => 3,
-                                                // 'collection'        => true,
+                                                'collection'        => true,
+                                                'faq'               => true,
+                                                'removable'         => true
                                             );
                                             mavf_post_accordion($mavArgs);
                                         ?>
@@ -457,7 +457,9 @@
                         </header>
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
-                                <button class="mav-btn-secondary" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'maverick-theme' );?></button>
+                                <div class="mav-flex-center-all">
+                                    <button class="mav-btn-secondary" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'maverick-theme' );?></button>
+                                </div>
                             </div>
                         </div>
                         <footer class="mav-sec-footer-wrapper">
@@ -484,7 +486,44 @@
                         </header>
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
-
+                                <div class="mav-price-table-wrapper">
+                                    <div class="mav-price-table-ctn">
+                                        <ul class="mav-price-table" data-size="legend">
+                                            <li class="mav-price-table-row" data-row="header">&nbsp;</li>
+                                            <li class="mav-price-table-row">Legend 1</li>
+                                            <li class="mav-price-table-row" data-row="price"><span class="mav-price">&nbsp;</span><span class="mav-price-unit" style="visibility: hidden;">đồng</span></li>
+                                            <li class="mav-price-table-row">Table row 3</li>
+                                            <li class="mav-price-table-row">Table row 4</li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta" style="visibility: hidden;">Đặt mua</button></li>
+                                        </ul>
+                                        <ul class="mav-price-table">
+                                            <li class="mav-price-table-row" data-row="header">Header Row</li>
+                                            <li class="mav-price-table-row">Table row 1</li>
+                                            <li class="mav-price-table-row" data-row="price"><span class="mav-price">100.000</span><span class="mav-price-unit">đồng</span></li>
+                                            <li class="mav-price-table-row" data-row="checked">&nbsp;</li>
+                                            <li class="mav-price-table-row" data-row="unchecked">&nbsp;</li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
+                                        </ul>
+                                        <ul class="mav-price-table" data-size="big">
+                                            <li class="mav-price-table-row" data-row="header"><h3>
+                                                Header row really long
+                                            </h3></li>
+                                            <li class="mav-price-table-row">Table row 1</li>
+                                            <li class="mav-price-table-row" data-row="price"><span class="mav-price">2.000.000</span><span class="mav-price-unit">đồng</span></li>
+                                            <li class="mav-price-table-row">Table row 3</li>
+                                            <li class="mav-price-table-row">Table row 4</li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
+                                        </ul>
+                                        <ul class="mav-price-table">
+                                            <li class="mav-price-table-row" data-row="header">Header Row</li>
+                                            <li class="mav-price-table-row">Table row 1</li>
+                                            <li class="mav-price-table-row" data-row="price"><span class="mav-price">300.000</span><span class="mav-price-unit">đồng</span></li>
+                                            <li class="mav-price-table-row">Table row 3</li>
+                                            <li class="mav-price-table-row">Table row 4</li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <footer class="mav-sec-footer-wrapper">

@@ -3,15 +3,13 @@ $mav-tab-border-color: #ddd;
 .mav-tab-wrapper {
     position: relative;
     max-width: var(--mav-site-width);
-    overflow-y: hidden;
-    @media #{$mav-phone} {
-        overflow-x: auto;
-    }
+    overflow: hidden;
 }
 
 .mav-tab-ctn {
     display: grid;
     grid-template-columns: repeat(auto,auto);
+    counter-reset: container;
 }
 
 .mav-tab-trigger {
@@ -24,7 +22,7 @@ $mav-tab-border-color: #ddd;
     border-bottom-color: $mav-tab-border-color;
     border-style: solid;
     border-width: 2px 1px 1px 1px;
-    font-weight: 600;
+
     cursor: pointer;
     @extend %mav-transition;
     &:hover {
@@ -39,15 +37,32 @@ $mav-tab-border-color: #ddd;
             z-index: $mav-layer-content;
         }
     }
+    @media #{$mav-phone} {
+        max-height: 20vh;
+        overflow: hidden;
+        counter-increment: container;
+        &:before {
+            content: counter(container);
+        }
+    }
+    .mav-tab-trigger-title {
+        font-weight: 600;
+    }
 }
 .mav-tab-content-wrapper {
     opacity: 0;
     grid-area: content;
-    padding: var(--mav-gutter);
+    padding: var(--mav-gutter-lg);
     transition: all .1s ease;
     background: white;
     border-color: $mav-tab-border-color;
     border-style: solid;
     border-width: 0 1px 1px 1px;
     z-index: -1;
+    max-height: 75vh;
+    @media #{$mav-mobile} {
+        padding: var(--mav-gutter);
+        max-width: 100%;
+        overflow-y: scroll;
+    }
 }

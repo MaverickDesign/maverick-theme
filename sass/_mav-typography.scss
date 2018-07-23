@@ -174,9 +174,6 @@ ul {
     text-decoration: none;
     letter-spacing: 1px;
     @extend %mav-transition;
-    @media #{$mav-phone} {
-        max-width: 80%;
-    }
 }
 
 .mav-link {

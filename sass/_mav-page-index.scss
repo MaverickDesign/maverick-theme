@@ -1,0 +1,100 @@
+/**
+ * Index Page Styles
+ */
+
+.mav-post-index-wrapper {
+    margin: var(--mav-gutter);
+    @media #{$mav-tablet} {
+        margin: var(--mav-gutter-lg);
+    }
+    @media #{$mav-desktop} {
+        margin: var(--mav-gutter-lg) var(--mav-gutter);
+    }
+}
+
+.mav-post-index-ctn {
+    display: grid;
+    grid-gap: var(--mav-gutter);
+    @media #{$mav-tablet} {
+        align-content: start;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.mav-has-sidebar {
+    @media #{$mav-desktop} {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        max-width: var(--mav-site-width);
+        margin: 0 auto;
+    }
+}
+
+/**
+ * Paginate navigation
+ */
+
+ .mav-paginate-links-ctn {
+    @extend .mav-flex-row;
+    flex-wrap: wrap;
+    margin-top: var(--mav-gutter);
+    padding: var(--mav-gutter);
+    background: #fff;
+    justify-content: center;
+    .page-numbers {
+        padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
+        margin-right: var(--mav-gutter-sm);
+        text-decoration: none;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .prev, .next {
+        font-weight: bold;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .prev {
+        &:before {
+            @extend %mav-font-awesome;
+            content: '\f053';
+            margin-right: var(--mav-gutter-xs);
+        }
+    }
+    .next {
+        &:after {
+            @extend %mav-font-awesome;
+            content: '\f054';
+            margin-left: var(--mav-gutter-xs);
+        }
+    }
+    .current {
+        background: var(--mav-color-primary);
+        @include text-contrast($mav-color-primary);
+        font-weight: bold;
+    }
+    a {
+        &:hover {
+            box-shadow: inset 0 -4px var(--mav-color-primary);
+        }
+    }
+}
+
+.mav-blog-sticky-post-wrapper {
+    background: var(--mav-color-off-white);
+    .mav-blog-sticky-post-ctn {
+        max-width: var(--mav-site-width);
+        display: grid;
+        grid-gap: var(--mav-gutter);
+        justify-content: center;
+        padding: var(--mav-gutter-lg) var(--mav-gutter);
+        @media #{$mav-tablet} {
+            padding: var(--mav-gutter-lg);
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media #{$mav-desktop} {
+            margin: 0 auto;
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+}

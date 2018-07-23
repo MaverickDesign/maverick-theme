@@ -160,7 +160,7 @@
                     text-transform: initial;
                     a {
                         @media #{$mav-mobile} {
-                            padding-left: var(--mav-gutter-lg);
+                            padding-left: var(--mav-gutter);
                         }
                     }
                 }
@@ -173,7 +173,7 @@
                     a {
                         padding-left: var(--mav-gutter-lg);
                         @media #{$mav-mobile} {
-                            padding-left: var(--mav-gutter-xl);
+                            padding-left: var(--mav-gutter-lg);
                         }
                     }
                 }

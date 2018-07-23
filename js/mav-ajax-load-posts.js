@@ -2,9 +2,8 @@ const mavLoadMorePostButton = document.querySelector('.mavjs-ajax-load-posts');
 
 if (mavLoadMorePostButton != undefined) {
     mavLoadMorePostButton.addEventListener('click',function(e){
+
         e.preventDefault();
-        // Load more button
-        // const mavLoadMorePostButton = this;
 
         // Get WordPress Ajax Url
         const mavAjaxUrl = this.dataset.ajaxUrl;
@@ -29,7 +28,8 @@ if (mavLoadMorePostButton != undefined) {
                 document.querySelector('.mavjs-posts-container').innerHTML += mavResponeData;
                 mavLoadMorePostButton.dataset.currentPage = Number(mavCurrentPage) + 1;
             } else {
-                mavLoadMorePostButton.classList.add('mav-hide');
+                mavLoadMorePostButton.parentElement.remove();
+                // mavLoadMorePostButton.classList.add('mav-hide');
             }
         })
         .catch(err => console.log(err));

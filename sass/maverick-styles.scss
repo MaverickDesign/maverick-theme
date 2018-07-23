@@ -59,12 +59,17 @@
 
 @import "mav-countdown";
 
+@import "mav-price-table";
+
 @import "mav-misc";
 
 /**
  * Specific Page Styles
  */
+
 @import "mav-page-contact";
+
+@import "mav-page-index";
 
 /* Styles specific for Maverick Theme Page Demo */
 @import "mav-page-theme";

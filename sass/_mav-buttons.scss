@@ -4,6 +4,10 @@
     }
 }
 
+.mav-btn-wrapper {
+    text-decoration: none;
+}
+
 button {
     margin: 0;
     padding: 0;
@@ -11,6 +15,9 @@ button {
 
     background: transparent;
     color: inherit;
+    &[data-full-width] {
+        width: 100%;
+    }
 }
 
 %mav-btn {
@@ -76,6 +83,16 @@ button {
     }
     &-secondary {
         @extend .mav-btn;
+    }
+    &-cta {
+        @extend .mav-btn-primary;
+        width: 100%;
+        border: none;
+        &:hover {
+            background: var(--mav-color-accent);
+            @include text-contrast($mav-color-accent);
+            animation: mav-brand-color-transition 2s infinite;
+        }
     }
 }
 
