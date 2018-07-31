@@ -1,15 +1,12 @@
-/*
+/**
  * Post Card
  */
+
  .mav-card-wrapper {
     position: relative;
     width: 100%;
     box-shadow: 0px 0px 1px $mav-color-border;
-    // @media #{$mav-phone} {
-    //     &:last-child {
-    //         margin-bottom: 0;
-    //     }
-    // }
+
 }
 
 .mav-card-post {

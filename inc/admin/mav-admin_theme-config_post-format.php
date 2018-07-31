@@ -14,6 +14,7 @@ add_settings_field(
 );
 
 function mavf_theme_config_theme_support_post_format() {
+
 	$mavSavedValue = get_option('mav_setting_post_format');
 
 	$mavPostFormats = array('aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat');

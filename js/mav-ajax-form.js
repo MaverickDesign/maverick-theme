@@ -1,61 +1,90 @@
-const mavForms = document.querySelectorAll('.mavjs-form');
+const mavContactForm = document.querySelector('.mavjs-form-contact');
 
-if (mavForms != undefined) {
-    for (mavForm of mavForms) {
-        mavForm.addEventListener('submit',function(e){
-            e.preventDefault();
+if (mavContactForm != undefined) {
+    mavContactForm.addEventListener('submit',function(e){
 
-            // Disable submit button
-            const mavSubmitBtn = this.querySelector('.mavjs-form-submit');
+        e.preventDefault();
+
+        let mavFormData = new FormData();
+
+        /* Submit button */
+        const mavSubmitBtn = this.querySelector('.mavjs-form-submit');
+        /* Disable submit button */
+        if (mavSubmitBtn != undefined) {
             mavSubmitBtn.disabled = true;
+            mavSubmitBtn.classList.add('mav-hide');
+        }
 
-            // Get WordPress Ajax Url
-            const mavAjaxUrl = this.dataset.ajaxUrl;
+        /* Get WordPress Ajax Url */
+        const mavAjaxUrl = this.dataset.ajaxUrl;
 
-            let mavFormData = new FormData();
-
-            // Get action callback
-            const mavAction = this.dataset.action;
+        /* Get action callback */
+        const mavAction = this.dataset.action;
+        if (mavAction != undefined) {
             mavFormData.append('action',mavAction);
+        }
 
-            // Get Name value
-            const mavName = this.querySelector('input[type="text"][name="name"]').value;
-            mavFormData.append('name',mavName);
+        /* Name */
+        const mavName = this.querySelector('input[type="text"][name="name"]');
+        if (mavName != undefined) {
+            mavFormData.append('name',mavName.value);
+        }
 
-            // Get email value
-            const mavEmail = this.querySelector('input[type="email"][name="email"]').value;
-            mavFormData.append('email',mavEmail);
+        /* Email */
+        const mavEmail = this.querySelector('input[type="email"][name="email"]');
+        if (mavEmail != undefined) {
+            mavFormData.append('email',mavEmail.value);
+        }
 
-            // Get phone value
-            const mavPhone = this.querySelector('input[type="phone"][name="phone"]').value;
-            if (mavPhone != undefined) {
-                mavFormData.append('phone',mavPhone);
-            }
+        /* Phone */
+        const mavPhone = this.querySelector('input[type="phone"][name="phone"]');
+        if (mavPhone != undefined) {
+            mavFormData.append('phone',mavPhone.value);
+        }
 
-            // Get message
-            const mavMessage = this.querySelector('textarea[name="message"]').value;
-            mavFormData.append('message',mavMessage);
+        /* Message */
+        const mavMessage = this.querySelector('textarea[name="message"]');
+        if (mavMessage != undefined) {
+            mavFormData.append('message',mavMessage.value);
+        }
 
-            if (mavName !== '' && mavEmail !== '' && mavMessage !== '') {
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', mavAjaxUrl);
-                xhr.onreadystatechange = function(){
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        const mavContactFormContainer = document.querySelector('.mav-contact-form-ctn');
-                        if (this.responseText != 0) {
-                            mavContactFormContainer.innerHTML += this.responseText;
-                        } else {
-                            mavContactFormContainer.innerHTML += this.responseText;
-                            // Reenable submit button
-                            mavSubmitBtn.disabled = false;
-                        }
+        if (mavAction !== '' && mavName !== '' && mavEmail !== '' && mavMessage !== '') {
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('POST', mavAjaxUrl);
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    const mavFormStatusContainer = document.querySelector('.mav-form-status-ctn');
+
+                    if (this.responseText != 0) {
+                        mavFormStatusContainer.innerHTML += this.responseText;
+                        mavf_reset_form_fields(mavContactForm);
+                    } else {
+                        mavFormStatusContainer.innerHTML += this.responseText;
                     }
+                    /* Reenable submit button */
+                    mavSubmitBtn.disabled = false;
+                    mavSubmitBtn.classList.remove('mav-hide');
                 }
-                xhr.send(mavFormData);
-            } else {
-                // Reenable submit button
-                mavSubmitBtn.disabled = false;
             }
-        });
+
+            xhr.send(mavFormData);
+        } else {
+            /* Reenable submit button */
+            mavSubmitBtn.disabled = false;
+            mavSubmitBtn.classList.remove('mav-hide');
+        }
+    });
+}
+
+function mavf_reset_form_fields(mavForm){
+    const mavInputs = mavForm.querySelectorAll('.mavjs-form-input');
+    if (mavInputs != undefined) {
+        for (mavInput of mavInputs) {
+            mavInput.value = '';
+        }
     }
 }

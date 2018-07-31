@@ -60,6 +60,8 @@ require TEMPLATE_DIR.'/inc/mav-slider.php';
 
 require TEMPLATE_DIR.'/inc/mav-carousel.php';
 
+require TEMPLATE_DIR. '/inc/mav-post-query.php';
+
 require TEMPLATE_DIR. '/inc/mav-post-grid.php';
 
 require TEMPLATE_DIR. '/inc/mav-post-feature.php';
@@ -77,5 +79,7 @@ require TEMPLATE_DIR. '/inc/mav-post-modal.php';
 require TEMPLATE_DIR. '/inc/mav-tab-view.php';
 
 require TEMPLATE_DIR. '/inc/mav-content-modify.php';
+
+require TEMPLATE_DIR. '/inc/mav-form.php';
 
 require TEMPLATE_DIR. '/inc/mav-misc.php';

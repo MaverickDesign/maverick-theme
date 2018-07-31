@@ -28,23 +28,21 @@ add_settings_field(
 // Callback function
 function mavf_theme_config_theme_support_custom_post_type(){
 
-	$mavSavedValue = esc_attr( get_option( 'mav_setting_custom_post_type' ) );
+	$mavSavedValue = get_option( 'mav_setting_custom_post_type' ) ;
 
-	$mavCustomPostTypes = array (
-		'testimonial',
-		'subscriber',
-		'portfolio',
-		'member'
-	);
+	$mavCustomPostTypes = array ( 'testimonial', 'subscriber', 'portfolio', 'member', 'client' );
 
 	echo '<div class="mav-grid" data-grid-gap="">';
 
-	$mavOutput = '';
-	foreach ($mavCustomPostTypes as $mavCustomPostType) {
-		$mavChecked = ( @$mavSavedValue[$mavCustomPostType] == 1 ? 'checked' : '');
-		$mavOutput .= '<label><input type="checkbox" id="mavid-custom-post-type-'.$mavCustomPostType.'" name="mav_setting_custom_post_type['.$mavCustomPostType.']" value="1" '.$mavChecked.'/> '.ucfirst($mavCustomPostType).'</label>';
-	}
-	echo $mavOutput;
+		$mavOutput = '';
+
+		foreach ($mavCustomPostTypes as $mavCustomPostType) {
+			$mavChecked = ( @$mavSavedValue[$mavCustomPostType] == 1 ? 'checked' : '');
+
+			$mavOutput .= '<label><input type="checkbox" id="mavid-custom-post-type-'.$mavCustomPostType.'" name="mav_setting_custom_post_type['.$mavCustomPostType.']" value="1" '.$mavChecked.'/> '.ucfirst($mavCustomPostType).'</label>';
+		}
+
+		echo $mavOutput;
 
 	echo '</div>';
 }

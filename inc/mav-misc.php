@@ -62,7 +62,7 @@ function mavf_get_single_category() {
  */
 
 function mavf_message_box($mavMessage = 'Thông báo',$mavIcon = 'fa-exclamation-circle', $mavCloseJS = true) {
-    /*
+    /**
      * This class is on the element to remove from the DOM
      * Default is on the top element of the message box
      */

@@ -14,4 +14,6 @@ $mavMemberArgs = array(
     'has_archive'   => true
 );
 
-register_post_type( 'mav_member', $mavMemberArgs );
+register_post_type( 'mav_cpt_member', $mavMemberArgs );
+
+flush_rewrite_rules();

@@ -37,6 +37,13 @@ function mavf_cpt(){
 	if (@$mavCPTs['member']) {
         require_once TEMPLATE_DIR.'/inc/admin/mav-admin_cpt_member.php';
     }
+
+    // Client Post Type
+	if (@$mavCPTs['client']) {
+        require_once TEMPLATE_DIR.'/inc/admin/mav-admin_cpt_client.php';
+    }
 }
 
 add_action('init', 'mavf_cpt');
+
+flush_rewrite_rules();

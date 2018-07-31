@@ -18,13 +18,14 @@
                     <div class="mav-post-info-ctn">
                     <?php
                         $mavSingleCat = function_exists('mavf_get_single_category') ? mavf_get_single_category() : '';
-
-                        printf(
-                            '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
-                            $mavSingleCat,
-                            __('Xem các bài chuyên mục','maverick-theme'),
-                            mavf_single_category()
-                        );
+                        if (!empty($mavSingleCat)) {
+                            printf(
+                                '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
+                                $mavSingleCat,
+                                __('Xem các bài chuyên mục','maverick-theme'),
+                                mavf_single_category()
+                            );
+                        }
                         printf('
                             <span class="mav-post-info" title="%2$s" data-type="date">%1$s</span>',
                             get_the_date(),

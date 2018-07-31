@@ -23,6 +23,8 @@
 
 @import "mav-breadcrumbs";
 
+@import "mav-post";
+
 @import "mav-form";
 
 @import "mav-card";
@@ -32,8 +34,6 @@
 @import "mav-page";
 
 @import "mav-card-post";
-
-@import "mav-post";
 
 @import "mav-slider";
 
@@ -67,9 +67,12 @@
  * Specific Page Styles
  */
 
-@import "mav-page-contact";
-
 @import "mav-page-index";
 
-/* Styles specific for Maverick Theme Page Demo */
+@import "mav-page-contact";
+
+
+/**
+ * Styles specific for Maverick Theme Page Demo
+ */
 @import "mav-page-theme";

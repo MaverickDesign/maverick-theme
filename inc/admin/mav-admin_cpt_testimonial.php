@@ -3,7 +3,7 @@
  * @package maverick-theme
  */
 
- $mavTestimonialLabels = array(
+$mavTestimonialLabels = array(
     'name'              => __('Testimonial','maverick-theme'),
     'singular_name'     => __('Testimonial','maverick-theme')
 );
@@ -14,4 +14,6 @@ $mavTestimonialArgs = array(
     'has_archive'   => true
 );
 
-register_post_type( 'mav_testimonial', $mavTestimonialArgs );
+register_post_type( 'mav_cpt_testimonial', $mavTestimonialArgs );
+
+flush_rewrite_rules();

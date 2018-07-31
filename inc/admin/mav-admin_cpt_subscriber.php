@@ -14,4 +14,6 @@ $mavSubscriberArgs = array(
     'has_archive'       => false
 );
 
-register_post_type( 'mav_subscriber', $mavSubscriberArgs );
+register_post_type( 'mav_cpt_subscriber', $mavSubscriberArgs );
+
+flush_rewrite_rules();

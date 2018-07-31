@@ -5,9 +5,10 @@
 ?>
 <?php
     /* Detect device */
-    $mavDevice = '';
     if (function_exists('mavf_mobile_detect')) {
         $mavDevice = mavf_mobile_detect();
+    } else {
+        $mavDevice = '';
     }
 ?>
 
@@ -50,8 +51,10 @@
         /**
          * Google Analytics
          */
-        $mavEGA = esc_attr( get_option('mav_setting_enable_google_analytics') );
-        $mavGAID = esc_attr( get_option('mav_setting_google_analytics_id') );
+
+         $mavEGA  = esc_attr( get_option( 'mav_setting_enable_google_analytics' ) );
+        $mavGAID = esc_attr( get_option( 'mav_setting_google_analytics_id' ) );
+
         if ( !empty( $mavEGA ) && !empty( $mavGAID ) ): ?>
             <script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -64,21 +67,24 @@
             </script> <?php
         endif;
     ?>
+
     <?php
         /* Wordpress Heads */
         wp_head();
     ?>
+
     <style>
         :root {
             <?php
                 /* Site Width */
-                $mavSiteWidth = esc_attr(get_option('mav_setting_grid_system'));
-                if (!empty($mavSiteWidth)) {
+                $mavSiteWidth = esc_attr( get_option( 'mav_setting_grid_system' ) );
+                if ( !empty($mavSiteWidth) ) {
                     echo '--mav-site-width: '.$mavSiteWidth.'px';
                 }
             ?>
         }
     </style>
+
 </head>
 
 <body data-device="<?php echo $mavDevice; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
@@ -110,6 +116,7 @@
     ?>
 
     <header id="mavid-page-header" class="mav-pg-header mav-pg-header-wrapper">
+
         <!-- Site Search -->
         <section id="mavid-sec-site-search" class="mav-sec-wrapper mav-site-search-wrapper">
             <div class="mav-sec-ctn">
@@ -121,6 +128,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Header Logo -->
         <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper">
             <div class="mav-header-logo-ctn">
@@ -137,6 +145,7 @@
                         ?>
                     </a>
                 </div>
+
                 <!-- Header Social Links -->
                 <div class="mav-flex-row mav-header-social-links">
                     <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
@@ -147,7 +156,9 @@
                         </div>
                         <?php endif;
                     ?>
-                    <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','maverick-theme'); ?>"></button>
+                    <div>
+                        <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','maverick-theme'); ?>"></button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,9 +168,9 @@
         /**
          * Header Menu
          */
-
-        if (current_theme_supports('menus') && has_nav_menu( 'primary_menu')): ?>
+        if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu') ): ?>
             <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
+
                 <!-- Sticky logo -->
                 <div class="mav-sticky-logo-wrapper mav-hide-on-mobile">
                     <div class="mav-sticky-logo-ctn">
@@ -175,6 +186,7 @@
                         </a>
                     </div>
                 </div>
+
                 <!-- Header Menu -->
                 <div class="mav-header-menu-wrapper">
                     <nav class="mav-header-menu-ctn">

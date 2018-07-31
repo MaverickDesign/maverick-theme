@@ -30,29 +30,29 @@
                             <div class="mav-contact-form-wrapper">
                                 <div class="mav-contact-form-ctn">
                                     <h3 class="mav-margin-bottom-lg mav-text-center"><?php _e('Gửi thông tin liên hệ','maverick-theme'); ?></h3>
-                                    <form id="mavid-contact-form" method="POST" class="mavjs-form mav-form mav-contact-form" data-ajax-url="<?php echo admin_url('admin-ajax.php')?>" data-action="mavf_ajax_form">
+                                    <form id="mavid-contact-form" method="POST" class="mavjs-form mav-form mav-contact-form" data-ajax-url="<?php echo admin_url('admin-ajax.php'); ?>" data-action="mavf_ajax_form">
                                         <!-- Name -->
                                         <label class="mav-form-label" for="mavid-form-name"><?php _e('Họ & Tên','maverick-theme'); ?></label>
-                                        <input type="text" id="mavid-form-name" name="name" placeholder="Ví dụ: John Doe" required>
+                                        <input type="text" id="mavid-form-name" name="name" placeholder="e.g., John Doe" required>
                                         <span class="mav-form-hint"><i class="fas fa-info-circle mav-margin-right-xs"></i><?php _e('Thông tin phải có.','maverick-theme'); ?></span>
                                         <!-- Email -->
                                         <label class="mav-form-label" for="mavid-form-email"><?php _e('Địa chỉ email','maverick-theme'); ?></label>
-                                        <input type="email" id="mavid-form-email" name="email" placeholder="Ví dụ: johndoe@email.com" required>
+                                        <input type="email" id="mavid-form-email" name="email" placeholder="e.g., johndoe@email.com" required>
                                         <span class="mav-form-hint"><i class="fas fa-info-circle mav-margin-right-xs"></i><?php _e('Thông tin phải có.','maverick-theme'); ?></span>
                                         <!-- Phone -->
                                         <label class="mav-form-label" for="mavid-form-phone"><?php _e('Số điện thoại','maverick-theme'); ?></label>
-                                        <input type="phone" id="mavid-form-phone" name="phone" placeholder="Ví dụ: 090-909-6464">
-                                        <span class="mav-form-hint"><?php _e('Thông tin tùy chọn.','maverick-theme'); ?></span>
+                                        <input type="phone" id="mavid-form-phone" name="phone" placeholder="e.g., 090-909-6464">
+                                        <span class="mav-form-hint"><?php _e( 'Thông tin tùy chọn.' , 'maverick-theme' ); ?></span>
                                         <!-- Message -->
                                         <textarea id="mavid-form-message" name="message" cols="100%" rows="10vw" placeholder="Nội dung liên hệ"></textarea>
                                         <!-- Submit button -->
-                                        <button id="mavid-form-submit" type="submit" class="mavjs-form-submit mav-btn-solid">Gửi nội dung</button>
+                                        <button id="mavid-form-submit" type="submit" class="mavjs-form-submit mav-btn-primary">Gửi nội dung</button>
                                     </form>
                                 </div>
                             </div>
                             <!-- Social links -->
                             <?php
-                                if (function_exists('mavf_social_links')): ?>
+                                if ( function_exists( 'mavf_social_links' ) ): ?>
                                     <div class="mav-contact-socials-wrapper">
                                         <div class="mav-contact-socials-ctn">
                                             <?php

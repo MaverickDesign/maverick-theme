@@ -14,4 +14,6 @@ $mavPortfolioArgs = array(
     'has_archive'   => true
 );
 
-register_post_type( 'mav_portfolio', $mavPortfolioArgs );
+register_post_type( 'mav_cpt_portfolio', $mavPortfolioArgs );
+
+flush_rewrite_rules();

@@ -41,7 +41,7 @@
             echo '</section>';
         }
 
-    /*
+    /**
      * Sidebar widgets
      */
     if ($mavSidebar) {

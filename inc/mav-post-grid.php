@@ -34,13 +34,13 @@ function mavf_post_grid($mavArgs){
 
     if ($mavQuery->have_posts()):
         printf(
-            sprintf('<div class="%1$s">',
-            $mavWrapper)
+            '<div class="%1$s">',
+            $mavWrapper
         );
             printf(
-                sprintf('<div class="%1$s" style="grid-template-columns: repeat(%2$s,1fr);">',
+                '<div class="%1$s" style="grid-template-columns: repeat(%2$s,1fr);">',
                 $mavContainer,
-                $mavPostDisplay)
+                $mavPostDisplay
             );
                 // The loop
                 while ($mavQuery->have_posts()):

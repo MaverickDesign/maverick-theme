@@ -6,7 +6,6 @@
 
  .mav-page-contact-wrapper {
     max-width: var(--mav-site-width);
-    // padding: 0 var(--mav-gutter);
     display: grid;
     grid-gap: var(--mav-gutter-lg);
     @media #{$mav-desktop} {
@@ -21,6 +20,9 @@
             justify-content: center;
             grid-area: form;
             height: 100%;
+            .mav-contact-form-ctn {
+                padding: var(--mav-gutter-lg);
+            }
         }
         .mav-contact-socials-wrapper {
             grid-area: social;
