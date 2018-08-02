@@ -27,22 +27,26 @@ function mavf_contact_form($mavArgs){
             'label'     => 'Email',
             'type'      => 'email',
             'required'  => true,
-            'hint'      => $mavHintRequired
+            'hint'      => $mavHintRequired,
+            'placeholder'   => 'e.g., johndoe@mail.com'
 
         ),
         'phone' => array(
             'label'     => 'Điện thoại',
             'type'      => 'phone',
-            'hint'      => $mavHintOptional
-        ),
-        'dob'   => array(
-            'label'     => 'Ngày sinh',
-            'type'      => 'date',
+            'hint'      => $mavHintOptional,
+            'placeholder'   => 'e.g., 090-909-6464'
+
         ),
         'address' => array(
             'label'     => 'Địa chỉ',
             'type'      => 'text',
-            'hint'      => $mavHintOptional
+            'hint'      => $mavHintOptional,
+            'placeholder'   => 'e.g., 121 Đinh Tiên Hoàng, Đa Kao, Quận 1, TP.HCM'
+        ),
+        'dob'   => array(
+            'label'     => 'Ngày sinh',
+            'type'      => 'date',
         ),
     );
 
@@ -106,6 +110,7 @@ function mavf_contact_form($mavArgs){
                                             $mavFieldType   = isset($mavFieldArgs['type'])      ? $mavFieldArgs['type']     : 'text';
                                             $mavFieldHint   = isset($mavFieldArgs['hint'])      ? $mavFieldArgs['hint']     : $mavHintOptional;
                                             $mavRequired    = isset($mavFieldArgs['required'])  ? 'required'                : '';
+                                            $mavPlaceholder = isset($mavFieldArgs['placeholder']) ? $mavFieldArgs['placeholder'] : '';
 
                                             $mavFieldID     = 'mavid-form__input--'.$mavFieldName;
 
@@ -114,8 +119,8 @@ function mavf_contact_form($mavArgs){
                                                     $mavFieldID, $mavFieldLabel
                                                 );
                                                 printf(
-                                                    '<input id="%1$s" type="%2$s" name="%4$s" class="mavjs-form-input mav-form-input" %3$s>',
-                                                    $mavFieldID, $mavFieldType, $mavRequired, $mavFieldName
+                                                    '<input id="%1$s" type="%2$s" name="%4$s" class="mavjs-form-input mav-form-input" placeholder="%5$s" %3$s>',
+                                                    $mavFieldID, $mavFieldType, $mavRequired, $mavFieldName, $mavPlaceholder
                                                 );
                                                 printf(
                                                     '<div class="mav-form-hint"><i class="fas fa-exclamation mav-margin-right-xs"></i>%1$s</div>',
@@ -126,7 +131,15 @@ function mavf_contact_form($mavArgs){
                                     /* Message */
                                     if ($mavCurrentField === 'message') {
                                         printf(
+                                            '<label for="mavid-form__input--message" class="mav-margin-bottom-sm">%1$s</label>',
+                                            __( 'Nội dung liên hệ' , 'maverick-theme' )
+                                        );
+                                        printf(
                                             '<textarea id="mavid-form__input--message" name="message" class="mavjs-form-input mav-form-input-message"></textarea>'
+                                        );
+                                        printf(
+                                            '<div class="mav-form-hint"><i class="fas fa-exclamation mav-margin-right-xs"></i>%1$s</div>',
+                                            __( 'Vui lòng nhập nội dung tiếng Việt có dấu.' , 'maverick-theme' )
                                         );
                                     }
                                 echo '</div>';
@@ -137,11 +150,11 @@ function mavf_contact_form($mavArgs){
                     /* Form Footer */
                     printf('<footer class="mav-form-footer mav-form-footer-wrapper">');
                         printf('<div class="mav-form-footer-ctn">');
-                            /* Form Submit Button */
+                            /* Submit Button */
                             printf('<div class="mav-form-submit-ctn">');
                                 printf(
-                                    '<button id="mavid-form-submit-%1$s" type="submit" class="mavjs-form-submit mav-btn-primary">%2$s</button>',
-                                    $mavUniqueNumber, __( 'Submit' , 'maverick-theme' )
+                                    '<button id="mavid-form-submit-%1$s" type="submit" class="mavjs-form-submit mav-btn-cta">%2$s</button>',
+                                    $mavUniqueNumber, __( 'Gửi thông tin liên hệ' , 'maverick-theme' )
                                 );
                             echo '</div>';
 

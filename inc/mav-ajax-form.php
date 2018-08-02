@@ -24,7 +24,7 @@ function mavf_ajax_form() {
         $mavSubject = __( 'Thông tin liên lạc từ ' , 'maverick-theme' ).$mavName;
         $mavHeaders = "From: $mavEmail\n";
         $mavHeaders .= "MIME-Version: 1.0\n";
-        $mavHeaders .= "Content-type: text/html; charset=iso=8859-1\n";
+        $mavHeaders .= "Content-type: text/html; charset=utf-8\n";
 
         if (wp_mail($mavTo, $mavSubject, $mavMessage, $mavHeaders)) {
             mavf_message_box(__('Thông tin liên hệ đã được gửi. Cám ơn bạn đã liên lạc với chung tôi.','maverick-theme'));

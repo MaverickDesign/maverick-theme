@@ -5,9 +5,14 @@ form {
     }
     input {
         border: none;
-        padding: var(--mav-gutter-sm) 0;
+        padding: var(--mav-gutter-sm);
         color: var(--mav-color-text-primary);
         font-size: inherit;
+    }
+    textarea {
+        resize: none;
+        border-color: var(--mav-color-border);
+        padding: var(--mav-gutter);
     }
 }
 
@@ -81,10 +86,15 @@ form {
     border: 1px solid var(--mav-color-border);
 }
 
-.mav-contact {
+.mav-contact-info-ctn {
+    border: 1px solid var(--mav-color-border);
+    padding: var(--mav-gutter);
+}
+.mav-contact-info {
     margin-bottom: var(--mav-gutter-sm);
+    color: var(--mav-color-text-primary);
     &:before {
-        color: var(--mav-color-text-primary);
+        color: var(--mav-color-text-secondary);
     }
     &:last-child {
         margin-bottom: 0;
@@ -112,28 +122,6 @@ form {
     }
 }
 
-.mav-contact-socials-ctn {
-    .mav-social-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(60px,80px));
-        justify-content: center;
-        .mav-social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: $mav-color-background;
-            border-radius: 50%;
-            font-size: 1.25rem;
-            @extend %mav-transition;
-            &:hover {
-                background: var(--mav-color-accent);
-                @include text-contrast($mav-color-brand-accent);
-            }
-        }
-    }
-}
 
 .mav-contact-form-ctn {
     width: 100%;
@@ -148,7 +136,7 @@ form {
     grid-gap: var(--mav-gutter-sm);
     input, textarea {
         display: flex;
-        font-family: $font-roboto;
+        font-family: inherit;
         font-size: 1rem;
         background: transparent;
         border: none;
@@ -169,6 +157,7 @@ form {
         resize: none;
         box-shadow: none;
         margin-bottom: var(--mav-gutter);
+
     }
     .mav-form-hint {
         overflow: hidden;
@@ -184,8 +173,9 @@ form {
 /**
  * Contact Form
  */
+
 .mav-form-contact-wrapper {
-    display: flex;
+    // display: flex;
 }
 
 .mav-form-contact-ctn {
@@ -193,19 +183,30 @@ form {
     width: 100%;
 }
 
+/* Contact Form Header */
 .mav-form-header-wrapper {
     .mav-form-header-ctn {
+        padding-bottom: var(--mav-gutter-lg);
+        display: grid;
+        grid-gap: var(--mav-gutter);
         .mav-form-title-wrapper {
             .mav-form-title-ctn {
+                text-align: center;
                 font-size: 2rem;
+            }
+        }
+        .mav-form-intro-wrapper {
+            .mav-form-intro-ctn {
+                text-align: center;
             }
         }
     }
 }
 
+/* Contact Form Body - The Form */
 .mav-form {
+    border: 1px solid var(--mav-color-border);
     background: white;
-    min-width: 50vw;
     display: grid;
     grid-gap: var(--mav-gutter);
     margin: 0 auto;
@@ -226,8 +227,9 @@ form {
         display: flex;
         flex-direction: column;
         width: 100%;
+
         label {
-            font-weight: 500;
+            // font-weight: 500;
             color: var(--mav-color-text-secondary);
         }
 
@@ -251,7 +253,7 @@ form {
             }
             &:focus {
                 outline-color: transparent;
-                box-shadow: inset 0 -2px var(--mav-color-primary);
+                box-shadow: inset 0 -2px var(--mav-color-accent);
                 color: var(--mav-color-text-primary);
                 + .mav-form-hint {
                     opacity: 1;
@@ -259,12 +261,18 @@ form {
                 }
             }
         }
-
         .mav-form-input-message {
             min-height: 20vh;
             font-family: inherit;
             font-size: 1rem;
-            resize: none;
+            &:focus {
+                border-color: var(--mav-color-accent);
+                outline: none;
+                + .mav-form-hint {
+                    opacity: 1;
+                    transform: translateY(0%);
+                }
+            }
         }
 
         .mav-form-hint {

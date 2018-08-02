@@ -38,7 +38,7 @@
                         </header>
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
-                                <div class="mav-post-content">
+                                <div class="mav-post mav-post-content mav-col-10 mav-center">
                                     <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong class="mav-maverick-theme">Maverick Theme</strong>) là một bộ giao diện hoàn toàn <strong>MIỄN PHÍ</strong> cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (Content Management System - CMS) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>30%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
                                     <p><strong class="mav-maverick-theme">Maverick Theme</strong> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: HTML5, CSS3, Javascript ES6+ và PHP 7.0+.</p>
                                     <p><strong class="mav-maverick-theme">Maverick Theme</strong> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
@@ -145,13 +145,15 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            $mavArgs = array(
-                                                'number_of_posts'   => 2,
-                                                'post_type'         => 'post',
-                                                'post_in'           => array(123,129),
-                                                // 'title_side'     => 'mav-right'
-                                            );
-                                                mavf_post_feature($mavArgs);
+                                        $mavQueryArgs = array(
+                                            'post_type'     => 'page',
+                                            'post_parent'   =>  22,
+                                        );
+                                        $mavArgs = array(
+                                            'query_args'    => $mavQueryArgs,
+                                            'button_text'   => 'Tìm hiểu thêm'
+                                        );
+                                        mavf_post_feature($mavArgs);
                                         ?>
                                     </div>
                                 </div>
@@ -537,6 +539,47 @@
                 </section>
             </div>
         </div>
+
+        <!-- Contact Form -->
+        <section class="mav-sec-wrapper">
+            <div class="mav-sec-ctn">
+                <!-- Section Header -->
+                <header class="mav-sec-header-wrapper">
+                    <div class="mav-sec-header-ctn">
+                        <div class="mav-sec-title-wrapper">
+                            <div class="mav-sec-title-ctn">
+                                <h2 class="mav-sec-title">Contact Form</h2>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Section Body -->
+                <div class="mav-sec-body-wrapper">
+                    <div class="mav-sec-body-ctn">
+                        <?php
+                            if ( function_exists( 'mavf_contact_form' ) ) {
+                                $mavFormArgs = array(
+                                    'fields'    => array('name','email','phone','address','dob','message'),
+                                    'form_title'    => __( 'Gửi thông tin liên hệ tới <strong>'.get_bloginfo( 'name' ).'</strong>' , 'maverick-theme' ),
+                                    'form_intro'    => __( 'Liên lạc với <strong>'.get_bloginfo( 'name' ).'</strong> qua email.' , 'maverick-theme' )
+                                );
+                                mavf_contact_form($mavFormArgs);
+                            }
+                        ?>
+                    </div>
+                </div>
+                <!-- Section Footer -->
+                <div class="mav-sec-footer-wrapper">
+                    <div class="mav-sec-footer-ctn">
+                        <?php
+                            if (function_exists('mavf_button')) {
+                                mavf_button('Xem hướng dẫn sử dụng', '#');
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer id="mavid-page-footer" class="mav-page-footer-wrapper">
             <div class="mav-page-footer-ctn">
             </div>

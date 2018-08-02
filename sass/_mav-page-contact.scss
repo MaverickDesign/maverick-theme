@@ -9,26 +9,44 @@
     display: grid;
     grid-gap: var(--mav-gutter-lg);
     @media #{$mav-desktop} {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: repeat(2,1fr);
         grid-template-rows: auto;
         grid-template-areas:
         "form social"
         "form map";
         align-items: stretch;
-        .mav-contact-form-wrapper{
-            display: flex;
-            justify-content: center;
+        .mav-form-contact-wrapper {
             grid-area: form;
-            height: 100%;
-            .mav-contact-form-ctn {
-                padding: var(--mav-gutter-lg);
-            }
+            width: 100%;
         }
         .mav-contact-socials-wrapper {
             grid-area: social;
         }
         .mav-contact-wrapper {
             grid-area: map;
+        }
+    }
+}
+
+.mav-contact-socials-ctn {
+    .mav-social-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(60px,80px));
+        justify-content: center;
+        .mav-social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: $mav-color-background;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            @extend %mav-transition;
+            &:hover {
+                background: var(--mav-color-accent);
+                @include text-contrast($mav-color-brand-accent);
+            }
         }
     }
 }
