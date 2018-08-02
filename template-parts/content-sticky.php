@@ -34,11 +34,11 @@
                         );
                     echo '</header>';
                     /* Only display on post index page */
-                    if ( is_home() ) {
-                        echo '<div class="mav-card-post-excerpt">';
-                            the_excerpt();
-                        echo '</div>';
-                    }
+                    // if ( is_home() ) {
+                    //     echo '<div class="mav-card-post-excerpt">';
+                    //         the_excerpt();
+                    //     echo '</div>';
+                    // }
                 ?>
             </div>
             <!-- Post footer -->

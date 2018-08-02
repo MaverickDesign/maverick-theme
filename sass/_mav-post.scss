@@ -33,7 +33,7 @@
     }
     &-info-ctn {
         padding: var(--mav-gutter);
-        box-shadow: 0 1px $mav-color-border;
+        box-shadow: 0 1px var(--mav-color-border);
         margin: 0 var(--mav-gutter);
         @media #{$mav-mobile} {
             flex-wrap: wrap;
@@ -124,13 +124,12 @@
 }
 
 .mav-post-info {
-    font-weight: bold;
     a {
         text-decoration: none;
     }
     &:before {
         @extend %mav-font-awesome;
-        margin-right: .5em;
+        margin-right: var(--mav-gutter-xs);
         font-size: inherit;
         color: var(--mav-color-text-secondary);
     }

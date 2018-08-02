@@ -234,9 +234,9 @@
  * ==============
  */
 .mav-sec-wrapper {
-    background: var(--mav-color-site-background);
+    // background: var(--mav-color-site-background);
     &:nth-child(even) {
-        background: var(--mav-color-off-white);
+        // background: var(--mav-color-off-white);
     }
     .mav-sec-ctn {
         max-width: var(--mav-site-width);
