@@ -1,20 +1,15 @@
-.mav-btn-ctn {
-    a {
-        text-decoration: none;
-    }
-}
-
-.mav-btn-wrapper {
-    text-decoration: none;
-}
-
 button {
     margin: 0;
     padding: 0;
     border: none;
 
     background: transparent;
+
     color: inherit;
+
+    font-weight: var(--mav-font-weight-bold);
+    font-family: $font-roboto-cond;
+
     cursor: pointer;
 
     &[data-full-width] {
@@ -27,18 +22,13 @@ button {
     justify-content: center;
     align-items: center;
 
-    padding: var(--mav-gutter-sm) var(--mav-gutter);
-
-    border: 1px solid var(--mav-color-primary);
+    border: 2px solid var(--mav-color-primary);
 
     background: transparent;
 
-    font-size: 1rem;
-    font-weight: 600;
     text-decoration: none;
-    text-align: center;
     text-transform: uppercase;
-    letter-spacing: .075rem;
+    letter-spacing: 0.5px;
 
     cursor: pointer;
 
@@ -47,30 +37,9 @@ button {
 
 .mav-btn {
     @extend %mav-btn;
-    @extend %mav-transition;
     &:hover {
         @include text-contrast($mav-color-primary);
         background: var(--mav-color-primary);
-    }
-}
-
-.mav-btn-solid {
-    @extend %mav-btn;
-    @include text-contrast($mav-color-primary);
-    background: var(--mav-color-primary);
-    &:hover {
-        background: transparent;
-        color: var(--mav-color-text-primary);
-    }
-}
-
-.mav-btn {
-    &-close {
-        cursor: pointer;
-        &:after {
-            content: "×";
-            font-size: 2rem;
-        }
     }
 }
 
@@ -80,20 +49,49 @@ button {
 
 .mav-btn {
     &-primary {
-        @extend .mav-btn-solid;
-        padding: var(--mav-gutter);
+        @extend .mav-btn;
+        padding: var(--mav-gutter-xs);
+        background: var(--mav-color-primary);
+        @include text-contrast($mav-color-primary);
+        &:hover {
+            background: transparent;
+            color: var(--mav-color-text-primary);
+        }
+        &-lg {
+            @extend .mav-btn-primary;
+            padding: var(--mav-gutter-sm);
+            letter-spacing: 1px;
+        }
     }
     &-secondary {
         @extend .mav-btn;
+        padding: var(--mav-gutter-xs);
+        border-width: 1px;
+        color: var(--mav-color-text-primary);
+        &-lg {
+            @extend .mav-btn-secondary;
+            padding: var(--mav-gutter-sm);
+            letter-spacing: 1px;
+        }
     }
     &-cta {
-        @extend .mav-btn-primary;
+        @extend .mav-btn;
         width: 100%;
-        border: none;
-        &:hover {
-            background: var(--mav-color-accent);
-            @include text-contrast($mav-color-accent);
-            animation: mav-brand-color-transition 2s infinite;
+        margin: 0 auto;
+        padding: var(--mav-gutter);
+        border-width: 0;
+        background: var(--mav-color-accent);
+        @include text-contrast($mav-color-accent);
+        font-size: 1rem;
+        text-transform: uppercase;
+        @extend %mav-transition;
+        letter-spacing: 1px;
+    }
+    &-close {
+        cursor: pointer;
+        &:after {
+            content: "×";
+            font-size: 2rem;
         }
     }
 }

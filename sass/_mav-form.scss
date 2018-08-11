@@ -80,49 +80,6 @@ form {
     }
 }
 
-.mav-contact-ctn, .mav-contact-socials-ctn {
-    background: white;
-    padding: var(--mav-gutter-lg);
-    border: 1px solid var(--mav-color-border);
-}
-
-.mav-contact-info-ctn {
-    border: 1px solid var(--mav-color-border);
-    padding: var(--mav-gutter);
-}
-.mav-contact-info {
-    margin-bottom: var(--mav-gutter-sm);
-    color: var(--mav-color-text-primary);
-    &:before {
-        color: var(--mav-color-text-secondary);
-    }
-    &:last-child {
-        margin-bottom: 0;
-    }
-    &[data-type] {
-        &:before {
-            @extend %mav-font-awesome;
-            margin-right: var(--mav-gutter-sm);
-        }
-    }
-    &[data-type="address"] {
-        &:before {
-            content: '\f015';
-        }
-    }
-    &[data-type="phone"] {
-        &:before {
-            content: '\f095';
-        }
-    }
-    &[data-type="email"] {
-        &:before {
-            content: '\f0e0';
-        }
-    }
-}
-
-
 .mav-contact-form-ctn {
     width: 100%;
     background: white;
@@ -213,6 +170,7 @@ form {
     padding: var(--mav-gutter);
     @media #{$mav-tablet} {
         padding: var(--mav-gutter-lg);
+        max-width: 80vw;
     }
     @media #{$mav-desktop} {
         padding: var(--mav-gutter-lg);
@@ -229,7 +187,8 @@ form {
         width: 100%;
 
         label {
-            // font-weight: 500;
+            font-family: $font-roboto-cond;
+            font-weight: var(--mav-font-weight-bold);
             color: var(--mav-color-text-secondary);
         }
 

@@ -26,12 +26,12 @@ function mavf_social_links($mavFull=false, $mavUlClass="mav-social-links", $mavC
 	 */
 	if ($mavFull) {
 		// Phone Number
-		$mavBrandPhoneNumber 	= esc_attr(get_option('mav_setting_brand_phone'));
+		$mavBrandPhoneNumber 	= esc_attr( get_option( 'mav_setting_brand_phone' ) );
 		if ( !empty($mavBrandPhoneNumber) ) {
 			mavf_social_account($mavBrandPhoneNumber, 'tel:' , $mavClass , 'Phone' , 'fa fa-phone' );
 		}
 		// Email
-		$mavBrandContactEmail 	= esc_attr(get_option('mav_setting_brand_email'));
+		$mavBrandContactEmail 	= esc_attr( get_option( 'mav_setting_brand_email' ) );
 		if ( !empty($mavBrandContactEmail) ) {
 			mavf_social_account($mavBrandContactEmail, 'mailto:' , $mavClass , 'Email' , 'fa fa-envelope' );
 		}

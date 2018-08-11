@@ -3,12 +3,13 @@
  * @package maverick-theme
  */
 
-add_settings_section( 'mavsec_site_setting_brand', 'Brand', 'mavf_site_setting_brand', 'mav_admin_page_site_setting' );
+add_settings_section( 'mavsec_site_setting_brand', __('Thông tin thương hiệu','maverick-theme'), 'mavf_site_setting_brand', 'mav_admin_page_site_setting' );
 
 function mavf_site_setting_brand() {
     _e('Thiết lập thông tin thương hiệu','maverick-theme');
 }
 
+// Brand Logo
 register_setting('mavog_site_setting','mav_setting_brand_logo');
 add_settings_field(
     'mavid_site_setting_brand_logo',
@@ -30,7 +31,7 @@ function mavf_site_setting_brand_logo() {
 	}
 }
 
-// Name
+// Brand Name
 register_setting('mavog_site_setting','mav_setting_brand_name');
 add_settings_field(
     'mavid_site_setting_brand_name',
@@ -69,7 +70,7 @@ function mavf_site_setting_brand_tagline() {
 
     printf(
         '<input type="text" name="mav_setting_brand_tagline" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue,__('Ví dụ: Professional Design Services','maverick-theme')
+        $mavSavedValue,__('e.g., Professional Design Services','maverick-theme')
     );
 }
 
@@ -87,7 +88,7 @@ function mavf_site_setting_brand_address() {
     $mavSavedValue = esc_attr(get_option('mav_setting_brand_address'));
     printf(
         '<input type="text" name="mav_setting_brand_address" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue, __('Ví dụ: 121 Đinh Tiên Hoàng, Đakao, Q.1, TP.HCM','maverick-theme')
+        $mavSavedValue, __('e.g., 121 Đinh Tiên Hoàng, Đakao, Q.1, TP.HCM','maverick-theme')
     );
 }
 
@@ -105,7 +106,25 @@ function mavf_site_setting_brand_phone() {
     $mavSavedValue = esc_attr(get_option('mav_setting_brand_phone'));
     printf(
         '<input type="text" name="mav_setting_brand_phone" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue, __('Ví dụ: 090-909-6464','maverick-theme')
+        $mavSavedValue, __('e.g., 090-909-6464','maverick-theme')
+    );
+}
+
+// Hotline
+register_setting('mavog_site_setting','mav_setting_brand_hotline');
+add_settings_field(
+    'mavid_site_setting_brand_hotline',
+    __('Hotline','maverick-theme'),
+    'mavf_site_setting_brand_hotline',
+    'mav_admin_page_site_setting',
+    'mavsec_site_setting_brand'
+);
+
+function mavf_site_setting_brand_hotline() {
+    $mavSavedValue = esc_attr(get_option('mav_setting_brand_hotline'));
+    printf(
+        '<input type="text" name="mav_setting_brand_hotline" value="%1$s" placeholder="%2$s"/>',
+        $mavSavedValue, __('e.g., 090-909-6464','maverick-theme')
     );
 }
 
@@ -123,7 +142,7 @@ function mavf_site_setting_brand_email() {
     $mavSavedValue = esc_attr( get_option('mav_setting_brand_email') );
     printf(
         '<input type="text" name="mav_setting_brand_email" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue, __('Ví dụ: johndoe@email.com','maverick-theme')
+        $mavSavedValue, __('e.g., johndoe@email.com','maverick-theme')
     );
 }
 
@@ -144,6 +163,6 @@ function mavf_site_setting_brand_website() {
     endif;
     printf(
         '<input type="text" name="mav_setting_brand_website" value="%1$s" placeholder="%2$s"/>',
-        $mavSavedValue, __('Ví dụ: http://www.maverick.vn','maverick-theme')
+        $mavSavedValue, __('e.g., http://www.maverick.vn','maverick-theme')
     );
 }

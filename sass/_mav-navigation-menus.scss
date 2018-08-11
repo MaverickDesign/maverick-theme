@@ -7,10 +7,12 @@
         }
     }
 }
+
 .mav-header-logo-wrapper {
     max-width: var(--mav-site-width);
     margin: auto;
 }
+
 .mav-header-logo-ctn {
     @extend %mav-flex-row;
     justify-content: space-between;
@@ -92,6 +94,10 @@
     }
 }
 
+/**
+ * Header Menu
+ */
+
 .mav-header-menu-wrapper {
     @media #{$mav-desktop} {
         @include mav-flex-center-all;
@@ -108,6 +114,7 @@
     ul { // lvl_1
         @extend %mav-flex-column;
         margin: 0;
+        padding-left: 0;
         @media #{$mav-desktop} {
             flex-direction: row;
             background: var(--mav-color-header-menu-background);

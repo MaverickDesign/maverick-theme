@@ -15,7 +15,7 @@ $mavClientArgs = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array( 'slug' => __( 'client' , 'maverick-theme' ) ),
+    'rewrite'            => array( 'slug' => __( 'khach-hang' , 'maverick-theme' ) ),
 );
 
 register_post_type( 'mav_cpt_client', $mavClientArgs );

@@ -12,7 +12,7 @@ function mavf_google_map($mavArgs) {
     $mavContainerClass  = isset($mavArgs['container'])  ? $mavArgs['container']         : 'mav-google-map-ctn';
 
     if (empty($mavGoogleMapHeight)) {
-        $mavGoogleMapHeight = '25vw';
+        $mavGoogleMapHeight = '25vh';
     }
 
     if (!empty($mavGoogleMap)):

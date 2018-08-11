@@ -153,14 +153,13 @@ function mavf_contact_form($mavArgs){
                             /* Submit Button */
                             printf('<div class="mav-form-submit-ctn">');
                                 printf(
-                                    '<button id="mavid-form-submit-%1$s" type="submit" class="mavjs-form-submit mav-btn-cta">%2$s</button>',
+                                    '<button id="mavid-form-submit-%1$s" type="submit" class="mavjs-form-submit mav-btn-primary-lg" data-full-width>%2$s</button>',
                                     $mavUniqueNumber, __( 'Gửi thông tin liên hệ' , 'maverick-theme' )
                                 );
                             echo '</div>';
 
                             /* Form Status */
-                            printf('<div class="mav-form-status-ctn">');
-                            echo '</div>';
+                            printf('<div class="mav-form-status-wrapper"><div class="mav-form-status-ctn"></div></div>');
                         echo '</div>';
                     echo '</footer>';
                 echo '</form>';

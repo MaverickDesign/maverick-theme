@@ -11,6 +11,7 @@
 .mav-breadcrumbs {
     display: flex;
     li {
+        list-style-type: none;
         margin-right: var(--mav-gutter-xs);
         &:last-child {
             margin-right: 0;

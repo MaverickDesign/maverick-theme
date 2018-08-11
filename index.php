@@ -28,7 +28,7 @@
                 'query_args'        => $mavStickyArgs,
                 'class_wrapper'     => 'mav-blog-sticky-post-wrapper',
                 'class_container'   => 'mav-blog-sticky-post-ctn',
-                'template'          => 'template-parts/content-sticky',
+                'template'          => 'template-parts/content',
             );
             mavf_post_query($mavArgs);
 
@@ -56,7 +56,7 @@
 
         $mavQuery = new WP_Query( $mavArgs );
 
-        if ($mavQuery->have_posts()) {
+        if ( $mavQuery->have_posts() ) {
             printf('<section id="mavid-post-index" class="mav-post-index-wrapper">');
                 $mavColumns = ( get_option( 'mav_setting_blog_page_columns' ) ) ? esc_attr( get_option( 'mav_setting_blog_page_columns' ) ) : '4';
                 /**
@@ -66,7 +66,7 @@
                     '<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
                     $mavColumns
                 );
-                    while ($mavQuery->have_posts()) {
+                    while ( $mavQuery->have_posts() ) {
                         $mavQuery->the_post();
                         get_template_part('template-parts/content', get_post_format());
                     }
@@ -78,9 +78,9 @@
                     /**
                      * Ajax load more posts
                      */
-                    echo '<div class="mav-margin-top">';
+                    echo '<div class="mav-padding-top-lg">';
                         printf(
-                            '<button class="mav-btn-cta mavjs-ajax-load-posts" data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',
+                            '<button class="mav-btn-primary-lg mavjs-ajax-load-posts" data-full-width data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',
                             admin_url('admin-ajax.php'), __('Xem thêm','maverick-theme')
                         );
                     echo '</div>';

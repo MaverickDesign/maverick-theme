@@ -8,27 +8,21 @@
         max-width: var(--mav-site-width);
     }
     .mav-carousel-nav-wrapper {
-        @extend .mav-flex-center-all;
+        position: relative;
         min-width: var(--mav-gutter-lg);
         min-height: var(--mav-gutter-lg);
-        // margin: 0 var(--mav-gutter);
-        @media #{$mav-phone} {
-            margin: 0 var(--mav-gutter-sm);
-        }
         .mav-carousel-nav {
             position: relative;
             @extend .mav-flex-center-all;
             width: var(--mav-gutter-lg);
             height: var(--mav-gutter-lg);
-            background: $mav-color-brand-primary;
 
             font-size: 1.5rem;
-            color: $mav-color-text-primary-dark;
+            color: var(--mav-color-text-secondary);
 
             @extend %mav-transition;
             &:hover {
-                border-radius: 50%;
-                animation: mav-brand-color-transition 4s infinite;
+                animation: mav-brand-color-transition-text 4s infinite;
             }
             &:before, &:after {
                 @extend %mav-font-awesome;
@@ -61,7 +55,7 @@
         display: flex;
         width: 100%;
         overflow: hidden;
-        margin: 0 var(--mav-gutter);
+        padding: var(--mav-gutter) 0;
         @media #{$mav-phone} {
             margin: 0 var(--mav-gutter-xs);
         }
@@ -71,12 +65,13 @@
             width: 100%;
             @extend %mav-transition;
             .mav-carousel-item {
+                position: relative;
                 flex: 0 0 auto;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 &:last-child {
-                    margin-right: 0!important;
+                    // margin-right: 0!important;
                 }
             }
         }

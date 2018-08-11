@@ -50,3 +50,50 @@
         }
     }
 }
+
+.mav-contact-ctn, .mav-contact-socials-ctn {
+    background: white;
+    padding: var(--mav-gutter-lg);
+    border: 1px solid var(--mav-color-border);
+    @media #{$mav-phone} {
+        padding: var(--mav-gutter);
+    }
+}
+
+.mav-contact-info-ctn {
+    border: 1px solid var(--mav-color-border);
+    padding: var(--mav-gutter);
+}
+
+.mav-contact-info {
+    list-style-type: none;
+    margin-bottom: var(--mav-gutter-sm);
+    color: var(--mav-color-text-primary);
+    &:before {
+        color: var(--mav-color-text-secondary);
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &[data-type] {
+        &:before {
+            @extend %mav-font-awesome;
+            margin-right: var(--mav-gutter-sm);
+        }
+    }
+    &[data-type="address"] {
+        &:before {
+            content: '\f015';
+        }
+    }
+    &[data-type="phone"] {
+        &:before {
+            content: '\f095';
+        }
+    }
+    &[data-type="email"] {
+        &:before {
+            content: '\f0e0';
+        }
+    }
+}

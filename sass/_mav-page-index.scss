@@ -86,7 +86,6 @@
         max-width: var(--mav-site-width);
         display: grid;
         grid-gap: var(--mav-gutter);
-        justify-content: center;
         padding: var(--mav-gutter-lg) var(--mav-gutter);
         @media #{$mav-tablet} {
             padding: var(--mav-gutter-lg);

@@ -31,3 +31,25 @@
 [data-scroll] {
     cursor: pointer;
 }
+/* Section: Typography */
+#mavid-sec-typography {
+    .mav-sec-body-ctn {
+        section {
+            padding: var(--mav-gutter-lg) 0;
+            border-bottom: 1px solid var(--mav-color-border);
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+    /* Font Sizes */
+    .mav-sec-typography-font-sizes {
+        li {
+            margin-bottom: var(--mav-gutter);
+        }
+    }
+}

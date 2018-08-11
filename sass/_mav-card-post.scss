@@ -7,34 +7,42 @@
     width: 100%;
 }
 .mav-card-ctn {
+    position: relative;
     height: 100%;
+    padding: 1px;
+    @media #{$mav-mobile} {
+        padding: 2px;
+    }
 }
+
 .mav-card-post {
     display: grid;
-    grid-template-rows: 20vh 160px auto;
+    grid-template-rows: 20vh 140px auto;
     background: white;
     border: 1px solid var(--mav-color-border);
     height: 100%;
-
+    overflow: hidden;
     @extend %mav-transition;
-    &:hover {
-        box-shadow: 0 10px 50px #ccc;
-    }
-    &-header, &-content, &-footer {
-        @media #{$mav-desktop} {
-            overflow: hidden;
+        &:hover {
+            box-shadow: 0 10px 50px #ccc;
         }
+
+    &-header, &-content, &-footer {
+        overflow: hidden;
     }
+
     &-header {
         display: flex;
         position: relative;
         overflow: hidden;
         box-shadow: 0 1px $mav-color-border;
     }
+
     &-thumbnail-wrapper {
         width: 100%;
         height: 100%;
     }
+
     &-thumbnail {
         display: block;
         width: 100%;
@@ -49,6 +57,7 @@
             transform: scale(1.05);
         }
     }
+
     &-info-ctn {
         display: flex;
         flex-wrap: wrap;
@@ -56,10 +65,10 @@
         padding-bottom: var(--mav-gutter-sm);
         @extend .mav-font-sm;
         a {
-            text-decoration: none;
             margin-right: var(--mav-gutter-sm);
         }
     }
+
     &-content {
         header {
             display: grid;
@@ -70,14 +79,23 @@
                 grid-template-rows: auto;
             }
         }
-        a {
-            text-decoration: none;
+        .mav-card-post-title-wrapper {
+            display: block;
+            overflow: hidden;
+            padding: var(--mav-gutter);
+            height: 100%;
         }
         .mav-card-post-title {
-            font-weight: 400;
-            color: var(--mav-color-text-primary);
+            font-size: var(--mav-font-size-lg);
+            font-weight: var(--mav-font-weight-medium);
+            color: var(--mav-color-text-secondary);
+            line-height: inherit;
+            @extend %mav-transition;
+            &:hover {
+                color: var(--mav-color-text-primary);
+            }
             @media #{$mav-phone} {
-                font-size: 1.25rem;
+                font-weight: var(--mav-font-weight-bold);
             }
         }
         .mav-card-post-excerpt {

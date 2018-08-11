@@ -24,8 +24,9 @@
         <!-- Nội dung chính của trang -->
         <div id="mavid-page-content" class="mav-page-body-wrapper">
             <div class="mav-page-body-ctn">
+
                 <!-- Giới thiệu -->
-                <section class="mav-sec-wrapper">
+                <section class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
                         <header class="mav-sec-header-wrapper">
                             <div class="mav-sec-header-ctn">
@@ -39,8 +40,8 @@
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <div class="mav-post mav-post-content mav-col-10 mav-center">
-                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong class="mav-maverick-theme">Maverick Theme</strong>) là một bộ giao diện hoàn toàn <strong>MIỄN PHÍ</strong> cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (Content Management System - CMS) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>30%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
-                                    <p><strong class="mav-maverick-theme">Maverick Theme</strong> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: HTML5, CSS3, Javascript ES6+ và PHP 7.0+.</p>
+                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong class="mav-maverick-theme">Maverick Theme</strong>) là một bộ giao diện hoàn toàn <strong>MIỄN PHÍ</strong> cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
+                                    <p><strong class="mav-maverick-theme">Maverick Theme</strong> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
                                     <p><strong class="mav-maverick-theme">Maverick Theme</strong> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
                                     <p><strong class="mav-maverick-theme">Maverick Theme</strong> hoàn toàn có thể đáp ứng đầy đủ các nhu cầu cơ bản của một website chuyên về nội dung.</p>
                                     <p>Trang này giới thiệu các tính năng nổi bật của <strong class="mav-maverick-theme">Maverick Theme</strong>.</p>
@@ -53,85 +54,87 @@
                 <!-- Các tính năng nổi bật: Item Grid -->
                 <?php
                     if (function_exists('mavf_items_grid')): ?>
-                    <section class="mav-sec-wrapper">
-                        <div class="mav-sec-ctn">
-                            <div class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
-                                            <h2 class="mav-sec-title">Các tính năng nổi bật</h2>
+                        <section class="mav-sec-wrapper mav-pg-section">
+                            <div class="mav-sec-ctn">
+                                <div class="mav-sec-header-wrapper">
+                                    <div class="mav-sec-header-ctn">
+                                        <div class="mav-sec-title-wrapper">
+                                            <div class="mav-sec-title-ctn">
+                                                <h2 class="mav-sec-title">Các tính năng nổi bật</h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn">
-                                    <?php
-                                        $mavArgs = array(
-                                            'columns'   => 4,
-                                            'items'     => file_get_contents(THEME_DIR.'/mav-grid-array.json')
-                                        );
-                                        mavf_items_grid($mavArgs);
-                                    ?>
+                                <div class="mav-sec-body-wrapper">
+                                    <div class="mav-sec-body-ctn">
+                                        <?php
+                                            $mavArgs = array(
+                                                'columns'   => 4,
+                                                'items'     => file_get_contents(THEME_DIR.'/mav-grid-array.json')
+                                            );
+                                            mavf_items_grid($mavArgs);
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    <?php endif;
+                        </section> <?php
+                    endif;
                 ?>
 
                 <!-- Tính năng: Slider -->
                 <?php
-                    if (function_exists('mavf_slider')): ?>
-                    <section id="mavid-sec-slider" class="mav-sec-wrapper">
-                        <div class="mav-sec-ctn">
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
-                                            <h2 class="mav-sec-title">Sliders</h2>
+                    if ( function_exists( 'mavf_slider' ) ): ?>
+                        <section id="mavid-sec-slider" class="mav-sec-wrapper mav-pg-section">
+                            <div class="mav-sec-ctn">
+                                <header class="mav-sec-header-wrapper">
+                                    <div class="mav-sec-header-ctn">
+                                        <div class="mav-sec-title-wrapper">
+                                            <div class="mav-sec-title-ctn">
+                                                <h2 class="mav-sec-title">Sliders</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="mav-sec-body-wrapper">
+                                    <div class="mav-sec-body-ctn">
+                                        <div class="mav-margin-bottom-xl">
+                                            <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 1</p>
+                                            <?php
+                                                mavf_slider(array('slider_type' => 1, 'number_of_slides' => 4));
+                                            ?>
+                                        </div>
+                                        <div class="mav-margin-bottom-xl">
+                                            <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 2</p>
+                                            <?php
+                                                mavf_slider(array('slider_type' => 2));
+                                            ?>
+                                        </div>
+                                        <div>
+                                        <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 3</p>
+                                            <?php
+                                                mavf_slider(array('slider_type' => 3));
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
-                            </header>
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn">
-                                    <div class="mav-margin-bottom-xl">
-                                        <h3 class="mav-margin-bottom">Slider Type 1</h3>
+                                <footer class="mav-sec-footer-wrapper">
+                                    <div class="mav-sec-footer-ctn">
                                         <?php
-                                            mavf_slider(array('slider_type' => 1, 'number_of_slides' => 4));
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
                                         ?>
                                     </div>
-                                    <div class="mav-margin-bottom-xl">
-                                        <h3 class="mav-margin-bottom">Slider Type 2</h3>
-                                        <?php
-                                            mavf_slider(array('slider_type' => 2));
-                                        ?>
-                                    </div>
-                                    <div>
-                                        <h3 class="mav-margin-bottom">Slider Type 3</h3>
-                                        <?php
-                                            mavf_slider(array('slider_type' => 3));
-                                        ?>
-                                    </div>
-                                </div>
+                                </footer>
                             </div>
-                            <footer class="mav-sec-footer-wrapper">
-                                <div class="mav-sec-footer-ctn">
-                                    <?php
-                                        mavf_button('Xem hướng dẫn sử dụng', '#');
-                                    ?>
-                                </div>
-                            </footer>
-                        </div>
-                    </section>
-                        <?php endif;
+                        </section> <?php
+                    endif;
                 ?>
 
                 <!-- Tính năng: Featured Post -->
                 <?php
-                    if (function_exists('mavf_post_feature')): ?>
-                        <section id="mavid-sec-post-featured" class="mav-sec-wrapper">
+                    if ( function_exists( 'mavf_post_feature' ) ): ?>
+                        <section id="mavid-sec-post-featured" class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <header class="mav-sec-header-wrapper">
                                     <div class="mav-sec-header-ctn">
@@ -160,7 +163,9 @@
                                 <footer class="mav-sec-footer-wrapper">
                                     <div class="mav-sec-footer-ctn">
                                         <?php
-                                            mavf_button('Xem hướng dẫn sử dụng', '#');
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
                                         ?>
                                     </div>
                                 </footer>
@@ -171,8 +176,8 @@
 
                 <!-- Tính năng: Post Carousel -->
                 <?php
-                    if (function_exists('mavf_carousel')): ?>
-                        <section id="mavid-sec-post-carousel" class="mav-sec-wrapper">
+                    if ( function_exists( 'mavf_carousel' ) ): ?>
+                        <section id="mavid-sec-post-carousel" class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <header class="mav-sec-header-wrapper">
                                     <div class="mav-sec-header-ctn">
@@ -198,7 +203,9 @@
                                 <footer class="mav-sec-footer-wrapper">
                                     <div class="mav-sec-footer-ctn">
                                         <?php
-                                            mavf_button('Xem hướng dẫn sử dụng', '#');
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
                                         ?>
                                     </div>
                                 </footer>
@@ -210,7 +217,7 @@
                 <!-- Tính năng: Post Grid -->
                 <?php
                     if (function_exists('mavf_post_grid')): ?>
-                    <section id="mavid-sec-post-grid" class="mav-sec-wrapper">
+                    <section id="mavid-sec-post-grid" class="mav-sec-wrapper mav-pg-section">
                         <div class="mav-sec-ctn">
                             <header class="mav-sec-header-wrapper">
                                 <div class="mav-sec-header-ctn">
@@ -237,7 +244,9 @@
                             <footer class="mav-sec-footer-wrapper">
                                 <div class="mav-sec-footer-ctn">
                                     <?php
-                                        mavf_button('Xem hướng dẫn sử dụng', '#');
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
                                     ?>
                                 </div>
                             </footer>
@@ -249,7 +258,7 @@
                 <!-- Tính năng: Google Map -->
                 <?php
                     if ( function_exists( 'mavf_google_map' ) && !empty( esc_attr( get_option( 'mav_setting_enable_google_map' ) ) ) ): ?>
-                    <section id="mavid-sec-google-map" class="mav-sec-wrapper">
+                    <section id="mavid-sec-google-map" class="mav-sec-wrapper mav-pg-section">
                         <div class="mav-sec-ctn">
                             <header class="mav-sec-header-wrapper">
                                 <div class="mav-sec-header-ctn">
@@ -270,7 +279,9 @@
                             <footer class="mav-sec-footer-wrapper">
                                 <div class="mav-sec-footer-ctn">
                                     <?php
-                                        mavf_button('Xem hướng dẫn sử dụng', '#');
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
                                     ?>
                                 </div>
                             </footer>
@@ -280,7 +291,7 @@
                 ?>
 
                 <!-- Tính năng: Lighbox Gallery -->
-                <section id="mavid-sec-lightbox" class="mav-sec-wrapper">
+                <section id="mavid-sec-lightbox" class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
                         <header class="mav-sec-header-wrapper">
                             <div class="mav-sec-header-ctn">
@@ -301,7 +312,9 @@
                         <footer class="mav-sec-footer-wrapper">
                             <div class="mav-sec-footer-ctn">
                                 <?php
-                                    mavf_button('Xem hướng dẫn sử dụng', '#');
+                                    if ( function_exists( 'mavf_button' ) ) {
+                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                    }
                                 ?>
                             </div>
                         </footer>
@@ -309,7 +322,7 @@
                 </section>
 
                 <!-- Tính năng: Countdown Timer -->
-                <section id="mavid-sec-countdown" class="mav-sec-wrapper">
+                <section id="mavid-sec-countdown" class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
                         <header class="mav-sec-header-wrapper">
                             <div class="mav-sec-header-ctn">
@@ -330,7 +343,9 @@
                         <footer class="mav-sec-footer-wrapper">
                             <div class="mav-sec-footer-ctn">
                                 <?php
-                                    mavf_button('Xem hướng dẫn sử dụng', '#');
+                                    if ( function_exists( 'mavf_button' ) ) {
+                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                    }
                                 ?>
                             </div>
                         </footer>
@@ -339,8 +354,8 @@
 
                 <!-- Tính năng: Accordion -->
                 <?php
-                    if (function_exists('mavf_post_accordion')): ?>
-                        <section id="mavid-sec-accordion" class="mav-sec-wrapper">
+                    if ( function_exists( 'mavf_post_accordion' ) ): ?>
+                        <section id="mavid-sec-accordion" class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <header class="mav-sec-header-wrapper">
                                     <div class="mav-sec-header-ctn">
@@ -367,7 +382,9 @@
                                 <footer class="mav-sec-footer-wrapper">
                                     <div class="mav-sec-footer-ctn">
                                         <?php
-                                            mavf_button('Xem hướng dẫn sử dụng', '#');
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
                                         ?>
                                     </div>
                                 </footer>
@@ -379,7 +396,7 @@
                 <!-- Tính năng: Tab View -->
                 <?php
                     if (function_exists('mavf_tab_posts')): ?>
-                        <section id="mavid-sec-tab" class="mav-sec-wrapper">
+                        <section id="mavid-sec-tab-view" class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <header class="mav-sec-header-wrapper">
                                     <div class="mav-sec-header-ctn">
@@ -403,7 +420,9 @@
                                 <footer class="mav-sec-footer-wrapper">
                                     <div class="mav-sec-footer-ctn">
                                         <?php
-                                            mavf_button('Xem hướng dẫn sử dụng', '#');
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
                                         ?>
                                     </div>
                                 </footer>
@@ -415,7 +434,7 @@
                 <!-- Tính năng: Message Box -->
                 <?php
                     if(function_exists('mavf_message_box')): ?>
-                        <section id="mavid-sec-message-box" class="mav-sec-wrapper">
+                        <section id="mavid-sec-message-box" class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <header class="mav-sec-header-wrapper">
                                     <div class="mav-sec-header-ctn">
@@ -436,7 +455,9 @@
                                 <footer class="mav-sec-footer-wrapper">
                                     <div class="mav-sec-footer-ctn">
                                         <?php
-                                            mavf_button('Xem hướng dẫn sử dụng', '#');
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
                                         ?>
                                     </div>
                                 </footer>
@@ -446,7 +467,7 @@
                 ?>
 
                 <!-- Tính năng: Javascript Modal Box -->
-                <section id="mavid-sec-modal-box" class="mav-sec-wrapper">
+                <section id="mavid-sec-modal-box" class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
                         <header class="mav-sec-header-wrapper">
                             <div class="mav-sec-header-ctn">
@@ -460,14 +481,16 @@
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <div class="mav-flex-center-all">
-                                    <button class="mav-btn-secondary" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'maverick-theme' );?></button>
+                                    <button class="mav-btn-cta" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'maverick-theme' );?></button>
                                 </div>
                             </div>
                         </div>
                         <footer class="mav-sec-footer-wrapper">
                             <div class="mav-sec-footer-ctn">
                                 <?php
-                                    mavf_button('Xem hướng dẫn sử dụng', '#');
+                                    if ( function_exists( 'mavf_button' ) ) {
+                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                    }
                                 ?>
                             </div>
                         </footer>
@@ -475,7 +498,7 @@
                 </section>
 
                 <!-- Tính năng: Price Table -->
-                <section id="mavid-sec-price-table" class="mav-sec-wrapper">
+                <section id="mavid-sec-price-table" class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
                         <header class="mav-sec-header-wrapper">
                             <div class="mav-sec-header-ctn">
@@ -507,9 +530,7 @@
                                             <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
                                         </ul>
                                         <ul class="mav-price-table" data-size="big">
-                                            <li class="mav-price-table-row" data-row="header"><h3>
-                                                Header row really long
-                                            </h3></li>
+                                            <li class="mav-price-table-row" data-row="header">Header row really long</li>
                                             <li class="mav-price-table-row">Table row 1</li>
                                             <li class="mav-price-table-row" data-row="price"><span class="mav-price">2.000.000</span><span class="mav-price-unit">đồng</span></li>
                                             <li class="mav-price-table-row">Table row 3</li>
@@ -531,55 +552,194 @@
                         <footer class="mav-sec-footer-wrapper">
                             <div class="mav-sec-footer-ctn">
                                 <?php
-                                    mavf_button('Xem hướng dẫn sử dụng', '#');
+                                    if ( function_exists( 'mavf_button' ) ) {
+                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                    }
                                 ?>
                             </div>
                         </footer>
                     </div>
                 </section>
+
+                <!-- Contact Form -->
+                <?php
+                    if ( function_exists( 'mavf_contact_form' ) ): ?>
+                        <section id="mavid-sec-contact-form" class="mav-sec-wrapper mav-pg-section">
+                            <div class="mav-sec-ctn">
+                                <header class="mav-sec-header-wrapper">
+                                    <div class="mav-sec-header-ctn">
+                                        <div class="mav-sec-title-wrapper">
+                                            <div class="mav-sec-title-ctn">
+                                                <h2 class="mav-sec-title">Contact Form</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="mav-sec-body-wrapper">
+                                    <div class="mav-sec-body-ctn">
+                                        <?php
+                                            $mavFormArgs = array(
+                                                'fields'    => array('name','email','phone','address','dob','message'),
+                                                'form_title'    => __( 'Gửi thông tin liên hệ tới '.get_bloginfo( 'name' ) , 'maverick-theme' ),
+                                                'form_intro'    => __( 'Liên lạc với '.get_bloginfo( 'name' ).' qua email.' , 'maverick-theme' )
+                                            );
+                                            mavf_contact_form($mavFormArgs);
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="mav-sec-footer-wrapper">
+                                    <div class="mav-sec-footer-ctn">
+                                        <?php
+                                            if ( function_exists( 'mavf_button' ) ) {
+                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </section> <?php
+                    endif;
+                ?>
+
+                <!-- Typography -->
+                <section id="mavid-sec-typography" class="mav-sec-wrapper mav-pg-section">
+                    <div class="mav-sec-ctn">
+                        <header class="mav-sec-header-wrapper">
+                            <div class="mav-sec-header-ctn">
+                                <div class="mav-sec-title-wrapper">
+                                    <div class="mav-sec-title-ctn">
+                                        <h2 class="mav-sec-title">Typography</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="mav-sec-body-wrapper">
+                            <div class="mav-sec-body-ctn">
+                                <!-- Headings -->
+                                <section class="mav-post-content">
+                                    <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Headings</h2>
+                                    <ul class="mav-non-list">
+                                        <li class="mav-h1 mav-padding-top-bottom"><span>H1</span> - <span>Heading 1</span></li>
+                                        <li class="mav-h2 mav-padding-top-bottom"><span>H2</span> - <span>Heading 2</span></li>
+                                        <li class="mav-h3 mav-padding-top-bottom"><span>H3</span> - <span>Heading 3</span></li>
+                                        <li class="mav-h4 mav-padding-top-bottom"><span>H4</span> - <span>Heading 4</span></li>
+                                        <li class="mav-h5 mav-padding-top-bottom"><span>H5</span> - <span>Heading 4</span></li>
+                                        <li class="mav-h6 mav-padding-top-bottom"><span>H6</span> - <span>Heading 4</span></li>
+                                    </ul>
+                                </section>
+
+                                <!-- Sub Headings -->
+                                <section class="mav-post-content">
+                                    <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Sub Headings</h2>
+                                    <ul class="mav-non-list">
+                                        <li class="mav-sub-heading-1 mav-padding-top-bottom">Sub Heading - Level 1</l>
+                                        <li class="mav-sub-heading-2 mav-padding-top-bottom">Sub Heading - Level 2</l>
+                                        <li class="mav-sub-heading-3 mav-padding-top-bottom">Sub Heading - Level 3</l>
+                                    </ul>
+                                </section>
+
+                                <!-- Fonts Sizes -->
+                                <section class="mav-post-content">
+                                    <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Font Sizes</h2>
+                                    <ul class="mav-non-list mav-sec-typography-font-sizes">
+                                        <li>
+                                            <h3 class="mav-sub-heading-2">Extra large</h3>
+                                            <p class="mav-text--xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, in!</p>
+                                        </li>
+                                        <li>
+                                            <h3 class="mav-sub-heading-2">Large</h3>
+                                            <p class="mav-text--lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio nemo dicta vero eveniet voluptates? Explicabo sed quos repellendus atque et.</p>
+                                        </li>
+                                        <li>
+                                            <h3 class="mav-sub-heading-2">Normal</h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsam suscipit quos, voluptas voluptatibus rem eligendi harum itaque reprehenderit minus, laudantium ratione consectetur magni. Ipsa laudantium reprehenderit dolore dolores minima!</p>
+                                        </li>
+                                        <li>
+                                            <h3 class="mav-sub-heading-2">Small</h3>
+                                            <p class="mav-text--sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel optio exercitationem voluptates accusantium cumque suscipit ea voluptate fugiat vitae odio libero adipisci ex veniam obcaecati quam, nostrum cum laborum, in recusandae at nulla? Culpa maiores corrupti ratione. Placeat, repellendus labore.</p>
+                                        </li>
+                                        <li>
+                                            <h3 class="mav-sub-heading-2">Extra small</h3>
+                                            <p class="mav-text--xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam adipisci minima voluptatibus, corrupti, nemo inventore laborum accusantium id fugiat sit ducimus. Cum odit neque voluptatum dicta asperiores architecto minus cumque nam tempore dolore corporis, impedit tempora blanditiis? Ea exercitationem dolor qui? Veniam, sunt! Sint ad nobis doloremque corporis recusandae iure.</p>
+                                        </li>
+                                    </ul>
+                                </section>
+
+                                <!-- List Items -->
+                                <section class="mav-post-content">
+                                    <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">List Items</h2>
+                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon>Unorder List</h3>
+                                    <ul class="mav-accordion-ctn-wrapper mav-margin-bottom">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                        <li>
+                                            List item 3
+                                            <ul>
+                                                <li>List item 1 - Level 2</li>
+                                                <li>List item 2  - Level 2</li>
+                                                <li>
+                                                    List item 3 - Level 2
+                                                    <ul>
+                                                        <li>List item 1 - Level 3</li>
+                                                        <li>List item 2 - Level 3</li>
+                                                        <li>
+                                                            List item 3 - Level 3
+                                                            <ul>
+                                                                <li>List item 1 - Level 4</li>
+                                                                <li>List item 2 - Level 4</li>
+                                                                <li>List item 3 - Level 4</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon>Order List</h3>
+                                    <ol class="mav-accordion-ctn-wrapper mav-margin-bottom">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                        <li>
+                                            List item 3
+                                            <ol>
+                                                <li>List item 1 - Level 2</li>
+                                                <li>List item 2  - Level 2</li>
+                                                <li>
+                                                    List item 3 - Level 2
+                                                    <ol>
+                                                        <li>List item 1 - Level 3</li>
+                                                        <li>List item 2 - Level 3</li>
+                                                        <li>
+                                                            List item 3 - Level 3
+                                                            <ol>
+                                                                <li>List item 1 - Level 4</li>
+                                                                <li>List item 2 - Level 4</li>
+                                                                <li>List item 3 - Level 4</li>
+                                                            </ol>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </section>
+                            </div>
+                        </div>
+                        <footer class="mav-sec-footer-wrapper">
+                            <div class="mav-sec-footer-ctn">
+                                <?php
+                                    if ( function_exists( 'mavf_button' ) ) {
+                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                    }
+                                ?>
+                            </div>
+                        </footer>
+                    </div>
+                </section>
+
             </div>
         </div>
 
-        <!-- Contact Form -->
-        <section class="mav-sec-wrapper">
-            <div class="mav-sec-ctn">
-                <!-- Section Header -->
-                <header class="mav-sec-header-wrapper">
-                    <div class="mav-sec-header-ctn">
-                        <div class="mav-sec-title-wrapper">
-                            <div class="mav-sec-title-ctn">
-                                <h2 class="mav-sec-title">Contact Form</h2>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-                <!-- Section Body -->
-                <div class="mav-sec-body-wrapper">
-                    <div class="mav-sec-body-ctn">
-                        <?php
-                            if ( function_exists( 'mavf_contact_form' ) ) {
-                                $mavFormArgs = array(
-                                    'fields'    => array('name','email','phone','address','dob','message'),
-                                    'form_title'    => __( 'Gửi thông tin liên hệ tới <strong>'.get_bloginfo( 'name' ).'</strong>' , 'maverick-theme' ),
-                                    'form_intro'    => __( 'Liên lạc với <strong>'.get_bloginfo( 'name' ).'</strong> qua email.' , 'maverick-theme' )
-                                );
-                                mavf_contact_form($mavFormArgs);
-                            }
-                        ?>
-                    </div>
-                </div>
-                <!-- Section Footer -->
-                <div class="mav-sec-footer-wrapper">
-                    <div class="mav-sec-footer-ctn">
-                        <?php
-                            if (function_exists('mavf_button')) {
-                                mavf_button('Xem hướng dẫn sử dụng', '#');
-                            }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </section>
         <footer id="mavid-page-footer" class="mav-page-footer-wrapper">
             <div class="mav-page-footer-ctn">
             </div>

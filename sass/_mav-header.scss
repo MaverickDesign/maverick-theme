@@ -24,8 +24,8 @@
     .mav-header-socials-ctn {
         .mav-social-links {
             li {
-                // padding: 0 var(--mav-gutter-sm);
-                margin-right: var(--mav-gutter);
+                list-style-type: none;
+                margin-right: var(--mav-gutter-lg);
                 a {
                     &:hover {
                         @extend %mav-link-text-accent;

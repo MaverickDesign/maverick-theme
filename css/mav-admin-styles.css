@@ -12,6 +12,9 @@
   --mav-gray: rgba(0, 0, 0, 0.5);
   --mav-white: White; }
 
+* {
+  z-index: 0; }
+
 /**
  * Font Stacks
  */
@@ -20,6 +23,9 @@
  */
 /**
  * Media Queries
+ */
+/**
+ * SASS Variables
  */
 /**
  * CSS Variables
@@ -43,7 +49,7 @@
   --mav-color-accent: #05a1b3;
   --mav-color-black: #464646;
   --mavc-black: #464646;
-  --mav-color-off-white: WhiteSmoke;
+  --mav-color-off-white: #fafafa;
   --mav-color-highlight: yellow;
   --mav-color-site-background: #fafafa;
   --mav-color-site-header: #b31705;
@@ -54,17 +60,27 @@
   /**
    * Typography
    */
-  --mav-font-size-xl: 26px;
-  --mav-font-size-lg: 22px;
-  --mav-font-size: 18px;
-  --mav-font-size-sm: 14px;
-  --mav-font-size-xs: 10px;
+  --mav-font-weight-thin: 100;
+  --mav-font-weight-light: 300;
+  --mav-font-weight-regular: 400;
+  --mav-font-weight-medium: 500;
+  --mav-font-weight-bold: 700;
+  --mav-font-weight-black: 900;
+  --mav-font-size-xl: 1.4rem;
+  --mav-font-size-lg: 1.2rem;
+  --mav-font-size: 16px;
+  --mav-font-size-sm: .8rem;
+  --mav-font-size-xs: .6rem;
+  --mav-font-size-subtitle-1: 16px;
+  --mav-font-size-subtitle-2: 14px;
+  --mav-font-size-button: 1rem;
+  --mav-font-size-caption: 1rem;
   --mav-font-body: var(--mav-font-size);
-  --mav-color-text-primary: #32373c;
-  --mav-color-text-secondary: #82878C;
+  --mav-color-text-primary: rgba(0, 0, 0, 0.87);
+  --mav-color-text-secondary: rgba(0, 0, 0, 0.6);
   --mav-color-text-primary-dark: #fafafa;
   --mav-color-text-secondary-dark: #ddd;
-  --mav-color-body: #32373c; }
+  --mav-color-body: rgba(0, 0, 0, 0.87); }
   @media only screen and (min-width: 1024px) {
     :root {
       --mav-site-width: 1680px; } }
@@ -79,6 +95,13 @@
     background-color: var(--mav-color-accent); }
   100% {
     background-color: var(--mav-color-primary); } }
+@keyframes mav-brand-color-transition-text {
+  0% {
+    color: var(--mav-color-primary); }
+  50% {
+    color: var(--mav-color-accent); }
+  100% {
+    color: var(--mav-color-primary); } }
 @keyframes mav-brand-color-transition-reversed {
   0% {
     background-color: var(--mav-color-accent); }

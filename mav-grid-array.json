@@ -1,32 +1,56 @@
 {
     "items" : [
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-slider\" title=\"Chuyển đến phần Slider\">Slider</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-slider\" title=\"Chuyển đến phần Slider\">Sliders</p>"
         },
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-post-carousel\" title=\"Chuyển đến phần Post Carousel\">Post Carousel</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-post-carousel\" title=\"Chuyển đến phần Post Carousel\">Post Carousel</p>"
         },
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-post-featured\" title=\"Chuyển đến phần Featured Post\">Featured Post</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-post-featured\" title=\"Chuyển đến phần Featured Post\">Featured Post</p>"
         },
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-post-grid\" title=\"Chuyển đến phần Post Grid\">Post Grid</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-post-grid\" title=\"Chuyển đến phần Post Grid\">Post Grid</p>"
         },
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-countdown\" title=\"Chuyển đến phần Countdown Timer\">Countdown Timer</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-countdown\" title=\"Chuyển đến phần Countdown Timer\">Countdown Timer</p>"
         },
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-lightbox\" title=\"Chuyển đến phần Lightbox Gallery\">Lightbox Gallery</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-lightbox\" title=\"Chuyển đến phần Lightbox Gallery\">Lightbox Gallery</p>"
         },
         {
-            "header" : "<span class=\"fas fa-home\"></span>",
-            "title" : "<p data-scroll=\"mavid-sec-google-map\" title=\"Chuyển đến phần Google Map\">Google Map</p>"
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-google-map\" title=\"Chuyển đến phần Google Map\">Google Map</p>"
+        },
+        {
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-accordion\" title=\"Chuyển đến phần Accordion\">Accordion</p>"
+        },
+        {
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-tab-view\" title=\"Chuyển đến phần Tab-View\">Tab-View</p>"
+        },
+        {
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-message-box\" title=\"Chuyển đến phần Message Box\">Message Box</p>"
+        },
+        {
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-modal-box\" title=\"Chuyển đến phần Modal Box\">Modal Box</p>"
+        },
+        {
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-price-table\" title=\"Chuyển đến phần Price Table\">Price Table</p>"
+        },
+        {
+            "header" : "<span class=\"mav-counter\"></span>",
+            "title" : "<p class=\"mav-item-grid-title\" data-scroll=\"mavid-sec-contact-form\" title=\"Chuyển đến phần Contact Form\">Contact Form</p>"
         }
     ]
 }

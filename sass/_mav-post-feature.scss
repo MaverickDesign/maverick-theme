@@ -21,7 +21,6 @@
     flex-direction: column;
     width: 100%;
     overflow: hidden;
-    // border: 1px solid var(--mav-color-border);
 
     @media #{$mav-tablet} {
         display: grid;
@@ -65,7 +64,7 @@
     display: grid;
     grid-gap: var(--mav-gutter);
     padding: var(--mav-gutter-lg);
-    background: var(--mav-color-off-white);
+    background: #f2f2f2;
     min-height: 100%;
 }
 
@@ -77,4 +76,8 @@
 
 .mav-post-feature-intro {
     color: var(--mav-color-text-secondary);
+}
+
+.mav-post-feature-cta-ctn {
+    @extend .mav-flex-center;
 }

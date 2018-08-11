@@ -88,6 +88,7 @@
     height: 100%;
     overflow: hidden;
     background: $mavBlack;
+
     .mav-slide {
         z-index: $mav-layer-background;
         position: absolute;
@@ -110,9 +111,9 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 25%;
+            height: 40%;
             @extend .mav-flex-center-all;
-            background: rgba($mavBlack,.33);
+            // background: rgba($mavBlack,.33);
             color: var(--mav-color-text-primary-dark);
             letter-spacing: 2px;
             @media #{$mav-desktop} {
@@ -125,12 +126,10 @@
             .mav-slider-title {
                 text-align: center;
                 max-width: 75vw;
-                color: white;
+                // color: white;
                 @extend %mav-transition;
                 @media #{$mav-phone} {
                     display: none;
-                }
-                &:hover {
                 }
             }
         }
@@ -147,7 +146,7 @@
             color: var(--mav-color-text-primary-dark);
             // cursor: pointer;
             &:hover {
-                opacity: 1;
+                // opacity: 1;
             }
         }
         .slide-prev {
@@ -169,14 +168,16 @@
             }
         }
     }
+
     .mav-slide-input {
         display: none;
     }
     input.mav-slide-input:checked {
         + .mav-slide {
-            // opacity: 1;
+            opacity: 1;
         }
     }
+
     .mav-slider-nav {
         position: absolute;
         bottom: 0;
@@ -190,11 +191,12 @@
         z-index: $mav-layer-image;
 
     }
+
     .mav-nav-dot {
         cursor: pointer;
         position: relative;
-        height: 1rem;
-        width: 1rem;
+        height: .75rem;
+        width: .75rem;
         border-radius: 50%;
         background: rgba($mav-color-text-secondary-dark,.75);
         box-shadow: 0 0 5px currentColor;
@@ -203,8 +205,10 @@
             transform: scale(1.15);
         }
     }
+
     .mav-active-dot {
         background: white;
+        transform: scale(1.1);
     }
 }
 
