@@ -63,39 +63,43 @@
             ?>
         </div>
     </section>
-    <!-- Post Footer -->
-    <footer class="mav-post-footer-wrapper mav-post-footer">
-        <div class="mav-post-footer-ctn">
-            <?php if (has_tag()): ?>
-                <!-- Post Tags -->
-                <div class="mav-post-tags-wrapper">
-                    <div class="mav-post-tags-ctn">
-                        <?php
-                        printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>',__('Thẻ liên kết','maverick-theme'));
-                        the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
-                        ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <?php
-                $mavCountPost = wp_count_posts();
-                if ($mavCountPost->publish > 1): ?>
-                    <!-- Post Navigation -->
-                    <div class="mav-post-navigation-wrapper">
-                        <div class="mav-post-navigation-ctn">
-                        <?php
-                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Các bài viết khác','maverick-theme'));
-                            echo '<nav class="mav-post-navigation">';
-                                previous_post_link('%link', '%title');
-                                next_post_link('%link', '%title');
-                            echo '</nav>';
-                        ?>
+    <?php
+        if ((has_tag()) || (wp_count_posts()->publish > 1)): ?>
+            <!-- Post Footer -->
+            <footer class="mav-post-footer-wrapper mav-post-footer">
+                <div class="mav-post-footer-ctn">
+                    <?php if (has_tag()): ?>
+                        <!-- Post Tags -->
+                        <div class="mav-post-tags-wrapper">
+                            <div class="mav-post-tags-ctn">
+                                <?php
+                                printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>',__('Thẻ liên kết','maverick-theme'));
+                                the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
+                                ?>
+                            </div>
                         </div>
-                    </div> <?php
-                endif;
-            ?>
-        </div>
-    </footer>
+                    <?php endif; ?>
+                    <?php
+                        $mavCountPost = wp_count_posts();
+                        if ($mavCountPost->publish > 1): ?>
+                            <!-- Post Navigation -->
+                            <div class="mav-post-navigation-wrapper">
+                                <div class="mav-post-navigation-ctn">
+                                <?php
+                                    printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Các bài viết khác','maverick-theme'));
+                                    echo '<nav class="mav-post-navigation">';
+                                        previous_post_link('%link', '%title');
+                                        next_post_link('%link', '%title');
+                                    echo '</nav>';
+                                ?>
+                                </div>
+                            </div> <?php
+                        endif;
+                    ?>
+                </div>
+            </footer> <?php
+        endif;
+    ?>
 </article>
 
 <?php
