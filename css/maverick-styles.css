@@ -1004,7 +1004,6 @@ button {
       .mav-post-title {
         font-family: "Roboto Condensed", Arial, sans-serif;
         font-weight: var(--mav-font-weight-bold);
-        text-align: left;
         font-size: 2.5rem;
         line-height: 3rem; } }
     @media only screen and (min-width: 1024px) {
@@ -2731,7 +2730,7 @@ form {
   @media only screen and (max-width: 480px) {
     .mav-countdown-unit-wrapper {
       flex-direction: column;
-      padding: var(--mav-gutter-sm); } }
+      padding: var(--mav-gutter-xs); } }
 
 .mav-countdown-unit {
   text-align: center;
@@ -2741,9 +2740,12 @@ form {
     justify-content: center;
     align-items: center; }
   .mav-countdown-unit[data-number] {
-    font-weight: 900;
+    font-weight: var(--mav-font-weight-black);
     font-size: 2rem;
     color: var(--mav-color-text-primary); }
+    @media only screen and (max-width: 480px) {
+      .mav-countdown-unit[data-number] {
+        font-size: 1.5rem; } }
   .mav-countdown-unit[data-unit] {
     font-size: .8rem;
     padding: 3px 6px;
@@ -2944,27 +2946,15 @@ form {
  */
 .mav-page-maintenance {
   display: grid;
-  grid-auto-rows: repeat(3, auto);
-  min-height: 100vh; }
+  grid-template-rows: auto;
+  min-height: 100vh;
+  text-align: center; }
   .mav-page-maintenance .mav-page-maintenance-section {
-    padding: var(--mav-gutter-lg) var(--mav-gutter);
-    text-align: center; }
-  @media only screen and (min-width: 1024px) {
-    .mav-page-maintenance .mav-countdown {
-      display: flex;
-      justify-content: center;
-      align-items: center; } }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .mav-page-maintenance .mav-countdown {
-      display: flex;
-      justify-content: center;
-      align-items: center; } }
-  .mav-page-maintenance .mav-countdown[data-type="number"] {
-    font-size: 2rem;
-    color: var(--mav-color-text-primary); }
-  .mav-page-maintenance .mav-countdown[data-type="unit"] {
-    font-weight: 300; }
+    padding: var(--mav-gutter-lg); }
+  .mav-page-maintenance .mav-countdown-ctn {
+    margin: 0 auto; }
   .mav-page-maintenance footer {
+    width: 100%;
     align-self: end; }
 
 .mav-posts-wrapper {

@@ -104,28 +104,17 @@
 
 .mav-page-maintenance {
     display: grid;
-    grid-auto-rows: repeat(3,auto);
+    grid-template-rows: auto;
     min-height: 100vh;
+    text-align: center;
     .mav-page-maintenance-section {
-        padding: var(--mav-gutter-lg) var(--mav-gutter);
-        text-align: center;
+        padding: var(--mav-gutter-lg);
     }
-    .mav-countdown {
-        @media #{$mav-desktop} {
-            @include mav-flex-center-all;
-        }
-        @media #{$mav-tablet} {
-            @include mav-flex-center-all;
-        }
-        &[data-type="number"] {
-            font-size: 2rem;
-            color: var(--mav-color-text-primary);
-        }
-        &[data-type="unit"] {
-            font-weight: 300;
-        }
+    .mav-countdown-ctn {
+        margin: 0 auto;
     }
     footer {
+        width: 100%;
         align-self: end;
     }
 }

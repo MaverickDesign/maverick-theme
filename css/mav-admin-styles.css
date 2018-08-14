@@ -128,15 +128,15 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px; } }
 
-form .form-table tr {
+form .form-table {
   box-shadow: 0 1px #ddd; }
-form .form-table td {
-  display: flex;
-  flex-direction: column;
-  width: auto; }
-  @media only screen and (min-width: 1024px) {
-    form .form-table td {
-      max-width: 30vw; } }
+  form .form-table td {
+    display: flex;
+    flex-direction: column;
+    width: auto; }
+    @media only screen and (min-width: 1024px) {
+      form .form-table td {
+        max-width: 30vw; } }
 form input[data-visual="short"] {
   max-width: 25%; }
 form input[data-visual="medium"] {

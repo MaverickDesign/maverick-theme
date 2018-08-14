@@ -28,8 +28,8 @@
 form {
     // display: grid;
     .form-table {
+        box-shadow: 0 1px $mav-color-border;
         tr {
-            box-shadow: 0 1px $mav-color-border;
         }
         td {
             display: flex;

@@ -18,7 +18,7 @@
     }
     @media #{$mav-phone} {
         flex-direction: column;
-        padding: var(--mav-gutter-sm);
+        padding: var(--mav-gutter-xs);
     }
 }
 .mav-countdown-unit {
@@ -27,9 +27,12 @@
         @include mav-flex-center-all;
     }
     &[data-number] {
-        font-weight: 900;
+        font-weight: var(--mav-font-weight-black);
         font-size: 2rem;
         color: var(--mav-color-text-primary);
+        @media #{$mav-phone} {
+            font-size: 1.5rem;
+        }
     }
     &[data-unit] {
         font-size: .8rem;
