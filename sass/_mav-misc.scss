@@ -28,19 +28,20 @@
  */
 
 .mav-message-box-wrapper {
-    @include mav-flex-center-all;
     margin: var(--mav-gutter-sm) 0;
 }
 
 .mav-message-box-ctn {
-    @extend %mav-flex-row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    grid-gap: var(--mav-gutter-sm);
     width: 100%;
-    background: var(--mav-color-off-white);
-    box-shadow: inset 4px 0px var(--mav-color-accent);
+    padding: var(--mav-gutter-xs) var(--mav-gutter);
+    box-shadow: inset 3px 0px var(--mav-color-accent);
+    border: 1px solid var(--mav-color-border);
+    background: white;
     span {
-        padding: var(--mav-gutter-sm) var(--mav-gutter);
         color: var(--mav-color-text-primary);
         &.mav-btn-close {
             &:hover {

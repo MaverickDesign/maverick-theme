@@ -11,6 +11,9 @@
             box-shadow: inset 0 -1px var(--mav-color-accent);
         }
     }
+    li {
+        list-style-type: none;
+    }
     aside {
         h3 {
             display: inline-flex;

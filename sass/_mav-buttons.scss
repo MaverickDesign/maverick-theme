@@ -62,6 +62,13 @@ button {
             padding: var(--mav-gutter-sm);
             letter-spacing: 1px;
         }
+        &-dark {
+            @extend .mav-btn-primary;
+            &:hover {
+                background: #222;
+                @include text-contrast(#222);
+            }
+        }
     }
     &-secondary {
         @extend .mav-btn;

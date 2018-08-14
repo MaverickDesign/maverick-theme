@@ -15,7 +15,8 @@ $mav-tab-border-color: #ddd;
 .mav-tab-trigger {
     display: flex;
     justify-content: center;
-    padding: var(--mav-gutter-sm);
+    align-items: center;
+    padding: var(--mav-gutter-xs) var(--mav-gutter);
     background: rgba(0,0,0,.025);
     border-color: transparent;
     border-left-color: darkgray;
@@ -44,6 +45,9 @@ $mav-tab-border-color: #ddd;
         &:before {
             content: counter(container);
         }
+    }
+    @media #{$mav-mobile} {
+        font-family: $font-roboto-cond;
     }
     .mav-tab-trigger-title {
         font-weight: 600;

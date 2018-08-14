@@ -41,7 +41,8 @@
         position: relative;
         overflow: hidden;
         display: grid;
-        align-items: end;
+        justify-content: center;
+        justify-items: center;
         grid-area: main-display;
         grid-column: 1/-1;
         width: 100%;
@@ -49,19 +50,20 @@
         filter: grayscale(0);
         transition: filter .3s ease;
         .mav-slide-title {
-            width: 100%;
+            text-shadow: 0 0 4px #222;
+            font-weight: var(--mav-font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--mav-gutter);
             opacity: 1;
             max-height: 100%;
             padding: var(--mav-gutter);
-            background: rgba(0,0,0,.75);
-            color: var(--mav-color-text-secondary-dark);
-            font-size: 1.25rem;
-            text-align: center;
-            text-decoration: none;
-            // transform: translateY(0%);
-            @media #{$mav-desktop} {
-                font-size: 2rem;
-                padding: var(--mav-gutter-sm) var(--mav-gutter-lg);
+            color: white;
+            @media #{$mav-phone} {
+                margin-bottom: 0;
+                width: 100%;
+                font-family: $font-roboto-cond;
+                font-size: 1.75rem;
+                line-height: 1.75rem;
             }
         }
     }
@@ -87,8 +89,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: $mavBlack;
-
     .mav-slide {
         z-index: $mav-layer-background;
         position: absolute;
@@ -108,14 +108,17 @@
             opacity: 1;
         }
         .mav-slide-post-title-ctn {
+            @extend .mav-flex-center-all;
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 40%;
-            @extend .mav-flex-center-all;
-            // background: rgba($mavBlack,.33);
+            height: 30%;
             color: var(--mav-color-text-primary-dark);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            @media #{$mav-phone} {
+                height: 40%;
+                background: transparent;
+            }
             @media #{$mav-desktop} {
                 opacity: 1;
                 padding: var(--mav-gutter);
@@ -126,7 +129,8 @@
             .mav-slider-title {
                 text-align: center;
                 max-width: 75vw;
-                // color: white;
+                color: white;
+                text-shadow: 0px 0px 4px #222;
                 @extend %mav-transition;
                 @media #{$mav-phone} {
                     display: none;
@@ -134,6 +138,7 @@
             }
         }
         .mav-slide-nav {
+            @extend .mav-flex-center-all;
             z-index: $mav-layer-image;
             position: absolute;
             width: 60px;
@@ -141,13 +146,8 @@
             opacity: .75;
             font-size: 2rem;
             @extend %mav-transition;
-            @extend .mav-flex-center-all;
             @extend %mav-font-awesome;
             color: var(--mav-color-text-primary-dark);
-            // cursor: pointer;
-            &:hover {
-                // opacity: 1;
-            }
         }
         .slide-prev {
             left: 0;
@@ -186,7 +186,7 @@
         justify-content: center;
 
         width: 100%;
-        padding: var(--mav-gutter-sm) 0;
+        padding: var(--mav-gutter) 0;
 
         z-index: $mav-layer-image;
 
@@ -194,7 +194,6 @@
 
     .mav-nav-dot {
         cursor: pointer;
-        position: relative;
         height: .75rem;
         width: .75rem;
         border-radius: 50%;
@@ -202,7 +201,7 @@
         box-shadow: 0 0 5px currentColor;
         @extend %mav-transition;
         &:hover {
-            transform: scale(1.15);
+            transform: scale(1.2);
         }
     }
 
@@ -238,7 +237,6 @@
 
         margin-right: var(--mav-gutter-sm);
 
-        background: $mav-color-background;
         background-repeat: no-repeat!important;
         background-size: cover!important;
         background-position: center!important;
@@ -249,6 +247,12 @@
         filter: grayscale(1);
         &:last-child {
             margin-right: 0;
+        }
+        @media #{$mav-tablet} {
+            &:nth-child(3) {
+                flex: 3;
+                filter: grayscale(0);
+            }
         }
         @media #{$mav-desktop} {
             flex: 2;
@@ -268,46 +272,28 @@
                 }
             }
         }
-        @media #{$mav-tablet} {
-            &:nth-child(3) {
-                flex: 3;
-                filter: grayscale(0);
-            }
-        }
         &:hover {
             flex: 4;
             filter: grayscale(0);
             width: 50%;
             transition: all .6s ease;
             > .mav-slide-title-ctn {
-            transition: all .6s ease;
-            transform: translateY(0);
+                transition: all .3s ease;
+                transform: translateY(0);
+                margin-bottom: var(--mav-gutter);
+                @media #{$mav-phone} {
+                    margin-bottom: 0;
+                }
             }
         }
         .mav-slide-title-ctn {
             @extend .mav-flex-center-all;
             width: 100%;
-            // height: 25%;
-            padding: var(--mav-gutter-sm);
-
-            background: rgba(0,0,0,.75);
             overflow: hidden;
-
-            transition: all .6s ease;
+            transition: all .3s ease;
             transform: translateY(100%);
-            &:hover {
-                background: rgba(0,0,0,.85);
-            }
             @media #{$mav-phone} {
                 height: 100%;
-            }
-            a {
-                text-decoration: none;
-                h2 {
-                    color: var(--mav-color-text-primary-dark);
-                    letter-spacing: 1px;
-                    font-size: 1.5rem;
-                }
             }
         }
     }

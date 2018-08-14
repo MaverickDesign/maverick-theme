@@ -11,6 +11,8 @@
             font-family: $font-roboto-cond;
             font-weight: var(--mav-font-weight-bold);
             text-align: left;
+            font-size: 2.5rem;
+            line-height: 2.5 * 1.2rem;
         }
         @media #{$mav-desktop} {
             padding: var(--mav-gutter-xl) 0;
@@ -156,29 +158,30 @@
 
 .mav-post-content-wrapper {
     .mav-post-content-ctn {
-        max-width: var(--mav-site-width);
-        margin: var(--mav-gutter-lg) auto var(--mav-gutter-lg) auto;
-    }
-}
-
-.mav-post-content {
-    // Max width
-    * {
         margin-left: auto;
         margin-right: auto;
+        max-width: var(--mav-site-width);
+        margin: var(--mav-gutter-lg) auto var(--mav-gutter-lg) auto;
         @media #{$mav-tablet} {
-            max-width: 80vw;
+            max-width: 60vw;
         }
         @media #{$mav-desktop} {
             width: 100%;
             max-width: 30vw;
         }
     }
+}
 
+.mav-post-content {
     /**
      * Headings
      */
-
+    h2, .mav-h2 {
+        font-size: 1.75rem;
+        @media #{$mav-phone} {
+            font-size: 1.5rem;
+        }
+    }
     /**
      * Body
      */
@@ -202,12 +205,11 @@
      * Images
      */
     img {
-        column-span: all;
         height: auto;
-        max-width: 100%;
-        max-height: 75vh;
+        max-height: 50vh;
+        padding: var(--mav-gutter) 0;
         &.aligncenter {
-            display: block;
+            display: flex;
             margin: 0 auto;
         }
     }
@@ -301,8 +303,9 @@ article.sticky {
     position: relative;
     display: grid;
     justify-content: center;
-    grid-gap: var(--mav-gutter-sm);
+    grid-gap: var(--mav-gutter);
     max-width: var(--mav-site-width);
+    margin: var(--mav-gutter-lg) auto;
     @media #{$mav-phone} {
         grid-template-columns: repeat(2,1fr)!important;
     }
@@ -326,17 +329,18 @@ article.sticky {
             display: flex;
         }
         img {
+            height: auto;
+            padding: var(--mav-gutter-xs);
             object-fit: cover;
-            border: var(--mav-gutter-sm) solid var(--mav-color-off-white);
+            border: 1px solid var(--mav-color-border);
+            @extend %mav-transition;
             &:hover {
-                transform: scale(1);
+                border-color: var(--mav-color-accent);
             }
         }
         figcaption {
-            background: var(--mav-color-off-white);
-            padding: var(--mav-gutter-sm);
-            padding-top: 0;
-            text-align: center;
+            padding-top: var(--mav-gutter-xs);
+            font-size: var(--mav-font-size-sm);
         }
     }
 }

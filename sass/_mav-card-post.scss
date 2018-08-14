@@ -87,15 +87,16 @@
         }
         .mav-card-post-title {
             font-size: var(--mav-font-size-lg);
-            font-weight: var(--mav-font-weight-medium);
-            color: var(--mav-color-text-secondary);
+            font-weight: var(--mav-font-weight-bold);
+            color: var(--mav-color-text-primary);
             line-height: inherit;
             @extend %mav-transition;
             &:hover {
-                color: var(--mav-color-text-primary);
+                text-decoration: underline;
+                text-underline-position: under;
             }
             @media #{$mav-phone} {
-                font-weight: var(--mav-font-weight-bold);
+                font-size: 1rem;
             }
         }
         .mav-card-post-excerpt {

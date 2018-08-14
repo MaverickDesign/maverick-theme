@@ -56,7 +56,7 @@
                  */
                 printf('<footer class="mav-card-post-footer">');
                     printf(
-                        '<a href="%1$s" title="%2$s"><button class="mav-btn-secondary" data-full-width>%2$s</button></a>',
+                        '<a href="%1$s" title="%2$s"><button class="mav-btn-primary" data-full-width>%2$s</button></a>',
                         get_the_permalink(), __('Xem chi tiết','maverick-theme')
                     );
                 echo '</footer>';

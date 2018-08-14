@@ -208,19 +208,10 @@ function mavf_slider($mavArgs) {
                     '<div id="mavid-slide-type-3-%2$s" data-number="%2$s" class="mav-slide" %1$s>',
                     $mavImageUrl, $i
                 );
-                    // printf(
-                    //     '<div id="mavid-slide-type-3-title-%1$s" data-number="%1$s" class="mav-slide-title-ctn mav-hide-on-mobile">',
-                    //     $i
-                    // );
-                    //     printf(
-                    //         '<a href="%2$s" title="Xem %1$s"><h2>%1$s</h2></a>',
-                    //         $mavTitle, $mavPermalink
-                    //     );
-                    // echo '</div>';
                     echo '<div class="mav-slide-title-ctn">';
                         printf(
-                            '<a href="%2$s" title="Xem %1$s" class="mav-btn-secondary">Xem chi tiết</a>',
-                            $mavTitle, $mavPermalink
+                            '<a href="%2$s" title="%1$s"><button class="mav-btn-primary-dark">%3$s</button></a>',
+                            $mavTitle, $mavPermalink, __( 'Xem chi tiết' , 'maverick-theme' )
                         );
                     echo '</div>';
                 echo '</div>';

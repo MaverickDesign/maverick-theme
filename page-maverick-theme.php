@@ -37,9 +37,9 @@
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper">
-                            <div class="mav-sec-body-ctn">
-                                <div class="mav-post mav-post-content mav-col-10 mav-center">
+                        <div class="mav-sec-body-wrapper mav-post-content-wrapper">
+                            <div class="mav-sec-body-ctn mav-post-content-ctn">
+                                <div class="mav-post-content">
                                     <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong class="mav-maverick-theme">Maverick Theme</strong>) là một bộ giao diện hoàn toàn <strong>MIỄN PHÍ</strong> cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
                                     <p><strong class="mav-maverick-theme">Maverick Theme</strong> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
                                     <p><strong class="mav-maverick-theme">Maverick Theme</strong> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
@@ -305,7 +305,7 @@
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <?php
-                                    echo do_shortcode('[gallery link="file" columns="3" size="medium" ids="231,232,233,234,235,236"]');
+                                    echo do_shortcode('[gallery link="file" columns="4" size="medium" ids="231,232,233,234,235,236"]');
                                 ?>
                             </div>
                         </div>
@@ -613,18 +613,18 @@
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper">
-                            <div class="mav-sec-body-ctn">
+                        <div class="mav-sec-body-wrapper mav-post-content-wrapper">
+                            <div class="mav-sec-body-ctn mav-post-content-ctn">
                                 <!-- Headings -->
-                                <section class="mav-post-content">
+                                <section>
                                     <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Headings</h2>
                                     <ul class="mav-non-list">
                                         <li class="mav-h1 mav-padding-top-bottom"><span>H1</span> - <span>Heading 1</span></li>
                                         <li class="mav-h2 mav-padding-top-bottom"><span>H2</span> - <span>Heading 2</span></li>
                                         <li class="mav-h3 mav-padding-top-bottom"><span>H3</span> - <span>Heading 3</span></li>
                                         <li class="mav-h4 mav-padding-top-bottom"><span>H4</span> - <span>Heading 4</span></li>
-                                        <li class="mav-h5 mav-padding-top-bottom"><span>H5</span> - <span>Heading 4</span></li>
-                                        <li class="mav-h6 mav-padding-top-bottom"><span>H6</span> - <span>Heading 4</span></li>
+                                        <li class="mav-h5 mav-padding-top-bottom"><span>H5</span> - <span>Heading 5</span></li>
+                                        <li class="mav-h6 mav-padding-top-bottom"><span>H6</span> - <span>Heading 6</span></li>
                                     </ul>
                                 </section>
 

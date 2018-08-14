@@ -1,17 +1,9 @@
 .mav-accordion-wrapper {
-    margin-bottom: var(--mav-gutter-sm);
-    &:last-child {
-        margin-bottom: 0;
-    }
 }
 
 .mav-accordion-ctn-wrapper {
     overflow: hidden;
     transition: max-height .3s ease;
-    // padding-left: var(--mav-gutter);
-    // padding-right: var(--mav-gutter);
-    // border: 1px solid var(--mav-color-border);
-    // border-top: 0;
 }
 
 .mav-accordion-ctn {
@@ -24,19 +16,13 @@
 
 .mav-accordion-trigger {
     position: relative;
-    display: flex;
     align-items: center;
     width: 100%;
     cursor: pointer;
-    .mav-btn-close {
-        position: absolute;
-        right: 0;
-        transform: translateX(-100%);
-    }
     &[data-trigger-icon] {
         &:before {
-            margin-right: var(--mav-gutter-sm);
             @extend %mav-font-awesome;
+            margin-right: var(--mav-gutter-sm);
             content: '\f078';
             @extend %mav-transition;
         }
@@ -56,30 +42,25 @@
             max-height: 100vh;
         }
     }
-    &:hover {
-        &:before {
-            transform: translateY(3px);
-        }
-    }
     &[data-faq][data-question] {
-        font-weight: 300;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-gap: var(--mav-gutter-xs);
         color: var(--mav-color-text-primary);
-        font-size: 1.25rem;
         border: 1px solid var(--mav-color-border);
         padding: var(--mav-gutter-sm);
         background: white;
         @extend %mav-transition;
         &:before {
-            font-size: 1rem;
             display: inline-flex;
             justify-content: center;
-            width: 1em;
-            display: inline-flex;
+            align-items: center;
+            width: 2em;
+            height: 2em;
             content: '\f128';
             @include text-contrast($mav-color-primary);
             background: var(--mav-color-primary);
-            padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
-            border-radius: 25%;
+            border-radius: 50%;
         }
         &[data-state="open"] {
             padding-left: var(--mav-gutter);
@@ -90,6 +71,14 @@
         }
         + .mav-accordion-ctn-wrapper {
             background: white;
+            border: 1px solid var(--mav-color-border);
+            border-top: 0;
+            .mav-accordion-ctn {
+                padding: var(--mav-gutter);
+            }
         }
+    }
+    .mav-btn-close {
+        color: var(--mav-color-text-secondary);
     }
 }
