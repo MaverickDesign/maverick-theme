@@ -7,7 +7,6 @@
     overflow: hidden;
     display: grid;
     grid-gap: var(--mav-gutter-xs);
-    grid-template-columns: repeat(5,1fr);
     grid-template-rows: 33vh 20vw;
     grid-template-areas:
     "main-display"
@@ -56,8 +55,13 @@
             margin-bottom: var(--mav-gutter);
             opacity: 1;
             max-height: 100%;
-            padding: var(--mav-gutter);
-            color: white;
+            padding: var(--mav-gutter-sm);
+            color: var(--mav-color-text-primary-dark);
+            font-size: 2rem;
+            background: rgba(0,0,0,.25);
+            &:hover {
+                color: white;
+            }
             @media #{$mav-phone} {
                 margin-bottom: 0;
                 width: 100%;
@@ -129,9 +133,14 @@
             .mav-slider-title {
                 text-align: center;
                 max-width: 75vw;
-                color: white;
+                color: var(--mav-color-text-primary-dark);
                 text-shadow: 0px 0px 4px #222;
+                background: rgba(0,0,0,.25);
+                padding: var(--mav-gutter-sm);
                 @extend %mav-transition;
+                &:hover {
+                    color: white;
+                }
                 @media #{$mav-phone} {
                     display: none;
                 }
@@ -148,6 +157,7 @@
             @extend %mav-transition;
             @extend %mav-font-awesome;
             color: var(--mav-color-text-primary-dark);
+            cursor: pointer;
         }
         .slide-prev {
             left: 0;
@@ -265,11 +275,6 @@
             &:nth-child(3) {
                 flex: 3;
                 filter: grayscale(0);
-                @media #{$mav-desktop} {
-                    > .mav-slide-title-ctn {
-                        transform: translateY(0);
-                    }
-                }
             }
         }
         &:hover {

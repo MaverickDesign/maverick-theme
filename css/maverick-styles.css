@@ -1764,7 +1764,6 @@ form {
   overflow: hidden;
   display: grid;
   grid-gap: var(--mav-gutter-xs);
-  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 33vh 20vw;
   grid-template-areas: "main-display" "thumbnail";
   width: 100%; }
@@ -1810,8 +1809,12 @@ form {
       margin-bottom: var(--mav-gutter);
       opacity: 1;
       max-height: 100%;
-      padding: var(--mav-gutter);
-      color: white; }
+      padding: var(--mav-gutter-sm);
+      color: var(--mav-color-text-primary-dark);
+      font-size: 2rem;
+      background: rgba(0, 0, 0, 0.25); }
+      .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title:hover {
+        color: white; }
       @media only screen and (max-width: 480px) {
         .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title {
           margin-bottom: 0;
@@ -1876,8 +1879,12 @@ form {
       .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title {
         text-align: center;
         max-width: 75vw;
-        color: white;
-        text-shadow: 0px 0px 4px #222; }
+        color: var(--mav-color-text-primary-dark);
+        text-shadow: 0px 0px 4px #222;
+        background: rgba(0, 0, 0, 0.25);
+        padding: var(--mav-gutter-sm); }
+        .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title:hover {
+          color: white; }
         @media only screen and (max-width: 480px) {
           .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title {
             display: none; } }
@@ -1888,7 +1895,8 @@ form {
       height: 100%;
       opacity: .75;
       font-size: 2rem;
-      color: var(--mav-color-text-primary-dark); }
+      color: var(--mav-color-text-primary-dark);
+      cursor: pointer; }
     .mav-slider-type-2-ctn .mav-slide .slide-prev {
       left: 0; }
       .mav-slider-type-2-ctn .mav-slide .slide-prev:hover {
@@ -1971,10 +1979,6 @@ form {
         .mav-slider-type-3-ctn .mav-slide:nth-child(3) {
           flex: 3;
           filter: grayscale(0); } }
-    @media only screen and (min-width: 1024px) and (min-width: 1024px) {
-      .mav-slider-type-3-ctn .mav-slide:nth-child(3) > .mav-slide-title-ctn {
-        transform: translateY(0); } }
-
     .mav-slider-type-3-ctn .mav-slide:hover {
       flex: 4;
       filter: grayscale(0);
