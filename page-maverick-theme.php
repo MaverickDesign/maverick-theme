@@ -40,11 +40,11 @@
                         <div class="mav-sec-body-wrapper mav-post-content-wrapper">
                             <div class="mav-sec-body-ctn mav-post-content-ctn">
                                 <div class="mav-post-content">
-                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong class="mav-maverick-theme">Maverick Theme</strong>) là một bộ giao diện hoàn toàn <strong>MIỄN PHÍ</strong> cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
-                                    <p><strong class="mav-maverick-theme">Maverick Theme</strong> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
-                                    <p><strong class="mav-maverick-theme">Maverick Theme</strong> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
-                                    <p><strong class="mav-maverick-theme">Maverick Theme</strong> hoàn toàn có thể đáp ứng đầy đủ các nhu cầu cơ bản của một website chuyên về nội dung.</p>
-                                    <p>Trang này giới thiệu các tính năng nổi bật của <strong class="mav-maverick-theme">Maverick Theme</strong>.</p>
+                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <span class="mav-maverick-theme">Maverick Theme</span>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
+                                    <p><span class="mav-maverick-theme">Maverick Theme</span> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
+                                    <p><span class="mav-maverick-theme">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
+                                    <p><span class="mav-maverick-theme">Maverick Theme</span> hoàn toàn có thể đáp ứng đầy đủ các nhu cầu cơ bản của một website chuyên về nội dung.</p>
+                                    <p>Trang này giới thiệu các tính năng nổi bật của <span class="mav-maverick-theme">Maverick Theme</span>.</p>
                                 </div>
                             </div>
                         </div>
@@ -395,7 +395,7 @@
 
                 <!-- Tính năng: Tab View -->
                 <?php
-                    if (function_exists('mavf_tab_posts')): ?>
+                    if (function_exists('mavf_tabbed_posts')): ?>
                         <section id="mavid-sec-tab-view" class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <header class="mav-sec-header-wrapper">
@@ -435,6 +435,22 @@
                                                     'category__in'          => array(5)
                                                 ),
                                                 'vertical'      => true
+                                            );
+                                            mavf_tabbed_posts($mavArgs);
+                                        ?>
+                                    </div>
+                                    <div class="mav-sec-body-ctn">
+                                        <div class="mav-sub-heading-1 mav-margin-bottom">Plain</div>
+                                        <?php
+                                            $mavArgs = array(
+                                                'query_args'    => array(
+                                                    'post_type'             => 'post',
+                                                    'posts_per_page'        => 5,
+                                                    'post__not_in'          => get_option("sticky_posts"),
+                                                    'ignore_sticky_posts'   => true,
+                                                    'category__in'          => array(5)
+                                                ),
+                                                'plain'      => true
                                             );
                                             mavf_tabbed_posts($mavArgs);
                                         ?>

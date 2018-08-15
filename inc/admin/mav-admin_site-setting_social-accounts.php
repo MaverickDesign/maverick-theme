@@ -3,6 +3,7 @@
  * @package maverick-theme
  */
 
+// Social Settings Section
 add_settings_section(
     'mavsec_site_setting_social_account',
     __('Tài khoản mạng xã hội','maverick-theme'),
@@ -14,13 +15,22 @@ function mavf_site_setting_social_account() {
     _e('Thiết lập thông tin tài khoản mạng xã hội','maverick-theme');
 }
 
-/* Facebook */
-register_setting('mavog_site_setting', 'mav_setting_social_account_facebook');
-add_settings_field('mavid_site_setting_social_account_facebook', 'Facebook', 'mavf_site_setting_social_account_facebook', 'mav_admin_page_site_setting', 'mavsec_site_setting_social_account');
+// Facebook
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_social_account_facebook'
+);
+add_settings_field(
+    'mavid_site_setting_social_account_facebook',
+    'Facebook',
+    'mavf_site_setting_social_account_facebook',
+    'mav_admin_page_site_setting',
+    'mavsec_site_setting_social_account'
+);
 
 function mavf_site_setting_social_account_facebook() {
     $mavSavedValue = esc_attr(get_option('mav_setting_social_account_facebook'));
-    printf('<input type="text" name="mav_setting_social_account_facebook" value="%1$s" placeholder="Facebook account"/>', $mavSavedValue);
+    printf('<input type="text" name="mav_setting_social_account_facebook" value="%1$s" placeholder="%2$s"/>', $mavSavedValue,__( 'Facebook account' , 'maverick-theme' ));
 }
 
 /* Google+ */

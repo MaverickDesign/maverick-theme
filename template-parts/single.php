@@ -86,7 +86,12 @@
                             <div class="mav-post-navigation-wrapper">
                                 <div class="mav-post-navigation-ctn">
                                 <?php
-                                    printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Các bài viết khác','maverick-theme'));
+                                    $mavTitle = __('Các bài viết khác','maverick-theme');
+                                    // Attachment Page
+                                    if (is_attachment()) {
+                                        $mavTitle = __('Trở lại bài viết','maverick-theme');
+                                    }
+                                    printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', $mavTitle);
                                     echo '<nav class="mav-post-navigation">';
                                         previous_post_link('%link', '%title');
                                         next_post_link('%link', '%title');

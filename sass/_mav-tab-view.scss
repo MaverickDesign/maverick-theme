@@ -80,4 +80,31 @@
             }
         }
     }
+    /**
+     * Plain Horizontal Style
+     */
+    &[data-plain] {
+    background: transparent;
+    padding: 0;
+        .mav-tab-ctn {
+            grid-column-gap: var(--mav-gutter);
+            .mav-tab-trigger {
+                background: transparent;
+                border: none;
+                padding: 0;
+                padding-bottom: var(--mav-gutter-sm);
+                // justify-content: center;
+                font-weight: var(--mav-font-weight-bold);
+                text-transform: uppercase;
+                // text-align: center;
+                &[data-state="active"] {
+                    box-shadow: inset 0px -3px var(--mav-color-primary);
+                }
+            }
+            .mav-tab-content-wrapper {
+                padding: 0;
+                margin-top: var(--mav-gutter-lg);
+            }
+        }
+    }
 }

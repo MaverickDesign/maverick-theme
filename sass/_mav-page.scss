@@ -42,17 +42,22 @@
 }
 
 .mav-page-title {
-    color: white!important;
-    line-height: 1em;
-    font-weight: var(--mav-font-weight-bold);
+    font-family: $font-alfa-slab-one;
+    color: rgba(255,255,255,.99)!important;
+    line-height: 1.2em;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,.5);
     text-transform: uppercase;
-    letter-spacing: .1rem;
-    @media #{$mav-tablet} {
-        max-width: 80vw;
-    }
+    letter-spacing: 3px;
     @media #{$mav-phone} {
         font-size: 2rem;
+    }
+    @media #{$mav-tablet} {
+        max-width: 80vw;
+        padding: var(--mav-gutter-sm);
+    }
+    @media #{$mav-desktop} {
+        font-size: 4rem;
+        padding: var(--mav-gutter);
     }
 }

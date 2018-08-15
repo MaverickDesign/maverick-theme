@@ -60,13 +60,13 @@
             display: grid;
             grid-gap: var(--mav-gutter);
             @extend .mav-pg-ctn;
-            color: var(--mav-color-text-secondary-dark);
+            color: var(--mav-color-text-primary-dark);
             h4 {
                 font-size: 1rem;
                 color: inherit;
                 text-transform: uppercase;
                 margin-bottom: var(--mav-gutter-sm);
-                font-weight: var(--mav-font-weight-regular);
+                font-weight: var(--mav-font-weight-medium);
                 letter-spacing: .5px;
             }
         }
