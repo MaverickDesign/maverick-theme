@@ -7,7 +7,7 @@
 }
 
 .mav-footer-copyright-wrapper {
-    background: var(--mavc-black);
+    background: #222;
 }
 
 .mav-footer-copyright-ctn {
@@ -72,6 +72,7 @@
 .mav-footer-menu-wrapper {
     padding: var(--mav-gutter-lg) var(--mav-gutter);
 }
+
 .mav-footer-menu-ctn {
 }
 
@@ -79,6 +80,7 @@
     ul { // lvl_1
         display: flex;
         margin-left: 0;
+        padding-left: 0;
         li {
             list-style: none;
             line-height: 2;

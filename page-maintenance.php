@@ -64,7 +64,7 @@
         </section>
 
         <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
-            <!-- Footer Socials -->
+            <!-- Socials -->
             <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
                 <div class="mav-footer-socials-ctn">
                     <?php
@@ -77,8 +77,9 @@
             </section>
             <?php endif;
         ?>
+
         <?php
-            $mavMaintenanceTime = esc_attr(get_option( 'mav_setting_maintenance_time' ));
+            $mavMaintenanceTime = esc_attr( get_option( 'mav_setting_maintenance_time' ) );
             if (!empty($mavMaintenanceTime)): ?>
                 <!-- Maintenance time -->
                 <section id="mavid-sec-maintenance-time" class="mav-page-maintenance-section">

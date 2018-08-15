@@ -409,11 +409,34 @@
                                 </header>
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
+                                        <div class="mav-sub-heading-1 mav-margin-bottom">Horizontal</div>
                                         <?php
                                             $mavArgs = array(
-                                                'number_of_post'    => '5'
+                                                'query_args'    => array(
+                                                    'post_type'             => 'post',
+                                                    'posts_per_page'        => 5,
+                                                    'post__not_in'          => get_option("sticky_posts"),
+                                                    'ignore_sticky_posts'   => true,
+                                                    'category__in'          => array(5)
+                                                ),
                                             );
-                                            mavf_tab_posts($mavArgs);
+                                            mavf_tabbed_posts($mavArgs);
+                                        ?>
+                                    </div>
+                                    <div class="mav-sec-body-ctn">
+                                        <div class="mav-sub-heading-1 mav-margin-bottom">Vertical</div>
+                                        <?php
+                                            $mavArgs = array(
+                                                'query_args'    => array(
+                                                    'post_type'             => 'post',
+                                                    'posts_per_page'        => 5,
+                                                    'post__not_in'          => get_option("sticky_posts"),
+                                                    'ignore_sticky_posts'   => true,
+                                                    'category__in'          => array(5)
+                                                ),
+                                                'vertical'      => true
+                                            );
+                                            mavf_tabbed_posts($mavArgs);
                                         ?>
                                     </div>
                                 </div>

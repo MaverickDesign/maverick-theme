@@ -1,72 +1,83 @@
-$mav-tab-border-color: #ddd;
-
+// Wrapper
 .mav-tab-wrapper {
-    position: relative;
-    max-width: var(--mav-site-width);
+    // position: relative;
     overflow: hidden;
-}
-
-.mav-tab-ctn {
-    display: grid;
-    grid-template-columns: repeat(auto,auto);
-    counter-reset: container;
-}
-
-.mav-tab-trigger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--mav-gutter-xs) var(--mav-gutter);
-    background: rgba(0,0,0,.025);
-    border-color: transparent;
-    border-left-color: darkgray;
-    border-bottom-color: $mav-tab-border-color;
-    border-style: solid;
-    border-width: 2px 1px 1px 1px;
-
-    cursor: pointer;
-    @extend %mav-transition;
-    &:hover {
-        color: var(--mav-color-text-primary);
-        background: rgba($mavBlack,.05);
-    }
-    &[data-state="active"] {
-        background: white;
-        border-color: var(--mav-color-primary) $mav-tab-border-color transparent $mav-tab-border-color!important;
-        + .mav-tab-content-wrapper {
-            opacity: 1;
-            z-index: $mav-layer-content;
+    padding: var(--mav-gutter-xs);
+    background: var(--mav-color-border);
+    // Container
+    .mav-tab-ctn {
+        display: grid;
+        grid-column-gap: var(--mav-gutter-xs);
+        max-width: var(--mav-site-width);
+        counter-reset: container;
+        // Trigger
+        .mav-tab-trigger {
+            display: flex;
+            padding: var(--mav-gutter-sm) var(--mav-gutter);
+            background: #fafafa;
+            line-height: 1.25rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--mav-color-border);
+            @extend %mav-transition;
+            &:hover {
+                color: var(--mav-color-text-primary);
+                background: rgba(0,0,0,.005);
+            }
+            &[data-state="active"] {
+                color: var(--mav-color-text-primary);
+                background: white;
+                border-bottom-color: transparent;
+                box-shadow: inset 0px 3px var(--mav-color-primary);
+                font-weight: var(--mav-font-weight-bold);
+                + .mav-tab-content-wrapper {
+                    opacity: 1;
+                    z-index: $mav-layer-overlay;
+                }
+            }
+            @media #{$mav-phone} {
+                counter-increment: container;
+                &:before {
+                    content: counter(container);
+                }
+            }
+            .mav-tab-trigger-title {
+                @media #{$mav-phone} {
+                    display: none;
+                }
+            }
         }
-    }
-    @media #{$mav-phone} {
-        max-height: 20vh;
-        overflow: hidden;
-        counter-increment: container;
-        &:before {
-            content: counter(container);
+        // Content
+        .mav-tab-content-wrapper {
+            opacity: 0;
+            grid-area: content;
+            padding: var(--mav-gutter-lg);
+            background: white;
+            max-height: 75vh;
+            @media #{$mav-mobile} {
+                padding: var(--mav-gutter);
+                overflow-y: auto;
+            }
         }
-    }
-    @media #{$mav-mobile} {
-        font-family: $font-roboto-cond;
-    }
-    .mav-tab-trigger-title {
-        font-weight: 600;
-    }
-}
-.mav-tab-content-wrapper {
-    opacity: 0;
-    grid-area: content;
-    padding: var(--mav-gutter-lg);
-    transition: all .1s ease;
-    background: white;
-    border-color: $mav-tab-border-color;
-    border-style: solid;
-    border-width: 0 1px 1px 1px;
-    z-index: -1;
-    max-height: 75vh;
-    @media #{$mav-mobile} {
-        padding: var(--mav-gutter);
-        max-width: 100%;
-        overflow-y: scroll;
+
+        /**
+         * Vertical Tab Styles
+         */
+        &[data-vertical] {
+            grid-column-gap: 0;
+            grid-row-gap: var(--mav-gutter-xs);
+            @media #{$mav-tablet} {
+                grid-template-columns: minmax(auto,25%) 1fr;
+            }
+            .mav-tab-trigger {
+                align-items: center;
+                border-right: 1px solid var(--mav-color-border);
+                &[data-state="active"] {
+                    border-right-color: transparent;
+                    box-shadow: inset 3px 0px var(--mav-color-primary);
+                }
+            }
+            .mav-tab-content-wrapper {
+            }
+        }
     }
 }

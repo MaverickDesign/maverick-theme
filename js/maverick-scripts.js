@@ -40,7 +40,6 @@
 /**
  * Tool Tip
  */
-
 let mavToolTips = document.querySelectorAll('[data-tooltip]');
 
 if (mavToolTips.length > 0) {
@@ -325,7 +324,9 @@ function mavf_body_click_events(){
         if (mavTarget.classList.contains('mav-mobile-ctn')){
             mavf_remove_mobile_container(mavTarget);
         }
-
+        /** Tab View
+         *
+         */
         if (mavTarget.classList.contains('mav-tab-trigger')){
             mavf_tab_view(mavTarget);
         }
