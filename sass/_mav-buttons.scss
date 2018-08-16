@@ -73,7 +73,6 @@ button {
     &-secondary {
         @extend .mav-btn;
         padding: var(--mav-gutter-xs);
-        border-width: 1px;
         color: var(--mav-color-text-primary);
         &-lg {
             @extend .mav-btn-secondary;

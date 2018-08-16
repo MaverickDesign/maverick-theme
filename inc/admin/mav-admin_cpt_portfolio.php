@@ -15,7 +15,8 @@ $mavArgs = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array( 'slug' => __( 'san_pham' , 'maverick-theme' ) ),
+    'taxonomies'    => array( 'category' ),
+    'rewrite'       => array( 'slug' => __( 'san_pham' , 'maverick-theme' ) ),
 );
 
 register_post_type( 'mav_cpt_portfolio', $mavArgs );

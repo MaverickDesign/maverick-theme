@@ -918,7 +918,6 @@ button {
     color: #c8c8c8; }
 .mav-btn-secondary, .mav-btn-secondary-lg {
   padding: var(--mav-gutter-xs);
-  border-width: 1px;
   color: var(--mav-color-text-primary); }
   .mav-btn-secondary-lg {
     padding: var(--mav-gutter-sm);
@@ -1110,7 +1109,7 @@ button {
   @media only screen and (min-width: 1024px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
       width: 100%;
-      max-width: 30vw; } }
+      max-width: 33%; } }
 
 .mav-post-content {
   /**

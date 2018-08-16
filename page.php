@@ -23,11 +23,15 @@
         <section id="mavid-page-content" class="mav-sec-wrapper">
             <div class="mav-sec-ctn">
                 <div class="mav-sec-body-wrapper">
-                    <div class="mav-sec-body-ctn mav-post mav-post-content">
-                        <?php
-                            the_post();
-                            the_content();
-                        ?>
+                    <div class="mav-sec-body-ctn">
+                        <div class="mav-post-content-wrapper">
+                            <div class="mav-post-content-ctn mav-post-content">
+                                <?php
+                                    the_post();
+                                    the_content();
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

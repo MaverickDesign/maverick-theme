@@ -13,11 +13,11 @@
 ?>
 
 <?php
-    session_start();
-    if (!isset($_SESSION['mavs_id'])) {
-        $_SESSION['mavs_id']        = mavf_unique(16);
-        $_SESSION['mavs_start']     = $_SERVER['REQUEST_TIME'];
-    }
+    // session_start();
+    // if (!isset($_SESSION['mavs_id'])) {
+    //     $_SESSION['mavs_id']        = mavf_unique(16);
+    //     $_SESSION['mavs_start']     = $_SERVER['REQUEST_TIME'];
+    // }
     // $mavSessionID = $_SESSION['mavs_id'];
 ?>
 
