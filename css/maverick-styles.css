@@ -199,7 +199,7 @@ table {
   line-height: 1.25em !important; }
 .mav-text--lg {
   font-size: 1.2rem;
-  line-height: 1.35em !important; }
+  line-height: 1.45em !important; }
 .mav-text--sm {
   font-size: .8rem;
   letter-spacing: .5px;
@@ -911,7 +911,7 @@ button {
     background: transparent;
     color: var(--mav-color-text-primary); }
   .mav-btn-primary-lg {
-    padding: var(--mav-gutter-sm);
+    padding: var(--mav-gutter);
     letter-spacing: 1px; }
   .mav-btn-primary-dark:hover {
     background: #222;
@@ -920,7 +920,7 @@ button {
   padding: var(--mav-gutter-xs);
   color: var(--mav-color-text-primary); }
   .mav-btn-secondary-lg {
-    padding: var(--mav-gutter-sm);
+    padding: var(--mav-gutter);
     letter-spacing: 1px; }
 .mav-btn-cta {
   width: 100%;
@@ -1102,14 +1102,14 @@ button {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--mav-site-width);
-  margin: var(--mav-gutter-lg) auto var(--mav-gutter-lg) auto; }
+  margin: var(--mav-gutter-lg) auto; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
-      max-width: 60vw; } }
+      max-width: 80vw; } }
   @media only screen and (min-width: 1024px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
       width: 100%;
-      max-width: 33%; } }
+      max-width: 50%; } }
 
 .mav-post-content {
   /**
@@ -1653,13 +1653,13 @@ form {
     min-height: 40vh; } }
 
 .mav-page-title {
-  font-family: "Alfa Slab One", cursive;
   color: rgba(255, 255, 255, 0.99) !important;
   line-height: 1.2em;
   text-align: center;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
-  letter-spacing: 3px; }
+  letter-spacing: 3px;
+  font-weight: var(--mav-font-weight-black); }
   @media only screen and (max-width: 480px) {
     .mav-page-title {
       font-size: 2rem; } }

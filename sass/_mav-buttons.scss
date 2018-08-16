@@ -59,7 +59,7 @@ button {
         }
         &-lg {
             @extend .mav-btn-primary;
-            padding: var(--mav-gutter-sm);
+            padding: var(--mav-gutter);
             letter-spacing: 1px;
         }
         &-dark {
@@ -76,7 +76,7 @@ button {
         color: var(--mav-color-text-primary);
         &-lg {
             @extend .mav-btn-secondary;
-            padding: var(--mav-gutter-sm);
+            padding: var(--mav-gutter);
             letter-spacing: 1px;
         }
     }

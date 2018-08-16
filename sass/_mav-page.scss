@@ -42,13 +42,13 @@
 }
 
 .mav-page-title {
-    font-family: $font-alfa-slab-one;
     color: rgba(255,255,255,.99)!important;
     line-height: 1.2em;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,.5);
     text-transform: uppercase;
     letter-spacing: 3px;
+    font-weight: var(--mav-font-weight-black);
     @media #{$mav-phone} {
         font-size: 2rem;
     }

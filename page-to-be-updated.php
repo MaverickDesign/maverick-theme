@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 <!-- Page content starts here -->
 
-<main id="mavid-page-main" class="mav-page-wrapper">
+<main id="mavid-page-main" class="mav-page-wrapper" data-page-id="<?php echo get_the_ID(); ?>">
     <div class="mav-page-ctn">
         <header id="mavid-page-header" class="mav-page-header-wrapper" <?php mavf_post_thumbnail_url();?>>
             <div class="mav-page-header-ctn">
