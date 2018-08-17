@@ -27,13 +27,11 @@
                     <div class="mav-sec-body-ctn">
                         <?php
                         printf('<p class="mav-flex-center mav-text--lg mav-text-center">%1$s</p>', __( 'Nội dung trang web này đang được cập nhật, vui lòng quay lại sau.' , 'maverick-theme' ));
+                        echo '<div class="mav-margin-top-lg">';
+                            /* Back and Home Buttons */
+                            include TEMPLATE_DIR . '/template-parts/mav-button__back-and-home.php';
+                        echo '</div>';
                         ?>
-                        <div class="mav-flex-center-all mav-padding-top-xl">
-                            <a href="javascript:history.go(-1)"><button class="mav-btn-secondary-lg mav-margin-right"><?php _e( 'Trở lại trang trước' , 'maverick-theme' ); ?></button></a>
-                            <?php
-                                mavf_button(__( 'Quay lại trang chủ' , 'maverick-theme' ),get_bloginfo( 'url' ),'mav-btn-primary-lg');
-                            ?>
-                        </div>
                     </div>
                 </div>
             </div>

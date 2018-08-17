@@ -162,11 +162,11 @@
         max-width: var(--mav-site-width);
         margin: var(--mav-gutter-lg) auto;
         @media #{$mav-tablet} {
-            max-width: 80vw;
+            max-width: 65ch;
         }
         @media #{$mav-desktop} {
             width: 100%;
-            max-width: 50%;
+            max-width: 65ch;
         }
     }
 }
@@ -176,10 +176,8 @@
      * Headings
      */
     h2, .mav-h2 {
-        font-size: 1.75rem;
-        @media #{$mav-phone} {
-            font-size: 1.5rem;
-        }
+        font-size: 1.5rem;
+        font-weight: var(--mav-font-weight-medium);
     }
     /**
      * Body

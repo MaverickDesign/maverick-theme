@@ -4,8 +4,8 @@
  */
 
  $mavClientLabels = array(
-    'name'              => __('Client','maverick-theme'),
-    'singular_name'     => __('Client','maverick-theme')
+    'name'              => __('Khách hàng','maverick-theme'),
+    'singular_name'     => __('Khách hàng','maverick-theme')
 );
 
 $mavClientArgs = array(
@@ -15,7 +15,7 @@ $mavClientArgs = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'       => array( 'slug' => __( 'khach-hang' , 'maverick-theme' ) ),
+    'rewrite'       => array( 'slug' => __( 'khach_hang' , 'maverick-theme' ) ),
 );
 
 register_post_type( 'mav_cpt_client', $mavClientArgs );

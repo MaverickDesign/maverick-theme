@@ -45,7 +45,6 @@
     $mavSectionClass = $mavSidebar ? 'mav-has-sidebar' : 'mav-site-width';
 
     printf('<div class="%1$s">', $mavSectionClass);
-
         $mavArgs = array (
             'post_type'             => 'post',
             'post_status'           => 'publish',
@@ -63,7 +62,7 @@
                  * Note: "mavjs-posts-container" class is for ajax function, do not remove
                  */
                 printf(
-                    '<div class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
+                    '<div id="mavid-posts-container" class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
                     $mavColumns
                 );
                     while ( $mavQuery->have_posts() ) {

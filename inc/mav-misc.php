@@ -121,10 +121,11 @@ add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
  * Button
  */
 
-function mavf_button($mavText,$mavLink = '', $mavStyle = 'mav-btn-primary') {
-    printf('<div class="mav-btn-ctn">');
-    printf('<a href="%2$s" title="%1$s" style="text-decoration: none;"><button class="%3$s">%1$s</button></a>',$mavText,$mavLink,$mavStyle);
-    printf('</div>');
+function mavf_button($mavText, $mavLink = '', $mavStyle = 'mav-btn-primary') {
+    printf(
+        '<a href="%2$s"><button type="button" title="%1$s" class="%3$s">%1$s</button></a>',
+        $mavText, $mavLink, $mavStyle
+    );
 };
 
 /**

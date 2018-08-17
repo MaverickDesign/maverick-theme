@@ -34,6 +34,13 @@
     align-items: center;
 }
 
+@media #{$mav-phone} {
+    .mav-flex__column--phone {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* Grids */
 
 .mav-grid {
@@ -279,5 +286,22 @@
 .mav-pg-section {
     &:nth-child(even) {
         background-color: #fafafa;
+    }
+}
+
+.mav-btn-ctn {
+    display: grid;
+    grid-gap: var(--mav-gutter);
+    justify-content: center;
+    justify-items: center;
+    &[data-columns="2"] {
+        grid-template-columns: repeat(2,max-content);
+        @media #{$mav-phone} {
+            grid-template-columns: 1fr;
+            a {
+                width: 100%;
+                button { width: 100%; }
+            }
+        }
     }
 }

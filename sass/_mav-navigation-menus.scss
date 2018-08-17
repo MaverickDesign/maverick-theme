@@ -1,10 +1,11 @@
 #mavid-site-logo {
+    height: 40px;
+    @media #{$mav-desktop} {
+        height: 60px;
+    }
     img {
         display: block;
-        height: 40px;
-        @media #{$mav-desktop} {
-            height: 60px;
-        }
+        height: 100%;
     }
 }
 
@@ -21,7 +22,7 @@
     padding: var(--mav-gutter-sm) var(--mav-gutter);
     @media #{$mav-mobile} {
         background: var(--mav-color-accent);
-        @include text-contrast($mav-color-brand-accent);
+        @include text-contrast($mav-color-accent);
     }
 }
 

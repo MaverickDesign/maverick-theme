@@ -415,6 +415,10 @@ ol li {
   justify-content: center;
   align-items: center; }
 
+@media only screen and (max-width: 480px) {
+  .mav-flex__column--phone {
+    flex-direction: column;
+    align-items: center; } }
 /* Grids */
 .mav-grid {
   display: grid; }
@@ -856,6 +860,21 @@ ol li {
 .mav-pg-section:nth-child(even) {
   background-color: #fafafa; }
 
+.mav-btn-ctn {
+  display: grid;
+  grid-gap: var(--mav-gutter);
+  justify-content: center;
+  justify-items: center; }
+  .mav-btn-ctn[data-columns="2"] {
+    grid-template-columns: repeat(2, max-content); }
+    @media only screen and (max-width: 480px) {
+      .mav-btn-ctn[data-columns="2"] {
+        grid-template-columns: 1fr; }
+        .mav-btn-ctn[data-columns="2"] a {
+          width: 100%; }
+          .mav-btn-ctn[data-columns="2"] a button {
+            width: 100%; } }
+
 table {
   border-collapse: collapse; }
   table caption {
@@ -1105,11 +1124,11 @@ button {
   margin: var(--mav-gutter-lg) auto; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
-      max-width: 80vw; } }
+      max-width: 65ch; } }
   @media only screen and (min-width: 1024px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
       width: 100%;
-      max-width: 50%; } }
+      max-width: 65ch; } }
 
 .mav-post-content {
   /**
@@ -1125,10 +1144,8 @@ button {
    * Block Quote
    */ }
   .mav-post-content h2, .mav-post-content .mav-h2 {
-    font-size: 1.75rem; }
-    @media only screen and (max-width: 480px) {
-      .mav-post-content h2, .mav-post-content .mav-h2 {
-        font-size: 1.5rem; } }
+    font-size: 1.5rem;
+    font-weight: var(--mav-font-weight-medium); }
   .mav-post-content p {
     color: var(--mav-color-text-primary);
     margin-bottom: 1.5em;
@@ -1332,8 +1349,7 @@ form {
   background: var(--mav-color-off-white); }
 
 .mav-site-search-ctn {
-  padding: var(--mav-gutter) 0;
-  width: 100%;
+  padding: var(--mav-gutter);
   display: flex;
   justify-content: center; }
 
@@ -2365,12 +2381,14 @@ form {
         .mav-footer-menu ul li ul ul li a {
           color: var(--mav-color-text-secondary-dark); }
 
-#mavid-site-logo img {
-  display: block;
+#mavid-site-logo {
   height: 40px; }
   @media only screen and (min-width: 1024px) {
-    #mavid-site-logo img {
+    #mavid-site-logo {
       height: 60px; } }
+  #mavid-site-logo img {
+    display: block;
+    height: 100%; }
 
 .mav-header-logo-wrapper {
   max-width: var(--mav-site-width);
