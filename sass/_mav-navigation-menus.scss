@@ -122,6 +122,7 @@
         }
         li {
             @extend %mav-flex-column;
+            margin-left: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
             list-style: none;

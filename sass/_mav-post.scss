@@ -198,6 +198,22 @@
         }
     }
 
+    ol {
+        li {
+            margin-left: 3ch;
+            ol {
+                li {
+                    margin-left: 2ch;
+                }
+            }
+        }
+    }
+    ul {
+        li {
+            margin-left: 2ch;
+        }
+    }
+
     /**
      * Images
      */

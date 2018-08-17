@@ -35,31 +35,26 @@
             font-weight: var(--mav-font-weight-regular);
         }
         .mav-social-links {
-            display: grid;
-            grid-gap: var(--mav-gutter-sm);
-            grid-template-columns: repeat(auto-fit,minmax(60px,80px));
+            display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             width: 100%;
             margin-top: var(--mav-gutter-lg);
-            @media #{$mav-phone} {
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-            }
             .mav-social-icon {
                 @extend .mav-flex-center-all;
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
                 border: 1px solid var(--mav-color-accent);
                 font-size: var(--mav-font-size-lg);
+                margin-left: 0;
+                margin-right: var(--mav-gutter);
                 @extend %mav-transition;
                 &:hover {
                     border-radius: 50%;
                     @extend %mav-link-obj-accent;
                 }
-                @media #{$mav-phone} {
-                    min-width: 40px;
-                    min-height: 40px;
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
@@ -82,12 +77,13 @@
         margin-left: 0;
         padding-left: 0;
         li {
+            margin-left: 0;
             list-style: none;
             line-height: 2;
             margin-right: var(--mav-gutter-lg);
             a {
                 display: inline-block;
-                font-weight: 600;
+                font-weight: var(--mav-font-weight-bold);
                 text-transform: uppercase;
                 color: var(--mav-color-text-primary-dark);
                 text-decoration: none;

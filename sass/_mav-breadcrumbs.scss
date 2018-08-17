@@ -12,13 +12,11 @@
     display: flex;
     li {
         list-style-type: none;
+        margin-left: 0;
         margin-right: var(--mav-gutter-xs);
         &:last-child {
             margin-right: 0;
         }
-    }
-    a {
-        text-decoration: none;
     }
     .item-current, .item-home {
         color: var(--mav-color-text-primary);

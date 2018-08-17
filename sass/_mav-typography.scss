@@ -187,22 +187,6 @@ p {
 }
 
 /* List Styles */
-ol {
-    li {
-        margin-left: 3ch;
-        ol {
-            li {
-                margin-left: 2ch;
-            }
-        }
-    }
-}
-ul {
-    li {
-        margin-left: 2ch;
-    }
-}
-
 ul {
     li {
         list-style-type: disc;
@@ -248,6 +232,7 @@ ol {
 .mav-non-list {
     li {
         list-style: none;
+        margin-left: 0!important;
     }
 }
 
