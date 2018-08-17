@@ -332,10 +332,13 @@ p {
   text-overflow: ellipsis; }
 
 /* List Styles */
-ol, ul {
-  list-style-position: inside; }
-  ol li ol, ol li ul, ul li ol, ul li ul {
-    padding-left: 1.5em; }
+ol li {
+  margin-left: 3ch; }
+  ol li ol li {
+    margin-left: 2ch; }
+
+ul li {
+  margin-left: 2ch; }
 
 ul li {
   list-style-type: disc; }
@@ -2496,7 +2499,8 @@ form {
           max-height: 100vh !important; } }
       @media only screen and (min-width: 1024px) {
         .mav-header-menu-ctn ul li.menu-item-home a:before {
-          content: '\f015'; } }
+          content: '\f015';
+          margin-right: var(--mav-gutter-xs); } }
       @media only screen and (max-width: 1023px) {
         .mav-header-menu-ctn ul li.menu-item-home {
           display: none !important; } }
@@ -3118,17 +3122,10 @@ form {
   grid-gap: var(--mav-gutter-lg); }
   @media only screen and (min-width: 1024px) {
     .mav-page-contact-wrapper {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      grid-template-areas: "form social" "form map";
-      align-items: stretch; }
+      max-width: 50vw;
+      margin: 0 auto; }
       .mav-page-contact-wrapper .mav-form-contact-wrapper {
-        grid-area: form;
-        width: 100%; }
-      .mav-page-contact-wrapper .mav-contact-socials-wrapper {
-        grid-area: social; }
-      .mav-page-contact-wrapper .mav-contact-wrapper {
-        grid-area: map; } }
+        width: 100%; } }
 
 .mav-contact-socials-ctn .mav-social-links {
   display: grid;

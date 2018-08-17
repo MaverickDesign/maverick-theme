@@ -145,6 +145,7 @@
                     @extend %mav-font-awesome;
                     @media #{$mav-desktop} {
                         content: '\f015';
+                        margin-right: var(--mav-gutter-xs);
                     }
                 }
                 @media #{$mav-mobile} {

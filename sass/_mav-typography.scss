@@ -187,13 +187,19 @@ p {
 }
 
 /* List Styles */
-
-ol, ul {
-    list-style-position: inside;
+ol {
     li {
-        ol, ul {
-            padding-left: 1.5em;
+        margin-left: 3ch;
+        ol {
+            li {
+                margin-left: 2ch;
+            }
         }
+    }
+}
+ul {
+    li {
+        margin-left: 2ch;
     }
 }
 

@@ -32,7 +32,7 @@
                                 $mavFormArgs = array(
                                     'fields'    => array('name','email','phone','message'),
                                     'form_title'    => __( 'Gửi thông tin liên hệ tới <strong>'.get_bloginfo( 'name' ).'</strong>' , 'maverick-theme' ),
-                                    'form_intro'    => __( 'Liên lạc với <strong>'.get_bloginfo( 'name' ).'</strong> qua email.' , 'maverick-theme' )
+                                    // 'form_intro'    => __( 'Liên lạc với <strong>'.get_bloginfo( 'name' ).'</strong> qua email.' , 'maverick-theme' )
                                 );
                                 mavf_contact_form($mavFormArgs);
                             }
@@ -66,7 +66,7 @@
                                     ?>
                                     <!-- Google Map -->
                                     <?php
-                                        if (function_exists('mavf_google_map')) {
+                                        if ( function_exists('mavf_google_map') && !empty( esc_attr( get_option( 'mav_setting_enable_google_map' ) ) ) ) {
                                             mavf_google_map([]);
                                         }
                                     ?>
