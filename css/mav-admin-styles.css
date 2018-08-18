@@ -80,6 +80,7 @@
   --mav-color-text-secondary: rgba(0, 0, 0, 0.6);
   --mav-color-text-primary-dark: #fafafa;
   --mav-color-text-secondary-dark: #ddd;
+  --mav-color-text-hint: rgba(0, 0, 0, 0.38);
   --mav-color-body: rgba(0, 0, 0, 0.87); }
   @media only screen and (min-width: 1024px) {
     :root {

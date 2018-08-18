@@ -122,16 +122,16 @@ if ( function_exists('mavf_carousel') && !empty($categories) && $categories[0]->
                 <div class="mav-sec-header-ctn">
                     <div class="mav-sec-title-wrapper">
                         <div class="mav-sec-title-ctn">
-                            <h4 class="mav-sec-title">
+                            <h3 class="mav-sec-title">
                             <?php
-                                if (!empty($categories)) {
+                                if ( !empty($categories) ) {
                                     printf(
                                         '%4$s <a href="%1$s" title="%3$s %2$s"><strong class="mav-no-break">%2$s</strong></a>',
                                         esc_url(get_category_link($categories[0]->term_id)), esc_html($categories[0]->name),__('Xem tất cả bài trong chuyên mục','maverick-theme'), __('Cùng chuyên mục','maverick-theme')
                                     );
                                 }
                             ?>
-                            </h4>
+                            </h3>
                         </div>
                     </div>
                 </div>

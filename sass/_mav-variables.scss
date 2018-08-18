@@ -186,10 +186,11 @@ $mav-color-background: #fafafa;
 
     --mav-font-body: var(--mav-font-size);
 
-    --mav-color-text-primary:          #{$mav-color-text-primary};
-    --mav-color-text-secondary:        #{$mav-color-text-secondary};
-    --mav-color-text-primary-dark:     #{$mav-color-text-primary-dark};
-    --mav-color-text-secondary-dark:   #{$mav-color-text-secondary-dark};
+    --mav-color-text-primary        : #{$mav-color-text-primary};
+    --mav-color-text-secondary      : #{$mav-color-text-secondary};
+    --mav-color-text-primary-dark   : #{$mav-color-text-primary-dark};
+    --mav-color-text-secondary-dark : #{$mav-color-text-secondary-dark};
+    --mav-color-text-hint           : #{$mav-color-text-hint};
 
     --mav-color-body: #{$mav-color-text-primary};
 

@@ -162,11 +162,11 @@
         max-width: var(--mav-site-width);
         margin: var(--mav-gutter-lg) auto;
         @media #{$mav-tablet} {
-            max-width: 65ch;
+            max-width: 800px;
         }
         @media #{$mav-desktop} {
             width: 100%;
-            max-width: 65ch;
+            max-width: 800px;
         }
     }
 }
@@ -217,48 +217,45 @@
     /**
      * Images
      */
+    figure {
+        margin-bottom: var(--mav-gutter);
+        img {
+            padding: 0;
+        }
+    }
+
     img {
         height: auto;
-        max-height: 50vh;
-        padding: var(--mav-gutter) 0;
+        max-width: 100%;
+        object-fit: contain;
+        padding: var(--mav-gutter-sm) 0;
         &.aligncenter {
             display: flex;
             margin: 0 auto;
         }
     }
 
+    iframe {
+        max-width: 100%;
+    }
     /**
      * Block Quote
      */
     blockquote {
+        position: relative;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         margin: var(--mav-gutter-lg) auto;
-        column-span: all;
-        max-width: 50vw;
-        background: var(--mav-color-site-background);
-        box-shadow: inset var(--mav-gutter-xs) 0 var(--mav-color-accent);
-        @media #{$mav-phone} {
-            max-width: 90vw;
-        }
+        // background: #fafafa;
+        // box-shadow: inset var(--mav-gutter-xs) 0 var(--mav-color-accent);
+        text-align: center;
+        width: max-content;
+        max-width: 100%;
         p {
-            position: relative;
-            padding: var(--mav-gutter);
-            font-family: $font-roboto-slab;
-            font-size: 1.75rem;
-            font-weight: 300;
-            text-align: center;
+            font-size: var(--mav-font-size-xl);
+            font-weight: var(--mav-font-weight-light);
             color: var(--mav-color-text-primary);
-            &:first-child {
-                &:first-letter{
-                    float: none;
-                    font-family: inherit;
-                    font-size: inherit;
-                    line-height: inherit;
-                    padding-top: 0;
-                    padding-right: 0;
-                }
-            }
+            margin: var(--mav-gutter-lg);
             &:before, &:after {
                 display: inline-block;
                 @extend %mav-font-awesome;
@@ -273,10 +270,32 @@
                 margin-left: var(--mav-gutter-sm);
             }
         }
-        span.mav-quote-author {
+        cite, .mav-quote-author {
             color: var(--mav-color-text-secondary);
-            font-weight: 400;
+            font-weight: var(--mav-font-weight-bold);
             white-space: nowrap;
+        }
+        cite {
+            margin-bottom: var(--mav-gutter-lg);
+            &:before {
+                content: "- ";
+            }
+            &:after {
+                position: absolute;
+                display: block;
+                content: "";
+                width: 25%;
+                height: 5px;
+                background: var(--mav-color-accent);
+                transform: translateX(-50%);
+                left: 50%;
+            }
+        }
+
+        // WordPress Gutenberg Style
+        &.wp-block-pullquote {
+            padding: 0;
+            margin: var(--mav-gutter-xl) auto;
         }
     }
 }

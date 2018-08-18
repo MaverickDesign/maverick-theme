@@ -157,6 +157,7 @@ table {
   --mav-color-text-secondary: rgba(0, 0, 0, 0.6);
   --mav-color-text-primary-dark: #fafafa;
   --mav-color-text-secondary-dark: #ddd;
+  --mav-color-text-hint: rgba(0, 0, 0, 0.38);
   --mav-color-body: rgba(0, 0, 0, 0.87); }
   @media only screen and (min-width: 1024px) {
     :root {
@@ -353,22 +354,6 @@ ol li {
 .mav-non-list li {
   list-style: none;
   margin-left: 0 !important; }
-
-.mav-sec-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: var(--mav-font-weight-light);
-  padding: 0 var(--mav-gutter-sm) var(--mav-gutter-xs) var(--mav-gutter-sm);
-  box-shadow: inset 0 -3px var(--mav-color-primary);
-  border-radius: var(--mav-gutter-sm);
-  border: 1px solid transparent;
-  color: var(--mav-color-text-primary);
-  text-transform: uppercase; }
-  .mav-sec-title:hover {
-    box-shadow: inset 0 -3px var(--mav-color-accent); }
-  @media only screen and (max-width: 480px) {
-    .mav-sec-title {
-      font-size: 1.5rem; } }
 
 .mav-link {
   position: relative;
@@ -834,6 +819,25 @@ ol li {
   align-items: center;
   padding: var(--mav-gutter-xl) 0 var(--mav-gutter); }
 
+.mav-sec-title-wrapper .mav-sec-title-ctn {
+  position: relative; }
+
+.mav-sec-title {
+  padding: 0 var(--mav-gutter-sm) var(--mav-gutter-xs) var(--mav-gutter-sm);
+  box-shadow: inset 0 -3px var(--mav-color-primary);
+  border-radius: var(--mav-gutter-sm);
+  border: 1px solid transparent;
+  color: var(--mav-color-text-primary);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: var(--mav-font-weight-light);
+  text-transform: uppercase; }
+  .mav-sec-title:hover {
+    box-shadow: inset 0 -3px var(--mav-color-accent); }
+  @media only screen and (max-width: 480px) {
+    .mav-sec-title {
+      font-size: 1.25rem; } }
+
 /* Section intro */
 .mav-sec-intro-wrapper .mav-sec-intro-ctn {
   padding-top: var(--mav-gutter-lg); }
@@ -849,13 +853,18 @@ ol li {
     .mav-sec-body-wrapper .mav-sec-body-ctn {
       padding: var(--mav-gutter-lg) 0; } }
 
-/* Section footer */
+/**
+ * Section footer
+ */
 .mav-sec-footer-wrapper .mav-sec-footer-ctn {
   padding: var(--mav-gutter) 0 var(--mav-gutter-xl); }
 
 .mav-pg-section:nth-child(even) {
   background-color: #fafafa; }
 
+/**
+ * Buttons Container
+ */
 .mav-btn-ctn {
   display: grid;
   grid-gap: var(--mav-gutter);
@@ -1119,11 +1128,11 @@ button {
   margin: var(--mav-gutter-lg) auto; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
-      max-width: 65ch; } }
+      max-width: 800px; } }
   @media only screen and (min-width: 1024px) {
     .mav-post-content-wrapper .mav-post-content-ctn {
       width: 100%;
-      max-width: 65ch; } }
+      max-width: 800px; } }
 
 .mav-post-content {
   /**
@@ -1153,39 +1162,33 @@ button {
       margin-left: 2ch; }
   .mav-post-content ul li {
     margin-left: 2ch; }
+  .mav-post-content figure {
+    margin-bottom: var(--mav-gutter); }
+    .mav-post-content figure img {
+      padding: 0; }
   .mav-post-content img {
     height: auto;
-    max-height: 50vh;
-    padding: var(--mav-gutter) 0; }
+    max-width: 100%;
+    object-fit: contain;
+    padding: var(--mav-gutter-sm) 0; }
     .mav-post-content img.aligncenter {
       display: flex;
       margin: 0 auto; }
+  .mav-post-content iframe {
+    max-width: 100%; }
   .mav-post-content blockquote {
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin: var(--mav-gutter-lg) auto;
-    column-span: all;
-    max-width: 50vw;
-    background: var(--mav-color-site-background);
-    box-shadow: inset var(--mav-gutter-xs) 0 var(--mav-color-accent); }
-    @media only screen and (max-width: 480px) {
-      .mav-post-content blockquote {
-        max-width: 90vw; } }
+    text-align: center;
+    width: max-content;
+    max-width: 100%; }
     .mav-post-content blockquote p {
-      position: relative;
-      padding: var(--mav-gutter);
-      font-family: "Roboto Slab", serif;
-      font-size: 1.75rem;
-      font-weight: 300;
-      text-align: center;
-      color: var(--mav-color-text-primary); }
-      .mav-post-content blockquote p:first-child:first-letter {
-        float: none;
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        padding-top: 0;
-        padding-right: 0; }
+      font-size: var(--mav-font-size-xl);
+      font-weight: var(--mav-font-weight-light);
+      color: var(--mav-color-text-primary);
+      margin: var(--mav-gutter-lg); }
       .mav-post-content blockquote p:before, .mav-post-content blockquote p:after {
         display: inline-block;
         color: var(--mav-color-accent); }
@@ -1195,10 +1198,26 @@ button {
       .mav-post-content blockquote p:after {
         content: '\f10e';
         margin-left: var(--mav-gutter-sm); }
-    .mav-post-content blockquote span.mav-quote-author {
+    .mav-post-content blockquote cite, .mav-post-content blockquote .mav-quote-author {
       color: var(--mav-color-text-secondary);
-      font-weight: 400;
+      font-weight: var(--mav-font-weight-bold);
       white-space: nowrap; }
+    .mav-post-content blockquote cite {
+      margin-bottom: var(--mav-gutter-lg); }
+      .mav-post-content blockquote cite:before {
+        content: "- "; }
+      .mav-post-content blockquote cite:after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 25%;
+        height: 5px;
+        background: var(--mav-color-accent);
+        transform: translateX(-50%);
+        left: 50%; }
+    .mav-post-content blockquote.wp-block-pullquote {
+      padding: 0;
+      margin: var(--mav-gutter-xl) auto; }
 
 /**
  * Sticky post
@@ -1379,6 +1398,11 @@ form {
     border: none; }
   #mavid-site-search input {
     width: 100%; }
+  #mavid-site-search button {
+    padding: 0 var(--mav-gutter-sm); }
+  @media only screen and (min-width: 1024px) {
+    #mavid-site-search {
+      max-width: 50vw; } }
 
 .mav-contact-form-ctn {
   width: 100%;
@@ -1393,7 +1417,6 @@ form {
   .mav-contact-form input, .mav-contact-form textarea {
     display: flex;
     font-family: inherit;
-    font-size: 1rem;
     background: transparent;
     border: none;
     box-shadow: 0 1px var(--mav-color-border); }
@@ -1414,7 +1437,7 @@ form {
     overflow: hidden;
     margin-bottom: var(--mav-gutter);
     opacity: 0;
-    font-size: .75rem;
+    font-size: var(--mav-font-size-sm);
     color: var(--mav-color-text-hint);
     transform: translateY(-100%); }
 
@@ -1459,9 +1482,8 @@ form {
     flex-direction: column;
     width: 100%; }
     .mav-form-fields-ctn .mav-form-input-ctn label {
-      font-family: "Roboto Condensed", Arial, sans-serif;
-      font-weight: var(--mav-font-weight-bold);
-      color: var(--mav-color-text-secondary); }
+      font-weight: var(--mav-font-weight-medium);
+      color: var(--mav-color-text-primary); }
     .mav-form-fields-ctn .mav-form-input-ctn .mav-form-input {
       flex: 1;
       outline-color: var(--mav-color-border);
@@ -1470,7 +1492,7 @@ form {
       background: transparent;
       z-index: 100; }
       .mav-form-fields-ctn .mav-form-input-ctn .mav-form-input::placeholder {
-        color: var(--mav-color-off-white); }
+        color: var(--mav-color-text-hint); }
       .mav-form-fields-ctn .mav-form-input-ctn .mav-form-input:required {
         box-shadow: inset 0 -1px var(--mav-color-primary); }
         .mav-form-fields-ctn .mav-form-input-ctn .mav-form-input:required + .mav-form-hint i {
@@ -2751,7 +2773,8 @@ form {
           box-shadow: inset 0px -3px var(--mav-color-primary); }
       .mav-tab-wrapper[data-plain] .mav-tab-ctn .mav-tab-content-wrapper {
         padding: 0;
-        margin-top: var(--mav-gutter-lg); }
+        margin-top: var(--mav-gutter-lg);
+        background: transparent; }
 
 /**
  * Countdown
@@ -3026,6 +3049,18 @@ form {
       filter: grayscale(1); }
       .mav-card-client-wrapper .mav-card-client-ctn img:hover {
         filter: grayscale(0); }
+
+/**
+ * Gutenberg Styles
+ */
+/**
+ * Gallery
+ */
+.wp-block-gallery {
+  margin-bottom: var(--mav-gutter); }
+
+.wp-block-separator {
+  margin: var(--mav-gutter) 0; }
 
 /**
  * Specific Page Styles

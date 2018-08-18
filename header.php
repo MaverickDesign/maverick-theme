@@ -32,7 +32,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="<?php single_post_title(); ?>" />
     <meta property="og:description"   content="Your description" />
-    <?php if( !is_404() && has_post_thumbnail( $post->ID ) ): ?>
+    <?php if( !is_404() && has_post_thumbnail() ): ?>
     <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" />
     <?php endif; ?>
     <!-- Open Graph Data -->
