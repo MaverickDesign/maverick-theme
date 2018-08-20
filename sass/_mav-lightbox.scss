@@ -8,36 +8,43 @@
     max-height: 100vh;
     top: 0;
     bottom: 0;
-    background: rgba(0,0,0,.95);
+    background: rgba(0,0,0,.90);
     z-index: $mav-layer-top;
     overflow: hidden;
     @media #{$mav-phone} {
         grid-template-rows: 5vh auto;
     }
     .mav-lightbox-header {
-        display: grid;
+        display: flex;
         align-items: center;
-        grid-gap: var(--mav-gutter);
-        grid-template-columns: auto 1fr;
         color: var(--mav-color-text-secondary-dark);
+        padding: var(--mav-gutter);
         .mav-lightbox-number {
-            display: inline-block;
-            padding-left: var(--mav-gutter);
+            font-weight: var(--mav-font-weight-bold);
+            &[data-current] {
+                padding-right: var(--mav-gutter-xs);
+            }
+            &[data-total] {
+                margin-right: var(--mav-gutter);
+                padding-left: var(--mav-gutter-xs);
+            }
         }
         .mav-lightbox-caption {
-            display: inline-block;
             color: var(--mav-color-text-primary-dark);
         }
     }
     .mav-lightbox-close {
         position: fixed;
-        display: flex;
-        color: white;
         right: 0;
-        padding: 0 var(--mav-gutter-sm);
         top: 0;
-        cursor: pointer;
+        padding: var(--mav-gutter-sm) var(--mav-gutter);
         font-size: 1.5rem;
+        color: var(--mav-color-text-secondary-dark);
+        cursor: pointer;
+        line-height: 1;
+        &:hover {
+            color: var(--mav-color-text-primary-dark);
+        }
     }
     .mav-lightbox-ctn{
         @extend .mav-flex-center-all;
@@ -48,12 +55,14 @@
         .mav-lightbox-nav {
             @extend .mav-flex-center-all;
             position: relative;
-            font-size: 1.5rem;
-            color: var(--mav-color-text-primary-dark);
+            font-size: 2rem;
+            color: var(--mav-color-text-secondary-dark);
             cursor: pointer;
+            &:hover {
+                color: var(--mav-color-text-primary-dark);
+            }
             &:before, &:after {
                 @extend %mav-font-awesome;
-                color: var(--mav-color-text-primary-dark);
                 @extend %mav-transition;
             }
             &[data-direction="prev"] {
@@ -145,6 +154,7 @@
                 &:hover{
                     filter: grayscale(0);
                     transform: scale(1.1);
+                    border: 2px solid var(--mav-color-border);
                 }
             }
         }

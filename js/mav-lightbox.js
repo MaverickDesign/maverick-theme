@@ -149,7 +149,6 @@ function mavf_lightbox(mavArgs = {
     }
 
     function mavf_lightbox() {
-        // console.log(this);
         event.stopPropagation();
 
         // Get collection ID of clicked image
@@ -176,7 +175,7 @@ function mavf_lightbox(mavArgs = {
             const mavCurrentNumber = this.dataset.number;
 
             let mavHeaderContent = `
-                <span class="mav-lightbox-number">${mavCurrentNumber}/${mavTotalItems}</span>
+                <span class="mav-lightbox-number" data-current title="Current item">${mavCurrentNumber}</span>/<span class="mav-lightbox-number" data-total title="Total items">${mavTotalItems}</span>
             `;
 
             mavLightboxHeader.innerHTML = mavHeaderContent;

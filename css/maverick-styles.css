@@ -1198,6 +1198,9 @@ button {
       .mav-post-content blockquote p:after {
         content: '\f10e';
         margin-left: var(--mav-gutter-sm); }
+      @media only screen and (max-width: 480px) {
+        .mav-post-content blockquote p {
+          margin: var(--mav-gutter-lg) 0; } }
     .mav-post-content blockquote cite, .mav-post-content blockquote .mav-quote-author {
       color: var(--mav-color-text-secondary);
       font-weight: var(--mav-font-weight-bold);
@@ -1681,6 +1684,9 @@ form {
   height: 100%;
   background: linear-gradient(to top right, rgba(179, 23, 5, 0.33) 0%, rgba(5, 161, 179, 0.33) 100%); }
 
+.mav-page-title-wrapper {
+  position: relative; }
+
 @media only screen and (max-width: 480px) {
   .mav-page-title-ctn {
     padding: var(--mav-gutter-lg) 0; } }
@@ -1830,7 +1836,9 @@ form {
       position: absolute;
       bottom: 0;
       opacity: 0;
-      max-height: 0; }
+      max-height: 0;
+      transition: opacity .6s ease;
+      font-weight: var(--mav-font-weight-light); }
       @media only screen and (max-width: 480px) {
         .mav-slider-type-1-ctn .mav-slide .mav-slide-title {
           top: 0; } }
@@ -1848,24 +1856,20 @@ form {
     transition: filter .3s ease; }
     .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title {
       text-shadow: 0 0 4px #222;
-      font-weight: var(--mav-font-weight-bold);
       text-align: center;
       margin-bottom: var(--mav-gutter);
       opacity: 1;
       max-height: 100%;
-      padding: var(--mav-gutter-sm);
-      color: var(--mav-color-text-primary-dark);
-      font-size: 2rem;
-      background: rgba(0, 0, 0, 0.25); }
+      padding: var(--mav-gutter-sm) var(--mav-gutter);
+      color: var(--mav-color-text-secondary-dark);
+      font-size: 1.75rem;
+      background: rgba(0, 0, 0, 0.75); }
       .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title:hover {
-        color: white; }
+        color: var(--mav-color-text-primary-dark); }
       @media only screen and (max-width: 480px) {
         .mav-slider-type-1-ctn .mav-first-slide .mav-slide-title {
-          margin-bottom: 0;
-          width: 100%;
-          font-family: "Roboto Condensed", Arial, sans-serif;
-          font-size: 1.75rem;
-          line-height: 1.75rem; } }
+          opacity: 0;
+          margin-bottom: 0; } }
 
 /**
  * Slider Type 2
@@ -1923,12 +1927,13 @@ form {
       .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title {
         text-align: center;
         max-width: 75vw;
-        color: var(--mav-color-text-primary-dark);
+        color: var(--mav-color-text-secondary-dark);
         text-shadow: 0px 0px 4px #222;
-        background: rgba(0, 0, 0, 0.25);
-        padding: var(--mav-gutter-sm); }
+        background: rgba(0, 0, 0, 0.75);
+        padding: var(--mav-gutter-sm) var(--mav-gutter);
+        font-weight: var(--mav-font-weight-light); }
         .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title:hover {
-          color: white; }
+          color: var(--mav-color-text-primary-dark); }
         @media only screen and (max-width: 480px) {
           .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title {
             display: none; } }
@@ -2117,7 +2122,7 @@ form {
   max-height: 100vh;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   overflow: hidden;
   /**
@@ -2127,26 +2132,30 @@ form {
     .mav-lightbox-wrapper {
       grid-template-rows: 5vh auto; } }
   .mav-lightbox-wrapper .mav-lightbox-header {
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-gap: var(--mav-gutter);
-    grid-template-columns: auto 1fr;
-    color: var(--mav-color-text-secondary-dark); }
+    color: var(--mav-color-text-secondary-dark);
+    padding: var(--mav-gutter); }
     .mav-lightbox-wrapper .mav-lightbox-header .mav-lightbox-number {
-      display: inline-block;
-      padding-left: var(--mav-gutter); }
+      font-weight: var(--mav-font-weight-bold); }
+      .mav-lightbox-wrapper .mav-lightbox-header .mav-lightbox-number[data-current] {
+        padding-right: var(--mav-gutter-xs); }
+      .mav-lightbox-wrapper .mav-lightbox-header .mav-lightbox-number[data-total] {
+        margin-right: var(--mav-gutter);
+        padding-left: var(--mav-gutter-xs); }
     .mav-lightbox-wrapper .mav-lightbox-header .mav-lightbox-caption {
-      display: inline-block;
       color: var(--mav-color-text-primary-dark); }
   .mav-lightbox-wrapper .mav-lightbox-close {
     position: fixed;
-    display: flex;
-    color: white;
     right: 0;
-    padding: 0 var(--mav-gutter-sm);
     top: 0;
+    padding: var(--mav-gutter-sm) var(--mav-gutter);
+    font-size: 1.5rem;
+    color: var(--mav-color-text-secondary-dark);
     cursor: pointer;
-    font-size: 1.5rem; }
+    line-height: 1; }
+    .mav-lightbox-wrapper .mav-lightbox-close:hover {
+      color: var(--mav-color-text-primary-dark); }
   .mav-lightbox-wrapper .mav-lightbox-ctn {
     justify-content: space-between;
     max-width: 100%;
@@ -2156,10 +2165,10 @@ form {
      */ }
     .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav {
       position: relative;
-      font-size: 1.5rem;
-      color: var(--mav-color-text-primary-dark);
+      font-size: 2rem;
+      color: var(--mav-color-text-secondary-dark);
       cursor: pointer; }
-      .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after {
+      .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:hover {
         color: var(--mav-color-text-primary-dark); }
       .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav[data-direction="prev"] {
         margin-left: var(--mav-gutter); }
@@ -2225,7 +2234,8 @@ form {
         filter: grayscale(1); }
         .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail:hover {
           filter: grayscale(0);
-          transform: scale(1.1); }
+          transform: scale(1.1);
+          border: 2px solid var(--mav-color-border); }
 
 [data-lightbox-item] {
   cursor: pointer; }
