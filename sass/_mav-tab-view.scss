@@ -87,24 +87,28 @@
     background: transparent;
     padding: 0;
         .mav-tab-ctn {
-            grid-column-gap: var(--mav-gutter);
+            grid-column-gap: var(--mav-gutter-lg);
             .mav-tab-trigger {
                 background: transparent;
                 border: none;
                 padding: 0;
-                padding-bottom: var(--mav-gutter-sm);
-                // justify-content: center;
+                padding-bottom: var(--mav-gutter);
                 font-weight: var(--mav-font-weight-bold);
-                text-transform: uppercase;
-                // text-align: center;
+                .mav-tab-trigger-title {
+                    padding-top: var(--mav-gutter);
+                }
                 &[data-state="active"] {
-                    box-shadow: inset 0px -3px var(--mav-color-primary);
+                    box-shadow: none;
+                    .mav-tab-trigger-title {
+                        box-shadow: inset 0px 3px var(--mav-color-primary);
+                    }
                 }
             }
             .mav-tab-content-wrapper {
                 padding: 0;
-                margin-top: var(--mav-gutter-lg);
+                padding-top: var(--mav-gutter-lg);
                 background: transparent;
+                box-shadow: 0 -1px var(--mav-color-border);
             }
         }
     }
