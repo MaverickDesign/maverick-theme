@@ -238,7 +238,7 @@ body {
 .mav-font-xs {
   font-size: 0.6rem; }
 
-.mav-font-sm, .mav-site-sidebar-ctn .widget_recent_entries ul li, .mav-card-post-info-ctn {
+.mav-font-sm, .mav-card-post-info-ctn {
   font-size: 0.8rem; }
 
 .mav-font-lg {
@@ -1567,18 +1567,17 @@ form {
   /**
    * Search Widget
    */ }
-  .mav-site-sidebar-ctn a {
-    text-decoration: none; }
-    .mav-site-sidebar-ctn a:hover {
-      color: var(--mav-color-text-primary);
-      box-shadow: inset 0 -1px var(--mav-color-accent); }
+  .mav-site-sidebar-ctn a:hover {
+    color: var(--mav-color-text-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--mav-color-accent);
+    text-underline-position: under; }
   .mav-site-sidebar-ctn li {
     list-style-type: none; }
   .mav-site-sidebar-ctn aside h3 {
     display: inline-flex;
     margin-bottom: var(--mav-gutter);
     font-size: var(--mav-font-size-lg);
-    font-weight: var(--mav-font-weight-light);
     box-shadow: 0 3px var(--mav-color-primary); }
   .mav-site-sidebar-ctn .widget {
     box-shadow: 0px 1px var(--mav-color-border);
@@ -1586,28 +1585,29 @@ form {
     .mav-site-sidebar-ctn .widget:last-child {
       box-shadow: none; }
   .mav-site-sidebar-ctn .widget_recent_entries ul li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 70% 30%;
     margin-bottom: var(--mav-gutter-sm); }
     .mav-site-sidebar-ctn .widget_recent_entries ul li:last-child {
       margin-bottom: 0; }
     .mav-site-sidebar-ctn .widget_recent_entries ul li:before {
       content: '\f15c';
       position: absolute;
-      margin-right: var(--mav-gutter-sm); }
+      margin-right: var(--mav-gutter-xs); }
     .mav-site-sidebar-ctn .widget_recent_entries ul li a {
-      margin-left: 1.5em;
-      font-weight: 400; }
-  .mav-site-sidebar-ctn .widget_categories ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); }
-    .mav-site-sidebar-ctn .widget_categories ul li {
-      margin-bottom: var(--mav-gutter-sm); }
-      .mav-site-sidebar-ctn .widget_categories ul li:before {
-        content: '\f07b';
-        margin-right: var(--mav-gutter-sm); }
-    .mav-site-sidebar-ctn .widget_categories ul a {
-      font-weight: 600; }
+      margin-left: var(--mav-gutter);
+      color: var(--mav-color-text-primary); }
+    .mav-site-sidebar-ctn .widget_recent_entries ul li .post-date {
+      justify-self: flex-end; }
+  .mav-site-sidebar-ctn .widget_categories ul li {
+    margin-bottom: var(--mav-gutter-sm); }
+    .mav-site-sidebar-ctn .widget_categories ul li a {
+      color: var(--mav-color-text-primary); }
+    .mav-site-sidebar-ctn .widget_categories ul li:before {
+      content: '\f07b';
+      margin-right: var(--mav-gutter-xs); }
+    .mav-site-sidebar-ctn .widget_categories ul li ul {
+      margin-left: var(--mav-gutter); }
   .mav-site-sidebar-ctn .widget_calendar .calendar_wrap {
     background: #fff;
     padding: var(--mav-gutter);
@@ -1620,8 +1620,6 @@ form {
     text-align: left; }
   .mav-site-sidebar-ctn .widget_calendar td#next {
     text-align: right; }
-  .mav-site-sidebar-ctn .widget_calendar a {
-    font-weight: 900; }
   .mav-site-sidebar-ctn .tagcloud {
     display: flex;
     flex-wrap: wrap;
@@ -1644,12 +1642,11 @@ form {
       margin-left: var(--mav-gutter-xs);
       font-weight: 400; }
   .mav-site-sidebar-ctn .widget_archive ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); }
+    display: grid; }
     .mav-site-sidebar-ctn .widget_archive ul li {
       margin-bottom: var(--mav-gutter-sm); }
       .mav-site-sidebar-ctn .widget_archive ul li a {
-        font-weight: bold; }
+        font-weight: var(--mav-font-weight-medium); }
   .mav-site-sidebar-ctn .widget_search form.search-form {
     display: flex;
     padding: var(--mav-gutter-xs);
@@ -1788,9 +1785,10 @@ form {
     font-weight: var(--mav-font-weight-bold);
     color: var(--mav-color-text-primary);
     line-height: inherit; }
-    .mav-card-post-content .mav-card-post-title:hover {
+    .mav-card-post-content .mav-card-post-title a:hover {
       text-decoration: underline;
-      text-underline-position: under; }
+      text-underline-position: under;
+      text-decoration-color: var(--mav-color-accent); }
     @media only screen and (max-width: 480px) {
       .mav-card-post-content .mav-card-post-title {
         font-size: 1rem; } }

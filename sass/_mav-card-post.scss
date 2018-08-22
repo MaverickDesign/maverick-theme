@@ -91,9 +91,12 @@
             color: var(--mav-color-text-primary);
             line-height: inherit;
             @extend %mav-transition;
-            &:hover {
-                text-decoration: underline;
-                text-underline-position: under;
+            a {
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-position: under;
+                    text-decoration-color: var(--mav-color-accent);
+                }
             }
             @media #{$mav-phone} {
                 font-size: 1rem;
