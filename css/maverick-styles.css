@@ -1161,10 +1161,12 @@ button {
   .mav-post-content ol, .mav-post-content ul {
     margin-bottom: 1.5em; }
   .mav-post-content ol li {
+    line-height: 1.75em;
     margin-left: 3ch; }
     .mav-post-content ol li ol li {
       margin-left: 2ch; }
   .mav-post-content ul li {
+    line-height: 1.75em;
     margin-left: 2ch; }
   .mav-post-content figure {
     margin-bottom: var(--mav-gutter); }
