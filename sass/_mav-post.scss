@@ -171,6 +171,7 @@
 }
 
 .mav-post-content {
+    color: var(--mav-color-text-primary);
     /**
      * Headings
      */
@@ -198,6 +199,10 @@
         &.attachment {
             @extend .mav-flex-center-all;
         }
+    }
+
+    ol, ul {
+        margin-bottom: 1.5em;
     }
 
     ol {

@@ -1134,6 +1134,7 @@ button {
       max-width: 800px; } }
 
 .mav-post-content {
+  color: var(--mav-color-text-primary);
   /**
    * Headings
    */
@@ -1157,6 +1158,8 @@ button {
     line-height: 1.75em; }
     .mav-post-content p:last-child, .mav-post-content p:only-child {
       margin-bottom: 0; }
+  .mav-post-content ol, .mav-post-content ul {
+    margin-bottom: 1.5em; }
   .mav-post-content ol li {
     margin-left: 3ch; }
     .mav-post-content ol li ol li {
