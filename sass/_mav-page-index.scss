@@ -84,16 +84,16 @@
     background: var(--mav-color-off-white);
     .mav-blog-sticky-post-ctn {
         max-width: var(--mav-site-width);
-        display: grid;
-        grid-gap: var(--mav-gutter);
+        // display: grid;
+        // grid-gap: var(--mav-gutter);
         padding: var(--mav-gutter-lg) var(--mav-gutter);
         @media #{$mav-tablet} {
             padding: var(--mav-gutter-lg);
-            grid-template-columns: repeat(2,1fr);
+            // grid-template-columns: repeat(2,1fr);
         }
         @media #{$mav-desktop} {
             margin: 0 auto;
-            grid-template-columns: repeat(3,1fr);
+            // grid-template-columns: repeat(3,1fr);
         }
     }
 }

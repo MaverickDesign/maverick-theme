@@ -54,19 +54,23 @@ require TEMPLATE_DIR. '/inc/mav-breadcrumbs.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-load-posts.php';
 
+// Social Accounts
 require TEMPLATE_DIR.'/inc/mav-social-accounts.php';
 
+// Post Query
+require TEMPLATE_DIR. '/inc/mav-post-query.php';
+
+require TEMPLATE_DIR. '/inc/mav-google-map.php';
+
+// Sliders
 require TEMPLATE_DIR.'/inc/mav-slider.php';
 
+// Carousel
 require TEMPLATE_DIR.'/inc/mav-carousel.php';
-
-require TEMPLATE_DIR. '/inc/mav-post-query.php';
 
 require TEMPLATE_DIR. '/inc/mav-post-grid.php';
 
 require TEMPLATE_DIR. '/inc/mav-post-feature.php';
-
-require TEMPLATE_DIR. '/inc/mav-google-map.php';
 
 require TEMPLATE_DIR. '/inc/mav-items-grid.php';
 

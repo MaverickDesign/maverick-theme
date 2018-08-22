@@ -20,18 +20,27 @@
         if (function_exists('mavf_post_query')) {
 
             $mavStickyArgs = array(
-                'post_type' => 'post',
-                'post__in' => $mavStickyPosts,
-                'ignore_sticky_posts' => 1
+                'post_type'             => 'post',
+                'post__in'              => $mavStickyPosts,
+                'ignore_sticky_posts'   => 1,
+                'posts_per_page'        => 3,
             );
-            $mavArgs = array(
-                'query_args'        => $mavStickyArgs,
-                'class_wrapper'     => 'mav-blog-sticky-post-wrapper',
-                'class_container'   => 'mav-blog-sticky-post-ctn',
-                'template'          => 'template-parts/content',
-            );
-            mavf_post_query($mavArgs);
-
+            // $mavArgs = array(
+            //     'query_args'        => $mavStickyArgs,
+            //     'class_wrapper'     => 'mav-blog-sticky-post-wrapper',
+            //     'class_container'   => 'mav-blog-sticky-post-ctn',
+            //     'template'          => 'template-parts/content',
+            // );
+            // mavf_post_query($mavArgs);
+            printf('<div class="mav-blog-sticky-post-wrapper">');
+                printf('<div class="mav-blog-sticky-post-ctn">');
+                    $mavArgs = array(
+                        'post_queries'              => $mavStickyArgs,
+                        'display'                   => 3,
+                    );
+                    mavf_carousel($mavArgs);
+                echo '</div>';
+            echo '</div>';
         }
     }
 
@@ -48,9 +57,10 @@
         $mavArgs = array (
             'post_type'             => 'post',
             'post_status'           => 'publish',
-            'post__not_in'          => $mavStickyPosts,
+            // 'post__not_in'          => $mavStickyPosts,
             'ignore_sticky_posts'   => 1,
-            'paged'                 =>  get_query_var('paged')
+            'paged'                 =>  get_query_var('paged'),
+            'orderby'               => 'date'
         );
 
         $mavQuery = new WP_Query( $mavArgs );

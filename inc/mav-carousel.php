@@ -53,69 +53,61 @@ function mavf_carousel($mavArgs){
     // Carousel slide interval
     $mavInterval        = isset($mavArgs['interval'])           ? $mavArgs['interval']          : 4000;
 
+    $mavPostQueries     = isset($mavArgs['post_queries'])       ? $mavArgs['post_queries']      : array();
+
     // Query arguments
-    $mavQueryArgs = array(
-        'post_type'                 => $mavPostType,
-        'posts_per_page'            => $mavNumberOfPosts,
-        'ignore_sticky_posts'       => true,
-        'post__in'                  => $mavPostIn,
-        'post__not_in'              => array( get_the_ID() ),
-        'category__in'              => $mavCategories,
-    );
+    $mavQueryArgs = array();
 
-    $mavQuery = new WP_Query($mavQueryArgs);
+    if ( !empty( $mavPostQueries ) ) {
+        $mavQueryArgs = $mavPostQueries;
+        if ( !empty( $mavQueryArgs['posts_per_page'] ) ) {
+            $mavNumberOfPosts = $mavQueryArgs['posts_per_page'];
+        }
+    } else {
+        $mavQueryArgs = array(
+            'post_type'                 => $mavPostType,
+            'posts_per_page'            => $mavNumberOfPosts,
+            'ignore_sticky_posts'       => true,
+            'post__in'                  => $mavPostIn,
+            'post__not_in'              => array( get_the_ID() ),
+            'category__in'              => $mavCategories,
+        );
+    }
 
-    if ($mavQuery->have_posts()) {
+    $mavQuery = new WP_Query( $mavQueryArgs );
+
+    if ( $mavQuery->have_posts() ) {
         printf(
-            sprintf('<div id="mavid-carousel-%2$s" data-unique="%2$s" data-total="%3$s" data-display="%4$s" data-current-direction="prev" data-auto-slide="%5$s" data-interval="%6$s" class="%1$s">',
-            $mavCarouselClass,
-            $mavUniqueNumber,
-            $mavNumberOfPosts,
-            $mavPostsToDipslay  ,
-            $mavAutoSlide,
-            $mavInterval)
+            '<div id="mavid-carousel-%2$s" data-unique="%2$s" data-total="%3$s" data-display="%4$s" data-current-direction="prev" data-auto-slide="%5$s" data-interval="%6$s" class="%1$s">',
+            $mavCarouselClass, $mavUniqueNumber, $mavNumberOfPosts, $mavPostsToDipslay, $mavAutoSlide, $mavInterval
         );
             printf(
-                sprintf('
-                <div class="%3$s">
+                '<div class="%3$s">
                     <nav data-direction="prev" data-current-direction="prev" data-current-step="0" data-unique="%2$s" class="%1$s"></nav>
                 </div>',
-                $mavNavClass,
-                $mavUniqueNumber,
-                $mavNavWrapperClass)
+                $mavNavClass, $mavUniqueNumber, $mavNavWrapperClass
             );
-            printf(
-                sprintf('<div class="%1$s">',$mavWrapperClass)
-            );
+            printf( '<div class="%1$s">', $mavWrapperClass );
                 printf(
-                    sprintf('<ul id="mavid-carousel-ctn-%1$s" class="%2$s" data-container="true">',
-                    $mavUniqueNumber,
-                    $mavContainerClass)
+                    '<ul id="mavid-carousel-ctn-%1$s" class="%2$s" data-container="true">',
+                    $mavUniqueNumber, $mavContainerClass
                 );
-
-                $i = 1;
+                    $i = 1;
                     // The Loop
-                    while ($mavQuery->have_posts()):
+                    while ( $mavQuery->have_posts() ):
                         $mavQuery->the_post();
-                            printf(
-                                sprintf('<li data-item-number="%2$s" data-gutter="" class="%1$s">',
-                                $mavItemClass,
-                                $i++)
-                            );
-                            get_template_part( $mavTemplate , get_post_format() );
+                            printf( '<li data-item-number="%2$s" data-gutter="" class="%1$s">', $mavItemClass, $i++ );
+                                get_template_part( $mavTemplate , get_post_format() );
                             echo '</li>';
                     endwhile;
-
                 echo '</ul>';
             echo '</div>';
+
             printf(
-                sprintf('
-                <div class="%3$s">
+                '<div class="%3$s">
                     <nav data-direction="next" data-current-direction="prev" data-current-step="0" data-unique="%2$s" class="%1$s mav-hide"></nav>
                 </div>',
-                $mavNavClass,
-                $mavUniqueNumber,
-                $mavNavWrapperClass)
+                $mavNavClass, $mavUniqueNumber, $mavNavWrapperClass
             );
         echo '</div>';
         // Reset post data
