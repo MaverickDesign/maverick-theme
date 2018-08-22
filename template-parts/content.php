@@ -4,7 +4,7 @@
  */
 ?>
 <?php
-    /* Get the Post/Page ID */
+    // Get the Post or Page ID
     $mavID = get_the_ID();
 
     $mavStickyPost = is_sticky($mavID) ? 'sticky' : '';
@@ -43,9 +43,9 @@
                             printf('<span class="mav-post-info" data-type="date">%1$s</span>', get_the_date());
                         echo '</div>';
                     echo '</div>';
-                    /* Title */
-                    printf('<div class="mav-card-post-title-wrapper">');
-                        printf('<h2 class="mav-card-post-title"><a href="%2$s" title="%3$s%1$s">%1$s</a></h2>',
+                    // Title
+                    printf( '<div class="mav-card-post-title-wrapper">' );
+                        printf('<h3 class="mav-card-post-title"><a href="%2$s" title="%3$s%1$s">%1$s</a></h3>',
                             get_the_title(), get_the_permalink(), __( 'Xem nội dung ' , 'maverick-theme' )
                         );
                     echo '</div>';

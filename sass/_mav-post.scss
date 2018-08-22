@@ -162,10 +162,9 @@
         max-width: var(--mav-site-width);
         margin: var(--mav-gutter-lg) auto;
         @media #{$mav-tablet} {
-            max-width: 800px;
+            max-width: 630px;
         }
         @media #{$mav-desktop} {
-            width: 100%;
             max-width: 800px;
         }
     }
@@ -177,7 +176,10 @@
      */
     h2, .mav-h2 {
         font-size: 1.5rem;
-        font-weight: var(--mav-font-weight-medium);
+        font-weight: var(--mav-font-weight-black);
+    }
+    h3, .mav-h3 {
+        font-size: 1.25rem;
     }
     /**
      * Body
@@ -187,7 +189,7 @@
         // text-justify: inter-character;
         color: var(--mav-color-text-primary);
         margin-bottom: 1.5em;
-        line-height: 1.65em;
+        line-height: 1.75em;
 
         &:last-child, &:only-child {
             margin-bottom: 0;
@@ -245,7 +247,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        margin: var(--mav-gutter-lg) auto;
+        margin: var(--mav-gutter-lg) auto var(--mav-gutter-xl);
         text-align: center;
         width: max-content;
         max-width: 100%;
