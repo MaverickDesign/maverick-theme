@@ -1701,13 +1701,14 @@ form {
     min-height: 40vh; } }
 
 .mav-page-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: var(--mav-font-weight-bold);
   color: rgba(255, 255, 255, 0.99) !important;
   line-height: 1.2em;
   text-align: center;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: var(--mav-font-weight-black); }
+  letter-spacing: 3px; }
   @media only screen and (max-width: 480px) {
     .mav-page-title {
       font-size: 2rem; } }
@@ -2529,8 +2530,7 @@ form {
           max-height: 100vh !important; } }
       @media only screen and (min-width: 1024px) {
         .mav-header-menu-ctn ul li.menu-item-home a:before {
-          content: '\f015';
-          margin-right: var(--mav-gutter-xs); } }
+          content: '\f015'; } }
       @media only screen and (max-width: 1023px) {
         .mav-header-menu-ctn ul li.menu-item-home {
           display: none !important; } }
