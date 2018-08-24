@@ -15,7 +15,7 @@ add_settings_field(
 
 function mavf_theme_config_ajax_load_posts() {
 
-	$mavSavedValue = esc_attr( get_option('mav_setting_ajax_load_posts') );
+	$mavSavedValue = esc_attr( get_option( 'mav_setting_ajax_load_posts' ) );
 
 	$mavChecked = ( @$mavSavedValue == 1 ? 'checked' : '');
 

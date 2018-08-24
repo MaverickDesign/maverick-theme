@@ -56,7 +56,7 @@ body {
     font-family: $font-roboto;
     font-size: var(--mav-font-size);
     line-height: 1.5;
-    color: var(--mav-color-text-secondary);
+    color: var(--mav-color-text-primary);
 }
 
 @each $mavSuffix, $mavSize in (xs: .6, sm: .8, lg: 1.2, xl: 1.4) {

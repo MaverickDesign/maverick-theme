@@ -7,6 +7,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        word-wrap: break-word;
         @media #{$mav-phone} {
             font-family: $font-roboto-cond;
             font-weight: var(--mav-font-weight-bold);
@@ -54,13 +55,13 @@
     }
 
     .mav-post-footer-wrapper {
-        padding: var(--mav-gutter-lg) var(--mav-gutter);
         background: var(--mav-color-accent);
         .mav-post-footer-ctn {
             display: grid;
             grid-gap: var(--mav-gutter);
             @extend .mav-pg-ctn;
             color: var(--mav-color-text-primary-dark);
+            padding: var(--mav-gutter-lg) var(--mav-gutter);
             h4 {
                 font-size: 1rem;
                 color: inherit;
@@ -128,12 +129,16 @@
         font-size: inherit;
         color: var(--mav-color-text-secondary);
     }
-    &:hover{
-        color: var(--mav-color-text-primary);
-    }
     &[data-type="category"] {
         &:before {
             content: '\f15c';
+        }
+        &:hover{
+            a {
+                text-decoration: underline;
+                text-underline-position: under;
+                text-decoration-color: var(--mav-color-accent);
+            }
         }
     }
     &[data-type="date"] {
@@ -146,9 +151,6 @@
             content: '\f2bd';
         }
     }
-    a {
-        text-decoration: none;
-    }
 }
 
 /**
@@ -157,8 +159,7 @@
 
 .mav-post-content-wrapper {
     .mav-post-content-ctn {
-        margin-left: auto;
-        margin-right: auto;
+        padding: var(--mav-gutter);
         max-width: var(--mav-site-width);
         margin: var(--mav-gutter-lg) auto;
         @media #{$mav-tablet} {
@@ -245,6 +246,7 @@
     }
 
     iframe {
+        width: 100%;
         max-width: 100%;
     }
     /**
@@ -286,7 +288,7 @@
             white-space: nowrap;
         }
         cite {
-            margin-bottom: var(--mav-gutter-lg);
+            // margin-bottom: var(--mav-gutter-lg);
             &:before {
                 content: "- ";
             }
@@ -314,7 +316,7 @@
  * Sticky post
  */
 
-article.sticky {
+.mav-blog-sticky-post-ctn article.sticky {
     .mav-card-post-header {
         &:before {
             @extend .mav-flex-center-all;
@@ -326,8 +328,8 @@ article.sticky {
             width: var(--mav-gutter-sm);
             padding: var(--mav-gutter-sm);
             border-radius: 50%;
-            background: $mav-color-brand-primary;
-            color: $mav-color-text-primary-dark;
+            background: var(--mav-color-primary);
+            color: var(--mav-color-text-primary-dark);
             animation: mav-brand-color-transition 2s infinite;
             transform: translate(var(--mav-gutter-sm),var(--mav-gutter-sm));
         }

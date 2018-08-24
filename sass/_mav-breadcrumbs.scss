@@ -1,6 +1,9 @@
 .mav-breadcrumbs-wrapper {
     background: var(--mav-color-site-background);
     box-shadow: 0 1px var(--mav-color-border);
+    @media #{$mav-mobile} {
+        display: none;
+    }
 }
 
 .mav-breadcrumbs-ctn {

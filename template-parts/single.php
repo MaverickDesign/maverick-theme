@@ -1,10 +1,11 @@
 <?php
 /**
  * @package maverick-theme
+ * Single Post Template
  */
 ?>
 
-<article id="mavid-post-<?php the_ID(); ?>" class="mav-post" data-post-id="<?php the_ID(); ?>">
+<article id="mavid-post-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" class="mav-post">
     <!-- Header -->
     <header class="mav-post-header-wrapper mav-post-header">
         <div class="mav-post-header-ctn">
@@ -53,8 +54,8 @@
         </div>
     </header>
     <!-- Post Content -->
-    <section class="mav-sec-wrapper mav-post-content-wrapper">
-        <div class="mav-sec-ctn mav-post-content-ctn mav-post-content">
+    <section class="mav-post-content-wrapper">
+        <div class="mav-post-content mav-post-content-ctn">
             <?php
                 // if (function_exists('mavf_post_content_modifier')) {
                 //     mavf_post_content_modifier(THEME_DIR.'/template-parts/mav-patterns.json');
@@ -63,12 +64,12 @@
             ?>
         </div>
     </section>
+    <!-- Post Footer -->
     <?php
-        if ((has_tag()) || (wp_count_posts()->publish > 1)): ?>
-            <!-- Post Footer -->
-            <footer class="mav-post-footer-wrapper mav-post-footer">
+        if ( ( has_tag() ) || ( wp_count_posts()->publish > 1 ) ): ?>
+            <footer class="mav-post-footer mav-post-footer-wrapper">
                 <div class="mav-post-footer-ctn">
-                    <?php if (has_tag()): ?>
+                    <?php if ( has_tag() ): ?>
                         <!-- Post Tags -->
                         <div class="mav-post-tags-wrapper">
                             <div class="mav-post-tags-ctn">
@@ -81,7 +82,7 @@
                     <?php endif; ?>
                     <?php
                         $mavCountPost = wp_count_posts();
-                        if ($mavCountPost->publish > 1): ?>
+                        if ( $mavCountPost->publish > 1 ): ?>
                             <!-- Post Navigation -->
                             <div class="mav-post-navigation-wrapper">
                                 <div class="mav-post-navigation-ctn">

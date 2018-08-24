@@ -163,7 +163,7 @@ table {
     :root {
       --mav-site-width: 1680px; } }
 
-.mav-sec-title, .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta, .mav-btn-top, .mav-btn-back, .mav-btn-top:before, .mav-btn-back:before, .mav-post-navigation a, .gallery figure img, .mav-post-tag-list li, .mav-site-search-wrapper, .mav-collapse, .mav-contact-form .mav-form-hint, .mav-form-fields-ctn .mav-form-input-ctn .mav-form-hint, .mav-card-post, .mav-card-post-thumbnail, .mav-card-post-content .mav-card-post-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-2-ctn .mav-nav-dot, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-carousel .mav-carousel-wrapper .mav-carousel-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail, [data-lightbox-item] img, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-footer-menu ul li a, .mav-sticky-logo-wrapper .mav-sticky-logo-ctn .mav-sticky-logo, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger[data-trigger-icon]:before, .mav-accordion-trigger[data-faq][data-question], .mav-tab-wrapper .mav-tab-ctn .mav-tab-trigger, .mav-card-client-wrapper .mav-card-client-ctn, .mav-card-client-wrapper .mav-card-client-ctn img, .mav-contact-socials-ctn .mav-social-links .mav-social-icon {
+.mav-sec-title, .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta, .mav-btn-top, .mav-btn-back, .mav-btn-top:before, .mav-btn-back:before, .mav-post-navigation a, .gallery figure img, .mav-post-tag-list li, .mav-site-search-wrapper, .mav-collapse, .mav-contact-form .mav-form-hint, .mav-form-fields-ctn .mav-form-input-ctn .mav-form-hint, .mav-site-sidebar-ctn .tagcloud a, .mav-site-sidebar-ctn .tagcloud .tag-link-count, .mav-card-post, .mav-card-post-thumbnail, .mav-card-post-content .mav-card-post-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-2-ctn .mav-nav-dot, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-carousel .mav-carousel-wrapper .mav-carousel-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail, [data-lightbox-item] img, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-footer-menu ul li a, .mav-sticky-logo-wrapper .mav-sticky-logo-ctn .mav-sticky-logo, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger[data-trigger-icon]:before, .mav-accordion-trigger[data-faq][data-question], .mav-tab-wrapper .mav-tab-ctn .mav-tab-trigger, .mav-card-client-wrapper .mav-card-client-ctn, .mav-card-client-wrapper .mav-card-client-ctn img, .mav-contact-socials-ctn .mav-social-links .mav-social-icon {
   transition: all .3s ease; }
 
 /**
@@ -213,7 +213,7 @@ table {
 abbr {
   font-weight: var(--mav-font-weight-medium); }
 
-.mav-link[data-link="external"]:after, .mav-btn-top:before, .mav-btn-back:before, .mav-post-info-ctn span:before, .mav-post-navigation a:before, .mav-post-navigation a:after, .mav-post-info:before, .mav-post-content blockquote p:before, .mav-post-content blockquote p:after, article.sticky .mav-card-post-header:before, .mav-post-tag-list li a:before, .mav-site-sidebar-ctn .widget_recent_entries ul li:before, .mav-site-sidebar-ctn .widget_categories ul li:before, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-header-menu-ctn ul li.menu-item-home a:before, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger[data-trigger-icon]:before, .mav-price-table-row[data-row="checked"]:before, .mav-price-table-row[data-row="unchecked"]:before, .mav-paginate-links-ctn .prev:before, .mav-paginate-links-ctn .next:after, .mav-contact-info[data-type]:before {
+.mav-link[data-link="external"]:after, .mav-btn-top:before, .mav-btn-back:before, .mav-post-info-ctn span:before, .mav-post-navigation a:before, .mav-post-navigation a:after, .mav-post-info:before, .mav-post-content blockquote p:before, .mav-post-content blockquote p:after, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-post-tag-list li a:before, .mav-site-sidebar-ctn .widget_recent_entries ul li:before, .mav-site-sidebar-ctn .widget_categories ul li:before, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-header-menu-ctn ul li.menu-item-home a:before, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger[data-trigger-icon]:before, .mav-price-table-row[data-row="checked"]:before, .mav-price-table-row[data-row="unchecked"]:before, .mav-paginate-links-ctn .prev:before, .mav-paginate-links-ctn .next:after, .mav-contact-info[data-type]:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -233,7 +233,7 @@ body {
   font-family: "Roboto", Arial, sans-serif;
   font-size: var(--mav-font-size);
   line-height: 1.5;
-  color: var(--mav-color-text-secondary); }
+  color: var(--mav-color-text-primary); }
 
 .mav-font-xs {
   font-size: 0.6rem; }
@@ -385,14 +385,14 @@ ol li {
   display: flex;
   flex-direction: column; }
 
-.mav-flex-center, .mav-post-feature-cta-ctn, .mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row, .mav-header-logo-ctn, .mav-flex-row, .mav-post-navigation, .mav-post-tag-list, .mav-paginate-links-ctn {
+.mav-flex-center, .mav-post-feature-cta-ctn, .mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row, .mav-header-logo-ctn, .mav-flex-row, .mav-post-navigation, .mav-post-tag-list, .mav-paginate-links-ctn {
   display: flex;
   flex-direction: row; }
 
 .mav-flex-center, .mav-post-feature-cta-ctn {
   justify-content: center; }
 
-.mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row {
+.mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row {
   justify-content: center;
   align-items: center; }
 
@@ -996,6 +996,9 @@ button {
 .mav-breadcrumbs-wrapper {
   background: var(--mav-color-site-background);
   box-shadow: 0 1px var(--mav-color-border); }
+  @media only screen and (max-width: 1023px) {
+    .mav-breadcrumbs-wrapper {
+      display: none; } }
 
 .mav-breadcrumbs-ctn {
   max-width: var(--mav-site-width);
@@ -1023,7 +1026,8 @@ button {
     padding: var(--mav-gutter-lg) 0;
     margin-left: auto;
     margin-right: auto;
-    width: 100%; }
+    width: 100%;
+    word-wrap: break-word; }
     @media only screen and (max-width: 480px) {
       .mav-post-title {
         font-family: "Roboto Condensed", Arial, sans-serif;
@@ -1057,12 +1061,12 @@ button {
       .mav-post-info-ctn span:before {
         margin-right: var(--mav-gutter-xs); }
   .mav-post .mav-post-footer-wrapper {
-    padding: var(--mav-gutter-lg) var(--mav-gutter);
     background: var(--mav-color-accent); }
     .mav-post .mav-post-footer-wrapper .mav-post-footer-ctn {
       display: grid;
       grid-gap: var(--mav-gutter);
-      color: var(--mav-color-text-primary-dark); }
+      color: var(--mav-color-text-primary-dark);
+      padding: var(--mav-gutter-lg) var(--mav-gutter); }
       .mav-post .mav-post-footer-wrapper .mav-post-footer-ctn h4 {
         font-size: 1rem;
         color: inherit;
@@ -1107,23 +1111,22 @@ button {
   margin-right: var(--mav-gutter-xs);
   font-size: inherit;
   color: var(--mav-color-text-secondary); }
-.mav-post-info:hover {
-  color: var(--mav-color-text-primary); }
 .mav-post-info[data-type="category"]:before {
   content: '\f15c'; }
+.mav-post-info[data-type="category"]:hover a {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: var(--mav-color-accent); }
 .mav-post-info[data-type="date"]:before {
   content: '\f073'; }
 .mav-post-info[data-type="author"]:before {
   content: '\f2bd'; }
-.mav-post-info a {
-  text-decoration: none; }
 
 /**
  * Post Content
  */
 .mav-post-content-wrapper .mav-post-content-ctn {
-  margin-left: auto;
-  margin-right: auto;
+  padding: var(--mav-gutter);
   max-width: var(--mav-site-width);
   margin: var(--mav-gutter-lg) auto; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -1181,6 +1184,7 @@ button {
       display: flex;
       margin: 0 auto; }
   .mav-post-content iframe {
+    width: 100%;
     max-width: 100%; }
   .mav-post-content blockquote {
     position: relative;
@@ -1211,19 +1215,17 @@ button {
       color: var(--mav-color-text-secondary);
       font-weight: var(--mav-font-weight-bold);
       white-space: nowrap; }
-    .mav-post-content blockquote cite {
-      margin-bottom: var(--mav-gutter-lg); }
-      .mav-post-content blockquote cite:before {
-        content: "- "; }
-      .mav-post-content blockquote cite:after {
-        position: absolute;
-        display: block;
-        content: "";
-        width: 25%;
-        height: 5px;
-        background: var(--mav-color-accent);
-        transform: translateX(-50%);
-        left: 50%; }
+    .mav-post-content blockquote cite:before {
+      content: "- "; }
+    .mav-post-content blockquote cite:after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 25%;
+      height: 5px;
+      background: var(--mav-color-accent);
+      transform: translateX(-50%);
+      left: 50%; }
     .mav-post-content blockquote.wp-block-pullquote {
       padding: 0;
       margin: var(--mav-gutter-xl) auto; }
@@ -1231,7 +1233,7 @@ button {
 /**
  * Sticky post
  */
-article.sticky .mav-card-post-header:before {
+.mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before {
   position: absolute;
   z-index: 1;
   content: '\f06d';
@@ -1239,11 +1241,11 @@ article.sticky .mav-card-post-header:before {
   width: var(--mav-gutter-sm);
   padding: var(--mav-gutter-sm);
   border-radius: 50%;
-  background: #b31705;
-  color: #fafafa;
+  background: var(--mav-color-primary);
+  color: var(--mav-color-text-primary-dark);
   animation: mav-brand-color-transition 2s infinite;
   transform: translate(var(--mav-gutter-sm), var(--mav-gutter-sm)); }
-article.sticky .mav-card-post-thumbnail {
+.mav-blog-sticky-post-ctn article.sticky .mav-card-post-thumbnail {
   filter: grayscale(0); }
 
 /**
@@ -1553,6 +1555,7 @@ form {
   grid-row-gap: var(--mav-gutter);
   align-content: start;
   padding: var(--mav-gutter-lg);
+  padding-right: 0;
   border-left: 1px solid var(--mav-color-border);
   /**
    * Recent Entries Widget
@@ -1585,14 +1588,15 @@ form {
     font-size: var(--mav-font-size-lg);
     box-shadow: 0 3px var(--mav-color-primary); }
   .mav-site-sidebar-ctn .widget {
-    box-shadow: 0px 1px var(--mav-color-border);
-    padding-bottom: var(--mav-gutter-lg); }
+    padding-bottom: var(--mav-gutter-lg);
+    box-shadow: 0px 1px var(--mav-color-border); }
     .mav-site-sidebar-ctn .widget:last-child {
-      box-shadow: none; }
+      box-shadow: none;
+      padding-bottom: 0; }
   .mav-site-sidebar-ctn .widget_recent_entries ul li {
     display: grid;
     grid-template-columns: 70% 30%;
-    margin-bottom: var(--mav-gutter-sm); }
+    margin-bottom: var(--mav-gutter-xs); }
     .mav-site-sidebar-ctn .widget_recent_entries ul li:last-child {
       margin-bottom: 0; }
     .mav-site-sidebar-ctn .widget_recent_entries ul li:before {
@@ -1603,14 +1607,18 @@ form {
       margin-left: var(--mav-gutter);
       color: var(--mav-color-text-primary); }
     .mav-site-sidebar-ctn .widget_recent_entries ul li .post-date {
-      justify-self: flex-end; }
+      justify-self: flex-end;
+      font-weight: var(--mav-font-weight-medium); }
   .mav-site-sidebar-ctn .widget_categories ul li {
-    margin-bottom: var(--mav-gutter-sm); }
+    margin-bottom: var(--mav-gutter-xs); }
     .mav-site-sidebar-ctn .widget_categories ul li a {
-      color: var(--mav-color-text-primary); }
+      color: var(--mav-color-text-primary);
+      font-weight: var(--mav-font-weight-medium);
+      text-transform: capitalize; }
     .mav-site-sidebar-ctn .widget_categories ul li:before {
       content: '\f07b';
-      margin-right: var(--mav-gutter-xs); }
+      margin-right: var(--mav-gutter-xs);
+      color: var(--mav-color-text-secondary); }
     .mav-site-sidebar-ctn .widget_categories ul li ul {
       margin-left: var(--mav-gutter); }
   .mav-site-sidebar-ctn .widget_calendar .calendar_wrap {
@@ -1628,28 +1636,36 @@ form {
   .mav-site-sidebar-ctn .tagcloud {
     display: flex;
     flex-wrap: wrap;
-    padding: var(--mav-gutter);
-    border: 1px solid var(--mav-color-border);
-    background: #fff;
     align-items: center; }
     .mav-site-sidebar-ctn .tagcloud a {
       display: flex;
       align-items: center;
       padding: var(--mav-gutter-sm);
-      margin-right: var(--mav-gutter-sm);
+      margin-right: var(--mav-gutter-xs);
+      margin-bottom: var(--mav-gutter-xs);
       line-height: .5em;
       border: 1px solid var(--mav-color-border);
       border-radius: 4px;
-      margin-bottom: var(--mav-gutter-sm); }
+      font-family: "Roboto Condensed", Arial, sans-serif;
+      text-transform: lowercase; }
       .mav-site-sidebar-ctn .tagcloud a:last-child {
         margin-right: 0; }
+      .mav-site-sidebar-ctn .tagcloud a:hover {
+        text-decoration: none;
+        background: var(--mav-color-accent);
+        border-color: transparent;
+        color: white; }
+        .mav-site-sidebar-ctn .tagcloud a:hover .tag-link-count {
+          color: white; }
     .mav-site-sidebar-ctn .tagcloud .tag-link-count {
+      font-size: .75rem;
       margin-left: var(--mav-gutter-xs);
-      font-weight: 400; }
+      font-weight: var(--mav-font-weight-bold);
+      color: var(--mav-color-text-secondary); }
   .mav-site-sidebar-ctn .widget_archive ul {
     display: grid; }
     .mav-site-sidebar-ctn .widget_archive ul li {
-      margin-bottom: var(--mav-gutter-sm); }
+      margin-bottom: var(--mav-gutter-xs); }
       .mav-site-sidebar-ctn .widget_archive ul li a {
         font-weight: var(--mav-font-weight-medium); }
   .mav-site-sidebar-ctn .widget_search form.search-form {
@@ -1692,10 +1708,10 @@ form {
 
 @media only screen and (max-width: 480px) {
   .mav-page-title-ctn {
-    padding: var(--mav-gutter-lg) 0; } }
+    padding: var(--mav-gutter-lg) var(--mav-gutter); } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .mav-page-title-ctn {
-    padding: var(--mav-gutter-xl) 0; } }
+    padding: var(--mav-gutter-xl) var(--mav-gutter); } }
 @media only screen and (min-width: 1024px) {
   .mav-page-title-ctn {
     min-height: 40vh; } }
@@ -1714,12 +1730,10 @@ form {
       font-size: 2rem; } }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .mav-page-title {
-      max-width: 80vw;
-      padding: var(--mav-gutter-sm); } }
+      font-size: 3rem; } }
   @media only screen and (min-width: 1024px) {
     .mav-page-title {
-      font-size: 4rem;
-      padding: var(--mav-gutter); } }
+      font-size: 4rem; } }
 
 /**
  * Post Card

@@ -30,13 +30,11 @@ function mavf_theme_config_breadcrumbs(){
         'footer'
     );
 	echo '<div class="mav-grid" data-grid-gap="">';
-
-	$mavOutput = '';
-	foreach ($mavPositions as $mavPosition) {
-		$mavChecked = ( @$mavSavedValue[$mavPosition] == 1 ? 'checked' : '');
-		$mavOutput .= '<label><input type="checkbox" id="mavid-breadcrumbs-'.$mavPosition.'" name="mav_setting_breadcrumbs['.$mavPosition.']" value="1" '.$mavChecked.'/> '.ucfirst($mavPosition).'</label>';
-	}
-	echo $mavOutput;
-
+		$mavOutput = '';
+		foreach ($mavPositions as $mavPosition) {
+			$mavChecked = ( @$mavSavedValue[$mavPosition] == 1 ? 'checked' : '');
+			$mavOutput .= '<label><input type="checkbox" id="mavid-breadcrumbs-'.$mavPosition.'" name="mav_setting_breadcrumbs['.$mavPosition.']" value="1" '.$mavChecked.'/> '.ucfirst($mavPosition).'</label>';
+		}
+		echo $mavOutput;
 	echo '</div>';
 }

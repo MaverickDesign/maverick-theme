@@ -6,6 +6,14 @@
 
 @import "mav-variables";
 
+#wpcontent {
+    padding-right: 10px;
+}
+
+h1 {
+    line-height: 1.2;
+}
+
 .mav-grid {
     display: grid;
     &[data-grid-gap] {
@@ -13,53 +21,75 @@
     }
 }
 
-.mav-admin-wrapper {
-    padding-right: 20px;
+.mav-admin-page-wrapper {
+    @media #{$mav-desktop} {
+        max-width: 40vw;
+    }
 }
 
 .mav-admin-site-settings-wrapper {
     @media #{$mav-desktop} {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-gap: 20px;
+        grid-gap: var(--mav-gutter);
     }
  }
 
 form {
-    // display: grid;
     .form-table {
-        box-shadow: 0 1px $mav-color-border;
+        margin: var(--mav-gutter) 0;
         tr {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-gap: var(--mav-gutter-sm);
+            padding: var(--mav-gutter) 0;
+            box-shadow: 0 1px $mav-color-border;
+            @media #{$mav-phone} {
+                display: flex;
+                flex-direction: column;
+            }
         }
-        td {
+        th, td {
             display: flex;
             flex-direction: column;
-            width: auto;
-            @media #{$mav-desktop} {
-                max-width: 30vw;
-            }
+            padding: var(--mav-gutter-sm) 0;
+            justify-content: center;
+        }
+        td {
+            margin-bottom: 0;
         }
     }
     input {
-        &[data-visual="short"] {
-            max-width: 25%;
-        }
-        &[data-visual="medium"] {
-            max-width: 50%;
-        }
-        &[data-visual="long"] {
-            max-width: 100%;
-        }
+        // &[data-visual="short"] {
+        //     max-width: 25%;
+        // }
+        // &[data-visual="medium"] {
+        //     max-width: 50%;
+        // }
+        // &[data-visual="long"] {
+        //     max-width: 100%;
+        // }
     }
 }
 
 .mav-admin {
     &-desc {
-        font-size: .8rem;
     }
 }
 
 .mav-range-slider-ctn{
     display: flex;
     justify-content: space-between;
+}
+
+#mavid-settings-preview {
+    img {
+        max-width: 30%;
+    }
+    @media #{$mav-phone} {
+        max-width: 100%;
+        img {
+            max-width: 100%;
+        }
+    }
 }

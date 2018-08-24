@@ -1,12 +1,13 @@
 <?php
-/*
+/**
  * @package maverick-theme
  */
 
-/*
+/**
  * Theme Support - Post Formats
  */
-$mavSavedValue = get_option('mav_setting_post_format');
+$mavSavedValue = get_option( 'mav_setting_post_format' );
+
 $mavPostFormats = array( 'aside' ,
 						 'gallery' ,
 						 'link' ,
@@ -22,7 +23,7 @@ foreach ($mavPostFormats as $mavPostFormat) {
 	$mavOutput[] = ( @$mavSavedValue[$mavPostFormat] == 1 ? $mavPostFormat : '');
 }
 
-if ( !empty($mavSavedValue) ) {
+if ( !empty( $mavSavedValue ) ) {
 	add_theme_support('post-formats' , $mavOutput );
 }
 
@@ -59,10 +60,8 @@ add_theme_support( 'custom-logo' , array(
  * Theme Support - Navigation Menus
  */
 function mavf_register_nav_menus() {
-	register_nav_menu('primary_menu' , 		'Main menu');
-	register_nav_menu('secondary_menu' , 	'Secondary/Footer menu');
-	// register_nav_menu('sticky_menu' , 		'Sticky menu');
-	// register_nav_menu('side_menu' , 		'Side menu');
+	register_nav_menu( 'primary_menu' , 'Main menu/Header Menu' );
+	register_nav_menu( 'secondary_menu' , 'Secondary/Footer menu' );
 }
 
 add_action('after_setup_theme' , 'mavf_register_nav_menus');
@@ -97,11 +96,14 @@ add_action( 'widgets_init', 'mavf_register_sidebars' );
  */
 
 function mailtrap($phpmailer) {
-    $phpmailer->isSMTP();
-    $phpmailer->Host = 'smtp.mailtrap.io';
-    $phpmailer->SMTPAuth = true;
-    $phpmailer->Port = 2525;
-    $phpmailer->Username = '413cfbd302af9e';
-    $phpmailer->Password = '1ba3c17307cb25';
-  }
-add_action('phpmailer_init', 'mailtrap');
+	$phpmailer->isSMTP();
+	$phpmailer->Host = 'smtp.mailtrap.io';
+	$phpmailer->SMTPAuth = true;
+	$phpmailer->Port = 2525;
+	$phpmailer->Username = '413cfbd302af9e';
+	$phpmailer->Password = '1ba3c17307cb25';
+}
+
+if ( get_option( 'mav_setting_dev_mode' ) ) {
+	add_action( 'phpmailer_init' , 'mailtrap' );
+}

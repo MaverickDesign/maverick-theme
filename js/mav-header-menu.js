@@ -47,23 +47,6 @@ function mavf_header_menu(){
         }
     });
 
-    // function mavf_resize(){
-    //     if (window.innerWidth > 1023) {
-    //         if (mavHeaderBreadcrumbs) {
-    //             mavHeaderBreadcrumbs.style.marginTop = mavHeaderMenu.offsetHeight+'px';
-    //         } else {
-    //             mavPageMainContent.style.marginTop = mavHeaderMenu.offsetHeight+'px';
-    //         }
-    //     } else if (window.innerWidth < 1024) {
-    //         if (mavHeaderBreadcrumbs) {
-    //             mavHeaderBreadcrumbs.style.marginTop = 0;
-    //         } else {
-    //             mavPageMainContent.style.marginTop = 0;
-    //         }
-    //     }
-    // };
-    // mavf_resize();
-
     function mavf_close_all_sub_menus(){
         for (const mavSubMenuIcon of mavSubmenuIcons) {
             mavSubMenuIcon.dataset.state = 'close';
@@ -81,7 +64,6 @@ function mavf_header_menu(){
         mavMobileMenuIcon.classList.add('fa-bars');
         mavMobileMenuIcon.classList.remove('fa-times');
         mavf_close_all_sub_menus();
-        // mavf_resize();
     });
 };
 mavf_header_menu();

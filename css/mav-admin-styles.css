@@ -115,41 +115,57 @@
     background-color: var(--mav-color-primary); }
   100% {
     background-color: var(--mav-color-primary); } }
+#wpcontent {
+  padding-right: 10px; }
+
+h1 {
+  line-height: 1.2; }
+
 .mav-grid {
   display: grid; }
   .mav-grid[data-grid-gap] {
     grid-gap: var(--mav-gutter-sm); }
 
-.mav-admin-wrapper {
-  padding-right: 20px; }
+@media only screen and (min-width: 1024px) {
+  .mav-admin-page-wrapper {
+    max-width: 40vw; } }
 
 @media only screen and (min-width: 1024px) {
   .mav-admin-site-settings-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px; } }
+    grid-gap: var(--mav-gutter); } }
 
 form .form-table {
-  box-shadow: 0 1px #ddd; }
-  form .form-table td {
+  margin: var(--mav-gutter) 0; }
+  form .form-table tr {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-gap: var(--mav-gutter-sm);
+    padding: var(--mav-gutter) 0;
+    box-shadow: 0 1px #ddd; }
+    @media only screen and (max-width: 480px) {
+      form .form-table tr {
+        display: flex;
+        flex-direction: column; } }
+  form .form-table th, form .form-table td {
     display: flex;
     flex-direction: column;
-    width: auto; }
-    @media only screen and (min-width: 1024px) {
-      form .form-table td {
-        max-width: 30vw; } }
-form input[data-visual="short"] {
-  max-width: 25%; }
-form input[data-visual="medium"] {
-  max-width: 50%; }
-form input[data-visual="long"] {
-  max-width: 100%; }
-
-.mav-admin-desc {
-  font-size: .8rem; }
+    padding: var(--mav-gutter-sm) 0;
+    justify-content: center; }
+  form .form-table td {
+    margin-bottom: 0; }
 
 .mav-range-slider-ctn {
   display: flex;
   justify-content: space-between; }
+
+#mavid-settings-preview img {
+  max-width: 30%; }
+@media only screen and (max-width: 480px) {
+  #mavid-settings-preview {
+    max-width: 100%; }
+    #mavid-settings-preview img {
+      max-width: 100%; } }
 
 /*# sourceMappingURL=mav-admin-styles.css.map */

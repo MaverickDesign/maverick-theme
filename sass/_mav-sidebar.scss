@@ -3,12 +3,11 @@
     grid-row-gap: var(--mav-gutter);
     align-content: start;
     padding: var(--mav-gutter-lg);
+    padding-right: 0;
     border-left: 1px solid var(--mav-color-border);
     a {
-        // text-decoration: none;
         &:hover {
             color: var(--mav-color-text-primary);
-            // box-shadow: inset 0 -1px var(--mav-color-accent);
             text-decoration: underline;
             text-decoration-color: var(--mav-color-accent);
             text-underline-position: under;
@@ -26,10 +25,11 @@
         }
     }
     .widget {
-        box-shadow: 0px 1px var(--mav-color-border);
         padding-bottom: var(--mav-gutter-lg);
+        box-shadow: 0px 1px var(--mav-color-border);
         &:last-child {
             box-shadow: none;
+            padding-bottom: 0;
         }
     }
     /**
@@ -40,12 +40,11 @@
             li {
                 display: grid;
                 grid-template-columns: 70% 30%;
-                margin-bottom: var(--mav-gutter-sm);
+                margin-bottom: var(--mav-gutter-xs);
                 &:last-child {
                     margin-bottom: 0
                 }
                 &:before {
-                    // display: inline-flex;
                     @extend %mav-font-awesome;
                     content: '\f15c';
                     position: absolute;
@@ -58,6 +57,7 @@
                 // WordPress Class
                 .post-date {
                     justify-self: flex-end;
+                    font-weight: var(--mav-font-weight-medium);
                 }
             }
         }
@@ -68,14 +68,17 @@
     .widget_categories {
         ul {
             li {
-                margin-bottom: var(--mav-gutter-sm);
+                margin-bottom: var(--mav-gutter-xs);
                 a {
                     color: var(--mav-color-text-primary);
+                    font-weight: var(--mav-font-weight-medium);
+                    text-transform: capitalize;
                 }
                 &:before {
                     @extend %mav-font-awesome;
                     content: '\f07b';
                     margin-right: var(--mav-gutter-xs);
+                    color: var(--mav-color-text-secondary);
                 }
                 ul {
                     margin-left: var(--mav-gutter);
@@ -113,26 +116,38 @@
     .tagcloud {
         display: flex;
         flex-wrap: wrap;
-        padding: var(--mav-gutter);
-        border: 1px solid var(--mav-color-border);
-        background: #fff;
         align-items: center;
         a {
             display: flex;
             align-items: center;
             padding: var(--mav-gutter-sm);
-            margin-right: var(--mav-gutter-sm);
+            margin-right: var(--mav-gutter-xs);
+            margin-bottom: var(--mav-gutter-xs);
             line-height: .5em;
             border: 1px solid var(--mav-color-border);
             border-radius: 4px;
-            margin-bottom: var(--mav-gutter-sm);
+            font-family: $font-roboto-cond;
+            text-transform: lowercase;
+            @extend %mav-transition;
             &:last-child {
                 margin-right: 0;
             }
+            &:hover {
+                text-decoration: none;
+                background: var(--mav-color-accent);
+                border-color: transparent;
+                @include text-contrast($mav-color-accent);
+                .tag-link-count {
+                    @include text-contrast($mav-color-accent);
+                }
+            }
         }
         .tag-link-count {
+            font-size: .75rem;
             margin-left: var(--mav-gutter-xs);
-            font-weight: 400;
+            font-weight: var(--mav-font-weight-bold);
+            color: var(--mav-color-text-secondary);
+            @extend %mav-transition;
         }
     }
     /**
@@ -142,7 +157,7 @@
         ul {
             display: grid;
             li {
-                margin-bottom: var(--mav-gutter-sm);
+                margin-bottom: var(--mav-gutter-xs);
                 a {
                     font-weight: var(--mav-font-weight-medium);
                 }

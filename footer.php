@@ -4,20 +4,36 @@
  */
 ?>
 
+<?php
+    /**
+     * Breadcrumb Section
+     */
+    $mavBreadcrumbs = get_option( 'mav_setting_breadcrumbs' );
+    if ( isset( $mavBreadcrumbs['footer'] ) && !is_front_page() && !is_home() && !is_attachment() && function_exists( 'mavf_breadcrumbs' ) ):
+        printf('<section class="mav-breadcrumbs-wrapper">');
+            printf('<div class="mav-breadcrumbs-ctn">');
+                mavf_breadcrumbs();
+            echo '</div>';
+        echo '</section>';
+    endif;
+?>
+
 <footer id="mavid-page-footer" class="mav-pg-footer">
-    <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
     <!-- Footer Socials -->
-    <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
-        <div class="mav-footer-socials-ctn">
-            <?php
-                printf('<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                    get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','maverick-theme')
-                );
-                mavf_social_links();
-            ?>
-        </div>
-    </section>
-    <?php endif; ?>
+    <?php
+        if( function_exists( 'mavf_social_links' ) && !empty( mavf_check_social_accounts() ) ): ?>
+        <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
+            <div class="mav-footer-socials-ctn">
+                <?php
+                    printf('<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
+                        get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','maverick-theme')
+                    );
+                    mavf_social_links();
+                ?>
+            </div>
+        </section>
+        <?php endif;
+    ?>
     <!-- Footer Menu -->
     <?php
         if (current_theme_supports('menus') && has_nav_menu( 'secondary_menu')): ?>
@@ -68,7 +84,9 @@
 </footer>
 
 <?php
-    /* Wordpress Footer Functions */
+    /**
+     *  Wordpress Footer Functions
+     */
     wp_footer();
 ?>
 

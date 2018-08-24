@@ -28,7 +28,7 @@
                         <?php
                         printf('<p class="mav-flex-center mav-text--lg mav-text-center">%1$s</p>', __( 'Nội dung trang web này đang được cập nhật, vui lòng quay lại sau.' , 'maverick-theme' ));
                         echo '<div class="mav-margin-top-lg">';
-                            /* Back and Home Buttons */
+                            // Back and Home Buttons
                             include TEMPLATE_DIR . '/template-parts/mav-button__back-and-home.php';
                         echo '</div>';
                         ?>

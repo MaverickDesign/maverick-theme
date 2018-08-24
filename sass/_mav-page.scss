@@ -32,10 +32,10 @@
 .mav-page-title-ctn {
     @extend .mav-flex-center-all;
     @media #{$mav-phone} {
-        padding: var(--mav-gutter-lg) 0;
+        padding: var(--mav-gutter-lg) var(--mav-gutter);
     }
     @media #{$mav-tablet} {
-        padding: var(--mav-gutter-xl) 0;
+        padding: var(--mav-gutter-xl) var(--mav-gutter);
     }
     @media #{$mav-desktop} {
         min-height: 40vh;
@@ -55,11 +55,9 @@
         font-size: 2rem;
     }
     @media #{$mav-tablet} {
-        max-width: 80vw;
-        padding: var(--mav-gutter-sm);
+        font-size: 3rem;
     }
     @media #{$mav-desktop} {
         font-size: 4rem;
-        padding: var(--mav-gutter);
     }
 }

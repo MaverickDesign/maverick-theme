@@ -4,8 +4,8 @@
  */
 
 echo '<section class="mav-admin-page-wrapper">';
-    printf('<h1>%1$s</h1>',__('Cấu hình Maverick Theme','maverick-theme'));
-    printf('<p>%1$s</p>',__('Tùy chỉnh các chức năng','maverick-theme'));
+    printf( '<h1>%1$s</h1>', __( 'Cấu hình Maverick Theme' , 'maverick-theme' ) );
+    printf( '<p>%1$s</p>', __( 'Tùy chỉnh các chức năng' , 'maverick-theme' ) );
 
     settings_errors();
 

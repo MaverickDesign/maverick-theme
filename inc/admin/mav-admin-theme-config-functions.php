@@ -5,6 +5,7 @@
 
 function mavf_admin_theme_config_options() {
 
+	require_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_dev-mode.php';
 	/**
 	 * Section: Theme Supports
 	 */
