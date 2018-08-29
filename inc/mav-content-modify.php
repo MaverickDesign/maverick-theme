@@ -1,7 +1,7 @@
 <?php
 /**
-    @package maverick-theme
-*/
+ * @package maverick-theme
+ */
 
 function remove_accent($str)
 {
@@ -16,24 +16,30 @@ function post_slug($str)
   array('', '-', ''), remove_accent($str)));
 }
 
-function mavf_modify_content($mavContent,$mavArgs){
-    $mavModifiedContent = preg_replace($mavArgs[0], $mavArgs[1], $mavContent);
+function mavf_modify_content($mavContent, $mav_args)
+{
+    $mavModifiedContent = preg_replace($mav_args[0], $mav_args[1], $mavContent);
     return $mavModifiedContent;
 }
 
 function mavf_post_content_modifier($mavJSONFile) {
-    $mavJSON = json_decode(file_get_contents($mavJSONFile),true);
+    $mavJSON = json_decode(file_get_contents($mavJSONFile), true);
 
     $mavPatterns = array();
-    foreach($mavJSON['patterns'] as $mavPattern) {
+    foreach ($mavJSON['patterns'] as $mavPattern) {
         $mavPatterns[] = $mavPattern['pattern'];
     }
+
     $mavReplaces = array();
-    foreach($mavJSON['patterns'] as $mavReplace) {
+    foreach ($mavJSON['patterns'] as $mavReplace) {
         $mavReplaces[] = $mavReplace['replace'];
     }
-    $mavArgs = [$mavPatterns, $mavReplaces];
-    add_filter( 'the_content', function( $content ) use ( $mavArgs ) {
-        return mavf_modify_content( $content, $mavArgs );
-    });
+
+    $mav_args = [$mavPatterns, $mavReplaces];
+    add_filter('the_content',
+        function ($content) use ($mav_args)
+        {
+            return mavf_modify_content($content, $mav_args);
+        }
+    );
 }

@@ -92,30 +92,30 @@
 
 <body data-device="<?php echo $mavDevice; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
     <?php
-        $mavEFA  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
-        $mavFAID = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
-        if ( !empty( $mavEFA ) && !empty( $mavFAID ) ): ?>
-            <!-- Facebook Script -->
-            <div id="fb-root"></div>
-            <script>
-                window.fbAsyncInit = function() {
-                    FB.init({
-                    appId      : '<?php echo $mavFAID; ?>,
-                    xfbml      : true,
-                    version    : 'v3.0'
-                    });
-                    FB.AppEvents.logPageView();
-                };
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s); js.id = id;
-                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            </script>
-            <!-- End of Facebook Script -->
-        <?php endif;
+    $mavEFA  = esc_attr(get_option('mav_setting_enable_facebook_app'));
+    $mavFAID = esc_attr(get_option('mav_setting_facebook_app_id'));
+    if (!empty($mavEFA) && !empty($mavFAID)) : ?>
+        <!-- Facebook Script -->
+        <div id="fb-root"></div>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '<?php echo $mavFAID; ?>,
+                xfbml      : true,
+                version    : 'v3.0'
+                });
+                FB.AppEvents.logPageView();
+            };
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!-- End of Facebook Script -->
+    <?php endif;
     ?>
 
     <header id="mavid-page-header" class="mav-pg-header mav-pg-header-wrapper">
@@ -157,21 +157,22 @@
             </div>
         </section>
         <!-- Header Site Search -->
-        <?php include TEMPLATE_DIR . '/template-parts/mav-header__site-search.php'; ?>
+        <?php get_template_part('/template-parts/mav-header__site-search'); ?>
     </header>
+
     <!-- Header Menu -->
-    <?php include TEMPLATE_DIR . '/template-parts/mav-header__menu.php'; ?>
+    <?php get_template_part('/template-parts/mav-header__menu'); ?>
 
     <?php
-		/**
-		 * Breadcrumb Section
-		 */
-        $mavBreadcrumbs = get_option( 'mav_setting_breadcrumbs' );
-        if ( isset( $mavBreadcrumbs['header'] ) && !is_front_page() && !is_home() && !is_attachment() && function_exists( 'mavf_breadcrumbs' ) ):
-            printf('<section class="mav-breadcrumbs-wrapper">');
-                printf('<div class="mav-breadcrumbs-ctn">');
-                    mavf_breadcrumbs();
-                echo '</div>';
-            echo '</section>';
-        endif;
+    /**
+     * Breadcrumb Section
+     */
+    $mavBreadcrumbs = get_option('mav_setting_breadcrumbs');
+    if (isset($mavBreadcrumbs['header']) && !is_front_page() && !is_home() && !is_attachment() && function_exists('mavf_breadcrumbs')) :
+        printf('<section class="mav-breadcrumbs-wrapper">');
+            printf('<div class="mav-breadcrumbs-ctn">');
+                mavf_breadcrumbs();
+            echo '</div>';
+        echo '</section>';
+    endif;
     ?>

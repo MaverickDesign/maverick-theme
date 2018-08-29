@@ -3,54 +3,49 @@
  * @package maverick-theme
  */
 
-function mavf_post_grid($mavArgs){
-
+function mavf_post_grid($mav_args)
+{
     if (function_exists('mavf_unique')) {
-        $mavUniqueNumber = mavf_unique(rand(4,16));
+        $mav_unique_number = mavf_unique(rand(4, 16));
     } else {
-        $mavUniqueNumber = wp_create_nonce(time());
+        $mav_unique_number = wp_create_nonce(time());
     }
 
-    $mavPostType        = isset($mavArgs['post_type'])                  ? $mavArgs['post_type']                 : 'post';
-    $mavNumberOfPosts   = isset($mavArgs['number_of_posts'])            ? $mavArgs['number_of_posts']           : 6;
+    $mav_post_type        = isset($mav_args['post_type'])                  ? $mav_args['post_type']                 : 'post';
+    $mavNumberOfPosts   = isset($mav_args['number_of_posts'])            ? $mav_args['number_of_posts']           : 6;
     // Specific post ids
-    $mavPostIn          = isset($mavArgs['post_in'])                    ? $mavArgs['post_in']                   : '';
-    $mavCategories      = isset($mavArgs['categories'])                 ? $mavArgs['categories']                : '';
-    $mavPostDisplay     = isset($mavArgs['posts_display'])              ? $mavArgs['posts_display']             : 6;
-    $mavTemplate        = isset($mavArgs['template'])                   ? $mavArgs['template']                  : 'template-parts/content';
+    $mavPostIn          = isset($mav_args['post_in'])                    ? $mav_args['post_in']                   : '';
+    $mav_categories      = isset($mav_args['categories'])                 ? $mav_args['categories']                : '';
+    $mavPostDisplay     = isset($mav_args['posts_display'])              ? $mav_args['posts_display']             : 6;
+    $mavTemplate        = isset($mav_args['template'])                   ? $mav_args['template']                  : 'template-parts/content';
 
-    $mavWrapper         = isset($mavArgs['wrapper_class'])              ? $mavArgs['wrapper_class']             : 'mav-post-grid-wrapper';
-    $mavContainer       = isset($mavArgs['container_class'])            ? $mavArgs['container_class']           : 'mav-post-grid-ctn';
+    $mavWrapper         = isset($mav_args['wrapper_class'])              ? $mav_args['wrapper_class']             : 'mav-post-grid-wrapper';
+    $mavContainer       = isset($mav_args['container_class'])            ? $mav_args['container_class']           : 'mav-post-grid-ctn';
 
-    $mavQueryArgs = array(
-        'post_type'                 => $mavPostType,
+    $mav_query_args = array(
+        'post_type'                 => $mav_post_type,
         'posts_per_page'            => $mavNumberOfPosts,
         'ignore_sticky_posts'       => true,
         'post__in'                  => $mavPostIn,
-        'category__in'              => $mavCategories,
+        'category__in'              => $mav_categories,
     );
 
-    $mavQuery = new WP_Query( $mavQueryArgs );
+    $mav_query = new WP_Query($mav_query_args);
 
-    if ($mavQuery->have_posts()):
-        printf(
-            '<div class="%1$s">',
-            $mavWrapper
-        );
+    // The loop
+    if ($mav_query->have_posts()) :
+        printf('<div class="%1$s">', $mavWrapper);
             printf(
                 '<div class="%1$s" style="grid-template-columns: repeat(%2$s,1fr);">',
-                $mavContainer,
-                $mavPostDisplay
+                $mavContainer, $mavPostDisplay
             );
-                // The loop
-                while ($mavQuery->have_posts()):
-                    $mavQuery->the_post();
-                    get_template_part( $mavTemplate , get_post_format() );
+                while ($mav_query->have_posts()) :
+                    $mav_query->the_post();
+                    get_template_part($mavTemplate, get_post_format());
                 endwhile;
+                // Reset post data
+                wp_reset_query();
             echo '</div>';
         echo '</div>';
-        // Reset post data
-        wp_reset_query();
     endif;
-
 }

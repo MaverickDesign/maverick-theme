@@ -7,17 +7,16 @@
  * Header Menu
  */
 
-if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu') ): ?>
+if (current_theme_supports('menus') && has_nav_menu('primary_menu')) : ?>
     <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
-
         <!-- Sticky logo -->
         <div class="mav-sticky-logo-wrapper mav-hide-on-mobile">
             <div class="mav-sticky-logo-ctn">
-                <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e('Về trang chủ','maverick-theme')?>" class="mav-sticky-logo">
+                <a href="<?php  bloginfo('url'); ?>" title="<?php _e('Về trang chủ', 'maverick-theme')?>" class="mav-sticky-logo">
                     <?php
                         $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
                         if ($mavBrandLogo) {
-                            echo "<img id=\"mavid-sticky-logo\" src=\"$mavBrandLogo;\">";
+                            printf('<img id="mavid-sticky-logo" src="%1$s">', $mavBrandLogo);
                         } else {
                             echo '<img id="mavid-sticky-logo" src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';
                         }
@@ -48,9 +47,8 @@ if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu') ): ?>
                     'depth' => 0,
                     'walker' => new Mav_Walker_Nav_Primary()
                 );
-                wp_nav_menu( $mavMenuArgs ); ?>
+                wp_nav_menu($mavMenuArgs); ?>
             </nav>
         </div>
-
     </section>
 <?php endif;

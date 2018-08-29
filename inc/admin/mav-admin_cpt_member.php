@@ -4,8 +4,8 @@
  */
 
 $mavMemberLabels = array(
-    'name'              => __('Member','maverick-theme'),
-    'singular_name'     => __('Member','maverick-theme')
+    'name'              => __('Member', 'maverick-theme'),
+    'singular_name'     => __('Member', 'maverick-theme')
 );
 
 $mavMemberArgs = array(
@@ -15,9 +15,9 @@ $mavMemberArgs = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array( 'slug' => __( 'thanh_vien' , 'maverick-theme' ) ),
+    'rewrite'            => array('slug' => __('thanh_vien', 'maverick-theme')),
 );
 
-register_post_type( 'mav_cpt_member', $mavMemberArgs );
+register_post_type('mav_cpt_member', $mavMemberArgs);
 
 flush_rewrite_rules();

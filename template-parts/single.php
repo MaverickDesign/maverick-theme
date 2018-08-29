@@ -66,45 +66,45 @@
     </section>
     <!-- Post Footer -->
     <?php
-        if ( ( has_tag() ) || ( wp_count_posts()->publish > 1 ) ): ?>
-            <footer class="mav-post-footer mav-post-footer-wrapper">
-                <div class="mav-post-footer-ctn">
-                    <?php if ( has_tag() ): ?>
-                        <!-- Post Tags -->
-                        <div class="mav-post-tags-wrapper">
-                            <div class="mav-post-tags-ctn">
-                                <?php
-                                printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>',__('Thẻ liên kết','maverick-theme'));
-                                the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
-                                ?>
-                            </div>
+    if ((has_tag()) || (wp_count_posts()->publish > 1)) : ?>
+        <footer class="mav-post-footer mav-post-footer-wrapper">
+            <div class="mav-post-footer-ctn">
+                <?php if (has_tag()) : ?>
+                    <!-- Post Tags -->
+                    <div class="mav-post-tags-wrapper">
+                        <div class="mav-post-tags-ctn">
+                            <?php
+                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Thẻ liên kết', 'maverick-theme'));
+                            the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
+                            ?>
                         </div>
-                    <?php endif; ?>
-                    <?php
-                        $mavCountPost = wp_count_posts();
-                        if ( $mavCountPost->publish > 1 ): ?>
-                            <!-- Post Navigation -->
-                            <div class="mav-post-navigation-wrapper">
-                                <div class="mav-post-navigation-ctn">
-                                <?php
-                                    $mavTitle = __('Các bài viết khác','maverick-theme');
-                                    // Attachment Page
-                                    if (is_attachment()) {
-                                        $mavTitle = __('Trở lại bài viết','maverick-theme');
-                                    }
-                                    printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', $mavTitle);
-                                    echo '<nav class="mav-post-navigation">';
-                                        previous_post_link('%link', '%title');
-                                        next_post_link('%link', '%title');
-                                    echo '</nav>';
-                                ?>
-                                </div>
-                            </div> <?php
-                        endif;
-                    ?>
-                </div>
-            </footer> <?php
-        endif;
+                    </div>
+                <?php endif; ?>
+                <?php
+                    $mavCountPost = wp_count_posts();
+                    if ($mavCountPost->publish > 1) : ?>
+                        <!-- Post Navigation -->
+                        <div class="mav-post-navigation-wrapper">
+                            <div class="mav-post-navigation-ctn">
+                            <?php
+                                $mavTitle = __('Các bài viết khác', 'maverick-theme');
+                                // Attachment Page
+                                if (is_attachment()) {
+                                    $mavTitle = __('Trở lại bài viết', 'maverick-theme');
+                                }
+                                printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', $mavTitle);
+                                echo '<nav class="mav-post-navigation">';
+                                    previous_post_link('%link', '%title');
+                                    next_post_link('%link', '%title');
+                                echo '</nav>';
+                            ?>
+                            </div>
+                        </div> <?php
+                    endif;
+                ?>
+            </div>
+        </footer> <?php
+    endif;
     ?>
 </article>
 
@@ -115,23 +115,27 @@
 
 $categories = get_the_category();
 
-if ( function_exists('mavf_carousel') && !empty($categories) && $categories[0]->count > 2 ): ?>
+if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->count > 2) : ?>
     <section id="mavid-sec-related-posts" class="mav-sec-wrapper">
         <div class="mav-sec-ctn">
             <!-- Header -->
             <header class="mav-sec-header-wrapper">
                 <div class="mav-sec-header-ctn">
+                    <!-- Title wrapper -->
                     <div class="mav-sec-title-wrapper">
                         <div class="mav-sec-title-ctn">
                             <h3 class="mav-sec-title">
-                            <?php
-                                if ( !empty($categories) ) {
+                                <?php
+                                if (!empty($categories)) {
                                     printf(
                                         '%4$s <a href="%1$s" title="%3$s %2$s"><strong class="mav-no-break">%2$s</strong></a>',
-                                        esc_url(get_category_link($categories[0]->term_id)), esc_html($categories[0]->name),__('Xem tất cả bài trong chuyên mục','maverick-theme'), __('Cùng chuyên mục','maverick-theme')
+                                        esc_url(get_category_link($categories[0]->term_id)),
+                                        esc_html($categories[0]->name),
+                                        __('Xem tất cả bài trong chuyên mục','maverick-theme'),
+                                        __('Cùng chuyên mục', 'maverick-theme')
                                     );
                                 }
-                            ?>
+                                ?>
                             </h3>
                         </div>
                     </div>
@@ -142,14 +146,14 @@ if ( function_exists('mavf_carousel') && !empty($categories) && $categories[0]->
             <div class="mav-sec-body-wrapper">
                 <div class="mav-sec-body-ctn">
                     <?php
-                        // Check if total post is greater than number of post to display
-                        $mavNumberOfPostsDisplay = 4 ? $categories[0]->count > 4 : $categories[0]->count;
-                        $mavArgs = array(
-                            'number_of_posts'           => 6,
-                            'number_of_posts_display'   => $mavNumberOfPostsDisplay,
-                            'categories'                => array($categories[0]->term_id),
-                        );
-                        mavf_carousel($mavArgs);
+                    // Check if total post is greater than number of post to display
+                    $mavNumberOfPostsDisplay = 4 ? $categories[0]->count > 4 : $categories[0]->count;
+                    $mav_args = array(
+                        'number_of_posts'           => 6,
+                        'number_of_posts_display'   => $mavNumberOfPostsDisplay,
+                        'categories'                => array($categories[0]->term_id),
+                    );
+                    mavf_carousel($mav_args);
                     ?>
                 </div>
             </div>
@@ -158,13 +162,13 @@ if ( function_exists('mavf_carousel') && !empty($categories) && $categories[0]->
             <footer class="mav-sec-footer-wrapper">
                 <div class="mav-sec-footer-ctn">
                     <?php
-                        printf(
-                            '<a href="%1$s" title="%3$s %2$s"><button class="mav-btn-primary-lg">%4$s</button></a>',
-                            esc_url( get_category_link( $categories[0]->term_id ) ),
-                            esc_html( $categories[0]->name ),
-                            __('Xem tất cả bài trong chuyên mục','maverick-theme'),
-                            __('Xem đầy đủ', 'maverick-theme')
-                        );
+                    printf(
+                        '<a href="%1$s" title="%3$s %2$s"><button class="mav-btn-primary-lg">%4$s</button></a>',
+                        esc_url(get_category_link($categories[0]->term_id)),
+                        esc_html($categories[0]->name),
+                        __('Xem tất cả bài trong chuyên mục', 'maverick-theme'),
+                        __('Xem đầy đủ', 'maverick-theme')
+                    );
                     ?>
                 </div>
             </footer>

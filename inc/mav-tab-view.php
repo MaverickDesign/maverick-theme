@@ -3,47 +3,54 @@
  * @package maverick-theme
  */
 
-function mavf_tabbed_posts($mavArgs) {
+/**
+ * Tabbed Post
+ *
+ * @param [type] $mav_args
+ * @return void
+ */
 
-    $mavQueryArgs = isset($mavArgs['query_args']) ? $mavArgs['query_args'] : array();
+function mavf_tabbed_posts($mav_args)
+{
+    $mav_query_args = isset($mav_args['query_args']) ? $mav_args['query_args'] : array();
 
-    if (empty($mavQueryArgs)) {
+    if (empty($mav_query_args)) {
         return;
     }
 
-    $mavVertical        = isset($mavArgs['vertical'])                       ? 'data-vertical'                           : '';
-    $mavPlain           = isset($mavArgs['plain']) && empty($mavVertical)   ? 'data-plain'                              : '';
-    $mavNumberOfPost    = isset($mavArgs['query_args']['posts_per_page'])   ? $mavArgs['query_args']['posts_per_page']  : 5;
+    $mav_vertical       = isset($mav_args['vertical'])                       ? 'data-vertical'                           : '';
+    $mav_plain          = isset($mav_args['plain']) && empty($mav_vertical)   ? 'data-plain'                              : '';
+    $mav_number_of_post = isset($mav_args['query_args']['posts_per_page'])   ? $mav_args['query_args']['posts_per_page']  : 5;
 
     $mavAreas = '';
 
-    if (empty($mavVertical)) {
+    if (empty($mav_vertical)) {
         // Horizontal layout
         $mavTrigger = array();
         $mavBody    = array();
 
-        for ($i = 1; $i <= $mavNumberOfPost; $i++) {
-            array_push($mavTrigger,'trigger');
-            array_push($mavBody,'content');
+        for ($i = 1; $i <= $mav_number_of_post; $i++) {
+            array_push($mavTrigger, 'trigger');
+            array_push($mavBody, 'content');
         }
-        $mavAreas = "'".implode($mavTrigger," ")."' '".implode($mavBody," ")."'";
+        $mavAreas = "'".implode($mavTrigger, " ")."' '".implode($mavBody, " ")."'";
     } else {
         // Vertical layout
-        for ($i = 1; $i <= $mavNumberOfPost; $i++) {
+        for ($i = 1; $i <= $mav_number_of_post; $i++) {
             $mavAreas .= "'trigger content' ";
         }
     }
 
-    $mavQuery = new WP_Query( $mavQueryArgs );
-    if ($mavQuery->have_posts()):
-        printf('<div class="mav-tab-wrapper" %1$s>', $mavPlain);
-            printf('<div class="mav-tab-ctn" style="grid-template-areas: %1$s" %2$s>', $mavAreas, $mavVertical);
+    $mav_query = new WP_Query($mav_query_args);
+    if ($mav_query->have_posts()) :
+        printf('<div class="mav-tab-wrapper" %1$s>', $mav_plain);
+            printf('<div class="mav-tab-ctn" style="grid-template-areas: %1$s" %2$s>', $mavAreas, $mav_vertical);
                 $mavState = 'data-state="active"';
-                while ($mavQuery->have_posts()):
-                    $mavQuery->the_post();
+                while ($mav_query->have_posts()) :
+                    $mav_query->the_post();
                     // Trigger
-                    printf('<div class="mav-tab-trigger" %1$s>',$mavState);
-                        printf('<span class="mav-tab-trigger-title">%1$s</span>',get_the_title());
+                    printf('<div class="mav-tab-trigger" %1$s>', $mavState);
+                        printf('<span class="mav-tab-trigger-title">%1$s</span>', get_the_title());
                     echo '</div>';
                     // Content
                     printf('<div class="mav-tab-content-wrapper" %1$s>', $mavState);

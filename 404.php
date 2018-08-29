@@ -11,15 +11,15 @@
         <?php
             printf(
                 '<h1 class="mav-text-center mav-margin-top-bottom-xl">%1$s</h1>',
-                __('Không tìm thấy nội dung','maverick-theme')
+                __('Không tìm thấy nội dung', 'maverick-theme')
             );
             printf(
                 '<p class="mav-text-center mav-margin-bottom-lg">%1$s</p>',
-                __('Nội dung bạn cần tìm không tồn tại trên website này. Vui lòng kiểm tra lại thông tin cần tìm.','maverick-theme')
+                __('Nội dung bạn cần tìm không tồn tại trên website này. Vui lòng kiểm tra lại thông tin cần tìm.', 'maverick-theme')
             );
             printf('<footer class="mav-flex-center-all mav-margin-bottom-lg">');
                 /* Back and Home Buttons */
-                include TEMPLATE_DIR . '/template-parts/mav-button__back-and-home.php';
+                require TEMPLATE_DIR.'/template-parts/mav-button__back-and-home.php';
             echo '</footer>';
         ?>
     </section>

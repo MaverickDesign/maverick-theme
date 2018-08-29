@@ -43,9 +43,8 @@
    * Colors
    */
   /* Brand colors */
-  --mav-brand-color-primary: #b31705;
   --mav-color-primary: #b31705;
-  --mav-brand-color-accent: #05a1b3;
+  --mav-color-primary-rgb: 179, 23, 5;
   --mav-color-accent: #05a1b3;
   --mav-color-black: #464646;
   --mavc-black: #464646;

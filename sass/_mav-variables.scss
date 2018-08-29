@@ -137,11 +137,12 @@ $mav-color-background: #fafafa;
     /* Brand colors */
 
     // Primary
-     --mav-brand-color-primary      : #{$mav-color-brand-primary};
+    //  --mav-brand-color-primary      : #{$mav-color-brand-primary};
      --mav-color-primary            : #{$mav-color-brand-primary};
+     --mav-color-primary-rgb        : 179, 23, 5;
 
      //  Accent
-     --mav-brand-color-accent       : #{$mav-color-brand-accent};
+    //  --mav-brand-color-accent       : #{$mav-color-brand-accent};
      --mav-color-accent             : #{$mav-color-brand-accent};
 
      --mav-color-black              : #464646;

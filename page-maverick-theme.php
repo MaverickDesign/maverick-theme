@@ -10,17 +10,8 @@
 <main id="mavid-page-main" class="mav-page-wrapper">
     <div class="mav-page-ctn">
         <!-- Tiêu đề trang -->
-        <header id="mavid-page-header" class="mav-page-header-wrapper" <?php mavf_post_thumbnail_url();?>>
-            <div class="mav-page-header-ctn">
-                <div id="mavid-sec-page-title" class="mav-page-title-wrapper" >
-                    <div class="mav-page-title-ctn" >
-                        <?php
-                            the_title('<h1 class="mav-page-title">','</h1>');
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <?php require TEMPLATE_DIR.'/template-parts/mav-page__header.php'; ?>
+
         <!-- Nội dung chính của trang -->
         <div id="mavid-page-content" class="mav-page-body-wrapper">
             <div class="mav-page-body-ctn">
@@ -67,11 +58,11 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            $mavArgs = array(
+                                            $mav_args = array(
                                                 'columns'   => 4,
                                                 'items'     => file_get_contents(THEME_DIR.'/mav-grid-array.json')
                                             );
-                                            mavf_items_grid($mavArgs);
+                                            mavf_items_grid($mav_args);
                                         ?>
                                     </div>
                                 </div>
@@ -147,15 +138,15 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                        $mavQueryArgs = array(
+                                        $mav_query_args = array(
                                             'post_type'     => 'page',
                                             'post_parent'   =>  22,
                                         );
-                                        $mavArgs = array(
-                                            'query_args'    => $mavQueryArgs,
+                                        $mav_args = array(
+                                            'query_args'    => $mav_query_args,
                                             'button_text'   => 'Tìm hiểu thêm'
                                         );
-                                        mavf_post_feature($mavArgs);
+                                        mavf_post_feature($mav_args);
                                         ?>
                                     </div>
                                 </div>
@@ -190,12 +181,12 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            $mavArgs = array(
+                                            $mav_args = array(
                                                 'number_of_posts'           => 8,
                                                 'number_of_posts_display'   => 4,
                                                 'categories'                => array(4,5)
                                             );
-                                                mavf_carousel($mavArgs);
+                                                mavf_carousel($mav_args);
                                         ?>
                                     </div>
                                 </div>
@@ -230,13 +221,13 @@
                             <div class="mav-sec-body-wrapper">
                                 <div class="mav-sec-body-ctn">
                                     <?php
-                                        $mavArgs = array(
+                                        $mav_args = array(
                                             'post_type'         => 'post',
                                             'number_of_posts'   => 6,
                                             'posts_display'     => 3,
                                             'auto_slide'        => 'false'
                                         );
-                                        mavf_post_grid($mavArgs);
+                                        mavf_post_grid($mav_args);
                                     ?>
                                 </div>
                             </div>
@@ -368,13 +359,13 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            $mavArgs = array(
+                                            $mav_args = array(
                                                 'number_of_posts'   => 3,
                                                 'collection'        => true,
                                                 'faq'               => true,
                                                 'removable'         => true
                                             );
-                                            mavf_post_accordion($mavArgs);
+                                            mavf_post_accordion($mav_args);
                                         ?>
                                     </div>
                                 </div>
@@ -410,7 +401,7 @@
                                     <div class="mav-sec-body-ctn">
                                         <div class="mav-sub-heading-1 mav-margin-bottom">Horizontal</div>
                                         <?php
-                                            $mavArgs = array(
+                                            $mav_args = array(
                                                 'query_args'    => array(
                                                     'post_type'             => 'post',
                                                     'posts_per_page'        => 5,
@@ -419,13 +410,13 @@
                                                     'category__in'          => array(5)
                                                 ),
                                             );
-                                            mavf_tabbed_posts($mavArgs);
+                                            mavf_tabbed_posts($mav_args);
                                         ?>
                                     </div>
                                     <div class="mav-sec-body-ctn">
                                         <div class="mav-sub-heading-1 mav-margin-bottom">Vertical</div>
                                         <?php
-                                            $mavArgs = array(
+                                            $mav_args = array(
                                                 'query_args'    => array(
                                                     'post_type'             => 'post',
                                                     'posts_per_page'        => 5,
@@ -435,13 +426,13 @@
                                                 ),
                                                 'vertical'      => true
                                             );
-                                            mavf_tabbed_posts($mavArgs);
+                                            mavf_tabbed_posts($mav_args);
                                         ?>
                                     </div>
                                     <div class="mav-sec-body-ctn">
                                         <div class="mav-sub-heading-1 mav-margin-bottom">Plain</div>
                                         <?php
-                                            $mavArgs = array(
+                                            $mav_args = array(
                                                 'query_args'    => array(
                                                     'post_type'             => 'post',
                                                     'posts_per_page'        => 5,
@@ -451,7 +442,7 @@
                                                 ),
                                                 'plain'      => true
                                             );
-                                            mavf_tabbed_posts($mavArgs);
+                                            mavf_tabbed_posts($mav_args);
                                         ?>
                                     </div>
                                 </div>

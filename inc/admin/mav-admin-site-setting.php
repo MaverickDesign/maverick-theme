@@ -4,8 +4,8 @@
  */
 ?>
 
-<h1><?php _e('Site Settings','maverick-theme'); ?></h1>
-<p><?php _e('Customize Site Settings','maverick-theme'); ?></p>
+<h1><?php _e('Site Settings', 'maverick-theme'); ?></h1>
+<p><?php _e('Customize Site Settings', 'maverick-theme'); ?></p>
 
 <?php settings_errors(); ?>
 
@@ -18,10 +18,10 @@
         ?>
     </form>
     <div id="mavid-settings-preview" class="mav-hide-on-phone">
-        <h2><?php _e('Setting Preview','maverick-theme'); ?></h2>
+        <h2><?php _e('Setting Preview', 'maverick-theme'); ?></h2>
         <?php
-			$mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
-		 ?>
-        <img id="mavid-preview-brand-logo" src="<?php print $mavBrandLogo; ?>" title="<?php bloginfo( 'name' ); ?>" alt="">
+            $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
+        ?>
+        <img id="mavid-preview-brand-logo" src="<?php print $mavBrandLogo; ?>" title="<?php bloginfo('name'); ?>" alt="">
     </div>
 </div>

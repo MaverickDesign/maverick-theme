@@ -21,8 +21,8 @@ add_settings_field(
 );
 
 function mavf_site_setting_maintenance() {
-    $mavSavedValue = esc_attr( get_option('mav_setting_maintenance') );
-    $mavChecked = ( @$mavSavedValue == 1 ? 'checked' : '');
+    $mav_saved_value = esc_attr( get_option('mav_setting_maintenance') );
+    $mavChecked = ( @$mav_saved_value == 1 ? 'checked' : '');
     printf('<label><input id="mavid-maintenance" type="checkbox" name="mav_setting_maintenance" value="1" %1$s/></label>',$mavChecked);
 }
 
@@ -37,6 +37,6 @@ add_settings_field(
 );
 
 function mavf_site_setting_maintenance_time(){
-    $mavSavedValue = esc_attr( get_option('mav_setting_maintenance_time') );
-    printf( '<input id="mavid-maintenance-time" type="date" name="mav_setting_maintenance_time" value="%1$s" placeholder="dd/mm/yyyy" data-visual="short"/>', $mavSavedValue );
+    $mav_saved_value = esc_attr( get_option('mav_setting_maintenance_time') );
+    printf( '<input id="mavid-maintenance-time" type="date" name="mav_setting_maintenance_time" value="%1$s" placeholder="dd/mm/yyyy" data-visual="short"/>', $mav_saved_value );
 }

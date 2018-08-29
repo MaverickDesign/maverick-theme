@@ -3,103 +3,105 @@
  * @package maverick-theme
  */
 
-function mavf_carousel($mavArgs){
-
+function mavf_carousel($mav_args)
+{
     if (function_exists('mavf_unique')) {
-        $mavUniqueNumber = mavf_unique(rand(4,16));
+        $mav_unique_number = mavf_unique(rand(4, 16));
     } else {
-        $mavUniqueNumber = wp_create_nonce(time());
+        $mav_unique_number = wp_create_nonce(time());
     }
 
     // Post type
-    $mavPostType        = isset($mavArgs['post_type'])          ? $mavArgs['post_type']         : 'post';
+    $mav_post_type        = isset($mav_args['post_type'])          ? $mav_args['post_type']         : 'post';
 
     // Number of posts to query
-    $mavNumberOfPosts   = isset($mavArgs['number_of_posts'])    ? $mavArgs['number_of_posts']   : 5;
+    $mavNumberOfPosts   = isset($mav_args['number_of_posts'])    ? $mav_args['number_of_posts']   : 5;
 
     // Number of posts to display
-    $mavPostsToDipslay  = isset($mavArgs['display'])            ? $mavArgs['display']           : 4;
+    $mavPostsToDipslay  = isset($mav_args['display'])            ? $mav_args['display']           : 4;
 
     // Specific post ids
-    $mavPostIn          = isset($mavArgs['post_in'])            ? $mavArgs['post_in']           : '';
+    $mavPostIn          = isset($mav_args['post_in'])            ? $mav_args['post_in']           : '';
 
     // Post categories
-    $mavCategories      = isset($mavArgs['categories'])         ? $mavArgs['categories']        : '';
+    $mav_categories      = isset($mav_args['categories'])         ? $mav_args['categories']        : '';
 
     // Carousel class
-    $mavCarouselClass   = isset($mavArgs['carousel_class'])     ? $mavArgs['carousel_class']    : 'mav-carousel';
+    $mavCarouselClass   = isset($mav_args['carousel_class'])     ? $mav_args['carousel_class']    : 'mav-carousel';
 
     // Carousel item class
-    $mavItemClass       = isset($mavArgs['item_class'])         ? $mavArgs['item_class']        : 'mav-carousel-item';
+    $mavItemClass       = isset($mav_args['item_class'])         ? $mav_args['item_class']        : 'mav-carousel-item';
 
     // Carousel item container class
-    $mavContainerClass  = isset($mavArgs['container_class'])    ? $mavArgs['container_class']   : 'mav-carousel-ctn';
+    $mavContainerClass  = isset($mav_args['container_class'])    ? $mav_args['container_class']   : 'mav-carousel-ctn';
 
     // Carousel wrapper class
-    $mavWrapperClass    = isset($mavArgs['wrapper_class'])      ? $mavArgs['wrapper_class']     : 'mav-carousel-wrapper';
+    $mavWrapperClass    = isset($mav_args['wrapper_class'])      ? $mav_args['wrapper_class']     : 'mav-carousel-wrapper';
 
     // Carousel nav wrapper class
-    $mavNavWrapperClass = isset($mavArgs['nav_wrapper_class'])  ? $mavArgs['nav_wrapper_class'] : 'mav-carousel-nav-wrapper';
+    $mavNavWrapperClass = isset($mav_args['nav_wrapper_class'])  ? $mav_args['nav_wrapper_class'] : 'mav-carousel-nav-wrapper';
 
     // Carousel nav class
-    $mavNavClass        = isset($mavArgs['nav_class'])          ? $mavArgs['nav_class']         : 'mav-carousel-nav';
+    $mavNavClass        = isset($mav_args['nav_class'])          ? $mav_args['nav_class']         : 'mav-carousel-nav';
 
     // Carousel item content template
-    $mavTemplate        = isset($mavArgs['template'])           ? $mavArgs['template']          : 'template-parts/content';
+    $mavTemplate        = isset($mav_args['template'])           ? $mav_args['template']          : 'template-parts/content';
 
     // Carousel auto slide
-    $mavAutoSlide       = isset($mavArgs['auto_slide'])         ? $mavArgs['auto_slide']        : 'true';
+    $mavAutoSlide       = isset($mav_args['auto_slide'])         ? $mav_args['auto_slide']        : 'true';
 
     // Carousel slide interval
-    $mavInterval        = isset($mavArgs['interval'])           ? $mavArgs['interval']          : 4000;
+    $mav_interval        = isset($mav_args['interval'])           ? $mav_args['interval']          : 4000;
 
-    $mavPostQueries     = isset($mavArgs['post_queries'])       ? $mavArgs['post_queries']      : array();
+    $mav_post_queries     = isset($mav_args['post_queries'])       ? $mav_args['post_queries']      : array();
 
     // Query arguments
-    $mavQueryArgs = array();
+    $mav_query_args = array();
 
-    if ( !empty( $mavPostQueries ) ) {
-        $mavQueryArgs = $mavPostQueries;
-        if ( !empty( $mavQueryArgs['posts_per_page'] ) ) {
-            $mavNumberOfPosts = $mavQueryArgs['posts_per_page'];
+    if (!empty($mav_post_queries)) {
+        $mav_query_args = $mav_post_queries;
+        if (!empty($mav_query_args['posts_per_page'])) {
+            $mavNumberOfPosts = $mav_query_args['posts_per_page'];
         }
     } else {
-        $mavQueryArgs = array(
-            'post_type'                 => $mavPostType,
+        $mav_query_args = array(
+            'post_type'                 => $mav_post_type,
             'posts_per_page'            => $mavNumberOfPosts,
             'ignore_sticky_posts'       => true,
             'post__in'                  => $mavPostIn,
-            'post__not_in'              => array( get_the_ID() ),
-            'category__in'              => $mavCategories,
+            'post__not_in'              => array(get_the_ID()),
+            'category__in'              => $mav_categories,
         );
     }
 
-    $mavQuery = new WP_Query( $mavQueryArgs );
+    $mav_query = new WP_Query($mav_query_args);
 
-    if ( $mavQuery->have_posts() ) {
+    if ($mav_query->have_posts()) {
         printf(
             '<div id="mavid-carousel-%2$s" data-unique="%2$s" data-total="%3$s" data-display="%4$s" data-current-direction="prev" data-auto-slide="%5$s" data-interval="%6$s" class="%1$s">',
-            $mavCarouselClass, $mavUniqueNumber, $mavNumberOfPosts, $mavPostsToDipslay, $mavAutoSlide, $mavInterval
+            $mavCarouselClass, $mav_unique_number, $mavNumberOfPosts, $mavPostsToDipslay, $mavAutoSlide, $mav_interval
         );
             printf(
                 '<div class="%3$s">
                     <nav data-direction="prev" data-current-direction="prev" data-current-step="0" data-unique="%2$s" class="%1$s"></nav>
                 </div>',
-                $mavNavClass, $mavUniqueNumber, $mavNavWrapperClass
+                $mavNavClass, $mav_unique_number, $mavNavWrapperClass
             );
-            printf( '<div class="%1$s">', $mavWrapperClass );
+            printf('<div class="%1$s">', $mavWrapperClass);
                 printf(
                     '<ul id="mavid-carousel-ctn-%1$s" class="%2$s" data-container="true">',
-                    $mavUniqueNumber, $mavContainerClass
+                    $mav_unique_number, $mavContainerClass
                 );
                     $i = 1;
                     // The Loop
-                    while ( $mavQuery->have_posts() ):
-                        $mavQuery->the_post();
-                            printf( '<li data-item-number="%2$s" data-gutter="" class="%1$s">', $mavItemClass, $i++ );
-                                get_template_part( $mavTemplate , get_post_format() );
+                    while ($mav_query->have_posts()) :
+                        $mav_query->the_post();
+                            printf('<li data-item-number="%2$s" data-gutter="" class="%1$s">', $mavItemClass, $i++);
+                                get_template_part($mavTemplate, get_post_format());
                             echo '</li>';
                     endwhile;
+                    // Reset post data
+                    wp_reset_query();
                 echo '</ul>';
             echo '</div>';
 
@@ -107,15 +109,13 @@ function mavf_carousel($mavArgs){
                 '<div class="%3$s">
                     <nav data-direction="next" data-current-direction="prev" data-current-step="0" data-unique="%2$s" class="%1$s mav-hide"></nav>
                 </div>',
-                $mavNavClass, $mavUniqueNumber, $mavNavWrapperClass
+                $mavNavClass, $mav_unique_number, $mavNavWrapperClass
             );
         echo '</div>';
-        // Reset post data
-        wp_reset_query();
     } else {
         printf(
-            sprintf('<div class="mav-flex-center-all"><span>Không có bài nào cùng chuyên mục %1$s</span></div>',
-            get_the_category()[0]->name)
+            '<div class="mav-flex-center-all"><span>%2$s %1$s</span></div>',
+            get_the_category()[0]->name, __('Không có bài nào cùng chuyên mục', 'maverick-theme')
         );
     }
 }

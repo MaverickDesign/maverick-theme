@@ -33,7 +33,7 @@
 <body class="mav-page-maintenance">
 
     <header id="mavid-page-header">
-        <div title="<?php bloginfo( 'name' ); ?>" class="mav-flex-center mav-margin-top">
+        <div title="<?php bloginfo('name'); ?>" class="mav-flex-center mav-margin-top">
             <?php
                 $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
                 if ($mavBrandLogo) {
@@ -63,13 +63,14 @@
             ?>
         </section>
 
-        <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())): ?>
+        <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())) : ?>
             <!-- Socials -->
             <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
                 <div class="mav-footer-socials-ctn">
                     <?php
-                        printf('<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                            get_bloginfo( 'name' ),__('trên mạng&nbsp;xã&nbsp;hội','maverick-theme')
+                        printf(
+                            '<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
+                            get_bloginfo('name'), __('trên mạng xã hội', 'maverick-theme')
                         );
                         mavf_social_links();
                     ?>
@@ -79,11 +80,11 @@
         ?>
 
         <?php
-            $mavMaintenanceTime = esc_attr( get_option( 'mav_setting_maintenance_time' ) );
-            if (!empty($mavMaintenanceTime)): ?>
+            $mavMaintenanceTime = esc_attr(get_option('mav_setting_maintenance_time'));
+            if (!empty($mavMaintenanceTime)) : ?>
                 <!-- Maintenance time -->
                 <section id="mavid-sec-maintenance-time" class="mav-page-maintenance-section">
-                    <h3 class="mav-margin-bottom"><?php _e('Thời gian dự kiến hoàn tất bảo trì còn','maverick-theme'); ?></h3>
+                    <h3 class="mav-margin-bottom"><?php _e('Thời gian dự kiến hoàn tất bảo trì còn', 'maverick-theme'); ?></h3>
                     <div class="mavjs-countdown mav-countdown-ctn" data-expired="<?php echo $mavMaintenanceTime; ?>"></div>
                 </section>
             <?php endif;
@@ -95,10 +96,10 @@
         <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
             <div class="mav-footer-copyright-ctn">
                 <div class="mav-margin-bottom-xs">
-                    <?php _e('Bản quyền','maverick-theme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của','maverick-theme'); ?> <a href="<?php bloginfo('url');?>" target="_blank" class="mav-link"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.','maverick-theme'); ?>
+                    <?php _e('Bản quyền', 'maverick-theme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của', 'maverick-theme'); ?> <a href="<?php bloginfo('url');?>" target="_blank" class="mav-link"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.', 'maverick-theme'); ?>
                 </div>
                 <div>
-                    <?php _e('Website xây dựng bằng','maverick-theme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank" class="mav-link"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi','maverick-theme'); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link"><strong>Maverick Design</strong></a>.
+                    <?php _e('Website xây dựng bằng', 'maverick-theme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank" class="mav-link">Maverick Theme</a> <?php _e('phát triển bởi', 'maverick-theme'); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link">Maverick Design</a>.
                 </div>
             </div>
         </section>

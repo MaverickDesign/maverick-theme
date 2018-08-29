@@ -3,20 +3,20 @@
  * @package maverick-theme
  */
 
-function mavf_post_modal($mavArgs){
+function mavf_post_modal($mav_args){
 
-    $mavHeaderClass = isset($mavArgs['header_class'])   ? $mavArgs['header_class']  : 'mav-modal-header';
-    $mavBodyClass   = isset($mavArgs['body_class'])     ? $mavArgs['body_class']    : 'mav-modal-body mav-post-content';
-    $mavFooterClass = isset($mavArgs['footer_class'])   ? $mavArgs['footer_class']  : 'mav-modal-footer';
-    $mavFooterClass = isset($mavArgs['footer'])         ? $mavArgs['footer']        : '';
+    $mavHeaderClass = isset($mav_args['header_class'])   ? $mav_args['header_class']  : 'mav-modal-header';
+    $mavBodyClass   = isset($mav_args['body_class'])     ? $mav_args['body_class']    : 'mav-modal-body mav-post-content';
+    $mavFooterClass = isset($mav_args['footer_class'])   ? $mav_args['footer_class']  : 'mav-modal-footer';
+    $mavFooterClass = isset($mav_args['footer'])         ? $mav_args['footer']        : '';
 
     if (function_exists('mavf_unique')) {
-        $mavUniqueNumber = mavf_unique(rand(6,12));
+        $mav_unique_number = mavf_unique(rand(6,12));
     } else {
-        $mavUniqueNumber = wp_create_nonce(time());
+        $mav_unique_number = wp_create_nonce(time());
     }
 
-    $mavQueryArgs = array(
+    $mav_query_args = array(
         'post_type'             => 'post',
         'post_status'           => 'publish',
         'posts_per_page'        => 1,
@@ -26,11 +26,11 @@ function mavf_post_modal($mavArgs){
         'post_in'               => array(129),
     );
 
-    $mavQuery = new WP_Query($mavQueryArgs);
+    $mav_query = new WP_Query($mav_query_args);
 
-    if ($mavQuery->have_posts()):
-        while ($mavQuery->have_posts()):
-            $mavQuery->the_post();
+    if ($mav_query->have_posts()):
+        while ($mav_query->have_posts()):
+            $mav_query->the_post();
             printf('<div id="mavid-modal" class="mav-modal mavjs-close">');
                 printf('<div class="mav-modal-box">');
                     printf('<header class="%1$s">',$mavHeaderClass);

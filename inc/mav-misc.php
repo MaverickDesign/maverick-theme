@@ -8,14 +8,16 @@
  * Usage: On HTML element
  */
 
-function mavf_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0') {
+function mavf_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0')
+{
     printf(
         'style="background: rgba(%2$s) url(%1$s/assets/brand-logo.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
         esc_url(get_template_directory_uri()), $logo_back, $logo_mark, $logo_typo
     );
 };
 
-function mavf_get_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0') {
+function mavf_get_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0')
+{
     return sprintf(
         'style="background: rgba(%2$s) url(%1$s/assets/brand-logo.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
         esc_url(get_template_directory_uri()), $logo_back, $logo_mark, $logo_typo
@@ -27,13 +29,15 @@ function mavf_get_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', 
  * Usage: On HTML element
  */
 
-function mavf_post_thumbnail_url($mav_size = 'full') {
+function mavf_post_thumbnail_url($mav_size = 'full')
+{
     $featured_img_url = esc_url(get_the_post_thumbnail_url(get_the_ID(),$mav_size));
     printf('style="background: url(%1$s);"', $featured_img_url);
 }
 
-function mavf_get_post_thumbnail_url($mav_size = 'full') {
-    $featured_img_url = esc_url(get_the_post_thumbnail_url(get_the_ID(),$mav_size));
+function mavf_get_post_thumbnail_url($mav_size = 'full')
+{
+    $featured_img_url = esc_url(get_the_post_thumbnail_url(get_the_ID(), $mav_size));
     return sprintf('style="background: url(%1$s);"', $featured_img_url);
 }
 
@@ -41,34 +45,44 @@ function mavf_get_post_thumbnail_url($mav_size = 'full') {
  * Custom Excerpt Length
  */
 
-function mavf_custom_excerpt_length( $length ) {
-	return 20;
+function mavf_custom_excerpt_length($length)
+{
+    return 20;
 }
-add_filter( 'excerpt_length', 'mavf_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'mavf_custom_excerpt_length', 999);
 
 /**
  * Display Single Default Category Link
+ *
+ * @return void
  */
-
-function mavf_single_category() {
-    $categories = get_the_category();
-    if ( ! empty( $categories ) ) {
-        return sprintf('<a href="%1$s">%2$s</a>', esc_url( get_category_link( $categories[0]->term_id ) ), esc_html( $categories[0]->name ));
+function mavf_single_category()
+{
+    $mav_categories = get_the_category();
+    if (!empty($mav_categories)) {
+        return sprintf('<a href="%1$s">%2$s</a>', esc_url(get_category_link($mav_categories[0]->term_id)), esc_html($mav_categories[0]->name));
     }
 }
 
-function mavf_get_single_category() {
-    $categories = get_the_category();
-    if ( ! empty( $categories ) ) {
-        return esc_html( $categories[0]->name );
+function mavf_get_single_category()
+{
+    $mav_categories = get_the_category();
+    if (!empty($mav_categories)) {
+        return esc_html($mav_categories[0]->name);
     }
 }
 
 /**
  * Message Box
+ *
+ * @param string $mavMessage
+ * @param string $mavIcon
+ * @param boolean $mavCloseJS
+ * @return void
  */
 
-function mavf_message_box($mavMessage = 'Thông báo',$mavIcon = 'fa-exclamation-circle', $mavCloseJS = true) {
+function mavf_message_box($mavMessage = 'Thông báo', $mavIcon = 'fa-exclamation-circle', $mavCloseJS = true)
+{
     /**
      * This class is on the element to remove from the DOM
      * Default is on the top element of the message box
@@ -76,52 +90,51 @@ function mavf_message_box($mavMessage = 'Thông báo',$mavIcon = 'fa-exclamation
     if ($mavCloseJS) {
         $mavCloseClass = ' mavjs-close';
     }
-    printf(
-        '<div aria-hidden="true" class="mav-message-box-wrapper%1$s">',
-        $mavCloseClass
-    );
-        echo '<div class="mav-message-box-ctn">';
-            printf(
-                '<span class="fas %1$s"></span>',
-                $mavIcon
-            );
-            printf(
-                '<span class="mav-message-content">%1$s</span>',
-                $mavMessage
-            );
+
+    printf('<div aria-hidden="true" class="mav-message-box-wrapper%1$s">', $mavCloseClass);
+        printf('<div class="mav-message-box-ctn">');
+            printf('<span class="fas %1$s"></span>', $mavIcon);
+            printf('<p class="mav-message-content">%1$s</p>', $mavMessage);
             printf(
                 '<span class="mav-btn-close" title="%1$s"></span>',
-                __('Đóng thông báo','maverick-theme')
+                __('Đóng thông báo', 'maverick-theme')
             );
         echo '</div>';
     echo '</div>';
 }
 
-/*
- */
-
-function my_theme_archive_title( $title ) {
-    if ( is_category() ) {
-        $title = single_cat_title( '', false );
-    } elseif ( is_tag() ) {
-        $title = single_tag_title( '', false );
-    } elseif ( is_author() ) {
+function my_theme_archive_title($title)
+{
+    if (is_category()) {
+        $title = single_cat_title('', false);
+    } elseif (is_tag()) {
+        $title = single_tag_title('', false);
+    } elseif (is_author()) {
         $title = '<span class="vcard">' . get_the_author() . '</span>';
-    } elseif ( is_post_type_archive() ) {
-        $title = post_type_archive_title( '', false );
-    } elseif ( is_tax() ) {
-        $title = single_term_title( '', false );
+    } elseif (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
     }
 
     return $title;
 }
-add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
+add_filter('get_the_archive_title', 'my_theme_archive_title');
 
 /**
  * Button
+ *
+ * @param string $mavText
+ * @param string $mavLink
+ * @param string $mavStyle
+ * @return void
  */
 
-function mavf_button($mavText, $mavLink = '', $mavStyle = 'mav-btn-primary') {
+function mavf_button($mavText = '', $mavLink = '', $mavStyle = 'mav-btn-primary')
+{
+    if (empty($mavText)) {
+        $mavText = __('Button Text');
+    }
     printf(
         '<a href="%2$s"><button type="button" title="%1$s" class="%3$s">%1$s</button></a>',
         $mavText, $mavLink, $mavStyle
@@ -129,18 +142,22 @@ function mavf_button($mavText, $mavLink = '', $mavStyle = 'mav-btn-primary') {
 };
 
 /**
- * Make unique string
+ * Make Unique String
+ *
+ * @param integer $mavLength
+ * @param string $mavExp
+ * @return void
  */
 
-function mavf_unique($mavLength = 0, $mavExp = 's'){
-
+function mavf_unique($mavLength = 0, $mavExp = 's')
+{
     $mavNonce = wp_create_nonce(date($mavExp));
 
-    $mavString = hash('sha512',$mavNonce);
+    $mavString = hash('sha512', $mavNonce);
 
     if ($mavLength > 0) {
         $mavStringLength = strlen($mavString);
-        $mavReturn = substr($mavString, floor(rand(0,10)) , $mavStringLength - ($mavStringLength - $mavLength) );
+        $mavReturn = substr($mavString, floor(rand(0, 10)), $mavStringLength - ($mavStringLength - $mavLength));
     } else {
         $mavReturn = $mavString;
     }

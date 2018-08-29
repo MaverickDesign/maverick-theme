@@ -120,9 +120,8 @@ table {
    * Colors
    */
   /* Brand colors */
-  --mav-brand-color-primary: #b31705;
   --mav-color-primary: #b31705;
-  --mav-brand-color-accent: #05a1b3;
+  --mav-color-primary-rgb: 179, 23, 5;
   --mav-color-accent: #05a1b3;
   --mav-color-black: #464646;
   --mavc-black: #464646;
@@ -1689,22 +1688,27 @@ form {
 .mav-page-header-wrapper {
   display: block;
   position: relative;
+  overflow: hidden; }
+
+.mav-page-header-ctn {
+  position: absolute;
+  display: block;
+  width: 100%;
+  min-height: 100%;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  overflow: hidden; }
+  filter: blur(10px);
+  transform: scale(1.1); }
   @media only screen and (min-width: 1024px) {
-    .mav-page-header-wrapper {
+    .mav-page-header-ctn {
       background-attachment: fixed !important; } }
 
-.mav-page-header-ctn {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top right, rgba(179, 23, 5, 0.33) 0%, rgba(5, 161, 179, 0.33) 100%); }
-
 .mav-page-title-wrapper {
-  position: relative; }
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top right, rgba(179, 23, 5, 0.33) 0%, rgba(5, 161, 179, 0.33) 100%); }
 
 @media only screen and (max-width: 480px) {
   .mav-page-title-ctn {
@@ -1714,11 +1718,9 @@ form {
     padding: var(--mav-gutter-xl) var(--mav-gutter); } }
 @media only screen and (min-width: 1024px) {
   .mav-page-title-ctn {
-    min-height: 40vh; } }
+    padding: calc(var(--mav-gutter-xl) * 1.5) var(--mav-gutter); } }
 
 .mav-page-title {
-  font-family: "Roboto Slab", serif;
-  font-weight: var(--mav-font-weight-bold);
   color: rgba(255, 255, 255, 0.99) !important;
   line-height: 1.2em;
   text-align: center;
@@ -1730,10 +1732,11 @@ form {
       font-size: 2rem; } }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .mav-page-title {
-      font-size: 3rem; } }
+      font-size: 3rem;
+      max-width: 80vw; } }
   @media only screen and (min-width: 1024px) {
     .mav-page-title {
-      font-size: 4rem; } }
+      font-size: 5rem; } }
 
 /**
  * Post Card
