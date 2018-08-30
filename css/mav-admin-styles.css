@@ -115,7 +115,7 @@
   100% {
     background-color: var(--mav-color-primary); } }
 #wpcontent {
-  padding-right: 10px; }
+  padding-right: 20px; }
 
 h1 {
   line-height: 1.2; }
@@ -136,13 +136,14 @@ h1 {
     grid-gap: var(--mav-gutter); } }
 
 form .form-table {
-  margin: var(--mav-gutter) 0; }
+  margin: var(--mav-gutter) 0;
+  box-shadow: 0 2px var(--mav-color-border); }
   form .form-table tr {
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-gap: var(--mav-gutter-sm);
     padding: var(--mav-gutter) 0;
-    box-shadow: 0 1px #ddd; }
+    box-shadow: 0 1px var(--mav-color-border); }
     @media only screen and (max-width: 480px) {
       form .form-table tr {
         display: flex;
@@ -154,6 +155,11 @@ form .form-table {
     justify-content: center; }
   form .form-table td {
     margin-bottom: 0; }
+
+.mav-admin-desc {
+  margin-top: var(--mav-gutter-xs);
+  font-size: var(--mav-font-size-sm);
+  color: var(--mav-color-text-secondary); }
 
 .mav-range-slider-ctn {
   display: flex;

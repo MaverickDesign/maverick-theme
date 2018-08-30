@@ -3,35 +3,41 @@
  * @package maverick-theme
  */
 
-function mavf_post_feature($mav_args)
+/**
+ * Featured Post
+ *
+ * @param [array] $mav_args
+ * @return void
+ */
+
+function mavf_post_feature( $mav_args )
 {
-    // Check if mavf_post_query function exist
-    if (!function_exists('mavf_post_query')) {
+    if ( ! function_exists( 'mavf_post_query' ) ) {
         return;
     }
 
-    $mavTemplate            = isset($mav_args['template'])               ? $mav_args['template']              : '/template-parts/mav-part-post-feature';
+    $mav_template               = isset( $mav_args['template'] )                ? $mav_args['template']              : '/template-parts/mav-part-post-feature';
 
-    $mavClassWrapper        = isset($mav_args['class_wrapper'])          ? $mav_args['class_wrapper']         : 'mav-posts-wrapper';
-    $mavClassContainer      = isset($mav_args['class_container'])        ? $mav_args['class_container']       : 'mav-posts-ctn';
+    $mav_class_wrapper          = isset( $mav_args['class_wrapper'] )           ? $mav_args['class_wrapper']         : 'mav-posts-wrapper';
+    $mav_class_container        = isset( $mav_args['class_container'] )         ? $mav_args['class_container']       : 'mav-posts-ctn';
 
-    $mavClassWrapperItem    = isset($mav_args['class_wrapper_item'])     ? $mav_args['class_wrapper_item']    : 'mav-post-feature-wrapper';
-    $mavClassContainerItem  = isset($mav_args['class_container_item'])   ? $mav_args['class_container_item']  : 'mav-post-feature-ctn';
+    $mav_class_wrapper_item     = isset( $mav_args['class_wrapper_item'] )      ? $mav_args['class_wrapper_item']    : 'mav-post-feature-wrapper';
+    $mav_class_container_item   = isset( $mav_args['class_container_item'] )    ? $mav_args['class_container_item']  : 'mav-post-feature-ctn';
 
-    $mavButtonText          = isset($mav_args['button_text'])            ? $mav_args['button_text']           : __('Xem chi tiết','maverick-theme');
+    $mav_button_text            = isset( $mav_args['button_text'] )             ? $mav_args['button_text']           : __( 'Xem chi tiết', 'maverick-theme' );
 
-    $mavTitleSide           = isset($mav_args['title_side'])            ? $mav_args['title_side']             : '';
+    $mav_title_side             = isset( $mav_args['title_side'] )              ? $mav_args['title_side']             : '';
 
-    set_query_var('mavClassContainerItem',  $mavClassContainerItem);
-    set_query_var('mavClassWrapperItem',    $mavClassWrapperItem);
-    set_query_var('mavButtonText',          $mavButtonText);
-    set_query_var('mavTitleSide',           $mavTitleSide);
+    set_query_var('mavClassContainerItem',  $mav_class_container_item);
+    set_query_var('mavClassWrapperItem',    $mav_class_wrapper_item);
+    set_query_var('mavButtonText',          $mav_button_text);
+    set_query_var('mavTitleSide',           $mav_title_side);
 
-    $mavPostFeatureArgs = array(
+    $mav_post_feature_args = array(
         'query_args'        => $mav_args['query_args'],
-        'class_wrapper'     => $mavClassWrapper,
-        'class_container'   => $mavClassContainer,
-        'template'          => $mavTemplate,
+        'class_wrapper'     => $mav_class_wrapper,
+        'class_container'   => $mav_class_container,
+        'template'          => $mav_template,
     );
-    mavf_post_query($mavPostFeatureArgs);
+    mavf_post_query( $mav_post_feature_args );
 }

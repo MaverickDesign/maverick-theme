@@ -7,6 +7,9 @@ function mavf_admin_theme_config_options()
 {
 
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_dev-mode.php';
+
+    include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_theme-info.php';
+
     /**
      * Section: Theme Supports
      */
@@ -44,7 +47,7 @@ function mavf_admin_theme_config_options()
 
 }
 
-add_action( 'admin_init' , 'mavf_admin_theme_config_options' );
+add_action('admin_init', 'mavf_admin_theme_config_options');
 
 // Create admin page for Theme Config
 function mavf_admin_page_theme_config()
@@ -54,5 +57,5 @@ function mavf_admin_page_theme_config()
 
 function mavf_theme_config_theme_setting()
 {
-    _e('Các thiết lập cho trang Blog','maverick-theme');
+    _e('Các thiết lập cho trang Blog', 'maverick-theme');
 }

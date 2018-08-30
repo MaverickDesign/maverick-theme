@@ -8,21 +8,43 @@
  * Usage: On HTML element
  */
 
-function mavf_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0')
+function mavf_logo_bg( $logo_back, $logo_mark = '255,255,255,1', $logo_typo = '255,255,255,0' )
 {
+    if ( ! isset( $logo_back ) ) {
+        $logo_back = '193,49,34,1';
+    }
     printf(
         'style="background: rgba(%2$s) url(%1$s/assets/brand-logo.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
-        esc_url(get_template_directory_uri()), $logo_back, $logo_mark, $logo_typo
+        esc_url( get_template_directory_uri() ), $logo_back, $logo_mark, $logo_typo
     );
 };
 
-function mavf_get_logo_bg($logo_back='193,49,34,1', $logo_mark='255,255,255,1', $logo_typo='255,255,255,0')
+function mavf_get_logo_bg( $logo_back, $logo_mark = '255,255,255,1', $logo_typo = '255,255,255,0' )
 {
+    if ( ! isset( $logo_back ) ) {
+        $logo_back = '193,49,34,1';
+    }
     return sprintf(
         'style="background: rgba(%2$s) url(%1$s/assets/brand-logo.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
-        esc_url(get_template_directory_uri()), $logo_back, $logo_mark, $logo_typo
+        esc_url( get_template_directory_uri() ), $logo_back, $logo_mark, $logo_typo
     );
 };
+
+function mavf_brand_logo_background( $mav_get = false, $mav_logo_back = '193,49,34,1', $mav_logo_mark = '255,255,255,1', $mav_logo_typo = '255,255,255,0' )
+{
+    if ( ! file_exists( get_template_directory() . '/assets/brand-logo.php') ) {
+        return;
+    }
+    $mav_output = sprintf(
+        'style="background: rgba(%2$s) url(%1$s/assets/brand-logo.php?back=%2$s&mark=%3$s&typo=%4$s) center no-repeat;"',
+        esc_url( get_template_directory_uri() ), $mav_logo_back, $mav_logo_mark, $mav_logo_typo
+    );
+    if ( ! $mav_get) {
+        echo $mav_output;
+    } else {
+        return $mav_output;
+    }
+}
 
 /**
  * Get post thumbnail URL

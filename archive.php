@@ -22,13 +22,10 @@ if (have_posts()) {
         );
             while (have_posts()) {
                 the_post();
-                // Get post template
-                get_template_part( 'template-parts/content', get_post_format() );
+                get_template_part('template-parts/content', get_post_format());
             }
         echo '</div>';
-            /*
-            * Post paginate links
-            */
+
         echo '<div id="mavid-paginate-links" class="mav-paginate-links-wrapper">';
             echo '<div class="mav-paginate-links-ctn">';
                     $mav_args = array(

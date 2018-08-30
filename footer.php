@@ -80,7 +80,7 @@ endif;
             <div class="mav-margin-bottom-xs">
                 <?php _e('Bản quyền', 'maverick-theme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của', 'maverick-theme'); ?> <a href="<?php bloginfo('url');?>" target="_blank" class="mav-link"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.', 'maverick-theme'); ?>
             </div>
-            <div>
+            <div class="<?php if ( ! get_option('mav_setting_theme_info') ) { echo 'mav-hide'; } ?>">
                 <?php _e('Website xây dựng bằng', 'maverick-theme'); ?> <a href="http://www.maverick.vn/maverick-theme/" target="_blank" class="mav-link"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi', 'maverick-theme'); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link"><strong>Maverick Design</strong></a>.
             </div>
         </div>
@@ -89,7 +89,7 @@ endif;
 
 <?php
     /**
-     *  Wordpress Footer Functions
+     * Wordpress Footer Functions
      */
     wp_footer();
 ?>

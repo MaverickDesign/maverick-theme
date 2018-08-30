@@ -146,14 +146,14 @@ if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->c
             <div class="mav-sec-body-wrapper">
                 <div class="mav-sec-body-ctn">
                     <?php
-                    // Check if total post is greater than number of post to display
-                    $mavNumberOfPostsDisplay = 4 ? $categories[0]->count > 4 : $categories[0]->count;
-                    $mav_args = array(
-                        'number_of_posts'           => 6,
-                        'number_of_posts_display'   => $mavNumberOfPostsDisplay,
-                        'categories'                => array($categories[0]->term_id),
-                    );
-                    mavf_carousel($mav_args);
+                        // Check if total post is greater than number of post to display
+                        $mavNumberOfPostsDisplay = 4 ? $categories[0]->count > 4 : $categories[0]->count;
+                        $mav_args = array(
+                            'number_of_posts'           => 6,
+                            'number_of_posts_display'   => $mavNumberOfPostsDisplay,
+                            'categories'                => array($categories[0]->term_id),
+                        );
+                        mavf_carousel($mav_args);
                     ?>
                 </div>
             </div>
@@ -162,13 +162,13 @@ if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->c
             <footer class="mav-sec-footer-wrapper">
                 <div class="mav-sec-footer-ctn">
                     <?php
-                    printf(
-                        '<a href="%1$s" title="%3$s %2$s"><button class="mav-btn-primary-lg">%4$s</button></a>',
-                        esc_url(get_category_link($categories[0]->term_id)),
-                        esc_html($categories[0]->name),
-                        __('Xem tất cả bài trong chuyên mục', 'maverick-theme'),
-                        __('Xem đầy đủ', 'maverick-theme')
-                    );
+                        printf(
+                            '<a href="%1$s" title="%3$s %2$s"><button class="mav-btn-primary-lg">%4$s</button></a>',
+                            esc_url(get_category_link($categories[0]->term_id)),
+                            esc_html($categories[0]->name),
+                            __('Xem tất cả bài trong chuyên mục', 'maverick-theme'),
+                            __('Xem đầy đủ', 'maverick-theme')
+                        );
                     ?>
                 </div>
             </footer>

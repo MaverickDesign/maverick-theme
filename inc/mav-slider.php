@@ -3,12 +3,20 @@
  * @package maverick-theme
  */
 
-function mavf_slider($mav_args) {
+/**
+ * Slider
+ *
+ * @param [array] $mav_args
+ * @return void
+ */
 
-    if (function_exists('mavf_unique')) {
-        $mav_unique_number = mavf_unique(rand(6, 12));
+function mavf_slider( $mav_args ) {
+
+    // Make unique string
+    if ( function_exists( 'mavf_unique' ) ) {
+        $mav_unique_number = mavf_unique( rand( 6, 12 ) );
     } else {
-        $mav_unique_number = wp_create_nonce(time());
+        $mav_unique_number = wp_create_nonce( time() );
     }
 
     /**
@@ -16,40 +24,39 @@ function mavf_slider($mav_args) {
      */
 
     // Post query arguments
-    $mav_post_queries = isset($mav_args['query_args']) ? $mav_args['query_args'] : array();
-
+    $mav_post_queries = isset( $mav_args['query_args'] ) ? $mav_args['query_args'] : array();
     // Slider type
-    $mav_slider_type = isset($mav_args['slider_type']) ? $mav_args['slider_type'] : 2;
+    $mav_slider_type = isset( $mav_args['slider_type'] ) ? $mav_args['slider_type'] : 2;
     // Post type
-    $mav_post_type = isset($mav_args['post_type']) ? $mav_args['post_type'] : 'post';
+    $mav_post_type = isset( $mav_args['post_type'] ) ? $mav_args['post_type'] : 'post';
     // Number of slides
-    $mav_number_of_slides = isset($mav_args['number_of_slides']) ? $mav_args['number_of_slides'] : 5;
+    $mav_number_of_slides = isset( $mav_args['number_of_slides'] ) ? $mav_args['number_of_slides'] : 5;
     // Slider ID
-    $mav_slider_id = isset($mav_args['slider_id']) ? $mav_args['slider_id'] : 'mavid-slider-'.$mav_slider_type.'-'.$mav_unique_number;
+    $mav_slider_id = isset( $mav_args['slider_id'] ) ? $mav_args['slider_id'] : 'mavid-slider-'.$mav_slider_type.'-'.$mav_unique_number;
     // Slider container class
-    $mav_slider_container = isset($mav_args['slider_container']) ? $mav_args['slider_container'] : 'mav-slider-type-'.$mav_slider_type.'-ctn';
+    $mav_slider_container = isset( $mav_args['slider_container'] ) ? $mav_args['slider_container'] : 'mav-slider-type-'.$mav_slider_type.'-ctn';
     // Slide interval
-    $mav_interval = isset($mav_args['interval']) ? $mav_args['interval'] : 4000;
+    $mav_interval = isset( $mav_args['interval'] ) ? $mav_args['interval'] : 4000;
     // Display post title
-    $mav_display_title = isset($mav_args['display_title']) ? $mav_args['display_title'] : true;
+    $mav_display_title = isset( $mav_args['display_title'] ) ? $mav_args['display_title'] : true;
     // Categories
-    $mav_categories = isset($mav_args['categories']) ? $mav_args['categories'] : '';
+    $mav_categories = isset( $mav_args['categories'] ) ? $mav_args['categories'] : '';
     // Specific posts
-    $mav_posts = isset($mav_args['posts']) ? $mav_args['posts'] : '';
+    $mav_posts = isset( $mav_args['posts'] ) ? $mav_args['posts'] : '';
     // Slider height
-    $mav_slider_height = isset($mav_args['height']) ? 'height: '.$mav_args['height'].';' : '';
+    $mav_slider_height = isset( $mav_args['height'] ) ? 'height: '.$mav_args['height'].';' : '';
 
 
     // Set max slides for slider type 1
-    if ($mav_slider_type == 1 && $mav_number_of_slides > 6) {
+    if ( $mav_slider_type == 1 && $mav_number_of_slides > 6 ) {
         $mav_number_of_slides = 6;
     }
     // Set max slides for slider type 2
-    if ($mav_slider_type == 2 && $mav_number_of_slides > 10) {
+    if ( $mav_slider_type == 2 && $mav_number_of_slides > 10 ) {
         $mav_number_of_slides = 10;
     }
     // Set max slides for slider type 3
-    if ($mav_slider_type == 3) {
+    if ( $mav_slider_type == 3 ) {
         $mav_number_of_slides = 5;
     }
 
@@ -57,13 +64,13 @@ function mavf_slider($mav_args) {
 
     $mav_query_args = array();
 
-    if (!empty($mav_post_queries)) {
+    if ( !empty( $mav_post_queries ) ) {
         $mav_query_args = $mav_post_queries;
     } else {
         $mav_query_args = array(
             'post_type'             => $mav_post_type,
             'post_status'           => 'publish',
-            'posts_per_page'        => ($mav_number_of_slides),
+            'posts_per_page'        => $mav_number_of_slides,
             'post__in'              => $mav_posts,
             'ignore_sticky_posts'   => true,
             'category__in'          => $mav_categories,
@@ -76,16 +83,17 @@ function mavf_slider($mav_args) {
         );
     }
 
-    $mav_query = new WP_Query($mav_query_args);
+    $mav_query = new WP_Query( $mav_query_args );
 
     // The Loop
-    if ($mav_query->have_posts()) :
+    if ( $mav_query->have_posts() ) :
         // Slider Wrapper
         printf(
             '<div id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
             $mav_slider_id, $mav_interval, $mav_slider_type, $mav_unique_number, $mav_slider_height
         );
-        $mav_element_styles = ($mav_slider_type == 1) ? 'style="grid-template-columns: repeat('.($mav_number_of_slides-1).',1fr);"' : '';
+        // Element style
+        $mav_element_styles = ( $mav_slider_type == 1 ) ? 'style="grid-template-columns: repeat('.( $mav_number_of_slides - 1 ).',1fr);"' : '';
             // Slider Container
             printf(
                 '<div class="mav-slider-container %1$s" %2$s>',
@@ -98,19 +106,19 @@ function mavf_slider($mav_args) {
                  * Type 1
                  * ==================================================
                  */
-                if ($mav_slider_type == 1) {
-                    while ($mav_query->have_posts()) :
+                if ( $mav_slider_type == 1 ) {
+                    while ( $mav_query->have_posts() ) :
                         $mav_query->the_post();
 
-                        if (function_exists('mavf_get_post_thumbnail_url')) {
-                            $mavImageUrl = mavf_get_post_thumbnail_url('large');
+                        if ( function_exists( 'mavf_get_post_thumbnail_url' ) ) {
+                            $mav_image_url = mavf_get_post_thumbnail_url( 'large' );
                         }
-
-                        ($i == 1 ? $mavFirstSlide = ' mav-first-slide' : $mavFirstSlide = '');
+                        $mav_first_slide = ( $i == 1 ) ? ' mav-first-slide' : '';
+                        // ( $i == 1 ? $mav_first_slide = ' mav-first-slide' : $mav_first_slide = '' );
 
                         printf(
                             '<div class="mav-slide mav-slide-number-%2$s %3$s" data-slide="%2$s" %1$s>',
-                            $mavImageUrl, $i, $mavFirstSlide
+                            $mav_image_url, $i, $mav_first_slide
                         );
                         printf(
                             '<a href="%1$s" class="mav-slide-title">%2$s</a>',
@@ -120,86 +128,93 @@ function mavf_slider($mav_args) {
 
                         $i++;
                     endwhile;
+
+                    // Reset post data
+                    wp_reset_postdata();
                 }
 
                 /**
                  * Type 2
                  * ==================================================
                  */
-                if ($mav_slider_type == 2) {
-                    $mavRandomNumber = $mav_unique_number;
-                    while ($mav_query->have_posts()) :
+                if ( $mav_slider_type == 2 ) {
+                    $mav_random_number = $mav_unique_number;
+                    while ( $mav_query->have_posts() ) :
                         $mav_query->the_post();
-                        if ($i == 1) {
-                            $mavChecked         = 'checked';
-                            $mavCurrentSlide    = ' mav-current-slide';
-                            $mavActiveSlide     = ' mav-active-slide';
+                        if ( $i == 1 ) {
+                            $mav_checked        = 'checked';
+                            $mav_current_slide  = ' mav-current-slide';
+                            $mav_active_slide   = ' mav-active-slide';
                         } else {
-                            $mavChecked         = '';
-                            $mavCurrentSlide    = '';
-                            $mavActiveSlide     = '';
+                            $mav_checked        = '';
+                            $mav_current_slide  = '';
+                            $mav_active_slide   = '';
                         }
 
                         printf(
                             '<input id="mavid-slide-%1$s-%4$s" type="radio" name="slides" data-number="%1$s" class="mav-slide-input%3$s" %2$s>',
-                            $i, $mavChecked, $mavCurrentSlide, $mavRandomNumber
+                            $i, $mav_checked, $mav_current_slide, $mav_random_number
                         );
 
-                        if (function_exists('mavf_get_post_thumbnail_url')) {
-                            $mavImageUrl = mavf_get_post_thumbnail_url('large');
+                        if ( function_exists( 'mavf_get_post_thumbnail_url' ) ) {
+                            $mav_image_url = mavf_get_post_thumbnail_url( 'large' );
                         }
 
                         printf(
                             '<div id="mavid-slide-ctn-%1$s-%4$s" data-slide="%1$s" data-number="%1$s" class="mav-slide%3$s" %2$s>',
-                            $i, $mavImageUrl, $mavActiveSlide, $mavRandomNumber
+                            $i, $mav_image_url, $mav_active_slide, $mav_random_number
                         );
 
-                        $mavPrevSlide = $i - 1;
-                        if ($mavPrevSlide < 1) {
-                            $mavPrevSlide = $mav_number_of_slides;
+                        $mav_prev_slide = $i - 1;
+
+                        if ( $mav_prev_slide < 1 ) {
+                            $mav_prev_slide = $mav_number_of_slides;
                         }
 
                         // Previous nav
                         printf(
                             '<label for="mavid-slide-%1$s-%2$s" data-input="mavid-slide-%1$s-%2$s" data-container="mavid-slide-ctn-%1$s-%2$s" data-number="%1$s" class="mav-slide-nav slide-prev"></label>',
-                            $mavPrevSlide, $mavRandomNumber
+                            $mav_prev_slide, $mav_random_number
                         );
 
-                        if ($mav_display_title) {
+                        if ( isset( $mav_display_title ) ) {
                             echo '<div class="mav-slide-post-title-ctn">';
                                 printf(
                                     '<a href="%2$s" title="%3$s %1$s"><h2 class="mav-slider-title">%1$s</h2><button class="mav-btn-primary mav-hide-on-desktop mav-hide-on-tablet">%3$s</button></a>',
-                                    get_the_title(), get_the_permalink(), __('Xem nội dung', 'maverick-theme')
+                                    get_the_title(), get_the_permalink(), __( 'Xem nội dung', 'maverick-theme' )
                                 );
                             echo '</div>';
                         }
 
-                        $mavNextSlide = $i + 1;
-                        if ($mavNextSlide > $mav_number_of_slides) {
-                            $mavNextSlide = 1;
+                        $mav_next_slide = $i + 1;
+                        if ( $mav_next_slide > $mav_number_of_slides ) {
+                            $mav_next_slide = 1;
                         }
 
                         // Next nav
                         printf(
                             '<label for="mavid-slide-%1$s-%2$s" data-input="mavid-slide-%1$s-%2$s" data-container="mavid-slide-ctn-%1$s-%2$s" data-number="%1$s" class="mav-slide-nav slide-next"></label>',
-                            $mavNextSlide, $mavRandomNumber
+                            $mav_next_slide, $mav_random_number
                         );
                         echo '</div>';
 
                         $i++;
                     endwhile;
 
+                    // Reset post data
+                    wp_reset_postdata();
+
                     // Nav dots
-                    printf('<div id="mavid-slider-css-nav-%1$s" class="mav-slider-nav">', $mavRandomNumber);
-                        for ($j = 1 ; $j <= $mav_number_of_slides ; $j++) {
-                            if ($j==1) {
-                                $mavActiveDot = ' mav-active-dot';
+                    printf( '<div id="mavid-slider-css-nav-%1$s" class="mav-slider-nav">', $mav_random_number );
+                        for ( $j = 1 ; $j <= $mav_number_of_slides ; $j++ ) {
+                            if ( $j == 1 ) {
+                                $mav_active_dot = ' mav-active-dot';
                             } else {
-                                $mavActiveDot = '';
+                                $mav_active_dot = '';
                             }
                             printf(
                                 '<label id="mavid-dot-%1$s-%3$s" for="mavid-slide-%1$s-%3$s" data-input="mavid-slide-%1$s-%3$s" data-container="mavid-slide-ctn-%1$s-%3$s" class="mav-nav-dot%2$s"></label>',
-                                $j, $mavActiveDot, $mavRandomNumber
+                                $j, $mav_active_dot, $mav_random_number
                             );
                         }
                     echo '</div>';
@@ -209,33 +224,35 @@ function mavf_slider($mav_args) {
                  * Type 3
                  * ==================================================
                  */
-                if ($mav_slider_type == 3) {
-                    while ($mav_query->have_posts()) :
+                if ( $mav_slider_type == 3 ) {
+                    while ( $mav_query->have_posts() ) :
                         $mav_query->the_post();
 
-                        $mavTitle = get_the_title();
-                        $mavPermalink = get_the_permalink();
+                        $mav_title = get_the_title();
+                        $mav_permalink = get_the_permalink();
 
-                        if (function_exists('mavf_get_post_thumbnail_url')) {
-                            $mavImageUrl = mavf_get_post_thumbnail_url('large');
+                        if ( function_exists( 'mavf_get_post_thumbnail_url' ) ) {
+                            $mav_image_url = mavf_get_post_thumbnail_url( 'large' );
                         }
                         printf(
                             '<div id="mavid-slide-type-3-%2$s" data-number="%2$s" class="mav-slide" %1$s>',
-                            $mavImageUrl, $i
+                            $mav_image_url, $i
                         );
                             echo '<div class="mav-slide-title-ctn">';
                                 printf(
                                     '<a href="%2$s" title="%1$s"><button class="mav-btn-primary-dark">%3$s</button></a>',
-                                    $mavTitle, $mavPermalink, __('Xem chi tiết', 'maverick-theme')
+                                    $mav_title, $mav_permalink, __( 'Xem chi tiết', 'maverick-theme' )
                                 );
                             echo '</div>';
                         echo '</div>';
                         $i++;
                     endwhile;
+
+                    // Reset post data
+                    wp_reset_postdata();
                 }
 
             echo '</div>'; // Slider Container
         echo '</div>'; // Slider Wrapper
     endif;
-    wp_reset_postdata();
 }

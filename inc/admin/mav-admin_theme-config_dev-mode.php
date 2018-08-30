@@ -23,12 +23,18 @@ add_settings_field(
     __('Dev Mode', 'maverick-theme'),
     'mavf_theme_config_dev_mode',
     'mav_admin_page_theme_config',
-    'mavsec_theme_config_dev_mode'
+    'mavsec_theme_config_dev_mode',
+    array(
+        'label_for' => 'mavid-setting-dev-mode'
+    )
 );
 
 function mavf_theme_config_dev_mode()
 {
-    $mav_saved_value = esc_attr(get_option('mav_setting_dev_mode'));
-    $mavChecked = (@$mav_saved_value == 1 ? 'checked' : '');
-    printf('<input id="mavid-setting-dev-mode" type="checkbox" name="mav_setting_dev_mode" value="1" %1$s/>', $mavChecked);
+    $mav_saved_value = esc_attr( get_option( 'mav_setting_dev_mode' ) );
+    $mav_checked = ( @$mav_saved_value == 1 ? 'checked' : '' );
+    printf(
+        '<input id="mavid-setting-dev-mode" type="checkbox" name="mav_setting_dev_mode" value="1" %1$s/>',
+        $mav_checked
+    );
 }

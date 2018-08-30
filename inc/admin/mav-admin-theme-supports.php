@@ -59,25 +59,31 @@ add_theme_support(
         'flex-width'    => false,
         'flex-height'   => false,
         'header-text'   => array(
-            'site-title',
-            'site-description'
-        ),
+                            'site-title',
+                            'site-description'
+                        ),
     )
 );
 
 /**
  * Theme Support - Navigation Menus
+ *
+ * @return void
  */
+
 function mavf_register_nav_menus()
 {
-    register_nav_menu('primary_menu', 'Main menu/Header Menu');
-    register_nav_menu('secondary_menu', 'Secondary/Footer menu');
+    register_nav_menu('primary_menu', __('Main menu/Header Menu', 'maverick-theme'));
+    register_nav_menu('secondary_menu', __('Secondary/Footer menu', 'maverick-theme'));
 }
 add_action('after_setup_theme', 'mavf_register_nav_menus');
 
 /**
  * Theme Support - Sidebars
+ *
+ * @return void
  */
+
 function mavf_register_sidebars()
 {
     /**
