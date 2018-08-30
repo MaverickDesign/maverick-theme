@@ -1,19 +1,19 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Setting Section
 add_settings_section(
     'mavsec_theme_config_theme_info',
-    __( 'Thông tin bộ giao diện', 'maverick-theme' ),
+    __( 'Thông tin bộ giao diện', 'mavericktheme' ),
     'mavf_theme_config_sec_theme_info',
     'mav_admin_page_theme_config'
 );
 
 function mavf_theme_config_sec_theme_info()
 {
-   _e( 'Thông tin bộ giao diện', 'maverick-theme' );
+   _e( 'Thông tin bộ giao diện', 'mavericktheme' );
 }
 
 register_setting(
@@ -22,7 +22,7 @@ register_setting(
 );
 add_settings_field(
     'mavid_theme_config_theme_info',
-    __( 'Hiển thị', 'maverick-theme' ),
+    __( 'Hiển thị', 'mavericktheme' ),
     'mavf_theme_config_theme_info',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_theme_info',

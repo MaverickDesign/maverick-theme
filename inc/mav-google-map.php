@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_google_map($mav_args)

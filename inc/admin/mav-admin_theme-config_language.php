@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 register_setting('mavog_theme_config', 'mav_setting_theme_language');

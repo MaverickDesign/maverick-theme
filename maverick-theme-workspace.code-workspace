@@ -1,0 +1,10 @@
+{
+	"folders": [],
+	"settings": {
+		"files.exclude": {
+			".vscode/" : true,
+			"maverick-theme-workspace.code-workspace": true,
+			"LICENSE" : true
+		}
+	}
+}

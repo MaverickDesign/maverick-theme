@@ -1,12 +1,12 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 register_setting('mavog_theme_config', 'mav_setting_blog_page_columns');
 add_settings_field(
     'mavid_theme_setting_blog_page_columns',
-    __('Số cột hiển thị', 'maverick-theme'),
+    __('Số cột hiển thị', 'mavericktheme'),
     'mavf_theme_config_blog_page_columns',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_theme_setting'
@@ -27,5 +27,5 @@ function mavf_theme_config_blog_page_columns()
     </ul>
     ';
 
-    printf('<span class="mav-admin-desc">%1$s</span>', __('Tùy chọn này giới hạn từ 1 đến 4 để đảm bảo tính mỹ thuật cho bố cục website.', 'maverick-theme'));
+    printf('<span class="mav-admin-desc">%1$s</span>', __('Tùy chọn này giới hạn từ 1 đến 4 để đảm bảo tính mỹ thuật cho bố cục website.', 'mavericktheme'));
 }

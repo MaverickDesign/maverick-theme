@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  * Template Name: Contact Page
  * Template Post Type: page
  */
@@ -25,7 +25,7 @@
                             if (function_exists('mavf_contact_form')) {
                                 $mavFormArgs = array(
                                     'fields'        => array('name','email','phone','message'),
-                                    'form_title'    => __('Gửi thông tin liên hệ tới <strong>'.get_bloginfo('name').'</strong>', 'maverick-theme'),
+                                    'form_title'    => __('Gửi thông tin liên hệ tới <strong>'.get_bloginfo('name').'</strong>', 'mavericktheme'),
                                 );
                                 mavf_contact_form($mavFormArgs);
                             }
@@ -39,9 +39,9 @@
                                         <?php
                                             printf(
                                                 '<h3 class="mav-margin-bottom-lg mav-text-center">%1$s <strong class="mav-no-break">%2$s</strong> %3$s</h3>',
-                                                __('Liên lạc với', 'maverick-theme'),
+                                                __('Liên lạc với', 'mavericktheme'),
                                                 get_bloginfo('name'),
-                                                __('qua mạng xã hội', 'maverick-theme')
+                                                __('qua mạng xã hội', 'mavericktheme')
                                             );
                                             mavf_social_links();
                                         ?>
@@ -53,7 +53,7 @@
                             <!-- Physical Address -->
                             <div class="mav-contact-wrapper">
                                 <div class="mav-contact-ctn">
-                                    <h3 class="mav-margin-bottom-lg mav-text-center"><?php _e('Liên hệ trực tiếp với','maverick-theme'); ?> <strong class="mav-no-break"><?php echo get_bloginfo('name'); ?></strong></h3>
+                                    <h3 class="mav-margin-bottom-lg mav-text-center"><?php _e('Liên hệ trực tiếp với','mavericktheme'); ?> <strong class="mav-no-break"><?php echo get_bloginfo('name'); ?></strong></h3>
                                     <?php
                                         get_template_part('/template-parts/mav-contact-info');
                                     ?>

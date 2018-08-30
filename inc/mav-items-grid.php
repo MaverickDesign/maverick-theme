@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_items_grid($mav_args)

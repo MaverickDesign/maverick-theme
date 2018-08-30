@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Get social account info from JSON file
@@ -70,7 +70,7 @@ function mavf_social_links( $mav_full = false, $mav_ul_class = "mav-social-links
         }
     }
 
-    $mav_brand_name = esc_html( get_bloginfo( 'name' ) ).__( ' trên ', 'maverick-theme' );
+    $mav_brand_name = esc_html( get_bloginfo( 'name' ) ).__( ' trên ', 'mavericktheme' );
 
     /**
      * Social Accounts

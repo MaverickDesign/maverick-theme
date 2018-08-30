@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_admin_theme_config_options()
@@ -29,7 +29,7 @@ function mavf_admin_theme_config_options()
      */
     add_settings_section(
         'mavsec_theme_config_theme_setting',
-        __('Trang Blog', 'maverick-theme'),
+        __('Trang Blog', 'mavericktheme'),
         'mavf_theme_config_theme_setting',
         'mav_admin_page_theme_config'
     );
@@ -57,5 +57,5 @@ function mavf_admin_page_theme_config()
 
 function mavf_theme_config_theme_setting()
 {
-    _e('Các thiết lập cho trang Blog', 'maverick-theme');
+    _e('Các thiết lập cho trang Blog', 'mavericktheme');
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 /**
@@ -181,7 +181,7 @@ function mavf_slider( $mav_args ) {
                             echo '<div class="mav-slide-post-title-ctn">';
                                 printf(
                                     '<a href="%2$s" title="%3$s %1$s"><h2 class="mav-slider-title">%1$s</h2><button class="mav-btn-primary mav-hide-on-desktop mav-hide-on-tablet">%3$s</button></a>',
-                                    get_the_title(), get_the_permalink(), __( 'Xem nội dung', 'maverick-theme' )
+                                    get_the_title(), get_the_permalink(), __( 'Xem nội dung', 'mavericktheme' )
                                 );
                             echo '</div>';
                         }
@@ -241,7 +241,7 @@ function mavf_slider( $mav_args ) {
                             echo '<div class="mav-slide-title-ctn">';
                                 printf(
                                     '<a href="%2$s" title="%1$s"><button class="mav-btn-primary-dark">%3$s</button></a>',
-                                    $mav_title, $mav_permalink, __( 'Xem chi tiết', 'maverick-theme' )
+                                    $mav_title, $mav_permalink, __( 'Xem chi tiết', 'mavericktheme' )
                                 );
                             echo '</div>';
                         echo '</div>';

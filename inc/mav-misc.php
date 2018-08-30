@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 /**
@@ -119,7 +119,7 @@ function mavf_message_box($mavMessage = 'Thông báo', $mavIcon = 'fa-exclamatio
             printf('<p class="mav-message-content">%1$s</p>', $mavMessage);
             printf(
                 '<span class="mav-btn-close" title="%1$s"></span>',
-                __('Đóng thông báo', 'maverick-theme')
+                __('Đóng thông báo', 'mavericktheme')
             );
         echo '</div>';
     echo '</div>';

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  * Template part: Card - Client
  */
 
@@ -10,7 +10,7 @@ if (has_post_thumbnail()) {
             printf(
                 '<a href="%1$s" title="%2$s">',
                 esc_url(get_the_permalink()),
-                __('Tìm hiều thêm về '.get_the_title(), 'maverick-theme')
+                __('Tìm hiều thêm về '.get_the_title(), 'mavericktheme')
             );
                 printf(
                     '<header><figure><img src="%1$s"></figure></header>',

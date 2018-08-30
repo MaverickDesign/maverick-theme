@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 /**
@@ -51,11 +51,11 @@ function mavf_post_accordion( $mav_args )
                     printf('<div class="mav-accordion-ctn">');
                         printf(
                             '<div class="mav-accordion-trigger" data-trigger-icon data-state="close" data-collection="%1$s" %3$s title="%2$s">',
-                            $mav_unique_number, __('Click to expand', 'maverick-theme'), $mav_faq_data.' data-question'
+                            $mav_unique_number, __('Click to expand', 'mavericktheme'), $mav_faq_data.' data-question'
                         );
                             the_title('<span class="mav-accordion-trigger-title">','</span>');
                             if ( $mav_removable ) {
-                                printf( '<span class="mav-btn-close" title="%1$s"></span>', __('Click to remove', 'maverick-theme') );
+                                printf( '<span class="mav-btn-close" title="%1$s"></span>', __('Click to remove', 'mavericktheme') );
                             }
                         echo '</div>';
                         printf('<div class="mav-accordion-ctn-wrapper" %1$s>', $mav_faq_data.' data-answer');

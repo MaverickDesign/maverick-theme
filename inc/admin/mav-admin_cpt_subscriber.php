@@ -1,11 +1,11 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 $mavLabels = array(
-    'name'              => __('Subsciber', 'maverick-theme'),
-    'singular_name'     => __('Subsciber', 'maverick-theme')
+    'name'              => __('Subsciber', 'mavericktheme'),
+    'singular_name'     => __('Subsciber', 'mavericktheme')
 );
 
 $mav_args = array(
@@ -15,7 +15,7 @@ $mav_args = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array('slug' => __('dang_ky', 'maverick-theme')),
+    'rewrite'            => array('slug' => __('dang_ky', 'mavericktheme')),
 );
 
 register_post_type('mav_cpt_subscriber', $mav_args);

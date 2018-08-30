@@ -1,11 +1,11 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 $mavLabels = array(
-    'name'              => __('Testimonial', 'maverick-theme'),
-    'singular_name'     => __('Testimonial', 'maverick-theme')
+    'name'              => __('Testimonial', 'mavericktheme'),
+    'singular_name'     => __('Testimonial', 'mavericktheme')
 );
 
 $mav_args = array(
@@ -15,7 +15,7 @@ $mav_args = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array('slug' => __('nhan_xet', 'maverick-theme')),
+    'rewrite'            => array('slug' => __('nhan_xet', 'mavericktheme')),
 );
 
 register_post_type('mav_cpt_testimonial', $mav_args);

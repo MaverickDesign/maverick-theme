@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 ?>
 
@@ -83,7 +83,7 @@ printf('<div class="%1$s">', $mavSectionClass);
                 echo '<div class="mav-padding-top-lg">';
                     printf(
                         '<button class="mav-btn-primary-lg mavjs-ajax-load-posts" data-full-width data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',
-                        admin_url('admin-ajax.php'), __('Xem thêm', 'maverick-theme')
+                        admin_url('admin-ajax.php'), __('Xem thêm', 'mavericktheme')
                     );
                 echo '</div>';
             } else {
@@ -93,8 +93,8 @@ printf('<div class="%1$s">', $mavSectionClass);
                 echo '<div id="mavid-paginate-links" class="mav-paginate-links-wrapper">';
                     echo '<div class="mav-paginate-links-ctn">';
                             $mav_args = array(
-                                'prev_text'          => __('Trang trước', 'maverick-theme'),
-                                'next_text'          => __('Trang sau', 'maverick-theme'),
+                                'prev_text'          => __('Trang trước', 'mavericktheme'),
+                                'next_text'          => __('Trang sau', 'mavericktheme'),
                                 'before_page_number' => '',
                                 'after_page_number'  => ''
                             );

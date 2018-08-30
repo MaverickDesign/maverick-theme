@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 $mav_post_type    = get_post_type();
@@ -33,7 +33,7 @@ printf(
                     printf('<div class="%1$s-title-ctn">', $mavNameSpace);
                         printf(
                             '<h3 class="%2$s-title mav-text-center"><a href="%3$s" title="%4$s %1$s">%1$s</a></h3>',
-                            get_the_title(), $mavNameSpace, get_the_permalink(), __('Đến trang' ,  'maverick-theme')
+                            get_the_title(), $mavNameSpace, get_the_permalink(), __('Đến trang' ,  'mavericktheme')
                         );
                     echo '</div>';
                 echo '</header>';
@@ -52,7 +52,7 @@ printf(
                         printf(
                             '<a href="%2$s" title="%3$s"><button class="mav-btn-cta">%1$s</button></a>',
                             $mavButtonText, get_the_permalink(),
-                            __('Đến trang '.get_the_title(), 'maverick-theme')
+                            __('Đến trang '.get_the_title(), 'mavericktheme')
                         );
                     echo '</div>';
                 echo '</footer>';

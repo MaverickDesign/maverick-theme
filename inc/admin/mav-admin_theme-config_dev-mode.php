@@ -1,26 +1,26 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Setting Section
 add_settings_section(
     'mavsec_theme_config_dev_mode',
-    __('Developing Mode', 'maverick-theme'),
+    __('Developing Mode', 'mavericktheme'),
     'mavf_theme_config_sec_dev_mode',
     'mav_admin_page_theme_config'
 );
 
 function mavf_theme_config_sec_dev_mode()
 {
-   _e('Kích hoạt chế độ đang phát triển website', 'maverick-theme');
+   _e('Kích hoạt chế độ đang phát triển website', 'mavericktheme');
 }
 
 // Setting Field
 register_setting('mavog_theme_config', 'mav_setting_dev_mode');
 add_settings_field(
     'mavid_theme_config_dev_mode',
-    __('Dev Mode', 'maverick-theme'),
+    __('Dev Mode', 'mavericktheme'),
     'mavf_theme_config_dev_mode',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_dev_mode',

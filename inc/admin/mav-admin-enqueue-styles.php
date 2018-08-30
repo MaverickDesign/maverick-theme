@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_enqueue_styles()
@@ -56,7 +56,7 @@ function mavf_enqueue_styles()
 
     // Main Maverick Theme CSS
     wp_enqueue_style(
-        'mavcss-maverick-theme-styles',
+        'mavcss-mavericktheme-styles',
         get_template_directory_uri().'/css/maverick-styles.css',
         array(),
         '1.0.0',

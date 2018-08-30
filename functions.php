@@ -1,13 +1,13 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
 */
 
 // Use for HTML sources
-// Eg: http://localhost/maverick.vn/wp-content/themes/maverick-theme
+// Eg: http://localhost/maverick.vn/wp-content/themes/mavericktheme
 define("THEME_DIR", get_template_directory_uri());
 // Use for PHP sources
-// Eg: D:\_Projects\www\maverick.vn/wp-content/themes/maverick-theme
+// Eg: D:\_Projects\www\maverick.vn/wp-content/themes/mavericktheme
 define("TEMPLATE_DIR", get_template_directory());
 
 /* Remove Generator Meta Tag */

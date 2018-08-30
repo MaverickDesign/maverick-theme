@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 /**
@@ -24,7 +24,7 @@ function mavf_post_feature( $mav_args )
     $mav_class_wrapper_item     = isset( $mav_args['class_wrapper_item'] )      ? $mav_args['class_wrapper_item']    : 'mav-post-feature-wrapper';
     $mav_class_container_item   = isset( $mav_args['class_container_item'] )    ? $mav_args['class_container_item']  : 'mav-post-feature-ctn';
 
-    $mav_button_text            = isset( $mav_args['button_text'] )             ? $mav_args['button_text']           : __( 'Xem chi tiết', 'maverick-theme' );
+    $mav_button_text            = isset( $mav_args['button_text'] )             ? $mav_args['button_text']           : __( 'Xem chi tiết', 'mavericktheme' );
 
     $mav_title_side             = isset( $mav_args['title_side'] )              ? $mav_args['title_side']             : '';
 

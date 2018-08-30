@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 add_settings_section(
@@ -9,13 +9,13 @@ add_settings_section(
 
 function mavf_site_setting_facebook_app()
 {
-    _e('Thiết lập cho Facebook App', 'maverick-theme');
+    _e('Thiết lập cho Facebook App', 'mavericktheme');
 }
 
 register_setting('mavog_site_setting', 'mav_setting_enable_facebook_app');
 add_settings_field(
     'mavid_site_setting_enable_facebook_app',
-    __('Kích hoạt Facebook App', 'maverick-theme'),
+    __('Kích hoạt Facebook App', 'mavericktheme'),
     'mavf_site_setting_enable_facebook_app',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_facebook_app'
@@ -31,7 +31,7 @@ function mavf_site_setting_enable_facebook_app()
 register_setting('mavog_site_setting', 'mav_setting_facebook_app_id');
 add_settings_field(
     'mavid_site_setting_facebook_app_id',
-    __('Facebook App ID', 'maverick-theme'),
+    __('Facebook App ID', 'mavericktheme'),
     'mavf_site_setting_facebook_app_id',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_facebook_app'
@@ -42,6 +42,6 @@ function mavf_site_setting_facebook_app_id()
     $mav_saved_value = esc_attr(get_option('mav_setting_facebook_app_id'));
     printf(
         '<input id="mavid-ss-facebook-app" type="text" name="mav_setting_facebook_app_id" value="%1$s" placeholder="%2$s"/>',
-        $mav_saved_value, __('Facebook App ID', 'maverick-theme')
+        $mav_saved_value, __('Facebook App ID', 'mavericktheme')
     );
 }

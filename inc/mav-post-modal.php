@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_post_modal( $mav_args )
@@ -34,7 +34,7 @@ function mavf_post_modal( $mav_args )
                 printf('<div class="mav-modal-box">');
                     printf( '<header class="%1$s">', $mav_header_class );
                         the_title('<h4 class="mav-modal-title">','</h4>');
-                        echo '<button class="mav-btn-close" title="'.__('Đóng','maverick-theme').'"></button>';
+                        echo '<button class="mav-btn-close" title="'.__('Đóng','mavericktheme').'"></button>';
                     echo '</header>';
                     printf( '<div class="%1$s">', $mav_body_class );
                         the_content();

@@ -1,13 +1,13 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 register_setting('mavog_theme_config', 'mav_setting_post_format');
 
 add_settings_field(
     'mavid_theme_config_theme_support_post_format',
-    __('Các định dạng bài viết', 'maverick-theme'),
+    __('Các định dạng bài viết', 'mavericktheme'),
     'mavf_theme_config_theme_support_post_format',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_theme_support'

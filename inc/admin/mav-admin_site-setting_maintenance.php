@@ -1,20 +1,20 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Website maintenance section
-add_settings_section( 'mavsec_site_setting_maintenance' , __('Bảo trì website','maverick-theme') , 'mavf_site_setting_sec_maintenance' , 'mav_admin_page_site_setting' );
+add_settings_section( 'mavsec_site_setting_maintenance' , __('Bảo trì website','mavericktheme') , 'mavf_site_setting_sec_maintenance' , 'mav_admin_page_site_setting' );
 
 function mavf_site_setting_sec_maintenance() {
-    _e('Thiết lập bảo trì website','maverick-theme');
+    _e('Thiết lập bảo trì website','mavericktheme');
 }
 
 // Eneable maintenance mode
 register_setting('mavog_site_setting','mav_setting_maintenance');
 add_settings_field(
     'mavid_site_setting_maintenance',
-    __('Kích hoạt chế độ bảo trì','maverick-theme'),
+    __('Kích hoạt chế độ bảo trì','mavericktheme'),
     'mavf_site_setting_maintenance',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_maintenance'
@@ -30,7 +30,7 @@ function mavf_site_setting_maintenance() {
 register_setting('mavog_site_setting','mav_setting_maintenance_time');
 add_settings_field(
     'mavid_site_setting_maintenance_time',
-    __('Ngày kết thúc bảo trì','maverick-theme'),
+    __('Ngày kết thúc bảo trì','mavericktheme'),
     'mavf_site_setting_maintenance_time',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_maintenance'

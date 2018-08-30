@@ -1,12 +1,12 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 ?>
 
 <?php
-    printf('<h1>%1$s</h1>', __('Thiết lập Website', 'maverick-theme'));
-    printf('<p>%1$s</p>', __('Các thiết lập cho website', 'maverick-theme'));
+    printf('<h1>%1$s</h1>', __('Thiết lập Website', 'mavericktheme'));
+    printf('<p>%1$s</p>', __('Các thiết lập cho website', 'mavericktheme'));
 
     // WordPress Setting Errors
     settings_errors();
@@ -17,13 +17,13 @@
         <?php
             settings_fields('mavog_site_setting');
             do_settings_sections('mav_admin_page_site_setting');
-            submit_button(__('Lưu các thay đổi', 'maverick-theme'), 'primary', 'mavb_submit');
+            submit_button(__('Lưu các thay đổi', 'mavericktheme'), 'primary', 'mavb_submit');
         ?>
     </form>
 
     <!-- Settings Preview -->
     <div id="mavid-settings-preview" class="mav-hide-on-phone">
-        <h2><?php _e('Các thông tin đã thiết lập', 'maverick-theme'); ?></h2>
+        <h2><?php _e('Các thông tin đã thiết lập', 'mavericktheme'); ?></h2>
         <?php
             $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
         ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  * Single Post Template
  */
 ?>
@@ -32,19 +32,19 @@
                             printf(
                                 '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
                                 $mavSingleCat,
-                                __('Xem các bài chuyên mục','maverick-theme'),
+                                __('Xem các bài chuyên mục','mavericktheme'),
                                 mavf_single_category()
                             );
                         }
                         printf('
                             <span class="mav-post-info" title="%2$s" data-type="date">%1$s</span>',
                             get_the_date(),
-                            __('Ngày đăng','maverick-theme')
+                            __('Ngày đăng','mavericktheme')
                         );
                         printf('
                             <span class="mav-post-info" title="%2$s" data-type="author">%1$s</span>',
                             get_the_author(),
-                            __('Tác giả','maverick-theme')
+                            __('Tác giả','mavericktheme')
                         );
                     ?>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="mav-post-tags-wrapper">
                         <div class="mav-post-tags-ctn">
                             <?php
-                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Thẻ liên kết', 'maverick-theme'));
+                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Thẻ liên kết', 'mavericktheme'));
                             the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
                             ?>
                         </div>
@@ -87,10 +87,10 @@
                         <div class="mav-post-navigation-wrapper">
                             <div class="mav-post-navigation-ctn">
                             <?php
-                                $mavTitle = __('Các bài viết khác', 'maverick-theme');
+                                $mavTitle = __('Các bài viết khác', 'mavericktheme');
                                 // Attachment Page
                                 if (is_attachment()) {
-                                    $mavTitle = __('Trở lại bài viết', 'maverick-theme');
+                                    $mavTitle = __('Trở lại bài viết', 'mavericktheme');
                                 }
                                 printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', $mavTitle);
                                 echo '<nav class="mav-post-navigation">';
@@ -131,8 +131,8 @@ if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->c
                                         '%4$s <a href="%1$s" title="%3$s %2$s"><strong class="mav-no-break">%2$s</strong></a>',
                                         esc_url(get_category_link($categories[0]->term_id)),
                                         esc_html($categories[0]->name),
-                                        __('Xem tất cả bài trong chuyên mục','maverick-theme'),
-                                        __('Cùng chuyên mục', 'maverick-theme')
+                                        __('Xem tất cả bài trong chuyên mục','mavericktheme'),
+                                        __('Cùng chuyên mục', 'mavericktheme')
                                     );
                                 }
                                 ?>
@@ -166,8 +166,8 @@ if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->c
                             '<a href="%1$s" title="%3$s %2$s"><button class="mav-btn-primary-lg">%4$s</button></a>',
                             esc_url(get_category_link($categories[0]->term_id)),
                             esc_html($categories[0]->name),
-                            __('Xem tất cả bài trong chuyên mục', 'maverick-theme'),
-                            __('Xem đầy đủ', 'maverick-theme')
+                            __('Xem tất cả bài trong chuyên mục', 'mavericktheme'),
+                            __('Xem đầy đủ', 'mavericktheme')
                         );
                     ?>
                 </div>

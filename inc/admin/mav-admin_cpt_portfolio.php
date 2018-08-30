@@ -1,11 +1,11 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 $mavLabels = array(
-    'name'              => __('Portfolio', 'maverick-theme'),
-    'singular_name'     => __('Portfolio', 'maverick-theme')
+    'name'              => __('Portfolio', 'mavericktheme'),
+    'singular_name'     => __('Portfolio', 'mavericktheme')
 );
 
 $mav_args = array(
@@ -16,7 +16,7 @@ $mav_args = array(
         'title','editor','thumbnail'
     ),
     'taxonomies'    => array('category'),
-    'rewrite'       => array('slug' => __('san_pham', 'maverick-theme')),
+    'rewrite'       => array('slug' => __('san_pham', 'mavericktheme')),
 );
 
 register_post_type('mav_cpt_portfolio', $mav_args);

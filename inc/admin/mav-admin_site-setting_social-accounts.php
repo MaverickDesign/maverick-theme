@@ -1,19 +1,19 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Social Settings Section
 add_settings_section(
     'mavsec_site_setting_social_account',
-    __('Tài khoản mạng xã hội', 'maverick-theme'),
+    __('Tài khoản mạng xã hội', 'mavericktheme'),
     'mavf_site_setting_social_account',
     'mav_admin_page_site_setting'
 );
 
 function mavf_site_setting_social_account()
 {
-    _e('Thiết lập thông tin tài khoản mạng xã hội', 'maverick-theme');
+    _e('Thiết lập thông tin tài khoản mạng xã hội', 'mavericktheme');
 }
 
 // Facebook
@@ -32,7 +32,7 @@ add_settings_field(
 function mavf_site_setting_social_account_facebook()
 {
     $mav_saved_value = esc_attr(get_option('mav_setting_social_account_facebook'));
-    printf('<input type="text" name="mav_setting_social_account_facebook" value="%1$s" placeholder="%2$s"/>', $mav_saved_value, __('Facebook account', 'maverick-theme'));
+    printf('<input type="text" name="mav_setting_social_account_facebook" value="%1$s" placeholder="%2$s"/>', $mav_saved_value, __('Facebook account', 'mavericktheme'));
 }
 
 /* Google+ */

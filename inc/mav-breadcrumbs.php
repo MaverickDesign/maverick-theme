@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-breadcrumbs', $mav_home_title='')
@@ -25,7 +25,7 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
 
         // Home page
         printf('<li class="item-home"><a class="bread-link bread-home" href="%1$s" title="%3$s"><i class="fas fa-home"></i><strong>%2$s</strong></a></li>',
-        get_home_url(), $home_title, __( 'Trở lại trang chủ' , 'maverick-theme' )
+        get_home_url(), $home_title, __( 'Trở lại trang chủ' , 'mavericktheme' )
         );
         printf('<li class="separator separator-home">%1$s</li>', $separator);
 
@@ -222,13 +222,13 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
             // Search results page
             printf(
                 '<li class="item-current item-current-%1$s"><strong class="bread-current bread-current-%1$s" title="%2$s">%2$s %1$s</strong></li>',
-                get_search_query(), __('Kết quả tìm kiếm: ', 'maverick-theme')
+                get_search_query(), __('Kết quả tìm kiếm: ', 'mavericktheme')
             );
 
         } elseif ( is_404() ) {
 
             // 404 page
-            printf('<li>%1$s</li>', __('Không tìm thấy kết quả', 'maverick-theme'));
+            printf('<li>%1$s</li>', __('Không tìm thấy kết quả', 'mavericktheme'));
         }
 
         echo '</ul>';

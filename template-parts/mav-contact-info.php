@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Get address setting
@@ -23,14 +23,14 @@ printf('<address class="mav-contact-info-wrapper mav-padding-top-bottom">');
         if (!empty($mavPhone)) {
             printf(
                 '<li class="mav-contact-info" data-type="phone"><a href="tel:+84%1$s" title="%2$s%1$s">%1$s</a></li>',
-                $mavPhone, __('Gọi cho số ', 'maverick-theme')
+                $mavPhone, __('Gọi cho số ', 'mavericktheme')
             );
         }
         // Email
         if (!empty($mavEmail)) {
             printf(
                 '<li class="mav-contact-info" data-type="email"><a href="mailto:%1$s" title="%2$s%1$s">%1$s</a></li>',
-                $mavEmail, __('Gửi email đến ', 'maverick-theme')
+                $mavEmail, __('Gửi email đến ', 'mavericktheme')
             );
         }
     echo '</ul>';

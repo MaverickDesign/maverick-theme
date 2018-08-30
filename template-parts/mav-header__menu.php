@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
@@ -9,7 +9,7 @@ if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
         <!-- Sticky logo -->
         <div class="mav-sticky-logo-wrapper mav-hide-on-mobile">
             <div class="mav-sticky-logo-ctn">
-                <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e( 'Về trang chủ', 'maverick-theme' ); ?>" class="mav-sticky-logo">
+                <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mav-sticky-logo">
                     <?php
                         $mavBrandLogo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
                         if ( $mavBrandLogo ) {

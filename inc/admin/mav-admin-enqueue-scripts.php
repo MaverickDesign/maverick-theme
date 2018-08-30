@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_enqueue_scripts()
@@ -25,7 +25,7 @@ function mavf_enqueue_scripts()
 
     // Helper Scripts
     wp_enqueue_script(
-        'maverick-theme-helpers',
+        'mavericktheme-helpers',
         THEME_DIR . '/js/mav-helpers.js',
         false,
         '1.0.0',
@@ -33,7 +33,7 @@ function mavf_enqueue_scripts()
     );
 
     wp_enqueue_script(
-        'maverick-theme-count-down',
+        'mavericktheme-count-down',
         THEME_DIR . '/js/mav-count-down.js',
         false,
         '1.0.0',
@@ -46,7 +46,7 @@ function mavf_enqueue_scripts()
 
         // Type Writter
         wp_enqueue_script(
-            'maverick-theme-type-writter',
+            'mavericktheme-type-writter',
             THEME_DIR . '/js/mav-type-writter.js',
             false,
             '1.0.0',
@@ -55,7 +55,7 @@ function mavf_enqueue_scripts()
 
         // Sliders
         wp_enqueue_script(
-            'maverick-theme-slider',
+            'mavericktheme-slider',
             THEME_DIR . '/js/mav-slider.js',
             false,
             '1.0.0',
@@ -63,7 +63,7 @@ function mavf_enqueue_scripts()
         );
 
         wp_enqueue_script(
-            'maverick-theme-carousel',
+            'mavericktheme-carousel',
             THEME_DIR . '/js/mav-carousel.js',
             false,
             '1.0.0',
@@ -71,7 +71,7 @@ function mavf_enqueue_scripts()
         );
 
         wp_enqueue_script(
-            'maverick-theme-lightbox',
+            'mavericktheme-lightbox',
             THEME_DIR . '/js/mav-lightbox.js',
             false,
             '1.0.0',
@@ -80,7 +80,7 @@ function mavf_enqueue_scripts()
 
         /* Header Menu */
         wp_enqueue_script(
-            'maverick-theme-header-menu',
+            'mavericktheme-header-menu',
             THEME_DIR . '/js/mav-header-menu.js',
             false,
             '1.0.0',
@@ -89,7 +89,7 @@ function mavf_enqueue_scripts()
 
         /* Ajax load posts */
         wp_enqueue_script(
-            'maverick-theme-ajax-load-posts',
+            'mavericktheme-ajax-load-posts',
             THEME_DIR . '/js/mav-ajax-load-posts.js',
             false,
             '1.0.0',
@@ -97,7 +97,7 @@ function mavf_enqueue_scripts()
         );
 
         wp_enqueue_script(
-            'maverick-theme-ajax-form',
+            'mavericktheme-ajax-form',
             THEME_DIR . '/js/mav-ajax-form.js',
             false,
             '1.0.0',
@@ -108,7 +108,7 @@ function mavf_enqueue_scripts()
         * Maverick Theme Scripts
         */
         wp_enqueue_script(
-            'maverick-theme-scripts',
+            'mavericktheme-scripts',
             THEME_DIR . '/js/maverick-scripts.js',
             array('jquery'),
             '1.0.0',

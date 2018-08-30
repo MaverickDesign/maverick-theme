@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 ?>
 
@@ -31,10 +31,10 @@
                         <div class="mav-sec-body-wrapper mav-post-content-wrapper">
                             <div class="mav-sec-body-ctn mav-post-content-ctn">
                                 <div class="mav-post-content">
-                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <span class="mav-maverick-theme">Maverick Theme</span>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
-                                    <p><span class="mav-maverick-theme">Maverick Theme</span> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
-                                    <p><span class="mav-maverick-theme">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
-                                    <p><span class="mav-maverick-theme">Maverick Theme</span> đáp ứng đầy đủ các yêu cầu cơ bản của một website chuyên về nội dung.</p>
+                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <span class="mav-mavericktheme">Maverick Theme</span>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
+                                    <p><span class="mav-mavericktheme">Maverick Theme</span> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
+                                    <p><span class="mav-mavericktheme">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
+                                    <p><span class="mav-mavericktheme">Maverick Theme</span> đáp ứng đầy đủ các yêu cầu cơ bản của một website chuyên về nội dung.</p>
                                 </div>
                             </div>
                         </div>
@@ -477,7 +477,7 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            mavf_message_box(__('Thông báo','maverick-theme'));
+                                            mavf_message_box(__('Thông báo','mavericktheme'));
                                         ?>
                                     </div>
                                 </div>
@@ -510,7 +510,7 @@
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <div class="mav-flex-center-all">
-                                    <button class="mav-btn-cta" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'maverick-theme' );?></button>
+                                    <button class="mav-btn-cta" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'mavericktheme' );?></button>
                                 </div>
                             </div>
                         </div>
@@ -609,8 +609,8 @@
                                         <?php
                                             $mavFormArgs = array(
                                                 'fields'    => array('name','email','phone','address','dob','message'),
-                                                'form_title'    => __( 'Gửi thông tin liên hệ tới '.get_bloginfo( 'name' ) , 'maverick-theme' ),
-                                                'form_intro'    => __( 'Liên lạc với '.get_bloginfo( 'name' ).' qua email.' , 'maverick-theme' )
+                                                'form_title'    => __( 'Gửi thông tin liên hệ tới '.get_bloginfo( 'name' ) , 'mavericktheme' ),
+                                                'form_intro'    => __( 'Liên lạc với '.get_bloginfo( 'name' ).' qua email.' , 'mavericktheme' )
                                             );
                                             mavf_contact_form($mavFormArgs);
                                         ?>

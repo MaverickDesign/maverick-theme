@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  * Template Name: To Be Updated
  * Template Post Type: page
  */
@@ -22,7 +22,7 @@
                         <?php
                         printf(
                             '<p class="mav-flex-center mav-text--lg mav-text-center">%1$s</p>',
-                            __('Nội dung trang web này đang được cập nhật, vui lòng quay lại sau.', 'maverick-theme')
+                            __('Nội dung trang web này đang được cập nhật, vui lòng quay lại sau.', 'mavericktheme')
                         );
                         echo '<div class="mav-margin-top-lg">';
                             // Back and Home Buttons

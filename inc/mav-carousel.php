@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 function mavf_carousel($mav_args)
@@ -115,7 +115,7 @@ function mavf_carousel($mav_args)
     } else {
         printf(
             '<div class="mav-flex-center-all"><span>%2$s %1$s</span></div>',
-            get_the_category()[0]->name, __('Không có bài nào cùng chuyên mục', 'maverick-theme')
+            get_the_category()[0]->name, __('Không có bài nào cùng chuyên mục', 'mavericktheme')
         );
     }
 }

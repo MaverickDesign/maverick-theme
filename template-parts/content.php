@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 // Get the Post or Page ID
@@ -41,7 +41,7 @@ printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
                         if ( function_exists( 'mavf_get_single_category' ) && function_exists( 'mavf_single_category' ) && ! empty( mavf_get_single_category() ) ) :
                             printf(
                                 '<span class="mav-post-info" data-type="category" title="%3$s%2$s">%1$s</span>',
-                                mavf_single_category(), mavf_get_single_category(), __( 'Xem mục ', 'maverick-theme' )
+                                mavf_single_category(), mavf_get_single_category(), __( 'Xem mục ', 'mavericktheme' )
                             );
                         endif;
                         printf( '<span class="mav-post-info" data-type="date">%1$s</span>', get_the_date() );
@@ -51,7 +51,7 @@ printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
                 printf('<div class="mav-card-post-title-wrapper">');
                     printf(
                         '<h3 class="mav-card-post-title"><a href="%2$s" title="%3$s%1$s">%1$s</a></h3>',
-                        get_the_title(), get_the_permalink(), __( 'Xem nội dung ', 'maverick-theme' )
+                        get_the_title(), get_the_permalink(), __( 'Xem nội dung ', 'mavericktheme' )
                     );
                 echo '</div>';
             echo '</section>';
@@ -62,7 +62,7 @@ printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
             printf('<footer class="mav-card-post-footer">');
                 printf(
                     '<a href="%1$s" title="%2$s"><button class="mav-btn-primary" data-full-width>%2$s</button></a>',
-                    get_the_permalink(), __( 'Xem chi tiết', 'maverick-theme' )
+                    get_the_permalink(), __( 'Xem chi tiết', 'mavericktheme' )
                 );
             echo '</footer>';
         echo '</article>';

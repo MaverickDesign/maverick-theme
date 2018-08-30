@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 printf('<section id="mavid-site-sidebar" class="mav-site-sidebar-ctn mav-hide-on-mobile">');

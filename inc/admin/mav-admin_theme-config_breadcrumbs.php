@@ -1,24 +1,24 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 add_settings_section(
     'mavsec_theme_config_sec_breadcrumbs',
-    __('Breadcrumbs', 'maverick-theme'),
+    __('Breadcrumbs', 'mavericktheme'),
     'mavf_theme_config_sec_breadcrumbs',
     'mav_admin_page_theme_config'
 );
 
 function mavf_theme_config_sec_breadcrumbs()
 {
-    _e('Breadcrumbs', 'maverick-theme');
+    _e('Breadcrumbs', 'mavericktheme');
 }
 
 register_setting('mavog_theme_config', 'mav_setting_breadcrumbs');
 add_settings_field(
     'mavid_theme_setting_breadcrumbs',
-    __('Kích hoạt Breadcrumbs', 'maverick-theme'),
+    __('Kích hoạt Breadcrumbs', 'mavericktheme'),
     'mavf_theme_config_breadcrumbs',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_sec_breadcrumbs'

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 ?>
 <?php
@@ -123,10 +123,10 @@
         <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper">
             <div class="mav-header-logo-ctn">
                 <!-- Mobile Menu Icon -->
-                <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','maverick-theme'); ?>"></button>
+                <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','mavericktheme'); ?>"></button>
                 <!-- Site Logo -->
                 <div id="mavid-site-logo" class="mav-site-logo-wrapper">
-                    <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','maverick-theme'); ?>" class="mav-site-logo-ctn">
+                    <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
                         <?php
                             $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
                             if ($mavBrandLogo) {
@@ -151,7 +151,7 @@
                     ?>
                     <!-- Site Search Toggle Button -->
                     <div>
-                        <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','maverick-theme'); ?>"></button>
+                        <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','mavericktheme'); ?>"></button>
                     </div>
                 </div>
             </div>

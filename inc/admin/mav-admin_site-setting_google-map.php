@@ -1,19 +1,19 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 add_settings_section('mavsec_site_setting_google_map', 'Google Map', 'mavf_site_setting_google_map', 'mav_admin_page_site_setting');
 
 function mavf_site_setting_google_map()
 {
-    _e('Các thiết lập cho Google Map','maverick-theme');
+    _e('Các thiết lập cho Google Map','mavericktheme');
 }
 
 register_setting('mavog_site_setting', 'mav_setting_enable_google_map');
 add_settings_field(
     'mavid_site_setting_enable_google_map',
-    __('Kích hoạt Google Map', 'maverick-theme'),
+    __('Kích hoạt Google Map', 'mavericktheme'),
     'mavf_site_setting_enable_google_map',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_google_map'
@@ -28,7 +28,7 @@ function mavf_site_setting_enable_google_map(){
 register_setting('mavog_site_setting', 'mav_setting_google_map_uri');
 add_settings_field(
     'mavid_site_setting_google_map_uri',
-    __('Google Map URI', 'maverick-theme'),
+    __('Google Map URI', 'mavericktheme'),
     'mavf_site_setting_google_map_uri',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_google_map'
@@ -45,7 +45,7 @@ function mavf_site_setting_google_map_uri()
 register_setting('mavog_site_setting', 'mav_setting_google_map_height');
 add_settings_field(
     'mavid_site_setting_google_map_height',
-    __('Chiều cao màn hình', 'maverick-theme'),
+    __('Chiều cao màn hình', 'mavericktheme'),
     'mavf_site_setting_google_map_height',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_google_map'
@@ -56,10 +56,10 @@ function mavf_site_setting_google_map_height()
     $mav_saved_value = esc_attr(get_option('mav_setting_google_map_height'));
     printf(
         '<input type="text" name="mav_setting_google_map_height" value="%1$s" placeholder="%2$s" data-visual="short"/>',
-        $mav_saved_value, __('e.g. 33', 'maverick-theme')
+        $mav_saved_value, __('e.g. 33', 'mavericktheme')
     );
     printf(
         '<span class="mav-admin-desc">%1$s</a>',
-        __('Chiều cao bản đồ theo tỉ lệ % chiều ngang màn hình (vw)', 'maverick-theme')
+        __('Chiều cao bản đồ theo tỉ lệ % chiều ngang màn hình (vw)', 'mavericktheme')
     );
 }

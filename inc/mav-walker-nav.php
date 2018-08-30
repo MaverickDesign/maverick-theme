@@ -1,6 +1,6 @@
 <?php
 /**
- * @package maverick-theme
+ * @package mavericktheme
  */
 
 class Mav_Walker_Nav_Primary extends Walker_Nav_Menu
@@ -55,7 +55,7 @@ class Mav_Walker_Nav_Primary extends Walker_Nav_Menu
         // Start li element
         $output .= $indent . '<li' . $id . $value . $class_names . $li_attributes . ' data-lvl="'.$depth_number.'"'.'>';
 
-        $attributes  = !empty( $item->attr_title )    ? ' title="'.esc_attr( $item->attr_title ).'"'    : ' title="'.__( 'Đến trang ', 'maverick-theme').apply_filters( 'the_title', $item->title, $item->ID ).'"';
+        $attributes  = !empty( $item->attr_title )    ? ' title="'.esc_attr( $item->attr_title ).'"'    : ' title="'.__( 'Đến trang ', 'mavericktheme').apply_filters( 'the_title', $item->title, $item->ID ).'"';
         $attributes .= !empty( $item->target )        ? ' target="'.esc_attr( $item->target ).'"'       : '';
         $attributes .= !empty( $item->xfn )           ? ' rel="'.esc_attr( $item->xfn ).'"'             : '';
         $attributes .= !empty( $item->url )           ? ' href="'.esc_attr( $item->url ).'"'            : '';
