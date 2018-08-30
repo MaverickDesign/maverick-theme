@@ -101,6 +101,12 @@ strong {
 h1, h2, h3, h4, h5, h6,
 .mav-h1, .mav-h2, .mav-h3, .mav-h4, .mav-h5, .mav-h6 {
     color: var(--mav-color-text-primary);
+    em {
+        font-style: italic;
+    }
+    b {
+        font-weight: var(--mav-font-weight-bold);
+    }
 }
 
 a {
@@ -111,19 +117,18 @@ a {
 }
 
 h1, .mav-h1 {
-    font-size: 3rem;
-    line-height: 3 * 1.2rem;
-    letter-spacing: -1px;
+    font-size: 4rem;
+    line-height: 1.1em;
     font-weight: var(--mav-font-weight-light);
     @media #{$mav-phone} {
         font-family: $font-roboto-cond;
-        font-weight: var(--mav-font-weight-bold);
+        font-size: 3rem;
     }
 }
 
 h2, .mav-h2 {
     font-size: 2rem;
-    line-height: 2 * 1.2rem;
+    line-height: 1.2em;
     font-weight: var(--mav-font-weight-bold);
     @media #{$mav-phone} {
         font-family: $font-roboto-cond;
@@ -133,24 +138,25 @@ h2, .mav-h2 {
 h3, .mav-h3 {
     font-size: 1.5rem;
     font-weight: var(--mav-font-weight-bold);
-    line-height: 1.5 * 1.2rem;
+    line-height: 1.2em;
 }
 
 h4, .mav-h4 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: var(--mav-font-weight-bold);
 }
 
 h5, .mav-h5 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: var(--mav-font-weight-bold);
     text-transform: uppercase;
 }
 
 h6, .mav-h6 {
+    font-size: 1rem;
     font-weight: var(--mav-font-weight-black);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: .5px;
 }
 
 // Sub Headings

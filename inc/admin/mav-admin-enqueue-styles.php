@@ -32,6 +32,15 @@ function mavf_enqueue_styles()
         'all'
     );
 
+    // Roboto Mono
+    wp_enqueue_style(
+        'mavcss-roboto-mono',
+        'https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&amp;subset=vietnamese',
+        array(),
+        '1.0.0',
+        'all'
+    );
+
     // Web Font Alfa Slab One by Google Font
     wp_enqueue_style(
         'mavcss-alfa-slab-one',

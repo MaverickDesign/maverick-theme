@@ -1,25 +1,35 @@
 table {
-    border-collapse: collapse;
+    margin: var(--mav-margin) auto;
     caption {
         margin-bottom: var(--mav-gutter);
         font-weight: bold;
     }
     thead {
-        font-weight: bold;
-        box-shadow: inset 0 -2px $mav-color-border;
+        padding: var(--mav-gutter-xs);
+        background: var(--mav-color-primary);
+        @include text-contrast($mav-color-primary);
     }
     tbody {
-        tr {
-            box-shadow: inset 0 -1px $mav-color-border;
-            &:last-child {
-                box-shadow: none;
-            }
-        }
-        td {
-            padding: var(--mav-gutter-xs);
-        }
     }
     tfoot {
         font-weight: bold;
+    }
+    th, td {
+        padding: var(--mav-gutter-sm);
+        border: 1px solid var(--mav-color-border);
+        text-align: left;
+        vertical-align: middle;
+    }
+    th {
+        font-weight: var(--mav-font-weight-medium);
+    }
+    tr {
+        &:nth-child(even) {
+            background: var(--mav-color-off-white);
+        }
+        &:hover {
+            background: var(--mav-color-accent);
+            @include text-contrast($mav-color-accent);
+        }
     }
 }

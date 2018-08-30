@@ -65,9 +65,9 @@
   --mav-font-weight-medium: 500;
   --mav-font-weight-bold: 700;
   --mav-font-weight-black: 900;
+  --mav-font-size: 18px;
   --mav-font-size-xl: 1.4rem;
   --mav-font-size-lg: 1.2rem;
-  --mav-font-size: 16px;
   --mav-font-size-sm: .8rem;
   --mav-font-size-xs: .6rem;
   --mav-font-size-subtitle-1: 16px;
@@ -81,6 +81,9 @@
   --mav-color-text-secondary-dark: #ddd;
   --mav-color-text-hint: rgba(0, 0, 0, 0.38);
   --mav-color-body: rgba(0, 0, 0, 0.87); }
+  @media only screen and (max-width: 480px) {
+    :root {
+      --mav-font-size: 16px; } }
   @media only screen and (min-width: 1024px) {
     :root {
       --mav-site-width: 1680px; } }

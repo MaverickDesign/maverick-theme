@@ -54,8 +54,15 @@
         </div>
     </header>
     <!-- Post Content -->
+    <?php
+        $mav_center_style = '';
+        $mav_post_format = get_post_format();
+        if ( $mav_post_format == 'video' ) {
+            $mav_center_style = 'style="text-align: center;"';
+        }
+    ?>
     <section class="mav-post-content-wrapper">
-        <div class="mav-post-content mav-post-content-ctn">
+        <div class="mav-post-content mav-post-content-ctn" <?php echo $mav_center_style; ?>>
             <?php
                 // if (function_exists('mavf_post_content_modifier')) {
                 //     mavf_post_content_modifier(THEME_DIR.'/template-parts/mav-patterns.json');

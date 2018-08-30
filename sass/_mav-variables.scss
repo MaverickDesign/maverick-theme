@@ -35,6 +35,7 @@ $mav-layer-bottom:      -1000;
 $font-roboto        : 'Roboto', Arial, sans-serif;
 $font-roboto-cond   : 'Roboto Condensed', Arial, sans-serif;
 $font-roboto-slab   : 'Roboto Slab', serif;
+$font-roboto-mono   : 'Roboto Mono', monospace;
 $font-awesome       : 'Font Awesome 5 Free';
 $font-alfa-slab-one : "Alfa Slab One", cursive;
 
@@ -173,9 +174,12 @@ $mav-color-background: #fafafa;
      --mav-font-weight-bold     : #{$mav-font-weight-bold};
      --mav-font-weight-black    : #{$mav-font-weight-black};
 
+    --mav-font-size: 18px;
+    @media #{$mav-phone} {
+        --mav-font-size: 16px;
+    }
     --mav-font-size-xl: 1.4rem;
     --mav-font-size-lg: 1.2rem;
-    --mav-font-size: 16px;
     --mav-font-size-sm: .8rem;
     --mav-font-size-xs: .6rem;
 
