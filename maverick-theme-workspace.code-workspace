@@ -1,5 +1,12 @@
 {
-	"folders": [],
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "D:\\_Projects\\www\\maverick.vn\\wp-content\\themes\\maverickdesign"
+		}
+	],
 	"settings": {
 		"files.exclude": {
 			".vscode/" : true,

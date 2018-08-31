@@ -11,7 +11,8 @@
 }
 
 .mav-footer-copyright-ctn {
-    max-width: var(--mav-site-width);
+    display: grid;
+    grid-gap: var(--mav-gutter-xs);
     margin: 0 auto;
     padding: var(--mav-gutter-lg) var(--mav-gutter);
     color: var(--mav-color-text-secondary-dark);
