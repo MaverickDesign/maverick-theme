@@ -3,7 +3,7 @@
     grid-row-gap: var(--mav-gutter);
     align-content: start;
     padding: var(--mav-gutter-lg);
-    padding-right: 0;
+    padding-right: var(--mav-gutter);
     border-left: 1px solid var(--mav-color-border);
     a {
         &:hover {
@@ -32,6 +32,7 @@
             padding-bottom: 0;
         }
     }
+
     /**
      * Recent Entries Widget
      */
@@ -62,6 +63,7 @@
             }
         }
     }
+
     /**
      * Categories Widget
      */
@@ -93,14 +95,25 @@
     .widget_calendar {
         .calendar_wrap {
             background: #fff;
-            padding: var(--mav-gutter);
-            border: 1px solid var(--mav-color-border);
+            // padding: var(--mav-gutter);
+            // border: 1px solid var(--mav-color-border);
         }
         table {
             width: 100%;
         }
-        td {
+        th, td {
             text-align: center;
+        }
+        tr {
+            &:hover, &:nth-child(even) {
+                background: unset;
+                color: inherit;
+            }
+        }
+        tfoot {
+            td {
+                border: 0;
+            }
         }
         td#prev {
             text-align: left;

@@ -37,8 +37,7 @@ endif;
     ?>
 
     <!-- Footer Menu -->
-    <?php
-    if (current_theme_supports('menus') && has_nav_menu('secondary_menu')) : ?>
+    <?php if ( current_theme_supports('menus') && has_nav_menu( 'secondary_menu' ) ) : ?>
         <section id="mavid-sec-footer-menu" class="mav-pg-ctn mav-footer-menu-wrapper mav-hide-on-mobile">
             <div class="mav-footer-menu-ctn">
                 <nav id="mavid-footer-menu" class="mav-footer-menu">
@@ -71,16 +70,15 @@ endif;
                 </nav>
             </div>
         </section>
-    <?php endif;
-    ?>
+    <?php endif; ?>
 
     <!-- Copyright section -->
     <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
         <div class="mav-footer-copyright-ctn">
-            <div class="mav-margin-bottom-xs">
+            <div>
                 <?php _e('Bản quyền', 'mavericktheme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của', 'mavericktheme'); ?> <a href="<?php bloginfo('url');?>" target="_blank" class="mav-link"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.', 'mavericktheme'); ?>
             </div>
-            <div class="<?php if ( ! get_option('mav_setting_theme_info') ) { echo 'mav-hide'; } ?>">
+            <div class="<?php if ( get_option( 'mav_setting_theme_info' ) ) { echo 'mav-hide'; } ?>">
                 <?php _e('Website xây dựng bằng', 'mavericktheme'); ?> <a href="http://www.maverick.vn/mavericktheme/" target="_blank" class="mav-link"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi', 'mavericktheme'); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link"><strong>Maverick Design</strong></a>.
             </div>
         </div>

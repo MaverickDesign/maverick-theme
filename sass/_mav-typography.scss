@@ -271,3 +271,9 @@ ol {
     }
 }
 
+sup {
+    display: inline-block;
+    font-size: 70%;
+    transform: translateY(-30%);
+    letter-spacing: -1px;
+}

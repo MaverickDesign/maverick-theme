@@ -1,8 +1,8 @@
 table {
     margin: var(--mav-margin) auto;
     caption {
-        margin-bottom: var(--mav-gutter);
-        font-weight: bold;
+        margin-bottom: var(--mav-gutter-sm);
+        font-weight: var(--mav-font-weight-bold);
     }
     thead {
         padding: var(--mav-gutter-xs);
@@ -12,7 +12,7 @@ table {
     tbody {
     }
     tfoot {
-        font-weight: bold;
+        font-weight: var(--mav-font-weight-bold);
     }
     th, td {
         padding: var(--mav-gutter-sm);

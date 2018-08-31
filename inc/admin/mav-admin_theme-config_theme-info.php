@@ -22,7 +22,7 @@ register_setting(
 );
 add_settings_field(
     'mavid_theme_config_theme_info',
-    __( 'Hiển thị', 'mavericktheme' ),
+    __( 'Không hiển thị', 'mavericktheme' ),
     'mavf_theme_config_theme_info',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_theme_info',

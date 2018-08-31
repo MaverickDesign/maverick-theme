@@ -384,6 +384,12 @@ ol li {
     content: '\f0c1';
     margin-left: var(--mav-gutter-xs); }
 
+sup {
+  display: inline-block;
+  font-size: 70%;
+  transform: translateY(-30%);
+  letter-spacing: -1px; }
+
 .mav-wrapper .mav-ctn {
   max-width: var(--mav-site-width);
   margin: 0 auto;
@@ -891,14 +897,14 @@ ol li {
 table {
   margin: var(--mav-margin) auto; }
   table caption {
-    margin-bottom: var(--mav-gutter);
-    font-weight: bold; }
+    margin-bottom: var(--mav-gutter-sm);
+    font-weight: var(--mav-font-weight-bold); }
   table thead {
     padding: var(--mav-gutter-xs);
     background: var(--mav-color-primary);
     color: white; }
   table tfoot {
-    font-weight: bold; }
+    font-weight: var(--mav-font-weight-bold); }
   table th, table td {
     padding: var(--mav-gutter-sm);
     border: 1px solid var(--mav-color-border);
@@ -1657,7 +1663,7 @@ form {
   grid-row-gap: var(--mav-gutter);
   align-content: start;
   padding: var(--mav-gutter-lg);
-  padding-right: 0;
+  padding-right: var(--mav-gutter);
   border-left: 1px solid var(--mav-color-border);
   /**
    * Recent Entries Widget
@@ -1724,13 +1730,16 @@ form {
     .mav-site-sidebar-ctn .widget_categories ul li ul {
       margin-left: var(--mav-gutter); }
   .mav-site-sidebar-ctn .widget_calendar .calendar_wrap {
-    background: #fff;
-    padding: var(--mav-gutter);
-    border: 1px solid var(--mav-color-border); }
+    background: #fff; }
   .mav-site-sidebar-ctn .widget_calendar table {
     width: 100%; }
-  .mav-site-sidebar-ctn .widget_calendar td {
+  .mav-site-sidebar-ctn .widget_calendar th, .mav-site-sidebar-ctn .widget_calendar td {
     text-align: center; }
+  .mav-site-sidebar-ctn .widget_calendar tr:hover, .mav-site-sidebar-ctn .widget_calendar tr:nth-child(even) {
+    background: unset;
+    color: inherit; }
+  .mav-site-sidebar-ctn .widget_calendar tfoot td {
+    border: 0; }
   .mav-site-sidebar-ctn .widget_calendar td#prev {
     text-align: left; }
   .mav-site-sidebar-ctn .widget_calendar td#next {
@@ -2461,7 +2470,7 @@ form {
 .mav-footer-copyright-ctn {
   max-width: var(--mav-site-width);
   margin: 0 auto;
-  padding: var(--mav-gutter);
+  padding: var(--mav-gutter-lg) var(--mav-gutter);
   color: var(--mav-color-text-secondary-dark);
   font-size: var(--mav-font-size-sm); }
 

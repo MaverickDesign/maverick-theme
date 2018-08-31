@@ -5,29 +5,31 @@
  */
 ?>
 
+<?php
+    $mav_post_type = get_post_type();
+?>
+
 <article id="mavid-post-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" class="mav-post">
     <!-- Header -->
     <header class="mav-post-header-wrapper mav-post-header">
         <div class="mav-post-header-ctn">
             <!-- Feature image -->
-            <?php
-                if (has_post_thumbnail()): ?>
+            <?php if ( has_post_thumbnail() && ( $mav_post_type !== 'mav_cpt_client' ) ) : ?>
                     <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo(get_the_post_thumbnail_url(get_the_ID(),'full'));  ?>)">
                     </div>
-                <?php endif;
-            ?>
+            <?php endif; ?>
             <!-- Post title -->
             <?php
-                if (is_single() && !is_attachment()) {
-                    printf('<div class="mav-pg-ctn"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1></div>', get_the_title());
+                if ( is_single() && ! is_attachment() ) {
+                    printf( '<div class="mav-pg-ctn"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1></div>', get_the_title() );
                 }
             ?>
             <!-- Post info -->
-            <?php if (!is_attachment()): ?>
+            <?php if ( ! is_attachment() ) : ?>
                 <div id="mavid-post-info" class="mav-post-info-wrapper">
                     <div class="mav-post-info-ctn">
                     <?php
-                        $mavSingleCat = function_exists('mavf_get_single_category') ? mavf_get_single_category() : '';
+                        $mavSingleCat = function_exists( 'mavf_get_single_category' ) ? mavf_get_single_category() : '';
                         if (!empty($mavSingleCat)) {
                             printf(
                                 '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
