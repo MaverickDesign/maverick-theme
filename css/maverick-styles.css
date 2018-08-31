@@ -2471,6 +2471,7 @@ form {
   display: grid;
   grid-gap: var(--mav-gutter-xs);
   margin: 0 auto;
+  max-width: var(--mav-site-width);
   padding: var(--mav-gutter-lg) var(--mav-gutter);
   color: var(--mav-color-text-secondary-dark);
   font-size: var(--mav-font-size-sm); }

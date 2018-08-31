@@ -72,4 +72,4 @@ function mavf_enqueue_styles()
         'all'
     );
 }
-add_action('wp_enqueue_scripts', 'mavf_enqueue_styles');
+add_action( 'wp_enqueue_scripts', 'mavf_enqueue_styles' );
