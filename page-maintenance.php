@@ -8,12 +8,13 @@
 
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?php
-            if (!is_front_page()) {
+            if ( !is_front_page() ) {
                 wp_title('');
                 echo(' - ');
                 bloginfo( 'name' );
@@ -23,31 +24,31 @@
         ?>
     </title>
 
-    <?php
-        //  Wordpress Heads
-        wp_head();
-    ?>
-
+    <?php wp_head(); ?>
 </head>
 
 <body class="mav-page-maintenance">
-
     <header id="mavid-page-header">
-        <div title="<?php bloginfo('name'); ?>" class="mav-flex-center mav-margin-top">
-            <?php
-                $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
-                if ($mavBrandLogo) {
-                    echo "<img src=\"$mavBrandLogo;\" height=80px>";
-                } else {
-                    if (is_child_theme()){
-                        $mavImgSrc = get_stylesheet_directory_uri();
-                    } else {
-                        $mavImgSrc = get_template_directory_uri();
-                    }
-                    echo '<img src="'.$mavImgSrc.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,1" height=80px>';
-                }
-            ?>
-        </div>
+        <?php if ( empty( get_option( 'mav_setting_maintenance_display_logo' ) ) ) : ?>
+            <div class="mav-margin-top-lg">
+                <figure title="<?php bloginfo( 'name' ); ?>" style="display: inline-block; margin: 0 auto;">
+                    <?php
+                        $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
+                        $mav_alt = get_bloginfo( 'name' ).' logo';
+                        if ( $mav_brand_logo ) {
+                            echo '<img alt="'.$mav_alt.'" src="'.$mav_brand_logo.'" height=80px>';
+                        } else {
+                            if ( is_child_theme() ) {
+                                $mavImgSrc = get_stylesheet_directory_uri();
+                            } else {
+                                $mavImgSrc = get_template_directory_uri();
+                            }
+                            echo '<img alt="'.$mav_alt.'" src="'.$mavImgSrc.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,1" height=80px>';
+                        }
+                    ?>
+                </figure>
+            </div>
+        <?php endif; ?>
     </header>
 
     <main id="mavid-page-main-content">
@@ -63,52 +64,33 @@
             ?>
         </section>
 
-        <?php if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())) : ?>
-            <!-- Socials -->
-            <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
-                <div class="mav-footer-socials-ctn">
-                    <?php
-                        printf(
-                            '<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                            get_bloginfo('name'), __('trên mạng xã hội', 'mavericktheme')
-                        );
-                        mavf_social_links();
-                    ?>
-                </div>
-            </section>
-            <?php endif;
+        <?php
+            if ( empty( get_option( 'mav_setting_maintenance_display_social' ) ) && function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
+                /* Social links */
+                include_once TEMPLATE_DIR . '/template-parts/mav-footer_social-links.php';
+            endif;
         ?>
 
         <?php
-            $mavMaintenanceTime = esc_attr(get_option('mav_setting_maintenance_time'));
-            if (!empty($mavMaintenanceTime)) : ?>
+            $mav_maintenance_time = esc_attr( get_option( 'mav_setting_maintenance_time' ) );
+            if ( ! empty( $mav_maintenance_time ) ) : ?>
                 <!-- Maintenance time -->
                 <section id="mavid-sec-maintenance-time" class="mav-page-maintenance-section">
-                    <h3 class="mav-margin-bottom"><?php _e('Thời gian dự kiến hoàn tất bảo trì còn', 'mavericktheme'); ?></h3>
-                    <div class="mavjs-countdown mav-countdown-ctn" data-expired="<?php echo $mavMaintenanceTime; ?>"></div>
-                </section>
-            <?php endif;
+                    <h3 class="mav-margin-bottom"><?php _e('Thời gian dự kiến hoàn tất còn', 'mavericktheme'); ?></h3>
+                    <div class="mavjs-countdown mav-countdown-ctn" data-expired="<?php echo $mav_maintenance_time; ?>"></div>
+                </section> <?php
+            endif;
         ?>
     </main>
 
     <footer id="mavid-page-footer" class="mav-pg-footer">
         <!-- Copyright section -->
-        <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
-            <div class="mav-footer-copyright-ctn">
-                <div class="mav-margin-bottom-xs">
-                    <?php _e('Bản quyền', 'mavericktheme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của', 'mavericktheme'); ?> <a href="<?php bloginfo('url');?>" target="_blank" class="mav-link"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.', 'mavericktheme'); ?>
-                </div>
-                <div>
-                    <?php _e('Website xây dựng bằng', 'mavericktheme'); ?> <a href="http://www.maverick.vn/mavericktheme/" target="_blank" class="mav-link">Maverick Theme</a> <?php _e('phát triển bởi', 'mavericktheme'); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link">Maverick Design</a>.
-                </div>
-            </div>
-        </section>
+        <?php
+            include_once TEMPLATE_DIR . '/template-parts/mav-footer_copyright.php';
+        ?>
     </footer>
 
-    <?php
-        // Wordpress Footer
-        wp_footer();
-    ?>
+    <?php wp_footer(); ?>
+</body>
 
-    </body>
 </html>

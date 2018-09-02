@@ -72,143 +72,140 @@
                 ?>
 
                 <!-- Tính năng: Slider -->
-                <?php
-                    if ( function_exists( 'mavf_slider' ) ): ?>
-                        <section id="mavid-sec-slider" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Sliders</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <div class="mav-margin-bottom-xl">
-                                            <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 1</p>
-                                            <?php
-                                                mavf_slider(array('slider_type' => 1, 'number_of_slides' => 4));
-                                            ?>
-                                        </div>
-                                        <div class="mav-margin-bottom-xl">
-                                            <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 2</p>
-                                            <?php
-                                                mavf_slider(array('slider_type' => 2));
-                                            ?>
-                                        </div>
-                                        <div>
-                                        <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 3</p>
-                                            <?php
-                                                mavf_slider(array('slider_type' => 3));
-                                            ?>
+                <?php if ( function_exists( 'mavf_slider' ) ) : ?>
+                    <section id="mavid-sec-slider" class="mav-sec-wrapper mav-pg-section">
+                        <div class="mav-sec-ctn">
+                            <!-- Header -->
+                            <header class="mav-sec-header-wrapper">
+                                <div class="mav-sec-header-ctn">
+                                    <div class="mav-sec-title-wrapper">
+                                        <div class="mav-sec-title-ctn">
+                                            <h2 class="mav-sec-title">Sliders</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <footer class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
+                            </header>
+                            <!-- Body -->
+                            <div class="mav-sec-body-wrapper">
+                                <div class="mav-sec-body-ctn">
+                                    <div class="mav-margin-bottom-xl">
+                                        <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 1</p>
                                         <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
-                                            }
+                                            mavf_slider(array('slider_type' => 1, 'number_of_slides' => 4));
                                         ?>
                                     </div>
-                                </footer>
+                                    <div class="mav-margin-bottom-xl">
+                                        <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 2</p>
+                                        <?php
+                                            mavf_slider(array('slider_type' => 2));
+                                        ?>
+                                    </div>
+                                    <div>
+                                    <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 3</p>
+                                        <?php
+                                            mavf_slider(array('slider_type' => 3));
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <!-- Footer -->
+                            <footer class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
+                                    ?>
+                                </div>
+                            </footer>
+                        </div>
+                    </section>
+                <?php endif; ?>
 
                 <!-- Tính năng: Featured Post -->
-                <?php
-                    if ( function_exists( 'mavf_post_feature' ) ): ?>
-                        <section id="mavid-sec-post-featured" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Featured Post</h2>
-                                            </div>
+                <?php if ( function_exists( 'mavf_post_feature' ) ) : ?>
+                    <section id="mavid-sec-post-featured" class="mav-sec-wrapper mav-pg-section">
+                        <div class="mav-sec-ctn">
+                            <header class="mav-sec-header-wrapper">
+                                <div class="mav-sec-header-ctn">
+                                    <div class="mav-sec-title-wrapper">
+                                        <div class="mav-sec-title-ctn">
+                                            <h2 class="mav-sec-title">Featured Post</h2>
                                         </div>
                                     </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <?php
-                                        $mav_query_args = array(
-                                            'post_type'     => 'page',
-                                            'post_parent'   =>  22,
-                                        );
-                                        $mav_args = array(
-                                            'query_args'    => $mav_query_args,
-                                            'button_text'   => 'Tìm hiểu thêm'
-                                        );
-                                        mavf_post_feature($mav_args);
-                                        ?>
-                                    </div>
                                 </div>
-                                <footer class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
-                                        <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
-                                            }
-                                        ?>
-                                    </div>
-                                </footer>
+                            </header>
+                            <div class="mav-sec-body-wrapper">
+                                <div class="mav-sec-body-ctn">
+                                    <?php
+                                    $mav_query_args = array(
+                                        'post_type'     => 'page',
+                                        'post_parent'   =>  22,
+                                    );
+                                    $mav_args = array(
+                                        'query_args'    => $mav_query_args,
+                                        'button_text'   => 'Tìm hiểu thêm'
+                                    );
+                                    mavf_post_feature($mav_args);
+                                    ?>
+                                </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <footer class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
+                                    ?>
+                                </div>
+                            </footer>
+                        </div>
+                    </section>
+                <?php endif; ?>
 
                 <!-- Tính năng: Post Carousel -->
-                <?php
-                    if ( function_exists( 'mavf_carousel' ) ): ?>
-                        <section id="mavid-sec-post-carousel" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Post Carousel</h2>
-                                            </div>
+                <?php if ( function_exists( 'mavf_carousel' ) ) : ?>
+                    <section id="mavid-sec-post-carousel" class="mav-sec-wrapper mav-pg-section">
+                        <div class="mav-sec-ctn">
+                            <header class="mav-sec-header-wrapper">
+                                <div class="mav-sec-header-ctn">
+                                    <div class="mav-sec-title-wrapper">
+                                        <div class="mav-sec-title-ctn">
+                                            <h2 class="mav-sec-title">Post Carousel</h2>
                                         </div>
                                     </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <?php
-                                            $mav_args = array(
-                                                'number_of_posts'           => 8,
-                                                'number_of_posts_display'   => 4,
-                                                'categories'                => array(4,5)
-                                            );
-                                                mavf_carousel($mav_args);
-                                        ?>
-                                    </div>
                                 </div>
-                                <footer class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
-                                        <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
-                                            }
-                                        ?>
-                                    </div>
-                                </footer>
+                            </header>
+                            <div class="mav-sec-body-wrapper">
+                                <div class="mav-sec-body-ctn">
+                                    <?php
+                                        $mav_args = array(
+                                            'number_of_posts'           => 8,
+                                            'number_of_posts_display'   => 4,
+                                            'categories'                => array(4,5)
+                                        );
+                                            mavf_carousel($mav_args);
+                                    ?>
+                                </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <footer class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
+                                    ?>
+                                </div>
+                            </footer>
+                        </div>
+                    </section>
+                <?php endif; ?>
 
                 <!-- Tính năng: Post Grid -->
-                <?php
-                    if (function_exists('mavf_post_grid')): ?>
+                <?php if ( function_exists( 'mavf_post_grid' ) ) : ?>
                     <section id="mavid-sec-post-grid" class="mav-sec-wrapper mav-pg-section">
                         <div class="mav-sec-ctn">
+                            <!-- Header -->
                             <header class="mav-sec-header-wrapper">
                                 <div class="mav-sec-header-ctn">
                                     <div class="mav-sec-title-wrapper">
@@ -218,6 +215,7 @@
                                     </div>
                                 </div>
                             </header>
+                            <!-- Body -->
                             <div class="mav-sec-body-wrapper">
                                 <div class="mav-sec-body-ctn">
                                     <?php
@@ -231,6 +229,7 @@
                                     ?>
                                 </div>
                             </div>
+                            <!-- Footer -->
                             <footer class="mav-sec-footer-wrapper">
                                 <div class="mav-sec-footer-ctn">
                                     <?php
@@ -242,14 +241,13 @@
                             </footer>
                         </div>
                     </section>
-                    <?php endif;
-                ?>
+                <?php endif; ?>
 
                 <!-- Tính năng: Google Map -->
-                <?php
-                    if ( function_exists( 'mavf_google_map' ) && !empty( esc_attr( get_option( 'mav_setting_enable_google_map' ) ) ) ): ?>
+                <?php if ( function_exists( 'mavf_google_map' ) && !empty( esc_attr( get_option( 'mav_setting_enable_google_map' ) ) ) ) : ?>
                     <section id="mavid-sec-google-map" class="mav-sec-wrapper mav-pg-section">
                         <div class="mav-sec-ctn">
+                            <!-- Header -->
                             <header class="mav-sec-header-wrapper">
                                 <div class="mav-sec-header-ctn">
                                     <div class="mav-sec-title-wrapper">
@@ -259,6 +257,7 @@
                                     </div>
                                 </div>
                             </header>
+                            <!-- Body -->
                             <div class="mav-sec-body-wrapper">
                                 <div class="mav-sec-body-ctn" data-full-width>
                                     <?php
@@ -266,6 +265,7 @@
                                     ?>
                                 </div>
                             </div>
+                            <!-- Footer -->
                             <footer class="mav-sec-footer-wrapper">
                                 <div class="mav-sec-footer-ctn">
                                     <?php
@@ -277,8 +277,7 @@
                             </footer>
                         </div>
                     </section>
-                    <?php endif;
-                ?>
+                <?php endif; ?>
 
                 <!-- Tính năng: Lighbox Gallery -->
                 <section id="mavid-sec-lightbox" class="mav-sec-wrapper mav-pg-section">
@@ -343,45 +342,84 @@
                 </section>
 
                 <!-- Tính năng: Accordion -->
-                <?php
-                    if ( function_exists( 'mavf_post_accordion' ) ): ?>
-                        <section id="mavid-sec-accordion" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Accordion</h2>
-                                            </div>
+                <?php if ( function_exists( 'mavf_post_accordion' ) ) : ?>
+                    <section id="mavid-sec-accordion" class="mav-sec-wrapper mav-pg-section">
+                        <div class="mav-sec-ctn">
+                            <!-- Header -->
+                            <header class="mav-sec-header-wrapper">
+                                <div class="mav-sec-header-ctn">
+                                    <div class="mav-sec-title-wrapper">
+                                        <div class="mav-sec-title-ctn">
+                                            <h2 class="mav-sec-title">Accordion</h2>
                                         </div>
                                     </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
+                                </div>
+                            </header>
+                            <!-- Body -->
+                            <div class="mav-sec-body-wrapper">
+                                <div class="mav-sec-body-ctn">
+                                    <div class="mav-margin-bottom-xl">
+                                        <p class="mav-sub-heading-1">Q&A Style</p>
                                         <?php
                                             $mav_args = array(
-                                                'number_of_posts'   => 3,
+                                                'query_args'        => array(
+                                                                        'post_type'             => 'post',
+                                                                        'posts_per_page'        => 3,
+                                                                        'ignore_sticky_posts'   => true,
+                                                                        'post__not_in'          => get_option( 'sticky_posts' ),
+                                                                    ),
                                                 'collection'        => true,
                                                 'faq'               => true,
                                                 'removable'         => true
                                             );
-                                            mavf_post_accordion($mav_args);
+                                            mavf_post_accordion( $mav_args );
+                                        ?>
+                                    </div>
+                                    <div class="mav-margin-bottom-xl">
+                                        <p class="mav-sub-heading-1">Individual</p>
+                                        <?php
+                                            $mav_args = array(
+                                                'query_args'        => array(
+                                                                        'post_type'             => 'post',
+                                                                        'posts_per_page'        => 3,
+                                                                        'ignore_sticky_posts'   => true,
+                                                                        'post__not_in'          => get_option( 'sticky_posts' ),
+                                                                    ),
+                                                'removable'         => true
+                                            );
+                                            mavf_post_accordion( $mav_args );
+                                        ?>
+                                    </div>
+                                    <div>
+                                        <p class="mav-sub-heading-1">Collection</p>
+                                        <?php
+                                            $mav_args = array(
+                                                'query_args'        => array(
+                                                                        'post_type'             => 'post',
+                                                                        'posts_per_page'        => 3,
+                                                                        'ignore_sticky_posts'   => true,
+                                                                        'post__not_in'          => get_option( 'sticky_posts' ),
+                                                                    ),
+                                                'collection'        => true,
+                                            );
+                                            mavf_post_accordion( $mav_args );
                                         ?>
                                     </div>
                                 </div>
-                                <footer class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
-                                        <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
-                                            }
-                                        ?>
-                                    </div>
-                                </footer>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <!-- Footer -->
+                            <footer class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
+                                    ?>
+                                </div>
+                            </footer>
+                        </div>
+                    </section>
+                <?php endif; ?>
 
                 <!-- Tính năng: Tab View -->
                 <?php

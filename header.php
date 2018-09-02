@@ -3,9 +3,18 @@
  * @package mavericktheme
  */
 ?>
+
+<?php
+    // Redirect to homepage when in maintenace mode
+    if ( ! is_home() && get_option( 'mav_setting_maintenance' ) ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+?>
+
 <?php
     /* Detect device */
-    if (function_exists('mavf_mobile_detect')) {
+    if ( function_exists( 'mavf_mobile_detect' ) ) {
         $mavDevice = mavf_mobile_detect();
     } else {
         $mavDevice = '';

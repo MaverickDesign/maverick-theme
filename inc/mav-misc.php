@@ -125,7 +125,7 @@ function mavf_message_box($mavMessage = 'Thông báo', $mavIcon = 'fa-exclamatio
     echo '</div>';
 }
 
-function my_theme_archive_title($title)
+function my_theme_archive_title( $title )
 {
     if (is_category()) {
         $title = single_cat_title('', false);
@@ -152,13 +152,13 @@ add_filter('get_the_archive_title', 'my_theme_archive_title');
  * @return void
  */
 
-function mavf_button($mavText = '', $mavLink = '', $mavStyle = 'mav-btn-primary')
+function mavf_button( $mavText = '', $mavLink = '', $mavStyle = 'mav-btn-primary' )
 {
-    if (empty($mavText)) {
-        $mavText = __('Button Text');
+    if ( empty($mavText) ) {
+        $mavText = __( 'Button Text', 'mavericktheme' );
     }
     printf(
-        '<a href="%2$s"><button type="button" title="%1$s" class="%3$s">%1$s</button></a>',
+        '<button type="button" title="%1$s" class="%3$s"><a href="%2$s">%1$s</a></button>',
         $mavText, $mavLink, $mavStyle
     );
 };

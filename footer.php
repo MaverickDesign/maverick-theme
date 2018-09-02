@@ -5,39 +5,29 @@
 ?>
 
 <?php
-/**
- * Breadcrumb Section
- */
-$mavBreadcrumbs = get_option('mav_setting_breadcrumbs');
-if (isset($mavBreadcrumbs['footer']) && !is_front_page() && !is_home() && !is_attachment() && function_exists('mavf_breadcrumbs')) :
-    printf('<section class="mav-breadcrumbs-wrapper">');
-        printf('<div class="mav-breadcrumbs-ctn">');
-            mavf_breadcrumbs();
-        echo '</div>';
-    echo '</section>';
-endif;
+    /**
+     * Footer Breadcrumb Section
+     */
+    $mav_breadcrumbs = get_option( 'mav_setting_breadcrumbs' );
+    if ( isset( $mav_breadcrumbs['footer'] ) && ! is_front_page() && ! is_home() && ! is_attachment() && function_exists( 'mavf_breadcrumbs') ) :
+        printf('<section class="mav-breadcrumbs-wrapper">');
+            printf('<div class="mav-breadcrumbs-ctn">');
+                mavf_breadcrumbs();
+            echo '</div>';
+        echo '</section>';
+    endif;
 ?>
 
 <footer id="mavid-page-footer" class="mav-pg-footer">
     <!-- Footer Socials -->
     <?php
-    if(function_exists('mavf_social_links') && !empty(mavf_check_social_accounts())) : ?>
-        <section id="mavid-sec-footer-social" class="mav-footer-socials-wrapper">
-            <div class="mav-footer-socials-ctn">
-                <?php
-                    printf(
-                        '<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                        get_bloginfo('name'), __('trên mạng&nbsp;xã&nbsp;hội', 'mavericktheme')
-                    );
-                    mavf_social_links();
-                ?>
-            </div>
-        </section>
-    <?php endif;
+        if ( function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
+           include_once TEMPLATE_DIR . '/template-parts/mav-footer_social-links.php';
+        endif;
     ?>
 
     <!-- Footer Menu -->
-    <?php if ( current_theme_supports('menus') && has_nav_menu( 'secondary_menu' ) ) : ?>
+    <?php if ( current_theme_supports( 'menus' ) && has_nav_menu( 'secondary_menu' ) ) : ?>
         <section id="mavid-sec-footer-menu" class="mav-pg-ctn mav-footer-menu-wrapper mav-hide-on-mobile">
             <div class="mav-footer-menu-ctn">
                 <nav id="mavid-footer-menu" class="mav-footer-menu">
@@ -73,16 +63,7 @@ endif;
     <?php endif; ?>
 
     <!-- Copyright section -->
-    <section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
-        <div class="mav-footer-copyright-ctn">
-            <div>
-                <?php _e('Bản quyền', 'mavericktheme');?> &copy; <strong><?php echo get_the_date('Y'); ?></strong> <?php _e('của', 'mavericktheme'); ?> <a href="<?php bloginfo('url');?>" target="_blank" class="mav-link"><strong><?php bloginfo('title'); ?></strong></a>. <?php _e('Bảo lưu mọi quyền hạn.', 'mavericktheme'); ?>
-            </div>
-            <div class="<?php if ( get_option( 'mav_setting_theme_info' ) ) { echo 'mav-hide'; } ?>">
-                <?php _e('Website xây dựng bằng', 'mavericktheme'); ?> <a href="http://www.maverick.vn/mavericktheme/" target="_blank" class="mav-link"><strong>Maverick Theme</strong></a> <?php _e('phát triển bởi', 'mavericktheme'); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link"><strong>Maverick Design</strong></a>.
-            </div>
-        </div>
-    </section>
+    <?php include_once TEMPLATE_DIR . '/template-parts/mav-footer_copyright.php'; ?>
 </footer>
 
 <?php

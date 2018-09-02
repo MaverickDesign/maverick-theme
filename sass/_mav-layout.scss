@@ -1,5 +1,4 @@
 .mav-wrapper {
-
     .mav-ctn {
         max-width: var(--mav-site-width);
         margin: 0 auto;
@@ -7,21 +6,25 @@
     }
 }
 
+// Flex Column
 %mav-flex-column, .mav-flex-column {
     display: flex;
     flex-direction: column;
 }
 
+// Flex Row
 %mav-flex-row, .mav-flex-row {
     display: flex;
     flex-direction: row;
 }
 
+// Flex Center Horizontal
 .mav-flex-center {
     @extend %mav-flex-row;
     justify-content: center;
 }
 
+// Flex Center Horizontal & Vertical
 .mav-flex-center-all  {
     @extend %mav-flex-row;
     justify-content: center;
@@ -41,11 +44,14 @@
     }
 }
 
-/* Grids */
+/**
+ * Grids
+ */
 
 .mav-grid {
     display: grid;
 }
+
 @media #{$mav-desktop} {
     @for $columns from 1 to 15 {
         .#{$mavNameSpace}-grid-col-#{$columns} {
@@ -208,9 +214,6 @@
  * Page layouts
  */
 
-.mav-pg-wrapper {
-}
-
 .mav-pg-ctn {
     max-width: var(--mav-site-width);
     margin: 0 auto;
@@ -232,8 +235,7 @@
 }
 
 /**
- * SECTION Styles
- * ==============
+ * Section Styles
  */
 .mav-sec-wrapper {
     .mav-sec-ctn {
@@ -246,7 +248,10 @@
         }
     }
 }
-/* Section header */
+
+/**
+ * Section header
+ */
 .mav-sec-header-wrapper {
     .mav-sec-header-ctn {
         display: flex;
@@ -256,7 +261,9 @@
     }
 }
 
-// Section title
+/**
+ * Section title
+ */
 .mav-sec-title-wrapper {
     .mav-sec-title-ctn {
         position: relative;
@@ -273,6 +280,9 @@
     font-weight: var(--mav-font-weight-light);
     text-transform: uppercase;
     @extend %mav-transition;
+    a {
+        text-decoration: none;
+    }
     &:hover {
         box-shadow: inset 0 -3px var(--mav-color-accent);
     }
@@ -281,7 +291,9 @@
     }
 }
 
-/* Section intro */
+/**
+ * Section intro
+ */
 .mav-sec-intro-wrapper {
     .mav-sec-intro-ctn {
         padding-top: var(--mav-gutter-lg);
@@ -292,7 +304,10 @@
         }
     }
 }
-/* Section body */
+
+/**
+ * Section body
+ */
 .mav-sec-body-wrapper {
     .mav-sec-body-ctn {
         padding: var(--mav-gutter-xl) 0;

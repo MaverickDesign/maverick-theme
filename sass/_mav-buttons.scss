@@ -15,6 +15,10 @@ button {
     &[data-full-width] {
         width: 100%;
     }
+
+    a {
+        text-decoration: none;
+    }
 }
 
 %mav-btn {
@@ -26,7 +30,6 @@ button {
 
     background: transparent;
 
-    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
@@ -50,17 +53,21 @@ button {
 .mav-btn {
     &-primary {
         @extend .mav-btn;
-        padding: var(--mav-gutter-xs);
         background: var(--mav-color-primary);
         @include text-contrast($mav-color-primary);
+        a {
+            padding: var(--mav-gutter-xs);
+        }
         &:hover {
             background: transparent;
             color: var(--mav-color-text-primary);
         }
         &-lg {
             @extend .mav-btn-primary;
-            padding: var(--mav-gutter);
             letter-spacing: 1px;
+            a {
+                padding: var(--mav-gutter);
+            }
         }
         &-dark {
             @extend .mav-btn-primary;
@@ -72,19 +79,22 @@ button {
     }
     &-secondary {
         @extend .mav-btn;
-        padding: var(--mav-gutter-xs);
         color: var(--mav-color-text-primary);
+        a {
+            padding: var(--mav-gutter-sm);
+        }
         &-lg {
             @extend .mav-btn-secondary;
-            padding: var(--mav-gutter);
             letter-spacing: 1px;
+            a {
+                padding: var(--mav-gutter);
+            }
         }
     }
     &-cta {
         @extend .mav-btn;
         width: 100%;
         margin: 0 auto;
-        padding: var(--mav-gutter);
         border-width: 0;
         background: var(--mav-color-accent);
         @include text-contrast($mav-color-accent);
@@ -92,6 +102,9 @@ button {
         text-transform: uppercase;
         @extend %mav-transition;
         letter-spacing: 1px;
+        a {
+            padding: var(--mav-gutter);
+        }
     }
     &-close {
         cursor: pointer;

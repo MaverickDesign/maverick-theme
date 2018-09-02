@@ -135,15 +135,15 @@ if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->c
                         <div class="mav-sec-title-ctn">
                             <h3 class="mav-sec-title">
                                 <?php
-                                if (!empty($categories)) {
-                                    printf(
-                                        '%4$s <a href="%1$s" title="%3$s %2$s"><strong class="mav-no-break">%2$s</strong></a>',
-                                        esc_url(get_category_link($categories[0]->term_id)),
-                                        esc_html($categories[0]->name),
-                                        __('Xem tất cả bài trong chuyên mục','mavericktheme'),
-                                        __('Cùng chuyên mục', 'mavericktheme')
-                                    );
-                                }
+                                    if ( ! empty( $categories ) ) {
+                                        printf(
+                                            '%4$s <a href="%1$s" title="%3$s %2$s" style="text-decoration: none;"><strong class="mav-no-break">%2$s</strong></a>',
+                                            esc_url( get_category_link( $categories[0]->term_id ) ),
+                                            esc_html( $categories[0]->name ),
+                                            __( 'Xem tất cả bài trong chuyên mục', 'mavericktheme' ),
+                                            __( 'Cùng chuyên mục', 'mavericktheme' )
+                                        );
+                                    }
                                 ?>
                             </h3>
                         </div>
@@ -172,11 +172,11 @@ if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->c
                 <div class="mav-sec-footer-ctn">
                     <?php
                         printf(
-                            '<a href="%1$s" title="%3$s %2$s"><button class="mav-btn-primary-lg">%4$s</button></a>',
-                            esc_url(get_category_link($categories[0]->term_id)),
-                            esc_html($categories[0]->name),
-                            __('Xem tất cả bài trong chuyên mục', 'mavericktheme'),
-                            __('Xem đầy đủ', 'mavericktheme')
+                            '<button class="mav-btn-primary-lg"><a href="%1$s" title="%3$s %2$s">%4$s</a></button>',
+                            esc_url( get_category_link( $categories[0]->term_id ) ),
+                            esc_html( $categories[0]->name ),
+                            __( 'Xem tất cả bài trong chuyên mục', 'mavericktheme' ),
+                            __( 'Xem đầy đủ', 'mavericktheme' )
                         );
                     ?>
                 </div>

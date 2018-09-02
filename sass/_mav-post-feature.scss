@@ -69,12 +69,16 @@
 }
 
 .mav-post-feature-title {
-    font-weight: 300;
+    font-weight: var(--mav-font-weight-light);
     font-size: 2rem;
     color: var(--mav-color-text-primary);
+    a {
+        text-decoration: none;
+    }
 }
 
 .mav-post-feature-intro {
+    font-size: 1rem;
     color: var(--mav-color-text-secondary);
 }
 

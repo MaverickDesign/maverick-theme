@@ -36,7 +36,7 @@ printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
              * Card Body
              */
             printf('<section class="mav-card-post-content">');
-                echo '<div class="mav-card-post-info-wrapper">';
+                printf('<div class="mav-card-post-info-wrapper">');
                     printf('<div class="mav-card-post-info-ctn mav-padding">');
                         if ( function_exists( 'mavf_get_single_category' ) && function_exists( 'mavf_single_category' ) && ! empty( mavf_get_single_category() ) ) :
                             printf(
@@ -48,9 +48,9 @@ printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
                     echo '</div>';
                 echo '</div>';
                 // Title
-                printf('<div class="mav-card-post-title-wrapper">');
+                printf('<div class="mav-card-title-wrapper">');
                     printf(
-                        '<h3 class="mav-card-post-title"><a href="%2$s" title="%3$s%1$s">%1$s</a></h3>',
+                        '<h3 class="mav-card-title" title="%3$s%1$s"><a href="%2$s">%1$s</a></h3>',
                         get_the_title(), get_the_permalink(), __( 'Xem nội dung ', 'mavericktheme' )
                     );
                 echo '</div>';
@@ -61,7 +61,7 @@ printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
              */
             printf('<footer class="mav-card-post-footer">');
                 printf(
-                    '<a href="%1$s" title="%2$s"><button class="mav-btn-primary" data-full-width>%2$s</button></a>',
+                    '<button class="mav-btn-primary" data-full-width><a href="%1$s" title="%2$s">%2$s</a></button>',
                     get_the_permalink(), __( 'Xem chi tiết', 'mavericktheme' )
                 );
             echo '</footer>';

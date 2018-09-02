@@ -5,33 +5,33 @@
 
 // Use for HTML sources
 // Eg: http://localhost/maverick.vn/wp-content/themes/mavericktheme
-define("THEME_DIR", get_template_directory_uri());
+define( "THEME_DIR", get_template_directory_uri() );
 // Use for PHP sources
 // Eg: D:\_Projects\www\maverick.vn/wp-content/themes/mavericktheme
-define("TEMPLATE_DIR", get_template_directory());
+define( "TEMPLATE_DIR", get_template_directory() );
 
 /* Remove Generator Meta Tag */
-remove_action('wp_head', 'wp_generator');
+remove_action( 'wp_head', 'wp_generator' );
 
 /**
  * Vendors
  */
-if (file_exists(TEMPLATE_DIR.'/vendor/Mobile_Detect.php')) {
+if ( file_exists( TEMPLATE_DIR.'/vendor/Mobile_Detect.php' ) ) {
 
     include_once TEMPLATE_DIR.'/vendor/Mobile_Detect.php';
 
     function mavf_mobile_detect()
     {
-        $mavDeviceDetect = new Mobile_Detect;
-        $mavDevice = 'desktop';
+        $mav_device_detect = new Mobile_Detect;
+        $mav_device = 'desktop';
 
-        if ($mavDeviceDetect->isMobile()) {
-            $mavDevice = 'mobile';
+        if ($mav_device_detect->isMobile()) {
+            $mav_device = 'mobile';
         }
-        if ($mavDeviceDetect->isTablet()) {
-            $mavDevice = 'tablet';
+        if ($mav_device_detect->isTablet()) {
+            $mav_device = 'tablet';
         }
-        return $mavDevice;
+        return $mav_device;
     }
 }
 
@@ -45,6 +45,15 @@ require TEMPLATE_DIR. '/inc/admin/mav-admin-theme-supports.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-styles.php';
 require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
 
+// Social Accounts
+require TEMPLATE_DIR.'/inc/mav-social-accounts.php';
+
+// Return if maintenance mode is enable
+if ( get_option( 'mav_setting_maintenance' ) ) {
+    return;
+}
+
+// Custom post types
 require TEMPLATE_DIR. '/inc/admin/mav-admin-cpt.php';
 
 /**
@@ -56,9 +65,6 @@ require TEMPLATE_DIR. '/inc/mav-walker-nav.php';
 require TEMPLATE_DIR. '/inc/mav-breadcrumbs.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-load-posts.php';
-
-// Social Accounts
-require TEMPLATE_DIR.'/inc/mav-social-accounts.php';
 
 // Post Query
 require TEMPLATE_DIR. '/inc/mav-post-query.php';

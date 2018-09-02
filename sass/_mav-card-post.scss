@@ -70,6 +70,7 @@
     }
 
     &-content {
+        // Card Header
         header {
             display: grid;
             padding: var(--mav-gutter);
@@ -79,23 +80,21 @@
                 grid-template-rows: auto;
             }
         }
-        .mav-card-post-title-wrapper {
+        // Card Title
+        .mav-card-title-wrapper {
             display: block;
             overflow: hidden;
             padding: var(--mav-gutter);
             height: 100%;
         }
-        .mav-card-post-title {
-            font-size: var(--mav-font-size-lg);
-            font-weight: var(--mav-font-weight-bold);
-            color: var(--mav-color-text-primary);
-            line-height: inherit;
+        .mav-card-title {
+            // font-size: var(--mav-font-size-lg);
+            font-weight: var(--mav-font-weight-medium);
             @extend %mav-transition;
             a {
+                text-decoration: none;
                 &:hover {
                     text-decoration: underline;
-                    text-underline-position: under;
-                    text-decoration-color: var(--mav-color-accent);
                 }
             }
             @media #{$mav-phone} {

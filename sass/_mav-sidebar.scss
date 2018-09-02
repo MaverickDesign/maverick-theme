@@ -6,11 +6,12 @@
     padding-right: var(--mav-gutter);
     border-left: 1px solid var(--mav-color-border);
     a {
+        text-decoration: none;
         &:hover {
-            color: var(--mav-color-text-primary);
+            // color: var(--mav-color-text-primary);
             text-decoration: underline;
             text-decoration-color: var(--mav-color-accent);
-            text-underline-position: under;
+            // text-underline-position: under;
         }
     }
     li {

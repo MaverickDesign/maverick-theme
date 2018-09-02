@@ -28,10 +28,10 @@ function mavf_post_feature( $mav_args )
 
     $mav_title_side             = isset( $mav_args['title_side'] )              ? $mav_args['title_side']             : '';
 
-    set_query_var('mavClassContainerItem',  $mav_class_container_item);
-    set_query_var('mavClassWrapperItem',    $mav_class_wrapper_item);
-    set_query_var('mavButtonText',          $mav_button_text);
-    set_query_var('mavTitleSide',           $mav_title_side);
+    set_query_var( 'mav_class_container_item',  $mav_class_container_item );
+    set_query_var( 'mav_class_wrapper_item',    $mav_class_wrapper_item );
+    set_query_var( 'mav_button_text',           $mav_button_text );
+    set_query_var( 'mav_title_side',            $mav_title_side );
 
     $mav_post_feature_args = array(
         'query_args'        => $mav_args['query_args'],
