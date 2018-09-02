@@ -19,7 +19,7 @@
             );
             printf('<footer class="mav-flex-center-all mav-margin-bottom-lg">');
                 // Back and Home Buttons
-                require TEMPLATE_DIR.'/template-parts/mav-button__back-and-home.php';
+                get_template_part('/template-parts/mav-button__back-and-home');
             echo '</footer>';
         ?>
     </section>
