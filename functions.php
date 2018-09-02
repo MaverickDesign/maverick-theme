@@ -49,9 +49,9 @@ require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
 require TEMPLATE_DIR.'/inc/mav-social-accounts.php';
 
 // Return if maintenance mode is enable
-if ( get_option( 'mav_setting_maintenance' ) ) {
-    return;
-}
+// if ( get_option( 'mav_setting_maintenance' ) ) {
+//     return;
+// }
 
 // Custom post types
 require TEMPLATE_DIR. '/inc/admin/mav-admin-cpt.php';

@@ -3,9 +3,9 @@
  * @package mavericktheme
  */
 
-if ( get_option( 'mav_setting_maintenance' ) ) {
-    return;
-}
+// if ( get_option( 'mav_setting_maintenance' ) ) {
+//     return;
+// }
 
 if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
     <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">

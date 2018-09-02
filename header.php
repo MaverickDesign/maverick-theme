@@ -15,9 +15,9 @@
 <?php
     /* Detect device */
     if ( function_exists( 'mavf_mobile_detect' ) ) {
-        $mavDevice = mavf_mobile_detect();
+        $mav_device = mavf_mobile_detect();
     } else {
-        $mavDevice = '';
+        $mav_device = '';
     }
 ?>
 
@@ -99,7 +99,7 @@
 
 </head>
 
-<body data-device="<?php echo $mavDevice; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
+<body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
     <?php
     $mavEFA  = esc_attr(get_option('mav_setting_enable_facebook_app'));
     $mavFAID = esc_attr(get_option('mav_setting_facebook_app_id'));
