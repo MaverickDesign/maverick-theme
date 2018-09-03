@@ -53,9 +53,14 @@
             padding: var(--mav-gutter-lg);
             background: white;
             max-height: 75vh;
+            overflow: hidden;
             @media #{$mav-mobile} {
                 padding: var(--mav-gutter);
+            }
+            .mav-tab-content-ctn {
+                display: block;
                 overflow-y: auto;
+                max-height: 50vh;
             }
         }
 

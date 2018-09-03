@@ -101,8 +101,8 @@
 
 <body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
     <?php
-    $mavEFA  = esc_attr(get_option('mav_setting_enable_facebook_app'));
-    $mavFAID = esc_attr(get_option('mav_setting_facebook_app_id'));
+    $mavEFA  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
+    $mavFAID = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
     if (!empty($mavEFA) && !empty($mavFAID)) : ?>
         <!-- Facebook Script -->
         <div id="fb-root"></div>
@@ -160,24 +160,24 @@
                     ?>
                     <!-- Site Search Toggle Button -->
                     <div>
-                        <button class="mav-site-search-icon fas fa-search" title="<?php _e('Tìm nội dung','mavericktheme'); ?>"></button>
+                        <button class="mav-site-search-icon fas fa-search" title="<?php _e( 'Tìm nội dung','mavericktheme' ); ?>"></button>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Header Site Search -->
-        <?php get_template_part('/template-parts/mav-header__site-search'); ?>
+        <?php get_template_part('template-parts/mav-header__site-search'); ?>
     </header>
 
     <!-- Header Menu -->
-    <?php get_template_part('/template-parts/mav-header__menu'); ?>
+    <?php get_template_part('template-parts/mav-header__menu'); ?>
 
     <?php
     /**
      * Breadcrumb Section
      */
-    $mavBreadcrumbs = get_option('mav_setting_breadcrumbs');
-    if (isset($mavBreadcrumbs['header']) && !is_front_page() && !is_home() && !is_attachment() && function_exists('mavf_breadcrumbs')) :
+    $mavBreadcrumbs = get_option( 'mav_setting_breadcrumbs' );
+    if ( isset( $mavBreadcrumbs['header'] ) && ! is_front_page() && ! is_home() && ! is_attachment() && function_exists( 'mavf_breadcrumbs' ) ) :
         printf('<section class="mav-breadcrumbs-wrapper">');
             printf('<div class="mav-breadcrumbs-ctn">');
                 mavf_breadcrumbs();

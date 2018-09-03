@@ -1,8 +1,8 @@
 {
     "patterns" : [
         {
-            "pattern" : "/(lorem ipsum)/i",
-            "replace" : "<strong>$0</strong>"
+            "pattern" : "/(Maverick Design)/i",
+            "replace" : "<span class=\"mav-brand-name\">$0</span>"
         },
         {
             "pattern" : "/(phần mềm)/i",

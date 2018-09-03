@@ -27,13 +27,15 @@ function mavf_post_grid( $mav_args )
     $mav_wrapper            = isset( $mav_args['wrapper_class'] )     ? $mav_args['wrapper_class']             : 'mav-post-grid-wrapper';
     $mav_container          = isset( $mav_args['container_class'] )   ? $mav_args['container_class']           : 'mav-post-grid-ctn';
 
-    $mav_query_args = array(
+    $mav_default_query_args = array(
         'post_type'                 => $mav_post_type,
         'posts_per_page'            => $mav_number_of_posts,
         'ignore_sticky_posts'       => true,
         'post__in'                  => $mav_post_in,
         'category__in'              => $mav_categories,
     );
+
+    $mav_query_args         = isset( $mav_args['query_args'] )        ? $mav_args['query_args']                : $mav_default_query_args;
 
     $mav_query = new WP_Query( $mav_query_args );
 

@@ -14,8 +14,8 @@
     <header class="mav-post-header-wrapper mav-post-header">
         <div class="mav-post-header-ctn">
             <!-- Feature image -->
-            <?php if ( has_post_thumbnail() && ( $mav_post_type !== 'mav_cpt_client' ) ) : ?>
-                    <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo(get_the_post_thumbnail_url(get_the_ID(),'full'));  ?>)">
+            <?php if ( has_post_thumbnail() && ( $mav_post_type == 'post' ) ) : ?>
+                    <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');  ?>)">
                     </div>
             <?php endif; ?>
             <!-- Post title -->
@@ -29,24 +29,20 @@
                 <div id="mavid-post-info" class="mav-post-info-wrapper">
                     <div class="mav-post-info-ctn">
                     <?php
-                        $mavSingleCat = function_exists( 'mavf_get_single_category' ) ? mavf_get_single_category() : '';
-                        if (!empty($mavSingleCat)) {
+                        $mav_single_cat = function_exists( 'mavf_get_single_category' ) ? mavf_get_single_category() : '';
+                        if ( ! empty( $mav_single_cat ) ) {
                             printf(
                                 '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
-                                $mavSingleCat,
-                                __('Xem các bài chuyên mục','mavericktheme'),
-                                mavf_single_category()
+                                $mav_single_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ), mavf_single_category()
                             );
                         }
                         printf('
                             <span class="mav-post-info" title="%2$s" data-type="date">%1$s</span>',
-                            get_the_date(),
-                            __('Ngày đăng','mavericktheme')
+                            get_the_date(), __( 'Ngày đăng', 'mavericktheme' )
                         );
                         printf('
                             <span class="mav-post-info" title="%2$s" data-type="author">%1$s</span>',
-                            get_the_author(),
-                            __('Tác giả','mavericktheme')
+                            get_the_author(), __( 'Tác giả', 'mavericktheme' )
                         );
                     ?>
                     </div>
@@ -66,9 +62,12 @@
     <section class="mav-post-content-wrapper">
         <div class="mav-post-content mav-post-content-ctn" <?php echo $mav_center_style; ?>>
             <?php
-                // if (function_exists('mavf_post_content_modifier')) {
-                //     mavf_post_content_modifier(THEME_DIR.'/template-parts/mav-patterns.json');
-                // }
+                if ( function_exists( 'mavf_post_content_modifier' ) ) {
+                    $mav_json_file = TEMPLATE_DIR . '/template-parts/mav-patterns.json';
+                    if ( file_exists( $mav_json_file ) ) {
+                        mavf_post_content_modifier($mav_json_file);
+                    }
+                }
                 the_content();
             ?>
         </div>

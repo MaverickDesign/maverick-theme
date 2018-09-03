@@ -3,22 +3,24 @@
  * @package mavericktheme
  */
 
-$mavLabels = array(
-    'name'              => __('Portfolio', 'mavericktheme'),
-    'singular_name'     => __('Portfolio', 'mavericktheme')
+$mav_labels = array(
+    'name'              => _x( 'Sản phẩm', 'mavericktheme' ),
+    'singular_name'     => _x( 'Sản phẩm', 'mavericktheme' ),
+    'add_new'           => __( 'Thêm sản phẩm mới', 'maverick-theme' ),
+    'all_items'         => __( 'Tất cả sản phẩm', 'maverick-theme' ),
 );
 
 $mav_args = array(
-    'labels'        => $mavLabels,
+    'labels'        => $mav_labels,
     'public'        => true,
     'has_archive'   => true,
     'supports'      => array(
-        'title','editor','thumbnail'
+        'title', 'editor', 'thumbnail'
     ),
-    'taxonomies'    => array('category'),
-    'rewrite'       => array('slug' => __('san_pham', 'mavericktheme')),
+    'taxonomies'    => array( 'category', 'post_tag' ),
+    'rewrite'       => array( 'slug' => __( 'san-pham', 'mavericktheme' ) ),
 );
 
-register_post_type('mav_cpt_portfolio', $mav_args);
+register_post_type( 'mav_cpt_portfolio', $mav_args );
 
 flush_rewrite_rules();

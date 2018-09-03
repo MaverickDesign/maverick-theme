@@ -1,15 +1,19 @@
+.mav-brand-name {
+    font-weight: var(--mav-font-weight-medium)
+}
+
 /**
  * Tool Tip
  */
 .mav-tool-tip {
     opacity: 0;
     position: fixed;
-    z-index: $mav-layer-top;
+    z-index: var(--mav-layer-top);
     padding: var(--mav-gutter-sm);
     border-radius: 4px;
-    background: rgba($mav-color-brand-accent,.9);
+    background: rgba($mav-color-accent,.9);
     font-size: .8rem;
-    @include text-contrast($mav-color-brand-accent);
+    @include text-contrast($mav-color-accent);
     transition: opacity .3s ease;
 }
 

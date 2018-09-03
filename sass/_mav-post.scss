@@ -176,15 +176,23 @@
 
     h2, .mav-h2 {
         margin-top: 1em;
+        margin-bottom: .5em;
         &:first-of-type {
             margin-top: 0;
         }
     }
+    h3, .mav-h3 {
+        margin-bottom: .25em;
+    }
 
     p {
         color: var(--mav-color-text-primary);
-        margin-bottom: 1em;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
         line-height: 1.75em;
+        &:first-of-type {
+            margin-top: 0;
+        }
         &:last-child, &:only-child {
             margin-bottom: 0;
         }
@@ -270,7 +278,7 @@
     blockquote {
         display: flex;
         flex-direction: column;
-        margin: var(--mav-gutter-lg) auto;
+        margin: var(--mav-gutter-xl) auto;
         text-align: center;
         width: max-content;
         max-width: 100%;
@@ -454,7 +462,7 @@
 /**
  * Post Tags
  */
- .mav-post-tag-list {
+.mav-post-tag-list {
     @extend .mav-flex-row;
     flex-wrap: wrap;
     li {
@@ -480,6 +488,7 @@
             font-size: var(--mav-font-size-sm);
             text-transform: lowercase;
             color: var(--mav-color-text-primary-dark);
+            text-decoration: none;
             &:before {
                 @extend %mav-font-awesome;
                 content: '\f292';

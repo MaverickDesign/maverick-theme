@@ -165,7 +165,7 @@ table {
     :root {
       --mav-site-width: 1680px; } }
 
-.mav-sec-title, .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta, .mav-btn-top, .mav-btn-back, .mav-btn-top:before, .mav-btn-back:before, .mav-post-navigation a, .gallery figure img, .mav-post-tag-list li, .mav-site-search-wrapper, .mav-collapse, .mav-contact-form .mav-form-hint, .mav-form-fields-ctn .mav-form-input-ctn .mav-form-hint, .mav-site-sidebar-ctn .tagcloud a, .mav-site-sidebar-ctn .tagcloud .tag-link-count, .mav-card-post, .mav-card-post-thumbnail, .mav-card-post-content .mav-card-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-2-ctn .mav-nav-dot, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-carousel .mav-carousel-wrapper .mav-carousel-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail, [data-lightbox-item] img, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-footer-menu ul li a, .mav-sticky-logo-wrapper .mav-sticky-logo-ctn .mav-sticky-logo, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger, .mav-accordion-trigger:before, .mav-accordion-trigger[data-faq][data-question], .mav-tab-wrapper .mav-tab-ctn .mav-tab-trigger, .mav-card-client-wrapper .mav-card-client-ctn, .mav-card-client-wrapper .mav-card-client-ctn img, .mav-contact-socials-ctn .mav-social-links .mav-social-icon {
+.mav-sec-title, .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta, .mav-btn-top, .mav-btn-back, .mav-btn-top:before, .mav-btn-back:before, .mav-post-navigation a, .gallery figure img, .mav-post-tag-list li, .mav-site-search-wrapper, .mav-collapse, .mav-contact-form .mav-form-hint, .mav-form-fields-ctn .mav-form-input-ctn .mav-form-hint, .mav-card-thumbnail-cpt-portfolio, .mav-site-sidebar-ctn .tagcloud a, .mav-site-sidebar-ctn .tagcloud .tag-link-count, .mav-card-post, .mav-card-post-thumbnail, .mav-card-post-content .mav-card-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-2-ctn .mav-nav-dot, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-carousel .mav-carousel-wrapper .mav-carousel-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail, [data-lightbox-item] img, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-footer-menu ul li a, .mav-sticky-logo-wrapper .mav-sticky-logo-ctn .mav-sticky-logo, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger, .mav-accordion-trigger:before, .mav-accordion-trigger[data-faq][data-question], .mav-tab-wrapper .mav-tab-ctn .mav-tab-trigger, .mav-card-client-wrapper .mav-card-client-ctn, .mav-card-client-wrapper .mav-card-client-ctn img, .mav-contact-socials-ctn .mav-social-links .mav-social-icon {
   transition: all .3s ease; }
 
 /**
@@ -373,12 +373,10 @@ ol li {
  */
 sup, sub {
   display: inline-block;
-  font-size: 70%;
-  font-weight: var(--mav-font-weight-medium);
-  margin: 0 1px; }
+  font-size: 70%; }
 
 sup {
-  transform: translateY(-15%); }
+  transform: translateY(-30%); }
 
 sub {
   transform: translateY(10%); }
@@ -399,8 +397,7 @@ kbd {
  * Inline Quote Tag
  */
 q {
-  font-weight: var(--mav-font-weight-medium);
-  font-size: var(--mav-font-size-lg); }
+  font-size: var(--mav-font-size-xl); }
   q:before, q:after {
     display: inline-block;
     color: var(--mav-color-accent);
@@ -485,11 +482,11 @@ a {
   display: flex;
   flex-direction: column; }
 
-.mav-flex-center, .mav-post-feature-cta-ctn, .mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row, .mav-header-logo-ctn, .mav-flex-row, .mav-post-navigation, .mav-post-tag-list, .mav-paginate-links-ctn {
+.mav-flex-center, .mav-card-cpt-portfolio .mav-card-content .mav-card-title-wrapper, .mav-card-cpt-portfolio .mav-card-post-info-ctn, .mav-card-cpt-portfolio .mav-card-post-info-ctn .post-categories, .mav-post-feature-cta-ctn, .mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row, .mav-header-logo-ctn, .mav-flex-row, .mav-post-navigation, .mav-post-tag-list, .mav-paginate-links-ctn {
   display: flex;
   flex-direction: row; }
 
-.mav-flex-center, .mav-post-feature-cta-ctn {
+.mav-flex-center, .mav-card-cpt-portfolio .mav-card-content .mav-card-title-wrapper, .mav-card-cpt-portfolio .mav-card-post-info-ctn, .mav-card-cpt-portfolio .mav-card-post-info-ctn .post-categories, .mav-post-feature-cta-ctn {
   justify-content: center; }
 
 .mav-flex-center-all, .mav-sec-footer-wrapper .mav-sec-footer-ctn, .mav-btn-top, .mav-btn-back, .mav-post-content p.attachment, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-post-attachment-wrapper, .mav-page-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-3-ctn .mav-slide .mav-slide-title-ctn, .mav-carousel, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-image-ctn, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-modal, .mav-price-table-row {
@@ -1028,7 +1025,9 @@ button {
   button[data-full-width] {
     width: 100%; }
   button a {
-    text-decoration: none; }
+    text-decoration: none;
+    height: 100%;
+    width: 100%; }
 
 .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta {
   display: flex;
@@ -1273,13 +1272,19 @@ button {
    * Address Tag
    */ }
   .mav-post-content h2, .mav-post-content .mav-h2 {
-    margin-top: 1em; }
+    margin-top: 1em;
+    margin-bottom: .5em; }
     .mav-post-content h2:first-of-type, .mav-post-content .mav-h2:first-of-type {
       margin-top: 0; }
+  .mav-post-content h3, .mav-post-content .mav-h3 {
+    margin-bottom: .25em; }
   .mav-post-content p {
     color: var(--mav-color-text-primary);
-    margin-bottom: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     line-height: 1.75em; }
+    .mav-post-content p:first-of-type {
+      margin-top: 0; }
     .mav-post-content p:last-child, .mav-post-content p:only-child {
       margin-bottom: 0; }
     .mav-post-content p pre, .mav-post-content p code {
@@ -1328,7 +1333,7 @@ button {
   .mav-post-content blockquote {
     display: flex;
     flex-direction: column;
-    margin: var(--mav-gutter-lg) auto;
+    margin: var(--mav-gutter-xl) auto;
     text-align: center;
     width: max-content;
     max-width: 100%;
@@ -1489,7 +1494,8 @@ button {
       align-items: center;
       font-size: var(--mav-font-size-sm);
       text-transform: lowercase;
-      color: var(--mav-color-text-primary-dark); }
+      color: var(--mav-color-text-primary-dark);
+      text-decoration: none; }
       .mav-post-tag-list li a:before {
         content: '\f292';
         margin-right: var(--mav-gutter-xs);
@@ -1703,10 +1709,65 @@ form {
       .mav-form-footer-ctn .mav-form-status-ctn .mav-form-status p {
         font-size: inherit; }
 
-.mav-card {
+/**
+ * Portfolio CPT
+ */
+.mav-card-cpt-portfolio {
   display: grid;
-  position: relative;
-  padding: var(--mav-gutter); }
+  grid-template-rows: auto;
+  border: 1px solid var(--mav-color-border);
+  background: white;
+  /* Card Header */
+  /* Card Content */
+  /* Card Footer */ }
+  .mav-card-cpt-portfolio .mav-card-header {
+    display: block;
+    height: 25vh; }
+    .mav-card-cpt-portfolio .mav-card-header .mav-card-post-thumbnail-wrapper {
+      display: flex; }
+  .mav-card-cpt-portfolio .mav-card-content {
+    background-color: var(--mav-color-off-white); }
+    .mav-card-cpt-portfolio .mav-card-content .mav-card-title-wrapper {
+      padding: var(--mav-gutter) 0; }
+      .mav-card-cpt-portfolio .mav-card-content .mav-card-title-wrapper .mav-card-title {
+        text-align: center;
+        font-size: 1.25rem;
+        max-width: 90%; }
+        .mav-card-cpt-portfolio .mav-card-content .mav-card-title-wrapper .mav-card-title a {
+          text-decoration: none; }
+  .mav-card-cpt-portfolio .mav-card-post-info-ctn {
+    padding: var(--mav-gutter-sm) 0; }
+    .mav-card-cpt-portfolio .mav-card-post-info-ctn .post-categories {
+      flex-wrap: wrap; }
+      .mav-card-cpt-portfolio .mav-card-post-info-ctn .post-categories li {
+        list-style-type: none; }
+  .mav-card-cpt-portfolio .mav-card-footer {
+    padding: var(--mav-gutter-sm); }
+    .mav-card-cpt-portfolio .mav-card-footer .mav-post-tag-list {
+      display: flex;
+      flex-wrap: wrap; }
+      .mav-card-cpt-portfolio .mav-card-footer .mav-post-tag-list li {
+        margin: var(--mav-gutter-xs) 0;
+        margin-right: var(--mav-gutter-sm); }
+        .mav-card-cpt-portfolio .mav-card-footer .mav-post-tag-list li:last-child {
+          margin-right: 0; }
+        .mav-card-cpt-portfolio .mav-card-footer .mav-post-tag-list li:hover {
+          background: white;
+          border-color: inherit; }
+      .mav-card-cpt-portfolio .mav-card-footer .mav-post-tag-list a {
+        color: var(--mav-color-text-secondary); }
+
+.mav-card-thumbnail-cpt-portfolio {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  filter: grayscale(1);
+  transform: scale(0.8); }
+  .mav-card-thumbnail-cpt-portfolio:hover {
+    filter: grayscale(0); }
 
 .mav-site-sidebar-ctn {
   display: grid;
@@ -2957,11 +3018,15 @@ form {
       grid-area: content;
       padding: var(--mav-gutter-lg);
       background: white;
-      max-height: 75vh; }
+      max-height: 75vh;
+      overflow: hidden; }
       @media only screen and (max-width: 1023px) {
         .mav-tab-wrapper .mav-tab-ctn .mav-tab-content-wrapper {
-          padding: var(--mav-gutter);
-          overflow-y: auto; } }
+          padding: var(--mav-gutter); } }
+      .mav-tab-wrapper .mav-tab-ctn .mav-tab-content-wrapper .mav-tab-content-ctn {
+        display: block;
+        overflow-y: auto;
+        max-height: 50vh; }
     .mav-tab-wrapper .mav-tab-ctn[data-vertical] {
       grid-column-gap: 0;
       grid-row-gap: var(--mav-gutter-xs); }
@@ -3145,13 +3210,16 @@ form {
 .mav-item-grid-title {
   font-size: var(--mav-font-size-lg); }
 
+.mav-brand-name {
+  font-weight: var(--mav-font-weight-medium); }
+
 /**
  * Tool Tip
  */
 .mav-tool-tip {
   opacity: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: var(--mav-layer-top);
   padding: var(--mav-gutter-sm);
   border-radius: 4px;
   background: rgba(5, 161, 179, 0.9);

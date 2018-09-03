@@ -254,12 +254,10 @@ ol { // Top Lvl
 sup, sub {
     display: inline-block;
     font-size: 70%;
-    font-weight: var(--mav-font-weight-medium);
-    margin: 0 1px;
 }
 // SuperScript
 sup {
-    transform: translateY(-15%);
+    transform: translateY(-30%);
 }
 // SubScript
 sub {
@@ -283,8 +281,7 @@ kbd {
  * Inline Quote Tag
  */
 q {
-    font-weight: var(--mav-font-weight-medium);
-    font-size: var(--mav-font-size-lg);
+    font-size: var(--mav-font-size-xl);
     &:before , &:after {
         display: inline-block;
         @extend %mav-font-awesome;

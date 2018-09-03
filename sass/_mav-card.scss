@@ -1,5 +1,89 @@
-.mav-card {
+// .mav-card {
+//     display: grid;
+//     position: relative;
+//     padding: var(--mav-gutter);
+// }
+
+/**
+ * Portfolio CPT
+ */
+
+.mav-card-cpt-portfolio {
     display: grid;
-    position: relative;
-    padding: var(--mav-gutter);
+    grid-template-rows: auto;
+    border: 1px solid var(--mav-color-border);
+    background: white;
+    /* Card Header */
+    .mav-card-header {
+        display: block;
+        height: 25vh;
+        .mav-card-post-thumbnail-wrapper {
+            display: flex;
+        }
+    }
+    /* Card Content */
+    .mav-card-content {
+        background-color: var(--mav-color-off-white);
+        .mav-card-title-wrapper {
+            padding: var(--mav-gutter) 0;
+            @extend .mav-flex-center;
+            .mav-card-title {
+                text-align: center;
+                font-size: 1.25rem;
+                max-width: 90%;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .mav-card-post-info-ctn {
+        @extend .mav-flex-center;
+        padding: var(--mav-gutter-sm) 0;
+        .post-categories {
+            @extend .mav-flex-center;
+            flex-wrap: wrap;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+    /* Card Footer */
+    .mav-card-footer {
+        padding: var(--mav-gutter-sm);
+        .mav-post-tag-list {
+            display: flex;
+            // justify-content: center;
+            flex-wrap: wrap;
+            li {
+                margin: var(--mav-gutter-xs) 0;
+                margin-right: var(--mav-gutter-sm);
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:hover {
+                    background: white;
+                    border-color: inherit;
+                }
+            }
+            a {
+                color: var(--mav-color-text-secondary);
+            }
+        }
+    }
+}
+
+.mav-card-thumbnail-cpt-portfolio {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain!important;
+    background-position: center center!important;
+    background-repeat: no-repeat!important;
+    @extend %mav-transition;
+    filter: grayscale(1);
+    transform: scale(.8);
+    &:hover{
+        filter: grayscale(0);
+    }
 }
