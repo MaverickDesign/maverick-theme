@@ -63,7 +63,7 @@ function mavf_items_grid($mav_args)
         );
         foreach ($mavItems['items'][$i] as $key => $value) {
             printf(
-                '<div data-type="%1$s" class="mav-text-center">%2$s</div>',
+                '<div data-type="%1$s" class="mav-text--center">%2$s</div>',
                 $key, $value
             );
         }

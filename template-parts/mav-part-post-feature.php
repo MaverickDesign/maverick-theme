@@ -32,7 +32,9 @@ printf(
                 printf('<header class="%1$s-title-wrapper">', $mav_name_space);
                     printf('<div class="%1$s-title-ctn">', $mav_name_space);
                         printf(
-                            '<h3 class="%2$s-title mav-text-center"><a href="%3$s" title="%4$s %1$s">%1$s</a></h3>',
+                            '<h3 class="%2$s-title mav-text--center">
+                                <a href="%3$s" title="%4$s %1$s">%1$s</a>
+                            </h3>',
                             get_the_title(), $mav_name_space, get_the_permalink(), __( 'Đến trang' , 'mavericktheme' )
                         );
                     echo '</div>';
@@ -40,9 +42,10 @@ printf(
 
                 // Intro
                 $mav_intro_content = ( $mav_post_type == 'page' ) ?  get_post_meta( get_the_ID(), 'mav_page_intro', true ) : get_the_excerpt();
+
                 printf( '<div class="%1$s-intro-wrapper">', $mav_name_space );
                     printf( '<div class="%1$s-intro-ctn">', $mav_name_space );
-                        printf( '<p class="%1$s-intro mav-text-center">%2$s</p>', $mav_name_space, $mav_intro_content );
+                        printf( '<p class="%1$s-intro mav-text--center">%2$s</p>', $mav_name_space, $mav_intro_content );
                     echo '</div>';
                 echo '</div>';
 
@@ -50,7 +53,9 @@ printf(
                 printf( '<footer class="%1$s-cta-wrapper">', $mav_name_space );
                     printf( '<div class="%1$s-cta-ctn">', $mav_name_space );
                         printf(
-                            '<button class="mav-btn-cta"><a href="%2$s" title="%3$s">%1$s</a></button>',
+                            '<button class="mav-btn-cta">
+                                <a href="%2$s" title="%3$s">%1$s</a>
+                            </button>',
                             $mav_button_text, get_the_permalink(),
                             __( 'Đến trang '.get_the_title(), 'mavericktheme' )
                         );

@@ -7,17 +7,16 @@
 }
 
 .mav-footer-copyright-wrapper {
-    background: #222;
 }
 
 .mav-footer-copyright-ctn {
     display: grid;
     grid-gap: var(--mav-gutter-xs);
-    margin: 0 auto;
     max-width: var(--mav-site-width);
+    margin: 0 auto;
     padding: var(--mav-gutter-lg) var(--mav-gutter);
-    color: var(--mav-color-text-secondary-dark);
     font-size: var(--mav-font-size-sm);
+    color: var(--mav-color-text-primary-dark);
 }
 
 /**
@@ -25,8 +24,8 @@
  */
 
 .mav-footer-socials-wrapper {
-    box-shadow: 0px -1px var(--mav-color-border);
     background: var(--mav-color-off-white);
+    box-shadow: 0px -1px var(--mav-color-border);
     .mav-footer-socials-ctn {
         padding: var(--mav-gutter-lg) var(--mav-gutter);
         @extend %mav-flex-column;
@@ -42,6 +41,7 @@
             flex-wrap: wrap;
             width: 100%;
             margin-top: var(--mav-gutter-lg);
+            @extend %mav-link-reset;
             .mav-social-icon {
                 @extend .mav-flex-center-all;
                 width: 50px;

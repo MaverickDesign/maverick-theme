@@ -8,16 +8,17 @@
         margin: var(--mav-gutter-lg);
     }
     @media #{$mav-desktop} {
-        margin: var(--mav-gutter-lg) var(--mav-gutter);
+        margin: var(--mav-gutter-xl) var(--mav-gutter);
     }
 }
 
 .mav-post-index-ctn {
     display: grid;
-    grid-gap: var(--mav-gutter);
+    grid-gap: var(--mav-gutter-lg);
     @media #{$mav-tablet} {
         align-content: start;
         grid-template-columns: repeat(2,1fr);
+        grid-gap: var(--mav-gutter);
     }
 }
 
@@ -39,8 +40,9 @@
     flex-wrap: wrap;
     margin-top: var(--mav-gutter);
     padding: var(--mav-gutter);
-    background: #fff;
+    background: var(--mav-color-off-white);
     justify-content: center;
+    @extend %mav-link-reset;
     .page-numbers {
         padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
         margin-right: var(--mav-gutter-sm);
@@ -80,20 +82,20 @@
     }
 }
 
+/**
+ * Sticky Post Area
+ */
+
 .mav-blog-sticky-post-wrapper {
     background: var(--mav-color-off-white);
     .mav-blog-sticky-post-ctn {
         max-width: var(--mav-site-width);
-        // display: grid;
-        // grid-gap: var(--mav-gutter);
-        padding: var(--mav-gutter-lg) var(--mav-gutter);
+        padding: var(--mav-gutter) var(--mav-gutter-xs);
         @media #{$mav-tablet} {
             padding: var(--mav-gutter-lg);
-            // grid-template-columns: repeat(2,1fr);
         }
         @media #{$mav-desktop} {
             margin: 0 auto;
-            // grid-template-columns: repeat(3,1fr);
         }
     }
 }

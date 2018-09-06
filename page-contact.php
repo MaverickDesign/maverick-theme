@@ -38,7 +38,7 @@
                                     <div class="mav-contact-socials-ctn">
                                         <?php
                                             printf(
-                                                '<h3 class="mav-margin-bottom-lg mav-text-center">%1$s <strong class="mav-no-break">%2$s</strong> %3$s</h3>',
+                                                '<h3 class="mav-margin-bottom-lg mav-text--center">%1$s <strong class="mav-no-break">%2$s</strong> %3$s</h3>',
                                                 __('Liên lạc với', 'mavericktheme'),
                                                 get_bloginfo('name'),
                                                 __('qua mạng xã hội', 'mavericktheme')
@@ -53,7 +53,7 @@
                             <!-- Physical Address -->
                             <div class="mav-contact-wrapper">
                                 <div class="mav-contact-ctn">
-                                    <h3 class="mav-margin-bottom-lg mav-text-center"><?php _e('Liên hệ trực tiếp với','mavericktheme'); ?> <strong class="mav-no-break"><?php echo get_bloginfo('name'); ?></strong></h3>
+                                    <h3 class="mav-margin-bottom-lg mav-text--center"><?php _e('Liên hệ trực tiếp với','mavericktheme'); ?> <strong class="mav-no-break"><?php echo get_bloginfo('name'); ?></strong></h3>
                                     <?php
                                         get_template_part('/template-parts/mav-contact-info');
                                     ?>

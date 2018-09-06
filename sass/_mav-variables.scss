@@ -58,10 +58,8 @@ $maverick: rgb(179,23,5);
 
 // THEME COLORS
 
-$mav-color-brand-primary    : $maverick;
-$mav-color-brand-accent     : complement($mav-color-brand-primary);
 $mav-color-primary          : $maverick;
-$mav-color-accent           : complement($mav-color-brand-primary);
+$mav-color-accent           : desaturate(complement($mav-color-primary),30%);
 
 $mav-color-text-primary     : rgba(0,0,0,.87);
 $mav-color-text-secondary   : rgba(0,0,0,.60);
@@ -71,15 +69,17 @@ $mav-color-text-primary-dark  : #fafafa;
 $mav-color-text-secondary-dark: #ddd;
 $mav-color-text-hint-dark     : #aaa;
 
-$mav-color-text-link: rgba($mav-color-brand-accent,.2);
+$mav-link-color: #b4e7f8;
+
+$mav-color-text-link: rgba($mav-color-accent,.2);
 
 $mav-color-border: #ddd;
 
 $mav-color-highlight: yellow;
 
 $mav-color: (
-    primary:    $mav-color-brand-primary,
-    secondary:  $mav-color-brand-accent,
+    primary:    $mav-color-primary,
+    secondary:  $mav-color-accent,
     tertiary:   orange,
     text: (
         primary:    $mav-color-text-primary,
@@ -138,13 +138,10 @@ $mav-color-background: #fafafa;
     /* Brand colors */
 
     // Primary
-    //  --mav-brand-color-primary      : #{$mav-color-brand-primary};
-     --mav-color-primary            : #{$mav-color-brand-primary};
-     --mav-color-primary-rgb        : 179, 23, 5;
+     --mav-color-primary            : #{$mav-color-primary};
 
      //  Accent
-    //  --mav-brand-color-accent       : #{$mav-color-brand-accent};
-     --mav-color-accent             : #{$mav-color-brand-accent};
+     --mav-color-accent             : #{$mav-color-accent};
 
      --mav-color-black              : #464646;
      --mavc-black                   : #464646;
@@ -153,9 +150,11 @@ $mav-color-background: #fafafa;
 
     // Site background
      --mav-color-site-background    : #{$mav-color-site-background};
-    //  Header background
-     --mav-color-site-header        : #{$mav-color-brand-primary};
-    //  Footer background
+
+     //  Header background
+     --mav-color-site-header        : #{$mav-color-primary};
+
+     //  Footer background
      --mav-color-site-footer        : var(--mav-color-accent);
 
      --mav-color-header-menu-background         : var(--mav-color-primary);
@@ -254,7 +253,7 @@ $mav-color-background: #fafafa;
         background-color: var(--mav-color-primary);
     }
     50% {
-        // background-color: darken($mav-color-brand-primary, 10%);
+        // background-color: darken($mav-color-primary, 10%);
         // background-color: #{'rgba(var(--mav-color-primary),1)'};
     }
     100% {

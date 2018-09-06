@@ -69,6 +69,7 @@
         position: absolute;
         display: flex;
         align-items: center;
+        @extend %mav-link-reset;
         .mav-sticky-logo {
             display: flex;
             position: relative;
@@ -192,6 +193,7 @@
                 display: flex;
                 padding: var(--mav-gutter);
                 text-decoration: none;
+                box-shadow: none;
                 &:hover {
                     background: var(--mav-color-header-menu-background-hover);
                 }

@@ -14,9 +14,9 @@ printf( '<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id );
              */
             printf( '<header class="mav-card-header">');
                 if ( has_post_thumbnail() && function_exists( 'mavf_get_post_thumbnail_url' ) ) :
-                    printf( '<a href="%1$s" class="mav-card-post-thumbnail-wrapper">', get_the_permalink() );
+                    printf( '<a href="%1$s" class="mav-card-thumbnail-wrapper">', get_the_permalink() );
                         printf(
-                            '<div class="mav-card-thumbnail-cpt-portfolio" %1$s></div>',
+                            '<div class="mav-card-thumbnail" %1$s></div>',
                             mavf_get_post_thumbnail_url( 'large' )
                         );
                     echo '</a>';
@@ -28,8 +28,8 @@ printf( '<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id );
              */
             printf('<section class="mav-card-content">');
                 // Post Info
-                printf('<div class="mav-card-post-info-wrapper">');
-                    printf('<div class="mav-card-post-info-ctn">');
+                printf('<div class="mav-card-info-wrapper">');
+                    printf('<div class="mav-card-info-ctn">');
                         the_category( '' );
                     echo '</div>';
                 echo '</div>';
@@ -46,9 +46,9 @@ printf( '<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id );
             /**
              * Card Footer
              */
-            printf('<footer class="mav-card-footer">');
-                the_tags('<ul class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
-            echo '</footer>';
+            // printf('<footer class="mav-card-footer">');
+            //     the_tags('<ul class="mav-tag-list"><li>', '</li><li>', '</li></ul>');
+            // echo '</footer>';
         echo '</article>';
     echo '</div>';
 echo '</div>';

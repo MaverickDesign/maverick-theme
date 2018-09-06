@@ -55,12 +55,12 @@
     }
 
     .mav-post-footer-wrapper {
-        background: var(--mav-color-accent);
+        background: var(--mav-color-off-white);
         .mav-post-footer-ctn {
             display: grid;
             grid-gap: var(--mav-gutter);
             @extend .mav-pg-ctn;
-            color: var(--mav-color-text-primary-dark);
+            color: var(--mav-color-text-primary);
             padding: var(--mav-gutter-lg) var(--mav-gutter);
             h4 {
                 font-size: 1rem;
@@ -74,21 +74,20 @@
     }
 
     &-navigation {
-        @extend .mav-flex-row;
+        display: flex;
         justify-content: space-between;
         @media #{$mav-phone} {
+            display: flex;
             flex-direction: column;
         }
         a {
-            color: var(--mav-color-text-primary-dark);
-            font-weight: 400;
+            max-width: max-content;
             text-decoration: none;
             padding: var(--mav-gutter-sm);
             border: 1px solid var(--mav-color-border);
             border-radius: 4px;
-            @extend %mav-transition;
+            transition: all .15s;
             &:hover {
-                background: var(--mav-color-primary);
                 border-color: var(--mav-color-primary);
             }
             &:before, &:after {
@@ -102,14 +101,14 @@
                 }
             }
             &[rel="prev"] {
-                align-self: flex-start;
+                justify-self: flex-start;
                 &:before {
                     content: '\f104';
                     margin-right: var(--mav-gutter-sm);
                 }
             }
             &[rel="next"] {
-                align-self: flex-end;
+                justify-self: flex-end;
                 text-align: right;
                 &:after {
                     content: '\f105';
@@ -132,13 +131,6 @@
     &[data-type="category"] {
         &:before {
             content: '\f15c';
-        }
-        &:hover{
-            a {
-                text-decoration: underline;
-                text-underline-position: under;
-                text-decoration-color: var(--mav-color-accent);
-            }
         }
     }
     &[data-type="date"] {
@@ -309,10 +301,6 @@
             font-size: var(--mav-font-size-xl);
             font-weight: var(--mav-font-weight-light);
             color: var(--mav-color-text-primary);
-            // margin: var(--mav-gutter-lg);
-            @media #{$mav-phone} {
-                // margin: var(--mav-gutter-lg) 0;
-            }
         }
         cite, .mav-quote-author {
             color: var(--mav-color-text-secondary);
@@ -413,6 +401,7 @@
     grid-gap: var(--mav-gutter);
     max-width: var(--mav-site-width);
     margin: var(--mav-gutter-lg) auto;
+    @extend %mav-link-reset;
     @media #{$mav-phone} {
         grid-template-columns: repeat(2,1fr)!important;
     }
@@ -431,7 +420,6 @@
     }
     figure {
         position: relative;
-        display: block;
         a {
             display: flex;
         }
@@ -446,9 +434,17 @@
             }
         }
         figcaption {
-            padding-top: var(--mav-gutter-xs);
+            position: absolute;
+            padding: var(--mav-gutter);
             font-size: var(--mav-font-size-sm);
             color: var(--mav-color-text-secondary);
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+            text-shadow: 0 0 2px #444;
         }
     }
 }
@@ -462,21 +458,27 @@
 /**
  * Post Tags
  */
-.mav-post-tag-list {
+.mav-tag-list {
     @extend .mav-flex-row;
     flex-wrap: wrap;
     li {
-        display: flex;
-        margin: 0 var(--mav-gutter-sm) var(--mav-gutter-sm) 0;
-        padding: var(--mav-gutter-xs);
+        display: inline-flex;
+
+        margin: 0;
+        margin-right: var(--mav-gutter-sm);
+        margin-top: var(--mav-gutter-xs);
+
         border: 1px solid var(--mav-color-border);
-        border-radius: 4px;
+        border-radius: 3px;
+
+        font-family: $font-roboto-mono;
+
         @extend %mav-transition;
         &:hover {
-            background: var(--mav-color-primary);
-            border-color: var(--mav-color-primary);
+            border-color: transparent;
+            background: var(--mav-color-accent);
             a {
-                @include text-contrast($mav-color-primary);
+                @include text-contrast($mav-color-accent);
             }
         }
         &:last-child {
@@ -485,10 +487,10 @@
         a {
             display: flex;
             align-items: center;
-            font-size: var(--mav-font-size-sm);
-            text-transform: lowercase;
-            color: var(--mav-color-text-primary-dark);
+            padding: var(--mav-gutter-xs);
+            font-size: var(--mav-font-size-xs);
             text-decoration: none;
+            text-transform: lowercase;
             &:before {
                 @extend %mav-font-awesome;
                 content: '\f292';

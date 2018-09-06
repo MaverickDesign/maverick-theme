@@ -26,7 +26,7 @@ function mavf_ajax_load_posts()
     if ( $mav_query->have_posts() ) {
         while ( $mav_query->have_posts() ) {
             $mav_query->the_post();
-            get_template_part( 'template-parts/content', get_post_format() );
+            get_template_part( 'template-parts/mav-card', get_post_format() );
         }
         wp_reset_query();
     } else {

@@ -67,7 +67,7 @@
                 );
                     while ( $mav_query->have_posts() ) {
                         $mav_query->the_post();
-                        get_template_part( 'template-parts/content', get_post_format() );
+                        get_template_part( 'template-parts/mav-card', get_post_format() );
                     }
                     wp_reset_postdata();
                 echo '</div>';
@@ -77,7 +77,7 @@
                     /**
                      * Ajax load more posts
                      */
-                    echo '<div class="mav-padding-top-lg">';
+                    printf('<div class="mav-padding-top-lg">');
                         printf(
                             '<button class="mav-btn-primary-lg mav-padding-sm mavjs-ajax-load-posts" data-full-width data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',
                             admin_url( 'admin-ajax.php' ), __( 'Xem thêm', 'mavericktheme' )

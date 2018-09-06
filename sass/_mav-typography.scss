@@ -1,29 +1,44 @@
-.mav-text {
-    &--xl {
-        font-size: 1.4rem;
-        line-height: 1.25em!important;
-    }
-    &--lg {
-        font-size: 1.2rem;
-        line-height: 1.45em!important;
-    }
-    &--sm {
-        font-size: .8rem;
-        letter-spacing: .5px;
-        line-height: 1.45em!important;
-    }
-    &--xs {
-        font-size: .6rem;
-        letter-spacing: .75px;
-        line-height: 1.75em!important;
+%#{$mavNameSpace}-link-reset {
+    a {
+        box-shadow: none;
+        font-weight: inherit;
+        &:hover {
+            background: unset;
+        }
     }
 }
 
-abbr {
-    font-weight: var(--mav-font-weight-medium);
+/**
+ * Anchor Tag
+ */
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--mav-color-accent);
+    text-underline-position: under;
+    &:hover {
+        text-decoration-color: var(--mav-color-primary);
+    }
 }
 
-%mav-font-awesome {
+.#{$mavNameSpace}-link {
+    &[data-link="external"] {
+        &:after {
+            @extend %mav-font-awesome;
+            content: '\f0c1';
+            margin-left: var(--mav-gutter-xs);
+        }
+    }
+    &--dark {
+        text-decoration-color: var(--mav-color-border);
+        &:hover {
+            text-decoration-color: var(--mav-color-text-primary-dark);
+        }
+    }
+}
+
+%#{$mavNameSpace}-font-awesome {
     font-family: $font-awesome;
     font-weight: 900;
 }
@@ -33,7 +48,7 @@ abbr {
     font-weight: 900;
 }
 
-%mav-font-awesome-line {
+%#{$mavNameSpace}-font-awesome-line {
     font-family: $font-awesome;
 }
 
@@ -41,16 +56,13 @@ abbr {
     margin-right: .25em;
 }
 
-.mav-no-break {
-    white-space: nowrap;
-}
-.mav-text-center {
-    text-align: center;
+.#{$mavNameSpace} {
+    &-no-break {
+        white-space: nowrap;
+    }
 }
 
-.mav-text-uppercase {
-    text-transform: uppercase;
-}
+
 
 body {
     font-family: $font-roboto;
@@ -59,22 +71,11 @@ body {
     color: var(--mav-color-text-primary);
 }
 
-@each $mavSuffix, $mavSize in (xs: .6, sm: .8, lg: 1.2, xl: 1.4) {
-    .#{$mavNameSpace}-font-#{$mavSuffix} {
-        font-size: #{$mavSize}rem;
-    }
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 strong {
     font-weight: var(--mav-font-weight-bold);
 }
 
-%mav-link {
+%#{$mavNameSpace}-link {
     &-obj {
         background: var(--mav-color-primary);
         @include text-contrast($mav-color-primary);
@@ -100,12 +101,11 @@ strong {
 
 h1, h2, h3, h4, h5, h6,
 .mav-h1, .mav-h2, .mav-h3, .mav-h4, .mav-h5, .mav-h6 {
-    color: var(--mav-color-text-primary);
-    em {
-        font-style: italic;
-    }
     b {
         font-weight: var(--mav-font-weight-bold);
+    }
+    a {
+        text-decoration: none;
     }
 }
 
@@ -218,6 +218,7 @@ ul { // Top lvl
 
 /**
  * Ordered List
+ * ============
  */
 ol { // Top Lvl
     li {
@@ -250,6 +251,7 @@ ol { // Top Lvl
 
 /**
  * SuperScript & SubScript
+ * =======================
  */
 sup, sub {
     display: inline-block;
@@ -266,6 +268,7 @@ sub {
 
 /**
  * Keyboard Tag
+ * ============
  */
 kbd {
     background: #444;
@@ -339,40 +342,33 @@ pre, code {
     word-wrap: break-word;
 }
 
-a {
-    text-decoration: underline;
-    text-decoration-color: var(--mav-color-accent);
-    text-underline-position: under;
-    &:hover {
-        text-decoration-color: var(--mav-color-primary);
-    }
+abbr {
+    font-weight: var(--mav-font-weight-medium);
 }
 
-// Hyperlink
-.mav-link {
-    position: relative;
-    font-weight: var(--mav-font-weight-medium);
-    text-decoration: none;
-    transition: all .1s ease;
-    &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        background: var(--mav-color-accent);
-        width: 100%;
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        z-index: $mav-layer-background;
+/**
+ * UTILITIES
+ * =========
+ */
+
+.#{$mavNameSpace}-text {
+    // Text aligns
+    @each $mavSide in (left, center, right, justify) {
+        &--#{$mavSide} {
+            text-align: #{$mavSide};
+        }
     }
-    &:hover {
-        color: var(--mav-color-accent);
+    // Text sizes
+    @each $mavSize, $mavLineHeight in ( xl: 1.25, lg: 1.5, sm: 1.75, xs: 1.75) {
+        &--#{$mavSize} {
+            font-size: var(--mav-font-size-#{$mavSize});
+            line-height: #{$mavLineHeight};
+        }
     }
-    &[data-link="external"] {
-        &:after {
-            @extend %mav-font-awesome;
-            content: '\f0c1';
-            margin-left: var(--mav-gutter-xs);
+    // Text transforms
+    @each $mavCase in (lowercase, uppercase, capitalize) {
+        &--#{$mavCase} {
+            text-transform: #{$mavCase};
         }
     }
 }

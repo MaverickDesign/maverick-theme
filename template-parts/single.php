@@ -9,13 +9,13 @@
     $mav_post_type = get_post_type();
 ?>
 
-<article id="mavid-post-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" class="mav-post">
+<article id="mavid-post-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" data-post-format="<?php echo get_post_format(); ?>" data-post-type="<?php echo get_post_type(); ?>" class="mav-post">
     <!-- Header -->
     <header class="mav-post-header-wrapper mav-post-header">
         <div class="mav-post-header-ctn">
             <!-- Feature image -->
             <?php if ( has_post_thumbnail() && ( $mav_post_type == 'post' ) ) : ?>
-                    <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');  ?>)">
+                    <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>)">
                     </div>
             <?php endif; ?>
             <!-- Post title -->
@@ -74,33 +74,33 @@
     </section>
     <!-- Post Footer -->
     <?php
-    if ((has_tag()) || (wp_count_posts()->publish > 1)) : ?>
+    if ( ( has_tag() ) || ( wp_count_posts()->publish > 1) ) : ?>
         <footer class="mav-post-footer mav-post-footer-wrapper">
             <div class="mav-post-footer-ctn">
-                <?php if (has_tag()) : ?>
+                <?php if ( has_tag() ) : ?>
                     <!-- Post Tags -->
                     <div class="mav-post-tags-wrapper">
                         <div class="mav-post-tags-ctn">
                             <?php
-                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __('Thẻ liên kết', 'mavericktheme'));
-                            the_tags('<ul id="mavid-post-tag-list" class="mav-post-tag-list"><li>', '</li><li>', '</li></ul>');
+                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __( 'Thẻ liên kết', 'mavericktheme' ) );
+                            the_tags('<ul id="mavid-tag-list" class="mav-tag-list"><li>', '</li><li>', '</li></ul>');
                             ?>
                         </div>
                     </div>
                 <?php endif; ?>
                 <?php
                     $mavCountPost = wp_count_posts();
-                    if ($mavCountPost->publish > 1) : ?>
+                    if ( $mavCountPost->publish > 1 ) : ?>
                         <!-- Post Navigation -->
                         <div class="mav-post-navigation-wrapper">
                             <div class="mav-post-navigation-ctn">
                             <?php
-                                $mavTitle = __('Các bài viết khác', 'mavericktheme');
+                                $mavTitle = __( 'Các bài viết khác', 'mavericktheme' );
                                 // Attachment Page
-                                if (is_attachment()) {
-                                    $mavTitle = __('Trở lại bài viết', 'mavericktheme');
+                                if ( is_attachment() ) {
+                                    $mavTitle = __( 'Trở lại bài viết', 'mavericktheme' );
                                 }
-                                printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', $mavTitle);
+                                printf( '<h4 class="mav-margin-bottom-sm">%1$s</h4>', $mavTitle );
                                 echo '<nav class="mav-post-navigation">';
                                     previous_post_link('%link', '%title');
                                     next_post_link('%link', '%title');
@@ -123,7 +123,7 @@
 
 $categories = get_the_category();
 
-if (function_exists('mavf_carousel') && !empty($categories) && $categories[0]->count > 2) : ?>
+if ( function_exists( 'mavf_carousel' ) && ! empty( $categories ) && $categories[0]->count > 2 ) : ?>
     <section id="mavid-sec-related-posts" class="mav-sec-wrapper">
         <div class="mav-sec-ctn">
             <!-- Header -->

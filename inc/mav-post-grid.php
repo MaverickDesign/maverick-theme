@@ -23,7 +23,7 @@ function mavf_post_grid( $mav_args )
     $mav_post_in            = isset( $mav_args['post_in'] )           ? $mav_args['post_in']                   : '';
     $mav_categories         = isset( $mav_args['categories'] )        ? $mav_args['categories']                : '';
     $mav_post_display       = isset( $mav_args['posts_display'] )     ? $mav_args['posts_display']             : 6;
-    $mav_template           = isset( $mav_args['template'] )          ? $mav_args['template']                  : 'template-parts/content';
+    $mav_template           = isset( $mav_args['template'] )          ? $mav_args['template']                  : 'template-parts/mav-card';
     $mav_wrapper            = isset( $mav_args['wrapper_class'] )     ? $mav_args['wrapper_class']             : 'mav-post-grid-wrapper';
     $mav_container          = isset( $mav_args['container_class'] )   ? $mav_args['container_class']           : 'mav-post-grid-ctn';
 

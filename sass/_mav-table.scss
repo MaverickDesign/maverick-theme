@@ -27,9 +27,5 @@ table {
         &:nth-child(even) {
             background: var(--mav-color-off-white);
         }
-        &:hover {
-            background: var(--mav-color-accent);
-            @include text-contrast($mav-color-accent);
-        }
     }
 }

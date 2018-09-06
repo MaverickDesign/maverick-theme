@@ -3,15 +3,16 @@
     grid-row-gap: var(--mav-gutter);
     align-content: start;
     padding: var(--mav-gutter-lg);
+    padding-top: var(--mav-gutter-xl);
     padding-right: var(--mav-gutter);
     border-left: 1px solid var(--mav-color-border);
+    @extend %mav-link-reset;
     a {
         text-decoration: none;
         &:hover {
-            // color: var(--mav-color-text-primary);
             text-decoration: underline;
             text-decoration-color: var(--mav-color-accent);
-            // text-underline-position: under;
+            text-underline-position: under;
         }
     }
     li {
@@ -131,6 +132,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        @extend %mav-link-reset;
         a {
             display: flex;
             align-items: center;
@@ -140,7 +142,7 @@
             line-height: .5em;
             border: 1px solid var(--mav-color-border);
             border-radius: 4px;
-            font-family: $font-roboto-cond;
+            font-family: $font-roboto-mono;
             text-transform: lowercase;
             @extend %mav-transition;
             &:last-child {

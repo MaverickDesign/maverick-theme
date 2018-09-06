@@ -47,7 +47,7 @@
             @extend %mav-transition;
             &:hover {
                 background: var(--mav-color-accent);
-                @include text-contrast($mav-color-brand-accent);
+                @include text-contrast($mav-color-accent);
             }
         }
     }

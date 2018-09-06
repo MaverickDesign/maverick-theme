@@ -23,7 +23,7 @@ function mavf_post_query( $mav_args )
      * Default settings
      */
 
-    $mav_template           = isset( $mav_args['template'] )          ? $mav_args['template']         : '/template-parts/content';
+    $mav_template           = isset( $mav_args['template'] )          ? $mav_args['template']         : '/template-parts/mav-card';
     $mav_posts_wrapper      = isset( $mav_args['wrapper'] )           ? $mav_args['wrapper']          : true;
     $mav_posts_container    = isset( $mav_args['container'] )         ? $mav_args['container']        : true;
     $mav_class_wrapper      = isset( $mav_args['class_wrapper'] )     ? $mav_args['class_wrapper']    : 'mav-posts-wrapper';

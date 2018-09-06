@@ -1,3 +1,13 @@
+.mav-blurred-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.90);
+    filter: blur(20px);
+}
+
 .mav-wrapper {
     .mav-ctn {
         max-width: var(--mav-site-width);
@@ -68,7 +78,24 @@
     }
 }
 
-.mav-center, [data-center] {
+// Grid Gaps
+.mav-grid__gap {
+    grid-gap: var(--mav-gutter);
+    &--xs {
+        grid-gap: var(--mav-gutter-xs);
+    }
+    &--sm {
+        grid-gap: var(--mav-gutter-sm);
+    }
+    &--lg {
+        grid-gap: var(--mav-gutter-lg);
+    }
+    &--xl {
+        grid-gap: var(--mav-gutter-xl);
+    }
+}
+
+.mav-center, .mav--center, [data-center] {
     margin-left: auto;
     margin-right: auto;
 }
@@ -90,7 +117,18 @@
         }
     }
 }
+@each $mavWidths in (5,10,15,20,25,30,33,35,40,45,50,55,60,65,66,70,75,80,85,90,95) {
+    $mavUnit: '%';
+    .mav-maxw--#{$mavWidths} {
+        max-width: #{$mavWidths}#{$mavUnit};
+    }
+}
 
+@media #{$mav-phone} {
+    div[class*="mav-maxw--"] {
+        max-width: unset;
+    }
+}
 /* Generals */
 
 .mav-hide {
@@ -158,11 +196,11 @@
     }
 }
 
-.mav-margin-top-bottom {
+.mav-margin-top-bottom  {
     margin-top: var(--mav-gutter);
     margin-bottom: var(--mav-gutter);
-    @each $size in xl,lg,sm,xs {
-        &-#{$size}, &[data-size-#{$size}] {
+    @each $size in xl, lg, sm, xs {
+        &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
             margin-top: var(--mav-gutter-#{$size});
             margin-bottom: var(--mav-gutter-#{$size});
         }
@@ -172,8 +210,8 @@
 .mav-margin-left-right {
     margin-left: var(--mav-gutter);
     margin-right: var(--mav-gutter);
-    @each $size in xl,lg,sm,xs {
-        &-#{$size}, &[data-size-#{$size}] {
+    @each $size in xl, lg, sm, xs {
+        &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
             margin-left: var(--mav-gutter-#{$size});
             margin-right: var(--mav-gutter-#{$size});
         }
@@ -183,8 +221,8 @@
 .mav-padding-top-bottom {
     padding-top: var(--mav-gutter);
     padding-bottom: var(--mav-gutter);
-    @each $size in xl,lg,sm,xs {
-        &-#{$size}, &[data-size-#{$size}] {
+    @each $size in xl, lg, sm, xs {
+        &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
             padding-top: var(--mav-gutter-#{$size});
             padding-bottom: var(--mav-gutter-#{$size});
         }
@@ -194,8 +232,8 @@
 .mav-padding-left-right {
     padding-left: var(--mav-gutter);
     padding-right: var(--mav-gutter);
-    @each $size in xl,lg,sm,xs {
-        &-#{$size}, &[data-size-#{$size}] {
+    @each $size in xl, lg, sm, xs {
+        &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
             padding-left: var(--mav-gutter-#{$size});
             padding-right: var(--mav-gutter-#{$size});
         }
@@ -252,8 +290,8 @@
 /**
  * Section header
  */
-.mav-sec-header-wrapper {
-    .mav-sec-header-ctn {
+.#{$mavNameSpace}-sec-header-wrapper {
+    .#{$mavNameSpace}-sec-header-ctn {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -264,30 +302,33 @@
 /**
  * Section title
  */
-.mav-sec-title-wrapper {
-    .mav-sec-title-ctn {
+.#{$mavNameSpace}-sec-title-wrapper {
+    .#{$mavNameSpace}-sec-title-ctn {
         position: relative;
     }
 }
-.mav-sec-title {
-    padding: 0 var(--mav-gutter-sm) var(--mav-gutter-xs) var(--mav-gutter-sm);
+
+.#{$mavNameSpace}-sec-title {
+    padding: var(--mav-gutter-sm);
+    padding-top: 0;
     box-shadow: inset 0 -3px var(--mav-color-primary);
     border-radius: var(--mav-gutter-sm);
     border: 1px solid transparent;
     color: var(--mav-color-text-primary);
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: var(--mav-font-weight-light);
+    font-size: 1.75rem;
+    // font-weight: var(--mav-font-weight-light);
     text-transform: uppercase;
     @extend %mav-transition;
-    a {
-        text-decoration: none;
-    }
+    @extend %mav-link-reset;
     &:hover {
         box-shadow: inset 0 -3px var(--mav-color-accent);
     }
     @media #{$mav-phone} {
         font-size: 1.25rem;
+    }
+    a {
+        text-decoration: none;
     }
 }
 
@@ -298,7 +339,6 @@
     .mav-sec-intro-ctn {
         padding-top: var(--mav-gutter-lg);
         .mav-sec-intro {
-            font-weight: var(--mav-font-weight-light);
             font-size: var(--mav-font-size-lg);
             text-align: center;
         }

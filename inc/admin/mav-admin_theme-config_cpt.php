@@ -5,7 +5,7 @@
 
 add_settings_section(
     'mavsec_theme_config_cpt',
-    __('Custom Post Types', 'mavericktheme'),
+    __( 'Custom Post Types', 'mavericktheme' ),
     'mavf_theme_config_cpt',
     'mav_admin_page_theme_config'
 );
@@ -20,7 +20,7 @@ register_setting('mavog_theme_config', 'mav_setting_custom_post_type');
 
 add_settings_field(
     'mavid_theme_config_theme_support_custom_post_type',
-    __('Kích hoạt các tính năng', 'mavericktheme'),
+    __( 'Kích hoạt các tính năng', 'mavericktheme' ),
     'mavf_theme_config_theme_support_custom_post_type',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_cpt'
@@ -29,19 +29,20 @@ add_settings_field(
 // Callback function
 function mavf_theme_config_theme_support_custom_post_type()
 {
-    $mav_saved_value = get_option('mav_setting_custom_post_type');
+    $mav_saved_value = get_option( 'mav_setting_custom_post_type' );
 
-    $mavCustomPostTypes = array(
+    $mav_custom_post_types = array(
         'testimonial',
         'subscriber',
         'portfolio',
         'member',
-        'client'
+        'client',
+        'service'
     );
 
     echo '<div class="mav-grid" data-grid-gap="">';
     $mavOutput = '';
-    foreach ($mavCustomPostTypes as $mavCustomPostType) {
+    foreach ($mav_custom_post_types as $mavCustomPostType) {
         $mavChecked = (@$mav_saved_value[$mavCustomPostType] == 1 ? 'checked' : '');
         $mavOutput .= '<label><input type="checkbox" id="mavid-custom-post-type-'.$mavCustomPostType.'" name="mav_setting_custom_post_type['.$mavCustomPostType.']" value="1" '.$mavChecked.'/> '.ucfirst($mavCustomPostType).'</label>';
     }

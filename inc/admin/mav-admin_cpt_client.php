@@ -15,9 +15,10 @@ $mav_client_args = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'       => array('slug' => __('khach-hang', 'mavericktheme')),
+    'taxonomies'    => array( 'category', 'post_tag' ),
+    'rewrite'       => array( 'slug' => __('khach-hang', 'mavericktheme') ),
 );
 
-register_post_type('mav_cpt_client', $mav_client_args);
+register_post_type( 'mav_cpt_client', $mav_client_args );
 
 flush_rewrite_rules();

@@ -8,8 +8,8 @@
     <div class="mav-footer-socials-ctn">
         <?php
             printf(
-                '<span class="mav-h3"><strong>%1$s</strong> %2$s</span>',
-                get_bloginfo( 'name' ), __( 'trên mạng xã hội', 'mavericktheme' )
+                '<p class="mav-text--xl mav-text--center"><strong>%1$s</strong> %2$s</p>',
+                get_bloginfo( 'name' ), __( 'trên <span class="mav-no-break">mạng xã hội</span>', 'mavericktheme' )
             );
             mavf_social_links();
         ?>

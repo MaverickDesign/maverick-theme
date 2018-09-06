@@ -132,28 +132,3 @@
     max-width: var(--mav-site-width);
     margin: 0 auto;
 }
-
-.mav-card-client-wrapper {
-    padding: var(--mav-gutter-xs);
-    .mav-card-client-ctn {
-        display: grid;
-        align-content: center;
-        border: 1px solid transparent;
-        padding: var(--mav-gutter);
-        height: 100%;
-        @extend %mav-transition;
-        &:hover {
-            border-color: var(--mav-color-border);
-        }
-        img {
-            width: 100%;
-            max-height: 15vh;
-            object-fit: contain;
-            filter: grayscale(1);
-            @extend %mav-transition;
-            &:hover {
-                filter: grayscale(0);
-            }
-        }
-    }
-}

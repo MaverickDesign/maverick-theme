@@ -45,7 +45,7 @@ function mavf_carousel($mav_args)
     $mavNavClass        = isset($mav_args['nav_class'])          ? $mav_args['nav_class']         : 'mav-carousel-nav';
 
     // Carousel item content template
-    $mavTemplate        = isset($mav_args['template'])           ? $mav_args['template']          : 'template-parts/content';
+    $mavTemplate        = isset($mav_args['template'])           ? $mav_args['template']          : 'template-parts/mav-card';
 
     // Carousel auto slide
     $mavAutoSlide       = isset($mav_args['auto_slide'])         ? $mav_args['auto_slide']        : 'true';
@@ -53,14 +53,14 @@ function mavf_carousel($mav_args)
     // Carousel slide interval
     $mav_interval        = isset($mav_args['interval'])           ? $mav_args['interval']          : 4000;
 
-    $mav_post_queries     = isset($mav_args['post_queries'])       ? $mav_args['post_queries']      : array();
+    $mav_post_queries     = isset($mav_args['query_args'])       ? $mav_args['query_args']      : array();
 
     // Query arguments
     $mav_query_args = array();
 
-    if (!empty($mav_post_queries)) {
+    if ( ! empty( $mav_post_queries ) ) {
         $mav_query_args = $mav_post_queries;
-        if (!empty($mav_query_args['posts_per_page'])) {
+        if ( ! empty( $mav_query_args['posts_per_page'] ) ) {
             $mavNumberOfPosts = $mav_query_args['posts_per_page'];
         }
     } else {
@@ -69,7 +69,7 @@ function mavf_carousel($mav_args)
             'posts_per_page'            => $mavNumberOfPosts,
             'ignore_sticky_posts'       => true,
             'post__in'                  => $mavPostIn,
-            'post__not_in'              => array(get_the_ID()),
+            'post__not_in'              => array( get_the_ID() ),
             'category__in'              => $mav_categories,
         );
     }
@@ -94,7 +94,7 @@ function mavf_carousel($mav_args)
                 );
                     $i = 1;
                     // The Loop
-                    while ($mav_query->have_posts()) :
+                    while ( $mav_query->have_posts() ) :
                         $mav_query->the_post();
                             printf('<li data-item-number="%2$s" data-gutter="" class="%1$s">', $mavItemClass, $i++);
                                 get_template_part($mavTemplate, get_post_format());

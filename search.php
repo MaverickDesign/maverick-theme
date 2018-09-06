@@ -31,7 +31,7 @@ printf('<div class="%1$s">', $mavSectionClass);
             );
                 while (have_posts()) {
                     the_post();
-                    get_template_part('template-parts/content');
+                    get_template_part('template-parts/mav-card');
                 }
             echo '</div>';
 
@@ -63,7 +63,7 @@ printf('<div class="%1$s">', $mavSectionClass);
                 echo '</div>';
             }
         } else {
-            printf('<div class="mav-grid mav-text-center">');
+            printf('<div class="mav-grid mav-text--center">');
                 printf(
                     '<h1 class="mav-margin-bottom-xl">%1$s</h1>',
                     __('Không tìm thấy nội dung', 'mavericktheme')

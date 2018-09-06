@@ -3,10 +3,6 @@
  * @package mavericktheme
  */
 
-// if ( get_option( 'mav_setting_maintenance' ) ) {
-//     return;
-// }
-
 if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
     <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
 
@@ -30,25 +26,25 @@ if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
         <div class="mav-header-menu-wrapper">
             <nav class="mav-header-menu-ctn">
                 <?php
-                $mavMenuArgs = array(
-                    'theme_location'    => 'primary_menu',
-                    'menu'              => '',
-                    'container'         => false,
-                    'container_class'   => '',
-                    'container_id'      => '',
-                    'menu_class'        => '',
-                    'menu_id'           => '',
-                    'echo'              => true,
-                    'fallback_cb'       => 'wp_page_menu',
-                    'before'            => '',
-                    'after'             => '',
-                    'link_before'       => '',
-                    'link_after'        => '',
-                    'items_wrap'        => '<ul id="mavid-header-menu" class="mav-header-menu">%3$s</u>',
-                    'depth'             => 0,
-                    'walker'            => new Mav_Walker_Nav_Primary()
-                );
-                wp_nav_menu( $mavMenuArgs );
+                    $mavMenuArgs = array(
+                        'theme_location'    => 'primary_menu',
+                        'menu'              => '',
+                        'container'         => false,
+                        'container_class'   => '',
+                        'container_id'      => '',
+                        'menu_class'        => '',
+                        'menu_id'           => '',
+                        'echo'              => true,
+                        'fallback_cb'       => 'wp_page_menu',
+                        'before'            => '',
+                        'after'             => '',
+                        'link_before'       => '',
+                        'link_after'        => '',
+                        'items_wrap'        => '<ul id="mavid-header-menu" class="mav-header-menu">%3$s</u>',
+                        'depth'             => 0,
+                        'walker'            => new Mav_Walker_Nav_Primary()
+                    );
+                    wp_nav_menu( $mavMenuArgs );
                 ?>
             </nav>
         </div>

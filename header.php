@@ -137,7 +137,7 @@
                 <div id="mavid-site-logo" class="mav-site-logo-wrapper">
                     <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
                         <?php
-                            $mavBrandLogo = esc_attr(get_option('mav_setting_brand_logo'));
+                            $mavBrandLogo = esc_attr( get_option('mav_setting_brand_logo') );
                             if ($mavBrandLogo) {
                                 echo "<img src=\"$mavBrandLogo;\">";
                             } else {

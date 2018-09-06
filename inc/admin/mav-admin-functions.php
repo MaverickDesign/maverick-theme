@@ -62,22 +62,35 @@ function mavf_enqueue_admin_scripts($mavHook)
     /**
      * Check if in the admin page
      */
-    // if ('toplevel_page_mav_admin_page_site_setting' != $mavHook) {
+    // if ( 'toplevel_page_mav_admin_page_site_setting' != $mavHook ) {
     //     return;
     // }
 
     /**
      * Admin panel css
      */
-    wp_register_style('mav_admin_css', THEME_DIR.'/css/mav-admin-styles.css', array(), '1.0.0', 'all');
+    wp_register_style(
+        'mav_admin_css',
+        THEME_DIR.'/css/mav-admin-styles.css',
+        array(),
+        '1.0.0',
+        'all'
+    );
     wp_enqueue_style('mav_admin_css');
-    wp_enqueue_media();
 
     /**
      * Admin Panel Javascript
      */
-    wp_register_script('mav_admin_script', THEME_DIR.'/js/mav-admin-scripts.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('mav_admin_script');
+    wp_register_script(
+        'mav_admin_script',
+        THEME_DIR.'/js/mav-admin-scripts.js',
+        array('jquery'),
+        '1.0.0',
+        true
+    );
+    wp_enqueue_script( 'mav_admin_script' );
+
+    wp_enqueue_media();
 }
 
-add_action('admin_enqueue_scripts', 'mavf_enqueue_admin_scripts');
+add_action( 'admin_enqueue_scripts', 'mavf_enqueue_admin_scripts' );

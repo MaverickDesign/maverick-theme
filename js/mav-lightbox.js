@@ -21,9 +21,9 @@ function mavf_lightbox(mavArgs = {
             const mavLightbox = document.createElement('div');
 
             // Set lightbox id
-            mavLightbox.setAttribute('id',`mavid-lightbox-${mavCollectionID}`);
+            mavLightbox.setAttribute('id', `mavid-lightbox-${mavCollectionID}`);
             mavLightbox.dataset.collection = mavCollectionID;
-            mavLightbox.setAttribute('data-total',mavGalleryItems.length);
+            mavLightbox.setAttribute('data-total', mavGalleryItems.length);
 
 
             // Add classes
@@ -249,7 +249,7 @@ if (typeof mavf_lightbox === 'function') {
             })
         }
 
-        document.addEventListener('keydown',function(event){
+        document.addEventListener('keydown', function(event) {
             switch (event.keyCode) {
                 // Left arrow key
                 case 37:
@@ -269,7 +269,7 @@ if (typeof mavf_lightbox === 'function') {
             }
         });
 
-        function mavf_arrow_key(mavKey){
+        function mavf_arrow_key(mavKey) {
             let mavCollection = document.querySelector('.mav-lightbox-current').dataset.collection;
 
             const mavNav = document.querySelector(`nav[data-collection="${mavCollection}"][data-direction="${mavKey}"]`);
