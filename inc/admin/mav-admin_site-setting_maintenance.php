@@ -51,7 +51,10 @@ function mavf_site_setting_maintenance_display_logo() {
 }
 
 // Display social links
-register_setting( 'mavog_site_setting', 'mav_setting_maintenance_display_social' );
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_maintenance_display_social'
+);
 add_settings_field(
     'mavid_site_setting_maintenance_display_social',
     __( 'Không hiển thị liên kết MXH', 'mavericktheme' ),
@@ -64,13 +67,19 @@ add_settings_field(
 );
 
 function mavf_site_setting_maintenance_display_social() {
-    $mav_saved_value = esc_attr( get_option('mav_setting_maintenance_display_social') );
+    $mav_saved_value = esc_attr( get_option( 'mav_setting_maintenance_display_social' ) );
     $mav_checked = ( @$mav_saved_value == 1 ? 'checked' : '');
-    printf('<input id="mavid-maintenance-display-social" type="checkbox" name="mav_setting_maintenance_display_social" value="1" %1$s/>',$mav_checked);
+    printf(
+        '<input id="mavid-maintenance-display-social" type="checkbox" name="mav_setting_maintenance_display_social" value="1" %1$s/>',
+        $mav_checked
+    );
 }
 
 // Maintenance time
-register_setting( 'mavog_site_setting', 'mav_setting_maintenance_time' );
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_maintenance_time'
+);
 add_settings_field(
     'mavid_site_setting_maintenance_time',
     __( 'Ngày kết thúc bảo trì', 'mavericktheme' ),

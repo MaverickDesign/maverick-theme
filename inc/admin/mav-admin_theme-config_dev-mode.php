@@ -6,14 +6,14 @@
 // Setting Section
 add_settings_section(
     'mavsec_theme_config_dev_mode',
-    __('Developing Mode', 'mavericktheme'),
+    __('Chế độ Website đang phát triển', 'mavericktheme'),
     'mavf_theme_config_sec_dev_mode',
     'mav_admin_page_theme_config'
 );
 
 function mavf_theme_config_sec_dev_mode()
 {
-   _e('Kích hoạt chế độ đang phát triển website', 'mavericktheme');
+    _e( 'Kích hoạt chế độ đang phát triển website', 'mavericktheme' );
 }
 
 // Setting Field

@@ -15,11 +15,10 @@ function mavf_admin_site_setting_options()
 
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_google-map.php';
 
+    // Maintenance Mode
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_maintenance.php';
 
-    // require_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_hero-slider.php';
-
-    // Terms and Conditions settings
+    // Terms and Conditions
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_terms.php';
 
 }

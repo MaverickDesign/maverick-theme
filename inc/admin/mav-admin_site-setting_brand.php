@@ -12,7 +12,7 @@ add_settings_section(
 
 function mavf_site_setting_brand()
 {
-    _e( 'Thiết lập thông tin thương hiệu', 'mavericktheme' );
+    printf( '<p class="mav-desc">%1$s</p>', __( 'Thiết lập các thông tin thương hiệu', 'mavericktheme' ) );
 }
 
 // Brand Logo
@@ -27,18 +27,20 @@ add_settings_field(
 
 function mavf_site_setting_brand_logo()
 {
-    $mav_saved_value = esc_attr( get_option( 'mav_setting_brand_logo' ) );
-    if ( empty( $mav_saved_value ) ) {
-        printf(
-            '<input id="mavid-btn-upload-brand-logo" type="button" value="%1$s">',
-            __('Upload Brand logo', 'mavericktheme')
-        );
-        echo '<input id="mavid-brand-logo" type="hidden" name="mav_setting_brand_logo" value="">';
-    } else {
-        printf( '<input id="mavid-btn-upload-brand-logo" type="button" value="%1$s">', __( 'Thay đổi', 'mavericktheme' ) );
-        printf('<input id="mavid-btn-remove-brand-logo" type="button" value="%1$s">', __('Gỡ bỏ', 'mavericktheme'));
-        printf('<input id="mavid-brand-logo" type="hidden" name="mav_setting_brand_logo" value="%1$s">', $mav_saved_value);
-    }
+    printf('<div class="mav-brand-logo-buttons">');
+        $mav_saved_value = esc_attr( get_option( 'mav_setting_brand_logo' ) );
+        if ( empty( $mav_saved_value ) ) {
+            printf(
+                '<input id="mavid-btn-upload-brand-logo" type="button" value="%1$s">',
+                __( 'Upload Brand logo', 'mavericktheme' )
+            );
+            echo '<input id="mavid-brand-logo" type="hidden" name="mav_setting_brand_logo" value="">';
+        } else {
+            printf( '<input id="mavid-btn-upload-brand-logo" type="button" value="%1$s">', __( 'Thay đổi', 'mavericktheme' ) );
+            printf( '<input id="mavid-btn-remove-brand-logo" type="button" value="%1$s">', __( 'Gỡ bỏ', 'mavericktheme') );
+            printf( '<input id="mavid-brand-logo" type="hidden" name="mav_setting_brand_logo" value="%1$s">', $mav_saved_value );
+        }
+    echo '</div>';
 }
 
 // Brand Name

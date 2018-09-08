@@ -10,8 +10,12 @@
 <html lang="<?php language_attributes(); ?>">
 
 <head>
+    <?php get_template_part('/template-parts/mav-header__google-analytics') ?>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
+
     <title>
         <?php
             if ( !is_front_page() ) {
@@ -19,7 +23,7 @@
                 echo(' - ');
                 bloginfo( 'name' );
             } else {
-                bloginfo( 'name' );
+                echo get_bloginfo( 'name' );
             }
         ?>
     </title>
@@ -67,7 +71,7 @@
         <?php
             if ( empty( get_option( 'mav_setting_maintenance_display_social' ) ) && function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
                 /* Social links */
-                include_once TEMPLATE_DIR . '/template-parts/mav-footer_social-links.php';
+                get_template_part('template-parts/mav-footer_social-links');
             endif;
         ?>
 
@@ -76,7 +80,7 @@
             if ( ! empty( $mav_maintenance_time ) ) : ?>
                 <!-- Maintenance time -->
                 <section id="mavid-sec-maintenance-time" class="mav-page-maintenance-section">
-                    <h3 class="mav-margin-bottom"><?php _e('Thời gian dự kiến hoàn tất còn', 'mavericktheme'); ?></h3>
+                    <h3 class="mav-margin-bottom"><?php _e( 'Thời gian dự kiến hoàn tất còn', 'mavericktheme' ); ?></h3>
                     <div class="mavjs-countdown mav-countdown-ctn" data-expired="<?php echo $mav_maintenance_time; ?>"></div>
                 </section> <?php
             endif;
@@ -86,7 +90,7 @@
     <footer id="mavid-page-footer" class="mav-pg-footer">
         <!-- Copyright section -->
         <?php
-            include_once TEMPLATE_DIR . '/template-parts/mav-footer_copyright.php';
+            get_template_part('/template-parts/mav-footer_copyright');
         ?>
     </footer>
 
