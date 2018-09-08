@@ -15,10 +15,10 @@
 a {
     color: inherit;
     text-decoration: underline;
-    text-decoration-color: var(--mav-color-accent);
+    text-decoration-color: var(--mav-color-border);
     text-underline-position: under;
     &:hover {
-        text-decoration-color: var(--mav-color-primary);
+        text-decoration-color: var(--mav-color-accent);
     }
 }
 

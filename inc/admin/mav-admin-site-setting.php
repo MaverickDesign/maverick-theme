@@ -5,6 +5,10 @@
 ?>
 
 <?php
+    printf('<div class="mav-admin-page-wrapper">')
+?>
+
+<?php
     printf('<h1>%1$s</h1>', __('Thiết lập Website', 'mavericktheme'));
     printf('<p>%1$s</p>', __('Các thiết lập cho website', 'mavericktheme'));
 
@@ -30,3 +34,7 @@
         <img id="mavid-preview-brand-logo" src="<?php print $mavBrandLogo; ?>" title="<?php bloginfo('name'); ?>" alt="">
     </div>
 </div>
+
+<?php
+    echo '</div>';
+?>

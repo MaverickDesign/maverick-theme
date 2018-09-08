@@ -57,5 +57,5 @@ function mavf_admin_page_theme_config()
 
 function mavf_theme_config_theme_setting()
 {
-    _e('Các thiết lập cho trang Blog', 'mavericktheme');
+    _e( 'Thiết lập cho trang Blog', 'mavericktheme' );
 }

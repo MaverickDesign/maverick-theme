@@ -14,7 +14,7 @@ function mavf_admin_init()
         'manage_options',
         'mav_admin_page_site_setting',
         'mavf_admin_page_site_setting',
-        get_template_directory_uri().'/assets/admin/maverick-logo-dashboard.png', 110
+        THEME_DIR.'/assets/admin/maverick-logo-dashboard.png', 110
     );
 
     /**
@@ -56,16 +56,8 @@ add_action('admin_menu', 'mavf_admin_init');
 /**
  * For admin panel
  */
-function mavf_enqueue_admin_scripts($mavHook)
+function mavf_enqueue_admin_scripts( $mavHook )
 {
-
-    /**
-     * Check if in the admin page
-     */
-    // if ( 'toplevel_page_mav_admin_page_site_setting' != $mavHook ) {
-    //     return;
-    // }
-
     /**
      * Admin panel css
      */

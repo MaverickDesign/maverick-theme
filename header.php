@@ -31,8 +31,63 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> <?php if(get_option('mav_setting_dev_mode')){ echo 'data-dev-mode'; } ?>>
+<html <?php language_attributes(); ?> <?php if ( get_option( 'mav_setting_dev_mode' ) ) { echo 'data-dev-mode'; } ?>>
 <head>
+    <?php
+        /**
+         * Google Analytics
+         */
+
+        //  Enable Google Analytics
+        $mav_ega  = esc_attr( get_option( 'mav_setting_enable_google_analytics' ) );
+        // Google Analytics ID
+        $mav_ga_id = esc_attr( get_option( 'mav_setting_google_analytics_id' ) );
+
+        if ( ! empty( $mav_ega ) && ! empty( $mav_ga_id ) ): ?>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $mav_ga_id ?>"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '<?php echo $mav_ga_id ?>');
+            </script>
+            <!-- End of Google Analytics -->
+
+            <!-- Old GA Script -->
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', '<?php echo $mav_ga_id ?>', 'auto');
+                ga('send', 'pageview');
+            </script>
+            <!-- End Old GA Script -->
+        <?php endif;
+    ?>
+    <?php
+        /**
+         * Google Tag Manager
+         */
+
+        // Enable Google Tag Manager
+        $mav_egtm = esc_attr( get_option( 'mav_setting_enable_google_tag_manager' ) );
+        // Google Tag Manager ID
+        $mav_gtm_id = esc_attr( get_option( 'mav_setting_google_tag_manager_id' ) );
+
+        if ( ! empty( $mav_egtm ) && ! empty( $mav_gtm_id ) ) : ?>
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','<?php echo $mav_gtm_id ?>');</script>
+            <!-- End Google Tag Manager -->
+        <?php endif;
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -41,10 +96,11 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="<?php single_post_title(); ?>" />
     <meta property="og:description"   content="Your description" />
-    <?php if( !is_404() && has_post_thumbnail() ): ?>
-    <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" />
+    <?php if ( ! is_404() && has_post_thumbnail() ) : ?>
+        <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" />
     <?php endif; ?>
     <!-- Open Graph Data -->
+
     <title>
         <?php
             if ( !is_front_page() ) {
@@ -56,27 +112,6 @@
             }
         ?>
     </title>
-
-    <?php
-        /**
-         * Google Analytics
-         */
-
-        $mavEGA  = esc_attr( get_option( 'mav_setting_enable_google_analytics' ) );
-        $mavGAID = esc_attr( get_option( 'mav_setting_google_analytics_id' ) );
-
-        if ( !empty( $mavEGA ) && !empty( $mavGAID ) ): ?>
-            <script>
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', '<?php echo $mavGAID ?>', 'auto');
-                ga('send', 'pageview');
-            </script> <?php
-        endif;
-    ?>
 
     <?php
         /**
@@ -101,15 +136,24 @@
 
 <body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
     <?php
-    $mavEFA  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
-    $mavFAID = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
-    if (!empty($mavEFA) && !empty($mavFAID)) : ?>
+        if ( ! empty( $mav_egtm ) && ! empty( $mav_gtm_id ) ) : ?>
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTGC75P"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        <?php endif;
+    ?>
+
+    <?php
+        $mav_efa  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
+        $mav_faid = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
+        if ( ! empty( $mav_efa ) && ! empty( $mav_faid ) ) : ?>
         <!-- Facebook Script -->
         <div id="fb-root"></div>
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
-                appId      : '<?php echo $mavFAID; ?>,
+                appId      : '<?php echo $mav_faid; ?>,
                 xfbml      : true,
                 version    : 'v3.0'
                 });
@@ -124,8 +168,7 @@
             }(document, 'script', 'facebook-jssdk'));
         </script>
         <!-- End of Facebook Script -->
-    <?php endif;
-    ?>
+    <?php endif; ?>
 
     <header id="mavid-page-header" class="mav-pg-header mav-pg-header-wrapper">
         <!-- Header Logo -->

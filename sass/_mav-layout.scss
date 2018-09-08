@@ -276,6 +276,7 @@
  * Section Styles
  */
 .mav-sec-wrapper {
+    scroll-snap-align: start;
     .mav-sec-ctn {
         max-width: var(--mav-site-width);
         margin: 0 auto;

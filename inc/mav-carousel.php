@@ -97,7 +97,7 @@ function mavf_carousel($mav_args)
                     while ( $mav_query->have_posts() ) :
                         $mav_query->the_post();
                             printf('<li data-item-number="%2$s" data-gutter="" class="%1$s">', $mavItemClass, $i++);
-                                get_template_part($mavTemplate, get_post_format());
+                                get_template_part( $mavTemplate, get_post_type() );
                             echo '</li>';
                     endwhile;
                     // Reset post data

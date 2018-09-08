@@ -164,7 +164,7 @@ table {
     :root {
       --mav-site-width: 1680px; } }
 
-.mav-sec-title, .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta, .mav-btn-top, .mav-btn-back, .mav-btn-top:before, .mav-btn-back:before, .gallery figure img, .mav-tag-list li, .mav-site-search-wrapper, .mav-collapse, .mav-contact-form .mav-form-hint, .mav-form-fields-ctn .mav-form-input-ctn .mav-form-hint, .mav-card-post, .mav-card-post-thumbnail, .mav-card .mav-card-thumbnail-wrapper .mav-card-thumbnail, .mav-card-client-wrapper .mav-card-client-ctn, .mav-card-client-wrapper .mav-card-client-ctn img, .mav-site-sidebar-ctn .tagcloud a, .mav-site-sidebar-ctn .tagcloud .tag-link-count, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-2-ctn .mav-nav-dot, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-carousel .mav-carousel-wrapper .mav-carousel-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail, [data-lightbox-item] img, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-footer-menu ul li a, .mav-sticky-logo-wrapper .mav-sticky-logo-ctn .mav-sticky-logo, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger, .mav-accordion-trigger:before, .mav-accordion-trigger[data-faq][data-question], .mav-tab-wrapper .mav-tab-ctn .mav-tab-trigger, .mav-contact-socials-ctn .mav-social-links .mav-social-icon {
+.mav-sec-title, .mav-btn, .mav-btn-primary, .mav-btn-primary-lg, .mav-btn-primary-dark, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit, .mav-btn-secondary, .mav-btn-secondary-lg, .mav-btn-cta, .mav-btn-top, .mav-btn-back, .mav-btn-top:before, .mav-btn-back:before, .gallery figure img, .mav-tag-list li, .mav-site-search-wrapper, .mav-collapse, .mav-contact-form .mav-form-hint, .mav-form-fields-ctn .mav-form-input-ctn .mav-form-hint, .mav-card-post, .mav-card-post-thumbnail, .mav-card .mav-card-thumbnail-wrapper .mav-card-thumbnail, .mav-card-cpt-portfolio, .mav-card-client-wrapper .mav-card-client-ctn, .mav-card-client-wrapper .mav-card-client-ctn img, .mav-site-sidebar-ctn .tagcloud a, .mav-site-sidebar-ctn .tagcloud .tag-link-count, .mav-slider-type-2-ctn .mav-slide .mav-slide-post-title-ctn .mav-slider-title, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-slider-type-2-ctn .mav-nav-dot, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-carousel .mav-carousel-wrapper .mav-carousel-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-thumbnail-wrapper .mav-lightbox-thumbnail-ctn .mav-lightbox-thumbnail, [data-lightbox-item] img, .mav-footer-socials-wrapper .mav-footer-socials-ctn .mav-social-links .mav-social-icon, .mav-footer-menu ul li a, .mav-sticky-logo-wrapper .mav-sticky-logo-ctn .mav-sticky-logo, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger, .mav-accordion-trigger:before, .mav-accordion-trigger[data-faq][data-question], .mav-tab-wrapper .mav-tab-ctn .mav-tab-trigger, .mav-contact-socials-ctn .mav-social-links .mav-social-icon {
   transition: all .3s ease; }
 
 /**
@@ -208,10 +208,10 @@ table {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: var(--mav-color-accent);
+  text-decoration-color: var(--mav-color-border);
   text-underline-position: under; }
   a:hover {
-    text-decoration-color: var(--mav-color-primary); }
+    text-decoration-color: var(--mav-color-accent); }
 
 .mav-link[data-link="external"]:after {
   content: '\f0c1';
@@ -978,13 +978,15 @@ abbr {
 /**
  * Section Styles
  */
-.mav-sec-wrapper .mav-sec-ctn {
-  max-width: var(--mav-site-width);
-  margin: 0 auto;
-  padding: 0 var(--mav-gutter); }
-  .mav-sec-wrapper .mav-sec-ctn[data-full-width] {
-    max-width: 100%;
-    padding: 0; }
+.mav-sec-wrapper {
+  scroll-snap-align: start; }
+  .mav-sec-wrapper .mav-sec-ctn {
+    max-width: var(--mav-site-width);
+    margin: 0 auto;
+    padding: 0 var(--mav-gutter); }
+    .mav-sec-wrapper .mav-sec-ctn[data-full-width] {
+      max-width: 100%;
+      padding: 0; }
 
 /**
  * Section header
@@ -1289,7 +1291,8 @@ button {
       padding: var(--mav-gutter-sm);
       border: 1px solid var(--mav-color-border);
       border-radius: 4px;
-      transition: all .15s; }
+      transition: all .15s;
+      background: #fdfdfd; }
       .mav-post-navigation a:hover {
         border-color: var(--mav-color-primary); }
       @media only screen and (max-width: 480px) {
@@ -1883,7 +1886,6 @@ form {
 .mav-card {
   display: grid;
   position: relative;
-  border: 1px solid var(--mav-color-border);
   /* Card Header */
   /* Card Content */
   /* Card Footer */ }
@@ -1896,11 +1898,9 @@ form {
     height: 100%;
     background-size: contain !important;
     background-position: center center !important;
-    background-repeat: no-repeat !important;
-    transform: scale(0.9); }
+    background-repeat: no-repeat !important; }
     @media only screen and (min-width: 1024px) {
       .mav-card .mav-card-thumbnail-wrapper .mav-card-thumbnail {
-        transform: scale(0.8);
         filter: grayscale(1); }
         .mav-card .mav-card-thumbnail-wrapper .mav-card-thumbnail:hover {
           filter: grayscale(0); } }
@@ -1933,8 +1933,10 @@ form {
  */
 .mav-card-cpt-portfolio {
   background: white;
-  box-shadow: 0 4px var(--mav-color-primary);
+  padding: var(--mav-gutter);
   /* Card Footer */ }
+  .mav-card-cpt-portfolio:hover {
+    border-color: var(--mav-color-accent); }
   .mav-card-cpt-portfolio .mav-card-title-wrapper {
     padding: var(--mav-gutter) 0;
     min-height: 90px; }

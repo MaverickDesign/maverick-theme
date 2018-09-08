@@ -22,7 +22,7 @@
     <!-- Footer Socials -->
     <?php
         if ( function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
-           include_once TEMPLATE_DIR . '/template-parts/mav-footer_social-links.php';
+            include_once TEMPLATE_DIR . '/template-parts/mav-footer_social-links.php';
         endif;
     ?>
 
@@ -55,7 +55,7 @@
                         'depth'             => 0,
                         'walker'            => ''
                     );
-                    wp_nav_menu($args);
+                    wp_nav_menu( $args );
                     ?>
                 </nav>
             </div>

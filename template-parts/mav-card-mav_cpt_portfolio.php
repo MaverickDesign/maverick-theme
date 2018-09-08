@@ -28,19 +28,19 @@ printf( '<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id );
              */
             printf('<section class="mav-card-content">');
                 // Post Info
-                printf('<div class="mav-card-info-wrapper">');
-                    printf('<div class="mav-card-info-ctn">');
-                        the_category( '' );
-                    echo '</div>';
-                echo '</div>';
+                // printf('<div class="mav-card-info-wrapper">');
+                //     printf('<div class="mav-card-info-ctn">');
+                //         the_category( '' );
+                //     echo '</div>';
+                // echo '</div>';
 
                 // Post Title
-                printf('<div class="mav-card-title-wrapper">');
-                    printf(
-                        '<h3 class="mav-card-title" title="%3$s%1$s"><a href="%2$s">%1$s</a></h3>',
-                        get_the_title(), get_the_permalink(), __( 'Xem sản phẩm ', 'mavericktheme' )
-                    );
-                echo '</div>';
+                // printf('<div class="mav-card-title-wrapper">');
+                //     printf(
+                //         '<h3 class="mav-card-title" title="%3$s%1$s"><a href="%2$s">%1$s</a></h3>',
+                //         get_the_title(), get_the_permalink(), __( 'Xem sản phẩm ', 'mavericktheme' )
+                //     );
+                // echo '</div>';
             echo '</section>';
 
             /**

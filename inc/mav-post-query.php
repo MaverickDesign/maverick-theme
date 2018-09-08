@@ -58,6 +58,8 @@ function mavf_post_query( $mav_args )
             $mav_query->the_post();
             get_template_part( $mav_template, get_post_format() );
         endwhile;
+
+        // Reset post data
         wp_reset_postdata();
 
         // End of Wrapper & Container

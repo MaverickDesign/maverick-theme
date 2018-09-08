@@ -26,7 +26,7 @@
         printf('<div class="mav-blog-sticky-post-wrapper">');
             printf('<div class="mav-blog-sticky-post-ctn">');
                 $mav_args = array(
-                    'post_queries'  => $mav_sticky_args,
+                    'query_args'  => $mav_sticky_args,
                     'display'       => 3,
                 );
                 mavf_carousel( $mav_args );
@@ -69,6 +69,7 @@
                         $mav_query->the_post();
                         get_template_part( 'template-parts/mav-card', get_post_format() );
                     }
+                    // Reset post data
                     wp_reset_postdata();
                 echo '</div>';
 
