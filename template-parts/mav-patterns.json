@@ -5,7 +5,7 @@
             "replace" : "<span class=\"mav-brand-name\">$0</span>"
         },
         {
-            "pattern" : "/(phần mềm)/i",
+            "pattern" : "/(Maverick Theme)/i",
             "replace" : "<strong>$0</strong>"
         }
     ]

@@ -32,9 +32,10 @@
 </head>
 
 <body class="mav-page-maintenance">
-    <header id="mavid-page-header">
-        <?php if ( empty( get_option( 'mav_setting_maintenance_display_logo' ) ) ) : ?>
+    <?php if ( empty( get_option( 'mav_setting_maintenance_display_logo' ) ) ) : ?>
+        <header id="mavid-page-header">
             <div class="mav-margin-top-lg">
+                <!-- Brand Logo -->
                 <figure title="<?php bloginfo( 'name' ); ?>" style="display: inline-block; margin: 0 auto;">
                     <?php
                         $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
@@ -52,8 +53,8 @@
                     ?>
                 </figure>
             </div>
-        <?php endif; ?>
-    </header>
+        </header>
+    <?php endif; ?>
 
     <main id="mavid-page-main-content">
         <header id="mavid-sec-page-title" class="mav-flex-center-all mav-page-maintenance-section">
@@ -71,7 +72,7 @@
         <?php
             if ( empty( get_option( 'mav_setting_maintenance_display_social' ) ) && function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
                 /* Social links */
-                get_template_part('template-parts/mav-footer_social-links');
+                get_template_part('/template-parts/mav-footer_social-links');
             endif;
         ?>
 

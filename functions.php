@@ -5,7 +5,7 @@
 
 // Use for HTML sources
 // Eg: http://localhost/maverick.vn/wp-content/themes/mavericktheme
-define( "THEME_DIR", get_template_directory_uri() );
+define( "TEMPLATE_URI", get_template_directory_uri() );
 // Use for PHP sources
 // Eg: D:\_Projects\www\maverick.vn/wp-content/themes/mavericktheme
 define( "TEMPLATE_DIR", get_template_directory() );
@@ -25,12 +25,14 @@ if ( file_exists( TEMPLATE_DIR.'/vendor/Mobile_Detect.php' ) ) {
         $mav_device_detect = new Mobile_Detect;
         $mav_device = 'desktop';
 
-        if ($mav_device_detect->isMobile()) {
+        if ( $mav_device_detect->isMobile() ) {
             $mav_device = 'mobile';
         }
-        if ($mav_device_detect->isTablet()) {
+
+        if ( $mav_device_detect->isTablet() ) {
             $mav_device = 'tablet';
         }
+
         return $mav_device;
     }
 }
@@ -48,20 +50,13 @@ require TEMPLATE_DIR. '/inc/admin/mav-admin-enqueue-scripts.php';
 // Social Accounts
 require TEMPLATE_DIR.'/inc/mav-social-accounts.php';
 
-// Return if maintenance mode is enable
-// if ( get_option( 'mav_setting_maintenance' ) ) {
-//     return;
-// }
-
 // Custom post types
 require TEMPLATE_DIR. '/inc/admin/mav-admin-cpt.php';
 
-/**
- * Theme Functions
- */
-
+// Header Menu Walker
 require TEMPLATE_DIR. '/inc/mav-walker-nav.php';
 
+// BreadCrumbs
 require TEMPLATE_DIR. '/inc/mav-breadcrumbs.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-load-posts.php';
@@ -69,6 +64,7 @@ require TEMPLATE_DIR. '/inc/mav-ajax-load-posts.php';
 // Post Query
 require TEMPLATE_DIR. '/inc/mav-post-query.php';
 
+// Google Map
 require TEMPLATE_DIR. '/inc/mav-google-map.php';
 
 // Sliders
@@ -77,14 +73,17 @@ require TEMPLATE_DIR.'/inc/mav-slider.php';
 // Carousel
 require TEMPLATE_DIR.'/inc/mav-carousel.php';
 
+// Post Grid
 require TEMPLATE_DIR. '/inc/mav-post-grid.php';
 
+// Featured Post
 require TEMPLATE_DIR. '/inc/mav-post-feature.php';
 
 require TEMPLATE_DIR. '/inc/mav-items-grid.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-form.php';
 
+// Post Accordion
 require TEMPLATE_DIR. '/inc/mav-post-accordion.php';
 
 require TEMPLATE_DIR. '/inc/mav-post-modal.php';

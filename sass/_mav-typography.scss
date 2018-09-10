@@ -25,9 +25,11 @@ a {
 .#{$mavNameSpace}-link {
     &[data-link="external"] {
         &:after {
+            display: inline-block;
             @extend %mav-font-awesome;
-            content: '\f0c1';
-            margin-left: var(--mav-gutter-xs);
+            content: '\f35d';
+            padding-left: var(--mav-gutter-xs);
+            color: var(--mav-color-text-hint);
         }
     }
     &--dark {

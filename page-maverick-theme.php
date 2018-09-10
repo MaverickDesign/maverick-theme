@@ -5,12 +5,12 @@
 ?>
 
 <?php get_header(); ?>
-<!-- Page content starts here -->
 
+<!-- Page content starts here -->
 <main id="mavid-page-main" class="mav-page-wrapper">
     <div class="mav-page-ctn">
         <!-- Tiêu đề trang -->
-        <?php require TEMPLATE_DIR.'/template-parts/mav-page__header.php'; ?>
+        <?php get_template_part('/template-parts/mav-page__header'); ?>
 
         <!-- Nội dung chính của trang -->
         <div id="mavid-page-content" class="mav-page-body-wrapper">
@@ -31,7 +31,7 @@
                         <div class="mav-sec-body-wrapper mav-post-content-wrapper">
                             <div class="mav-sec-body-ctn mav-post-content-ctn">
                                 <div class="mav-post-content">
-                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <span class="mav-mavericktheme">Maverick Theme</span>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
+                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong>Maverick Theme</strong>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
                                     <p><span class="mav-mavericktheme">Maverick Theme</span> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
                                     <p><span class="mav-mavericktheme">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
                                     <p><span class="mav-mavericktheme">Maverick Theme</span> đáp ứng đầy đủ các yêu cầu cơ bản của một website chuyên về nội dung.</p>
@@ -60,7 +60,7 @@
                                         <?php
                                             $mav_args = array(
                                                 'columns'   => 4,
-                                                'items'     => file_get_contents(THEME_DIR.'/mav-grid-array.json')
+                                                'items'     => file_get_contents(TEMPLATE_URI.'/mav-grid-array.json')
                                             );
                                             mavf_items_grid($mav_args);
                                         ?>
@@ -567,6 +567,7 @@
                 <!-- Tính năng: Price Table -->
                 <section id="mavid-sec-price-table" class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
+                        <!-- Header -->
                         <header class="mav-sec-header-wrapper">
                             <div class="mav-sec-header-ctn">
                                 <div class="mav-sec-title-wrapper">
@@ -576,6 +577,7 @@
                                 </div>
                             </div>
                         </header>
+                        <!-- Body -->
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <div class="mav-price-table-wrapper">
@@ -616,11 +618,12 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Footer -->
                         <footer class="mav-sec-footer-wrapper">
                             <div class="mav-sec-footer-ctn">
                                 <?php
                                     if ( function_exists( 'mavf_button' ) ) {
-                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                     }
                                 ?>
                             </div>
@@ -645,12 +648,12 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            $mavFormArgs = array(
-                                                'fields'    => array('name','email','phone','address','dob','message'),
+                                            $mav_form_args = array(
+                                                'fields'        => array( 'name', 'email', 'phone', 'address', 'dob', 'message' ),
                                                 'form_title'    => __( 'Gửi thông tin liên hệ tới '.get_bloginfo( 'name' ) , 'mavericktheme' ),
                                                 'form_intro'    => __( 'Liên lạc với '.get_bloginfo( 'name' ).' qua email.' , 'mavericktheme' )
                                             );
-                                            mavf_contact_form($mavFormArgs);
+                                            mavf_contact_form( $mav_form_args );
                                         ?>
                                     </div>
                                 </div>
@@ -658,7 +661,7 @@
                                     <div class="mav-sec-footer-ctn">
                                         <?php
                                             if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                                mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                             }
                                         ?>
                                     </div>
@@ -807,12 +810,13 @@
             </div>
         </div>
 
+        <!-- Chân trang -->
         <footer id="mavid-page-footer" class="mav-page-footer-wrapper">
             <div class="mav-page-footer-ctn">
             </div>
         </footer>
     </div>
 </main>
-
 <!-- Page content ends here -->
+
 <?php get_footer(); ?>

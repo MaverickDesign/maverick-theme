@@ -166,22 +166,22 @@ function mavf_button( $mavText = '', $mavLink = '', $mavStyle = 'mav-btn-primary
 /**
  * Make Unique String
  *
- * @param integer $mavLength
+ * @param integer $mav_length
  * @param string $mavExp
  * @return void
  */
 
-function mavf_unique($mavLength = 0, $mavExp = 's')
+function mavf_unique( $mav_length = 0, $mavExp = 's' )
 {
-    $mavNonce = wp_create_nonce(date($mavExp));
+    $mavNonce = wp_create_nonce( date( $mavExp ) );
 
     $mavString = hash('sha512', $mavNonce);
 
-    if ($mavLength > 0) {
+    if ($mav_length > 0) {
         $mavStringLength = strlen($mavString);
-        $mavReturn = substr($mavString, floor(rand(0, 10)), $mavStringLength - ($mavStringLength - $mavLength));
+        $mavReturn = substr( $mavString, floor( rand(0, 10) ), $mavStringLength - ( $mavStringLength - $mav_length) );
     } else {
         $mavReturn = $mavString;
     }
-    return esc_html($mavReturn);
+    return esc_html( $mavReturn );
 }

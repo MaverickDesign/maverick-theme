@@ -5,9 +5,10 @@
 
 function mavf_admin_theme_config_options()
 {
-
+    // Enable Development Mode
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_dev-mode.php';
 
+    // Display Theme Info
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_theme-info.php';
 
     /**
@@ -18,18 +19,19 @@ function mavf_admin_theme_config_options()
     // Post formats
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_post-format.php';
 
+    // Grid system
+    include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_grid-system.php';
+
     // Custom Post Types
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_cpt.php';
 
-    // Grid system
-    include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_grid-system.php';
 
     /**
      * Section: Theme Settings
      */
     add_settings_section(
         'mavsec_theme_config_theme_setting',
-        __('Trang Blog', 'mavericktheme'),
+        __( 'Trang Blog', 'mavericktheme' ),
         'mavf_theme_config_theme_setting',
         'mav_admin_page_theme_config'
     );
@@ -43,11 +45,12 @@ function mavf_admin_theme_config_options()
     // Blog page columns
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_blog-page-columns.php';
 
+    // BreadCrumbs
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_breadcrumbs.php';
 
 }
 
-add_action('admin_init', 'mavf_admin_theme_config_options');
+add_action( 'admin_init', 'mavf_admin_theme_config_options' );
 
 // Create admin page for Theme Config
 function mavf_admin_page_theme_config()
@@ -57,5 +60,5 @@ function mavf_admin_page_theme_config()
 
 function mavf_theme_config_theme_setting()
 {
-    _e( 'Thiết lập cho trang Blog', 'mavericktheme' );
+    printf( '<p class="mav-desc">%1$s</p>', __( 'Thiết lập cho trang Blog', 'mavericktheme' ) );
 }

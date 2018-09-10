@@ -6,7 +6,7 @@
 /**
  * Theme Support - Post Formats
  */
-$mav_saved_value = get_option('mav_setting_post_format');
+$mav_saved_value = get_option( 'mav_setting_post_format' );
 
 $mav_post_formats = array(
     'aside' ,
@@ -19,20 +19,21 @@ $mav_post_formats = array(
     'audio' ,
     'chat'
 );
+
 $mav_output = array();
 
-foreach ($mav_post_formats as $mav_post_format) {
-    $mav_output[] = (@$mav_saved_value[$mav_post_format] == 1 ? $mav_post_format : '');
+foreach ( $mav_post_formats as $mav_post_format ) {
+    $mav_output[] = ( @$mav_saved_value[$mav_post_format] == 1 ? $mav_post_format : '' );
 }
 
-if (!empty($mav_saved_value)) {
-    add_theme_support('post-formats', $mav_output);
+if ( ! empty( $mav_saved_value ) ) {
+    add_theme_support( 'post-formats', $mav_output );
 }
 
 /**
  * Theme Support - Feature Image
  */
-add_theme_support('post-thumbnails');
+add_theme_support( 'post-thumbnails' );
 
 /**
  * Theme Support - HTML5
@@ -73,10 +74,10 @@ add_theme_support(
 
 function mavf_register_nav_menus()
 {
-    register_nav_menu('primary_menu', __('Main menu/Header Menu', 'mavericktheme'));
-    register_nav_menu('secondary_menu', __('Secondary/Footer menu', 'mavericktheme'));
+    register_nav_menu( 'primary_menu', __( 'Main menu/Header Menu', 'mavericktheme' ) );
+    register_nav_menu( 'secondary_menu', __( 'Secondary/Footer menu', 'mavericktheme' ) );
 }
-add_action('after_setup_theme', 'mavf_register_nav_menus');
+add_action( 'after_setup_theme', 'mavf_register_nav_menus' );
 
 /**
  * Theme Support - Sidebars
@@ -100,16 +101,16 @@ function mavf_register_sidebars()
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
     );
-    register_sidebar($mav_main_sidebar);
+    register_sidebar( $mav_main_sidebar );
 }
-add_action('widgets_init', 'mavf_register_sidebars');
+add_action( 'widgets_init', 'mavf_register_sidebars' );
 
 /**
  * Test local SMTP Mail Server
  * Note: Remove this function in production site
  */
 
-function mailtrap($phpmailer)
+function mailtrap( $phpmailer )
 {
     $phpmailer->isSMTP();
     $phpmailer->Host        = 'smtp.mailtrap.io';
@@ -119,6 +120,6 @@ function mailtrap($phpmailer)
     $phpmailer->Password    = '1ba3c17307cb25';
 }
 
-if (get_option('mav_setting_dev_mode')) {
-    add_action('phpmailer_init', 'mailtrap');
+if ( get_option( 'mav_setting_dev_mode' ) ) {
+    add_action( 'phpmailer_init', 'mailtrap' );
 }

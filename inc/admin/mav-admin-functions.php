@@ -14,7 +14,7 @@ function mavf_admin_init()
         'manage_options',
         'mav_admin_page_site_setting',
         'mavf_admin_page_site_setting',
-        THEME_DIR.'/assets/admin/maverick-logo-dashboard.png', 110
+        TEMPLATE_URI.'/assets/admin/maverick-logo-dashboard.png', 110
     );
 
     /**
@@ -63,7 +63,7 @@ function mavf_enqueue_admin_scripts( $mavHook )
      */
     wp_register_style(
         'mav_admin_css',
-        THEME_DIR.'/css/mav-admin-styles.css',
+        TEMPLATE_URI.'/css/mav-admin-styles.css',
         array(),
         '1.0.0',
         'all'
@@ -75,7 +75,7 @@ function mavf_enqueue_admin_scripts( $mavHook )
      */
     wp_register_script(
         'mav_admin_script',
-        THEME_DIR.'/js/mav-admin-scripts.js',
+        TEMPLATE_URI.'/js/mav-admin-scripts.js',
         array('jquery'),
         '1.0.0',
         true

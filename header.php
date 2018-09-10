@@ -1,19 +1,15 @@
 <?php
-    // Redirect to homepage when in maintenace mode
-    // if ( ! is_home() && get_option( 'mav_setting_maintenance' ) ) {
-    //     wp_redirect( home_url() );
-    //     exit;
-    // }
-?>
-
-<?php
 /**
  * @package mavericktheme
  */
-?>
 
-<?php
-    /* Detect device */
+    // Redirect to homepage when in maintenace mode
+    if ( ! is_home() && get_option( 'mav_setting_maintenance' ) ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+
+    // Detect device
     if ( function_exists( 'mavf_mobile_detect' ) ) {
         $mav_device = mavf_mobile_detect();
     } else {
@@ -33,7 +29,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php if ( get_option( 'mav_setting_dev_mode' ) ) { echo 'data-dev-mode'; } ?>>
 <head>
-    <?php get_template_part('/template-parts/mav-header__google-analytics') ?>
+    <?php get_template_part( '/template-parts/mav-header__google-analytics' ); ?>
     <?php
         /**
          * Google Tag Manager
@@ -81,9 +77,7 @@
     </title>
 
     <?php
-        /**
-         * Wordpress Heads
-         */
+        // Wordpress Heads
         wp_head();
     ?>
 
@@ -98,7 +92,6 @@
             ?>
         }
     </style>
-
 </head>
 
 <body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
@@ -142,16 +135,16 @@
         <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper">
             <div class="mav-header-logo-ctn">
                 <!-- Mobile Menu Icon -->
-                <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e('Nhấn để mở','mavericktheme'); ?>"></button>
+                <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e( 'Nhấn để mở','mavericktheme' ); ?>"></button>
                 <!-- Site Logo -->
                 <div id="mavid-site-logo" class="mav-site-logo-wrapper">
                     <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
                         <?php
-                            $mavBrandLogo = esc_attr( get_option('mav_setting_brand_logo') );
-                            if ($mavBrandLogo) {
-                                echo "<img src=\"$mavBrandLogo;\">";
+                            $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
+                            if ($mav_brand_logo) {
+                                echo "<img src=\"$mav_brand_logo;\">";
                             } else {
-                                echo '<img src="'.get_template_directory_uri().'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
+                                echo '<img src="'.TEMPLATE_URI.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
                             }
                         ?>
                     </a>
@@ -176,22 +169,10 @@
             </div>
         </section>
         <!-- Header Site Search -->
-        <?php get_template_part('template-parts/mav-header__site-search'); ?>
+        <?php get_template_part('/template-parts/mav-header__site-search'); ?>
     </header>
 
     <!-- Header Menu -->
-    <?php get_template_part('template-parts/mav-header__menu'); ?>
-
-    <?php
-    /**
-     * Breadcrumb Section
-     */
-    $mavBreadcrumbs = get_option( 'mav_setting_breadcrumbs' );
-    if ( isset( $mavBreadcrumbs['header'] ) && ! is_front_page() && ! is_home() && ! is_attachment() && function_exists( 'mavf_breadcrumbs' ) ) :
-        printf('<section class="mav-breadcrumbs-wrapper">');
-            printf('<div class="mav-breadcrumbs-ctn">');
-                mavf_breadcrumbs();
-            echo '</div>';
-        echo '</section>';
-    endif;
-    ?>
+    <?php get_template_part('/template-parts/mav-header__menu'); ?>
+    <!-- Header BreadCrumbs -->
+    <?php get_template_part('/template-parts/mav-header__breadcrumbs'); ?>
