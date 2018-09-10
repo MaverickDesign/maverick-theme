@@ -7,8 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php language_attributes(); ?>">
-
+<html <?php language_attributes(); ?>>
 <head>
     <?php get_template_part('/template-parts/mav-header__google-analytics') ?>
 
@@ -30,7 +29,6 @@
 
     <?php wp_head(); ?>
 </head>
-
 <body class="mav-page-maintenance">
     <?php if ( empty( get_option( 'mav_setting_maintenance_display_logo' ) ) ) : ?>
         <header id="mavid-page-header">
@@ -97,5 +95,4 @@
 
     <?php wp_footer(); ?>
 </body>
-
 </html>

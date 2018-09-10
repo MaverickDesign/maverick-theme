@@ -21,5 +21,7 @@ printf('<div class="mav-admin-page-wrapper">');
             // Submit Button
             submit_button( __( 'Lưu các thay đổi', 'mavericktheme' ), 'primary', 'mavb_submit');
         echo '</form>';
+        // Theme Info
+        include_once TEMPLATE_DIR.'/inc/admin/admin-parts/mav-admin__part--theme-info.php';
     echo '</div>';
 echo '</div>';

@@ -66,7 +66,7 @@
 
     <title>
         <?php
-            if ( !is_front_page() ) {
+            if ( ! is_front_page() ) {
                 wp_title('');
                 echo(' - ');
                 bloginfo( 'name' );
@@ -168,11 +168,14 @@
                 </div>
             </div>
         </section>
+
         <!-- Header Site Search -->
-        <?php get_template_part('/template-parts/mav-header__site-search'); ?>
+        <?php get_template_part( '/template-parts/mav-header__site-search' ); ?>
+
     </header>
 
     <!-- Header Menu -->
-    <?php get_template_part('/template-parts/mav-header__menu'); ?>
+    <?php get_template_part( '/template-parts/mav-header__menu' ); ?>
+
     <!-- Header BreadCrumbs -->
-    <?php get_template_part('/template-parts/mav-header__breadcrumbs'); ?>
+    <?php get_template_part( '/template-parts/mav-header__breadcrumbs' ); ?>

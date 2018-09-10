@@ -150,14 +150,16 @@
             background: white;
             border: 1px solid var(--mav-color-border);
             @media #{$mav-desktop} {
-                max-width: 66%;
-                margin: 0 auto;
+                max-width: 30vw;
+                // margin: 0 auto;
+                margin-left: auto;
             }
             header {
                 display: grid;
                 grid-template-columns: auto 1fr;
                 grid-gap: var(--mav-gutter);
                 align-items: center;
+                margin-bottom: var(--mav-gutter-lg);
                 p {
                     margin: 0;
                 }
