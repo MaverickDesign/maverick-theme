@@ -30,6 +30,11 @@ function mavf_admin_init()
     );
 
     /**
+     * Site Setting Functions
+     */
+    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting-functions.php';
+
+    /**
      * Add Theme Config Submenu Page
      */
     add_submenu_page(
@@ -42,14 +47,37 @@ function mavf_admin_init()
     );
 
     /**
-     * Site Setting Functions
-     */
-    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting-functions.php';
-
-    /**
      * Theme Config Functions
      */
     include_once TEMPLATE_DIR . '/inc/admin/mav-admin-theme-config-functions.php';
+
+    // Theme Styles - Submenu Page
+    add_submenu_page(
+        'mav_admin_page_site_setting',
+        'Theme Styles',
+        'Theme Styles',
+        'manage_options',
+        'mav_admin_page_theme_styles',
+        'mavf_admin_page_theme_styles'
+    );
+
+    // Theme Styles Functions
+    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-theme-styles-functions.php';
+
+    /**
+     * Theme Info Submenu Page
+     */
+    add_submenu_page(
+        'mav_admin_page_site_setting',
+        'Theme Info',
+        'Theme Info',
+        'manage_options',
+        'mav_admin_page_theme_info',
+        'mavf_admin_page_theme_info'
+    );
+    // Theme Info Functions
+    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-theme-info-functions.php';
+
 }
 add_action('admin_menu', 'mavf_admin_init');
 

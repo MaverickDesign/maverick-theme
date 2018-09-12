@@ -20,7 +20,7 @@
     display: grid;
     grid-template-rows: 20vh 140px auto;
     background: white;
-    border: 1px solid var(--mav-color-border);
+    border: 1px solid var(--mav-color--border);
     height: 100%;
     overflow: hidden;
     @extend %mav-transition;
@@ -153,7 +153,7 @@
     // Card Title
     .mav-card-title-wrapper {
         @extend .mav-flex-center-all;
-        padding: var(--mav-gutter-lg) 0;
+        padding: var(--mav-gutter--lg) 0;
         background: white;
         .mav-card-title {
             text-align: center;
@@ -194,7 +194,7 @@
 .mav-card-cpt-portfolio {
     background: white;
     // box-shadow: 0 4px var(--mav-color-primary);
-    // border: 1px solid var(--mav-color-border);
+    // border: 1px solid var(--mav-color--border);
     @extend %mav-transition;
     padding: var(--mav-gutter);
     &:hover {
@@ -228,10 +228,10 @@
         height: 100%;
         @extend %mav-transition;
         &:hover {
-            border-color: var(--mav-color-border);
+            border-color: var(--mav-color--border);
         }
         @media #{$mav-mobile} {
-            border-color: var(--mav-color-border);
+            border-color: var(--mav-color--border);
         }
         figure {
             display: flex;

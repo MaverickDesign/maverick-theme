@@ -1,29 +1,24 @@
-$mavNameSpace: 'mav';
+$mavNS: 'mav';
 
-/**
- * Color code
- */
-
-$mavBlack: black;
-$mavGray : rgba(black,.5);
-$mavWhite: White;
-
-:root {
-    --mav-black: #{$mavBlack};
-    --mav-gray : #{$mavGray};
-    --mav-white: #{$mavWhite};
-}
-
+/* Layers */
 $mav-layer-top:          1000;
 $mav-layer-overlay:       100;
 $mav-layer-image:          10;
-$mav-layer-content:         0;
+$mav-layer-content:   initial;
 $mav-layer-background:    -10;
 $mav-layer-under:        -100;
 $mav-layer-bottom:      -1000;
 
+$mav-layer--top:          1000;
+$mav-layer--overlay:       100;
+$mav-layer--image:          10;
+$mav-layer--content:   initial;
+$mav-layer--background:    -10;
+$mav-layer--under:        -100;
+$mav-layer--bottom:      -1000;
+
 * {
-    z-index: $mav-layer-content;
+    z-index: $mav-layer--content;
 }
 
 /**
@@ -32,12 +27,17 @@ $mav-layer-bottom:      -1000;
 
 // Available weights: 100, 300, 400, 500, 700, 900
 
-$font-roboto        : 'Roboto', Arial, sans-serif;
-$font-roboto-cond   : 'Roboto Condensed', Arial, sans-serif;
-$font-roboto-slab   : 'Roboto Slab', serif;
-$font-roboto-mono   : 'Roboto Mono', monospace;
-$font-awesome       : 'Font Awesome 5 Free';
-$font-alfa-slab-one : "Alfa Slab One", cursive;
+$font-roboto            : 'Roboto', Arial, sans-serif;
+$font-roboto-cond       : 'Roboto Condensed', Arial, sans-serif;
+$font-roboto-slab       : 'Roboto Slab', serif;
+$font-roboto-mono       : 'Roboto Mono', monospace;
+$font-awesome           : 'Font Awesome 5 Free';
+$font-alfa-slab-one     : "Alfa Slab One", cursive;
+$font-ibm-plex-sans     : 'IBM Plex Sans', Arial, sans-serif;
+$font-ibm-plex-serif    : 'IBM Plex Serif', serif;
+$font-montserrat        : 'Montserrat', sans-serif;
+$font-exo               : 'Exo', Arial, sans-serif;
+
 
 $mav-font-weight-thin   : 100;
 $mav-font-weight-light  : 300;
@@ -45,6 +45,13 @@ $mav-font-weight-regular: 400;
 $mav-font-weight-medium : 500;
 $mav-font-weight-bold   : 700;
 $mav-font-weight-black  : 900;
+
+$mav-font__weight--thin   : 100;
+$mav-font__weight--light  : 300;
+$mav-font__weight--regular: 400;
+$mav-font__weight--medium : 500;
+$mav-font__weight--bold   : 700;
+$mav-font__weight--black  : 900;
 
 /**
  * THEME COLORS
@@ -58,42 +65,55 @@ $maverick: rgb(194,47,35);
 
 // THEME COLORS
 
-$mav-color-primary          : $maverick;
-$mav-color-accent           : desaturate(complement($mav-color-primary),30%);
+$mav-color-primary  : $maverick;
+$mav-color-accent   : darken(complement($mav-color-primary),10%);
 
-$mav-color-text-primary     : rgba(0,0,0,.87);
-$mav-color-text-secondary   : rgba(0,0,0,.60);
-$mav-color-text-hint        : rgba(0,0,0,.38);
+$mavc-primary   : $maverick;
+$mavc-accent    : darken(complement($mavc-primary),10%);
+
+$mav-color--primary   : $maverick;
+$mav-color--accent    : darken(complement($mav-color--primary),10%);
+
+$mav-color-text-primary     : #222;
+$mav-color-text-secondary   : #aaa;
+$mav-color-text-hint        : #ababad;
+
+$mavc-text__primary     : #222;
+$mavc-text__secondary   : #aaa;
+
+$mav-color__text--primary: #222;
+$mav-color__text--secondary: #aaa;
+$mav-color__text--hint: #ccc;
 
 $mav-color-text-primary-dark  : #fafafa;
 $mav-color-text-secondary-dark: #ddd;
 $mav-color-text-hint-dark     : #aaa;
 
-$mav-link-color: #b4e7f8;
+$mav-color__text--primary--dark  : #fafafa;
+$mav-color__text--secondary--dark  : #ddd;
+$mav-color__text--hint--dark  : #aaa;
 
-$mav-color-text-link: rgba($mav-color-accent,.2);
+$mav-link-color: #b4e7f8;
+$mav-color--link: #b4e7f8;
 
 $mav-color-border: #ddd;
+$mav-color--border: #ddd;
+$mavc-border: #ddd;
 
 $mav-color-highlight: yellow;
-
-$mav-color: (
-    primary:    $mav-color-primary,
-    secondary:  $mav-color-accent,
-    tertiary:   orange,
-    text: (
-        primary:    $mav-color-text-primary,
-        secondary:  $mav-color-text-secondary-dark,
-        hint:       $mav-color-text-hint
-    )
-);
+$mavc-highlight: yellow;
+$mav-color--highlight: yellow;
 
 $mav-color-site-background: #fafafa;
+$mav-color__site--background: #fafafa;
 
 $mav-color-header-background: transparent;
+$mav-color__header--background: transparent;
 $mav-color-footer-background: #222;
+$mav-color__footer--background: #222;
 
 $mav-color-header-menu-background       : $mav-color-primary;
+$mav-color__header-menu--background: $mavc-primary;
 $mav-color-header-menu-background-hover : $mav-color-accent;
 
 /**
@@ -110,101 +130,181 @@ $mav-desktop: "only screen and (min-width: 1024px)";
  */
 
 $mav-site-width: 1680px;
-$mav-page-margin: 25px;
 $mav-gutter: 20px;
-$mav-spacing: 20px;
 
 $mav-site-color-background: #fafafa;
+$mav-color__site--background: #fbfbfb;
 $mav-color-background: #fafafa;
+$mav-color--background: #fafafa;
 
 /**
  * CSS Variables
  */
 :root {
+
+    /* Font Families */
+    --mav-font__family--awesome         : 'Font Awesome 5 Free';
+    --mav-font__family--exo             : 'Exo', Arial, sans-serif;
+    --mav-font__family--roboto          : 'Roboto', Arial, sans-serif;
+    --mav-font__family--roboto-cond     : 'Roboto Condensed', Arial, sans-serif;
+    --mav-font__family--roboto-slab     : 'Roboto Slab', serif;
+    --mav-font__family--roboto-mono     : 'Roboto Mono', monospace;
+    --mav-font__family--alfa-slab-one   : "Alfa Slab One", cursive;
+    --mav-font__family--ibm-plex-sans   : 'IBM Plex Sans', Arial, sans-serif;
+    --mav-font__family--ibm-plex-serif  : 'IBM Plex Serif', serif;
+    --mav-font__family--montserrat      : 'Montserrat', sans-serif;
+
+    // Primary font
+    --mav-font--primary     : var(--mav-font__family--ibm-plex-serif);
+    // Secondary font
+    --mav-font--secondary   : var(--mav-font__family--exo);
+
     /**
+     * ==================================================
      * Layouts
+     * ==================================================
      */
 
-     --mav-gutter       : #{$mav-gutter};
-     --mav-gutter-xl    : calc(var(--mav-gutter) * 4);
-     --mav-gutter-lg    : calc(var(--mav-gutter) * 2);
-     --mav-gutter-sm    : calc(var(--mav-gutter) / 2);
-     --mav-gutter-xs    : calc(var(--mav-gutter) / 4);
+    --mav-gutter       : #{$mav-gutter};
+
+    --mav-gutter-xl    : calc(var(--mav-gutter) * 4);
+    --mav-gutter-lg    : calc(var(--mav-gutter) * 2);
+    --mav-gutter-sm    : calc(var(--mav-gutter) / 2);
+    --mav-gutter-xs    : calc(var(--mav-gutter) / 4);
+
+    --mav-gutter--xl    : calc(var(--mav-gutter) * 4);
+    --mav-gutter--lg    : calc(var(--mav-gutter) * 2);
+    --mav-gutter--sm    : calc(var(--mav-gutter) / 2);
+    --mav-gutter--xs    : calc(var(--mav-gutter) / 4);
 
     /**
+     * ==================================================
      * Colors
+     * ==================================================
      */
 
-    /* Brand colors */
+    // Brand colors
+    // ------------
 
     // Primary
-     --mav-color-primary            : #{$mav-color-primary};
+    --mav-color-primary     : #{$mav-color-primary};
+    --mav-color--primary    : #{$mav-color-primary};
+    --mavc-primary         : #{$mav-color-primary};
 
-     //  Accent
-     --mav-color-accent             : #{$mav-color-accent};
+    //  Accent
+    --mav-color-accent      : #{$mav-color-accent};
+    --mav-color--accent     : #{$mav-color-accent};
+    --mavc-accent          : #{$mav-color-accent};
 
-     --mav-color-black              : #464646;
-     --mavc-black                   : #464646;
-     --mav-color-off-white          : #fafafa;
-     --mav-color-highlight          : #{$mav-color-highlight};
+    --mav-color-black       : #464646;
+    --mavc-black            : #464646;
+    --mav-color-off-white   : #fafafa;
+    --mavc-off-white       : #fafafa;
+    --mav-color-highlight   : #{$mav-color-highlight};
+    --mavc-highlight       : #{$mav-color-highlight};
 
     // Site background
-     --mav-color-site-background    : #{$mav-color-site-background};
+    --mav-color-site-background    : #{$mav-color-site-background};
+    --mavc-site--background        : #{$mav-color-site-background};
 
-     //  Header background
-     --mav-color-site-header        : #{$mav-color-primary};
+    //  Header background
+    --mav-color-site-header        : var(--mav-color-primary);
+    --mavc-site__header--background: var(--mav-color-primary);
 
-     //  Footer background
-     --mav-color-site-footer        : var(--mav-color-accent);
+    //  Footer background
+    --mav-color-site-footer        : var(--mav-color-accent);
+    --mavc-site__footer--background: var(--mav-color-accent);
 
-     --mav-color-header-menu-background         : var(--mav-color-primary);
-     --mav-color-header-menu-background-hover   : rgba(0,0,0,.2);
+    --mav-color-header-menu-background          : var(--mav-color-primary);
+    --mavc__header-menu--background             : var(--mav-color-primary);
+    --mav-color-header-menu-background-hover    : rgba(0,0,0,.2);
 
-     --mav-color-border: #{$mav-color-border};
+    --mav-color-border: #{$mav-color-border};
+    --mav-color--border: #{$mav-color-border};;
 
     /**
      * Typography
      */
 
-     --mav-font-weight-thin     : #{$mav-font-weight-thin};
-     --mav-font-weight-light    : #{$mav-font-weight-light};
-     --mav-font-weight-regular  : #{$mav-font-weight-regular};
-     --mav-font-weight-medium   : #{$mav-font-weight-medium};
-     --mav-font-weight-bold     : #{$mav-font-weight-bold};
-     --mav-font-weight-black    : #{$mav-font-weight-black};
+    --mav-font-weight-thin      : #{$mav-font-weight-thin};
+    --mav-font-weight-light     : #{$mav-font-weight-light};
+    --mav-font-weight-regular   : #{$mav-font-weight-regular};
+    --mav-font-weight-medium    : #{$mav-font-weight-medium};
+    --mav-font-weight-bold      : #{$mav-font-weight-bold};
+    --mav-font-weight-black     : #{$mav-font-weight-black};
+
+    --mav-font__weight--thin    : #{$mav-font-weight-thin};
+    --mav-font__weight--light   : #{$mav-font-weight-light};
+    --mav-font__weight--regular : #{$mav-font-weight-regular};
+    --mav-font__weight--medium  : #{$mav-font-weight-medium};
+    --mav-font__weight--bold    : #{$mav-font-weight-bold};
+    --mav-font__weight--black   : #{$mav-font-weight-black};
 
     --mav-font-size: 18px;
-    @media #{$mav-phone} {
-        --mav-font-size: 16px;
-    }
+    --mav-font__size: 18px;
+    // @media #{$mav-phone} {
+    //     --mav-font-size: 18px;
+    // }
+
     --mav-font-size-xl: 1.4rem;
     --mav-font-size-lg: 1.2rem;
-    --mav-font-size-sm: .8rem;
-    --mav-font-size-xs: .6rem;
+    --mav-font-size-nm: initial;
+    --mav-font-size-sm: 0.8rem;
+    --mav-font-size-xs: 0.6rem;
+
+    --mav-font__size--xl: 1.4rem;
+    --mav-font__size--lg: 1.2rem;
+    --mav-font__size--nm: initial;
+    --mav-font__size--sm: 0.8rem;
+    --mav-font__size--xs: 0.6rem;
 
     --mav-font-size-subtitle-1: 16px;
     --mav-font-size-subtitle-2: 14px;
 
+    --mav-font__size--subtitle-1: 16px;
+    --mav-font__size--subtitle-2: 14px;
+
     --mav-font-size-button: 1rem;
     --mav-font-size-caption: 1rem;
 
+    --mav-font__size--button: 1rem;
+    --mav-font__size--caption: 1rem;
+
     --mav-font-body: var(--mav-font-size);
 
-    --mav-color-text-primary        : #{$mav-color-text-primary};
-    --mav-color-text-secondary      : #{$mav-color-text-secondary};
-    --mav-color-text-primary-dark   : #{$mav-color-text-primary-dark};
-    --mav-color-text-secondary-dark : #{$mav-color-text-secondary-dark};
-    --mav-color-text-hint           : #{$mav-color-text-hint};
+    // Text Colors
 
-    --mav-color-body: #{$mav-color-text-primary};
+    --mav-color-text-primary        : #{$mav-color-text-primary};
+    --mav-color-text-primary-dark   : #{$mav-color-text-primary-dark};
+    --mav-color-text-secondary      : #{$mav-color-text-secondary};
+    --mav-color-text-secondary-dark : #{$mav-color-text-secondary-dark};
+
+    --mav-color-text-hint           : #{$mav-color-text-hint};
+    --mavc__text-hint               : #{$mav-color-text-hint};
+    --mavc__text-hint--dark         : #{$mav-color-text-hint};
+
+    --mav-color__text--primary           : #{$mav-color-text-primary};
+    --mav-color__text--primary--dark     : #{$mav-color-text-primary-dark};
+    --mav-color__text--secondary         : #{$mav-color-text-secondary};
+    --mav-color__text--secondary--dark   : #{$mav-color-text-secondary-dark};
+
+    // --mav-color-body    : #{$mav-color-text-primary};
+    // --mavc__body        : #{$mav-color-text-primary};
 
     @media #{$mav-desktop} {
-        --mav-site-width: #{$mav-site-width};
+        --mav-site-width    : #{$mav-site-width};
+        --mav-site--width   : #{$mav-site-width};
     }
 }
 
 %mav-transition {
     transition: all .3s ease;
+    &--fast {
+        transition: all .15s ease;
+    }
+    &--slow {
+        transition: all .6s ease;
+    }
 }
 
 
@@ -214,7 +314,7 @@ $mav-color-background: #fafafa;
 
 @keyframes mav-brand-color-transition {
     0% {
-        background-color: var(--mav-color-primary);
+        background-color: var(--mavc-primary);
     }
     50% {
         background-color: var(--mav-color-accent);
@@ -248,17 +348,17 @@ $mav-color-background: #fafafa;
     }
 }
 
-@keyframes mav-brand-color-dark {
-    0% {
-        background-color: var(--mav-color-primary);
-    }
-    50% {
-        // background-color: darken($mav-color-primary, 10%);
-        // background-color: #{'rgba(var(--mav-color-primary),1)'};
-    }
-    100% {
-        background-color: var(--mav-color-primary);
-    }
-}
+// @keyframes mav-brand-color-dark {
+//     0% {
+//         background-color: var(--mav-color-primary);
+//     }
+//     50% {
+//         // background-color: darken($mav-color-primary, 10%);
+//         // background-color: #{'rgba(var(--mav-color-primary),1)'};
+//     }
+//     100% {
+//         background-color: var(--mav-color-primary);
+//     }
+// }
 
 $mav-color-gradient-brand: linear-gradient(to right, var(--mav-color-primary) 0%, var(--mav-color-accent) 100%);

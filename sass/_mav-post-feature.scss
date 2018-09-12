@@ -4,7 +4,7 @@
 
 .mav-post-feature-wrapper {
     overflow: hidden;
-    margin-bottom: var(--mav-gutter-xl);
+    margin-bottom: var(--mav-gutter--xl);
     &:last-child, &:only-child {
         margin-bottom: 0;
     }
@@ -39,7 +39,6 @@
 .mav-post-feature-figure-wrapper {
     width: 100%;
     min-height: 100%;
-    background: var(--mav-color-accent);
     @media #{$mav-desktop} {
         grid-column: span 2;
     }
@@ -63,21 +62,18 @@
 .mav-post-feature-info-ctn {
     display: grid;
     grid-gap: var(--mav-gutter);
-    padding: var(--mav-gutter-lg);
-    background: #f2f2f2;
-    min-height: 100%;
+    padding: var(--mav-gutter--lg);
+    background: #efefef;
+    height: 100%;
 }
 
 // Title
 .mav-post-feature-title {
     font-size: 2rem;
-    font-weight: var(--mav-font-weight-light);
     text-align: center;
 }
 
 .mav-post-feature-intro {
-    font-size: 1rem;
-    color: var(--mav-color-text-secondary);
 }
 
 .mav-post-feature-cta-ctn {

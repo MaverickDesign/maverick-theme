@@ -13,7 +13,7 @@ add_settings_section(
 
 function mavf_theme_config_sec_theme_info()
 {
-   _e( 'Thông tin bộ giao diện', 'mavericktheme' );
+    _e( 'Thông tin bộ giao diện', 'mavericktheme' );
 }
 
 register_setting(

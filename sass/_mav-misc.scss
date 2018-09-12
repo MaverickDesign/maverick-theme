@@ -43,7 +43,7 @@
     width: 100%;
     padding: var(--mav-gutter-xs) var(--mav-gutter);
     box-shadow: inset 3px 0px var(--mav-color-accent);
-    border: 1px solid var(--mav-color-border);
+    border: 1px solid var(--mav-color--border);
     background: white;
     span {
         color: var(--mav-color-text-primary);
@@ -112,7 +112,7 @@
     min-height: 100vh;
     text-align: center;
     .mav-page-maintenance-section {
-        padding: var(--mav-gutter-lg);
+        padding: var(--mav-gutter--lg);
     }
     .mav-countdown-ctn {
         margin: 0 auto;
@@ -129,6 +129,6 @@
 
 .mav-posts-ctn {
     position: relative;
-    max-width: var(--mav-site-width);
+    max-width: var(--mav-site--width);
     margin: 0 auto;
 }

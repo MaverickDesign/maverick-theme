@@ -16,7 +16,10 @@ function mavf_site_setting_brand()
 }
 
 // Brand Logo
-register_setting( 'mavog_site_setting', 'mav_setting_brand_logo' );
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_brand_logo'
+);
 add_settings_field(
     'mavid_site_setting_brand_logo',
     __( 'Biểu tượng thương hiệu', 'mavericktheme' ),
@@ -32,7 +35,7 @@ function mavf_site_setting_brand_logo()
         if ( empty( $mav_saved_value ) ) {
             printf(
                 '<input id="mavid-btn-upload-brand-logo" type="button" value="%1$s">',
-                __( 'Upload Brand logo', 'mavericktheme' )
+                __( 'Thiết lập', 'mavericktheme' )
             );
             echo '<input id="mavid-brand-logo" type="hidden" name="mav_setting_brand_logo" value="">';
         } else {

@@ -5,17 +5,20 @@
 
 add_settings_section(
     'mavsec_site_setting_terms',
-    __('Thỏa thuận với người dùng', 'mavericktheme'),
+    __( 'Thỏa thuận với người dùng', 'mavericktheme' ),
     'mavf_site_setting_sec_terms',
     'mav_admin_page_site_setting'
 );
 
 function mavf_site_setting_sec_terms()
 {
-    _e('Thiết lập thỏa thuận người dùng', 'mavericktheme');
+    _e( 'Thiết lập thỏa thuận người dùng', 'mavericktheme' );
 }
 
-register_setting('mavog_site_setting', 'mav_setting_enable_terms');
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_enable_terms'
+);
 
 add_settings_field(
     'mavid_site_setting_enable_terms',

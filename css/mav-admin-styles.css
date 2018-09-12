@@ -4,16 +4,9 @@
 /*
  * Text Contrast
  */
-/**
- * Color code
- */
-:root {
-  --mav-black: black;
-  --mav-gray: rgba(0, 0, 0, 0.5);
-  --mav-white: White; }
-
+/* Layers */
 * {
-  z-index: 0; }
+  z-index: initial; }
 
 /**
  * Font Stacks
@@ -31,30 +24,61 @@
  * CSS Variables
  */
 :root {
+  /* Font Families */
+  --mav-font__family--awesome: 'Font Awesome 5 Free';
+  --mav-font__family--exo: 'Exo', Arial, sans-serif;
+  --mav-font__family--roboto: 'Roboto', Arial, sans-serif;
+  --mav-font__family--roboto-cond: 'Roboto Condensed', Arial, sans-serif;
+  --mav-font__family--roboto-slab: 'Roboto Slab', serif;
+  --mav-font__family--roboto-mono: 'Roboto Mono', monospace;
+  --mav-font__family--alfa-slab-one: "Alfa Slab One", cursive;
+  --mav-font__family--ibm-plex-sans: 'IBM Plex Sans', Arial, sans-serif;
+  --mav-font__family--ibm-plex-serif: 'IBM Plex Serif', serif;
+  --mav-font__family--montserrat: 'Montserrat', sans-serif;
+  --mav-font--primary: var(--mav-font__family--ibm-plex-serif);
+  --mav-font--secondary: var(--mav-font__family--exo);
   /**
+   * ==================================================
    * Layouts
+   * ==================================================
    */
   --mav-gutter: 20px;
   --mav-gutter-xl: calc(var(--mav-gutter) * 4);
   --mav-gutter-lg: calc(var(--mav-gutter) * 2);
   --mav-gutter-sm: calc(var(--mav-gutter) / 2);
   --mav-gutter-xs: calc(var(--mav-gutter) / 4);
+  --mav-gutter--xl: calc(var(--mav-gutter) * 4);
+  --mav-gutter--lg: calc(var(--mav-gutter) * 2);
+  --mav-gutter--sm: calc(var(--mav-gutter) / 2);
+  --mav-gutter--xs: calc(var(--mav-gutter) / 4);
   /**
+   * ==================================================
    * Colors
+   * ==================================================
    */
-  /* Brand colors */
   --mav-color-primary: #c22f23;
-  --mav-color-accent: #4599a0;
+  --mav-color--primary: #c22f23;
+  --mavc-primary: #c22f23;
+  --mav-color-accent: #1b8d97;
+  --mav-color--accent: #1b8d97;
+  --mavc-accent: #1b8d97;
   --mav-color-black: #464646;
   --mavc-black: #464646;
   --mav-color-off-white: #fafafa;
+  --mavc-off-white: #fafafa;
   --mav-color-highlight: yellow;
+  --mavc-highlight: yellow;
   --mav-color-site-background: #fafafa;
-  --mav-color-site-header: #c22f23;
+  --mavc-site--background: #fafafa;
+  --mav-color-site-header: var(--mav-color-primary);
+  --mavc-site__header--background: var(--mav-color-primary);
   --mav-color-site-footer: var(--mav-color-accent);
+  --mavc-site__footer--background: var(--mav-color-accent);
   --mav-color-header-menu-background: var(--mav-color-primary);
+  --mavc__header-menu--background: var(--mav-color-primary);
   --mav-color-header-menu-background-hover: rgba(0,0,0,.2);
   --mav-color-border: #ddd;
+  --mav-color--border: #ddd;
   /**
    * Typography
    */
@@ -64,35 +88,55 @@
   --mav-font-weight-medium: 500;
   --mav-font-weight-bold: 700;
   --mav-font-weight-black: 900;
+  --mav-font__weight--thin: 100;
+  --mav-font__weight--light: 300;
+  --mav-font__weight--regular: 400;
+  --mav-font__weight--medium: 500;
+  --mav-font__weight--bold: 700;
+  --mav-font__weight--black: 900;
   --mav-font-size: 18px;
+  --mav-font__size: 18px;
   --mav-font-size-xl: 1.4rem;
   --mav-font-size-lg: 1.2rem;
-  --mav-font-size-sm: .8rem;
-  --mav-font-size-xs: .6rem;
+  --mav-font-size-nm: initial;
+  --mav-font-size-sm: 0.8rem;
+  --mav-font-size-xs: 0.6rem;
+  --mav-font__size--xl: 1.4rem;
+  --mav-font__size--lg: 1.2rem;
+  --mav-font__size--nm: initial;
+  --mav-font__size--sm: 0.8rem;
+  --mav-font__size--xs: 0.6rem;
   --mav-font-size-subtitle-1: 16px;
   --mav-font-size-subtitle-2: 14px;
+  --mav-font__size--subtitle-1: 16px;
+  --mav-font__size--subtitle-2: 14px;
   --mav-font-size-button: 1rem;
   --mav-font-size-caption: 1rem;
+  --mav-font__size--button: 1rem;
+  --mav-font__size--caption: 1rem;
   --mav-font-body: var(--mav-font-size);
-  --mav-color-text-primary: rgba(0, 0, 0, 0.87);
-  --mav-color-text-secondary: rgba(0, 0, 0, 0.6);
+  --mav-color-text-primary: #222;
   --mav-color-text-primary-dark: #fafafa;
+  --mav-color-text-secondary: #aaa;
   --mav-color-text-secondary-dark: #ddd;
-  --mav-color-text-hint: rgba(0, 0, 0, 0.38);
-  --mav-color-body: rgba(0, 0, 0, 0.87); }
-  @media only screen and (max-width: 480px) {
-    :root {
-      --mav-font-size: 16px; } }
+  --mav-color-text-hint: #ababad;
+  --mavc__text-hint: #ababad;
+  --mavc__text-hint--dark: #ababad;
+  --mav-color__text--primary: #222;
+  --mav-color__text--primary--dark: #fafafa;
+  --mav-color__text--secondary: #aaa;
+  --mav-color__text--secondary--dark: #ddd; }
   @media only screen and (min-width: 1024px) {
     :root {
-      --mav-site-width: 1680px; } }
+      --mav-site-width: 1680px;
+      --mav-site--width: 1680px; } }
 
 /**
  * Keyframe animations
  */
 @keyframes mav-brand-color-transition {
   0% {
-    background-color: var(--mav-color-primary); }
+    background-color: var(--mavc-primary); }
   50% {
     background-color: var(--mav-color-accent); }
   100% {
@@ -111,11 +155,6 @@
     background-color: var(--mav-color-primary); }
   100% {
     background-color: var(--mav-color-accent); } }
-@keyframes mav-brand-color-dark {
-  0% {
-    background-color: var(--mav-color-primary); }
-  100% {
-    background-color: var(--mav-color-primary); } }
 #wpcontent {
   padding-right: 20px; }
   @media only screen and (max-width: 480px) {
@@ -131,7 +170,7 @@
   .mav-admin-page-wrapper p {
     font-size: 1rem; }
   .mav-admin-page-wrapper .mav-admin-page-container {
-    margin-top: var(--mav-gutter-lg);
+    margin-top: var(--mav-gutter--lg);
     display: grid;
     grid-gap: var(--mav-gutter); }
     @media only screen and (min-width: 1024px) {
@@ -142,7 +181,7 @@
     line-height: 1.2; }
   .mav-admin-page-wrapper h2 {
     font-size: 1.25rem;
-    margin-top: var(--mav-gutter-lg); }
+    margin-top: var(--mav-gutter--lg); }
     .mav-admin-page-wrapper h2:first-of-type {
       margin-top: 0; }
   .mav-admin-page-wrapper .mav-grid {
@@ -168,9 +207,9 @@
       display: grid;
       background: #fafafa;
       margin-top: var(--mav-gutter);
-      border: 1px solid var(--mav-color-border);
+      border: 1px solid var(--mav-color--border);
       box-sizing: border-box;
-      box-shadow: inset 4px 0 var(--mav-color-border); }
+      box-shadow: inset 4px 0 var(--mav-color--border); }
       .mav-admin-page-wrapper form .form-table tbody {
         padding: var(--mav-gutter);
         max-width: 100%; }
@@ -179,7 +218,7 @@
         display: grid;
         grid-template-columns: 30% auto;
         grid-gap: var(--mav-gutter-sm);
-        border-bottom: 1px solid var(--mav-color-border); }
+        border-bottom: 1px solid var(--mav-color--border); }
         .mav-admin-page-wrapper form .form-table tr:only-child, .mav-admin-page-wrapper form .form-table tr:last-child {
           border-bottom: 0; }
         @media only screen and (max-width: 480px) {
@@ -216,9 +255,9 @@
   .mav-admin-page-wrapper .mav-desc {
     color: var(--mav-color-text-secondary); }
   .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn {
-    padding: var(--mav-gutter-lg);
+    padding: var(--mav-gutter--lg);
     background: white;
-    border: 1px solid var(--mav-color-border); }
+    border: 1px solid var(--mav-color--border); }
     @media only screen and (min-width: 1024px) {
       .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn {
         max-width: 30vw;
@@ -228,7 +267,7 @@
       grid-template-columns: auto 1fr;
       grid-gap: var(--mav-gutter);
       align-items: center;
-      margin-bottom: var(--mav-gutter-lg); }
+      margin-bottom: var(--mav-gutter--lg); }
       .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn header p {
         margin: 0; }
     .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn .mav-admin-maverick-logo {
@@ -239,5 +278,10 @@
         height: 100%;
         width: 100%;
         object-fit: contain; }
+
+.mav-admin-color-preview-box {
+  margin-top: var(--mav-gutter-xs);
+  display: inline-block;
+  height: 30px; }
 
 /*# sourceMappingURL=mav-admin-styles.css.map */

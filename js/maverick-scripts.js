@@ -107,6 +107,9 @@ if (mavToolTips.length > 0) {
     }
 })();
 
+/**
+ * Create bottom container for buttons
+ */
 (function mavf_create_bottom_container(){
     const mavBottomContainer = document.createElement('div');
     mavBottomContainer.classList.add('mav-bottom-container');
@@ -159,6 +162,9 @@ if (typeof mavf_btn_scroll_to_top === 'function') {
     mavf_btn_scroll_to_top('span','mav-btn-top','Lên đầu trang');
 }
 
+/**
+ * Go Back Button
+ */
 function mavf_go_back_button(mavEle = 'span', mavClass = 'mav-btn-back', mavTitle = 'Trở lại trang trước') {
     const mavElement = document.createElement(mavEle);
     mavElement.classList.add(mavClass);

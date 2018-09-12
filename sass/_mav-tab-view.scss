@@ -3,7 +3,7 @@
     // position: relative;
     overflow: hidden;
     padding: var(--mav-gutter-xs);
-    background: var(--mav-color-border);
+    background: var(--mav-color--border);
     // Container
     .mav-tab-ctn {
         display: grid;
@@ -17,7 +17,7 @@
             background: #fafafa;
             line-height: 1.25rem;
             cursor: pointer;
-            border-bottom: 1px solid var(--mav-color-border);
+            border-bottom: 1px solid var(--mav-color--border);
             @extend %mav-transition;
             &:hover {
                 color: var(--mav-color-text-primary);
@@ -50,7 +50,7 @@
         .mav-tab-content-wrapper {
             opacity: 0;
             grid-area: content;
-            padding: var(--mav-gutter-lg);
+            padding: var(--mav-gutter--lg);
             background: white;
             max-height: 75vh;
             overflow: hidden;
@@ -75,7 +75,7 @@
             }
             .mav-tab-trigger {
                 align-items: center;
-                border-right: 1px solid var(--mav-color-border);
+                border-right: 1px solid var(--mav-color--border);
                 &[data-state="active"] {
                     border-right-color: transparent;
                     box-shadow: inset 3px 0px var(--mav-color-primary);
@@ -92,7 +92,7 @@
     background: transparent;
     padding: 0;
         .mav-tab-ctn {
-            grid-column-gap: var(--mav-gutter-lg);
+            grid-column-gap: var(--mav-gutter--lg);
             .mav-tab-trigger {
                 background: transparent;
                 border: none;
@@ -111,9 +111,9 @@
             }
             .mav-tab-content-wrapper {
                 padding: 0;
-                padding-top: var(--mav-gutter-lg);
+                padding-top: var(--mav-gutter--lg);
                 background: transparent;
-                box-shadow: 0 -1px var(--mav-color-border);
+                box-shadow: 0 -1px var(--mav-color--border);
             }
         }
     }

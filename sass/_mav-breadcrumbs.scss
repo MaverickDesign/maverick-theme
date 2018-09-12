@@ -1,34 +1,28 @@
 .mav-breadcrumbs-wrapper {
-    background: var(--mav-color-site-background);
-    box-shadow: 0 1px var(--mav-color-border);
+    font-family: var(--mav-font--secondary);
+    box-shadow: 0 1px var(--mav-color--border);
     @media #{$mav-mobile} {
         display: none;
     }
 }
 
 .mav-breadcrumbs-ctn {
-    max-width: var(--mav-site-width);
+    max-width: var(--mav-site--width);
     padding: var(--mav-gutter);
     margin: 0 auto;
 }
+
 .mav-breadcrumbs {
     display: flex;
-    @extend %mav-link-reset;
     li {
         list-style-type: none;
         margin-left: 0;
-        margin-right: var(--mav-gutter-xs);
+        margin-right: var(--mav-gutter--sm);
         &:last-child {
             margin-right: 0;
         }
     }
     .item-current, .item-home {
-        color: var(--mav-color-text-primary);
-    }
-    a {
-        &:hover {
-            text-decoration: underline;
-            text-underline-position: under;
-        }
+        color: var(--mav-color__text--primary);
     }
 }

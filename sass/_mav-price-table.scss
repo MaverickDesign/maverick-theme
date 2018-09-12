@@ -18,7 +18,7 @@
     display: grid;
     text-align: center;
     color: var(--mav-color-text-secondary);
-    border: 2px solid var(--mav-color-border);
+    border: 2px solid var(--mav-color--border);
     // Recommended table
     &[data-size="big"] {
         position: relative;
@@ -27,7 +27,7 @@
         z-index: $mav-layer-overlay;
         > [data-row="header"] {
             background: var(--mav-color-primary);
-            padding: var(--mav-gutter-lg) var(--mav-gutter);
+            padding: var(--mav-gutter--lg) var(--mav-gutter);
             font-size: var(--mav-font-size-xl);
             font-weight: var(--mav-font-weight-bold);
         }
@@ -53,7 +53,7 @@
 .mav-price-table-row {
     @extend .mav-flex-center-all;
     padding: var(--mav-gutter);
-    box-shadow: inset 0 -1px 0px var(--mav-color-border);
+    box-shadow: inset 0 -1px 0px var(--mav-color--border);
     background: white;
     overflow: hidden;
     &:last-child {
@@ -79,7 +79,7 @@
             text-transform: uppercase;
             font-size: .75rem;
             padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
-            border: 1px solid var(--mav-color-border);
+            border: 1px solid var(--mav-color--border);
             border-radius: 10%;
         }
     }

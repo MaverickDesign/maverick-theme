@@ -7,8 +7,8 @@ button {
 
     color: inherit;
 
-    font-weight: var(--mav-font-weight-bold);
-    font-family: $font-roboto-cond;
+    font-family: var(--mav-font--secondary);
+    font-weight: var(--mav-font__weight--bold);
 
     cursor: pointer;
 
@@ -17,13 +17,9 @@ button {
     }
 
     a {
-        text-decoration: none;
-        box-shadow: none;
         height: 100%;
         width: 100%;
-        &:hover {
-            background: unset;
-        }
+        text-decoration: none;
     }
 }
 

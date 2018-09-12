@@ -20,7 +20,7 @@
             @extend %mav-link-reset;
             li {
                 list-style-type: none;
-                margin-right: var(--mav-gutter-lg);
+                margin-right: var(--mav-gutter--lg);
                 a {
                     &:hover {
                         @extend %mav-link-text-accent;

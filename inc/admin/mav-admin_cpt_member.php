@@ -15,7 +15,7 @@ $mavMemberArgs = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array('slug' => __('thanh_vien', 'mavericktheme')),
+    'rewrite'            => array('slug' => __('member', 'mavericktheme')),
 );
 
 register_post_type('mav_cpt_member', $mavMemberArgs);

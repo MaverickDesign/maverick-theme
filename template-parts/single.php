@@ -18,12 +18,14 @@
                     <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>)">
                     </div>
             <?php endif; ?>
+
             <!-- Post title -->
             <?php
                 if ( is_single() && ! is_attachment() ) {
-                    printf( '<div class="mav-pg-ctn"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1></div>', get_the_title() );
+                    printf( '<div class="mav-post-title-ctn"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1></div>', get_the_title() );
                 }
             ?>
+
             <!-- Post info -->
             <?php if ( ! is_attachment() ) : ?>
                 <div id="mavid-post-info" class="mav-post-info-wrapper">

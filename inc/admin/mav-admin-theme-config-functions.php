@@ -5,6 +5,7 @@
 
 function mavf_admin_theme_config_options()
 {
+
     // Enable Development Mode
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_dev-mode.php';
 
@@ -49,7 +50,6 @@ function mavf_admin_theme_config_options()
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_breadcrumbs.php';
 
 }
-
 add_action( 'admin_init', 'mavf_admin_theme_config_options' );
 
 // Create admin page for Theme Config

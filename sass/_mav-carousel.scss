@@ -9,13 +9,13 @@
     }
     .mav-carousel-nav-wrapper {
         position: relative;
-        min-width: var(--mav-gutter-lg);
-        min-height: var(--mav-gutter-lg);
+        min-width: var(--mav-gutter--lg);
+        min-height: var(--mav-gutter--lg);
         .mav-carousel-nav {
             position: relative;
             @extend .mav-flex-center-all;
-            width: var(--mav-gutter-lg);
-            height: var(--mav-gutter-lg);
+            width: var(--mav-gutter--lg);
+            height: var(--mav-gutter--lg);
 
             font-size: 1.5rem;
             color: var(--mav-color-text-secondary);

@@ -20,14 +20,10 @@
                 <div class="mav-sec-body-wrapper">
                     <div class="mav-sec-body-ctn">
                         <?php
-                        printf(
-                            '<p class="mav-flex-center mav-text--lg mav-text--center">%1$s</p>',
-                            __('Nội dung trang web này đang được cập nhật, vui lòng quay lại sau.', 'mavericktheme')
-                        );
-                        echo '<div class="mav-margin-top-lg">';
-                            // Back and Home Buttons
-                            require TEMPLATE_DIR.'/template-parts/mav-button__back-and-home.php';
-                        echo '</div>';
+                            printf(
+                                '<p class="mav-text--center mav-text--lg">%1$s</p>',
+                                __( 'Nội dung trang web này đang được cập nhật, vui lòng quay lại sau.', 'mavericktheme' )
+                            );
                         ?>
                     </div>
                 </div>
@@ -36,6 +32,12 @@
 
         <!-- Page Footer -->
         <footer id="mavid-page-footer" class="mav-page-footer mav-page-footer-wrapper">
+            <?php
+                printf('<div class="mav-margin-bottom-xl">');
+                    // Back and Home Buttons
+                    require TEMPLATE_DIR.'/template-parts/mav-button__back-and-home.php';
+                echo '</div>';
+            ?>
         </footer>
     </div>
 </main>

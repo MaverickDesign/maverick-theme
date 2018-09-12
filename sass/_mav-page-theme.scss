@@ -8,10 +8,10 @@
         &-content {
             margin: 0 auto;
             max-width: var(--mav-site-width);
-            padding: var(--mav-gutter-lg) 0;
+            padding: var(--mav-gutter--lg) 0;
         }
         &-body {
-            padding: var(--mav-gutter-lg) 0;
+            padding: var(--mav-gutter--lg) 0;
         }
     }
 }
@@ -35,8 +35,8 @@
 #mavid-sec-typography {
     .mav-sec-body-ctn {
         section {
-            padding: var(--mav-gutter-lg) 0;
-            border-bottom: 1px solid var(--mav-color-border);
+            padding: var(--mav-gutter--lg) 0;
+            border-bottom: 1px solid var(--mav-color--border);
             &:first-child {
                 padding-top: 0;
             }

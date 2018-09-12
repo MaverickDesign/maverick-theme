@@ -15,9 +15,11 @@ $mav_args = array(
     'supports'      => array(
         'title','editor','thumbnail'
     ),
-    'rewrite'            => array( 'slug' => __( 'nhan_xet', 'mavericktheme' ) ),
+    'rewrite'       => array(
+        'slug' => __( 'testimonial', 'mavericktheme' )
+    ),
 );
 
-register_post_type('mav_cpt_testimonial', $mav_args);
+register_post_type( 'mav_cpt_testimonial', $mav_args );
 
 flush_rewrite_rules();

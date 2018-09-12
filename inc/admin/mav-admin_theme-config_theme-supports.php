@@ -5,7 +5,7 @@
 
 add_settings_section(
     'mavsec_theme_config_theme_support',
-    __('Hỗ trợ các tính năng', 'mavericktheme'),
+    __( 'Hỗ trợ các tính năng', 'mavericktheme' ),
     'mavf_theme_config_theme_support',
     'mav_admin_page_theme_config'
 );

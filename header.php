@@ -50,6 +50,8 @@
             <!-- End Google Tag Manager -->
         <?php endif;
     ?>
+
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo get_bloginfo('description')?>">
@@ -62,7 +64,7 @@
     <?php if ( ! is_404() && has_post_thumbnail() ) : ?>
         <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" />
     <?php endif; ?>
-    <!-- Open Graph Data -->
+    <!-- End of Open Graph Data -->
 
     <title>
         <?php
@@ -71,7 +73,11 @@
                 echo(' - ');
                 bloginfo( 'name' );
             } else {
-                bloginfo( 'name' );
+                $mav_blog_desc = get_bloginfo('description');
+                echo get_bloginfo( 'name' );
+                if ( ! empty( $mav_blog_desc ) ) {
+                    echo ' - '.$mav_blog_desc;
+                }
             }
         ?>
     </title>
@@ -81,20 +87,37 @@
         wp_head();
     ?>
 
-    <style>
-        :root {
-            <?php
+    <!-- Modified Theme Styles -->
+    <?php
+        echo '<style>';
+            echo ':root {';
+
                 /* Site Width */
-                $mavSiteWidth = esc_attr( get_option( 'mav_setting_grid_system' ) );
-                if ( !empty( $mavSiteWidth ) ) {
-                    echo '--mav-site-width: '.$mavSiteWidth.'px';
-                }
-            ?>
-        }
-    </style>
+                    $mav_site_width = esc_attr( get_option( 'mav_setting_grid_system' ) );
+                    if ( ! empty( $mav_site_width ) ) {
+                        echo '--mav-site-width: '.$mav_site_width.'px;';
+                        echo '--mav-site--width: '.$mav_site_width.'px;';
+                    }
+
+                    /* Primary Color */
+                    $mav_color__primary = esc_attr( get_option( 'mav_setting_color_primary' ) );
+                    if ( ! empty( $mav_color__primary ) ) {
+                        echo "--mav-color-primary: $mav_color__primary;";
+                        echo "--mavc-primary: $mav_color__primary;";
+                    }
+
+                    /* Accent Color */
+                    $mav_color__accent = esc_attr( get_option( 'mav_setting_color_accent' ) );
+                    if ( ! empty( $mav_color__accent ) ) {
+                        echo "--mav-color-accent: $mav_color__accent;";
+                        echo "--mavc-accent: $mav_color__accent;";
+                    }
+            echo '}';
+        echo '</style>';
+    ?>
 </head>
 
-<body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mavSiteWidth; ?>">
+<body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mav_site_width; ?>">
     <?php
         if ( ! empty( $mav_egtm ) && ! empty( $mav_gtm_id ) ) : ?>
             <!-- Google Tag Manager (noscript) -->

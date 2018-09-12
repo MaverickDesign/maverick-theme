@@ -22,7 +22,7 @@
         font-size: 1rem;
     }
     .mav-admin-page-container {
-        margin-top: var(--mav-gutter-lg);
+        margin-top: var(--mav-gutter--lg);
         display: grid;
         grid-gap: var(--mav-gutter);
         @media #{$mav-desktop} {
@@ -36,7 +36,7 @@
 
     h2 {
         font-size: 1.25rem;
-        margin-top: var(--mav-gutter-lg);
+        margin-top: var(--mav-gutter--lg);
         &:first-of-type {
             margin-top: 0;
         }
@@ -72,9 +72,9 @@
             display: grid;
             background: #fafafa;
             margin-top: var(--mav-gutter);
-            border: 1px solid var(--mav-color-border);
+            border: 1px solid var(--mav-color--border);
             box-sizing: border-box;
-            box-shadow: inset 4px 0 var(--mav-color-border);
+            box-shadow: inset 4px 0 var(--mav-color--border);
             tbody {
                 padding: var(--mav-gutter);
                 max-width: 100%;
@@ -84,7 +84,7 @@
                 display: grid;
                 grid-template-columns: 30% auto;
                 grid-gap: var(--mav-gutter-sm);
-                border-bottom: 1px solid var(--mav-color-border);
+                border-bottom: 1px solid var(--mav-color--border);
                 &:only-child, &:last-child {
                     border-bottom: 0;
                 }
@@ -146,9 +146,9 @@
     /* Theme Info */
     .mav-admin-theme-info-wrapper {
         .mav-admin-theme-info-ctn {
-            padding: var(--mav-gutter-lg);
+            padding: var(--mav-gutter--lg);
             background: white;
-            border: 1px solid var(--mav-color-border);
+            border: 1px solid var(--mav-color--border);
             @media #{$mav-desktop} {
                 max-width: 30vw;
                 // margin: 0 auto;
@@ -159,7 +159,7 @@
                 grid-template-columns: auto 1fr;
                 grid-gap: var(--mav-gutter);
                 align-items: center;
-                margin-bottom: var(--mav-gutter-lg);
+                margin-bottom: var(--mav-gutter--lg);
                 p {
                     margin: 0;
                 }
@@ -176,4 +176,10 @@
             }
         }
     }
+}
+
+.mav-admin-color-preview-box {
+    margin-top: var(--mav-gutter-xs);
+    display: inline-block;
+    height: 30px;
 }

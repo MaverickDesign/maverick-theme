@@ -1,24 +1,31 @@
 .mav-post {
     &-header {
         text-align: center;
-    }
-    &-title {
-        padding: var(--mav-gutter-lg) 0;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        word-wrap: break-word;
         @media #{$mav-phone} {
-            font-family: $font-roboto-cond;
-            font-weight: var(--mav-font-weight-bold);
+            text-align: left;
         }
+    }
+    &-title-ctn {
+        padding: var(--mav-gutter--lg) var(--mav-gutter);
+        margin: 0 auto;
+        // margin-left: auto;
+        // margin-right: auto;
+        // width: 100%;
+
         @media #{$mav-tablet} {
             max-width: 80%;
         }
         @media #{$mav-desktop} {
-            padding: var(--mav-gutter-xl) 0;
-            max-width: 60%;
-            font-weight: var(--mav-font-weight-light);
+            max-width: 66vw;
+            padding: var(--mav-gutter--xl) 0;
+        }
+    }
+    &-title {
+        font-family: var(--mav-font--primary);
+        line-height: 1.25;
+        word-wrap: break-word;
+        @media #{$mav-phone} {
+            text-align: left;
         }
     }
     /**
@@ -34,13 +41,10 @@
             box-shadow: inset 0 0 80px rgba(0,0,0,0.33);
         }
     }
-    &-info-wrapper {
-        @extend .mav-site-width;
-    }
     &-info-ctn {
-        padding: var(--mav-gutter) 0;
-        box-shadow: 0 1px var(--mav-color-border);
-        margin: 0 var(--mav-gutter);
+        padding: var(--mav-gutter);
+        background: var(--mavc-off-white);
+        box-shadow: 0 1px var(--mavc-border);
         span {
             margin-right: var(--mav-gutter);
             white-space: nowrap;
@@ -49,7 +53,7 @@
             }
             &:before {
                 @extend %mav-font-awesome;
-                margin-right: var(--mav-gutter-xs);
+                margin-right: var(--mav-gutter--xs);
             }
         }
     }
@@ -57,17 +61,17 @@
     .mav-post-footer-wrapper {
         background: var(--mav-color-off-white);
         .mav-post-footer-ctn {
+            max-width: var(--mav-site--width);
+            margin: 0 auto;
             display: grid;
-            grid-gap: var(--mav-gutter);
-            @extend .mav-pg-ctn;
-            color: var(--mav-color-text-primary);
-            padding: var(--mav-gutter-lg) var(--mav-gutter);
+            grid-gap: var(--mav-gutter-lg);
+            padding: var(--mav-gutter--xl) var(--mav-gutter);
             h4 {
                 font-size: 1rem;
                 color: inherit;
                 text-transform: uppercase;
-                margin-bottom: var(--mav-gutter-sm);
-                font-weight: var(--mav-font-weight-medium);
+                margin-bottom: var(--mav-gutter--sm);
+                font-weight: var(--mav-font__weight--bold);
                 letter-spacing: .5px;
             }
         }
@@ -83,20 +87,19 @@
         a {
             max-width: max-content;
             text-decoration: none;
-            padding: var(--mav-gutter-sm);
-            border: 1px solid var(--mav-color-border);
+            padding: var(--mav-gutter--sm);
+            border: 1px solid var(--mav-color--border);
             border-radius: 4px;
             transition: all .15s;
-            background: #fdfdfd;
             &:hover {
-                border-color: var(--mav-color-primary);
+                border-color: var(--mav-color--accent);
             }
             &:before, &:after {
                 @extend %mav-font-awesome;
             }
             @media #{$mav-phone} {
                 width: 100%;
-                margin-bottom: var(--mav-gutter-sm);
+                margin-bottom: var(--mav-gutter--sm);
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -105,7 +108,7 @@
                 justify-self: flex-start;
                 &:before {
                     content: '\f104';
-                    margin-right: var(--mav-gutter-sm);
+                    margin-right: var(--mav-gutter--sm);
                 }
             }
             &[rel="next"] {
@@ -113,7 +116,7 @@
                 text-align: right;
                 &:after {
                     content: '\f105';
-                    margin-left: var(--mav-gutter-sm);
+                    margin-left: var(--mav-gutter--sm);
                 }
             }
         }
@@ -125,9 +128,8 @@
 .mav-post-info {
     &:before {
         @extend %mav-font-awesome;
-        margin-right: var(--mav-gutter-xs);
-        font-size: inherit;
-        color: var(--mav-color-text-secondary);
+        margin-right: var(--mav-gutter--xs);
+        color: var(--mav-color__text--secondary);
     }
     &[data-type="category"] {
         &:before {
@@ -152,11 +154,11 @@
 
 .mav-post-content-wrapper {
     .mav-post-content-ctn {
-        padding: var(--mav-gutter);
-        max-width: var(--mav-site-width);
-        margin: var(--mav-gutter-lg) auto;
+        padding: 0 var(--mav-gutter);
+        max-width: var(--mav-site--width);
+        margin: var(--mav-gutter--xl) auto;
         @media #{$mav-tablet} {
-            max-width: 85vw;
+            max-width: 75vw;
         }
         @media #{$mav-desktop} {
             max-width: 800px;
@@ -165,9 +167,8 @@
 }
 
 .mav-post-content {
-    color: var(--mav-color-text-primary);
-
     h2, .mav-h2 {
+        font-weight: var(--mav-font__weight--bold);
         margin-top: 1em;
         margin-bottom: .5em;
         &:first-of-type {
@@ -179,11 +180,10 @@
     }
 
     p {
-        color: var(--mav-color-text-primary);
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
-        line-height: 1.75em;
-        &:first-of-type {
+        font-weight: var(--mav-font__weight--regular);
+        margin: 1.5em 0;
+        line-height: 1.75;
+        &:first-child, &:only-child {
             margin-top: 0;
         }
         &:last-child, &:only-child {
@@ -243,14 +243,16 @@
             margin: 0 auto;
         }
     }
-
+    .aligncenter {
+        margin: 0 auto;
+    }
     .alignleft {
         float: left;
-        margin-right: var(--mav-gutter-lg);
+        margin-right: var(--mav-gutter--lg);
     }
     .alignright {
         float: right;
-        margin-left: var(--mav-gutter-lg);
+        margin-left: var(--mav-gutter--lg);
         &:only-child{
             float: none;
             margin-left: 0;
@@ -275,8 +277,8 @@
         text-align: center;
         width: max-content;
         max-width: 100%;
-        border: 1px solid var(--mav-color-border);
-        padding: 0 var(--mav-gutter);
+        border: 1px solid var(--mav-color--border);
+        padding: 0 var(--mav-gutter-lg);
         &:before, &:after {
             display: block;
             @extend %mav-font-awesome;
@@ -301,7 +303,7 @@
         p {
             font-size: var(--mav-font-size-xl);
             font-weight: var(--mav-font-weight-light);
-            color: var(--mav-color-text-primary);
+            margin-bottom: 0;
         }
         cite, .mav-quote-author {
             color: var(--mav-color-text-secondary);
@@ -355,11 +357,11 @@
     /**
      * Address Tag
      */
-     address {
-         margin-bottom: 1rem;
-         padding-left: var(--mav-gutter);
-         border-left: 3px solid var(--mav-color-accent);
-     }
+    address {
+        margin-bottom: 1rem;
+        padding-left: var(--mav-gutter);
+        border-left: 3px solid var(--mav-color--accent);
+    }
 
 
 }
@@ -376,14 +378,14 @@
             @extend .mav-flex-center-all;
             @extend %mav-font-awesome;
             content: '\f06d';
-            height: var(--mav-gutter-sm);
-            width: var(--mav-gutter-sm);
-            padding: var(--mav-gutter-sm);
+            height: var(--mav-gutter);
+            width: var(--mav-gutter);
+            padding: var(--mav-gutter--sm);
             border-radius: 50%;
-            background: var(--mav-color-primary);
-            color: var(--mav-color-text-primary-dark);
+            background: var(--mav-color--primary);
+            color: var(--mav-color__text--primary--dark);
             animation: mav-brand-color-transition 2s infinite;
-            transform: translate(var(--mav-gutter-sm),var(--mav-gutter-sm));
+            transform: translate(var(--mav-gutter--sm),var(--mav-gutter--sm));
         }
     }
     .mav-card-post-thumbnail {
@@ -395,63 +397,20 @@
  * Post gallery
  */
 
-.gallery {
-    position: relative;
-    display: grid;
-    justify-content: center;
-    grid-gap: var(--mav-gutter);
-    max-width: var(--mav-site-width);
-    margin: var(--mav-gutter-lg) auto;
-    @extend %mav-link-reset;
-    @media #{$mav-phone} {
-        grid-template-columns: repeat(2,1fr)!important;
-    }
-    @media #{$mav-tablet} {
-        grid-template-columns: repeat(3,1fr)!important;
-    }
-    @media #{$mav-desktop} {
-        grid-template-columns: repeat(4,1fr);
-        grid-gap: var(--mav-gutter);
-    }
-    .gallery-item {
-        * {
-            width: 100%;
-            height: 100%;
-        }
-    }
+.gallery, .wp-block-gallery {
+    max-width: var(--mav-site--width);
     figure {
-        position: relative;
-        a {
-            display: flex;
-        }
         img {
-            height: auto;
-            padding: var(--mav-gutter-xs);
+            padding: var(--mav-gutter--xs);
             object-fit: cover;
-            border: 1px solid var(--mav-color-border);
+            border: 1px solid var(--mav-color--border);
             @extend %mav-transition;
-            &:hover {
-                border-color: var(--mav-color-accent);
-            }
-        }
-        figcaption {
-            position: absolute;
-            padding: var(--mav-gutter);
-            font-size: var(--mav-font-size-sm);
-            color: var(--mav-color-text-secondary);
-            bottom: 0;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: flex-end;
-            color: white;
-            text-shadow: 0 0 2px #444;
         }
     }
 }
 
-@for $columns from 1 to 8 {
-    .gallery-columns-#{$columns} {
+@for $columns from 1 to 9 {
+    .gallery-columns-#{$columns}, .columns-#{$columns} {
         grid-template-columns: repeat(#{$columns},1fr);
     }
 }
@@ -462,24 +421,23 @@
 .mav-tag-list {
     @extend .mav-flex-row;
     flex-wrap: wrap;
+    font-family: var(--mav-font--secondary);
     li {
         display: inline-flex;
 
         margin: 0;
-        margin-right: var(--mav-gutter-sm);
-        margin-top: var(--mav-gutter-xs);
+        margin-right: var(--mav-gutter--sm);
+        margin-top: var(--mav-gutter--xs);
 
-        border: 1px solid var(--mav-color-border);
+        border: 1px solid var(--mav-color--border);
         border-radius: 3px;
 
-        font-family: $font-roboto-mono;
-
-        @extend %mav-transition;
+        @extend %mav-transition--fast;
         &:hover {
             border-color: transparent;
-            background: var(--mav-color-accent);
+            background: var(--mav-color--accent);
             a {
-                @include text-contrast($mav-color-accent);
+                @include text-contrast($mav-color--accent);
             }
         }
         &:last-child {
@@ -488,15 +446,15 @@
         a {
             display: flex;
             align-items: center;
-            padding: var(--mav-gutter-xs);
-            font-size: var(--mav-font-size-xs);
+            padding: var(--mav-gutter--xs);
+            font-size: var(--mav-font__size--sm);
             text-decoration: none;
             text-transform: lowercase;
             &:before {
                 @extend %mav-font-awesome;
                 content: '\f292';
-                margin-right: var(--mav-gutter-xs);
-                font-size: var(--mav-font-size-xs);
+                margin-right: var(--mav-gutter--xs);
+                font-size: var(--mav-font__size--xs);
             }
         }
     }
@@ -510,7 +468,7 @@
     padding: var(--mav-gutter-xl) var(--mav-gutter-sm);
     background: var(--mav-color-site-background);
     @media #{$mav-phone} {
-        padding: var(--mav-gutter-lg) 0;
+        padding: var(--mav-gutter--lg) 0;
     }
 }
 
@@ -521,5 +479,10 @@
 
 .mav-post-attachment-wrapper {
     @extend .mav-flex-center-all;
-    padding: var(--mav-gutter-lg);
+    padding: var(--mav-gutter--lg);
+}
+
+figcaption {
+    font-size: var(--mav-font__size--sm);
+    color: var(--mav-color__text--secondary);
 }

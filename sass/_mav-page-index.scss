@@ -5,7 +5,7 @@
 .mav-post-index-wrapper {
     margin: var(--mav-gutter);
     @media #{$mav-tablet} {
-        margin: var(--mav-gutter-lg);
+        margin: var(--mav-gutter--lg);
     }
     @media #{$mav-desktop} {
         margin: var(--mav-gutter-xl) var(--mav-gutter);
@@ -14,7 +14,7 @@
 
 .mav-post-index-ctn {
     display: grid;
-    grid-gap: var(--mav-gutter-lg);
+    grid-gap: var(--mav-gutter--lg);
     @media #{$mav-tablet} {
         align-content: start;
         grid-template-columns: repeat(2,1fr);
@@ -92,7 +92,7 @@
         max-width: var(--mav-site-width);
         padding: var(--mav-gutter) var(--mav-gutter-xs);
         @media #{$mav-tablet} {
-            padding: var(--mav-gutter-lg);
+            padding: var(--mav-gutter--lg);
         }
         @media #{$mav-desktop} {
             margin: 0 auto;

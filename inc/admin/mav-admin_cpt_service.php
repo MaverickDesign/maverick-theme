@@ -18,8 +18,12 @@ $mav_args = array(
     'supports'      => array(
         'title', 'editor', 'thumbnail'
     ),
-    'taxonomies'    => array( 'category', 'post_tag' ),
-    'rewrite'       => array( 'slug' => __( 'service', 'mavericktheme' ) ),
+    'taxonomies'    => array(
+        'category', 'post_tag'
+    ),
+    'rewrite'       => array(
+        'slug' => __( 'service', 'mavericktheme' )
+    ),
 );
 
 register_post_type( 'mav_cpt_service', $mav_args );

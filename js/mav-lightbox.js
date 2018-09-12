@@ -1,5 +1,5 @@
 function mavf_lightbox(mavArgs = {
-    mavGalleryClass: '.gallery'
+    mavGalleryClass: '.wp-block-gallery'
 }){
     // Define Image pattern
     const mavImagePattern = /\.(jpg)|(png)|(svg)|(gif)$/i;
@@ -229,21 +229,33 @@ function mavf_lightbox(mavArgs = {
         }
     }
 }
-// Init lightbox
+
+/**
+ * Init lightbox
+ */
+
 if (typeof mavf_lightbox === 'function') {
 
-    const mavGalleries      = document.querySelectorAll('.gallery');
-    const mavAttachments    = document.querySelectorAll('.attachment');
+    // Generic WordPress Gallery Class
+    const mavGalleries          = document.querySelectorAll('.gallery');
+    // Gutenberg Gallery Class
+    const mavGutenbergGalleries = document.querySelectorAll('.wp-block-gallery');
+    // Post Attachment Class
+    const mavAttachments        = document.querySelectorAll('.attachment');
 
     if (mavGalleries.length > 0 || mavAttachments.length > 0) {
 
-        // console.log(`Maverick's Lightbox loaded.`);
         if (mavGalleries.length > 0) {
             mavf_lightbox({
                 mavGalleryClass: '.gallery'
             });
         }
-        if (mavAttachments.length > 0) {
+        if (mavGutenbergGalleries.length > 0) {
+            mavf_lightbox({
+                mavGalleryClass: '.wp-block-gallery'
+            });
+        }
+        if ( mavAttachments.length > 0 ) {
             mavf_lightbox({
                 mavGalleryClass: '.attachment'
             })

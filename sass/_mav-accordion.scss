@@ -58,7 +58,7 @@
         + .mav-accordion-ctn-wrapper {
             margin-top: var(--mav-gutter);
             max-height: 100vh;
-            border-bottom: 1px solid var(--mav-color-border);
+            border-bottom: 1px solid var(--mav-color--border);
             .mav-accordion-ctn {
                 padding: 0;
             }
@@ -70,7 +70,7 @@
         grid-template-columns: auto 1fr auto;
         grid-gap: var(--mav-gutter-xs);
         color: var(--mav-color-text-primary);
-        border: 1px solid var(--mav-color-border);
+        border: 1px solid var(--mav-color--border);
         padding: var(--mav-gutter-sm);
         background: white;
         @extend %mav-transition;
@@ -95,7 +95,7 @@
         }
         + .mav-accordion-ctn-wrapper {
             background: white;
-            border: 1px solid var(--mav-color-border);
+            border: 1px solid var(--mav-color--border);
             border-top: 0;
             margin-top: 0;
             .mav-accordion-ctn {

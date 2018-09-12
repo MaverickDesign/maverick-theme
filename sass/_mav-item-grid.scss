@@ -14,7 +14,7 @@
 .mav-items-grid-item-ctn {
     display: flex;
     flex-direction: column;
-    padding: var(--mav-gutter-lg);
+    padding: var(--mav-gutter--lg);
     border-left: 1px solid $mav-color-border;
     &[data-row="top"] {
         border-bottom: 1px solid $mav-color-border;

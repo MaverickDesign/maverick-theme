@@ -1,13 +1,3 @@
-%#{$mavNameSpace}-link-reset {
-    a {
-        box-shadow: none;
-        font-weight: inherit;
-        &:hover {
-            background: unset;
-        }
-    }
-}
-
 /**
  * Anchor Tag
  */
@@ -15,32 +5,43 @@
 a {
     color: inherit;
     text-decoration: underline;
-    text-decoration-color: var(--mav-color-border);
+    text-decoration-color: var(--mav-color--border);
     text-underline-position: under;
     &:hover {
-        text-decoration-color: var(--mav-color-accent);
+        text-decoration-color: var(--mav-color--accent);
     }
 }
 
-.#{$mavNameSpace}-link {
+.#{$mavNS}-link {
     &[data-link="external"] {
         &:after {
             display: inline-block;
             @extend %mav-font-awesome;
             content: '\f35d';
-            padding-left: var(--mav-gutter-xs);
-            color: var(--mav-color-text-hint);
+            padding-left: var(--mav-gutter--xs);
+            color: var(--mav-color__text--hint);
         }
     }
     &--dark {
-        text-decoration-color: var(--mav-color-border);
+        text-decoration-color: var(--mav-color--border);
         &:hover {
             text-decoration-color: var(--mav-color-text-primary-dark);
         }
     }
 }
 
-%#{$mavNameSpace}-font-awesome {
+%#{$mavNS}-link-reset {
+    a {
+        box-shadow: none;
+        font-weight: inherit;
+        &:hover {
+            background: unset;
+            color: inherit;
+        }
+    }
+}
+
+%#{$mavNS}-font-awesome {
     font-family: $font-awesome;
     font-weight: 900;
 }
@@ -50,15 +51,15 @@ a {
     font-weight: 900;
 }
 
-%#{$mavNameSpace}-font-awesome-line {
+%#{$mavNS}-font-awesome-line {
     font-family: $font-awesome;
 }
 
-.mav-fa-icon {
+.#{$mavNS}-fa-icon {
     margin-right: .25em;
 }
 
-.#{$mavNameSpace} {
+.#{$mavNS} {
     &-no-break {
         white-space: nowrap;
     }
@@ -66,20 +67,9 @@ a {
 
 
 
-body {
-    font-family: $font-roboto;
-    font-size: var(--mav-font-size);
-    line-height: 1.5;
-    color: var(--mav-color-text-primary);
-}
-
-strong {
-    font-weight: var(--mav-font-weight-bold);
-}
-
-%#{$mavNameSpace}-link {
+%#{$mavNS}-link {
     &-obj {
-        background: var(--mav-color-primary);
+        background: var(--mav-color--primary);
         @include text-contrast($mav-color-primary);
         &-accent {
             background: var(--mav-color-accent);
@@ -98,13 +88,25 @@ strong {
 }
 
 /**
+ * Site Global Settings
+ */
+body {
+    font-family: var(--mav-font--primary);
+    font-size: var(--mav-font__size);
+    color: var(--mav-color__text--primary);
+    line-height: 1.5;
+}
+
+/**
  * Headings
  */
 
 h1, h2, h3, h4, h5, h6,
-.mav-h1, .mav-h2, .mav-h3, .mav-h4, .mav-h5, .mav-h6 {
+.#{$mavNS}-h1, .#{$mavNS}-h2, .#{$mavNS}-h3, .#{$mavNS}-h4, .#{$mavNS}-h5, .#{$mavNS}-h6 {
+    font-family: var(--mav-font--secondary);
+    font-weight: var(--mav-font__weight--medium);
     b {
-        font-weight: var(--mav-font-weight-bold);
+        font-weight: var(--mav-font__weight--black);
     }
     a {
         text-decoration: none;
@@ -120,43 +122,30 @@ a {
 
 h1, .mav-h1 {
     font-size: 4rem;
-    line-height: 1.1em;
-    font-weight: var(--mav-font-weight-light);
     @media #{$mav-phone} {
-        font-family: $font-roboto-cond;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
 h2, .mav-h2 {
-    font-size: 2rem;
-    line-height: 1.2em;
-    font-weight: var(--mav-font-weight-bold);
-    @media #{$mav-phone} {
-        font-family: $font-roboto-cond;
-    }
+    font-size: 1.75rem;
 }
 
 h3, .mav-h3 {
     font-size: 1.5rem;
-    font-weight: var(--mav-font-weight-bold);
-    line-height: 1.2em;
 }
 
 h4, .mav-h4 {
     font-size: 1.25rem;
-    font-weight: var(--mav-font-weight-bold);
 }
 
 h5, .mav-h5 {
     font-size: 1.25rem;
-    font-weight: var(--mav-font-weight-bold);
     text-transform: uppercase;
 }
 
 h6, .mav-h6 {
     font-size: 1rem;
-    font-weight: var(--mav-font-weight-black);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -164,9 +153,7 @@ h6, .mav-h6 {
 // Sub Headings
 
 %mav-sub-heading {
-    font-family: $font-roboto;
-    font-weight: var(--mav-font-weight-bold);
-    color: var(--mav-color-text-primary);
+    color: var(--mav-color__text--primary);
 }
 
 .mav-sub-heading-1 {
@@ -179,7 +166,7 @@ h6, .mav-h6 {
 }
 .mav-sub-heading-3, .mav-heading-over-line {
     @extend %mav-sub-heading;
-    font-weight: var(--mav-font-weight-black);
+    font-weight: var(--mav-font__weight--black);
     font-size: var(--mav-font-size-sm);
     text-transform: uppercase;
     letter-spacing: .5px;
@@ -188,9 +175,6 @@ h6, .mav-h6 {
 /* Paragraph Tag */
 
 p {
-    font-size: var(--mav-font-size);
-    font-weight: var(--mav-font-weight-regular);
-    line-height: 1.75;
     text-overflow: ellipsis;
 }
 
@@ -244,7 +228,7 @@ ol { // Top Lvl
 }
 
 // Non-List
-.mav-non-list {
+.#{$mavNS}-non-list {
     li {
         list-style: none;
         margin-left: 0!important;
@@ -273,12 +257,13 @@ sub {
  * ============
  */
 kbd {
+    padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
     background: #444;
     color: var(--mav-color-text-primary-dark);
-    padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
     font-family: $font-roboto-mono;
-    white-space: nowrap;
     font-weight: var(--mav-font-weight-medium);
+    font-size: var(--mav-font-size-sm);
+    white-space: nowrap;
     border-radius: 6px;
 }
 
@@ -289,8 +274,8 @@ q {
     font-size: var(--mav-font-size-xl);
     &:before , &:after {
         display: inline-block;
-        @extend %mav-font-awesome;
         color: var(--mav-color-accent);
+        @extend %mav-font-awesome;
         font-size: var(--mav-font-size-xs);
     }
     &:before {
@@ -339,13 +324,17 @@ em {
 pre, code {
     display: inline-block;
     font-family: $font-roboto-mono;
-    font-weight: var(--mav-font-weight-medium);
+    font-weight: var(--mav-font__weight--medium);
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
 abbr {
-    font-weight: var(--mav-font-weight-medium);
+    font-weight: var(--mav-font__weight--medium);
+}
+
+strong {
+    font-weight: var(--mav-font__weight--bold);
 }
 
 /**
@@ -353,7 +342,7 @@ abbr {
  * =========
  */
 
-.#{$mavNameSpace}-text {
+.#{$mavNS}-text {
     // Text aligns
     @each $mavSide in (left, center, right, justify) {
         &--#{$mavSide} {

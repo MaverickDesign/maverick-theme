@@ -25,8 +25,8 @@
 
             // Display post (page) content
             if ( $mav_show_page_content ) {
-                printf('<div class="mav-pg-ctn">');
-                    printf('<div class="mav-center mav-maxw--70 mav-padding-top-bottom-xl">');
+                printf('<div class="mav-pg-ctn mav-post-content-wrapper">');
+                    printf('<div class="mav-post-content-ctn mav-padding-top-xl">');
                         the_post();
                         the_content();
                     echo '</div>';
