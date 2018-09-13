@@ -173,10 +173,10 @@
 
 @each $size in xl,lg,sm,xs {
     .mav-margin-#{$size} {
-        margin: var(--mav-gutter-#{$size});
+        margin: var(--mav-gutter--#{$size});
     }
     .mav-padding-#{$size} {
-        padding: var(--mav-gutter-#{$size});
+        padding: var(--mav-gutter--#{$size});
     }
 }
 
@@ -189,10 +189,10 @@
     }
     @each $size in xl,lg,sm,xs {
         .#{$mavNS}-margin-#{$direction}-#{$size} {
-            margin-#{$direction}: var(--mav-gutter-#{$size});
+            margin-#{$direction}: var(--mav-gutter--#{$size});
         }
         .#{$mavNS}-padding-#{$direction}-#{$size} {
-            padding-#{$direction}: var(--mav-gutter-#{$size});
+            padding-#{$direction}: var(--mav-gutter--#{$size});
         }
     }
 }
@@ -202,8 +202,8 @@
     margin-bottom: var(--mav-gutter);
     @each $size in xl, lg, sm, xs {
         &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
-            margin-top: var(--mav-gutter-#{$size});
-            margin-bottom: var(--mav-gutter-#{$size});
+            margin-top: var(--mav-gutter--#{$size});
+            margin-bottom: var(--mav-gutter--#{$size});
         }
     }
 }
@@ -213,8 +213,8 @@
     margin-right: var(--mav-gutter);
     @each $size in xl, lg, sm, xs {
         &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
-            margin-left: var(--mav-gutter-#{$size});
-            margin-right: var(--mav-gutter-#{$size});
+            margin-left: var(--mav-gutter--#{$size});
+            margin-right: var(--mav-gutter--#{$size});
         }
     }
 }
@@ -224,8 +224,8 @@
     padding-bottom: var(--mav-gutter);
     @each $size in xl, lg, sm, xs {
         &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
-            padding-top: var(--mav-gutter-#{$size});
-            padding-bottom: var(--mav-gutter-#{$size});
+            padding-top: var(--mav-gutter--#{$size});
+            padding-bottom: var(--mav-gutter--#{$size});
         }
     }
 }
@@ -235,8 +235,8 @@
     padding-right: var(--mav-gutter);
     @each $size in xl, lg, sm, xs {
         &-#{$size}, &--#{$size}, &[data-size-#{$size}] {
-            padding-left: var(--mav-gutter-#{$size});
-            padding-right: var(--mav-gutter-#{$size});
+            padding-left: var(--mav-gutter--#{$size});
+            padding-right: var(--mav-gutter--#{$size});
         }
     }
 }
@@ -245,7 +245,7 @@
 .mav-site-width {
     margin: 0 auto;
     @media #{$mav-desktop} {
-        max-width: var(--mav-site-width);
+        max-width: var(--mav-site--width);
     }
 }
 
@@ -254,13 +254,13 @@
  */
 
 .mav-pg-ctn {
-    max-width: var(--mav-site-width);
+    max-width: var(--mav-site--width);
     margin: 0 auto;
     padding: 0 var(--mav-gutter);
 }
 
 .mav-pg-width {
-    max-width: var(--mav-site-width);
+    max-width: var(--mav-site--width);
     margin: 0 auto;
 }
 
@@ -269,7 +269,7 @@
         position: sticky;
         width: 100%;
         top: 0;
-        z-index: $mav-layer-top;
+        z-index: var(--mav-layer--top);
     }
 }
 

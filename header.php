@@ -91,33 +91,31 @@
     <?php
         echo '<style>';
             echo ':root {';
-
                 /* Site Width */
-                    $mav_site_width = esc_attr( get_option( 'mav_setting_grid_system' ) );
-                    if ( ! empty( $mav_site_width ) ) {
-                        echo '--mav-site-width: '.$mav_site_width.'px;';
-                        echo '--mav-site--width: '.$mav_site_width.'px;';
-                    }
-
-                    /* Primary Color */
-                    $mav_color__primary = esc_attr( get_option( 'mav_setting_color_primary' ) );
-                    if ( ! empty( $mav_color__primary ) ) {
-                        echo "--mav-color-primary: $mav_color__primary;";
-                        echo "--mavc-primary: $mav_color__primary;";
-                    }
-
-                    /* Accent Color */
-                    $mav_color__accent = esc_attr( get_option( 'mav_setting_color_accent' ) );
-                    if ( ! empty( $mav_color__accent ) ) {
-                        echo "--mav-color-accent: $mav_color__accent;";
-                        echo "--mavc-accent: $mav_color__accent;";
-                    }
+                $mav_site__width = esc_attr( get_option( 'mav_setting_grid_system' ) );
+                if ( ! empty( $mav_site__width ) ) {
+                    echo '--mav-site-width: '.$mav_site__width.'px;';
+                    echo '--mav-site--width: '.$mav_site__width.'px;';
+                }
+                /* Primary Color */
+                $mav_color__primary = esc_attr( get_option( 'mav_setting_color_primary' ) );
+                if ( ! empty( $mav_color__primary ) ) {
+                    echo "--mav-color-primary: $mav_color__primary;";
+                    echo "--mav-color--primary: $mav_color__primary;";
+                }
+                /* Accent Color */
+                $mav_color__accent = esc_attr( get_option( 'mav_setting_color_accent' ) );
+                if ( ! empty( $mav_color__accent ) ) {
+                    echo "--mav-color-accent: $mav_color__accent;";
+                    echo "--mav-color--accent: $mav_color__accent;";
+                }
             echo '}';
         echo '</style>';
     ?>
+
 </head>
 
-<body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mav_site_width; ?>">
+<body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mav_site__width; ?>">
     <?php
         if ( ! empty( $mav_egtm ) && ! empty( $mav_gtm_id ) ) : ?>
             <!-- Google Tag Manager (noscript) -->

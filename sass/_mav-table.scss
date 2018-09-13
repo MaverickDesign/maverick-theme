@@ -1,31 +1,29 @@
 table {
-    margin: var(--mav-margin) auto;
+    margin: var(--mav-gutter) auto;
     caption {
-        margin-bottom: var(--mav-gutter-sm);
-        font-weight: var(--mav-font-weight-bold);
+        margin-bottom: var(--mav-gutter--sm);
+        font-weight: var(--mav-font__weight--bold);
     }
     thead {
-        padding: var(--mav-gutter-xs);
-        background: var(--mav-color-primary);
-        @include text-contrast($mav-color-primary);
-    }
-    tbody {
+        padding: var(--mav-gutter--xs);
+        background: var(--mav-color--primary);
+        @include text-contrast($mav-color--primary);
     }
     tfoot {
-        font-weight: var(--mav-font-weight-bold);
+        font-weight: var(--mav-font__weight--bold);
     }
     th, td {
-        padding: var(--mav-gutter-sm);
+        padding: var(--mav-gutter--sm);
         border: 1px solid var(--mav-color--border);
         text-align: left;
         vertical-align: middle;
     }
     th {
-        font-weight: var(--mav-font-weight-medium);
+        font-weight: var(--mav-font__weight--medium);
     }
     tr {
         &:nth-child(even) {
-            background: var(--mav-color-off-white);
+            background: var(--mav-color--off-white);
         }
     }
 }

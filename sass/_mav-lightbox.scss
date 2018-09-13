@@ -9,7 +9,7 @@
     top: 0;
     bottom: 0;
     background: rgba(0,0,0,.90);
-    z-index: $mav-layer-top;
+    z-index: var(--mav-layer-top);
     overflow: hidden;
     @media #{$mav-phone} {
         grid-template-rows: 5vh auto;
@@ -17,33 +17,33 @@
     .mav-lightbox-header {
         display: flex;
         align-items: center;
-        color: var(--mav-color-text-secondary-dark);
+        color: var(--mav-color__text--secondary--dark);
         padding: var(--mav-gutter);
         .mav-lightbox-number {
-            font-weight: var(--mav-font-weight-bold);
+            font-weight: var(--mav-font__weight--bold);
             &[data-current] {
-                padding-right: var(--mav-gutter-xs);
+                padding-right: var(--mav-gutter--xs);
             }
             &[data-total] {
                 margin-right: var(--mav-gutter);
-                padding-left: var(--mav-gutter-xs);
+                padding-left: var(--mav-gutter--xs);
             }
         }
         .mav-lightbox-caption {
-            color: var(--mav-color-text-primary-dark);
+            color: var(--mav-color__text--primary--dark);
         }
     }
     .mav-lightbox-close {
         position: fixed;
         right: 0;
         top: 0;
-        padding: var(--mav-gutter-sm) var(--mav-gutter);
+        padding: var(--mav-gutter--sm) var(--mav-gutter);
         font-size: 1.5rem;
-        color: var(--mav-color-text-secondary-dark);
-        cursor: pointer;
         line-height: 1;
+        color: var(--mav-color__text--secondary--dark);
+        cursor: pointer;
         &:hover {
-            color: var(--mav-color-text-primary-dark);
+            color: var(--mav-color__text--primary--dark);
         }
     }
     .mav-lightbox-ctn{
@@ -56,10 +56,10 @@
             @extend .mav-flex-center-all;
             position: relative;
             font-size: 2rem;
-            color: var(--mav-color-text-secondary-dark);
+            color: var(--mav-color__text--secondary--dark);
             cursor: pointer;
             &:hover {
-                color: var(--mav-color-text-primary-dark);
+                color: var(--mav-color__text--primary--dark);
             }
             &:before, &:after {
                 @extend %mav-font-awesome;
@@ -68,7 +68,7 @@
             &[data-direction="prev"] {
                 margin-left: var(--mav-gutter);
                 @media #{$mav-phone} {
-                    margin-left: var(--mav-gutter-sm);
+                    margin-left: var(--mav-gutter--sm);
                 }
                 &:before {
                     content: '\f053';
@@ -82,7 +82,7 @@
             &[data-direction="next"] {
                 margin-right: var(--mav-gutter);
                 @media #{$mav-phone} {
-                    margin-right: var(--mav-gutter-sm);
+                    margin-right: var(--mav-gutter--sm);
                 }
                 &:after {
                     content: '\f054';
@@ -100,8 +100,8 @@
         .mav-lightbox-image-ctn {
             @extend .mav-flex-center-all;
             width: 100%;
-            padding: var(--mav-gutter-xs);
-            margin: 0 var(--mav-gutter-xs);
+            padding: var(--mav-gutter--xs);
+            margin: 0 var(--mav-gutter--xs);
             /**
              * Lightbox image
              */
@@ -133,7 +133,7 @@
             grid-template-columns: repeat(auto-fit,5vh);
             justify-content: center;
             align-items: center;
-            grid-gap: var(--mav-gutter-sm);
+            grid-gap: var(--mav-gutter--sm);
             width: 100%;
             /**
              * Lightbox Thumbnail

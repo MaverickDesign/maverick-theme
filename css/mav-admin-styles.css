@@ -24,6 +24,13 @@
  * CSS Variables
  */
 :root {
+  --mav-layer--top: 1000;
+  --mav-layer--overlay: 100;
+  --mav-layer--image: 10;
+  --mav-layer--content: initial;
+  --mav-layer--background: -10;
+  --mav-layer--under: -100;
+  --mav-layer--bottom: -1000;
   /* Font Families */
   --mav-font__family--awesome: 'Font Awesome 5 Free';
   --mav-font__family--exo: 'Exo', Arial, sans-serif;
@@ -58,25 +65,24 @@
    */
   --mav-color-primary: #c22f23;
   --mav-color--primary: #c22f23;
-  --mavc-primary: #c22f23;
   --mav-color-accent: #1b8d97;
   --mav-color--accent: #1b8d97;
-  --mavc-accent: #1b8d97;
   --mav-color-black: #464646;
-  --mavc-black: #464646;
   --mav-color-off-white: #fafafa;
-  --mavc-off-white: #fafafa;
   --mav-color-highlight: yellow;
-  --mavc-highlight: yellow;
+  --mav-color--black: #464646;
+  --mav-color--off-white: #fafafa;
+  --mav-color--highlight: yellow;
   --mav-color-site-background: #fafafa;
-  --mavc-site--background: #fafafa;
-  --mav-color-site-header: var(--mav-color-primary);
-  --mavc-site__header--background: var(--mav-color-primary);
-  --mav-color-site-footer: var(--mav-color-accent);
-  --mavc-site__footer--background: var(--mav-color-accent);
-  --mav-color-header-menu-background: var(--mav-color-primary);
-  --mavc__header-menu--background: var(--mav-color-primary);
+  --mav-color__site--background: #fbfbfb;
+  --mav-color-site-header: var(--mav-color--primary);
+  --mav-color__site-header--background: var(--mav-color--primary);
+  --mav-color-site-footer: var(--mav-color--accent);
+  --mav-color__site-footer--background: var(--mav-color--accent);
+  --mav-color-header-menu-background: var(--mav-color--primary);
   --mav-color-header-menu-background-hover: rgba(0,0,0,.2);
+  --mav-color__header-menu--background: var(--mav-color--primary);
+  --mav-color__header-menu--background--hover: rgba(0,0,0,.2);
   --mav-color-border: #ddd;
   --mav-color--border: #ddd;
   /**
@@ -95,6 +101,7 @@
   --mav-font__weight--bold: 700;
   --mav-font__weight--black: 900;
   --mav-font-size: 18px;
+  --mav-font--size: 18px;
   --mav-font__size: 18px;
   --mav-font-size-xl: 1.4rem;
   --mav-font-size-lg: 1.2rem;
@@ -114,14 +121,15 @@
   --mav-font-size-caption: 1rem;
   --mav-font__size--button: 1rem;
   --mav-font__size--caption: 1rem;
-  --mav-font-body: var(--mav-font-size);
+  --mav-font-body: var(--mav-font--size);
+  --mav-font--body: var(--mav-font--size);
   --mav-color-text-primary: #222;
   --mav-color-text-primary-dark: #fafafa;
   --mav-color-text-secondary: #aaa;
   --mav-color-text-secondary-dark: #ddd;
   --mav-color-text-hint: #ababad;
-  --mavc__text-hint: #ababad;
-  --mavc__text-hint--dark: #ababad;
+  --mav-color__text--hint: #ccc;
+  --mav-color__text--hint--dark: #ccc;
   --mav-color__text--primary: #222;
   --mav-color__text--primary--dark: #fafafa;
   --mav-color__text--secondary: #aaa;
@@ -136,25 +144,25 @@
  */
 @keyframes mav-brand-color-transition {
   0% {
-    background-color: var(--mavc-primary); }
+    background-color: var(--mav-color--primary); }
   50% {
-    background-color: var(--mav-color-accent); }
+    background-color: var(--mav-color--accent); }
   100% {
-    background-color: var(--mav-color-primary); } }
+    background-color: var(--mav-color--primary); } }
 @keyframes mav-brand-color-transition-text {
   0% {
-    color: var(--mav-color-primary); }
+    color: var(--mav-color--primary); }
   50% {
-    color: var(--mav-color-accent); }
+    color: var(--mav-color--accent); }
   100% {
-    color: var(--mav-color-primary); } }
+    color: var(--mav-color--primary); } }
 @keyframes mav-brand-color-transition-reversed {
   0% {
-    background-color: var(--mav-color-accent); }
+    background-color: var(--mav-color--accent); }
   50% {
-    background-color: var(--mav-color-primary); }
+    background-color: var(--mav-color--primary); }
   100% {
-    background-color: var(--mav-color-accent); } }
+    background-color: var(--mav-color--accent); } }
 #wpcontent {
   padding-right: 20px; }
   @media only screen and (max-width: 480px) {

@@ -1,5 +1,5 @@
 .mav-brand-name {
-    font-weight: var(--mav-font-weight-medium)
+    font-weight: var(--mav-font__weight--medium)
 }
 
 /**
@@ -8,12 +8,12 @@
 .mav-tool-tip {
     opacity: 0;
     position: fixed;
-    z-index: var(--mav-layer-top);
-    padding: var(--mav-gutter-sm);
+    z-index: var(--mav-layer--top);
+    padding: var(--mav-gutter--sm);
     border-radius: 4px;
-    background: rgba($mav-color-accent,.9);
+    background: rgba($mav-color--accent,.9);
     font-size: .8rem;
-    @include text-contrast($mav-color-accent);
+    @include text-contrast($mav-color--accent);
     transition: opacity .3s ease;
 }
 
@@ -32,29 +32,29 @@
  */
 
 .mav-message-box-wrapper {
-    margin: var(--mav-gutter-sm) 0;
+    margin: var(--mav-gutter--sm) 0;
 }
 
 .mav-message-box-ctn {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    grid-gap: var(--mav-gutter-sm);
+    grid-gap: var(--mav-gutter--sm);
     width: 100%;
-    padding: var(--mav-gutter-xs) var(--mav-gutter);
+    padding: var(--mav-gutter--xs) var(--mav-gutter);
     box-shadow: inset 3px 0px var(--mav-color-accent);
     border: 1px solid var(--mav-color--border);
     background: white;
     span {
-        color: var(--mav-color-text-primary);
+        color: var(--mav-color__text--primary);
         &.mav-btn-close {
             &:hover {
-                color: var(--mav-color-accent);
+                color: var(--mav-color--accent);
             }
         }
     }
     @media #{$mav-desktop} {
-        max-width: var(--mav-site-width);
+        max-width: var(--mav-site--width);
         margin: 0 auto;
     }
 }
@@ -99,7 +99,7 @@
     bottom: 0;
     right: 0;
     padding: var(--mav-gutter);
-    z-index: $mav-layer-top;
+    z-index: var(--mav-layer--top);
 }
 
 /**

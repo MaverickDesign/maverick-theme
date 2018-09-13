@@ -28,7 +28,7 @@ button {
     justify-content: center;
     align-items: center;
 
-    border: 2px solid var(--mav-color-primary);
+    border: 2px solid var(--mav-color--primary);
 
     background: transparent;
 
@@ -43,8 +43,8 @@ button {
 .mav-btn {
     @extend %mav-btn;
     &:hover {
-        @include text-contrast($mav-color-primary);
-        background: var(--mav-color-primary);
+        @include text-contrast($mav-color--primary);
+        background: var(--mav-color--primary);
     }
 }
 
@@ -55,14 +55,14 @@ button {
 .mav-btn {
     &-primary {
         @extend .mav-btn;
-        background: var(--mav-color-primary);
-        @include text-contrast($mav-color-primary);
+        background: var(--mav-color--primary);
+        @include text-contrast($mav-color--primary);
         a {
-            padding: var(--mav-gutter-xs);
+            padding: var(--mav-gutter--xs);
         }
         &:hover {
             background: transparent;
-            color: var(--mav-color-text-primary);
+            color: var(--mav-color__text--primary);
         }
         &-lg {
             @extend .mav-btn-primary;
@@ -81,9 +81,9 @@ button {
     }
     &-secondary {
         @extend .mav-btn;
-        color: var(--mav-color-text-primary);
+        color: var(--mav-color__text--primary);
         a {
-            padding: var(--mav-gutter-sm);
+            padding: var(--mav-gutter--sm);
         }
         &-lg {
             @extend .mav-btn-secondary;
@@ -98,8 +98,8 @@ button {
         width: 100%;
         margin: 0 auto;
         border-width: 0;
-        background: var(--mav-color-accent);
-        @include text-contrast($mav-color-accent);
+        background: var(--mav-color--accent);
+        @include text-contrast($mav-color--accent);
         font-size: 1rem;
         text-transform: uppercase;
         @extend %mav-transition;
@@ -121,7 +121,7 @@ button {
     width: 40px;
     height: 40px;
     @extend .mav-flex-center-all;
-    background: var(--mav-color-accent);
+    background: var(--mav-color--accent);
     animation: mav-brand-color-transition 5s infinite;
     border-radius: 50%;
     opacity: 0;
@@ -130,21 +130,24 @@ button {
         @extend %mav-font-awesome;
         content: '\f0aa';
         font-size: 1.5rem;
-        @include text-contrast($mav-color-accent);
+        @include text-contrast($mav-color--accent);
         @extend %mav-transition;
     }
     &:hover {
-        background: var(--mav-color-primary);
+        background: var(--mav-color--primary);
         &:before {
             transform: translateY(-2px);
         }
     }
 }
 
+// Button - To Top
 .mav-btn-top {
     visibility: hidden;
 }
 
+// Button - Go Back
+// For mobile devices
 .mav-btn-back {
     opacity: 1;
     animation: mav-brand-color-transition-reversed 5s infinite;

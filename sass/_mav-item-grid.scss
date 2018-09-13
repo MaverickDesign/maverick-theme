@@ -15,12 +15,12 @@
     display: flex;
     flex-direction: column;
     padding: var(--mav-gutter--lg);
-    border-left: 1px solid $mav-color-border;
+    border-left: 1px solid var(--mav-color--border);
     &[data-row="top"] {
-        border-bottom: 1px solid $mav-color-border;
+        border-bottom: 1px solid var(--mav-color--border);
     }
     &[data-row="middle"] {
-        border-bottom: 1px solid $mav-color-border;
+        border-bottom: 1px solid var(--mav-color--border);
     }
     &[data-column="left"] {
         border-left: 0;
@@ -28,7 +28,7 @@
     @media #{$mav-phone} {
         padding: var(--mav-gutter);
         border: 0px!important;
-        border-bottom: 1px solid $mav-color-border!important;
+        border-bottom: 1px solid var(--mav-color--border)!important;
         &:last-child {
             border-bottom: 0!important;
         }
@@ -36,5 +36,5 @@
 }
 
 .mav-item-grid-title {
-    font-size: var(--mav-font-size-lg);
+    font-size: var(--mav-font__size--lg);
 }

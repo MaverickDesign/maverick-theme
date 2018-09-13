@@ -2,10 +2,7 @@
     display: flex;
     .mav-social-icon {
         font-size: 1rem;
-        color: var(--mav-color-text-primary);
-        a {
-            text-decoration: none;
-        }
+        color: var(--mav-color__text--primary);
     }
 }
 
@@ -17,15 +14,9 @@
     }
     .mav-header-socials-ctn {
         .mav-social-links {
-            @extend %mav-link-reset;
             li {
                 list-style-type: none;
                 margin-right: var(--mav-gutter--lg);
-                a {
-                    &:hover {
-                        @extend %mav-link-text-accent;
-                    }
-                }
             }
         }
     }

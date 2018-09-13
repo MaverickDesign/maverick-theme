@@ -3,7 +3,7 @@
     grid-row-gap: var(--mav-gutter);
     align-content: start;
     padding: var(--mav-gutter--lg);
-    padding-top: var(--mav-gutter-xl);
+    padding-top: var(--mav-gutter--xl);
     padding-right: var(--mav-gutter);
     border-left: 1px solid var(--mav-color--border);
     @extend %mav-link-reset;
@@ -11,7 +11,7 @@
         text-decoration: none;
         &:hover {
             text-decoration: underline;
-            text-decoration-color: var(--mav-color-accent);
+            text-decoration-color: var(--mav-color--accent);
             text-underline-position: under;
         }
     }
@@ -22,8 +22,7 @@
         h3 {
             display: inline-flex;
             margin-bottom: var(--mav-gutter);
-            font-size: var(--mav-font-size-lg);
-            box-shadow: 0 3px var(--mav-color-primary);
+            box-shadow: 0 3px var(--mav-color--primary);
         }
     }
     .widget {
@@ -43,7 +42,7 @@
             li {
                 display: grid;
                 grid-template-columns: 70% 30%;
-                margin-bottom: var(--mav-gutter-xs);
+                margin-bottom: var(--mav-gutter--xs);
                 &:last-child {
                     margin-bottom: 0
                 }
@@ -51,16 +50,16 @@
                     @extend %mav-font-awesome;
                     content: '\f15c';
                     position: absolute;
-                    margin-right: var(--mav-gutter-xs);
+                    margin-right: var(--mav-gutter--xs);
                 }
                 a {
                     margin-left: var(--mav-gutter);
-                    color: var(--mav-color-text-primary);
+                    // color: var(--mav-color__text--primary);
                 }
                 // WordPress Class
                 .post-date {
                     justify-self: flex-end;
-                    font-weight: var(--mav-font-weight-medium);
+                    font-weight: var(--mav-font__weight--medium);
                 }
             }
         }
@@ -72,17 +71,17 @@
     .widget_categories {
         ul {
             li {
-                margin-bottom: var(--mav-gutter-xs);
+                // margin-bottom: var(--mav-gutter--xs);
                 a {
-                    color: var(--mav-color-text-primary);
-                    font-weight: var(--mav-font-weight-medium);
+                    // color: var(--mav-color__text--primary);
+                    // font-weight: var(--mav-font__weight--medium);
                     text-transform: capitalize;
                 }
                 &:before {
                     @extend %mav-font-awesome;
                     content: '\f07b';
-                    margin-right: var(--mav-gutter-xs);
-                    color: var(--mav-color-text-secondary);
+                    margin-right: var(--mav-gutter--xs);
+                    color: var(--mav-color__text--secondary);
                 }
                 ul {
                     margin-left: var(--mav-gutter);
@@ -97,8 +96,6 @@
     .widget_calendar {
         .calendar_wrap {
             background: #fff;
-            // padding: var(--mav-gutter);
-            // border: 1px solid var(--mav-color--border);
         }
         table {
             width: 100%;
@@ -132,38 +129,37 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        @extend %mav-link-reset;
         a {
             display: flex;
             align-items: center;
-            padding: var(--mav-gutter-sm);
-            margin-right: var(--mav-gutter-xs);
-            margin-bottom: var(--mav-gutter-xs);
+            padding: var(--mav-gutter--sm);
+            margin-right: var(--mav-gutter--xs);
+            margin-bottom: var(--mav-gutter--xs);
             line-height: .5em;
             border: 1px solid var(--mav-color--border);
             border-radius: 4px;
             font-family: $font-roboto-mono;
             text-transform: lowercase;
-            @extend %mav-transition;
+            @extend %mav-transition--fast;
             &:last-child {
                 margin-right: 0;
             }
             &:hover {
                 text-decoration: none;
-                background: var(--mav-color-accent);
+                background: var(--mav-color--accent);
                 border-color: transparent;
-                @include text-contrast($mav-color-accent);
+                @include text-contrast($mav-color--accent);
                 .tag-link-count {
-                    @include text-contrast($mav-color-accent);
+                    @include text-contrast($mav-color--accent);
                 }
             }
         }
         .tag-link-count {
             font-size: .75rem;
-            margin-left: var(--mav-gutter-xs);
-            font-weight: var(--mav-font-weight-bold);
-            color: var(--mav-color-text-secondary);
-            @extend %mav-transition;
+            margin-left: var(--mav-gutter--xs);
+            font-weight: var(--mav-font__weight--bold);
+            color: var(--mav-color__text--secondary);
+            @extend %mav-transition--fast;
         }
     }
     /**
@@ -172,12 +168,6 @@
     .widget_archive {
         ul {
             display: grid;
-            li {
-                margin-bottom: var(--mav-gutter-xs);
-                a {
-                    font-weight: var(--mav-font-weight-medium);
-                }
-            }
         }
     }
 
@@ -187,7 +177,7 @@
     .widget_search {
         form.search-form {
             display: flex;
-            padding: var(--mav-gutter-xs);
+            padding: var(--mav-gutter--xs);
             border: 1px solid var(--mav-color--border);
             label {
                 width: 100%;
@@ -202,7 +192,7 @@
             }
             .search-submit {
                 @extend .mav-btn-primary;
-                font-size: var(--mav-font-size-sm);
+                font-size: var(--mav-font__size--sm);
             }
         }
     }

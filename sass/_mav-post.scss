@@ -43,8 +43,8 @@
     }
     &-info-ctn {
         padding: var(--mav-gutter);
-        background: var(--mavc-off-white);
-        box-shadow: 0 1px var(--mavc-border);
+        background: var(--mav-color--off-white);
+        box-shadow: 0 1px var(--mav-color--border);
         span {
             margin-right: var(--mav-gutter);
             white-space: nowrap;
@@ -59,12 +59,12 @@
     }
 
     .mav-post-footer-wrapper {
-        background: var(--mav-color-off-white);
+        background: var(--mav-color--off-white);
         .mav-post-footer-ctn {
             max-width: var(--mav-site--width);
             margin: 0 auto;
             display: grid;
-            grid-gap: var(--mav-gutter-lg);
+            grid-gap: var(--mav-gutter--lg);
             padding: var(--mav-gutter--xl) var(--mav-gutter);
             h4 {
                 font-size: 1rem;
@@ -273,41 +273,41 @@
     blockquote {
         display: flex;
         flex-direction: column;
-        margin: var(--mav-gutter-xl) auto;
+        margin: var(--mav-gutter--xl) auto;
         text-align: center;
         width: max-content;
         max-width: 100%;
         border: 1px solid var(--mav-color--border);
-        padding: 0 var(--mav-gutter-lg);
+        padding: 0 var(--mav-gutter--lg);
         &:before, &:after {
             display: block;
             @extend %mav-font-awesome;
-            color: var(--mav-color-accent);
-            background: var(--mav-color-off-white);
+            color: var(--mav-color--accent);
+            background: var(--mav-color--off-white);
             margin: 0 auto;
-            padding: var(--mav-gutter-sm);
+            padding: var(--mav-gutter--sm);
             width: 1.5em;
             height: 1.5em;
             border-radius: 50%;
         }
         &:before {
             content: '\f10d';
-            margin-bottom: var(--mav-gutter-sm);
+            margin-bottom: var(--mav-gutter--sm);
             transform: translateY(-50%);
         }
         &:after {
             content: '\f10e';
-            margin-top: var(--mav-gutter-sm);
+            margin-top: var(--mav-gutter--sm);
             transform: translateY(50%);
         }
         p {
-            font-size: var(--mav-font-size-xl);
-            font-weight: var(--mav-font-weight-light);
+            font-size: var(--mav-font-size--xl);
+            font-weight: var(--mav-font__weight--light);
             margin-bottom: 0;
         }
         cite, .mav-quote-author {
-            color: var(--mav-color-text-secondary);
-            font-weight: var(--mav-font-weight-bold);
+            color: var(--mav-color__text--secondary);
+            font-weight: var(--mav-font__weight--bold);
             white-space: nowrap;
             padding: 0 var(--mav-gutter);
         }
@@ -318,7 +318,7 @@
                 content: "";
                 width: 50px;
                 height: 5px;
-                background: var(--mav-color-accent);
+                background: var(--mav-color--accent);
                 transform: translateX(-50%);
                 left: 50%;
             }
@@ -331,12 +331,12 @@
         // WordPress Gutenberg Style
         &.wp-block-pullquote {
             padding: 0;
-            margin: var(--mav-gutter-xl) auto;
+            margin: var(--mav-gutter--xl) auto;
         }
     }
 
     cite {
-        font-weight: var(--mav-font-weight-bold);
+        font-weight: var(--mav-font__weight--bold);
     }
 
     /**
@@ -345,9 +345,9 @@
     dl {
         // Title
         dt {
-            font-weight: var(--mav-font-weight-bold);
+            font-weight: var(--mav-font__weight--bold);
             margin-top: var(--mav-gutter);
-            font-size: var(--mav-font-size-lg);
+            font-size: var(--mav-font__size--lg);
             &:first-of-type {
                 margin-top: 0;
             }
@@ -465,8 +465,8 @@
  */
 
 .mav-related-posts-wrapper {
-    padding: var(--mav-gutter-xl) var(--mav-gutter-sm);
-    background: var(--mav-color-site-background);
+    padding: var(--mav-gutter--xl) var(--mav-gutter--sm);
+    background: var(--mav-color__site--background);
     @media #{$mav-phone} {
         padding: var(--mav-gutter--lg) 0;
     }

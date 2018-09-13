@@ -6,7 +6,7 @@
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-gap: var(--mav-gutter-xs);
+    grid-gap: var(--mav-gutter--xs);
     grid-template-rows: 33vh 20vw;
     grid-template-areas:
     "main-display"
@@ -17,7 +17,7 @@
     }
     .mav-slide {
         height: 100%;
-        background: var(--mav-color-site-background);
+        background: var(--mav-color__site--background);
         background-repeat: no-repeat!important;
         background-size: cover!important;
         background-position: center!important;
@@ -32,7 +32,7 @@
             opacity: 0;
             max-height: 0;
             transition: opacity .6s ease;
-            font-weight: var(--mav-font-weight-light);
+            font-weight: var(--mav-font__weight--light);
             @media #{$mav-phone} {
                 top: 0;
             }
@@ -56,20 +56,16 @@
             margin-bottom: var(--mav-gutter);
             opacity: 1;
             max-height: 100%;
-            padding: var(--mav-gutter-sm) var(--mav-gutter);
-            color: var(--mav-color-text-secondary-dark);
+            padding: var(--mav-gutter--sm) var(--mav-gutter);
+            color: var(--mav-color__text--secondary--dark);
             font-size: 1.75rem;
             background: rgba(0,0,0,.75);
             &:hover {
-                color: var(--mav-color-text-primary-dark);
+                color: var(--mav-color__text--primary--dark);
             }
             @media #{$mav-phone} {
                 opacity: 0;
                 margin-bottom: 0;
-                // width: 100%;
-                // font-family: $font-roboto-cond;
-                // font-size: 1.75rem;
-                // line-height: 1.75rem;
             }
         }
     }
@@ -96,7 +92,7 @@
     height: 100%;
     overflow: hidden;
     .mav-slide {
-        z-index: $mav-layer-background;
+        z-index: $mav-layer--background;
         position: absolute;
         display: flex;
         justify-content: center;
@@ -110,7 +106,7 @@
         overflow: hidden;
         opacity: 0;
         &.mav-active-slide {
-            z-index: $mav-layer-image;
+            z-index: $mav-layer--image;
             opacity: 1;
         }
         .mav-slide-post-title-ctn {
@@ -119,7 +115,7 @@
             bottom: 0;
             width: 100%;
             height: 30%;
-            color: var(--mav-color-text-primary-dark);
+            color: var(--mav-color__text--primary--dark);
             letter-spacing: 1px;
             @media #{$mav-phone} {
                 height: 40%;
@@ -135,16 +131,14 @@
             .mav-slider-title {
                 text-align: center;
                 max-width: 75vw;
-                color: var(--mav-color-text-secondary-dark);
+                color: var(--mav-color__text--secondary--dark);
                 text-shadow: 0px 0px 4px #222;
                 background: rgba(0,0,0,.75);
-                padding: var(--mav-gutter-sm) var(--mav-gutter);
-                font-weight: var(--mav-font-weight-light);
+                padding: var(--mav-gutter--sm) var(--mav-gutter);
+                font-weight: var(--mav-font__weight--light);
                 @extend %mav-transition;
                 &:hover {
-                    color: var(--mav-color-text-primary-dark);
-                }
-                @media #{$mav-desktop} {
+                    color: var(--mav-color__text--primary--dark);
                 }
                 @media #{$mav-phone} {
                     display: none;
@@ -153,7 +147,7 @@
         }
         .mav-slide-nav {
             @extend .mav-flex-center-all;
-            z-index: $mav-layer-image;
+            z-index: var(--mav-layer--image);
             position: absolute;
             width: 60px;
             height: 100%;
@@ -161,7 +155,7 @@
             font-size: 2rem;
             @extend %mav-transition;
             @extend %mav-font-awesome;
-            color: var(--mav-color-text-primary-dark);
+            color: var(--mav-color__text--primary--dark);
             cursor: pointer;
         }
         .slide-prev {
@@ -203,7 +197,7 @@
         width: 100%;
         padding: var(--mav-gutter) 0;
 
-        z-index: $mav-layer-image;
+        z-index: var(--mav-layer--image);
 
     }
 
@@ -212,7 +206,7 @@
         height: .75rem;
         width: .75rem;
         border-radius: 50%;
-        background: rgba($mav-color-text-secondary-dark,.75);
+        background: rgba($mav-color__text--secondary--dark,.75);
         box-shadow: 0 0 5px currentColor;
         @extend %mav-transition;
         &:hover {
@@ -250,7 +244,7 @@
         align-items: flex-end;
         position: relative;
 
-        margin-right: var(--mav-gutter-sm);
+        margin-right: var(--mav-gutter--sm);
 
         background-repeat: no-repeat!important;
         background-size: cover!important;

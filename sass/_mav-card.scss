@@ -2,7 +2,7 @@
  * Post Card - Index Page
  */
 
- .mav-card-wrapper {
+.mav-card-wrapper {
     position: relative;
     width: 100%;
 }
@@ -193,12 +193,10 @@
 
 .mav-card-cpt-portfolio {
     background: white;
-    // box-shadow: 0 4px var(--mav-color-primary);
-    // border: 1px solid var(--mav-color--border);
-    @extend %mav-transition;
     padding: var(--mav-gutter);
+    @extend %mav-transition;
     &:hover {
-        border-color: var(--mav-color-accent);
+        border-color: var(--mav-color--accent);
     }
     .mav-card-title-wrapper {
         padding: var(--mav-gutter) 0;

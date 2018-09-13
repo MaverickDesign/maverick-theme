@@ -2,7 +2,7 @@
  * Modal
  */
 
- @keyframes mav-show-modal {
+@keyframes mav-show-modal {
     0%{
         transform: translateY(-25%);
         }
@@ -19,7 +19,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: $mav-layer-top;
+    z-index: var(--mav-layer--top);
 
     .mav-modal-box {
         display: grid;
@@ -38,9 +38,9 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        padding: var(--mav-gutter-sm) var(--mav-gutter);
-        background: var(--mav-color-primary);
-        color: var(--mav-color-text-primary-dark);
+        padding: var(--mav-gutter--sm) var(--mav-gutter);
+        background: var(--mav-color--primary);
+        color: var(--mav-color__text--primary--dark);
         font-size: 1.25rem;
         * {
             color: inherit;
@@ -56,8 +56,8 @@
     .mav-modal-footer {
         display: flex;
         justify-content: flex-end;
-        background: var(--mav-color-off-white);
-        padding: var(--mav-gutter-sm) var(--mav-gutter);
+        background: var(--mav-color--off-white);
+        padding: var(--mav-gutter--sm) var(--mav-gutter);
     }
 
     .mav-modal-close {

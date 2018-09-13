@@ -25,7 +25,7 @@ a {
     &--dark {
         text-decoration-color: var(--mav-color--border);
         &:hover {
-            text-decoration-color: var(--mav-color-text-primary-dark);
+            text-decoration-color: var(--mav-color__text--primary--dark);
         }
     }
 }
@@ -70,19 +70,19 @@ a {
 %#{$mavNS}-link {
     &-obj {
         background: var(--mav-color--primary);
-        @include text-contrast($mav-color-primary);
+        @include text-contrast($mav-color--primary);
         &-accent {
-            background: var(--mav-color-accent);
-            @include text-contrast($mav-color-accent);
+            background: var(--mav-color--accent);
+            @include text-contrast($mav-color--accent);
         }
         &-bg {
-            background: var(--mav-color-background);
+            background: var(--mav-color--background);
         }
     }
     &-text {
         text-decoration: none;
         &-accent {
-            color: var(--mav-color-accent);
+            color: var(--mav-color--accent);
         }
     }
 }
@@ -92,7 +92,7 @@ a {
  */
 body {
     font-family: var(--mav-font--primary);
-    font-size: var(--mav-font__size);
+    font-size: var(--mav-font--size);
     color: var(--mav-color__text--primary);
     line-height: 1.5;
 }
@@ -158,16 +158,16 @@ h6, .mav-h6 {
 
 .mav-sub-heading-1 {
     @extend %mav-sub-heading;
-    font-size: var(--mav-font-size-xl);
+    font-size: var(--mav-font__size--xl);
 }
 .mav-sub-heading-2 {
     @extend %mav-sub-heading;
-    font-size: var(--mav-font-size-lg);
+    font-size: var(--mav-font__size--lg);
 }
 .mav-sub-heading-3, .mav-heading-over-line {
     @extend %mav-sub-heading;
     font-weight: var(--mav-font__weight--black);
-    font-size: var(--mav-font-size-sm);
+    font-size: var(--mav-font__size--sm);
     text-transform: uppercase;
     letter-spacing: .5px;
 }
@@ -257,12 +257,12 @@ sub {
  * ============
  */
 kbd {
-    padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
+    padding: var(--mav-gutter--xs) var(--mav-gutter--sm);
     background: #444;
-    color: var(--mav-color-text-primary-dark);
+    color: var(--mav-color__text--primary--dark);
     font-family: $font-roboto-mono;
-    font-weight: var(--mav-font-weight-medium);
-    font-size: var(--mav-font-size-sm);
+    font-weight: var(--mav-font__weight--medium);
+    font-size: var(--mav-font__size--sm);
     white-space: nowrap;
     border-radius: 6px;
 }
@@ -271,21 +271,21 @@ kbd {
  * Inline Quote Tag
  */
 q {
-    font-size: var(--mav-font-size-xl);
+    font-size: var(--mav-font__size--xl);
     &:before , &:after {
         display: inline-block;
-        color: var(--mav-color-accent);
+        color: var(--mav-color--accent);
         @extend %mav-font-awesome;
-        font-size: var(--mav-font-size-xs);
+        font-size: var(--mav-font__size--xs);
     }
     &:before {
         content: '\f10d';
-        margin-right: var(--mav-gutter-sm);
+        margin-right: var(--mav-gutter--sm);
         transform: translateY(-20%);
     }
     &:after {
         content: '\f10e';
-        margin-left: var(--mav-gutter-sm);
+        margin-left: var(--mav-gutter--sm);
     }
 }
 
@@ -293,7 +293,7 @@ q {
  * Small Tag
  */
 small {
-    font-size: var(--mav-font-size-sm);
+    font-size: var(--mav-font__size--sm);
 }
 
 /**
@@ -301,14 +301,14 @@ small {
  */
 var {
     font-family: $font-roboto-mono;
-    font-weight: var(--mav-font-weight-medium);
+    font-weight: var(--mav-font__weight--medium);
 }
 
 /**
  * Deleted Tag
  */
 del {
-    color: var(--mav-color-text-hint);
+    color: var(--mav-color__text--hint);
 }
 
 /**
@@ -352,7 +352,7 @@ strong {
     // Text sizes
     @each $mavSize, $mavLineHeight in ( xl: 1.25, lg: 1.5, sm: 1.75, xs: 1.75) {
         &--#{$mavSize} {
-            font-size: var(--mav-font-size-#{$mavSize});
+            font-size: var(--mav-font__size--#{$mavSize});
             line-height: #{$mavLineHeight};
         }
     }

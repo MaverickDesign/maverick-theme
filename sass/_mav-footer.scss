@@ -1,18 +1,9 @@
 /**
- * Page Footer
- */
-
-.mav-pg-footer {
-    // background: var(--mav-color-site-footer);
-    // color: var(--mav-color-text-primary-dark);
-}
-
-/**
  * Footer Social Links
  */
 
 .mav-footer-socials-wrapper {
-    background: var(--mav-color-off-white);
+    background: var(--mav-color--off-white);
     border-top: 1px solid var(--mav-color--border);
     .mav-footer-socials-ctn {
         font-family: var(--mav-font--secondary);
@@ -31,8 +22,8 @@
                 @extend .mav-flex-center-all;
                 width: 50px;
                 height: 50px;
-                border: 1px solid var(--mav-color-accent);
-                font-size: var(--mav-font-size-lg);
+                border: 1px solid var(--mav-color--accent);
+                font-size: var(--mav-font__size--lg);
                 margin-left: 0;
                 margin-right: var(--mav-gutter);
                 @extend %mav-transition;
@@ -68,7 +59,7 @@
             margin-right: var(--mav-gutter--lg);
             a {
                 display: inline-block;
-                font-weight: var(--mav-font-weight-bold);
+                font-weight: var(--mav-font__weight--bold);
                 text-transform: uppercase;
                 text-decoration: none;
                 letter-spacing: 0.5px;
@@ -86,28 +77,30 @@
                         text-transform: unset;
                         font-weight: initial;
                         &:hover {
-                            transform: translateX(var(--mav-gutter-sm));
+                            transform: translateX(var(--mav-gutter--sm));
                         }
                     }
                 }
                 ul { // lvl_3
-                    margin: var(--mav-gutter-sm) 0 var(--mav-gutter) var(--mav-gutter);
+                    margin: var(--mav-gutter--sm) 0 var(--mav-gutter) var(--mav-gutter);
                 }
             }
         }
     }
 }
 
+/* Footer - Copyright */
+
 .mav-footer-copyright-wrapper {
-    background: #222;
+    background: var(--mav-color--accent);
 }
 
 .mav-footer-copyright-ctn {
     display: grid;
-    grid-gap: var(--mav-gutter-xs);
-    max-width: var(--mav-site-width);
+    grid-gap: var(--mav-gutter--xs);
+    max-width: var(--mav-site--width);
     margin: 0 auto;
     padding: var(--mav-gutter--lg) var(--mav-gutter);
-    font-size: var(--mav-font-size-sm);
-    color: var(--mav-color-text-primary-dark);
+    font-size: var(--mav-font__size--sm);
+    color: var(--mav-color__text--primary--dark);
 }

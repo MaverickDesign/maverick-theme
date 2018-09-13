@@ -68,9 +68,6 @@ $maverick: rgb(194,47,35);
 $mav-color-primary  : $maverick;
 $mav-color-accent   : darken(complement($mav-color-primary),10%);
 
-$mavc-primary   : $maverick;
-$mavc-accent    : darken(complement($mavc-primary),10%);
-
 $mav-color--primary   : $maverick;
 $mav-color--accent    : darken(complement($mav-color--primary),10%);
 
@@ -108,13 +105,16 @@ $mav-color-site-background: #fafafa;
 $mav-color__site--background: #fafafa;
 
 $mav-color-header-background: transparent;
-$mav-color__header--background: transparent;
 $mav-color-footer-background: #222;
+
+$mav-color__header--background: transparent;
 $mav-color__footer--background: #222;
 
-$mav-color-header-menu-background       : $mav-color-primary;
-$mav-color__header-menu--background: $mavc-primary;
-$mav-color-header-menu-background-hover : $mav-color-accent;
+$mav-color-header-menu-background       : $mav-color--primary;
+$mav-color-header-menu-background-hover : $mav-color--accent;
+
+$mav-color__header-menu--background         : $mav-color--primary;
+$mav-color__header-menu--background--hover  : $mav-color--accent;
 
 /**
  * Media Queries
@@ -130,10 +130,13 @@ $mav-desktop: "only screen and (min-width: 1024px)";
  */
 
 $mav-site-width: 1680px;
+$mav-site--width: 1680px;
+
 $mav-gutter: 20px;
 
 $mav-site-color-background: #fafafa;
 $mav-color__site--background: #fbfbfb;
+
 $mav-color-background: #fafafa;
 $mav-color--background: #fafafa;
 
@@ -141,6 +144,15 @@ $mav-color--background: #fafafa;
  * CSS Variables
  */
 :root {
+
+    // Z-Index
+    --mav-layer--top:          1000;
+    --mav-layer--overlay:       100;
+    --mav-layer--image:          10;
+    --mav-layer--content:   initial;
+    --mav-layer--background:    -10;
+    --mav-layer--under:        -100;
+    --mav-layer--bottom:      -1000;
 
     /* Font Families */
     --mav-font__family--awesome         : 'Font Awesome 5 Free';
@@ -188,39 +200,39 @@ $mav-color--background: #fafafa;
 
     // Primary
     --mav-color-primary     : #{$mav-color-primary};
-    --mav-color--primary    : #{$mav-color-primary};
-    --mavc-primary         : #{$mav-color-primary};
+    --mav-color--primary    : #{$mav-color--primary};
 
     //  Accent
     --mav-color-accent      : #{$mav-color-accent};
-    --mav-color--accent     : #{$mav-color-accent};
-    --mavc-accent          : #{$mav-color-accent};
+    --mav-color--accent     : #{$mav-color--accent};
 
     --mav-color-black       : #464646;
-    --mavc-black            : #464646;
     --mav-color-off-white   : #fafafa;
-    --mavc-off-white       : #fafafa;
     --mav-color-highlight   : #{$mav-color-highlight};
-    --mavc-highlight       : #{$mav-color-highlight};
+
+    --mav-color--black       : #464646;
+    --mav-color--off-white   : #fafafa;
+    --mav-color--highlight   : #{$mav-color--highlight};
 
     // Site background
-    --mav-color-site-background    : #{$mav-color-site-background};
-    --mavc-site--background        : #{$mav-color-site-background};
+    --mav-color-site-background     : #{$mav-color-site-background};
+    --mav-color__site--background   : #{$mav-color__site--background};
 
     //  Header background
-    --mav-color-site-header        : var(--mav-color-primary);
-    --mavc-site__header--background: var(--mav-color-primary);
+    --mav-color-site-header                 : var(--mav-color--primary);
+    --mav-color__site-header--background    : var(--mav-color--primary);
 
     //  Footer background
-    --mav-color-site-footer        : var(--mav-color-accent);
-    --mavc-site__footer--background: var(--mav-color-accent);
+    --mav-color-site-footer                 : var(--mav-color--accent);
+    --mav-color__site-footer--background    : var(--mav-color--accent);
 
-    --mav-color-header-menu-background          : var(--mav-color-primary);
-    --mavc__header-menu--background             : var(--mav-color-primary);
+    --mav-color-header-menu-background          : var(--mav-color--primary);
     --mav-color-header-menu-background-hover    : rgba(0,0,0,.2);
+    --mav-color__header-menu--background        : var(--mav-color--primary);
+    --mav-color__header-menu--background--hover : rgba(0,0,0,.2);
 
     --mav-color-border: #{$mav-color-border};
-    --mav-color--border: #{$mav-color-border};;
+    --mav-color--border: #{$mav-color--border};
 
     /**
      * Typography
@@ -233,14 +245,15 @@ $mav-color--background: #fafafa;
     --mav-font-weight-bold      : #{$mav-font-weight-bold};
     --mav-font-weight-black     : #{$mav-font-weight-black};
 
-    --mav-font__weight--thin    : #{$mav-font-weight-thin};
-    --mav-font__weight--light   : #{$mav-font-weight-light};
-    --mav-font__weight--regular : #{$mav-font-weight-regular};
-    --mav-font__weight--medium  : #{$mav-font-weight-medium};
-    --mav-font__weight--bold    : #{$mav-font-weight-bold};
-    --mav-font__weight--black   : #{$mav-font-weight-black};
+    --mav-font__weight--thin    : #{$mav-font__weight--thin};
+    --mav-font__weight--light   : #{$mav-font__weight--light};
+    --mav-font__weight--regular : #{$mav-font__weight--regular};
+    --mav-font__weight--medium  : #{$mav-font__weight--medium};
+    --mav-font__weight--bold    : #{$mav-font__weight--bold};
+    --mav-font__weight--black   : #{$mav-font__weight--black};
 
     --mav-font-size: 18px;
+    --mav-font--size: 18px;
     --mav-font__size: 18px;
     // @media #{$mav-phone} {
     //     --mav-font-size: 18px;
@@ -270,7 +283,8 @@ $mav-color--background: #fafafa;
     --mav-font__size--button: 1rem;
     --mav-font__size--caption: 1rem;
 
-    --mav-font-body: var(--mav-font-size);
+    --mav-font-body: var(--mav-font--size);
+    --mav-font--body: var(--mav-font--size);
 
     // Text Colors
 
@@ -280,20 +294,17 @@ $mav-color--background: #fafafa;
     --mav-color-text-secondary-dark : #{$mav-color-text-secondary-dark};
 
     --mav-color-text-hint           : #{$mav-color-text-hint};
-    --mavc__text-hint               : #{$mav-color-text-hint};
-    --mavc__text-hint--dark         : #{$mav-color-text-hint};
+    --mav-color__text--hint         : #{$mav-color__text--hint};
+    --mav-color__text--hint--dark   : #{$mav-color__text--hint};
 
-    --mav-color__text--primary           : #{$mav-color-text-primary};
-    --mav-color__text--primary--dark     : #{$mav-color-text-primary-dark};
-    --mav-color__text--secondary         : #{$mav-color-text-secondary};
-    --mav-color__text--secondary--dark   : #{$mav-color-text-secondary-dark};
-
-    // --mav-color-body    : #{$mav-color-text-primary};
-    // --mavc__body        : #{$mav-color-text-primary};
+    --mav-color__text--primary           : #{$mav-color__text--primary};
+    --mav-color__text--primary--dark     : #{$mav-color__text--primary--dark};
+    --mav-color__text--secondary         : #{$mav-color__text--secondary};
+    --mav-color__text--secondary--dark   : #{$mav-color__text--secondary--dark};
 
     @media #{$mav-desktop} {
         --mav-site-width    : #{$mav-site-width};
-        --mav-site--width   : #{$mav-site-width};
+        --mav-site--width   : #{$mav-site--width};
     }
 }
 
@@ -314,51 +325,51 @@ $mav-color--background: #fafafa;
 
 @keyframes mav-brand-color-transition {
     0% {
-        background-color: var(--mavc-primary);
+        background-color: var(--mav-color--primary);
     }
     50% {
-        background-color: var(--mav-color-accent);
+        background-color: var(--mav-color--accent);
     }
     100% {
-        background-color: var(--mav-color-primary);
+        background-color: var(--mav-color--primary);
     }
 }
 
 @keyframes mav-brand-color-transition-text {
     0% {
-        color: var(--mav-color-primary);
+        color: var(--mav-color--primary);
     }
     50% {
-        color: var(--mav-color-accent);
+        color: var(--mav-color--accent);
     }
     100% {
-        color: var(--mav-color-primary);
+        color: var(--mav-color--primary);
     }
 }
 
 @keyframes mav-brand-color-transition-reversed {
     0% {
-        background-color: var(--mav-color-accent);
+        background-color: var(--mav-color--accent);
     }
     50% {
-        background-color: var(--mav-color-primary);
+        background-color: var(--mav-color--primary);
     }
     100% {
-        background-color: var(--mav-color-accent);
+        background-color: var(--mav-color--accent);
     }
 }
 
 // @keyframes mav-brand-color-dark {
 //     0% {
-//         background-color: var(--mav-color-primary);
+//         background-color: var(--mav-color--primary);
 //     }
 //     50% {
 //         // background-color: darken($mav-color-primary, 10%);
 //         // background-color: #{'rgba(var(--mav-color-primary),1)'};
 //     }
 //     100% {
-//         background-color: var(--mav-color-primary);
+//         background-color: var(--mav-color--primary);
 //     }
 // }
 
-$mav-color-gradient-brand: linear-gradient(to right, var(--mav-color-primary) 0%, var(--mav-color-accent) 100%);
+$mav-color-gradient-brand: linear-gradient(to right, var(--mav-color--primary) 0%, var(--mav-color--accent) 100%);

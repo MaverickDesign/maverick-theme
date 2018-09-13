@@ -20,11 +20,11 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: var(--mav-gutter-sm) 0;
+    padding: var(--mav-gutter--sm) 0;
     @extend %mav-transition;
     &:hover {
         background: rgba(black, 0.025);
-        padding-left: var(--mav-gutter-sm);
+        padding-left: var(--mav-gutter--sm);
     }
     &:before {
         @extend %mav-transition;
@@ -32,7 +32,7 @@
     }
     &[data-trigger-icon] {
         &:before {
-            margin-right: var(--mav-gutter-sm);
+            margin-right: var(--mav-gutter--sm);
             content: '\f078';
             transform: rotate(-90deg);
         }
@@ -51,7 +51,7 @@
 
     &[data-state="open"] {
         background: rgba(black, 0.025);
-        padding-left: var(--mav-gutter-sm);
+        padding-left: var(--mav-gutter--sm);
         &:before {
             transform: rotate(0deg);
         }
@@ -68,29 +68,29 @@
     &[data-faq][data-question] {
         display: grid;
         grid-template-columns: auto 1fr auto;
-        grid-gap: var(--mav-gutter-xs);
-        color: var(--mav-color-text-primary);
+        grid-gap: var(--mav-gutter--xs);
+        color: var(--mav-color__text--primary);
         border: 1px solid var(--mav-color--border);
-        padding: var(--mav-gutter-sm);
+        padding: var(--mav-gutter--sm);
         background: white;
         @extend %mav-transition;
         &:before {
+            content: '\f128';
             display: inline-flex;
             justify-content: center;
             align-items: center;
             width: 2em;
             height: 2em;
-            content: '\f128';
-            @include text-contrast($mav-color-primary);
-            background: var(--mav-color-primary);
             border-radius: 50%;
+            background: var(--mav-color--primary);
+            @include text-contrast($mav-color--primary);
             transform: rotate(0deg);
         }
         &[data-state="open"] {
             padding-left: var(--mav-gutter);
             &:before {
                 content: '\f12a';
-                background: var(--mav-color-accent);
+                background: var(--mav-color--accent);
             }
         }
         + .mav-accordion-ctn-wrapper {
@@ -106,10 +106,10 @@
     .mav-btn-close {
         position: absolute;
         right: 0;
-        color: var(--mav-color-text-secondary);
+        color: var(--mav-color__text--secondary);
         transform: translateX(-100%);
         &:hover {
-            color: var(--mav-color-text-primary);
+            color: var(--mav-color__text--primary);
         }
     }
 }

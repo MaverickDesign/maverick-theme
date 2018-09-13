@@ -1,12 +1,10 @@
 /**
  * Countdown
  */
-.mav-countdown-wrapper{
 
-}
 .mav-countdown-ctn {
     @include mav-flex-center-all;
-    max-width: var(--mav-site-width);
+    max-width: var(--mav-site--width);
     overflow: hidden;
 }
 .mav-countdown-unit-wrapper {
@@ -18,18 +16,18 @@
     }
     @media #{$mav-phone} {
         flex-direction: column;
-        padding: var(--mav-gutter-xs);
+        padding: var(--mav-gutter--xs);
     }
 }
 .mav-countdown-unit {
     text-align: center;
+    margin-right: var(--mav-gutter--xs);
     &[data-container] {
         @include mav-flex-center-all;
     }
     &[data-number] {
-        font-weight: var(--mav-font-weight-black);
         font-size: 2rem;
-        color: var(--mav-color-text-primary);
+        color: var(--mav-color__text--primary);
         @media #{$mav-phone} {
             font-size: 1.5rem;
         }
@@ -41,5 +39,4 @@
         border-radius: 10%;
         text-transform: uppercase;
     }
-    margin-right: var(--mav-gutter-xs);
 }

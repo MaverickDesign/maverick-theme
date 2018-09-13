@@ -5,7 +5,7 @@
     &-ctn {
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
-        grid-gap: var(--mav-gutter-sm);
+        grid-gap: var(--mav-gutter--sm);
         justify-content: center;
         align-items: end;
         @media #{$mav-phone} {
@@ -17,19 +17,19 @@
 .mav-price-table {
     display: grid;
     text-align: center;
-    color: var(--mav-color-text-secondary);
+    color: var(--mav-color__text--secondary);
     border: 2px solid var(--mav-color--border);
     // Recommended table
     &[data-size="big"] {
         position: relative;
         box-shadow: 0 0 50px rgba(0,0,0,.5);
-        border-color: var(--mav-color-primary);
-        z-index: $mav-layer-overlay;
+        border-color: var(--mav-color--primary);
+        z-index: var(--mav-layer--overlay);
         > [data-row="header"] {
-            background: var(--mav-color-primary);
+            background: var(--mav-color--primary);
             padding: var(--mav-gutter--lg) var(--mav-gutter);
-            font-size: var(--mav-font-size-xl);
-            font-weight: var(--mav-font-weight-bold);
+            font-size: var(--mav-font__size--xl);
+            font-weight: var(--mav-font__weight--bold);
         }
         > [data-row="footer"] {
             position: relative;
@@ -60,17 +60,17 @@
         box-shadow: none;
     }
     &[data-row="header"] {
-        background: var(--mav-color-accent);
-        color: var(--mav-color-text-primary-dark);
-        font-weight: var(--mav-font-weight-bold);
-        font-size: var(--mav-font-size-lg);
+        background: var(--mav-color--accent);
+        color: var(--mav-color__text--primary--dark);
+        font-weight: var(--mav-font__weight--bold);
+        font-size: var(--mav-font__size--lg);
     }
     &[data-row="price"] {
         flex-direction: column;
         .mav-price {
             font-size: 2.5rem;
-            font-weight: var(--mav-font-weight-bold);
-            color: var(--mav-color-text-primary);
+            font-weight: var(--mav-font__weight--bold);
+            // color: var(--mav-color__text--primary);
             @media #{$mav-phone} {
                 font-size: 1em;
             }
@@ -78,7 +78,7 @@
         .mav-price-unit {
             text-transform: uppercase;
             font-size: .75rem;
-            padding: var(--mav-gutter-xs) var(--mav-gutter-sm);
+            padding: var(--mav-gutter--xs) var(--mav-gutter--sm);
             border: 1px solid var(--mav-color--border);
             border-radius: 10%;
         }

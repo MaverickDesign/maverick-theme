@@ -1,11 +1,11 @@
 .mav-carousel {
-    position: relative;
     @extend .mav-flex-center-all;
+    position: relative;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
     @media #{$mav-desktop} {
-        max-width: var(--mav-site-width);
+        max-width: var(--mav-site--width);
     }
     .mav-carousel-nav-wrapper {
         position: relative;
@@ -18,12 +18,10 @@
             height: var(--mav-gutter--lg);
 
             font-size: 1.5rem;
-            color: var(--mav-color-text-secondary);
+            color: var(--mav-color__text--secondary);
 
             @extend %mav-transition;
-            &:hover {
-                animation: mav-brand-color-transition-text 4s infinite;
-            }
+
             &:before, &:after {
                 @extend %mav-font-awesome;
                 @extend %mav-transition;
@@ -57,7 +55,7 @@
         overflow: hidden;
         padding: var(--mav-gutter) 0;
         @media #{$mav-phone} {
-            margin: 0 var(--mav-gutter-xs);
+            margin: 0 var(--mav-gutter--xs);
         }
         .mav-carousel-ctn {
             position: relative;
@@ -70,9 +68,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                &:last-child {
-                    // margin-right: 0!important;
-                }
             }
         }
     }
