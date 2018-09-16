@@ -21,8 +21,8 @@
     width: 100%;
     padding: var(--mav-gutter--sm) var(--mav-gutter);
     @media #{$mav-mobile} {
-        background: var(--mav-color-primary);
-        @include text-contrast($mav-color--primary);
+        background: var(--mav-color--accent);
+        @include text-contrast($mav-color--accent);
     }
 }
 
