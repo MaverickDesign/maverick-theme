@@ -14,15 +14,27 @@
     <header class="mav-post-header-wrapper mav-post-header">
         <div class="mav-post-header-ctn">
             <!-- Feature image -->
-            <?php if ( has_post_thumbnail() && ( $mav_post_type == 'post' ) ) : ?>
-                    <div id="mavid-post-feature-image" class="mav-post-feature-image mav-hide-on-phone" style="background-image: url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>)">
-                    </div>
-            <?php endif; ?>
+            <?php
+                if ( has_post_thumbnail() && ( $mav_post_type == 'post' ) ) :
+                    $mav_breadcrumbs = get_option( 'mav_setting_breadcrumbs' );
+                    $mav_breadcrumbs_height = isset( $mav_breadcrumbs['header'] ) ? '67px' : '0px';
+                    $mav_height = 'height: calc( 100vh - ( (80px) + (67px) + ('.$mav_breadcrumbs_height.') ) );';
+                    $mav_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+                    printf(
+                        '<div id="mavid-post-feature-image" class="mav-post__feature-image" style="background-image: url(%1$s); %2$s"></div>',
+                        $mav_image_url, $mav_height
+                    );
+                endif;
+            ?>
 
-            <!-- Post title -->
             <?php
                 if ( is_single() && ! is_attachment() ) {
+                    // Post title
                     printf( '<div class="mav-post-title-ctn"><h1 id="mavid-post-title" class="mav-post-title">%1$s</h1></div>', get_the_title() );
+                    // Post excerpt
+                    if ( has_excerpt() ) {
+                        printf ('<div class="mav-post-excerpt">%1$s</div>', get_the_excerpt() );
+                    }
                 }
             ?>
 
@@ -31,21 +43,36 @@
                 <div id="mavid-post-info" class="mav-post-info-wrapper">
                     <div class="mav-post-info-ctn">
                     <?php
-                        $mav_single_cat = function_exists( 'mavf_get_single_category' ) ? mavf_get_single_category() : '';
-                        if ( ! empty( $mav_single_cat ) ) {
-                            printf(
-                                '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
-                                $mav_single_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ), mavf_single_category()
-                            );
-                        }
-                        printf('
-                            <span class="mav-post-info" title="%2$s" data-type="date">%1$s</span>',
-                            get_the_date(), __( 'Ngày đăng', 'mavericktheme' )
-                        );
-                        printf('
-                            <span class="mav-post-info" title="%2$s" data-type="author">%1$s</span>',
+                        // Author
+                        printf(
+                            '<div class="mav-post-info" title="%2$s %1$s" data-type="author">%1$s</div>',
                             get_the_author(), __( 'Tác giả', 'mavericktheme' )
                         );
+                        // Category
+                        // $mav_single_cat = function_exists( 'mavf_get_single_category' ) ? mavf_get_single_category() : '';
+                        // if ( ! empty( $mav_single_cat ) ) {
+                        //     printf(
+                        //         '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
+                        //         $mav_single_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ), mavf_single_category()
+                        //     );
+                        // }
+                        printf( '<div class="mav-post-info mav-category-list" data-type="category">' );
+                            // Get post categories
+                            $cats = wp_get_post_categories( $post->ID );
+                            foreach ( $cats as $category ) {
+                                printf('<li>');
+                                    $current_cat = get_cat_name( $category );
+                                    $cat_link = get_category_link( $category );
+                                    printf( '<a href="%1$s" title="%3$s %2$s">%2$s</a>', $cat_link, $current_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ) );
+                                echo "</li>";
+                            }
+                        echo '</div>';
+                        // Post Date
+                        printf(
+                            '<div class="mav-post-info" title="%2$s %1$s" data-type="date">%1$s</div>',
+                            get_the_date(), __( 'Ngày đăng', 'mavericktheme' )
+                        );
+
                     ?>
                     </div>
                 </div>
@@ -55,14 +82,15 @@
     </header>
     <!-- Post Content -->
     <?php
-        $mav_center_style = '';
-        $mav_post_format = get_post_format();
-        if ( $mav_post_format == 'video' ) {
-            $mav_center_style = 'style="text-align: center;"';
-        }
+        // $mav_center_style = '';
+        // $mav_post_format = get_post_format();
+        // if ( $mav_post_format == 'video' ) {
+        //     $mav_center_style = 'style="text-align: center;"';
+        // }
     ?>
     <section class="mav-post-content-wrapper">
-        <div class="mav-post-content mav-post-content-ctn" <?php echo $mav_center_style; ?>>
+        <!-- <div class="mav-post-content mav-post-content-ctn" <?php //echo $mav_center_style; ?>> -->
+        <div <?php post_class('mav-post-content mav-post-content-ctn') ?>>
             <?php
                 if ( function_exists( 'mavf_post_content_modifier' ) ) {
                     $mav_json_file = TEMPLATE_DIR . '/template-parts/mav-patterns.json';

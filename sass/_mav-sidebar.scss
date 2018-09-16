@@ -1,4 +1,5 @@
 .mav-site-sidebar-ctn {
+    font-family: var(--mav-font--secondary);
     display: grid;
     grid-row-gap: var(--mav-gutter);
     align-content: start;
@@ -51,10 +52,10 @@
                     content: '\f15c';
                     position: absolute;
                     margin-right: var(--mav-gutter--xs);
+                    color: var(--mav-color__text--secondary);
                 }
                 a {
                     margin-left: var(--mav-gutter);
-                    // color: var(--mav-color__text--primary);
                 }
                 // WordPress Class
                 .post-date {

@@ -35,14 +35,14 @@
  * Paginate navigation
  */
 
- .mav-paginate-links-ctn {
+.mav-paginate-links-ctn, .mav-paginate-links__ctn {
+    font-family: var(--mav-font--secondary);
     @extend .mav-flex-row;
     flex-wrap: wrap;
     margin-top: var(--mav-gutter);
     padding: var(--mav-gutter);
     background: var(--mav-color--off-white);
     justify-content: center;
-    @extend %mav-link-reset;
     .page-numbers {
         padding: var(--mav-gutter--xs) var(--mav-gutter--sm);
         margin-right: var(--mav-gutter--sm);

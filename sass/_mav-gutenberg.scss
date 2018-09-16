@@ -1,10 +1,10 @@
 /**
  * Gallery
  */
-.wp-block-gallery {
-    margin-bottom: var(--mav-gutter);
-}
 
 .wp-block-separator {
-    margin: var(--mav-gutter) 0;
+    margin: var(--mav-gutter--xl) 0;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--mav-color--border), rgba(0, 0, 0, 0));
 }

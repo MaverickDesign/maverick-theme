@@ -180,11 +180,14 @@
                                 <div class="mav-sec-body-ctn">
                                     <?php
                                         $mav_args = array(
-                                            'number_of_posts'           => 8,
-                                            'number_of_posts_display'   => 4,
-                                            'categories'                => array(4,5)
+                                            'query_args'    => array(
+                                                'post_type'         => 'post',
+                                                'posts_per_page'    => 5,
+                                                'cat'               => array(1),
+                                            ),
+                                            'display'   => 4,
                                         );
-                                            mavf_carousel($mav_args);
+                                            mavf_carousel( $mav_args );
                                     ?>
                                 </div>
                             </div>
@@ -192,7 +195,7 @@
                                 <div class="mav-sec-footer-ctn">
                                     <?php
                                         if ( function_exists( 'mavf_button' ) ) {
-                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                         }
                                     ?>
                                 </div>
@@ -225,7 +228,7 @@
                                             'posts_display'     => 3,
                                             'auto_slide'        => 'false'
                                         );
-                                        mavf_post_grid($mav_args);
+                                        mavf_post_grid( $mav_args );
                                     ?>
                                 </div>
                             </div>
@@ -234,7 +237,7 @@
                                 <div class="mav-sec-footer-ctn">
                                     <?php
                                         if ( function_exists( 'mavf_button' ) ) {
-                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                         }
                                     ?>
                                 </div>
@@ -261,7 +264,7 @@
                             <div class="mav-sec-body-wrapper">
                                 <div class="mav-sec-body-ctn" data-full-width>
                                     <?php
-                                        mavf_google_map(array('height' => '50vh'));
+                                        mavf_google_map( array( 'height' => '50vh' ) );
                                     ?>
                                 </div>
                             </div>
@@ -270,7 +273,7 @@
                                 <div class="mav-sec-footer-ctn">
                                     <?php
                                         if ( function_exists( 'mavf_button' ) ) {
-                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                            mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                         }
                                     ?>
                                 </div>
@@ -302,7 +305,7 @@
                             <div class="mav-sec-footer-ctn">
                                 <?php
                                     if ( function_exists( 'mavf_button' ) ) {
-                                        mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                     }
                                 ?>
                             </div>
@@ -515,7 +518,7 @@
                                 <div class="mav-sec-body-wrapper">
                                     <div class="mav-sec-body-ctn">
                                         <?php
-                                            mavf_message_box(__('Thông báo','mavericktheme'));
+                                            mavf_message_box( __( 'Thông báo', 'mavericktheme' ) );
                                         ?>
                                     </div>
                                 </div>
@@ -523,7 +526,7 @@
                                     <div class="mav-sec-footer-ctn">
                                         <?php
                                             if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                                mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
                                             }
                                         ?>
                                     </div>
@@ -548,7 +551,7 @@
                         <div class="mav-sec-body-wrapper">
                             <div class="mav-sec-body-ctn">
                                 <div class="mav-flex-center-all">
-                                    <button class="mav-btn-cta" onclick="if(typeof mavf_create_modal_box === 'function'){typeof mavf_create_modal_box()}else{console.log('Modal function not found.')}"><?php _e( 'Click to open Modal Box' , 'mavericktheme' );?></button>
+                                    <button class="mav-btn-cta mav-padding" onclick="if( typeof mavf_create_modal_box === 'function' ){ typeof mavf_create_modal_box() } else { console.log('Modal function not found.') }"><?php _e( 'Nhấn để mở Modal Box' , 'mavericktheme' );?></button>
                                 </div>
                             </div>
                         </div>
@@ -588,7 +591,7 @@
                                             <li class="mav-price-table-row" data-row="price"><span class="mav-price">&nbsp;</span><span class="mav-price-unit" style="visibility: hidden;">đồng</span></li>
                                             <li class="mav-price-table-row">Table row 3</li>
                                             <li class="mav-price-table-row">Table row 4</li>
-                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta" style="visibility: hidden;">Đặt mua</button></li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta mav-padding" style="visibility: hidden;">Đặt mua</button></li>
                                         </ul>
                                         <ul class="mav-price-table">
                                             <li class="mav-price-table-row" data-row="header">Header Row</li>
@@ -596,7 +599,7 @@
                                             <li class="mav-price-table-row" data-row="price"><span class="mav-price">100.000</span><span class="mav-price-unit">đồng</span></li>
                                             <li class="mav-price-table-row" data-row="checked">&nbsp;</li>
                                             <li class="mav-price-table-row" data-row="unchecked">&nbsp;</li>
-                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta mav-padding">Đặt mua</button></li>
                                         </ul>
                                         <ul class="mav-price-table" data-size="big">
                                             <li class="mav-price-table-row" data-row="header">Header row really long</li>
@@ -604,7 +607,7 @@
                                             <li class="mav-price-table-row" data-row="price"><span class="mav-price">2.000.000</span><span class="mav-price-unit">đồng</span></li>
                                             <li class="mav-price-table-row">Table row 3</li>
                                             <li class="mav-price-table-row">Table row 4</li>
-                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta mav-padding">Đặt mua</button></li>
                                         </ul>
                                         <ul class="mav-price-table">
                                             <li class="mav-price-table-row" data-row="header">Header Row</li>
@@ -612,7 +615,7 @@
                                             <li class="mav-price-table-row" data-row="price"><span class="mav-price">300.000</span><span class="mav-price-unit">đồng</span></li>
                                             <li class="mav-price-table-row">Table row 3</li>
                                             <li class="mav-price-table-row">Table row 4</li>
-                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta">Đặt mua</button></li>
+                                            <li class="mav-price-table-row" data-row="footer"><button class="mav-btn-cta mav-padding">Đặt mua</button></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -738,7 +741,7 @@
                                 <!-- List Items -->
                                 <section class="mav-post-content">
                                     <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">List Items</h2>
-                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon>Unorder List</h3>
+                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon data-state="open">Unorder List</h3>
                                     <ul class="mav-accordion-ctn-wrapper mav-margin-bottom">
                                         <li>List item 1</li>
                                         <li>List item 2</li>
@@ -765,7 +768,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon>Order List</h3>
+                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon data-state="open">Order List</h3>
                                     <ol class="mav-accordion-ctn-wrapper mav-margin-bottom">
                                         <li>List item 1</li>
                                         <li>List item 2</li>

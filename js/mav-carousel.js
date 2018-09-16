@@ -1,4 +1,4 @@
-console.log(`Maverick's Carousel loaded.`);
+// console.log(`Maverick's Carousel loaded.`);
 
 function mavf_carousel(mavArgs = {
     mavCarouselClass        : '.mav-carousel',
@@ -70,7 +70,8 @@ function mavf_carousel(mavArgs = {
                 }
 
                 // Calculate item width
-                let mavItemWidth = Math.floor((100 / mavItemsToDisplay) - 1);
+                // let mavItemWidth = Math.floor((100 / mavItemsToDisplay) - 1);
+                let mavItemWidth = Math.floor((100 / mavItemsToDisplay));
 
                 // Calculate item gutter
                 let mavGutter = (( 100-(mavItemWidth*mavItemsToDisplay))/(mavItemsToDisplay-1))+'%';

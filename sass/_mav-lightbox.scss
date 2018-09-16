@@ -1,4 +1,4 @@
-.mav-lightbox-wrapper{
+.mav-lightbox-wrapper, .mav-lightbox__wrapper {
     position: fixed;
     display: grid;
     grid-template-columns: 1fr;
@@ -9,17 +9,17 @@
     top: 0;
     bottom: 0;
     background: rgba(0,0,0,.90);
-    z-index: var(--mav-layer-top);
+    z-index: var(--mav-layer--top);
     overflow: hidden;
     @media #{$mav-phone} {
         grid-template-rows: 5vh auto;
     }
-    .mav-lightbox-header {
+    .mav-lightbox-header, .mav-lightbox__header {
         display: flex;
         align-items: center;
         color: var(--mav-color__text--secondary--dark);
         padding: var(--mav-gutter);
-        .mav-lightbox-number {
+        .mav-lightbox-number, .mav-lightbox__number {
             font-weight: var(--mav-font__weight--bold);
             &[data-current] {
                 padding-right: var(--mav-gutter--xs);
@@ -29,7 +29,7 @@
                 padding-left: var(--mav-gutter--xs);
             }
         }
-        .mav-lightbox-caption {
+        .mav-lightbox-caption, .mav-lightbox__caption {
             color: var(--mav-color__text--primary--dark);
         }
     }
@@ -46,13 +46,14 @@
             color: var(--mav-color__text--primary--dark);
         }
     }
-    .mav-lightbox-ctn{
+    .mav-lightbox-ctn, .mav-lightbox__ctn {
         @extend .mav-flex-center-all;
         justify-content: space-between;
         max-width: 100%;
         overflow: hidden;
         @extend %mav-transition;
-        .mav-lightbox-nav {
+
+        .mav-lightbox-nav, .mav-lightbox__nav {
             @extend .mav-flex-center-all;
             position: relative;
             font-size: 2rem;
@@ -97,7 +98,7 @@
         /**
          * Lightbox image container
          */
-        .mav-lightbox-image-ctn {
+        .mav-lightbox-image-ctn, .mav-lightbox__image--ctn {
             @extend .mav-flex-center-all;
             width: 100%;
             padding: var(--mav-gutter--xs);
@@ -119,7 +120,7 @@
     /**
      * Lightbox thumbnail wrapper
      */
-    .mav-lightbox-thumbnail-wrapper {
+    .mav-lightbox-thumbnail-wrapper, .mav-lightbox__thumbnail--wrapper {
         @extend .mav-flex-center-all;
         padding: var(--mav-gutter);
         @media #{$mav-phone} {
@@ -128,7 +129,7 @@
         /**
          * Lightbox thumbnail container
          */
-        .mav-lightbox-thumbnail-ctn {
+        .mav-lightbox-thumbnail-ctn, .mav-lightbox__thumbnail--ctn {
             display: grid;
             grid-template-columns: repeat(auto-fit,5vh);
             justify-content: center;
@@ -138,7 +139,7 @@
             /**
              * Lightbox Thumbnail
              */
-            .mav-lightbox-thumbnail {
+            .mav-lightbox-thumbnail, .mav-lightbox__thumbnail {
                 cursor: pointer;
                 position: relative;
                 display: block;

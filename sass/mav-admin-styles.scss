@@ -45,14 +45,14 @@
     .mav-grid {
         display: grid;
         &[data-grid-gap] {
-            grid-gap: var(--mav-gutter-sm);
+            grid-gap: var(--mav-gutter--sm);
         }
     }
 
     .mav-brand-logo-buttons {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-gap: var(--mav-gutter-sm);
+        grid-gap: var(--mav-gutter--sm);
     }
 
     form {
@@ -66,10 +66,11 @@
         }
         input {
             box-shadow: none;
-            padding: var(--mav-gutter-xs);
+            padding: var(--mav-gutter--sm);
         }
         .form-table {
-            display: grid;
+            display: inline-grid;
+            align-items: center;
             background: #fafafa;
             margin-top: var(--mav-gutter);
             border: 1px solid var(--mav-color--border);
@@ -83,7 +84,7 @@
                 max-width: 100%;
                 display: grid;
                 grid-template-columns: 30% auto;
-                grid-gap: var(--mav-gutter-sm);
+                grid-gap: var(--mav-gutter--sm);
                 border-bottom: 1px solid var(--mav-color--border);
                 &:only-child, &:last-child {
                     border-bottom: 0;
@@ -117,8 +118,8 @@
     .mav-admin {
         // Description
         &-desc {
-            margin-top: var(--mav-gutter-xs);
-            color: var(--mav-color-text-secondary);
+            margin-top: var(--mav-gutter--xs);
+            color: var(--mav-color__text--secondary);
         }
     }
 
@@ -137,10 +138,6 @@
                 max-width: 100%;
             }
         }
-    }
-
-    .mav-desc {
-        color: var(--mav-color-text-secondary);
     }
 
     /* Theme Info */
@@ -179,7 +176,7 @@
 }
 
 .mav-admin-color-preview-box {
-    margin-top: var(--mav-gutter-xs);
+    margin-top: var(--mav-gutter--xs);
     display: inline-block;
-    height: 30px;
+    height: 40px;
 }

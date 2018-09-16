@@ -57,12 +57,12 @@ function mavf_admin_init()
         'Theme Styles',
         'Theme Styles',
         'manage_options',
-        'mav_admin_page_theme_styles',
-        'mavf_admin_page_theme_styles'
+        'mav_admin__setting_section__theme_styles',
+        'mavf_admin__theme_styles__page'
     );
 
     // Theme Styles Functions
-    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-theme-styles-functions.php';
+    include_once TEMPLATE_DIR . '/inc/admin/mav_admin__theme_styles__functions.php';
 
     /**
      * Theme Info Submenu Page
@@ -73,13 +73,13 @@ function mavf_admin_init()
         'Theme Info',
         'manage_options',
         'mav_admin_page_theme_info',
-        'mavf_admin_page_theme_info'
+        'mavf_admin__theme_info__page'
     );
     // Theme Info Functions
-    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-theme-info-functions.php';
+    include_once TEMPLATE_DIR . '/inc/admin/mav_admin__theme_info__functions.php';
 
 }
-add_action('admin_menu', 'mavf_admin_init');
+add_action( 'admin_menu', 'mavf_admin_init' );
 
 /**
  * For admin panel
@@ -96,7 +96,7 @@ function mavf_enqueue_admin_scripts( $mavHook )
         '1.0.0',
         'all'
     );
-    wp_enqueue_style('mav_admin_css');
+    wp_enqueue_style( 'mav_admin_css' );
 
     /**
      * Admin Panel Javascript

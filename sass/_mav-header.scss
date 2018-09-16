@@ -17,6 +17,9 @@
             li {
                 list-style-type: none;
                 margin-right: var(--mav-gutter--lg);
+                a {
+                    text-decoration: none;
+                }
             }
         }
     }

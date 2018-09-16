@@ -334,12 +334,15 @@
 /**
  * Section intro
  */
-.mav-sec-intro-wrapper {
-    .mav-sec-intro-ctn {
+.mav-sec-intro-wrapper, .mav-sec__intro--wrapper {
+    .mav-sec-intro-ctn, .mav-sec__intro--ctn {
         padding-top: var(--mav-gutter--lg);
-        .mav-sec-intro {
-            font-size: var(--mav-font-size-lg);
-            text-align: center;
+        text-align: center;
+        max-width: 60vw;
+        margin: 0 auto;
+        @extend .mav-text__intro;
+        @media #{$mav-phone} {
+            max-width: 90vw;
         }
     }
 }

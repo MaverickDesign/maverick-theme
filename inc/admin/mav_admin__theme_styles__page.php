@@ -17,7 +17,7 @@ printf('<div class="mav-admin-page-wrapper">');
             // Option Group
             settings_fields( 'mavog_theme_styles' );
             // Sections
-            do_settings_sections( 'mav_admin_page_theme_styles' );
+            do_settings_sections( 'mav_admin__setting_section__theme_styles' );
             // Submit Button
             submit_button( __( 'Lưu các thay đổi', 'mavericktheme' ), 'primary', 'mavb_submit');
         echo '</form>';

@@ -3,7 +3,10 @@
  * @package mavericktheme
  */
 
-register_setting( 'mavog_theme_config', 'mav_setting_blog_page_sidebar' );
+register_setting(
+    'mavog_theme_config',
+    'mav_setting_blog_page_sidebar'
+);
 
 add_settings_field(
     'mavid_theme_setting_blog_page_sidebar',

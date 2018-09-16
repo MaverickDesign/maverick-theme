@@ -71,7 +71,7 @@
   --mav-color-off-white: #fafafa;
   --mav-color-highlight: yellow;
   --mav-color--black: #464646;
-  --mav-color--off-white: #fafafa;
+  --mav-color--off-white: #f4f4f5;
   --mav-color--highlight: yellow;
   --mav-color-site-background: #fafafa;
   --mav-color__site--background: #fbfbfb;
@@ -111,8 +111,8 @@
   --mav-font__size--xl: 1.4rem;
   --mav-font__size--lg: 1.2rem;
   --mav-font__size--nm: initial;
-  --mav-font__size--sm: 0.8rem;
-  --mav-font__size--xs: 0.6rem;
+  --mav-font__size--sm: 0.9rem;
+  --mav-font__size--xs: 0.7rem;
   --mav-font-size-subtitle-1: 16px;
   --mav-font-size-subtitle-2: 14px;
   --mav-font__size--subtitle-1: 16px;
@@ -195,11 +195,11 @@
   .mav-admin-page-wrapper .mav-grid {
     display: grid; }
     .mav-admin-page-wrapper .mav-grid[data-grid-gap] {
-      grid-gap: var(--mav-gutter-sm); }
+      grid-gap: var(--mav-gutter--sm); }
   .mav-admin-page-wrapper .mav-brand-logo-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: var(--mav-gutter-sm); }
+    grid-gap: var(--mav-gutter--sm); }
   .mav-admin-page-wrapper form {
     display: grid;
     max-width: 100%; }
@@ -210,9 +210,10 @@
       max-width: max-content; }
     .mav-admin-page-wrapper form input {
       box-shadow: none;
-      padding: var(--mav-gutter-xs); }
+      padding: var(--mav-gutter--sm); }
     .mav-admin-page-wrapper form .form-table {
-      display: grid;
+      display: inline-grid;
+      align-items: center;
       background: #fafafa;
       margin-top: var(--mav-gutter);
       border: 1px solid var(--mav-color--border);
@@ -225,7 +226,7 @@
         max-width: 100%;
         display: grid;
         grid-template-columns: 30% auto;
-        grid-gap: var(--mav-gutter-sm);
+        grid-gap: var(--mav-gutter--sm);
         border-bottom: 1px solid var(--mav-color--border); }
         .mav-admin-page-wrapper form .form-table tr:only-child, .mav-admin-page-wrapper form .form-table tr:last-child {
           border-bottom: 0; }
@@ -248,8 +249,8 @@
       .mav-admin-page-wrapper form .form-table td {
         margin: var(--mav-gutter) 0; }
   .mav-admin-page-wrapper .mav-admin-desc {
-    margin-top: var(--mav-gutter-xs);
-    color: var(--mav-color-text-secondary); }
+    margin-top: var(--mav-gutter--xs);
+    color: var(--mav-color__text--secondary); }
   .mav-admin-page-wrapper .mav-range-slider-ctn {
     display: flex;
     justify-content: space-between; }
@@ -260,8 +261,6 @@
       max-width: 100%; }
       .mav-admin-page-wrapper #mavid-settings-preview img {
         max-width: 100%; } }
-  .mav-admin-page-wrapper .mav-desc {
-    color: var(--mav-color-text-secondary); }
   .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn {
     padding: var(--mav-gutter--lg);
     background: white;
@@ -288,8 +287,8 @@
         object-fit: contain; }
 
 .mav-admin-color-preview-box {
-  margin-top: var(--mav-gutter-xs);
+  margin-top: var(--mav-gutter--xs);
   display: inline-block;
-  height: 30px; }
+  height: 40px; }
 
 /*# sourceMappingURL=mav-admin-styles.css.map */

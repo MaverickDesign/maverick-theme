@@ -7,14 +7,14 @@
  * Section: Theme Colors
  */
 add_settings_section(
-    'mavsec_theme_styles_theme_colors',
+    'mavsec__theme_styles__theme_colors',
     __( 'Thiết lập màu sắc', 'mavericktheme' ),
-    'mavf_theme_styles_theme_colors',
-    'mav_admin_page_theme_styles'
+    'mavf__theme_styles__theme_colors',
+    'mav_admin__setting_section__theme_styles'
 );
 
-function mavf_theme_styles_theme_colors() {
-    _e( 'Thiết lập màu sắc cho website', 'mavericktheme' );
+function mavf__theme_styles__theme_colors() {
+    printf( '<p>%1$s</p>', __( 'Thiết lập màu sắc cho website', 'mavericktheme' ) );
 }
 
 // Primary Color
@@ -26,8 +26,8 @@ add_settings_field(
     'mavid_theme_styles_color_primary',
     __( 'Màu chính', 'mavericktheme' ),
     'mavf_theme_styles_color_primary',
-    'mav_admin_page_theme_styles',
-    'mavsec_theme_styles_theme_colors'
+    'mav_admin__setting_section__theme_styles',
+    'mavsec__theme_styles__theme_colors'
 );
 
 function mavf_theme_styles_color_primary()
@@ -47,15 +47,16 @@ function mavf_theme_styles_color_primary()
 
 // Accent Color
 register_setting(
-    'mavog_theme_styles', 'mav_setting_color_accent'
+    'mavog_theme_styles',
+    'mav_setting_color_accent'
 );
 
 add_settings_field(
     'mavid_theme_styles_color_accent',
     __( 'Màu phụ', 'mavericktheme' ),
     'mavf_theme_styles_color_accent',
-    'mav_admin_page_theme_styles',
-    'mavsec_theme_styles_theme_colors'
+    'mav_admin__setting_section__theme_styles',
+    'mavsec__theme_styles__theme_colors'
 );
 
 function mavf_theme_styles_color_accent()

@@ -1,6 +1,7 @@
 <?php
 /**
  * @package mavericktheme
+ * Default Post Card
  */
 
 // Get the Post or Page ID
@@ -8,11 +9,9 @@ $mav_id = get_the_ID();
 
 $mav_sticky_post = is_sticky( $mav_id ) ? 'sticky' : '';
 
-printf('<div class="mav-card-wrapper" data-post-id="%1$s">', $mav_id);
-    printf('<div class="mav-card-ctn" data-post-id="%1$s">', $mav_id);
-        printf(
-            '<article class="mav-card-post %2$s" data-postid="%1$s">', $mav_id, $mav_sticky_post
-        );
+printf('<div class="mav-card--wrapper" data-post-id="%1$s">', $mav_id);
+    printf('<div class="mav-card--ctn">');
+        printf( '<article class="mav-card--post %2$s" data-post-id="%1$s">', $mav_id, $mav_sticky_post );
 
             /**
              * Card Header
