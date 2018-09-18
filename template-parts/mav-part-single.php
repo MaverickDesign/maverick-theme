@@ -49,18 +49,11 @@
                             get_the_author(), __( 'Tác giả', 'mavericktheme' )
                         );
                         // Category
-                        // $mav_single_cat = function_exists( 'mavf_get_single_category' ) ? mavf_get_single_category() : '';
-                        // if ( ! empty( $mav_single_cat ) ) {
-                        //     printf(
-                        //         '<span class="mav-post-info" title="%2$s %1$s" data-type="category">%3$s</span>',
-                        //         $mav_single_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ), mavf_single_category()
-                        //     );
-                        // }
                         printf( '<div class="mav-post-info mav-category-list" data-type="category">' );
                             // Get post categories
                             $cats = wp_get_post_categories( $post->ID );
                             foreach ( $cats as $category ) {
-                                printf('<li>');
+                                printf('<li class="mav-post__info--category">');
                                     $current_cat = get_cat_name( $category );
                                     $cat_link = get_category_link( $category );
                                     printf( '<a href="%1$s" title="%3$s %2$s">%2$s</a>', $cat_link, $current_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ) );

@@ -1,4 +1,8 @@
-.mav-brand-name {
+.mav-brand__name {
+    font-weight: var(--mav-font__weight--bold)
+}
+.mav-theme__name, .mav-text__en {
+    font-family: var(--mav-font--secondary);
     font-weight: var(--mav-font__weight--medium)
 }
 
@@ -95,7 +99,7 @@
 .mav-bottom-container {
     position: fixed;
     display: grid;
-    grid-gap: var(--mav-gutter-xs);
+    grid-gap: var(--mav-gutter--xs);
     bottom: 0;
     right: 0;
     padding: var(--mav-gutter);

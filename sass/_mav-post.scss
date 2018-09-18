@@ -77,14 +77,15 @@
         display: grid;
         grid-template-columns: max-content auto max-content;
         margin: 0 auto;
-        padding: var(--mav-gutter-lg) var(--mav-gutter);
+        padding: var(--mav-gutter);
         max-width: var(--mav-site--width);
         box-shadow: 0 -1px var(--mav-color--border);
         font-family: var(--mav-font--secondary);
         text-align: left;
         overflow: hidden;
+        font-size: var(--mav-font__size--sm);
         @media #{$mav-tablet} {
-            padding: var(--mav-gutter-lg) var(--mav-gutter);
+            padding: var(--mav-gutter);
         }
         @media #{$mav-phone} {
             display: flex;
@@ -103,10 +104,10 @@
                 margin-right: var(--mav-gutter--xs);
             }
         }
+
         .mav-category-list {
             display: flex;
             flex-wrap: wrap;
-            // justify-content: center;
             max-height: 3em;
             overflow: hidden;
             @media #{$mav-phone} {
@@ -114,12 +115,20 @@
             }
             li {
                 list-style: none;
-                margin-right: var(--mav-gutter--sm);
+                &:after {
+                    content: '/';
+                    margin: 0 var(--mav-gutter--sm);
+                    color: var(--mav-color__text--secondary);
+                }
                 &:last-child {
-                    margin-right: 0;
+                    &:after {
+                        content: '';
+                        margin: 0;
+                    }
                 }
             }
         }
+
     }
 
     .mav-post-footer-wrapper {
@@ -162,6 +171,7 @@
                 @extend %mav-font-awesome;
             }
             @media #{$mav-phone} {
+                max-width: 100%;
                 width: 100%;
                 margin-bottom: var(--mav-gutter--sm);
                 &:last-child {
@@ -186,8 +196,6 @@
         }
     }
 }
-
-
 
 .mav-post-info {
     &:before {
@@ -244,7 +252,7 @@
                 form,
                 figure,
                 twitterwidget {
-                    max-width: 720px;
+                    max-width: 50vw;
                     margin-left: auto;
                     margin-right: auto;
                 }

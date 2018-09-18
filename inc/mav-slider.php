@@ -10,7 +10,8 @@
  * @return void
  */
 
-function mavf_slider( $mav_args ) {
+function mavf_slider( $mav_args )
+{
 
     // Make unique string
     if ( function_exists( 'mavf_unique' ) ) {
@@ -89,7 +90,7 @@ function mavf_slider( $mav_args ) {
     if ( $mav_query->have_posts() ) :
         // Slider Wrapper
         printf(
-            '<div id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
+            '<div id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider__wrapper mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
             $mav_slider_id, $mav_interval, $mav_slider_type, $mav_unique_number, $mav_slider_height
         );
         // Element style
@@ -113,17 +114,17 @@ function mavf_slider( $mav_args ) {
                         if ( function_exists( 'mavf_get_post_thumbnail_url' ) ) {
                             $mav_image_url = mavf_get_post_thumbnail_url( 'large' );
                         }
+
                         $mav_first_slide = ( $i == 1 ) ? ' mav-first-slide' : '';
-                        // ( $i == 1 ? $mav_first_slide = ' mav-first-slide' : $mav_first_slide = '' );
 
                         printf(
                             '<div class="mav-slide mav-slide-number-%2$s %3$s" data-slide="%2$s" %1$s>',
                             $mav_image_url, $i, $mav_first_slide
                         );
-                        printf(
-                            '<a href="%1$s" class="mav-slide-title">%2$s</a>',
-                            get_the_permalink(), get_the_title()
-                        );
+                            printf(
+                                '<a href="%1$s" class="mav-slide-title">%2$s</a>',
+                                get_the_permalink(), get_the_title()
+                            );
                         echo '</div>';
 
                         $i++;

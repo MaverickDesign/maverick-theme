@@ -1,0 +1,146 @@
+/**
+ * Uni Slider
+ * ==========
+ */
+
+// Slider wrapper
+.mav-slider__wrp {
+    position: relative;
+    background: black;
+}
+// Slider container
+.mav-slider__ctn {
+    position: relative;
+}
+
+// Slides wrapper
+.mav-slider__slides--wrp {
+    position: relative;
+    overflow: hidden;
+}
+// Slides container
+.mav-slider__slides--ctn {
+    position: relative;
+    display: grid;
+    transition: all 1s ease;
+    @media #{$mav-tablet} {
+        max-height: 50vh;
+    }
+    @media #{$mav-phone} {
+        max-height: 70vh;
+    }
+}
+
+// Item Wrapper
+.mav-slider__slide--wrp {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    transition: all .3s ease;
+    // opacity: .75;
+    // filter: blur(20px);
+    &:nth-child(even) {
+        background: #eee;
+    }
+    &[data-active-slide] {
+        // opacity: 1;
+        // filter: blur(0);
+        border: 1px solid red;
+    }
+}
+// Item Container
+.mav-slider__slide--ctn {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+// Item Image Wrapper
+.mav-slider__slide__image--wrp {
+}
+// Item Image container
+.mav-slider__slide__image--ctn {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Slide Title Wrapper
+.mav-slider__slide__title-wrp {
+}
+// Slide Title Container
+.mav-slider__slide__title-ctn {
+}
+// Slide Title
+.mav-slider__slide--title {
+    position: relative;
+    color: red;
+}
+
+// Slider Nav - Arrows
+.mav-slider__nav__arrow--wrp {
+}
+.mav-slider__nav__arrow--ctn {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    &[data-direction="prev"] {
+        top: 0;
+        left: 0;
+    }
+    &[data-direction="next"] {
+        top: 0;
+        right: 0;
+    }
+}
+.mav-slider__nav--arrow {
+    cursor: pointer;
+    &[data-direction="prev"] {
+        top: 0;
+        left: 0;
+        background: red;
+    }
+    &[data-direction="next"] {
+        bottom: 0;
+        right: 0;
+        background: yellow;
+    }
+}
+
+// Slider Nav Wrapper
+.mav-slider__nav--wrp {
+}
+// Slider Nav Container
+.mav-slider__nav--ctn {
+
+}
+.mav-slider__nav__dots--ctn {
+    position: relative;
+    background: beige;
+    display: flex;
+    justify-content: center;
+}
+.mav-slider__nav--dot {
+    cursor: pointer;
+    list-style-type: none;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid var(--mav-color--border);
+    margin: var(--mav-gutter--xs);
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -18,17 +18,10 @@ function mavf_carousel( $mav_args )
     $mav_post_type        = isset($mav_args['post_type'])          ? $mav_args['post_type']         : 'post';
 
     // Number of posts to query
-    // $mav_number_of_posts   = isset($mav_args['number_of_posts'])    ? $mav_args['number_of_posts']   : 5;
     $mav_number_of_posts   = isset($mav_post_queries['posts_per_page'])    ? $mav_post_queries['posts_per_page']   : 5;
 
     // Number of posts to display
     $mav_posts_to_display  = isset($mav_args['display'])            ? $mav_args['display']           : 4;
-
-    // Specific post ids
-    // $mavPostIn          = isset($mav_args['post_in'])            ? $mav_args['post_in']           : '';
-
-    // Post categories
-    // $mav_categories      = isset($mav_args['categories'])         ? $mav_args['categories']        : '';
 
     // Carousel class
     $mav_carousel_class   = isset($mav_args['carousel_class'])     ? $mav_args['carousel_class']    : 'mav-carousel';
@@ -59,25 +52,6 @@ function mavf_carousel( $mav_args )
 
     // Query arguments
     $mav_query_args = $mav_post_queries;
-
-
-    // $mav_query_args = array();
-
-    // if ( ! empty( $mav_post_queries ) ) {
-    //     $mav_query_args = $mav_post_queries;
-    //     if ( ! empty( $mav_query_args['posts_per_page'] ) ) {
-    //         $mav_number_of_posts = $mav_query_args['posts_per_page'];
-    //     }
-    // } else {
-    //     $mav_query_args = array(
-    //         'post_type'                 => $mav_post_type,
-    //         'posts_per_page'            => $mav_number_of_posts,
-    //         'ignore_sticky_posts'       => true,
-    //         'post__in'                  => $mavPostIn,
-    //         'post__not_in'              => array( get_the_ID() ),
-    //         'category__in'              => $mav_categories,
-    //     );
-    // }
 
     $mav_query = new WP_Query( $mav_query_args );
 
@@ -118,9 +92,10 @@ function mavf_carousel( $mav_args )
             );
         echo '</div>';
     } else {
-        printf(
-            '<div class="mav-flex-center-all"><span>%2$s %1$s</span></div>',
-            get_the_category()[0]->name, __( 'Không có bài nào cùng chuyên mục', 'mavericktheme' )
-        );
+        // printf(
+        //     '<div class="mav-flex-center-all"><span>%2$s %1$s</span></div>',
+        //     get_the_category()[0]->name, __( 'Không có bài nào cùng chuyên mục', 'mavericktheme' )
+        // );
+        return;
     }
 }

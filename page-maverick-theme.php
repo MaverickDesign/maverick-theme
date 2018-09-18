@@ -15,7 +15,6 @@
         <!-- Nội dung chính của trang -->
         <div id="mavid-page-content" class="mav-page-body-wrapper">
             <div class="mav-page-body-ctn">
-
                 <!-- Giới thiệu -->
                 <section class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
@@ -28,14 +27,12 @@
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper mav-post-content-wrapper">
-                            <div class="mav-sec-body-ctn mav-post-content-ctn">
-                                <div class="mav-post-content">
-                                    <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong>Maverick Theme</strong>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<em>Content Management System - <abbr title="Content Management System">CMS</abbr></em>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
-                                    <p><span class="mav-mavericktheme">Maverick Theme</span> được phát triển bởi <strong class="mav-maverick-design">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
-                                    <p><span class="mav-mavericktheme">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (Desktop Computer), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
-                                    <p><span class="mav-mavericktheme">Maverick Theme</span> đáp ứng đầy đủ các yêu cầu cơ bản của một website chuyên về nội dung.</p>
-                                </div>
+                        <div class="mav-post-content-wrapper">
+                            <div class="mav-post-content-ctn mav-post-content">
+                                <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong>Maverick Theme</strong>) là một bộ giao diện (Theme) cho nền tảng <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (Content Management System - <abbr title="Content Management System">CMS</abbr>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
+                                <p><span class="mav-theme__name">Maverick Theme</span> được phát triển bởi <strong class="mav-brand__name">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, Javascript ES6+ và PHP 7.0+.</p>
+                                <p><span class="mav-theme__name">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (<span class="mav-text__en">Desktop Computer</span>), các thiết bị di động như: Điện thoại di động thông minh (Smart Phone) và máy tính bảng (Tablet) với tiêu chí phát triển "Ưu tiên cho di động" (Mobile First).</p>
+                                <p><span class="mav-theme__name">Maverick Theme</span> đáp ứng đầy đủ các yêu cầu cơ bản của một website chuyên về nội dung.</p>
                             </div>
                         </div>
                     </div>
@@ -43,7 +40,7 @@
 
                 <!-- Các tính năng nổi bật: Item Grid -->
                 <?php
-                    if (function_exists('mavf_items_grid')): ?>
+                    if ( function_exists( 'mavf_items_grid' ) ) : ?>
                         <section class="mav-sec-wrapper mav-pg-section">
                             <div class="mav-sec-ctn">
                                 <div class="mav-sec-header-wrapper">
@@ -60,9 +57,9 @@
                                         <?php
                                             $mav_args = array(
                                                 'columns'   => 4,
-                                                'items'     => file_get_contents(TEMPLATE_URI.'/mav-grid-array.json')
+                                                'items'     => file_get_contents( TEMPLATE_URI.'/mav-grid-array.json' )
                                             );
-                                            mavf_items_grid($mav_args);
+                                            mavf_items_grid( $mav_args );
                                         ?>
                                     </div>
                                 </div>
@@ -91,7 +88,7 @@
                                     <div class="mav-margin-bottom-xl">
                                         <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 1</p>
                                         <?php
-                                            mavf_slider(array('slider_type' => 1, 'number_of_slides' => 4));
+                                            mavf_slider( array( 'slider_type' => 1, 'number_of_slides' => 4) );
                                         ?>
                                     </div>
                                     <div class="mav-margin-bottom-xl">
@@ -810,14 +807,31 @@
                     </div>
                 </section>
 
+                <section id="mavid-sec-uni-slider">
+                    <?php
+                        if ( function_exists( 'mavf_uni_slider' ) ) {
+                            $mav_args = array(
+                                'query_args'    => array(
+                                    'post_type'             => 'post',
+                                    'posts_per_page'        => 5,
+                                    'ignore_sticky_posts'   => true,
+                                    'meta_query'            => array(
+                                        array(
+                                            'key'        => '_thumbnail_id',
+                                            'compare'    => 'EXISTS'
+                                        )
+                                    )
+                                ),
+                                'slider_type'   => 1,
+                                'display'       => 2,
+                                'slider_height' => '60vh',
+                            );
+                            mavf_uni_slider( $mav_args );
+                        }
+                    ?>
+                </section>
             </div>
         </div>
-
-        <!-- Chân trang -->
-        <footer id="mavid-page-footer" class="mav-page-footer-wrapper">
-            <div class="mav-page-footer-ctn">
-            </div>
-        </footer>
     </div>
 </main>
 <!-- Page content ends here -->

@@ -68,7 +68,13 @@ require TEMPLATE_DIR. '/inc/mav-post-query.php';
 require TEMPLATE_DIR. '/inc/mav-google-map.php';
 
 // Sliders
-require TEMPLATE_DIR.'/inc/mav-slider.php';
+if ( file_exists( TEMPLATE_DIR.'/inc/mav-slider.php' ) ) {
+    include TEMPLATE_DIR.'/inc/mav-slider.php';
+}
+
+if ( file_exists( TEMPLATE_DIR.'/inc/mav-uni-slider.php' ) ) {
+    include TEMPLATE_DIR.'/inc/mav-uni-slider.php';
+}
 
 // Carousel
 require TEMPLATE_DIR.'/inc/mav-carousel.php';

@@ -10,10 +10,12 @@ console.log('Maverick\'s Slider loaded.');
  * @args: mavSlideContainerClass - slider wrapper inside the container
  */
 
-function mavf_slider(mavArgs = {
+function mavf_slider(
+    mavArgs = {
         mavSliderId             : '',
         mavSlideContainerClass  : ''
-    }) {
+    }
+) {
 
     const mavSliders = document.querySelectorAll('.mav-slider');
 
@@ -213,5 +215,5 @@ function mavf_slider(mavArgs = {
  * Start Sliders
  */
 if (typeof mavf_slider === 'function') {
-    mavf_slider();
+    // mavf_slider();
 }

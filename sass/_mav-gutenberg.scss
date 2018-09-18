@@ -1,10 +1,15 @@
-/**
- * Gallery
- */
-
+.wp-block-embed-youtube {
+    &.aligncenter {
+        text-align: center;
+    }
+}
 .wp-block-separator {
     margin: var(--mav-gutter--xl) 0;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--mav-color--border), rgba(0, 0, 0, 0));
+}
+
+p.has-drop-cap::first-letter {
+    font-weight: var(--mav-font__weight--medium)!important;
 }

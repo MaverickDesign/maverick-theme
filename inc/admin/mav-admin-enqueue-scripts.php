@@ -63,6 +63,14 @@ function mavf_enqueue_scripts()
         );
 
         wp_enqueue_script(
+            'mavericktheme-uni-slider',
+            TEMPLATE_URI . '/js/mav-uni-slider.js',
+            false,
+            '1.0.0',
+            true
+        );
+
+        wp_enqueue_script(
             'mavericktheme-carousel',
             TEMPLATE_URI . '/js/mav-carousel.js',
             false,
