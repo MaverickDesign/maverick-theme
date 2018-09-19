@@ -3,7 +3,7 @@
  * version: 1.0
  */
 
-console.log('Maverick\'s Multi Type Writter loaded.');
+// console.log('Maverick\'s Multi Type Writter loaded.');
 
 /*
  * Function: mavf_type_writer

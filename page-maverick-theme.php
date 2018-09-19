@@ -806,30 +806,6 @@
                         </footer>
                     </div>
                 </section>
-
-                <section id="mavid-sec-uni-slider">
-                    <?php
-                        if ( function_exists( 'mavf_uni_slider' ) ) {
-                            $mav_args = array(
-                                'query_args'    => array(
-                                    'post_type'             => 'post',
-                                    'posts_per_page'        => 5,
-                                    'ignore_sticky_posts'   => true,
-                                    'meta_query'            => array(
-                                        array(
-                                            'key'        => '_thumbnail_id',
-                                            'compare'    => 'EXISTS'
-                                        )
-                                    )
-                                ),
-                                'slider_type'   => 1,
-                                'display'       => 2,
-                                'slider_height' => '60vh',
-                            );
-                            mavf_uni_slider( $mav_args );
-                        }
-                    ?>
-                </section>
             </div>
         </div>
     </div>

@@ -35,9 +35,6 @@
                 </div>
             </div>
         </section>
-        <!-- Page Footer -->
-        <!-- <footer id="mavid-page-footer" class="mav-page-footer mav-page-footer-wrapper">
-        </footer> -->
     </div>
 </main>
 

@@ -2556,7 +2556,7 @@ form {
   .mav-slider__slide--wrp:nth-child(even) {
     background: #eee; }
   .mav-slider__slide--wrp[data-active-slide] {
-    border: 1px solid red; }
+    border: 5px solid red; }
 
 .mav-slider__slide--ctn {
   position: relative;

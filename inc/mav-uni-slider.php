@@ -210,13 +210,13 @@ function mavf_uni_slider( $mav_args )
                     '
                     <div class="mav-slider__nav__arrow--wrp" data-direction="prev" data-type="%2$s">
                         <div class="mav-slider__nav__arrow--ctn" data-direction="prev" data-type="%2$s">
-                            <div class="mavjs-slider__nav--arrow mav-slider__nav--arrow" data-unique="%1$s" data-type="%2$s" data-direction="prev" data-next-slide="%3$s" data-current-step="0">
+                            <div class="mavjs-slider__nav--arrow mav-slider__nav--arrow" data-unique="%1$s" data-type="%2$s" data-direction="prev" data-slide-number="1" data-current-step="0">
                                 <span>Prev</span>
                             </div>
                         </div>
                     </div>
                     ',
-                    $mav_unique_number, $mav_slider_type, $mav_total_posts
+                    $mav_unique_number, $mav_slider_type
                 );
 
                 // Next Button
@@ -224,7 +224,7 @@ function mavf_uni_slider( $mav_args )
                     '
                     <div class="mav-slider__nav__arrow--wrp" data-direction="next" data-type="%2$s">
                         <div class="mav-slider__nav__arrow--ctn" data-direction="next" data-type="%2$s">
-                            <div class="mavjs-slider__nav--arrow mav-slider__nav--arrow" data-unique="%1$s" data-type="%2$s" data-direction="next" data-next-slide="2" data-current-step="0">
+                            <div class="mavjs-slider__nav--arrow mav-slider__nav--arrow" data-unique="%1$s" data-type="%2$s" data-direction="next" data-slide-number="1" data-current-step="0">
                                 <span>Next</span>
                             </div>
                         </div>

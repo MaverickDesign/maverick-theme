@@ -5,20 +5,19 @@
 function mavf_uni_slider(
     mavArgs = {
         'mavSliderClass'                    : '.mavjs-uni-slider',
-        'mavSliderClassNavButton'           : '.mavjs-slider__nav--arrow',
         'mavSliderClassSlidesContainer'     : '.mavjs-uni-slider__slides--ctn',
         'mavSliderClassSlideItem'           : '.mavjs-uni-slider__slide--item',
+        'mavSliderClassNavButton'           : '.mavjs-slider__nav--arrow',
         'mavSliderClassNavDotsContainer'    : '.mavjs-slider__nav__dots--ctn',
         'mavSliderClassNavDot'              : '.mavjs-slider__nav--dot',
     }
 ) {
     // Select all sliders on page
     const mavAllSliders = document.querySelectorAll(mavArgs['mavSliderClass']);
-    // console.log('mavAllSliders: ', mavAllSliders);
 
     // Loop for each slider
     for ( const mavCurrentSlider of mavAllSliders ) {
-        console.log('mavCurrentSlider: ', mavCurrentSlider);
+
         // Get Slider Type
         const mavSliderType = mavCurrentSlider.dataset.type;
 
@@ -28,13 +27,8 @@ function mavf_uni_slider(
         // Get number of slides to display
         const mavSlidesDisplay = mavCurrentSlider.dataset.slidesDisplay;
 
-        let mavMaxSteps = ( Number(mavTotalSlides) - Number(mavSlidesDisplay) );
-        console.log('mavMaxSteps: ', mavMaxSteps);
-
         // Get Next Button
         const mavButtonNext = mavCurrentSlider.querySelector(`${mavArgs['mavSliderClassNavButton']}[data-direction="next"]`);
-        // Update next slide number base on total display items
-        mavButtonNext.dataset.nextSlide = Number(mavSlidesDisplay) + 1;
         mavButtonNext.addEventListener('click', mavf_nav_button);
 
         // Get Prev Button
@@ -44,66 +38,127 @@ function mavf_uni_slider(
         // Get slides container
         const mavSlidesContainer = mavCurrentSlider.querySelector(mavArgs['mavSliderClassSlidesContainer']);
 
-
-        function mavf_get_slide_width() {
-            let mavCurrentActiveSlide = mavf_get_active_slide();
-            let mavSlideWidth = mavCurrentActiveSlide.offsetWidth;
-            console.log('Active Slide Width: ', mavSlideWidth);
-            return mavSlideWidth;
+        /**
+         * Get slide item by number
+         * @param {int} mavSlideNumber
+         */
+        function mavf_get_slide(mavSlideNumber) {
+            return mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-slide-number="${mavSlideNumber}"]`);
         }
 
+        /**
+         * Update slider nav buttons slide number attribute
+         * @param {int} mavNewSlideNumber
+         */
+        function mavf_update_nav_slide_number(mavNewSlideNumber) {
+            mavButtonNext.dataset.slideNumber = mavNewSlideNumber;
+            mavButtonPrev.dataset.slideNumber = mavNewSlideNumber;
+        }
+
+        /**
+         * Get current active slide
+         */
         function mavf_get_active_slide() {
-            return mavCurrentActiveSlide = mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-active-slide]`);
+            const mavCurrentActiveSlide = mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-active-slide]`);
+            if (mavCurrentActiveSlide) {
+                return mavCurrentActiveSlide;
+            }
         }
 
-        function mavf_update_current_step(mavCurrentStep) {
-            mavButtonNext.dataset.currentStep = mavCurrentStep;
-            mavButtonPrev.dataset.currentStep = mavCurrentStep;
+        /**
+         * Set active attribute to slide item by number
+         * @param {int} mavSlideNumber
+         */
+        function mavf_set_active_slide(mavSlideNumber) {
+            if ( mavSlideNumber !== undefined ) {
+                const mavCurrentActiveSlide = mavf_get_active_slide();
+                if (mavCurrentActiveSlide) {
+                    mavCurrentActiveSlide.removeAttribute('data-active-slide');
+                    const mavNewActiveSlide = mavf_get_slide(mavSlideNumber);
+                    mavNewActiveSlide.setAttribute('data-active-slide', '');
+                }
+            }
         }
 
-        function mavf_translate_slides_container(mavTranslateAmount) {
-            mavSlidesContainer.style.transform = `translateX(${mavTranslateAmount}px)`;
+        function mavf_translate_slide_container() {
+            let mavSlideNumber = mavButtonNext.dataset.slideNumber;
+            let mavTranslateAmount = ( Number(mavSlideNumber) - Number(mavSlidesDisplay) ) * (100/Number(mavSlidesDisplay));
+            if ( mavTranslateAmount < 0 ) {
+                mavTranslateAmount = 0;
+            }
+            mavSlidesContainer.style.transform = `translateX(-${mavTranslateAmount}%)`;
         }
 
-        // Slider Nav Arrow
+        /**
+         * Slider Nav Buttons Function
+         */
         function mavf_nav_button() {
             event.stopPropagation;
 
             const mavButton = this;
-            console.log('mavButton: ', mavButton);
 
             // Get button direction
             const mavDirection = mavButton.dataset.direction;
 
-            // Get current step from button data attribute
-            let mavCurrentStep = mavButton.dataset.currentStep;
-            // Get item width
-            let mavItemWidth = mavf_get_slide_width();
-            // Calculate max translate amount
-            let mavMaxTranslateAmount = Number(mavItemWidth) * ( Number(mavTotalSlides) - Number(mavSlidesDisplay) );
+            // Get current slide number
+            const mavCurrentSlideNumber = Number(mavButton.dataset.slideNumber);
 
-            let mavCurrentActiveSlide = mavf_get_active_slide();
-            console.log('mavCurrentActiveSlide: ', mavCurrentActiveSlide);
-            let mavCurrentSlideNumber = mavCurrentActiveSlide.dataset.slideNumber;
-            console.log('mavCurrentSlideNumber: ', mavCurrentSlideNumber);
-
-
-            // Update current step
-            if ( mavDirection == 'next' &&  mavCurrentStep < mavMaxSteps ) {
-                mavCurrentStep = Number(mavCurrentStep) + 1 ;
-                mavf_update_current_step(mavCurrentStep);
-            }
-            if ( mavDirection == 'prev' && mavCurrentStep >= 1 ) {
-                mavCurrentStep = Number(mavCurrentStep) - 1;
-                mavf_update_current_step(mavCurrentStep);
+            // Next Button
+            if ( mavDirection == 'next' )  {
+                // Update slide number
+                if ( mavCurrentSlideNumber < mavTotalSlides ) {
+                    mavf_update_nav_slide_number(mavCurrentSlideNumber + 1);
+                    mavf_set_active_slide(mavCurrentSlideNumber + 1)
+                } else if (mavCurrentSlideNumber == mavTotalSlides) {
+                    mavf_update_nav_slide_number(mavTotalSlides);
+                    mavf_set_active_slide(mavTotalSlides)
+                }
             }
 
-            // Calculate translate amount
-            let mavTranslateAmount = ( Number(mavCurrentStep) * Number(mavItemWidth) );
-            if ( mavTranslateAmount <= mavMaxTranslateAmount ) {
-                // Translate slides container
-                mavf_translate_slides_container(Number(mavTranslateAmount) * -1);
+            // Prev Button
+            if ( mavDirection == 'prev' )  {
+                // Update slide number
+                if ( mavCurrentSlideNumber > 1 ) {
+                    mavf_update_nav_slide_number(mavCurrentSlideNumber - 1);
+                    mavf_set_active_slide(mavCurrentSlideNumber - 1);
+                } else if ( mavCurrentSlideNumber <= mavSlidesDisplay ) {
+                    mavf_update_nav_slide_number(1);
+                    mavf_set_active_slide(1);
+                }
             }
+
+            // Translate slide container
+            mavf_translate_slide_container();
+        }
+
+        // Query nav dots container
+        const mavNavDotsContainer = mavCurrentSlider.querySelector(mavArgs['mavSliderClassNavDotsContainer']);
+        // Query nav dots
+        const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
+        // Add click event to nav dots
+        for (const mavNavDot of mavNavDots) {
+            mavNavDot.addEventListener('click', mavf_nav_dot);
+        }
+
+        /**
+         * Slider Dot Function
+         */
+        function mavf_nav_dot() {
+            event.stopPropagation;
+
+            const mavDot = this;
+
+            // Get dot slide number
+            const mavSlideNumber = mavDot.dataset.slideNumber;
+
+            // Update slide number to slider navs
+            mavf_update_nav_slide_number(mavSlideNumber);
+
+            // Update active slide
+            mavf_set_active_slide(mavSlideNumber);
+
+            // Translate slide container
+            mavf_translate_slide_container();
         }
     }
 }
