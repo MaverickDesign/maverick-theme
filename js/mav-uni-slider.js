@@ -1,28 +1,54 @@
 /**
  * Maverick Uni Slider
  */
+console.log("Maverick's Uni Slider loaded.");
+console.log(document.readyState);
 
 function mavf_uni_slider(
     mavArgs = {
         'mavSliderClass'                    : '.mavjs-uni-slider',
         'mavSliderClassSlidesContainer'     : '.mavjs-uni-slider__slides--ctn',
         'mavSliderClassSlideItem'           : '.mavjs-uni-slider__slide--item',
-        'mavSliderClassNavButton'           : '.mavjs-slider__nav--arrow',
-        'mavSliderClassNavDotsContainer'    : '.mavjs-slider__nav__dots--ctn',
-        'mavSliderClassNavDot'              : '.mavjs-slider__nav--dot',
+        'mavSliderClassNavButton'           : '.mavjs-uni-slider__nav--arrow',
+        'mavSliderClassNavDotsContainer'    : '.mavjs-uni-slider__nav__dots--ctn',
+        'mavSliderClassNavDot'              : '.mavjs-uni-slider__nav--dot',
+        'mavSliderClassNavArrowTitle'       : '.mavjs-title',
+        'mavSliderClassNavArrowThumbnail'   : '.mavjs-featured-image',
     }
 ) {
-    // Select all sliders on page
+    // Query all sliders on page
     const mavAllSliders = document.querySelectorAll(mavArgs['mavSliderClass']);
+
+    if ( mavAllSliders.length == 0 ) {
+        console.log('Không tìm thấy Uni Slider nào.');
+        return;
+    }
 
     // Loop for each slider
     for ( const mavCurrentSlider of mavAllSliders ) {
 
+        // Update number of slides to display based on current device
+        mavf_update_slide_display(mavCurrentSlider);
+
         // Get Slider Type
         const mavSliderType = mavCurrentSlider.dataset.type;
+        if ( mavSliderType === undefined ) {
+            mavSliderType = 1;
+        }
+
+        // Get slider interval
+        let mavInterval = mavCurrentSlider.dataset.interval;
+        if (mavInterval === undefined) {
+            mavInterval = 4000;
+            console.log('Chú ý: Không tìm thấy dữ kiện cung cấp thời gian vòng lặp (Interval). Sử dụng giá trị mặc định là: ', mavInterval);
+        }
 
         // Get total slides
-        const mavTotalSlides = mavCurrentSlider.dataset.totalSlides;
+        let mavTotalSlides = mavCurrentSlider.dataset.totalSlides;
+        if ( mavTotalSlides === undefined ) {
+            mavTotalSlides = mavCurrentSlider.querySelectorAll(mavArgs['mavSliderClassSlideItem']).length;
+            console.log('Chú ý: Không tìm thấy dữ kiện cung cấp tổng số Slide. Sử dụng giá trị đã tính toán được là: ', mavTotalSlides);
+        }
 
         // Get number of slides to display
         const mavSlidesDisplay = mavCurrentSlider.dataset.slidesDisplay;
@@ -80,13 +106,20 @@ function mavf_uni_slider(
             }
         }
 
-        function mavf_translate_slide_container() {
+        /**
+         * Translate slides container
+         */
+        function mavf_translate_slides_container() {
             let mavSlideNumber = mavButtonNext.dataset.slideNumber;
+            // Get current number of slides to display
+            const mavSlidesDisplay = mavCurrentSlider.dataset.slidesDisplay;
             let mavTranslateAmount = ( Number(mavSlideNumber) - Number(mavSlidesDisplay) ) * (100/Number(mavSlidesDisplay));
             if ( mavTranslateAmount < 0 ) {
                 mavTranslateAmount = 0;
             }
             mavSlidesContainer.style.transform = `translateX(-${mavTranslateAmount}%)`;
+            mavf_toggle_nav(mavCurrentSlider);
+            mavf_update_active_dot(mavNavDotsContainer);
         }
 
         /**
@@ -105,19 +138,21 @@ function mavf_uni_slider(
 
             // Next Button
             if ( mavDirection == 'next' )  {
-                // Update slide number
                 if ( mavCurrentSlideNumber < mavTotalSlides ) {
+                    // Update new slide number to nav button
                     mavf_update_nav_slide_number(mavCurrentSlideNumber + 1);
+                    // Set active state to new slide
                     mavf_set_active_slide(mavCurrentSlideNumber + 1)
                 } else if (mavCurrentSlideNumber == mavTotalSlides) {
+                    // Update new slide number to nav button
                     mavf_update_nav_slide_number(mavTotalSlides);
+                    // Set active state to new slide
                     mavf_set_active_slide(mavTotalSlides)
                 }
             }
 
             // Prev Button
             if ( mavDirection == 'prev' )  {
-                // Update slide number
                 if ( mavCurrentSlideNumber > 1 ) {
                     mavf_update_nav_slide_number(mavCurrentSlideNumber - 1);
                     mavf_set_active_slide(mavCurrentSlideNumber - 1);
@@ -128,11 +163,60 @@ function mavf_uni_slider(
             }
 
             // Translate slide container
-            mavf_translate_slide_container();
+            mavf_translate_slides_container();
+
+            mavf_update_nav_thumbnail(mavNavDotsContainer);
+        }
+
+        function mavf_update_nav_thumbnail(mavDotsContainer) {
+            let mavNewActiveSlide = mavf_get_active_slide();
+            let mavCurrentSlideNumber = Number(mavNewActiveSlide.dataset.slideNumber);
+            let mavNextNumber = mavCurrentSlideNumber + 1;
+            let mavPrevNumber = mavCurrentSlideNumber - 1;
+
+            if (mavCurrentSlideNumber >= mavTotalSlides ) {
+                mavNextNumber = mavTotalSlides;
+            }
+
+            if (mavCurrentSlideNumber < 2  ) {
+                mavPrevNumber = 1;
+            }
+
+            // Button Next
+            // Set thumbnail image
+            mavButtonNext.querySelector(mavArgs['mavSliderClassNavArrowThumbnail']).src = mavf_get_dot_img_url(mavDotsContainer, mavNextNumber);
+            // Set title
+            mavButtonNext.querySelector(mavArgs['mavSliderClassNavArrowTitle']).innerHTML = mavf_get_dot_title(mavDotsContainer, mavNextNumber);
+            // Button Prev
+            // Set thumbnail image
+            mavButtonPrev.querySelector(mavArgs['mavSliderClassNavArrowThumbnail']).src = mavf_get_dot_img_url(mavDotsContainer, mavPrevNumber);
+            // Set title
+            mavButtonPrev.querySelector(mavArgs['mavSliderClassNavArrowTitle']).innerHTML = mavf_get_dot_title(mavDotsContainer, mavPrevNumber);
+        }
+
+        function mavf_toggle_nav(mavSlider) {
+            const mavSlideNumber = mavf_get_active_slide().dataset.slideNumber;
+            const mavNext = mavSlider.querySelector('.mav-slider__nav__arrow--wrp[data-direction="next"]');
+            console.log('mavNext: ', mavNext);
+            const mavPrev = mavSlider.querySelector('.mav-slider__nav__arrow--wrp[data-direction="prev"]');
+            console.log('mavPrev: ', mavPrev);
+            if ( mavSlideNumber == mavTotalSlides ) {
+                mavNext.classList.add('mav-hide');
+            } else {
+                mavNext.classList.remove('mav-hide');
+            }
+
+            if ( mavSlideNumber == 1 ) {
+                mavPrev.classList.add('mav-hide');
+            } else {
+                mavPrev.classList.remove('mav-hide');
+            }
         }
 
         // Query nav dots container
         const mavNavDotsContainer = mavCurrentSlider.querySelector(mavArgs['mavSliderClassNavDotsContainer']);
+        mavf_update_nav_thumbnail(mavNavDotsContainer);
+
         // Query nav dots
         const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
         // Add click event to nav dots
@@ -141,7 +225,23 @@ function mavf_uni_slider(
         }
 
         /**
-         * Slider Dot Function
+         * Update active state for thumbnail dot
+         * @param {obj} mavNavDotsContainer
+         */
+        function mavf_update_active_dot(mavNavDotsContainer) {
+            const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
+            const mavNewActiveSlide = mavf_get_active_slide();
+            const mavSlideNumber = mavNewActiveSlide.dataset.slideNumber;
+            for (const mavNavDot of mavNavDots) {
+                mavNavDot.dataset.active = '0';
+            }
+            const mavActiveDot = mavNavDotsContainer.querySelector(`${mavArgs['mavSliderClassNavDot']}[data-slide-number="${mavSlideNumber}"]`)
+            console.log('mavActiveDot: ', mavActiveDot);
+            mavActiveDot.dataset.active = '1';
+        }
+
+        /**
+         * Slider dot function
          */
         function mavf_nav_dot() {
             event.stopPropagation;
@@ -158,11 +258,139 @@ function mavf_uni_slider(
             mavf_set_active_slide(mavSlideNumber);
 
             // Translate slide container
-            mavf_translate_slide_container();
+            mavf_translate_slides_container();
+
+            mavf_update_nav_thumbnail(mavNavDotsContainer);
+        }
+
+        /**
+         * Start slider function
+         */
+        function mavf_start_slide() {
+            let mavSliderType1 = setInterval(mavf_start, mavInterval);
+            let mavDirection = 'next';
+            function mavf_start() {
+
+                let mavCurrentSlideNumber = mavf_get_active_slide().dataset.slideNumber;
+
+                if ( mavCurrentSlideNumber < mavTotalSlides && mavDirection == 'next' ) {
+                    mavButtonNext.click();
+                } else {
+                    mavDirection = 'prev';
+                }
+                if ( mavCurrentSlideNumber > 1 && mavDirection == 'prev' ) {
+                    mavButtonPrev.click();
+                } else {
+                    mavDirection = 'next';
+                }
+            }
+            mavCurrentSlider.addEventListener('mouseover', mavf_pause);
+            function mavf_pause() {
+                clearInterval(mavSliderType1);
+            }
+            mavCurrentSlider.addEventListener('mouseleave', mavf_resume);
+            function mavf_resume() {
+                mavSliderType1 = setInterval(mavf_start, mavInterval);
+            }
+        }
+        // Start the slider
+        mavf_start_slide();
+
+    } // End of For Loop each slider
+
+    /**
+     * Query a thumbnail dot
+     * @param {obj} mavDotsContainer
+     * @param {int} mavDotNumber
+     */
+    function mavf_get_nav_dot(mavDotsContainer, mavDotNumber) {
+        return mavDotsContainer.querySelector(`${mavArgs['mavSliderClassNavDot']}[data-slide-number="${mavDotNumber}"]`);
+    }
+
+    /**
+     * Get thunbnail dot image url
+     * @param {obj} mavDotsContainer
+     * @param {int} mavDotNumber
+     */
+    function mavf_get_dot_img_url(mavDotsContainer, mavDotNumber) {
+        const mavDot = mavf_get_nav_dot(mavDotsContainer, mavDotNumber);
+        return mavDot.querySelector('img').src;
+    }
+
+    /**
+     * Get thumbnail dot title
+     * @param {obj} mavDotsContainer
+     * @param {int} mavDotNumber
+     */
+    function mavf_get_dot_title(mavDotsContainer, mavDotNumber) {
+        const mavDot = mavf_get_nav_dot(mavDotsContainer, mavDotNumber);
+        return mavDot.title;
+    }
+
+    /**
+     * Update sliders width when resize window
+     */
+    function mavf_screen_resize() {
+        let mavMessage;
+        window.addEventListener('resize', function(){
+            // Clear setTimeout
+            clearTimeout(mavMessage);
+            mavMessage = setTimeout(function(){
+                // Update sliders width
+                mavf_update_sliders_width();
+            }, 300);
+        });
+    }
+    mavf_screen_resize();
+
+    function mavf_update_slide_display(mavCurrentSlider) {
+        // Get slides container
+        const mavSlidesContainer = mavCurrentSlider.querySelector(mavArgs['mavSliderClassSlidesContainer']);
+
+        // Get init slides display
+        const mavInitSlidesDisplay = mavCurrentSlider.dataset.initSlidesDisplay;
+
+        // Get total slides
+        const mavTotalSlides = mavCurrentSlider.dataset.totalSlides;
+
+        // Get slider width after window resized
+        let mavCurrentSliderWidth = mavCurrentSlider.offsetWidth;
+
+        // Set slider width data attribute
+        mavCurrentSlider.dataset.width = mavCurrentSliderWidth;
+
+        // Check for screen size desktop
+        if ( mavCurrentSliderWidth > 1024 ) {
+            mavCurrentSlider.dataset.slidesDisplay = mavInitSlidesDisplay;
+            const mavPercent = 100 / Number(mavInitSlidesDisplay);
+            mavSlidesContainer.style.gridTemplateColumns = `repeat(${mavTotalSlides},${mavPercent}%)`;
+        }
+        // Check for screen size tablet
+        if ( mavCurrentSliderWidth < 1025 && mavCurrentSliderWidth > 414 ) {
+            mavCurrentSlider.dataset.slidesDisplay = 2;
+            mavSlidesContainer.style.gridTemplateColumns = `repeat(${mavTotalSlides},50%)`;
+        }
+        // Check for screen size phone
+        if ( mavCurrentSliderWidth < 415 ) {
+            mavCurrentSlider.dataset.slidesDisplay = 1;
+            mavSlidesContainer.style.gridTemplateColumns = `repeat(${mavTotalSlides},100%)`;
+        }
+    }
+
+    function mavf_update_sliders_width() {
+        for ( const mavCurrentSlider of mavAllSliders ) {
+            mavf_update_slide_display(mavCurrentSlider);
+            // Click next button for slide reposition
+            mavCurrentSlider.querySelector(`${mavArgs['mavSliderClassNavButton']}[data-direction="next"]`).click();
         }
     }
 }
 
-if ( typeof mavf_uni_slider === 'function' ) {
-    mavf_uni_slider();
-}
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Your code to run since DOM is loaded and ready
+    console.log('DOM content loaded.');
+    console.log(document.readyState);
+    if ( typeof mavf_uni_slider === 'function' ) {
+        mavf_uni_slider();
+    }
+});

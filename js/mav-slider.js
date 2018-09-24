@@ -3,7 +3,7 @@
  * Version: 1.0
  */
 
-console.log('Maverick\'s Slider loaded.');
+// console.log('Maverick\'s Slider loaded.');
 
 /**
  * @args: mavSliderId - ID of the container

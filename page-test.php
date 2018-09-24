@@ -30,7 +30,8 @@
                         ),
                         'slider_type'   => 1,
                         'display'       => 2,
-                        'slider_height' => '30vh',
+                        'slider_height' => '40vh',
+                        'interval'      => 5000,
                     );
                     mavf_uni_slider( $mav_args );
                 }
@@ -52,7 +53,7 @@
                         ),
                         'slider_type'   => 1,
                         'display'       => 1,
-                        'slider_height' => '30vh',
+                        'slider_height' => '40vh',
                     );
                     mavf_uni_slider( $mav_args );
                 }
@@ -74,7 +75,7 @@
                         ),
                         'slider_type'   => 1,
                         'display'       => 4,
-                        'slider_height' => '30vh',
+                        'slider_height' => '40vh',
                     );
                     mavf_uni_slider( $mav_args );
                 }

@@ -74,7 +74,7 @@ function mavf_carousel(mavArgs = {
                 let mavItemWidth = Math.floor((100 / mavItemsToDisplay));
 
                 // Calculate item gutter
-                let mavGutter = (( 100-(mavItemWidth*mavItemsToDisplay))/(mavItemsToDisplay-1))+'%';
+                let mavGutter = (( 100 - (mavItemWidth * mavItemsToDisplay) ) / (mavItemsToDisplay - 1)) + '%';
 
                 // Tablet screen size
                 if (mavTotalWidth < 1025 && mavTotalWidth > 414 ) {
@@ -166,7 +166,7 @@ function mavf_carousel(mavArgs = {
                     mavNewStep = mavCurrentStep - 1;
                 }
 
-                function mavf_nav_display(){
+                function mavf_nav_display() {
                     for (mavNav of mavNavs ) {
                         mavNav.classList.remove('mav-hide');
                     }

@@ -29,7 +29,11 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php if ( get_option( 'mav_setting_dev_mode' ) ) { echo 'data-dev-mode'; } ?>>
 <head>
-    <?php get_template_part( '/template-parts/mav-header__google-analytics' ); ?>
+    <?php
+        // Google Analytics
+        get_template_part( '/template-parts/mav-header__google-analytics' );
+    ?>
+
     <?php
         /**
          * Google Tag Manager
@@ -48,6 +52,22 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','<?php echo $mav_gtm_id ?>');</script>
             <!-- End Google Tag Manager -->
+        <?php endif;
+    ?>
+
+    <?php
+        /* Google AdSense */
+        $mav_egas = esc_attr( get_option( 'mav_setting_enable_google_adsense' ) );
+        $mav_gas_id = esc_attr( get_option( 'mav_setting_google_adsense_id' ) );
+        if ( ! empty( $mav_egas ) && ! empty( $mav_gas_id ) ) : ?>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "<?php echo $mav_gas_id ?>",
+                    // google_ad_client: "ca-pub-9572362503337525",
+                    enable_page_level_ads: true
+                });
+            </script>
         <?php endif;
     ?>
 
@@ -88,30 +108,7 @@
     ?>
 
     <!-- Modified Theme Styles -->
-    <?php
-        echo '<style>';
-            echo ':root {';
-                /* Site Width */
-                $mav_site__width = esc_attr( get_option( 'mav_setting_grid_system' ) );
-                if ( ! empty( $mav_site__width ) ) {
-                    echo '--mav-site-width: '.$mav_site__width.'px;';
-                    echo '--mav-site--width: '.$mav_site__width.'px;';
-                }
-                /* Primary Color */
-                $mav_color__primary = esc_attr( get_option( 'mav_setting_color_primary' ) );
-                if ( ! empty( $mav_color__primary ) ) {
-                    echo "--mav-color-primary: $mav_color__primary;";
-                    echo "--mav-color--primary: $mav_color__primary;";
-                }
-                /* Accent Color */
-                $mav_color__accent = esc_attr( get_option( 'mav_setting_color_accent' ) );
-                if ( ! empty( $mav_color__accent ) ) {
-                    echo "--mav-color-accent: $mav_color__accent;";
-                    echo "--mav-color--accent: $mav_color__accent;";
-                }
-            echo '}';
-        echo '</style>';
-    ?>
+    <?php get_template_part( '/template-parts/header/mav-header__modified-styles' ); ?>
 
 </head>
 

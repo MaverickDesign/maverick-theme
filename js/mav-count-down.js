@@ -1,5 +1,5 @@
-console.log(`Maverick's Countdown loaded.`);
-console.log(document.readyState);
+// console.log(`Maverick's Countdown loaded.`);
+// console.log(document.readyState);
 
 function mavf_count_down(mavArgs = {
     expired: '',

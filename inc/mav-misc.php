@@ -185,3 +185,7 @@ function mavf_unique( $mav_length = 0, $mavExp = 's' )
     }
     return esc_html( $mavReturn );
 }
+
+function mavf_console_error( $mavMessage ) {
+    printf('<script>console.log("%1$s");</script>', $mavMessage);
+}
