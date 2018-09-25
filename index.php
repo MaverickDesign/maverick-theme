@@ -16,7 +16,7 @@
 
     $mav_sticky_posts = get_option( 'sticky_posts' );
 
-    if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_carousel' ) ) {
+    if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_uni_slider' ) ) {
         $mav_sticky_args = array(
             'post_type'             => 'post',
             'post__in'              => $mav_sticky_posts,
@@ -26,10 +26,12 @@
         printf('<div class="mav-blog-sticky-post-wrapper">');
             printf('<div class="mav-blog-sticky-post-ctn">');
                 $mav_args = array(
-                    'query_args'  => $mav_sticky_args,
+                    'query_args'    => $mav_sticky_args,
                     'display'       => 3,
+                    'auto_slide'    => false,
+                    'template'      => TEMPLATE_DIR.'/template-parts/mav-card.php'
                 );
-                mavf_carousel( $mav_args );
+                mavf_uni_slider( $mav_args );
             echo '</div>';
         echo '</div>';
     }

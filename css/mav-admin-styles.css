@@ -133,7 +133,8 @@
   --mav-color__text--primary: #222;
   --mav-color__text--primary--dark: #fafafa;
   --mav-color__text--secondary: #aaa;
-  --mav-color__text--secondary--dark: #ddd; }
+  --mav-color__text--secondary--dark: #ddd;
+  --mav-color__gradient--brand: linear-gradient(to right, var(--mav-color--primary) 0%, var(--mav-color--accent) 100%); }
   @media only screen and (min-width: 1024px) {
     :root {
       --mav-site-width: 1680px;

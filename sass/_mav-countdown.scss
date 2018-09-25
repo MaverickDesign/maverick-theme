@@ -3,10 +3,12 @@
  */
 
 .mav-countdown-ctn {
+    font-family: $font-roboto-mono;
     @include mav-flex-center-all;
     max-width: var(--mav-site--width);
     overflow: hidden;
 }
+
 .mav-countdown-unit-wrapper {
     @include mav-flex-center-all;
     padding: var(--mav-gutter);
@@ -28,6 +30,7 @@
     &[data-number] {
         font-size: 2rem;
         color: var(--mav-color__text--primary);
+        font-weight: var(--mav-font__weight--bold);
         @media #{$mav-phone} {
             font-size: 1.5rem;
         }

@@ -64,7 +64,6 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({
                     google_ad_client: "<?php echo $mav_gas_id ?>",
-                    // google_ad_client: "ca-pub-9572362503337525",
                     enable_page_level_ads: true
                 });
             </script>

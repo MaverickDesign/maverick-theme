@@ -30,6 +30,12 @@ function mavf_uni_slider(
         // Update number of slides to display based on current device
         mavf_update_slide_display(mavCurrentSlider);
 
+        // Get auto slide setting
+        let mavAutoSlide = mavCurrentSlider.dataset.autoSlide;
+        if (mavAutoSlide === undefined) {
+            mavAutoSlide = true;
+        }
+
         // Get Slider Type
         const mavSliderType = mavCurrentSlider.dataset.type;
         if ( mavSliderType === undefined ) {
@@ -82,12 +88,20 @@ function mavf_uni_slider(
         }
 
         /**
-         * Get current active slide
+         * Get active slide
          */
         function mavf_get_active_slide() {
             const mavCurrentActiveSlide = mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-active-slide]`);
             if (mavCurrentActiveSlide) {
                 return mavCurrentActiveSlide;
+            }
+        }
+
+        // Get active slide number
+        function mavf_get_active_slide_number() {
+            const mavCurrentActiveSlide = mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-active-slide]`);
+            if (mavCurrentActiveSlide) {
+                return mavCurrentActiveSlide.dataset.slideNumber;
             }
         }
 
@@ -110,11 +124,12 @@ function mavf_uni_slider(
          * Translate slides container
          */
         function mavf_translate_slides_container() {
-            let mavSlideNumber = mavButtonNext.dataset.slideNumber;
+            // let mavSlideNumber = mavButtonNext.dataset.slideNumber;
+            let mavSlideNumber = mavf_get_active_slide_number();
             // Get current number of slides to display
             const mavSlidesDisplay = mavCurrentSlider.dataset.slidesDisplay;
             let mavTranslateAmount = ( Number(mavSlideNumber) - Number(mavSlidesDisplay) ) * (100/Number(mavSlidesDisplay));
-            if ( mavTranslateAmount < 0 ) {
+            if ( mavTranslateAmount < 1 ) {
                 mavTranslateAmount = 0;
             }
             mavSlidesContainer.style.transform = `translateX(-${mavTranslateAmount}%)`;
@@ -134,7 +149,8 @@ function mavf_uni_slider(
             const mavDirection = mavButton.dataset.direction;
 
             // Get current slide number
-            const mavCurrentSlideNumber = Number(mavButton.dataset.slideNumber);
+            // const mavCurrentSlideNumber = Number(mavButton.dataset.slideNumber);
+            const mavCurrentSlideNumber = Number(mavf_get_active_slide_number());
 
             // Next Button
             if ( mavDirection == 'next' )  {
@@ -195,11 +211,11 @@ function mavf_uni_slider(
         }
 
         function mavf_toggle_nav(mavSlider) {
-            const mavSlideNumber = mavf_get_active_slide().dataset.slideNumber;
+            const mavSlideNumber = mavf_get_active_slide_number();
             const mavNext = mavSlider.querySelector('.mav-slider__nav__arrow--wrp[data-direction="next"]');
-            console.log('mavNext: ', mavNext);
+            // console.log('mavNext: ', mavNext);
             const mavPrev = mavSlider.querySelector('.mav-slider__nav__arrow--wrp[data-direction="prev"]');
-            console.log('mavPrev: ', mavPrev);
+            // console.log('mavPrev: ', mavPrev);
             if ( mavSlideNumber == mavTotalSlides ) {
                 mavNext.classList.add('mav-hide');
             } else {
@@ -216,6 +232,7 @@ function mavf_uni_slider(
         // Query nav dots container
         const mavNavDotsContainer = mavCurrentSlider.querySelector(mavArgs['mavSliderClassNavDotsContainer']);
         mavf_update_nav_thumbnail(mavNavDotsContainer);
+        mavf_update_active_dot(mavNavDotsContainer);
 
         // Query nav dots
         const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
@@ -230,13 +247,13 @@ function mavf_uni_slider(
          */
         function mavf_update_active_dot(mavNavDotsContainer) {
             const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
-            const mavNewActiveSlide = mavf_get_active_slide();
-            const mavSlideNumber = mavNewActiveSlide.dataset.slideNumber;
+            // const mavNewActiveSlide = mavf_get_active_slide();
+            const mavSlideNumber = mavf_get_active_slide_number();
             for (const mavNavDot of mavNavDots) {
                 mavNavDot.dataset.active = '0';
             }
             const mavActiveDot = mavNavDotsContainer.querySelector(`${mavArgs['mavSliderClassNavDot']}[data-slide-number="${mavSlideNumber}"]`)
-            console.log('mavActiveDot: ', mavActiveDot);
+            // console.log('mavActiveDot: ', mavActiveDot);
             mavActiveDot.dataset.active = '1';
         }
 
@@ -267,34 +284,58 @@ function mavf_uni_slider(
          * Start slider function
          */
         function mavf_start_slide() {
-            let mavSliderType1 = setInterval(mavf_start, mavInterval);
+            console.log('Slider started.');
+            const mavIndicator = mavCurrentSlider.querySelector('.mavjs-slider__loading--indicator');
+            mavf_set_slider_indicator();
+
+            let mavUniSlider = setInterval(mavf_start, mavInterval);
             let mavDirection = 'next';
+
+            // Start Slider
             function mavf_start() {
+                // console.log('mavDirection: ', mavDirection);
+                // Get active slide number
+                // console.log(mavf_get_active_slide());
+                let mavCurrentSlideNumber = mavf_get_active_slide_number();
+                // console.log('mavCurrentSlideNumber: ', mavCurrentSlideNumber);
 
-                let mavCurrentSlideNumber = mavf_get_active_slide().dataset.slideNumber;
-
+                if ( mavCurrentSlideNumber == 1  && mavDirection == 'prev' ) {
+                    mavDirection = 'next';
+                }
+                if ( mavCurrentSlideNumber == mavTotalSlides ) {
+                    mavDirection = 'prev';
+                }
                 if ( mavCurrentSlideNumber < mavTotalSlides && mavDirection == 'next' ) {
                     mavButtonNext.click();
-                } else {
-                    mavDirection = 'prev';
                 }
                 if ( mavCurrentSlideNumber > 1 && mavDirection == 'prev' ) {
                     mavButtonPrev.click();
-                } else {
-                    mavDirection = 'next';
                 }
             }
+
+            // Pause Slider
             mavCurrentSlider.addEventListener('mouseover', mavf_pause);
             function mavf_pause() {
-                clearInterval(mavSliderType1);
+                clearInterval(mavUniSlider);
+                mavIndicator.removeAttribute('data-animation');
             }
+
+            // Resume Slider
             mavCurrentSlider.addEventListener('mouseleave', mavf_resume);
             function mavf_resume() {
-                mavSliderType1 = setInterval(mavf_start, mavInterval);
+                mavUniSlider = setInterval(mavf_start, mavInterval);
+                mavf_set_slider_indicator();
+            }
+
+            function mavf_set_slider_indicator() {
+                mavIndicator.setAttribute('data-animation','');
+                mavIndicator.style.animationDuration = Number(mavInterval)/1000 + 's';
             }
         }
         // Start the slider
-        mavf_start_slide();
+        if ( mavAutoSlide == 1 ) {
+            mavf_start_slide();
+        }
 
     } // End of For Loop each slider
 
@@ -366,7 +407,7 @@ function mavf_uni_slider(
             mavSlidesContainer.style.gridTemplateColumns = `repeat(${mavTotalSlides},${mavPercent}%)`;
         }
         // Check for screen size tablet
-        if ( mavCurrentSliderWidth < 1025 && mavCurrentSliderWidth > 414 ) {
+        if ( mavCurrentSliderWidth < 1025 && mavCurrentSliderWidth > 414 && mavInitSlidesDisplay > 1 ) {
             mavCurrentSlider.dataset.slidesDisplay = 2;
             mavSlidesContainer.style.gridTemplateColumns = `repeat(${mavTotalSlides},50%)`;
         }

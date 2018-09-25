@@ -87,8 +87,8 @@
     </main>
 
     <footer id="mavid-page-footer" class="mav-pg-footer">
-        <!-- Copyright section -->
         <?php
+            /* Copyright section */
             get_template_part('/template-parts/mav-footer_copyright');
         ?>
     </footer>

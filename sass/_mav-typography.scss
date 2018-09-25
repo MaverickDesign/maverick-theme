@@ -357,6 +357,7 @@ strong {
             text-align: #{$mavSide};
         }
     }
+
     // Text sizes
     @each $mavSize, $mavLineHeight in ( xl: 1.25, lg: 1.5, sm: 1.75, xs: 1.75) {
         &--#{$mavSize} {
@@ -364,6 +365,7 @@ strong {
             line-height: #{$mavLineHeight};
         }
     }
+
     // Text transforms
     @each $mavCase in (lowercase, uppercase, capitalize) {
         &--#{$mavCase} {
@@ -377,4 +379,8 @@ strong {
     @media #{$mav-phone} {
         font-size: 1rem;
     }
+}
+
+abbr, acronym {
+    cursor: help;
 }

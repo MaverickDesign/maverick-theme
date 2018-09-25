@@ -21,22 +21,16 @@
                             'post_type'             => 'post',
                             'posts_per_page'        => 5,
                             'ignore_sticky_posts'   => true,
-                            'meta_query'            => array(
-                                array(
-                                    'key'        => '_thumbnail_id',
-                                    'compare'    => 'EXISTS'
-                                )
-                            )
                         ),
                         'slider_type'   => 1,
                         'display'       => 2,
                         'slider_height' => '40vh',
-                        'interval'      => 5000,
+                        'interval'      => 3000,
                     );
                     mavf_uni_slider( $mav_args );
                 }
             ?>
-            <hr/>
+            <div class="mav-divider"></div>
             <?php
                 if ( function_exists( 'mavf_uni_slider' ) ) {
                     $mav_args = array(
@@ -44,21 +38,18 @@
                             'post_type'             => 'post',
                             'posts_per_page'        => 5,
                             'ignore_sticky_posts'   => true,
-                            'meta_query'            => array(
-                                array(
-                                    'key'        => '_thumbnail_id',
-                                    'compare'    => 'EXISTS'
-                                )
-                            )
                         ),
                         'slider_type'   => 1,
                         'display'       => 1,
                         'slider_height' => '40vh',
+                        'thumbnail_position'    => 'middle',
+                        'thumbnail_size'        => array('60px','60px'),
+                        'interval'      => 3000,
                     );
                     mavf_uni_slider( $mav_args );
                 }
             ?>
-            <hr/>
+            <div class="mav-divider"></div>
             <?php
                 if ( function_exists( 'mavf_uni_slider' ) ) {
                     $mav_args = array(
@@ -66,16 +57,19 @@
                             'post_type'             => 'post',
                             'posts_per_page'        => 5,
                             'ignore_sticky_posts'   => true,
-                            'meta_query'            => array(
-                                array(
-                                    'key'        => '_thumbnail_id',
-                                    'compare'    => 'EXISTS'
-                                )
-                            )
+                            // 'meta_query'            => array(
+                            //     array(
+                            //         'key'        => '_thumbnail_id',
+                            //         'compare'    => 'EXISTS'
+                            //     )
+                            // )
                         ),
                         'slider_type'   => 1,
                         'display'       => 4,
                         'slider_height' => '40vh',
+                        'thumbnail_position'    => 'inside',
+                        'thumbnail_image'   => false,
+                        'thumbnail_size'   => array('20px','20px'),
                     );
                     mavf_uni_slider( $mav_args );
                 }
