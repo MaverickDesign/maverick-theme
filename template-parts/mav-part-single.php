@@ -10,6 +10,7 @@
 ?>
 
 <article id="mavid-post-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" data-post-format="<?php echo get_post_format(); ?>" data-post-type="<?php echo get_post_type(); ?>" class="mav-post">
+
     <!-- Header -->
     <header class="mav-post-header-wrapper mav-post-header">
         <div class="mav-post-header-ctn">
@@ -56,7 +57,10 @@
                                 printf('<li class="mav-post__info--category">');
                                     $current_cat = get_cat_name( $category );
                                     $cat_link = get_category_link( $category );
-                                    printf( '<a href="%1$s" title="%3$s %2$s">%2$s</a>', $cat_link, $current_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' ) );
+                                    printf(
+                                        '<a href="%1$s" title="%3$s %2$s">%2$s</a>',
+                                        $cat_link, $current_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' )
+                                    );
                                 echo "</li>";
                             }
                         echo '</div>';
@@ -73,14 +77,8 @@
 
         </div>
     </header>
+
     <!-- Post Content -->
-    <?php
-        // $mav_center_style = '';
-        // $mav_post_format = get_post_format();
-        // if ( $mav_post_format == 'video' ) {
-        //     $mav_center_style = 'style="text-align: center;"';
-        // }
-    ?>
     <section class="mav-post-content-wrapper">
         <!-- <div class="mav-post-content mav-post-content-ctn" <?php //echo $mav_center_style; ?>> -->
         <div <?php post_class('mav-post-content mav-post-content-ctn') ?>>
@@ -95,6 +93,7 @@
             ?>
         </div>
     </section>
+
     <!-- Post Footer -->
     <?php
     if ( ( has_tag() ) || ( wp_count_posts()->publish > 1) ) : ?>
@@ -178,11 +177,11 @@
                     <div class="mav-sec-body-ctn">
                         <?php
                             // Check if total post is greater than number of post to display
-                            $mav_number_of_posts_display = $categories[0]->count > 4 ? 4 : $categories[0]->count;
+                            $mav_number_of_posts_display = ($categories[0]->count > 4) ? 4 : $categories[0]->count - 1;
                             $mav_args = array(
                                 'query_args'    => array(
                                     'post_type' => $mav_post_type,
-                                    'cat'   => $categories[0]->term_id
+                                    'cat'       => $categories[0]->term_id
                                 ),
                                 'display'   => $mav_number_of_posts_display
                             );

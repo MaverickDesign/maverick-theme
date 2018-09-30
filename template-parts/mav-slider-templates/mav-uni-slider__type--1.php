@@ -33,9 +33,9 @@ printf('<article class="mav-uni-slider__slide_content--wrp">');
         }
 
         // Read more button
-        printf( '<div class="mav-slider__button--wrp" %1$s>', $mav_slider_type );
+        printf( '<div class="mav-slider__button--wrp mav-hide-on-phone" %1$s>', $mav_slider_type );
             printf(
-                '<button class="mav-btn__primary"><a href="%2$s">%1$s</a></button>',
+                '<button class="mav-btn__primary--dark"><a href="%2$s">%1$s</a></button>',
                 __( 'Xem chi tiết', 'mavericktheme' ), $mav_permalink
                 );
         echo '</div>';

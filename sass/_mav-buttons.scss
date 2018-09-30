@@ -12,14 +12,14 @@ button {
 
     cursor: pointer;
 
-    &[data-full-width] {
-        width: 100%;
-    }
-
     a {
         height: 100%;
         width: 100%;
         text-decoration: none;
+    }
+
+    &[data-full-width] {
+        width: 100%;
     }
 }
 
@@ -42,6 +42,7 @@ button {
 
 .mav-btn {
     @extend %mav-btn;
+    @extend %mav-transition;
     &:hover {
         @include text-contrast($mav-color--primary);
         background: var(--mav-color--primary);
@@ -56,28 +57,34 @@ button {
     &-primary, &__primary {
         @extend .mav-btn;
         background: var(--mav-color--primary);
-        @include text-contrast($mav-color--primary);
+        color: white;
         a {
-            padding: var(--mav-gutter--xs);
+            padding: var(--mav-gutter--sm);
         }
         &:hover {
-            background: transparent;
             color: var(--mav-color__text--primary);
+            background: transparent;
         }
-        &-lg {
+        &-lg, &--lg {
             @extend .mav-btn-primary;
             letter-spacing: 1px;
             a {
                 padding: var(--mav-gutter);
             }
         }
-        &-dark {
-            @extend .mav-btn-primary;
+        &-dark, &--dark {
+            @extend .mav-btn__primary;
+            color: white;
             &:hover {
-                background: #222;
-                @include text-contrast(#222);
+                border-color: transparent;
+                background: var(--mav-color--primary);
+                color: white;
+                a {
+                    background: rgba(#222, .3);
+                }
             }
         }
+
     }
     &-secondary {
         @extend .mav-btn;
@@ -163,4 +170,13 @@ button {
         opacity: 0;
         visibility: hidden;
     }
+}
+
+.mav-link__read_more {
+    font-family: var(--mav-font--secondary);
+    font-size: var(--mav-font__size--xs);
+    font-weight: var(--mav-font__weight--bold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--mav-color--primary);
 }

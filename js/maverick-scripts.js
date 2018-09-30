@@ -309,6 +309,7 @@ function mavf_tab_view(e){
 function mavf_body_click_events(){
     document.body.addEventListener('click',function(e){
         const mavTarget = e.target;
+
         /**
          * Accordion
          */
@@ -318,20 +319,23 @@ function mavf_body_click_events(){
         if (mavTarget.classList.contains('mav-accordion-trigger-title')){
             mavTarget.parentElement.click();
         }
+
         /**
          * Close Button
          */
         if (mavTarget.classList.contains('mav-btn-close')){
             mavf_close_btn(mavTarget);
         }
+
         /**
          * Remove mobile container
          */
         if (mavTarget.classList.contains('mav-mobile-ctn')){
             mavf_remove_mobile_container(mavTarget);
         }
-        /** Tab View
-         *
+
+        /**
+         * Tab View
          */
         if (mavTarget.classList.contains('mav-tab-trigger')){
             mavf_tab_view(mavTarget);
@@ -339,11 +343,27 @@ function mavf_body_click_events(){
         if (mavTarget.classList.contains('mav-tab-trigger-title')){
             mavTarget.parentElement.click();
         }
+
         /**
          * Smooth Scrolling
          */
         if (mavTarget.dataset.scroll != undefined ){
             mavf_smooth_scroll(mavTarget);
+        }
+
+        /**
+         * Facebook Share Button
+         */
+        if ( mavTarget.classList.contains('mavjs-fb-share-button') ){
+            const mavShareUrl = mavTarget.dataset.href;
+            console.log('mavShareUrl: ', mavShareUrl);
+            function share(mavShareUrl) {
+                FB.ui({
+                    method: 'share',
+                    href: `${mavShareUrl}`,
+                }, function(response){});
+            }
+            share(mavShareUrl);
         }
     })
 };

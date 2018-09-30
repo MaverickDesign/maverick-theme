@@ -304,6 +304,8 @@ $mav-color--background: #fafafa;
 
     --mav-color__gradient--brand: linear-gradient(to right, var(--mav-color--primary) 0%, var(--mav-color--accent) 100%);
 
+    --mav-border: 1px solid var(--mav-color--border);
+
     @media #{$mav-desktop} {
         --mav-site-width    : #{$mav-site-width};
         --mav-site--width   : #{$mav-site--width};

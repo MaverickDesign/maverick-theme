@@ -127,25 +127,16 @@
         if ( ! empty( $mav_efa ) && ! empty( $mav_faid ) ) : ?>
         <!-- Facebook Script -->
         <div id="fb-root"></div>
-        <script>
-            window.fbAsyncInit = function() {
-                FB.init({
-                appId      : '<?php echo $mav_faid; ?>,
-                xfbml      : true,
-                version    : 'v3.0'
-                });
-                FB.AppEvents.logPageView();
-            };
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=<?php echo $mav_faid; ?>&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         <!-- End of Facebook Script -->
-    <?php endif; ?>
+        <?php endif;
+    ?>
 
     <header id="mavid-page-header" class="mav-pg-header mav-pg-header-wrapper">
         <!-- Header Logo -->

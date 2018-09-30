@@ -2,7 +2,7 @@
  * Post Card - Index Page
  */
 
-.mav-card-wrapper, .mav-card--wrapper {
+.mav-card-wrapper, .mav-card--wrapper, .mav-card--wrp {
     position: relative;
     width: 100%;
 }
@@ -86,31 +86,35 @@
         }
         // Card Title
         .mav-card-title-wrapper {
-            display: block;
-            overflow: hidden;
-            padding: var(--mav-gutter);
-            height: 10vh;
-            @media #{$mav-phone} {
-                height: 20vh;
+            .mav-card__title--ctn {
+                display: block;
+                padding: var(--mav-gutter);
+                height: 100px;
+                overflow: hidden;
+                .mav-card-title {
+                    font-size: 1.25rem;
+                    font-weight: var(--mav-font__weight--bold);
+                    @media #{$mav-phone} {
+                        font-size: 1.15rem;
+                    }
+                }
             }
         }
-        .mav-card-title {
-            font-size: 1.25rem;
-            font-weight: var(--mav-font__weight--bold);
-            @media #{$mav-phone} {
-                font-size: 1.15rem;
+
+        // Card Excerpt
+        .mav-card__excerpt--wrp {
+            .mav-card__excerpt--ctn {
+                display: block;
+                position: relative;
+                padding: 0 var(--mav-gutter);
+                overflow: hidden;
+                height: 60px;
+                .mav-card__excerpt {
+                    font-size: var(--mav-font__size--sm);
+                    color: var(--mav-color__text--secondary);
+                }
             }
         }
-        // .mav-card-post-excerpt {
-        //     position: relative;
-        //     padding: 0 var(--mav-gutter);
-        //     height: 5em;
-        //     overflow: hidden;
-        //     color: var(--mav-color-text-secondary);
-        //     @media #{$mav-phone} {
-        //         display: none;
-        //     }
-        // }
     }
     &-footer {
         padding: var(--mav-gutter);
@@ -221,7 +225,7 @@
 
 /**
  * CPT: Client
- * ==============
+ * ===========
  */
 
 .mav-card-client-wrapper {
@@ -265,5 +269,260 @@
                 }
             }
         }
+    }
+}
+
+/**
+ * Default post index card
+ * support for list & card styles
+ */
+
+// Card wrapper
+.mav-card__wrp {
+    height: 100%;
+    .mav-card__ctn {
+        background: transparent;
+        height: 100%;
+    }
+}
+
+/**
+ * Card content
+ * ============
+ */
+
+// Card content wrapper
+.mav-card__content--wrp {
+    height: 100%;
+
+    // Card content container
+    .mav-card__content--ctn {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        border: var(--mav-border);
+        @media #{$mav-phone} {
+            grid-template-columns: 1fr!important;
+        }
+    }
+}
+
+/**
+ * Card Header
+ */
+
+// Card Header wrapper
+.mav-card__header--wrp {
+    .mav-card__header--ctn {
+        height: 100%;
+
+        // Post thumbnail wrapper
+        .mav-card__post__thumbnail--wrp {
+            height: 100%;
+
+            // Post thunbnail container
+            .mav-card__post__thumbnail--ctn {
+                position: relative;
+                height: 25vh;
+                overflow: hidden;
+                box-shadow: 0px 1px var(--mav-color--border);
+
+                // Post thumbnail
+                .mav-card__post__thumbnail {
+                    height: 100%;
+                    background-position: center!important;
+                    background-size: cover!important;
+                    filter: grayscale(1);
+                    @extend %mav-transition;
+                    &:hover {
+                        transform: scale(1.1);
+                        filter: grayscale(0);
+                    }
+                }
+
+                @media #{$mav-phone} {
+                    height: 100%;
+                    .mav-card__post__thumbnail {
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/**
+ * Card Body
+ * =========
+ */
+
+// Card Body wrapper
+.mav-card__body--wrp {
+
+    // Card Body container
+    .mav-card__body--ctn {
+        display: grid;
+        grid-gap: var(--mav-gutter);
+        grid-template-rows: auto 1fr;
+        height: 100%;
+        padding: var(--mav-gutter);
+
+        // Card body - header
+        .mav-card__body__header--wrp {
+            .mav-card__body__header--ctn {
+                display: grid;
+                grid-gap: var(--mav-gutter);
+                grid-template-columns: max-content 1fr;
+                font-family: var(--mav-font--secondary);
+                font-size: var(--mav-font__size--sm);
+                color: var(--mav-color__text--secondary);
+
+                // Categories container
+                .mav-cars__post__categories--ctn {
+                    max-height: 3em;
+                    overflow: hidden;
+                    ul {
+                        display: flex;
+                    }
+                    li {
+                        display: none;
+                        &:first-child, &:last-child {
+                            display: block;
+                            margin-left: var(--mav-gutter--sm);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Card body - body
+        .mav-card__body__body--wrp {
+            .mav-card__body__body--ctn {
+
+                // Card post title
+                .mav-card__post__title {
+                    font-size: 1.5rem;
+                    word-break: break-word;
+                    @extend %mav-transition;
+                    &:hover {
+                        color: var(--mav-color__text--secondary);
+                    }
+                }
+
+                // Excerpt
+                .mav-card__post__excerpt--ctn {
+                    color: var(--mav-color__text--secondary);
+                    @media #{$mav-phone} {
+                        font-size: var(--mav-font__size--sm);
+                    }
+                }
+
+            }
+        }
+
+        // Card body - footer
+        .mav-card__body__footer--wrp {
+            .mav-card__body__footer--ctn {
+
+                .mav-card__post__tags--ctn {
+                    max-height: 76px;
+                    overflow: hidden;
+                }
+
+            }
+        }
+
+    }
+
+}
+
+/**
+ * Card Footer
+ * ===========
+ */
+
+// Card Footer wrapper
+.mav-card__footer--wrp {
+    // Card Footer container
+    .mav-card__footer--ctn {
+        @media #{$mav-phone} {
+            border: 0!important;
+        }
+        .mav-card__socials--ctn {
+            display: flex;
+            color: var(--mav-color__text--secondary);
+            font-size: var(--mav-font__size--sm);
+            border-top: var(--mav-border);
+            justify-content: flex-end;
+            li {
+                list-style: none;
+                text-align: center;
+                padding: var(--mav-gutter);
+                border-left: var(--mav-border);
+                min-width: 20%;
+                cursor: pointer;
+                @extend %mav-transition;
+                &:hover {
+                    color: var(--mav-color__text--primary);
+                }
+            }
+            @media #{$mav-phone} {
+                flex-direction: row!important;
+                border-top: var(--mav-border)!important;
+                li {
+                    margin-bottom: 0!important;
+                }
+            }
+        }
+
+    }
+}
+
+/*
+ * List Style
+ */
+
+.mav-card__content--ctn {
+    &[data-style-list] {
+        grid-template-columns: 30% 1fr auto;
+
+        .mav-card__post__thumbnail--ctn {
+            height: 100%!important;
+        }
+
+        .mav-card__body--ctn {
+            min-height: 25vh;
+
+            .mav-card__post__title {
+                width: max-content;
+                @media #{$mav-phone} {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .mav-card__footer--ctn {
+            border-left: var(--mav-border);
+
+            .mav-card__socials--ctn {
+                flex-direction: column;
+                border-top: 0;
+                li {
+                    padding: var(--mav-gutter);
+                    margin-right: 0;
+                    border-left: 0;
+                    border-bottom: var(--mav-border);
+                    @media #{$mav-phone} {
+                        border-left: var(--mav-border);;
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+        }
+
     }
 }

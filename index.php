@@ -16,22 +16,22 @@
 
     $mav_sticky_posts = get_option( 'sticky_posts' );
 
-    if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_uni_slider' ) ) {
+    if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_carousel' ) ) {
         $mav_sticky_args = array(
             'post_type'             => 'post',
             'post__in'              => $mav_sticky_posts,
             'ignore_sticky_posts'   => 1,
             'posts_per_page'        => 3,
         );
-        printf('<div class="mav-blog-sticky-post-wrapper">');
-            printf('<div class="mav-blog-sticky-post-ctn">');
+        printf( '<div class="mav-blog-sticky-post-wrapper">' );
+            printf( '<div class="mav-blog-sticky-post-ctn">' );
                 $mav_args = array(
                     'query_args'    => $mav_sticky_args,
                     'display'       => 3,
                     'auto_slide'    => false,
-                    'template'      => TEMPLATE_DIR.'/template-parts/mav-card.php'
+                    'template'      => '/template-parts/mav-card'
                 );
-                mavf_uni_slider( $mav_args );
+                mavf_carousel( $mav_args );
             echo '</div>';
         echo '</div>';
     }
@@ -45,7 +45,7 @@
 
     $mav_section_class = $mavSidebar ? 'mav-has-sidebar' : 'mav-site-width';
 
-    printf('<div class="%1$s">', $mav_section_class);
+    printf( '<div class="%1$s">', $mav_section_class );
 
         $mav_args = array (
             'post_type'             => 'post',
@@ -59,30 +59,45 @@
 
         if ( $mav_query->have_posts() ) {
             printf('<section id="mavid-post-index" class="mav-post-index-wrapper">');
-                $mavColumns = ( get_option( 'mav_setting_blog_page_columns' ) ) ? esc_attr( get_option( 'mav_setting_blog_page_columns' ) ) : '4';
+
+                // Get display style option for blog page
+                $mav_display_style = ( get_option( 'mav_setting_blog_page_display_style' ) ) ? esc_attr( get_option( 'mav_setting_blog_page_display_style' ) ) : 'card';
+
+                if ( isset( $mav_display_style ) && $mav_display_style == 'card' )  {
+                    $mav_columns = ( get_option( 'mav_setting_blog_page_columns' ) ) ? esc_attr( get_option( 'mav_setting_blog_page_columns' ) ) : '4';
+                } else {
+                    $mav_columns = 1;
+                }
+                // Get number of columns display
+                $mav_display_classes = sprintf('mav-post-index-ctn mav-grid-col-%1$s', $mav_columns);
                 /**
                  * Note: "mavjs-posts-container" class is for ajax function, do not remove
                  */
                 printf(
-                    '<div id="mavid-posts-container" class="mavjs-posts-container mav-post-index-ctn mav-grid-col-%1$s">',
-                    $mavColumns
-                );
+                    '<div id="mavid-posts-container" class="mavjs-posts-container %1$s" data-display-style="%2$s">',
+                    $mav_display_classes, $mav_display_style
+                    );
                     while ( $mav_query->have_posts() ) {
                         $mav_query->the_post();
-                        get_template_part( 'template-parts/mav-card', get_post_format() );
+                        // get_template_part( "template-parts/mav-$mav_display_style", get_post_format() );
+                        get_template_part( "template-parts/mav-list", get_post_format() );
                     }
                     // Reset post data
                     wp_reset_postdata();
                 echo '</div>';
 
-                // Post Navigation
+                /**
+                 * Post Navigation Section
+                 * =======================
+                 */
+
                 if ( esc_attr( get_option( 'mav_setting_ajax_load_posts' ) ) ) {
                     /**
-                     * Ajax load more posts
+                     * Ajax Load Posts
                      */
                     printf('<div class="mav-padding-top-lg">');
                         printf(
-                            '<button class="mav-btn-primary-lg mav-padding-sm mavjs-ajax-load-posts" data-full-width data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',
+                            '<button class="mavjs-ajax-load-posts mav-btn__primary--lg mav-padding" data-full-width data-ajax-url="%1$s" data-current-page="1" data-action="mavf_ajax_load_posts">%2$s</button>',
                             admin_url( 'admin-ajax.php' ), __( 'Xem thêm', 'mavericktheme' )
                         );
                     echo '</div>';

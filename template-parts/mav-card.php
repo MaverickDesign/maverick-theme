@@ -1,7 +1,7 @@
 <?php
 /**
  * @package mavericktheme
- * Default Post Card
+ * Default Post Card Style
  */
 
 // Get the Post or Page ID
@@ -9,7 +9,7 @@ $mav_id = get_the_ID();
 
 $mav_sticky_post = is_sticky( $mav_id ) ? 'sticky' : '';
 
-printf('<div class="mav-card--wrapper" data-post-id="%1$s">', $mav_id);
+printf( '<div class="mav-card--wrapper" data-post-id="%1$s">', $mav_id );
     printf('<div class="mav-card--ctn">');
         printf( '<article class="mav-card--post %2$s" data-post-id="%1$s">', $mav_id, $mav_sticky_post );
 
@@ -48,11 +48,21 @@ printf('<div class="mav-card--wrapper" data-post-id="%1$s">', $mav_id);
                 echo '</div>';
                 // Title
                 printf('<div class="mav-card-title-wrapper">');
-                    printf(
-                        '<h3 class="mav-card-title" title="%3$s%1$s"><a href="%2$s">%1$s</a></h3>',
-                        get_the_title(), get_the_permalink(), __( 'Xem nội dung ', 'mavericktheme' )
-                    );
+                    printf('<div class="mav-card__title--ctn">');
+                        printf(
+                            '<h3 class="mav-card-title" title="%3$s%1$s"><a href="%2$s">%1$s</a></h3>',
+                            get_the_title(), get_the_permalink(), __( 'Xem nội dung ', 'mavericktheme' )
+                        );
+                    echo '</div>';
                 echo '</div>';
+
+                if (is_home()) {
+                    printf('<div class="mav-card__excerpt--wrp">');
+                        printf('<div class="mav-card__excerpt--ctn">');
+                            printf( '<p class="mav-card__excerpt">%1$s</p>', get_the_excerpt() );
+                        echo '</div>';
+                    echo '</div>';
+                }
             echo '</section>';
 
             /**

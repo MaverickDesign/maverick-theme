@@ -559,6 +559,8 @@
     @extend .mav-flex-row;
     flex-wrap: wrap;
     font-family: var(--mav-font--secondary);
+    font-size: var(--mav-font__size--xs);
+    color: var(--mav-color__text--secondary);
     li {
         display: inline-flex;
 
@@ -584,7 +586,6 @@
             display: flex;
             align-items: center;
             padding: var(--mav-gutter--xs);
-            font-size: var(--mav-font__size--sm);
             text-decoration: none;
             text-transform: lowercase;
             &:before {

@@ -14,11 +14,13 @@
 
 .mav-post-index-ctn {
     display: grid;
-    grid-gap: var(--mav-gutter--lg);
-    @media #{$mav-tablet} {
-        align-content: start;
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: var(--mav-gutter);
+    grid-gap: var(--mav-gutter);
+    &[data-display-style="card"] {
+        @media #{$mav-tablet} {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    &[data-display-style="list"] {
     }
 }
 
@@ -73,7 +75,7 @@
     .current {
         background: var(--mav-color--primary);
         @include text-contrast($mav-color--primary);
-        font-weight: bold;
+        font-weight: var(--mav-font__weight--bold);
     }
     a {
         &:hover {

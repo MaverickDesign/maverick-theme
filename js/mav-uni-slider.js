@@ -1,12 +1,9 @@
 /**
  * Maverick Uni Slider
  */
-console.log("Maverick's Uni Slider loaded.");
-console.log(document.readyState);
-
 function mavf_uni_slider(
     mavArgs = {
-        'mavSliderClass'                    : '.mavjs-uni-slider',
+        'mavSliderClass'                    : 'mavjs-uni-slider',
         'mavSliderClassSlidesContainer'     : '.mavjs-uni-slider__slides--ctn',
         'mavSliderClassSlideItem'           : '.mavjs-uni-slider__slide--item',
         'mavSliderClassNavButton'           : '.mavjs-uni-slider__nav--arrow',
@@ -17,10 +14,10 @@ function mavf_uni_slider(
     }
 ) {
     // Query all sliders on page
-    const mavAllSliders = document.querySelectorAll(mavArgs['mavSliderClass']);
+    const mavAllSliders = document.querySelectorAll(`.${mavArgs['mavSliderClass']}`);
 
     if ( mavAllSliders.length == 0 ) {
-        console.log('Không tìm thấy Uni Slider nào.');
+        console.log('No Uni Slider found.');
         return;
     }
 
@@ -418,6 +415,9 @@ function mavf_uni_slider(
         }
     }
 
+    /**
+     * Update all sliders width on the page
+     */
     function mavf_update_sliders_width() {
         for ( const mavCurrentSlider of mavAllSliders ) {
             mavf_update_slide_display(mavCurrentSlider);
@@ -427,10 +427,8 @@ function mavf_uni_slider(
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    // Your code to run since DOM is loaded and ready
-    console.log('DOM content loaded.');
-    console.log(document.readyState);
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Maverick's Uni Slider loaded.");
     if ( typeof mavf_uni_slider === 'function' ) {
         mavf_uni_slider();
     }

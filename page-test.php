@@ -55,21 +55,13 @@
                     $mav_args = array(
                         'query_args'    => array(
                             'post_type'             => 'post',
-                            'posts_per_page'        => 5,
+                            'posts_per_page'        => 7,
                             'ignore_sticky_posts'   => true,
-                            // 'meta_query'            => array(
-                            //     array(
-                            //         'key'        => '_thumbnail_id',
-                            //         'compare'    => 'EXISTS'
-                            //     )
-                            // )
                         ),
                         'slider_type'   => 1,
-                        'display'       => 4,
-                        'slider_height' => '40vh',
-                        'thumbnail_position'    => 'inside',
-                        'thumbnail_image'   => false,
-                        'thumbnail_size'   => array('20px','20px'),
+                        'display'       => 5,
+                        'slider_height' => '45vh',
+                        'template'  => TEMPLATE_DIR.'/template-parts/mav-card.php',
                     );
                     mavf_uni_slider( $mav_args );
                 }

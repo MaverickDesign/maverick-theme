@@ -1,9 +1,6 @@
 <?php
 /**
  * @package mavericktheme
- */
-
-/**
  * Slider
  *
  * @param [array] $mav_args
@@ -14,11 +11,7 @@ function mavf_slider( $mav_args )
 {
 
     // Make unique string
-    if ( function_exists( 'mavf_unique' ) ) {
-        $mav_unique_number = mavf_unique( rand( 6, 12 ) );
-    } else {
-        $mav_unique_number = wp_create_nonce( time() );
-    }
+    $mav_unique_number = function_exists( 'mavf_unique' ) ? mavf_unique( rand( 6, 12 ) ) : wp_create_nonce( time() );
 
     /**
      * Default settings
@@ -26,27 +19,39 @@ function mavf_slider( $mav_args )
 
     // Post query arguments
     $mav_post_queries = isset( $mav_args['query_args'] ) ? $mav_args['query_args'] : array();
+
     // Slider type
+    // Default: 2
     $mav_slider_type = isset( $mav_args['slider_type'] ) ? $mav_args['slider_type'] : 2;
+
     // Post type
     $mav_post_type = isset( $mav_args['post_type'] ) ? $mav_args['post_type'] : 'post';
+
     // Number of slides
+    // Default: 5
     $mav_number_of_slides = isset( $mav_args['number_of_slides'] ) ? $mav_args['number_of_slides'] : 5;
+
     // Slider ID
     $mav_slider_id = isset( $mav_args['slider_id'] ) ? $mav_args['slider_id'] : 'mavid-slider-'.$mav_slider_type.'-'.$mav_unique_number;
+
     // Slider container class
     $mav_slider_container = isset( $mav_args['slider_container'] ) ? $mav_args['slider_container'] : 'mav-slider-type-'.$mav_slider_type.'-ctn';
-    // Slide interval
-    $mav_interval = isset( $mav_args['interval'] ) ? $mav_args['interval'] : 4000;
+
+    // Slider interval
+    // Default: 5000
+    $mav_interval = isset( $mav_args['interval'] ) ? $mav_args['interval'] : 5000;
+
     // Display post title
     $mav_display_title = isset( $mav_args['display_title'] ) ? $mav_args['display_title'] : true;
+
     // Categories
     $mav_categories = isset( $mav_args['categories'] ) ? $mav_args['categories'] : '';
+
     // Specific posts
     $mav_posts = isset( $mav_args['posts'] ) ? $mav_args['posts'] : '';
+
     // Slider height
     $mav_slider_height = isset( $mav_args['height'] ) ? 'height: '.$mav_args['height'].';' : '';
-
 
     // Set max slides for slider type 1
     if ( $mav_slider_type == 1 && $mav_number_of_slides > 6 ) {
@@ -92,14 +97,15 @@ function mavf_slider( $mav_args )
         printf(
             '<div id="%1$s" data-type="%3$s" data-interval="%2$s" data-unique="%4$s" class="mav-slider__wrapper mav-slider mav-slider-type-%3$s-wrapper" style="%5$s">',
             $mav_slider_id, $mav_interval, $mav_slider_type, $mav_unique_number, $mav_slider_height
-        );
-        // Element style
-        $mav_element_styles = ( $mav_slider_type == 1 ) ? 'style="grid-template-columns: repeat('.( $mav_number_of_slides - 1 ).',1fr);"' : '';
+            );
+
             // Slider Container
+            // Element style
+            $mav_element_styles = ( $mav_slider_type == 1 ) ? 'style="grid-template-columns: repeat('.( $mav_number_of_slides - 1 ).',1fr);"' : '';
             printf(
                 '<div class="mav-slider-container %1$s" %2$s>',
                 $mav_slider_container, $mav_element_styles
-            );
+                );
 
                 $i = 1;
 
@@ -229,7 +235,6 @@ function mavf_slider( $mav_args )
                     while ( $mav_query->have_posts() ) :
                         $mav_query->the_post();
 
-                        $mav_title = get_the_title();
                         $mav_permalink = get_the_permalink();
 
                         if ( function_exists( 'mavf_get_post_thumbnail_url' ) ) {
@@ -238,22 +243,27 @@ function mavf_slider( $mav_args )
                         printf(
                             '<div id="mavid-slide-type-3-%2$s" data-number="%2$s" class="mav-slide" %1$s>',
                             $mav_image_url, $i
-                        );
-                            echo '<div class="mav-slide-title-ctn">';
+                            );
+                            printf( '<div class="mav-slide-title-ctn">' );
                                 printf(
-                                    '<a href="%2$s" title="%1$s"><button class="mav-btn-primary-dark">%3$s</button></a>',
-                                    $mav_title, $mav_permalink, __( 'Xem chi tiết', 'mavericktheme' )
+                                    '<button class="mav-btn__primary--dark"><a href="%2$s" title="%1$s">%3$s</a></button>',
+                                    get_the_title(), $mav_permalink, __( 'Xem chi tiết', 'mavericktheme' )
                                 );
                             echo '</div>';
                         echo '</div>';
+
                         $i++;
+
                     endwhile;
 
                     // Reset post data
                     wp_reset_postdata();
                 }
 
-            echo '</div>'; // Slider Container
-        echo '</div>'; // Slider Wrapper
+            // End of Slider Container
+            echo '</div>';
+
+        // End of Slider wrapper
+        echo '</div>';
     endif;
 }

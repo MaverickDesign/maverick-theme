@@ -24,7 +24,7 @@
             position: relative;
             display: flex;
             width: 100%;
-            @extend %mav-transition;
+            transition: all .6s ease-in-out;
 
             // Carousel Item
             .mav-carousel-item {
