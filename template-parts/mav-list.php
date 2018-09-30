@@ -171,10 +171,15 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                     printf( '<div class="mav-card__footer--ctn">' );
 
                         printf('<ul class="mav-card__socials--ctn">' );
-                            printf(
-                                '<li title="%2$s"><i class="mavjs-fb-share-button fab fa-facebook-f" data-href="%1$s"></i></li>',
-                                $mav_permalink, __( 'Chia sẻ Facebook', 'mavericktheme' )
-                            );
+                            // printf(
+                            //     '<li title="%2$s"><i class="mavjs-fb-share-button fab fa-facebook-f" data-href="%1$s"></i></li>',
+                            //     $mav_permalink, __( 'Chia sẻ Facebook', 'mavericktheme' )
+                            // );
+                            echo '<div class="fb-share-button" data-href="'.$mav_permalink.'" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$mav_permalink.'%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>';
+                            // printf(
+                            //     '<li title="%2$s"></li>',
+                            //     $mav_permalink, __( 'Chia sẻ Facebook', 'mavericktheme' )
+                            // );
                             printf(
                                 '<li title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
                                 __( 'Sao chép liên kết', 'mavericktheme' )
