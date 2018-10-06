@@ -15,6 +15,9 @@
     } else {
         $mav_device = '';
     }
+
+    $mav_site__width = esc_attr( get_option('mav_setting_grid_system') );
+
 ?>
 
 <?php
@@ -76,12 +79,15 @@
     <meta name="description" content="<?php echo get_bloginfo('description')?>">
 
     <!-- Open Graph Data -->
-    <meta property="og:url"           content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="<?php single_post_title(); ?>" />
-    <meta property="og:description"   content="Your description" />
+    <meta property="og:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="<?php single_post_title(); ?>"/>
+    <?php
+        $mav_excerpt = has_excerpt() ? get_the_excerpt() : __( '', 'mavericktheme' );
+        printf('<meta property="og:description" content="%1$s"/>', $mav_excerpt);
+    ?>
     <?php if ( ! is_404() && has_post_thumbnail() ) : ?>
-        <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" />
+        <meta property="og:image" content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" />
     <?php endif; ?>
     <!-- End of Open Graph Data -->
 
@@ -125,16 +131,16 @@
         $mav_efa  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
         $mav_faid = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
         if ( ! empty( $mav_efa ) && ! empty( $mav_faid ) ) : ?>
-        <!-- Facebook Script -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=<?php echo $mav_faid; ?>&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <!-- End of Facebook Script -->
+            <!-- Facebook Script -->
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=<?php echo $mav_faid; ?>&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <!-- End of Facebook Script -->
         <?php endif;
     ?>
 

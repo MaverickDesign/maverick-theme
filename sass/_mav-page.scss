@@ -59,5 +59,6 @@
     }
     @media #{$mav-desktop} {
         font-size: 4rem;
+        max-width: 60vw;
     }
 }

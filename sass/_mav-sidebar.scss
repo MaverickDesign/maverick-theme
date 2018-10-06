@@ -1,12 +1,29 @@
 .mav-site-sidebar-ctn {
-    font-family: var(--mav-font--secondary);
+
+    /**
+     * Custom scroll bar
+     */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 8px;
+        background: var(--mav-color--off-white);
+        // box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: var(--mav-color--border);
+        // box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+
     display: grid;
-    grid-row-gap: var(--mav-gutter);
+    grid-row-gap: var(--mav-gutter--lg);
     align-content: start;
-    padding: var(--mav-gutter--lg);
-    padding-top: var(--mav-gutter--xl);
-    padding-right: var(--mav-gutter);
-    border-left: 1px solid var(--mav-color--border);
+    padding: var(--mav-gutter--xl) var(--mav-gutter) var(--mav-gutter--xl) var(--mav-gutter--lg);
+    border-left: var(--mav-border);
     @extend %mav-link-reset;
     a {
         text-decoration: none;
@@ -44,6 +61,7 @@
                 display: grid;
                 grid-template-columns: 70% 30%;
                 margin-bottom: var(--mav-gutter--xs);
+                font-size: var(--mav-font__size--sm);
                 &:last-child {
                     margin-bottom: 0
                 }
@@ -70,12 +88,12 @@
      * Categories Widget
      */
     .widget_categories {
+        font-size: var(--mav-font__size--sm);
         ul {
+            max-height: 50vh;
+            overflow-y: auto;
             li {
-                // margin-bottom: var(--mav-gutter--xs);
                 a {
-                    // color: var(--mav-color__text--primary);
-                    // font-weight: var(--mav-font__weight--medium);
                     text-transform: capitalize;
                 }
                 &:before {
@@ -130,6 +148,8 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        max-height: 50vh;
+        overflow-y: auto;
         a {
             display: flex;
             align-items: center;
@@ -167,8 +187,11 @@
      * Widget Archive
     */
     .widget_archive {
+        font-size: var(--mav-font__size--sm);
         ul {
             display: grid;
+            max-height: 50vh;
+            overflow-y: auto;
         }
     }
 

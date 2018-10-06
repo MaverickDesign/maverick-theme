@@ -17,8 +17,15 @@ $mav_permalink = get_the_permalink( $mav_id );
 
 // Get display style option
 $mav_display_style = ( get_option( 'mav_setting_blog_page_display_style' ) ) ? esc_attr( get_option( 'mav_setting_blog_page_display_style' ) ) : 'card';
-// Card style
-$mav_style = 'data-style-'.$mav_display_style;
+
+// Get queried style from ajax load post function
+$mav_queried_style = get_query_var('mav_card_style');
+if ( ! empty( $mav_queried_style ) ) {
+    $mav_display_style = $mav_queried_style;
+}
+
+// Set card style
+$mav_style = 'data-style="'.$mav_display_style.'"';
 
 // Brand Logo Background
 $mav_background_logo = function_exists( 'mavf_brand_logo_background' ) ? mavf_brand_logo_background( true, '240,240,240,1', '0,0,0,0.05', '0,0,0,0' ) : '';
@@ -36,8 +43,8 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
         // Post wrapper
         printf( '<div class="mav-card__content--wrp">' );
             // Post container
-            printf( '<article id="mavid-%2$s-%3$s" %1$s data-post-type="%2$s" data-id="%3$s" class="mav-card__content--ctn">',
-                $mav_style, $mav_post_type, $mav_id
+            printf( '<article id="mavid-%2$s-%3$s" %1$s data-post-type="%2$s" data-id="%3$s" class="mavjs-card__content--ctn mav-card__content--ctn %4$s">',
+                $mav_style, $mav_post_type, $mav_id, $mav_sticky_class
                 );
 
                 /**
@@ -83,23 +90,18 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                             printf( '<div class="mav-card__body__header--ctn">' );
 
                                 // Post Date
-                                printf('<div class="mav-cars__post__date--wrp">');
-                                    printf('<div class="mav-cars__post__date--ctn">');
-                                        $archive_year  = get_the_time('Y');
-                                        $archive_month = get_the_time('m');
-                                        $archive_day   = get_the_time('d');
-                                        $mav_date_link = get_day_link( $archive_year, $archive_month, $archive_day);
-                                        printf(
-                                            '<div class="" title="%2$s %1$s"><a href="%3$s">%1$s</a></div>',
-                                            get_the_date(), __( 'Xem các bài đăng ngày', 'mavericktheme' ), $mav_date_link
-                                            );
+                                printf('<div class="mav-card__post__date--wrp">');
+                                    printf('<div class="mav-card__post__date--ctn mav-post-info" data-type="date">');
+                                        mavf_post_date();
                                     echo '</div>';
                                 echo '</div>';
 
-                                // Categories
-                                printf('<div class="mav-cars__post__categories--wrp">');
-                                    printf('<div class="mav-cars__post__categories--ctn">');
-                                        the_category();
+                                // Post Categories
+                                printf('<div class="mav-card__post__categories--wrp">');
+                                    printf('<div class="mav-card__post__categories--ctn mav-post-info" data-type="category">');
+                                        if ( function_exists('mavf_post_categories') ) {
+                                            mavf_post_categories( $mav_id );
+                                        }
                                     echo '</div>';
                                 echo '</div>';
 
@@ -171,15 +173,9 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                     printf( '<div class="mav-card__footer--ctn">' );
 
                         printf('<ul class="mav-card__socials--ctn">' );
-                            // printf(
-                            //     '<li title="%2$s"><i class="mavjs-fb-share-button fab fa-facebook-f" data-href="%1$s"></i></li>',
-                            //     $mav_permalink, __( 'Chia sẻ Facebook', 'mavericktheme' )
-                            // );
-                            echo '<div class="fb-share-button" data-href="'.$mav_permalink.'" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$mav_permalink.'%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>';
-                            // printf(
-                            //     '<li title="%2$s"></li>',
-                            //     $mav_permalink, __( 'Chia sẻ Facebook', 'mavericktheme' )
-                            // );
+                            if ( ! empty( get_option( 'mav_setting_enable_facebook_app' ) ) ) :
+                                echo '<li title="'.__( 'Chia sẻ Facebook', 'mavericktheme' ).'"><div class="fb-share-button" data-href="'.$mav_permalink.'" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$mav_permalink.'%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>';
+                            endif;
                             printf(
                                 '<li title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
                                 __( 'Sao chép liên kết', 'mavericktheme' )

@@ -79,7 +79,7 @@ function mavf_uni_slider( $mav_args )
 
     // Slider Container Height
     // Default: 50vh
-    $mav_slider_height = isset( $mav_args['slider_height'] ) ? $mav_args['slider_height'] : '50vh';
+    $mav_slider_height = isset( $mav_args['height'] ) ? $mav_args['height'] : '50vh';
 
     // Slide Interval
     // Default: 5000
@@ -165,9 +165,9 @@ function mavf_uni_slider( $mav_args )
     if ( $mav_query-> have_posts() ) :
         // Slider wrapper
         printf(
-            '<div id="mavid-uni-slider-%1$s" class="%2$s %3$s" data-unique="%1$s" data-type="%4$s" data-total-slides="%5$s" data-init-slides-display="%6$s" data-slides-display="%6$s" data-interval="%7$s" data-auto-slide="%8$s">',
+            '<div id="mavid-uni-slider-%1$s" class="%2$s %3$s" data-unique="%1$s" data-type="%4$s" data-total-slides="%5$s" data-init-slides-display="%6$s" data-slides-display="%6$s" data-interval="%7$s" data-auto-slide="%8$s" style="background: %9$s;">',
             $mav_unique_number, $mav_class_slider_js, $mav_class_slider_wrapper, $mav_slider_type,
-            $mav_total_posts, $mav_posts_to_display, $mav_slider_interval, $mav_auto_slide
+            $mav_total_posts, $mav_posts_to_display, $mav_slider_interval, $mav_auto_slide, $mav_slider_background_color
             );
 
             // Slider container
@@ -179,6 +179,8 @@ function mavf_uni_slider( $mav_args )
                     '<div class="mavjs-slider__loading--indicator mav-slider__loading--indicator %2$s" style="animation-duration: %1$s;"></div>',
                     $mav_slider_interval, $mav_show_indicator
                 );
+
+                printf('<div>');
 
                 // Slides Wrapper
                 printf(
@@ -240,33 +242,6 @@ function mavf_uni_slider( $mav_args )
                     echo '</ul>';
                 echo '</div>';
 
-                // Slider Thumbnail Nav Wrapper
-                printf(
-                    '<div class="mav-slider__nav--wrapper" data-unique="%1$s" data-type="%2$s" %3$s>',
-                    $mav_unique_number, $mav_slider_type, $mav_hidden
-                    );
-                    // Slider Thumbnail Nav Container
-                    printf(
-                        '<nav class="mav-slider__nav--ctn" data-position="%1$s">',
-                        $mav_nav_thumbnail_container_position
-                        );
-                        // Thumbnail Dot Container
-                        printf( '<ul class="mavjs-uni-slider__nav__dots--ctn mav-slider__nav__dots--ctn">' );
-                            $mav_show_thumbnail = !$mav_nav_thumbnail_image ? 'mav-hide' : '';
-                            for ( $i = 1; $i < $mav_i; $i++ ) {
-                                printf(
-                                    '
-                                    <li id="mavid-uni-slider-%1$s-nav-dot-%2$s" class="mavjs-uni-slider__nav--dot mav-slider__nav--dot" data-slide-number="%2$s" title="%3$s" style="width: %5$s; height: %6$s;">
-                                        <img class="%7$s" src="%4$s">
-                                    </li>
-                                    ',
-                                    $mav_unique_number, $i, $mav_titles[$i-1], $mav_image_urls[$i-1], $mav_nav_thumbnail_size[0], $mav_nav_thumbnail_size[1], $mav_show_thumbnail
-                                    );
-                            }
-                        echo '</ul>';
-                    echo '</nav>';
-                echo '</div>';
-
                 // Button Prev
                 printf(
                     '<div class="mav-slider__nav__arrow--wrp mav-hide" %3$s data-direction="prev" data-type="%2$s">
@@ -310,6 +285,35 @@ function mavf_uni_slider( $mav_args )
                     </div>',
                     $mav_unique_number, $mav_slider_type, $mav_hidden
                 );
+
+                echo '</div>';
+
+                // Slider Thumbnail Nav Wrapper
+                printf(
+                    '<div class="mav-slider__nav--wrapper" data-unique="%1$s" data-type="%2$s" %3$s>',
+                    $mav_unique_number, $mav_slider_type, $mav_hidden
+                    );
+                    // Slider Thumbnail Nav Container
+                    printf(
+                        '<nav class="mav-slider__nav--ctn" data-position="%1$s">',
+                        $mav_nav_thumbnail_container_position
+                        );
+                        // Thumbnail Dot Container
+                        printf( '<ul class="mavjs-uni-slider__nav__dots--ctn mav-slider__nav__dots--ctn">' );
+                            $mav_show_thumbnail = !$mav_nav_thumbnail_image ? 'mav-hide' : '';
+                            for ( $i = 1; $i < $mav_i; $i++ ) {
+                                printf(
+                                    '
+                                    <li id="mavid-uni-slider-%1$s-nav-dot-%2$s" class="mavjs-uni-slider__nav--dot mav-slider__nav--dot" data-slide-number="%2$s" title="%3$s" style="width: %5$s; height: %6$s;">
+                                        <img class="%7$s" src="%4$s">
+                                    </li>
+                                    ',
+                                    $mav_unique_number, $i, $mav_titles[$i-1], $mav_image_urls[$i-1], $mav_nav_thumbnail_size[0], $mav_nav_thumbnail_size[1], $mav_show_thumbnail
+                                    );
+                            }
+                        echo '</ul>';
+                    echo '</nav>';
+                echo '</div>';
 
             // End of slider container
             echo '</div>';

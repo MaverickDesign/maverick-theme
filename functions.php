@@ -101,3 +101,33 @@ require TEMPLATE_DIR. '/inc/mav-content-modify.php';
 require TEMPLATE_DIR. '/inc/mav-form.php';
 
 require TEMPLATE_DIR. '/inc/mav-misc.php';
+
+function mavf_post_categories( $mav_post_id )
+{
+    // Get post categories
+    $cats = wp_get_post_categories( $mav_post_id );
+    printf('<ul class="mav-category__list">');
+        foreach ( $cats as $category ) {
+            $current_cat = get_cat_name( $category );
+            $cat_link = get_category_link( $category );
+            printf('<li class="mav-category__item">');
+                printf(
+                    '<a href="%1$s" title="%3$s %2$s">%2$s</a>',
+                    $cat_link, $current_cat, __( 'Xem các bài chuyên mục', 'mavericktheme' )
+                );
+            echo "</li>";
+        }
+    echo '</ul>';
+}
+
+function mavf_post_date()
+{
+    $archive_year  = get_the_time('Y');
+    $archive_month = get_the_time('m');
+    $archive_day   = get_the_time('d');
+    $mav_date_link = get_day_link( $archive_year, $archive_month, $archive_day);
+    printf(
+        '<span class="mav-post__date" title="%2$s %1$s"><a href="%3$s">%1$s</a></span>',
+        get_the_date(), __( 'Xem các bài đăng ngày', 'mavericktheme' ), $mav_date_link
+        );
+}

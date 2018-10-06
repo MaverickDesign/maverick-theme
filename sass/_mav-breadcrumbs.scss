@@ -1,4 +1,4 @@
-.mav-breadcrumbs-wrapper {
+.mav-breadcrumbs-wrapper, .mav-breadcrumbs__wrp {
     font-family: var(--mav-font--secondary);
     box-shadow: 0 1px var(--mav-color--border);
     @media #{$mav-mobile} {
@@ -6,10 +6,11 @@
     }
 }
 
-.mav-breadcrumbs-ctn {
+.mav-breadcrumbs-ctn, .mav-breadcrumbs__ctn {
     max-width: var(--mav-site--width);
     padding: var(--mav-gutter);
     margin: 0 auto;
+    box-shadow: 0 -1px var(--mav-color--border);
 }
 
 .mav-breadcrumbs {

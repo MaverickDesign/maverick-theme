@@ -20,25 +20,25 @@ printf('<article class="mav-uni-slider__slide_content--wrp">');
 
         if ( $mav_display_title ) {
             // Slide Title Wrapper
-            printf( '<div class="mav-slider__slide_title--wrp" %1$s>', $mav_slider_type );
+            printf( '<div class="mav-slider__slide_title--wrp">' );
                 // Slide Title Container
-                printf('<div class="mav-slider__slide_title--ctn">');
+                printf('<div class="mav-slider__slide_title--ctn" %1$s>', $mav_slider_type);
                     // Slide Title
                     printf(
-                        '<h2 class="mav-slider__slide--title"><a href="%2$s">%1$s</a></h2>',
-                        $mav_title, $mav_permalink
+                        '<h2 class="mav-slider__slide--title"><a href="%2$s" title="%3$s %1$s">%1$s</a></h2>',
+                        $mav_title, $mav_permalink, __( 'Xem nội dung', 'mavericktheme' )
                         );
                 echo '</div>';
             echo '</div>';
         }
 
         // Read more button
-        printf( '<div class="mav-slider__button--wrp mav-hide-on-phone" %1$s>', $mav_slider_type );
-            printf(
-                '<button class="mav-btn__primary--dark"><a href="%2$s">%1$s</a></button>',
-                __( 'Xem chi tiết', 'mavericktheme' ), $mav_permalink
-                );
-        echo '</div>';
+        // printf( '<div class="mav-slider__button--wrp mav-hide-on-phone" %1$s>', $mav_slider_type );
+        //     printf(
+        //         '<button class="mav-btn__primary--dark"><a href="%2$s">%1$s</a></button>',
+        //         __( 'Xem chi tiết', 'mavericktheme' ), $mav_permalink
+        //         );
+        // echo '</div>';
 
         // Slide Feature Image Wrapper
         printf(

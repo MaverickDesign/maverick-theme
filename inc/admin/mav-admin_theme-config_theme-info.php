@@ -17,7 +17,7 @@ function mavf_theme_info_display_theme_info()
 }
 
 register_setting(
-    'mavog_theme_config',
+    'mavog_theme_info',
     'mav_setting_theme_info'
 );
 add_settings_field(

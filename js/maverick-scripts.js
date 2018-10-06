@@ -382,3 +382,64 @@ document.addEventListener('DOMContentLoaded',function(){
     mavf_body_click_events();
     mavf_document_key();
 },false);
+
+// Blog Page List & Card View Toggle
+
+function mavf_blog_page_view_style( mav_args = {
+    'setting_container' : '.mavjs-setting-ctn',
+    'posts_container'   : '.mavjs-posts-container',
+    'button_list'       : '.mavjs-display-list',
+    'button_card'       : '.mavjs-display-card'
+}) {
+
+    // Query setting container
+    const mavSettingContainer = document.querySelector(mav_args['setting_container']);
+    // Query posts container
+    const mavPostsContainer = document.querySelector(mav_args['posts_container']);
+
+    if ( mavPostsContainer == undefined || mavSettingContainer == undefined) {
+        return;
+    }
+    // Button List
+    const mavButtonList = mavSettingContainer.querySelector(mav_args['button_list']);
+
+    mavButtonList.addEventListener('click', function(){
+        mavf_update_setting_container('list');
+        mavf_card_style();
+    });
+
+    // Button Card
+    const mavButtonCard = mavSettingContainer.querySelector(mav_args['button_card']);
+    mavButtonCard.addEventListener('click', function(){
+        mavf_update_setting_container('card');
+        mavf_card_style();
+    });
+
+    function mavf_update_setting_container(mavView) {
+        // mavSettingContainer.dataset.view = mavView;
+        mavPostsContainer.dataset.displayStyle = mavView;
+    }
+}
+
+mavf_blog_page_view_style();
+
+function mavf_card_style( mav_args = {
+    // 'setting_container' : '.mavjs-setting-ctn',
+    'posts_container'   : '.mavjs-posts-container',
+    'card_container'    : '.mavjs-card__content--ctn',
+} ) {
+
+    // const mavSettingContainer = document.querySelector(mav_args['setting_container']);
+    const mavPostContainer = document.querySelector(mav_args['posts_container']);
+
+    if ( mavPostContainer == undefined ) {
+        return;
+    }
+    const mavView = mavPostContainer.dataset.displayStyle;
+
+    // mavPostContainer.dataset.displayStyle = mavView;
+    const mavCards = mavPostContainer.querySelectorAll(mav_args['card_container']);
+    for ( const mavCard of mavCards ) {
+        mavCard.dataset.style = mavView;
+    }
+}

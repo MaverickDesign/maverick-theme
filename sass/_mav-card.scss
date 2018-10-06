@@ -203,24 +203,23 @@
  */
 
 .mav-card-cpt-portfolio {
-    background: white;
     padding: var(--mav-gutter);
     @extend %mav-transition;
-    &:hover {
-        border-color: var(--mav-color--accent);
-    }
-    .mav-card-title-wrapper {
-        padding: var(--mav-gutter) 0;
-        min-height: 90px;
-    }
-    /* Card Footer */
-    .mav-card-footer {
-        @extend .mav-flex-center;
-        .mav-tag-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
+    // &:hover {
+    //     border-color: var(--mav-color--accent);
+    // }
+    // .mav-card-title-wrapper {
+    //     padding: var(--mav-gutter) 0;
+    //     min-height: 90px;
+    // }
+    // /* Card Footer */
+    // .mav-card-footer {
+    //     @extend .mav-flex-center;
+    //     .mav-tag-list {
+    //         display: flex;
+    //         flex-wrap: wrap;
+    //     }
+    // }
 }
 
 /**
@@ -233,7 +232,7 @@
         display: grid;
         align-content: center;
         border: 1px solid transparent;
-        padding: var(--mav-gutter);
+        padding: var(--mav-gutter--lg);
         height: 100%;
         @extend %mav-transition;
         &:hover {
@@ -257,8 +256,8 @@
             }
         }
         img {
-            width: 95%;
-            height: 95%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             object-position: center;
             @extend %mav-transition;
@@ -275,6 +274,7 @@
 /**
  * Default post index card
  * support for list & card styles
+ * ==============================
  */
 
 // Card wrapper
@@ -305,6 +305,12 @@
         @media #{$mav-phone} {
             grid-template-columns: 1fr!important;
         }
+        &.sticky {
+            background: hsl(0, 0, 99);
+        }
+        &:hover {
+            background: hsl(0, 0, 99);
+        }
     }
 }
 
@@ -333,11 +339,9 @@
                     height: 100%;
                     background-position: center!important;
                     background-size: cover!important;
-                    filter: grayscale(1);
                     @extend %mav-transition;
                     &:hover {
                         transform: scale(1.1);
-                        filter: grayscale(0);
                     }
                 }
 
@@ -380,17 +384,12 @@
                 color: var(--mav-color__text--secondary);
 
                 // Categories container
-                .mav-cars__post__categories--ctn {
-                    max-height: 3em;
-                    overflow: hidden;
-                    ul {
-                        display: flex;
-                    }
+                .mav-card__post__categories--ctn {
+                    display: flex;
                     li {
                         display: none;
                         &:first-child, &:last-child {
                             display: block;
-                            margin-left: var(--mav-gutter--sm);
                         }
                     }
                 }
@@ -403,11 +402,12 @@
 
                 // Card post title
                 .mav-card__post__title {
-                    font-size: 1.5rem;
+                    font-size: 1.25rem;
+                    font-weight: var(--mav-font__weight--bold);
                     word-break: break-word;
                     @extend %mav-transition;
                     &:hover {
-                        color: var(--mav-color__text--secondary);
+                        color: var(--mav-color--primary);
                     }
                 }
 
@@ -461,7 +461,6 @@
                 text-align: center;
                 padding: var(--mav-gutter);
                 border-left: var(--mav-border);
-                min-width: 20%;
                 cursor: pointer;
                 @extend %mav-transition;
                 &:hover {
@@ -481,12 +480,14 @@
 }
 
 /*
- * List Style
+ * Card List Style
+ * ===============
  */
 
 .mav-card__content--ctn {
-    &[data-style-list] {
-        grid-template-columns: 30% 1fr auto;
+
+    &[data-style="list"] {
+        grid-template-columns: 33.3333% 1fr auto;
 
         .mav-card__post__thumbnail--ctn {
             height: 100%!important;

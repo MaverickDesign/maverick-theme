@@ -3,7 +3,7 @@
  * @package mavericktheme
  */
 
-function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-breadcrumbs', $mav_home_title='')
+function mavf_breadcrumbs( $mav_breadcrumb_id='', $mav_breadcrumb_class='mav-breadcrumbs', $mav_home_title='' )
 {
     // Settings
     $separator          = '<span class="fas fa-angle-right"></span>';
@@ -39,13 +39,16 @@ function mavf_breadcrumbs($mav_breadcrumb_id='', $mav_breadcrumb_class='mav-brea
             $post_type = get_post_type();
 
             // If it is a custom post type display name and link
-            if($post_type != 'post') {
+            if ( $post_type != 'post' ) {
 
-                $post_type_object = get_post_type_object($post_type);
-                $post_type_archive = get_post_type_archive_link($post_type);
+                $post_type_object = get_post_type_object( $post_type );
+                $post_type_archive = get_post_type_archive_link( $post_type );
 
-                printf('<li class="item-cat item-custom-post-type-%1$s"><a class="bread-cat bread-custom-post-type-%1$s" href="%2$s" title="%3$s">%3$s</a></li>', $post_type, $post_type_archive, $post_type_object->labels->name);
-                printf('<li class="separator"> %1$s </li>',$separator);
+                printf(
+                    '<li class="item-cat item-custom-post-type-%1$s"><a class="bread-cat bread-custom-post-type-%1$s" href="%2$s" title="%3$s">%3$s</a></li>',
+                    $post_type, $post_type_archive, $post_type_object->labels->name
+                );
+                printf( '<li class="separator"> %1$s </li>', $separator );
 
             }
 
