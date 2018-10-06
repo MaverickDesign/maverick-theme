@@ -122,6 +122,10 @@ function mavf_uni_slider( $mav_args )
     // Default: true
     $mav_auto_slide = isset( $mav_args['auto_slide'] ) ? $mav_args['auto_slide'] : true;
 
+    // Display preview post in nav arroe
+    // Default: true
+    $mav_display_preview = isset ( $mav_args['display_preview'] ) ? $mav_args['display_preview'] : true;
+
     // Make A Unique String
     $mav_unique_number = function_exists( 'mavf_unique' ) ? mavf_unique( rand( 6, 12 ) ) : wp_create_nonce( time() );
 
@@ -156,7 +160,7 @@ function mavf_uni_slider( $mav_args )
         $mav_posts_to_display = $mav_total_posts;
     }
 
-    $mav_hidden = ($mav_total_posts == $mav_posts_to_display) ? 'data-hidden' : '';
+    $mav_hidden = ( $mav_total_posts == $mav_posts_to_display ) ? 'data-hidden' : '';
 
     /**
      * Start here
@@ -242,12 +246,14 @@ function mavf_uni_slider( $mav_args )
                     echo '</ul>';
                 echo '</div>';
 
+                $mav_hide_preview = $mav_display_preview ? '' : 'data-hidden';
+
                 // Button Prev
                 printf(
                     '<div class="mav-slider__nav__arrow--wrp mav-hide" %3$s data-direction="prev" data-type="%2$s">
                         <div class="mav-slider__nav__arrow--ctn" data-direction="prev" data-type="%2$s">
                             <div class="mavjs-uni-slider__nav--arrow mav-slider__nav--arrow" data-unique="%1$s" data-type="%2$s" data-direction="prev" data-slide-number="1">
-                                <div class="mavjs-nav__preview--wrp mav-slider__preview--wrp">
+                                <div class="mavjs-nav__preview--wrp mav-slider__preview--wrp" %4$s>
                                     <div class="mavjs-nav__preview--ctn mav-slider__preview--ctn">
                                         <figure>
                                             <img src="" class="mavjs-featured-image mav-slider__nav--image" data-prev>
@@ -261,7 +267,7 @@ function mavf_uni_slider( $mav_args )
                             </div>
                         </div>
                     </div>',
-                    $mav_unique_number, $mav_slider_type, $mav_hidden
+                    $mav_unique_number, $mav_slider_type, $mav_hidden, $mav_hide_preview
                 );
 
                 // Button Next
@@ -270,7 +276,7 @@ function mavf_uni_slider( $mav_args )
                         <div class="mav-slider__nav__arrow--ctn" data-direction="next" data-type="%2$s">
                             <div class="mavjs-uni-slider__nav--arrow mav-slider__nav--arrow" data-unique="%1$s" data-type="%2$s" data-direction="next" data-slide-number="1">
                                 <span class="mav-slider__nav--icon"><i class="fas fa-chevron-right"></i></span>
-                                <div class="mavjs-nav__preview--wrp mav-slider__preview--wrp">
+                                <div class="mavjs-nav__preview--wrp mav-slider__preview--wrp" %4$s>
                                     <div class="mavjs-nav__preview--ctn mav-slider__preview--ctn">
                                         <figure>
                                             <img src="" class="mavjs-featured-image mav-slider__nav--image" data-next>
@@ -283,7 +289,7 @@ function mavf_uni_slider( $mav_args )
                             </div>
                         </div>
                     </div>',
-                    $mav_unique_number, $mav_slider_type, $mav_hidden
+                    $mav_unique_number, $mav_slider_type, $mav_hidden, $mav_hide_preview
                 );
 
                 echo '</div>';

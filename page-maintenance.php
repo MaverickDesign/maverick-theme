@@ -28,6 +28,8 @@
     </title>
 
     <?php wp_head(); ?>
+
+    <?php get_template_part( '/template-parts/header/mav-header__modified-styles' ); ?>
 </head>
 <body class="mav-page-maintenance">
     <?php if ( empty( get_option( 'mav_setting_maintenance_display_logo' ) ) ) : ?>

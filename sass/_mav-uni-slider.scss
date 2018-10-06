@@ -61,9 +61,9 @@
     display: flex;
     &:hover {
         .mav-slider__nav--icon {
-            opacity: 0;
-            width: 0;
-            margin: 0;
+            // opacity: 0;
+            // width: 0;
+            // margin: 0;
         }
         // Preview image
         figure {
@@ -93,6 +93,7 @@
     align-items: center;
     background: rgba(white, .25);
     padding: var(--mav-gutter--sm);
+    @extend %mav-transition;
     &[data-direction="prev"] {
         padding-left: 0;
         .mav-slider__nav--icon {
@@ -108,6 +109,9 @@
     .mav-slider__nav--icon {
         font-size: var(--mav-font__size--lg);
         @extend %mav-transition--fast;
+    }
+    &:hover {
+        background: rgba(white, .5);
     }
 }
 

@@ -4,8 +4,8 @@
  */
 ?>
 
-<section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper">
-    <div class="mav-footer-copyright-ctn">
+<section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper mav-footer__copyright--wrp">
+    <div class="mav-footer-copyright-ctn mav-footer__copyright--ctn">
         <!-- Copyright -->
         <div>
             <?php _e( 'Bản quyền', 'mavericktheme' ); ?> &copy; <strong><?php echo get_the_date( 'Y' ); ?></strong> <?php _e( 'của', 'mavericktheme' ); ?> <a href="<?php bloginfo( 'url' );?>" target="_blank" class="mav-link--dark"><strong><?php bloginfo( 'title' ); ?></strong></a>. <?php _e( 'Bảo lưu mọi quyền hạn.', 'mavericktheme' ); ?>

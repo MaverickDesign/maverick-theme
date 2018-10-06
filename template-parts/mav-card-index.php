@@ -43,7 +43,8 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
         // Post wrapper
         printf( '<div class="mav-card__content--wrp">' );
             // Post container
-            printf( '<article id="mavid-%2$s-%3$s" %1$s data-post-type="%2$s" data-id="%3$s" class="mavjs-card__content--ctn mav-card__content--ctn %4$s">',
+            printf(
+                '<article id="mavid-%2$s-%3$s" %1$s data-post-type="%2$s" data-id="%3$s" class="mavjs-card__content--ctn mav-card__content--ctn %4$s">',
                 $mav_style, $mav_post_type, $mav_id, $mav_sticky_class
                 );
 
@@ -173,9 +174,17 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                     printf( '<div class="mav-card__footer--ctn">' );
 
                         printf('<ul class="mav-card__socials--ctn">' );
-                            if ( ! empty( get_option( 'mav_setting_enable_facebook_app' ) ) ) :
-                                echo '<li title="'.__( 'Chia sẻ Facebook', 'mavericktheme' ).'"><div class="fb-share-button" data-href="'.$mav_permalink.'" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$mav_permalink.'%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>';
+                            // Facebook share button
+                            // if ( ! empty( get_option( 'mav_setting_enable_facebook_app' ) ) ) :
+                            //     echo '<li title="'.__( 'Chia sẻ Facebook', 'mavericktheme' ).'"><div class="fb-share-button" data-href="'.$mav_permalink.'" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$mav_permalink.'%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>';
+                            // endif;
+
+                            $mav_efa  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
+                            $mav_faid = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
+                            if ( ! empty( $mav_efa ) && ! empty( $mav_faid ) ) :
+                                echo '<li class="mav-social__btn" title="'.__( 'Chia sẻ Facebook', 'mavericktheme' ).'" data-facebook><a target="_blank" href="https://www.facebook.com/dialog/share?app_id='.$mav_faid.'&amp;display=popup&amp;href='.get_post_permalink().'"><i class="fab fa-facebook-f"></i></a></li>';
                             endif;
+
                             printf(
                                 '<li title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
                                 __( 'Sao chép liên kết', 'mavericktheme' )

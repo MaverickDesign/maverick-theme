@@ -19,11 +19,8 @@
                 background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.75) 100%);
                 @include mav-font-awesome;
                 content: '\f078';
-                // content: attr(data-message);
-                // font-size: var(--mav-font__size--sm);
                 color: var(--mav-color__text--secondary--dark);
-                // font-family: var(--mav-font--secondary);
-                // text-transform: uppercase;
+                text-align: center;
             }
         }
         @media #{$mav-tablet} {
@@ -35,13 +32,14 @@
     }
 
     &-header {
-        text-align: center;
+        // text-align: center;
         // background: linear-gradient(to bottom, var(--mav-color--off-white) 60%, rgba(0,0,0,0) 100%) ;
     }
 
     &__title--ctn {
         margin: 0 auto;
         padding: var(--mav-gutter--lg) var(--mav-gutter);
+        text-align: center;
         @media #{$mav-desktop} {
             padding: var(--mav-gutter--xl) 0;
         }
@@ -55,22 +53,27 @@
         word-wrap: break-word;
         max-width: 640px;
     }
+
+    // Post excerpt wrapper
     .mav-post__excerpt--wrp {
+        // Post excerpt container
         .mav-post__excerpt--ctn {
             max-width: 640px;
             margin: 0 auto;
             padding: var(--mav-gutter--xl) 0;
             padding-top: 0!important;
+            text-align: center;
             @media #{$mav-phone} {
                 max-width: 80%;
                 padding: var(--mav-gutter--lg) 0;
             }
-        }
-    }
-    .mav-post__excerpt {
-        font-weight: var(--mav-font__weight--light);
-        @media #{$mav-desktop} {
-            font-size: var(--mav-font__size--lg);
+            // Post excerpt
+            .mav-post__excerpt {
+                font-weight: var(--mav-font__weight--light);
+                @media #{$mav-desktop} {
+                    font-size: var(--mav-font__size--lg);
+                }
+            }
         }
     }
 
@@ -608,5 +611,16 @@ figcaption {
                 margin: 0;
             }
         }
+    }
+}
+
+.mav-social__btn {
+    list-style: none;
+}
+
+.mav-post__socials--wrp {
+    .mav-post__socials--ctn {
+        max-width: var(--mav-site--width);
+        margin: 0 auto;
     }
 }
