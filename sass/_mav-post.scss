@@ -336,36 +336,44 @@
             margin: 0;
         }
 
-        // WordPress Gutenberg Style
-        &.wp-block-pullquote, .mav-pullquote {
-            font-family: var(--mav-font--secondary);
-            padding: 0 var(--mav-gutter);
-            margin: var(--mav-gutter--xl) auto;
-            border: 1px solid var(--mav-color--border);
-            box-shadow: none;
-            &:before, &:after {
-                display: block;
-                @extend %mav-font-awesome;
-                color: var(--mav-color--accent);
-                background: var(--mav-color--off-white);
-                margin: 0 auto;
-                padding: var(--mav-gutter--sm);
-                width: 1.5em;
-                height: 1.5em;
-                border-radius: 50%;
-            }
-            &:before {
-                content: '\f10d';
-                margin-bottom: var(--mav-gutter--sm);
-                transform: translateY(-50%);
-            }
-            &:after {
-                content: '\f10e';
-                margin-top: var(--mav-gutter--sm);
-                transform: translateY(50%);
-            }
+    }
+
+    .mav-pullquote {
+        font-family: var(--mav-font--secondary);
+        padding: 0 var(--mav-gutter);
+        margin: var(--mav-gutter--lg) auto;
+        border: 1px solid var(--mav-color--border);
+        box-shadow: none;
+        &:before, &:after {
+            display: block;
+            @extend %mav-font-awesome-solid;
+            color: var(--mav-color--accent);
+            background: var(--mav-color--off-white);
+            margin: 0 auto;
+            padding: var(--mav-gutter--sm);
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+        }
+        &:before {
+            content: '\f10d';
+            margin-bottom: var(--mav-gutter--sm);
+            transform: translateY(-50%);
+        }
+        &:after {
+            content: '\f10e';
+            margin-top: var(--mav-gutter--sm);
+            transform: translateY(50%);
         }
     }
+
+    // WordPress Gutenberg Style
+    .wp-block-pullquote {
+        blockquote {
+            @extend .mav-pullquote;
+        }
+    }
+
     cite {
         font-family: var(--mav-font--secondary);
         font-weight: var(--mav-font__weight--bold);

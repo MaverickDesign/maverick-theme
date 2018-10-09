@@ -274,10 +274,10 @@ a {
     background: unset;
     color: inherit; }
 
-.mav-post-info:before, .mav-post__info:before, .mav-post-content blockquote.wp-block-pullquote:before, .mav-post-content blockquote.wp-block-pullquote:after, .mav-post-content blockquote .mav-pullquote:before, .mav-post-content blockquote .mav-pullquote:after, .mav-post__content blockquote.wp-block-pullquote:before, .mav-post__content blockquote.wp-block-pullquote:after, .mav-post__content blockquote .mav-pullquote:before, .mav-post__content blockquote .mav-pullquote:after, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-site-sidebar-ctn .widget_recent_entries ul li:before, .mav-site-sidebar-ctn .widget_categories ul li:before, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-price-table-row[data-row="checked"]:before, .mav-price-table-row[data-row="unchecked"]:before, .mav-paginate-links-ctn .prev:before, .mav-paginate-links__ctn .prev:before, .mav-paginate-links-ctn .next:after, .mav-paginate-links__ctn .next:after {
+.mav-post-info:before, .mav-post__info:before, .mav-blog-sticky-post-ctn article.sticky .mav-card-post-header:before, .mav-site-sidebar-ctn .widget_recent_entries ul li:before, .mav-site-sidebar-ctn .widget_categories ul li:before, .mav-slider-type-2-ctn .mav-slide .mav-slide-nav, .mav-price-table-row[data-row="checked"]:before, .mav-price-table-row[data-row="unchecked"]:before, .mav-paginate-links-ctn .prev:before, .mav-paginate-links__ctn .prev:before, .mav-paginate-links-ctn .next:after, .mav-paginate-links__ctn .next:after {
   font-family: "Font Awesome 5 Free"; }
 
-.mav-link[data-link="external"]:after, q:before, q:after, .mav-btn-top:before, .mav-btn-back:before, .mav-post-navigation a:before, .mav-post-navigation a:after, .mav-tag-list li a:before, .mav-tag__list li a:before, .mav-card__post__thumbnail--wrp .mav-card__post__thumbnail--ctn .mav-card__post__thumbnail:after, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox__nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox__nav:after, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox__nav:before, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox__nav:after, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox__nav:before, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox__nav:after, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox-nav:before, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox-nav:after, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox__nav:before, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox__nav:after, [data-lightbox-item]:after, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger:before, .mav-contact-info[data-type]:before, .mav-contact__address[data-type]:before {
+.mav-link[data-link="external"]:after, q:before, q:after, .mav-btn-top:before, .mav-btn-back:before, .mav-post-navigation a:before, .mav-post-navigation a:after, .mav-post-content .mav-pullquote:before, .mav-post-content .wp-block-pullquote blockquote:before, .mav-post-content .mav-pullquote:after, .mav-post-content .wp-block-pullquote blockquote:after, .mav-post__content .mav-pullquote:before, .mav-post__content .wp-block-pullquote blockquote:before, .mav-post__content .mav-pullquote:after, .mav-post__content .wp-block-pullquote blockquote:after, .mav-tag-list li a:before, .mav-tag__list li a:before, .mav-card__post__thumbnail--wrp .mav-card__post__thumbnail--ctn .mav-card__post__thumbnail:after, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:before, .mav-carousel .mav-carousel-nav-wrapper .mav-carousel-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox__nav:before, .mav-lightbox-wrapper .mav-lightbox-ctn .mav-lightbox__nav:after, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox-nav:before, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox-nav:after, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox__nav:before, .mav-lightbox-wrapper .mav-lightbox__ctn .mav-lightbox__nav:after, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox-nav:before, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox-nav:after, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox__nav:before, .mav-lightbox__wrapper .mav-lightbox-ctn .mav-lightbox__nav:after, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox-nav:before, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox-nav:after, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox__nav:before, .mav-lightbox__wrapper .mav-lightbox__ctn .mav-lightbox__nav:after, [data-lightbox-item]:after, .mav-header-menu-ctn ul .mav-submenu-icon:after, .mav-accordion-trigger:before, .mav-contact-info[data-type]:before, .mav-contact__address[data-type]:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -1592,29 +1592,29 @@ button {
           font-size: var(--mav-font__size--lg); } }
     .mav-post-content blockquote pre, .mav-post-content blockquote code, .mav-post__content blockquote pre, .mav-post__content blockquote code {
       margin: 0; }
-    .mav-post-content blockquote.wp-block-pullquote, .mav-post-content blockquote .mav-pullquote, .mav-post__content blockquote.wp-block-pullquote, .mav-post__content blockquote .mav-pullquote {
-      font-family: var(--mav-font--secondary);
-      padding: 0 var(--mav-gutter);
-      margin: var(--mav-gutter--xl) auto;
-      border: 1px solid var(--mav-color--border);
-      box-shadow: none; }
-      .mav-post-content blockquote.wp-block-pullquote:before, .mav-post-content blockquote.wp-block-pullquote:after, .mav-post-content blockquote .mav-pullquote:before, .mav-post-content blockquote .mav-pullquote:after, .mav-post__content blockquote.wp-block-pullquote:before, .mav-post__content blockquote.wp-block-pullquote:after, .mav-post__content blockquote .mav-pullquote:before, .mav-post__content blockquote .mav-pullquote:after {
-        display: block;
-        color: var(--mav-color--accent);
-        background: var(--mav-color--off-white);
-        margin: 0 auto;
-        padding: var(--mav-gutter--sm);
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 50%; }
-      .mav-post-content blockquote.wp-block-pullquote:before, .mav-post-content blockquote .mav-pullquote:before, .mav-post__content blockquote.wp-block-pullquote:before, .mav-post__content blockquote .mav-pullquote:before {
-        content: '\f10d';
-        margin-bottom: var(--mav-gutter--sm);
-        transform: translateY(-50%); }
-      .mav-post-content blockquote.wp-block-pullquote:after, .mav-post-content blockquote .mav-pullquote:after, .mav-post__content blockquote.wp-block-pullquote:after, .mav-post__content blockquote .mav-pullquote:after {
-        content: '\f10e';
-        margin-top: var(--mav-gutter--sm);
-        transform: translateY(50%); }
+  .mav-post-content .mav-pullquote, .mav-post-content .wp-block-pullquote blockquote, .mav-post__content .wp-block-pullquote .mav-post-content blockquote, .mav-post__content .mav-pullquote, .mav-post-content .wp-block-pullquote .mav-post__content blockquote, .mav-post__content .wp-block-pullquote blockquote {
+    font-family: var(--mav-font--secondary);
+    padding: 0 var(--mav-gutter);
+    margin: var(--mav-gutter--lg) auto;
+    border: 1px solid var(--mav-color--border);
+    box-shadow: none; }
+    .mav-post-content .mav-pullquote:before, .mav-post-content .wp-block-pullquote blockquote:before, .mav-post__content .wp-block-pullquote .mav-post-content blockquote:before, .mav-post-content .mav-pullquote:after, .mav-post-content .wp-block-pullquote blockquote:after, .mav-post__content .wp-block-pullquote .mav-post-content blockquote:after, .mav-post__content .mav-pullquote:before, .mav-post-content .wp-block-pullquote .mav-post__content blockquote:before, .mav-post__content .wp-block-pullquote blockquote:before, .mav-post__content .mav-pullquote:after, .mav-post-content .wp-block-pullquote .mav-post__content blockquote:after, .mav-post__content .wp-block-pullquote blockquote:after {
+      display: block;
+      color: var(--mav-color--accent);
+      background: var(--mav-color--off-white);
+      margin: 0 auto;
+      padding: var(--mav-gutter--sm);
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%; }
+    .mav-post-content .mav-pullquote:before, .mav-post-content .wp-block-pullquote blockquote:before, .mav-post__content .wp-block-pullquote .mav-post-content blockquote:before, .mav-post__content .mav-pullquote:before, .mav-post-content .wp-block-pullquote .mav-post__content blockquote:before, .mav-post__content .wp-block-pullquote blockquote:before {
+      content: '\f10d';
+      margin-bottom: var(--mav-gutter--sm);
+      transform: translateY(-50%); }
+    .mav-post-content .mav-pullquote:after, .mav-post-content .wp-block-pullquote blockquote:after, .mav-post__content .wp-block-pullquote .mav-post-content blockquote:after, .mav-post__content .mav-pullquote:after, .mav-post-content .wp-block-pullquote .mav-post__content blockquote:after, .mav-post__content .wp-block-pullquote blockquote:after {
+      content: '\f10e';
+      margin-top: var(--mav-gutter--sm);
+      transform: translateY(50%); }
   .mav-post-content cite, .mav-post__content cite {
     font-family: var(--mav-font--secondary);
     font-weight: var(--mav-font__weight--bold);
