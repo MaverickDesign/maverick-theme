@@ -1,6 +1,8 @@
-function mavf_lightbox(mavArgs = {
-    mavGalleryClass: '.wp-block-gallery'
-}){
+function mavf_lightbox(
+    mavArgs = {
+        mavGalleryClass: '.wp-block-gallery'
+    }
+){
     // Define Image pattern
     const mavImagePattern = /\.(jpg)|(png)|(svg)|(gif)$/i;
 
@@ -46,24 +48,24 @@ function mavf_lightbox(mavArgs = {
             ` : '';
 
             const mavContent = `
-            <div class="mav-lightbox-header"></div>
-            <div class="mav-lightbox-ctn">
-                ${mavLightboxNavPrev}
-                <figure class="mav-lightbox-image-ctn">
-                    <img src="" data-current="" data-max="${mavGalleryItems.length}" title="" class="mav-lightbox-image">
-                </figure>
-                ${mavLightboxNavNext}
-            </div>
-            ${mavLightboxThumbnails}
-            <div class="mav-lightbox-close" title="Click to close">&times;</div>
+                <div class="mav-lightbox-header"></div>
+                <div class="mav-lightbox-ctn">
+                    ${mavLightboxNavPrev}
+                    <figure class="mav-lightbox-image-ctn">
+                        <img src="" data-current="" data-max="${mavGalleryItems.length}" title="" class="mav-lightbox-image">
+                    </figure>
+                    ${mavLightboxNavNext}
+                </div>
+                ${mavLightboxThumbnails}
+                <div class="mav-lightbox-close" title="Click to close">&times;</div>
             `;
 
             mavLightbox.innerHTML  = mavContent;
 
-            mavLightbox.addEventListener('click',mavf_close_lightbox);
-            mavLightbox.querySelector('.mav-lightbox-close').addEventListener('click',mavf_close_lightbox);
+            mavLightbox.addEventListener('click', mavf_close_lightbox);
+            mavLightbox.querySelector('.mav-lightbox-close').addEventListener('click', mavf_close_lightbox);
 
-            function mavf_close_lightbox(){
+            function mavf_close_lightbox() {
                 event.stopPropagation();
 
                 mavLightbox.classList.add('mav-hide');
@@ -77,7 +79,7 @@ function mavf_lightbox(mavArgs = {
 
                 let mavNumber = i++;
 
-                let mavImageUrl = mavGalleryItem.getAttribute('href');
+                const mavImageUrl = mavGalleryItem.getAttribute('href');
 
                 // Check if target is image url
                 if (mavImageUrl.search(mavImagePattern) > 0) {
@@ -85,11 +87,11 @@ function mavf_lightbox(mavArgs = {
                     // Get the image thumbnail
                     let mavThumbnailImageUrl = mavGalleryItem.querySelector('img').src;
                     // Set the collection ID
-                    mavGalleryItem.setAttribute('data-collection',mavCollectionID);
+                    mavGalleryItem.setAttribute('data-collection', mavCollectionID);
                     // Set full image url
-                    mavGalleryItem.setAttribute('data-url',mavImageUrl);
+                    mavGalleryItem.setAttribute('data-url', mavImageUrl);
                     // Set item number
-                    mavGalleryItem.setAttribute('data-number',mavNumber);
+                    mavGalleryItem.setAttribute('data-number', mavNumber);
                     // Add lightbox data attribute to item
                     mavGalleryItem.setAttribute('data-lightbox-item','');
 
@@ -243,7 +245,7 @@ if (typeof mavf_lightbox === 'function') {
     // Post Attachment Class
     const mavAttachments        = document.querySelectorAll('.attachment');
 
-    if (mavGalleries.length > 0 || mavAttachments.length > 0) {
+    if (mavGalleries.length > 0 || mavAttachments.length > 0 || mavGutenbergGalleries.length > 0) {
 
         if (mavGalleries.length > 0) {
             mavf_lightbox({

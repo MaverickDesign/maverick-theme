@@ -23,7 +23,7 @@
                 $mav_show_page_content = true;
             }
 
-            // Display post (page) content
+            // Display page content
             if ( $mav_show_page_content ) {
                 printf('<div class="mav-pg-ctn mav-post-content-wrapper">');
                     printf('<div class="mav-post-content-ctn mav-padding-top-xl">');
@@ -61,7 +61,7 @@
                     }
 
                     printf(
-                        '<div id="mavid-post-container" class="mav-post-index-ctn mav-grid-col-%1$s" style="grid-gap: var(--mav-gutter-xl);">',
+                        '<div id="mavid-post-container" class="mav-post-index-ctn mav-grid-col-%1$s" style="grid-gap: var(--mav-gutter);">',
                         $mav_columns
                     );
                         while ( $mav_query->have_posts() ) {

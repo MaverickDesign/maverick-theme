@@ -8,17 +8,19 @@
     max-height: 100vh;
     top: 0;
     bottom: 0;
-    background: rgba(0,0,0,.90);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%,rgba(0,0,0,.95) 100%);
     z-index: var(--mav-layer--top);
     overflow: hidden;
     @media #{$mav-phone} {
         grid-template-rows: 5vh auto;
     }
+
     .mav-lightbox-header, .mav-lightbox__header {
         display: flex;
         align-items: center;
         color: var(--mav-color__text--secondary--dark);
         padding: var(--mav-gutter);
+
         .mav-lightbox-number, .mav-lightbox__number {
             font-weight: var(--mav-font__weight--bold);
             &[data-current] {
@@ -29,10 +31,12 @@
                 padding-left: var(--mav-gutter--xs);
             }
         }
+
         .mav-lightbox-caption, .mav-lightbox__caption {
             color: var(--mav-color__text--primary--dark);
         }
     }
+
     .mav-lightbox-close {
         position: fixed;
         right: 0;
@@ -63,7 +67,7 @@
                 color: var(--mav-color__text--primary--dark);
             }
             &:before, &:after {
-                @extend %mav-font-awesome;
+                @extend %mav-font-awesome-solid;
                 @extend %mav-transition;
             }
             &[data-direction="prev"] {
@@ -103,6 +107,7 @@
             width: 100%;
             padding: var(--mav-gutter--xs);
             margin: 0 var(--mav-gutter--xs);
+
             /**
              * Lightbox image
              */
@@ -164,12 +169,28 @@
 
 [data-lightbox-item] {
     cursor: pointer;
-    img {
+    @extend %mav-transition;
+    overflow: hidden;
+    &:after {
+        position: absolute;
+        @extend %mav-font-awesome-solid;
+        content: '\f002';
+        color: var(--mav-color__text--secondary--dark);
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%,rgba(0,0,0,.5) 100%);
+        opacity: 0;
         @extend %mav-transition;
     }
     &:hover {
-        img {
-            transform: scale(1.025);
+        // transform: scale(1.05);
+        filter: grayscale(1);
+        &:after {
+            opacity: 1;
         }
     }
 }

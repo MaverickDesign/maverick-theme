@@ -12,11 +12,11 @@ a {
     }
 }
 
-.#{$mavNS}-link {
+.mav-link {
     &[data-link="external"] {
         &:after {
             display: inline-block;
-            @extend %mav-font-awesome;
+            @extend %mav-font-awesome-solid;
             content: '\f35d';
             padding-left: var(--mav-gutter--xs);
             color: var(--mav-color__text--hint);
@@ -41,33 +41,35 @@ a {
     }
 }
 
-%#{$mavNS}-font-awesome {
+%mav-font-awesome {
+    font-family: $font-awesome;
+}
+
+%mav-font-awesome-solid {
     font-family: $font-awesome;
     font-weight: 900;
 }
 
 @mixin mav-font-awesome {
     font-family: $font-awesome;
+}
+
+@mixin mav-font-awesome-solid {
+    font-family: $font-awesome;
     font-weight: 900;
 }
 
-%#{$mavNS}-font-awesome-line {
-    font-family: $font-awesome;
-}
-
-.#{$mavNS}-fa-icon {
+.mav-fa-icon, .mav-fa__icon {
     margin-right: .25em;
 }
 
-.#{$mavNS} {
+.mav {
     &-no-break {
         white-space: nowrap;
     }
 }
 
-
-
-%#{$mavNS}-link {
+%mav-link {
     &-obj {
         background: var(--mav-color--primary);
         @include text-contrast($mav-color--primary);
@@ -283,7 +285,7 @@ q {
     &:before , &:after {
         display: inline-block;
         color: var(--mav-color--accent);
-        @extend %mav-font-awesome;
+        @extend %mav-font-awesome-solid;
         font-size: var(--mav-font__size--xs);
     }
     &:before {

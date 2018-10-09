@@ -59,7 +59,7 @@
             @extend %mav-transition;
 
             &:before, &:after {
-                @extend %mav-font-awesome;
+                @extend %mav-font-awesome-solid;
                 @extend %mav-transition;
             }
             &[data-direction="prev"] {
@@ -97,16 +97,16 @@
  */
 
 .mav-carousel {
-    .mav-card--wrapper {
-        box-shadow: none;
-    }
-    .mav-card-ctn, .mav-card--ctn {
-        padding: 10px;
+    .mav-card__ctn {
+        padding: var(--mav-gutter--xs);
         @media #{$mav-phone} {
             padding: 0;
         }
     }
-    .mav-card--post {
-        box-shadow: none;
+    .mav-card__body__header--ctn {
+        @media #{$mav-phone} {
+            grid-template-columns: 1fr!important;
+            grid-gap: var(--mav-gutter--xs)!important;
+        }
     }
 }

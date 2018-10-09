@@ -66,7 +66,7 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                                 if ( has_post_thumbnail() ) {
                                     printf(
                                         '<a href="%2$s" title="%3$s"><div class="mav-card__post__thumbnail" %1$s></div></a>',
-                                        mavf_get_post_thumbnail_url( 'large' ), $mav_permalink, $mav_title
+                                        mavf_get_post_thumbnail_url( 'large' ), $mav_permalink, __('Xem nội dung '.$mav_title, 'mavericktheme')
                                     );
                                 }
                             echo '</figure>';
@@ -85,7 +85,7 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                     // Card body container
                     printf( '<div class="mav-card__body--ctn">' );
 
-                        // Header wrapper
+                        // Body Header
                         printf('<header class="mav-card__body__header--wrp">');
                             // Header container
                             printf( '<div class="mav-card__body__header--ctn">' );
@@ -109,15 +109,15 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                             echo '</div>';
                         echo '</header>';
 
-                        // Body
+                        // Body Body
                         printf('<div class="mav-card__body__body--wrp">');
                             printf( '<div class="mav-card__body__body--ctn">' );
 
                                 // Title
-                                printf('<div class="mav-card__post__title--wrp">');
-                                    printf('<div class="mav-card__post__title--ctn">');
+                                printf('<div class="mav-card__title--wrp">');
+                                    printf('<div class="mav-card__title--ctn">');
                                         printf(
-                                            '<h2 class="mav-card__post__title"><a href="%2$s" title="%3$s %1$s">%1$s</a></h2>',
+                                            '<h2 class="mav-card__title"><a href="%2$s" title="%3$s %1$s">%1$s</a></h2>',
                                             $mav_title, $mav_permalink, __( 'Xem bài', 'mavericktheme' )
                                         );
                                     echo '</div>';
@@ -126,10 +126,10 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                                 // Excerpt
                                 if ( has_excerpt() ):
                                     // Excerpt wrapper
-                                    printf('<div class="mav-card__post__excerpt--wrp">');
+                                    printf('<div class="mav-card__excerpt--wrp">');
                                         // Excerpt container
-                                        printf('<div class="mav-card__post__excerpt--ctn">');
-                                            printf('<p class="mav-card__post__excerpt">%1$s</p>', get_the_excerpt());
+                                        printf('<div class="mav-card__excerpt--ctn">');
+                                            printf('<p class="mav-card__excerpt">%1$s</p>', get_the_excerpt());
                                         echo '</div>';
                                     echo '</div>';
                                 endif;
@@ -146,7 +146,7 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                             echo '</div>';
                         echo '</div>';
 
-                        // Footer
+                        // Body Footer
                         printf('<footer class="mav-card__body__footer--wrp">');
                             printf('<div class="mav-card__body__footer--ctn">');
 
@@ -175,15 +175,8 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
 
                         printf('<ul class="mav-card__socials--ctn">' );
                             // Facebook share button
-                            // if ( ! empty( get_option( 'mav_setting_enable_facebook_app' ) ) ) :
-                            //     echo '<li title="'.__( 'Chia sẻ Facebook', 'mavericktheme' ).'"><div class="fb-share-button" data-href="'.$mav_permalink.'" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$mav_permalink.'%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>';
-                            // endif;
+                            get_template_part( 'template-parts/social-buttons/mav-btn__social--facebook' );
 
-                            $mav_efa  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
-                            $mav_faid = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
-                            if ( ! empty( $mav_efa ) && ! empty( $mav_faid ) ) :
-                                echo '<li class="mav-social__btn" title="'.__( 'Chia sẻ Facebook', 'mavericktheme' ).'" data-facebook><a target="_blank" href="https://www.facebook.com/dialog/share?app_id='.$mav_faid.'&amp;display=popup&amp;href='.get_the_permalink().'"><i class="fab fa-facebook-f"></i></a></li>';
-                            endif;
                             printf(
                                 '<li title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
                                 __( 'Sao chép liên kết', 'mavericktheme' )

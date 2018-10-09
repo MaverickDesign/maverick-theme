@@ -4,8 +4,8 @@
  * Template part: Post paginate links
  */
 
-echo '<div id="mavid-paginate-links" class="mav-paginate-links-wrapper">';
-    echo '<div class="mav-paginate-links-ctn">';
+echo '<div id="mavid-paginate-links" class="mav-paginate-links-wrapper mav-paginate--wrp">';
+    echo '<div class="mav-paginate-links-ctn mav-paginate--ctn">';
             $mav_args = array(
                 'prev_text'          => __( 'Trang trước', 'mavericktheme' ),
                 'next_text'          => __( 'Trang sau', 'mavericktheme' ),

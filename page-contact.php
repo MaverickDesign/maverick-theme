@@ -11,6 +11,7 @@
 <!-- Page content starts here -->
 <main id="mavid-page-main-content" class="mav-page-wrapper">
     <div class="mav-page-ctn">
+
         <!-- Page Header -->
         <?php get_template_part('/template-parts/mav-page__header'); ?>
 
@@ -22,32 +23,32 @@
                         <div class="mav-page-contact-wrapper">
                             <!-- Contact Form -->
                             <?php
-                            if (function_exists('mavf_contact_form')) {
-                                $mavFormArgs = array(
-                                    'fields'        => array('name','email','phone','message'),
+                            if ( function_exists( 'mavf_contact_form' ) ) {
+                                $mav_form_args = array(
+                                    'fields'        => array( 'name', 'email', 'phone', 'message' ),
                                     'form_title'    => __('Gửi thông tin liên hệ tới <strong>'.get_bloginfo('name').'</strong>', 'mavericktheme'),
                                 );
-                                mavf_contact_form($mavFormArgs);
+                                mavf_contact_form( $mav_form_args );
                             }
                             ?>
 
                             <!-- Social links -->
                             <?php
-                            if (function_exists('mavf_social_links')) : ?>
-                                <div class="mav-contact-socials-wrapper">
-                                    <div class="mav-contact-socials-ctn">
-                                        <?php
-                                            printf(
-                                                '<h3 class="mav-margin-bottom-lg mav-text--center">%1$s <strong class="mav-no-break">%2$s</strong> %3$s</h3>',
-                                                __('Liên lạc với', 'mavericktheme'),
-                                                get_bloginfo('name'),
-                                                __('qua mạng xã hội', 'mavericktheme')
-                                            );
-                                            mavf_social_links();
-                                        ?>
-                                    </div>
-                                </div> <?php
-                            endif;
+                                if ( function_exists( 'mavf_social_links' ) ) : ?>
+                                    <div class="mav-contact-socials-wrapper">
+                                        <div class="mav-contact-socials-ctn">
+                                            <?php
+                                                printf(
+                                                    '<h3 class="mav-margin__bottom--lg mav-text--center">%1$s <strong class="mav-no-break">%2$s</strong> %3$s</h3>',
+                                                    __( 'Liên lạc với', 'mavericktheme' ),
+                                                    get_bloginfo( 'name' ),
+                                                    __( 'qua mạng xã hội', 'mavericktheme' )
+                                                );
+                                                mavf_social_links();
+                                            ?>
+                                        </div>
+                                    </div> <?php
+                                endif;
                             ?>
 
                             <!-- Physical Address -->

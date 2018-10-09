@@ -25,7 +25,7 @@
     }
     &:before {
         @extend %mav-transition;
-        @extend %mav-font-awesome;
+        @extend %mav-font-awesome-solid;
     }
     &[data-trigger-icon] {
         &:before {
@@ -47,15 +47,12 @@
     }
 
     &[data-state="open"] {
-        // background: rgba(black, 0.025);
-        // padding-left: var(--mav-gutter--sm);
         &:before {
             transform: rotate(0deg);
         }
         + .mav-accordion-ctn-wrapper {
             margin-top: var(--mav-gutter);
             max-height: 100vh;
-            // border-bottom: 1px solid var(--mav-color--border);
             .mav-accordion-ctn {
                 padding: 0;
             }

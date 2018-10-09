@@ -141,10 +141,10 @@
             }
             &.menu-item-home {
                 a:before {
-                    @extend %mav-font-awesome;
-                    @media #{$mav-desktop} {
-                        content: '\f015';
-                    }
+                    // @extend %mav-font-awesome-solid;
+                    // // @media #{$mav-desktop} {
+                    // //     content: '\f015';
+                    // // }
                 }
                 @media #{$mav-mobile} {
                     display: none!important;
@@ -212,7 +212,7 @@
             }
             &:after {
                 display: block;
-                @extend %mav-font-awesome;
+                @extend %mav-font-awesome-solid;
                 @extend %mav-transition;
             }
             &[data-state="close"] {

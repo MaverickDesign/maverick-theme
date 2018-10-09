@@ -1,285 +1,14 @@
 /**
- * Post Card - Index Page
- */
-
-.mav-card-wrapper, .mav-card--wrapper, .mav-card--wrp {
-    position: relative;
-    width: 100%;
-}
-
-.mav-card-ctn, .mav-card--ctn {
-    position: relative;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-.mav-card-post, .mav-card--post {
-    display: grid;
-    height: 100%;
-    background: white;
-    overflow: hidden;
-    border: 1px solid var(--mav-color--border);
-    @extend %mav-transition;
-        &:hover {
-            box-shadow: 0 10px 40px #ccc;
-        }
-
-    &-header, &-content, &-footer {
-        overflow: hidden;
-    }
-
-    &-header {
-        display: flex;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 1px var(--mav-color--border);
-        height: 20vh;
-        @media #{$mav-tablet} {
-            height: 20vw;
-        }
-        @media #{$mav-phone} {
-            height: 40vw;
-        }
-    }
-
-    &-thumbnail-wrapper {
-        width: 100%;
-        height: 100%;
-    }
-
-    &-thumbnail {
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-size: cover!important;
-        background-position: center center!important;
-        background-repeat: no-repeat!important;
-        @extend %mav-transition;
-        filter: grayscale(1);
-        &:hover{
-            filter: grayscale(0);
-            transform: scale(1.05);
-        }
-    }
-
-    &-info-ctn {
-        font-family: var(--mav-font--secondary);
-        display: flex;
-        flex-wrap: wrap;
-        box-shadow: 0 1px #eee;
-        padding-bottom: var(--mav-gutter--sm);
-        @extend .mav-text--sm;
-        a {
-            margin-right: var(--mav-gutter--sm);
-        }
-    }
-
-    &-content {
-        // Card Header
-        header {
-            display: grid;
-            padding: var(--mav-gutter);
-            overflow: hidden;
-            @media #{$mav-phone} {
-                grid-template-rows: auto;
-            }
-        }
-        // Card Title
-        .mav-card-title-wrapper {
-            .mav-card__title--ctn {
-                display: block;
-                padding: var(--mav-gutter);
-                height: 100px;
-                overflow: hidden;
-                .mav-card-title {
-                    font-size: 1.25rem;
-                    font-weight: var(--mav-font__weight--bold);
-                    @media #{$mav-phone} {
-                        font-size: 1.15rem;
-                    }
-                }
-            }
-        }
-
-        // Card Excerpt
-        .mav-card__excerpt--wrp {
-            .mav-card__excerpt--ctn {
-                display: block;
-                position: relative;
-                padding: 0 var(--mav-gutter);
-                overflow: hidden;
-                height: 60px;
-                .mav-card__excerpt {
-                    font-size: var(--mav-font__size--sm);
-                    color: var(--mav-color__text--secondary);
-                }
-            }
-        }
-    }
-    &-footer {
-        padding: var(--mav-gutter);
-        align-self: end;
-    }
-}
-
-/**
- * Card Styles
- * ===========
- */
-
-.mav-card {
-    display: grid;
-    position: relative;
-
-    /* Card Header */
-    header, .mav-card-header {
-        display: block;
-        height: 25vh;
-    }
-
-    // Thumbnail
-    .mav-card-thumbnail-wrapper {
-        .mav-card-thumbnail {
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-size: contain!important;
-            background-position: center center!important;
-            background-repeat: no-repeat!important;
-            @extend %mav-transition;
-            @media #{$mav-desktop} {
-                filter: grayscale(1);
-                &:hover{
-                    filter: grayscale(0);
-                }
-            }
-        }
-    }
-
-    /* Card Content */
-    .mav-card-content {
-        background-color: var(--mav-color--off-white);
-    }
-
-    // Card Title
-    .mav-card-title-wrapper {
-        @extend .mav-flex-center-all;
-        padding: var(--mav-gutter--lg) 0;
-        background: white;
-        .mav-card-title {
-            text-align: center;
-            font-size: 1.25rem;
-            max-width: 80%;
-        }
-    }
-
-    .mav-card-info-ctn {
-        @extend .mav-flex-center;
-        padding: var(--mav-gutter--sm);
-        font-size: var(--mav-font__size--sm);
-        .post-categories {
-            @extend .mav-flex-center;
-            flex-wrap: wrap;
-            li {
-                list-style-type: none;
-                margin: var(--mav-gutter--xs) 0;
-                margin-right: var(--mav-gutter--sm);
-                &:last-child {
-                    margin-right: none;
-                }
-            }
-        }
-    }
-
-    /* Card Footer */
-    footer, .mav-card-footer {
-        padding: var(--mav-gutter--sm);
-    }
-}
-
-/**
- * CPT: Portfolio
- * ==============
- */
-
-.mav-card-cpt-portfolio {
-    padding: var(--mav-gutter);
-    @extend %mav-transition;
-    // &:hover {
-    //     border-color: var(--mav-color--accent);
-    // }
-    // .mav-card-title-wrapper {
-    //     padding: var(--mav-gutter) 0;
-    //     min-height: 90px;
-    // }
-    // /* Card Footer */
-    // .mav-card-footer {
-    //     @extend .mav-flex-center;
-    //     .mav-tag-list {
-    //         display: flex;
-    //         flex-wrap: wrap;
-    //     }
-    // }
-}
-
-/**
- * CPT: Client
- * ===========
- */
-
-.mav-card-client-wrapper {
-    .mav-card-client-ctn {
-        display: grid;
-        align-content: center;
-        border: 1px solid transparent;
-        padding: var(--mav-gutter--lg);
-        height: 100%;
-        @extend %mav-transition;
-        &:hover {
-            border-color: var(--mav-color--border);
-        }
-        @media #{$mav-mobile} {
-            border-color: var(--mav-color--border);
-        }
-        figure {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            @media #{$mav-phone} {
-                height: 30vw;
-            }
-            @media #{$mav-tablet} {
-                height: 20vw;
-            }
-            @media #{$mav-desktop} {
-                height: 10vw;
-            }
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            @extend %mav-transition;
-            @media #{$mav-desktop} {
-                filter: grayscale(1);
-                &:hover {
-                    filter: grayscale(0);
-                }
-            }
-        }
-    }
-}
-
-/**
- * Default post index card
- * support for list & card styles
- * ==============================
+ * Default card style for index post
+ * Support both list & card styles
+ * =================================
  */
 
 // Card wrapper
 .mav-card__wrp {
     height: 100%;
+    width: 100%;
+    // Card container
     .mav-card__ctn {
         background: transparent;
         height: 100%;
@@ -301,15 +30,14 @@
         height: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
+        background: white;
         border: var(--mav-border);
+        @extend %mav-transition;
         @media #{$mav-phone} {
             grid-template-columns: 1fr!important;
         }
         &.sticky {
-            background: hsl(0, 0, 99);
-        }
-        &:hover {
-            background: hsl(0, 0, 99);
+            border-color: var(--mav-color--primary);
         }
     }
 }
@@ -320,40 +48,60 @@
 
 // Card Header wrapper
 .mav-card__header--wrp {
+    // Card header container
     .mav-card__header--ctn {
         height: 100%;
+    }
+}
 
-        // Post thumbnail wrapper
-        .mav-card__post__thumbnail--wrp {
+// Post thumbnail wrapper
+.mav-card__post__thumbnail--wrp {
+    height: 100%;
+
+    // Post thunbnail container
+    .mav-card__post__thumbnail--ctn {
+        position: relative;
+        height: 25vh;
+        overflow: hidden;
+
+        // Post thumbnail
+        .mav-card__post__thumbnail {
+            position: relative;
             height: 100%;
-
-            // Post thunbnail container
-            .mav-card__post__thumbnail--ctn {
-                position: relative;
-                height: 25vh;
-                overflow: hidden;
-                box-shadow: 0px 1px var(--mav-color--border);
-
-                // Post thumbnail
-                .mav-card__post__thumbnail {
-                    height: 100%;
-                    background-position: center!important;
-                    background-size: cover!important;
-                    @extend %mav-transition;
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-                }
-
-                @media #{$mav-phone} {
-                    height: 100%;
-                    .mav-card__post__thumbnail {
-                        height: 30vh;
-                    }
+            background-position: center!important;
+            background-size: cover!important;
+            background-repeat: no-repeat!important;
+            @extend %mav-transition;
+            &:after {
+                position: absolute;
+                @extend %mav-font-awesome-solid;
+                content: '\f002';
+                color: var(--mav-color__text--secondary--dark);
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%,rgba(0,0,0,.5) 100%);
+                @extend %mav-transition;
+                opacity: 0;
+            }
+            &:hover {
+                transform: scale(1.05);
+                filter: grayscale(1);
+                &:after {
+                    opacity: 1;
                 }
             }
         }
 
+        @media #{$mav-phone} {
+            height: 100%;
+            .mav-card__post__thumbnail {
+                height: 30vh;
+            }
+        }
     }
 }
 
@@ -401,7 +149,7 @@
             .mav-card__body__body--ctn {
 
                 // Card post title
-                .mav-card__post__title {
+                .mav-card__title {
                     font-size: 1.25rem;
                     font-weight: var(--mav-font__weight--bold);
                     word-break: break-word;
@@ -412,8 +160,10 @@
                 }
 
                 // Excerpt
-                .mav-card__post__excerpt--ctn {
+                .mav-card__excerpt--ctn {
+                    margin-top: var(--mav-gutter--sm);
                     color: var(--mav-color__text--secondary);
+                    font-weight: var(--mav-font__weight--light);
                     @media #{$mav-phone} {
                         font-size: var(--mav-font__size--sm);
                     }
@@ -525,5 +275,23 @@
 
         }
 
+    }
+}
+
+/**
+ * Custom post type
+ */
+
+// Portfolio
+.mav-card__post__thumbnail--ctn {
+    &[data-cpt*="portfolio"], &[data-cpt*="client"] {
+        border: var(--mav-border);
+        @media #{$mav-desktop} {
+            height: 30vh;
+        }
+        .mav-card__post__thumbnail {
+            background-size: contain!important;
+            transform: scale(0.8);
+        }
     }
 }

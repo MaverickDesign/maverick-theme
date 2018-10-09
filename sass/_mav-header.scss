@@ -1,22 +1,25 @@
-.mav-social-links {
+.mav-social-links, .mav-social__links {
     display: flex;
-    .mav-social-icon {
+    .mav-social-icon, .mav-social__icon {
         font-size: 1rem;
         color: var(--mav-color__text--primary);
+        &:hover {
+            color: var(--mav-color--accent);
+        }
     }
 }
 
-.mav-header-socials-wrapper {
+.mav-header-socials-wrapper, .mav-header__socials--wrp {
     display: none;
     @media #{$mav-desktop} {
         display: flex;
         justify-self: end;
     }
-    .mav-header-socials-ctn {
-        .mav-social-links {
+    .mav-header-socials-ctn, .mav-header__socials--ctn {
+        .mav-social-links, .mav-social__links--ctn {
             li {
                 list-style-type: none;
-                margin-right: var(--mav-gutter--lg);
+                margin-right: var(--mav-gutter);
                 a {
                     text-decoration: none;
                 }

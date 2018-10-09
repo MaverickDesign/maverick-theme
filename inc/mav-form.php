@@ -24,32 +24,32 @@ function mavf_contact_form( $mav_args )
     /* Default Field Attributes */
     $mav_form_fields = array(
         'name' => array(
-            'label'         => __( 'Họ & Tên', 'maverick-theme' ),
+            'label'         => __( 'Họ & Tên', 'mavericktheme' ),
             'type'          => 'text',
             'required'      => true,
             'hint'          => $mav_hint_required,
-            'placeholder'   => 'E.g., John Doe'
+            'placeholder'   => 'Ví dụ: John Doe'
         ),
         'email' => array(
-            'label'         => __( 'Email', 'maverick-theme' ),
+            'label'         => __( 'Địa chỉ Email', 'mavericktheme' ),
             'type'          => 'email',
             'required'      => true,
             'hint'          => $mav_hint_required,
-            'placeholder'   => 'E.g., johndoe@mail.com'
+            'placeholder'   => 'Ví dụ: johndoe@mail.com'
 
         ),
         'phone' => array(
-            'label'         => __( 'Điện thoại', 'maverick-theme' ),
+            'label'         => __( 'Điện thoại', 'mavericktheme' ),
             'type'          => 'phone',
             'hint'          => $mav_hint_optional,
-            'placeholder'   => 'e.g., 090-909-6464'
+            'placeholder'   => 'Ví dụ: 090-909-6464'
 
         ),
         'address' => array(
-            'label'         => __( 'Địa chỉ', 'maverick-theme' ),
+            'label'         => __( 'Địa chỉ', 'mavericktheme' ),
             'type'          => 'text',
             'hint'          => $mav_hint_optional,
-            'placeholder'   => 'e.g., 121 Đinh Tiên Hoàng, Đa Kao, Quận 1, TP.HCM'
+            'placeholder'   => 'Ví dụ: 121 Đinh Tiên Hoàng, Đa Kao, Quận 1, TP.HCM'
         ),
         'dob' => array(
             'label'         => __( 'Ngày sinh', 'maverick-theme' ),
@@ -156,6 +156,7 @@ function mavf_contact_form( $mav_args )
                     // Form Footer
                     printf('<footer class="mav-form-footer mav-form-footer-wrapper">');
                         printf('<div class="mav-form-footer-ctn">');
+
                             // Submit Button
                             printf('<div class="mav-form-submit-ctn">');
                                 printf(
@@ -163,8 +164,10 @@ function mavf_contact_form( $mav_args )
                                     $mav_unique_number, __( 'Gửi thông tin liên hệ', 'mavericktheme' )
                                 );
                             echo '</div>';
-                            // Form Status
+
+                            // Form Feedback
                             printf('<div class="mav-form-status-wrapper"><div class="mav-form-status-ctn"></div></div>');
+
                         echo '</div>';
                     echo '</footer>';
                 echo '</form>';

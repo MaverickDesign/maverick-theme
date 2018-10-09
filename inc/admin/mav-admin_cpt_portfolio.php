@@ -4,10 +4,10 @@
  */
 
 $mav_labels = array(
-    'name'              => _x( 'Sản phẩm', 'mavericktheme' ),
-    'singular_name'     => _x( 'Sản phẩm', 'mavericktheme' ),
-    'add_new'           => __( 'Thêm sản phẩm mới', 'maverick-theme' ),
-    'all_items'         => __( 'Tất cả sản phẩm', 'maverick-theme' ),
+    'name'              => _x( 'Portfolio', 'mavericktheme' ),
+    'singular_name'     => _x( 'Portfolio', 'mavericktheme' ),
+    'add_new'           => __( 'Thêm Portfolio mới', 'maverick-theme' ),
+    'all_items'         => __( 'Tất cả Portfolio', 'maverick-theme' ),
 );
 
 $mav_args = array(

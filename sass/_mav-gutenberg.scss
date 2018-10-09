@@ -13,3 +13,12 @@
 p.has-drop-cap::first-letter {
     font-weight: var(--mav-font__weight--medium)!important;
 }
+
+.wp-block-gallery {
+    margin: var(--mav-gutter--lg) 0;
+}
+
+.wp-block-image {
+    margin-top: var(--mav-gutter--lg);
+    margin-bottom: var(--mav-gutter--lg);
+}
