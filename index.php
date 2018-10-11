@@ -23,7 +23,7 @@ if ( !$mav_display_sticky_post_section ) :
     if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_carousel' ) ) {
         $mav_sticky_args = array(
             'post_type'             => 'post',
-            'post__in'              => $mav_sticky_posts,
+            'post__in'              => get_option( 'sticky_posts' ),
             'ignore_sticky_posts'   => 1,
             'posts_per_page'        => 3,
         );
@@ -60,7 +60,8 @@ printf( '<div class="%1$s">', $mav_section_class );
         'post_type'             => 'post',
         'post_status'           => 'publish',
         'ignore_sticky_posts'   => 1,
-        'paged'                 =>  get_query_var( 'paged' ),
+        'post_not__in'          => get_option( 'sticky_posts' ),
+        'paged'                 => get_query_var( 'paged' ),
         'orderby'               => 'date'
     );
 
@@ -79,8 +80,8 @@ printf( '<div class="%1$s">', $mav_section_class );
                 printf( '<div class="mav-blog_page__setting--wrp">' );
                     printf( '<div class="mavjs-setting-ctn mav-blog_page__setting--ctn">' );
                         printf('<span>%1$s</span>', __( 'Dạng hiển thị:', 'mavericktheme' ));
-                        printf( '<li class="mavjs-display-list mav-style__list" data-style="list"><i class="fas fa-th-list"></i> %1$s</li>', __( 'Danh sách', 'mavericktheme' ) );
-                        printf( '<li class="mavjs-display-card mav-style__card" data-style="card"><i class="fas fa-th-large"></i> %1$s</li>', __( 'Dạng thẻ', 'mavericktheme' ) );
+                        printf( '<li class="mavjs-display-list mav-style__list" data-style="list" title="%1$s"><i class="fas fa-th-list"></i></li>', __( 'Hiển thị dạng danh sách', 'mavericktheme' ) );
+                        printf( '<li class="mavjs-display-card mav-style__card" data-style="card" title="%1$s"><i class="fas fa-th-large"></i></li>', __( 'Hiển thị dạng thẻ', 'mavericktheme' ) );
                     echo '</div>';
                 echo '</div>';
             endif;

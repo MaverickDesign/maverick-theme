@@ -22,6 +22,23 @@
     </section>
 
 <?php
+/* Comment section */
+printf('<section id="mavid-sec-post-comment" class="mav-post__comment--wrp">');
+    printf('<div class="mav-post__comment--ctn">');
+        // Facebook comment plugin
+        $mav_facebook_comment = esc_attr( get_option( 'mav_setting_facebook_comment' ) );
+        if ( ! empty( $mav_facebook_comment ) ) {
+            printf('<div class="mav-post__comment__facebook--wrp">');
+                printf('<div class="mav-post__comment__facebook--ctn">');
+                    echo '<div class="fb-comments" data-href="'.get_the_permalink().'" data-numposts="5" data-width="100%"></div>';
+                echo '</div>';
+            echo '</div>';
+        }
+    echo '</div>';
+echo '</section>';
+?>
+
+<?php
     /**
      * Related posts section
      * =====================

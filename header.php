@@ -38,10 +38,6 @@
     ?>
 
     <?php
-        /**
-         * Google Tag Manager
-         */
-
         // Enable Google Tag Manager
         $mav_egtm = esc_attr( get_option( 'mav_setting_enable_google_tag_manager' ) );
         // Google Tag Manager ID
@@ -54,7 +50,6 @@
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','<?php echo $mav_gtm_id ?>');</script>
-            <!-- End Google Tag Manager -->
         <?php endif;
     ?>
 
@@ -76,7 +71,9 @@
     <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo get_bloginfo('description')?>">
+    <meta name="description" content="<?php
+        echo (has_excerpt() && is_single()) ? get_the_excerpt() : get_bloginfo('description');
+    ?>">
 
     <!-- Open Graph Data -->
     <meta property="og:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>"/>
@@ -89,23 +86,22 @@
     <?php if ( ! is_404() && has_post_thumbnail() ) : ?>
         <meta property="og:image" content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" />
     <?php endif; ?>
-    <!-- End of Open Graph Data -->
 
-    <title>
-        <?php
-            if ( ! is_front_page() ) {
-                wp_title('');
-                echo(' - ');
-                bloginfo( 'name' );
-            } else {
-                $mav_blog_desc = get_bloginfo('description');
-                echo get_bloginfo( 'name' );
+    <?php
+        $mav_blog_desc = get_bloginfo( 'description' );
+        $mav_title = get_bloginfo( 'name' );
+        if ( ! is_front_page() )
+            {
+                $mav_title = get_the_title().' - '.get_bloginfo( 'name' );
+            }
+        else
+            {
                 if ( ! empty( $mav_blog_desc ) ) {
-                    echo ' - '.$mav_blog_desc;
+                    $mav_title = get_bloginfo( 'name' ).' - '.$mav_blog_desc;
                 }
             }
-        ?>
-    </title>
+    ?>
+    <title><?php echo $mav_title; ?></title>
 
     <?php
         // Wordpress Heads
@@ -118,12 +114,12 @@
 </head>
 
 <body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mav_site__width; ?>">
+
     <?php
         if ( ! empty( $mav_egtm ) && ! empty( $mav_gtm_id ) ) : ?>
             <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTGC75P"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
         <?php endif;
     ?>
 
@@ -140,22 +136,24 @@
             js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=<?php echo $mav_faid; ?>&autoLogAppEvents=1';
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
-            <!-- End of Facebook Script -->
         <?php endif;
     ?>
 
-    <header id="mavid-page-header" class="mav-pg-header mav-pg-header-wrapper">
+    <header id="mavid-site-header" class="mav-pg-header mav-pg-header-wrapper">
+
         <!-- Header Logo -->
-        <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper">
-            <div class="mav-header-logo-ctn">
+        <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper mav-header__logo--wrp">
+            <div class="mav-header-logo-ctn mav-header__logo--ctn">
+
                 <!-- Mobile Menu Icon -->
                 <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e( 'Nhấn để mở','mavericktheme' ); ?>"></button>
+
                 <!-- Site Logo -->
-                <div id="mavid-site-logo" class="mav-site-logo-wrapper">
-                    <a href="<?php  bloginfo('url') ;?>" title="<?php _e('Về trang chủ','mavericktheme'); ?>" class="mav-site-logo-ctn">
+                <div id="mavid-site-logo" class="mav-site-logo-wrapper mav-site__logo--wrp">
+                    <a href="<?php  bloginfo('url') ;?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mav-site-logo-ctn mav-site__logo--ctn">
                         <?php
                             $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
-                            if ($mav_brand_logo) {
+                            if ( $mav_brand_logo ) {
                                 echo "<img src=\"$mav_brand_logo;\">";
                             } else {
                                 echo '<img src="'.TEMPLATE_URI.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
