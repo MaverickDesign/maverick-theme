@@ -104,7 +104,7 @@ function mavf_enqueue_styles()
         'mavcss-mavericktheme-styles',
         TEMPLATE_URI.'/css/maverick-styles.css',
         array(),
-        '1.0.0',
+        '',
         'all'
     );
 }
