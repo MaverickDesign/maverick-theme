@@ -57,13 +57,47 @@
 // Post thumbnail wrapper
 .mav-card__post__thumbnail--wrp {
     height: 100%;
+    overflow: hidden;
 
     // Post thunbnail container
     .mav-card__post__thumbnail--ctn {
         position: relative;
         height: 25vh;
         overflow: hidden;
-
+        @extend %mav-transition;
+        &:after, &:before {
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            color: var(--mav-color__text--secondary--dark);
+            cursor: pointer;
+            @extend %mav-transition;
+        }
+        &:before {
+            font-family: var(--mav-font--secondary);
+            font-size: var(--mav-font__size--xs);
+            margin-top: 2em;
+            content: attr(data-message);
+            z-index: var(--mav-layer--top);
+            text-transform: uppercase;
+        }
+        &:after {
+            @extend %mav-font-awesome-solid;
+            content: '\f002';
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.90) 0%,rgba(0,0,0,.70) 100%);
+        }
+        &:hover {
+            transform: scale(1.05);
+            filter: grayscale(1);
+            &:after, &:before {
+                opacity: 1;
+            }
+        }
         // Post thumbnail
         .mav-card__post__thumbnail {
             position: relative;
@@ -71,29 +105,6 @@
             background-position: center!important;
             background-size: cover!important;
             background-repeat: no-repeat!important;
-            @extend %mav-transition;
-            &:after {
-                position: absolute;
-                @extend %mav-font-awesome-solid;
-                content: '\f002';
-                color: var(--mav-color__text--secondary--dark);
-                top: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%,rgba(0,0,0,.5) 100%);
-                @extend %mav-transition;
-                opacity: 0;
-            }
-            &:hover {
-                transform: scale(1.05);
-                filter: grayscale(1);
-                &:after {
-                    opacity: 1;
-                }
-            }
         }
 
         @media #{$mav-phone} {

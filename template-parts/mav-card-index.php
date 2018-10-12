@@ -61,7 +61,7 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                         // Featured image wrapper
                         printf('<div class="mav-card__post__thumbnail--wrp" %1$s>', $mav_background_logo);
                             // Featured image container
-                            printf('<figure class="mav-card__post__thumbnail--ctn">');
+                            printf( '<figure class="mav-card__post__thumbnail--ctn" data-message="%1$s">', __( 'Xem nội dung', 'mavericktheme' ) );
                                 // Featured image
                                 if ( has_post_thumbnail() ) {
                                     printf(
@@ -176,9 +176,10 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                         printf('<ul class="mav-card__socials--ctn">' );
                             // Facebook share button
                             get_template_part( 'template-parts/social-buttons/mav-btn__social--facebook' );
-
+                            // Twitter share button
+                            get_template_part( 'template-parts/social-buttons/mav-btn__social--twitter' );
                             printf(
-                                '<li title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
+                                '<li class="mav-social__btn" title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
                                 __( 'Sao chép liên kết', 'mavericktheme' )
                             );
                         echo '</u>';

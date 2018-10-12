@@ -23,7 +23,7 @@ printf( '<div class="mav-card__wrp">' );
                     // Featured image wrapper
                     printf('<div class="mav-card__post__thumbnail--wrp">');
                         // Featured image container
-                        printf( '<figure class="mav-card__post__thumbnail--ctn" data-cpt="%1$s">', $mav_post_type );
+                        printf( '<figure class="mav-card__post__thumbnail--ctn" data-cpt="%1$s" data-message="%2$s">', $mav_post_type, __( 'Nhấn để xem', 'mavericktheme' ) );
                             // Featured image
                             if ( has_post_thumbnail() ) {
                                 printf(

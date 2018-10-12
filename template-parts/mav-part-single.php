@@ -102,6 +102,7 @@ printf(
                             get_template_part( 'template-parts/social-buttons/mav-btn__social--twitter' );
                         echo '</div>';
                     echo '</div>';
+
                 echo '</div>';
             echo '</div>';
 

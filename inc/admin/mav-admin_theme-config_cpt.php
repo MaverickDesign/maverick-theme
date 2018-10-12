@@ -12,11 +12,13 @@ add_settings_section(
 
 function mavf_theme_config_cpt()
 {
-    _e('Kích hoạt các chức năng mở rộng', 'mavericktheme');
+    _e( 'Kích hoạt các chức năng mở rộng', 'mavericktheme' );
 }
 
 // Register setting
-register_setting('mavog_theme_config', 'mav_setting_custom_post_type');
+register_setting(
+    'mavog_theme_config', 'mav_setting_custom_post_type'
+);
 
 add_settings_field(
     'mavid_theme_config_theme_support_custom_post_type',
@@ -37,13 +39,14 @@ function mavf_theme_config_theme_support_custom_post_type()
         'portfolio',
         'member',
         'client',
-        'service'
+        'service',
+        'product'
     );
 
-    echo '<div class="mav-grid" data-grid-gap="">';
+    echo '<div class="mav-grid" data-grid-gap>';
     $mavOutput = '';
-    foreach ($mav_custom_post_types as $mavCustomPostType) {
-        $mavChecked = (@$mav_saved_value[$mavCustomPostType] == 1 ? 'checked' : '');
+    foreach ( $mav_custom_post_types as $mavCustomPostType ) {
+        $mavChecked = ( @$mav_saved_value[$mavCustomPostType] == 1 ? 'checked' : '' );
         $mavOutput .= '<label><input type="checkbox" id="mavid-custom-post-type-'.$mavCustomPostType.'" name="mav_setting_custom_post_type['.$mavCustomPostType.']" value="1" '.$mavChecked.'/> '.ucfirst($mavCustomPostType).'</label>';
     }
     echo $mavOutput;

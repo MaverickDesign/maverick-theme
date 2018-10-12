@@ -40,6 +40,13 @@ function mavf_cpt()
     }
 
     /**
+     * Product Post Type
+     */
+    if ( @$mavCPTs['product'] ) {
+        include_once TEMPLATE_DIR . '/inc/admin/mav-admin_cpt_product.php';
+    }
+
+    /**
      * Member Post Type
      */
     if ( @$mavCPTs['member'] ) {
@@ -72,7 +79,8 @@ function mav_show_cpt_archives( $mav_query ) {
             'mav_cpt_client',
             'mav_cpt_portfolio',
             'mav_cpt_member',
-            'mav_cpt_service'
+            'mav_cpt_service',
+            'mav_cpt_product',
             )
         );
         return $mav_query;

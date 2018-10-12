@@ -254,6 +254,7 @@
     }
 
     h2, .mav-h2 {
+        font-size: 1.5rem;
         font-weight: var(--mav-font__weight--bold);
         margin-top: 1em;
         margin-bottom: .5em;
@@ -599,9 +600,9 @@ figcaption {
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 0 var(--mav-gutter--lg);
+    padding: 0 var(--mav-gutter);
     color: var(--mav-color__text--secondary);
-    border-left: var(--mav-border);
+    // border-left: var(--mav-border);
     @extend %mav-transition;
     @media #{$mav-phone} {
         padding: var(--mav-gutter--sm) var(--mav-gutter);
@@ -630,7 +631,7 @@ figcaption {
     .mav-post__comment--ctn {
         max-width: var(--mav-site--width);
         padding: 0 var(--mav-gutter);
-        margin: var(--mav-gutter--lg) auto;
+        margin: var(--mav-gutter--xl) auto;
         @media #{$mav-desktop} {
         }
     }
