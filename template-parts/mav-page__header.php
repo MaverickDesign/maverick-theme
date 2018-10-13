@@ -1,13 +1,19 @@
-<header id="mavid-page-header" class="mav-page-header-wrapper">
-    <!-- Featured Image -->
-    <div class="mav-page-header-ctn" <?php mavf_post_thumbnail_url(); ?>>
-    </div>
-    <!-- Page Title -->
-    <div id="mavid-sec-page-title" class="mav-page-title-wrapper" >
-        <div class="mav-page-title-ctn" >
-            <?php
-            the_title('<h1 class="mav-page-title">', '</h1>');
-            ?>
-        </div>
-    </div>
-</header>
+<?php
+/**
+ * @package mavericktheme
+ */
+
+printf('<header id="mavid-page-header" class="mav-page__header--wrp">');
+    if (has_post_thumbnail()) {
+        // Featured Image
+        echo '<div class="mav-page__feature__image" ';
+        mavf_post_thumbnail_url();
+        echo '></div>';
+    }
+    // Page Title
+    printf('<div class="mav-page-title-wrapper mav-page__title--wrp">');
+        printf('<div class="mav-page-title-ctn mav-page__title--ctn">');
+            the_title('<h1 class="mav-page-title mav-page__title">', '</h1>');
+        echo '</div>';
+    echo '</div>';
+echo '</header>';

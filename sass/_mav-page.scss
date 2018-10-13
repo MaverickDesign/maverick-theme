@@ -1,14 +1,19 @@
-.mav-page-ctn {
+.mav-page-ctn, .mav-page__ctn {
     margin: 0 auto;
 }
 
 // Page Header
-.mav-page-header-wrapper {
+.mav-page-header-wrapper, .mav-page__header--wrp {
     display: block;
     position: relative;
     overflow: hidden;
 }
-.mav-page-header-ctn {
+
+.mav-page__header--ctn {
+
+}
+
+.mav-page-header-ctn, .mav-page__feature__image {
     position: absolute;
     display: block;
     width: 100%;
@@ -24,11 +29,11 @@
 }
 
 // Page Title
-.mav-page-title-wrapper {
+.mav-page-title-wrapper, .mav-page__title--wrp {
     position: relative;
 }
 
-.mav-page-title-ctn {
+.mav-page-title-ctn, .mav-page__title--ctn {
     @extend .mav-flex-center-all;
     @media #{$mav-phone} {
         padding: var(--mav-gutter--lg) var(--mav-gutter);
@@ -41,12 +46,12 @@
     }
 }
 
-.mav-page-title {
+.mav-page-title, .mav-page__title {
     font-weight: var(--mav-font__weight--bold);
     color: rgba(255,255,255,.99)!important;
     line-height: 1.2em;
     text-align: center;
-    text-shadow: 0 0 5px rgba(0,0,0,.5);
+    text-shadow: 0 0 5px rgba(0,0,0,.25);
     text-transform: uppercase;
     letter-spacing: 2px;
     @media #{$mav-phone} {
