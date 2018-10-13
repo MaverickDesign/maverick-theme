@@ -38,14 +38,15 @@ printf(
                     echo '</div>';
                 endif;
 
+                $mav_has_post_thumbnail = has_post_thumbnail() ? 'data-has-feature-image' : '';
                 // Post title
                 printf(
-                    '<div class="mav-post__title--wrp">
+                    '<div class="mav-post__title--wrp" %2$s>
                         <div class="mav-post__title--ctn">
                             <h1 id="mavid-post-title" class="mav-post__title">%1$s</h1>
                         </div>
                     </div>',
-                    get_the_title()
+                    get_the_title(), $mav_has_post_thumbnail
                 );
 
                 // Post excerpt

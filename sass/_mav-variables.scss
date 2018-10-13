@@ -363,17 +363,4 @@ $mav-color--background: #fafafa;
     }
 }
 
-// @keyframes mav-brand-color-dark {
-//     0% {
-//         background-color: var(--mav-color--primary);
-//     }
-//     50% {
-//         // background-color: darken($mav-color-primary, 10%);
-//         // background-color: #{'rgba(var(--mav-color-primary),1)'};
-//     }
-//     100% {
-//         background-color: var(--mav-color--primary);
-//     }
-// }
-
 $mav-color-gradient-brand: linear-gradient(to right, var(--mav-color--primary) 0%, var(--mav-color--accent) 100%);

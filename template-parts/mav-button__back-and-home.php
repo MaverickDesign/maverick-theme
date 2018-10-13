@@ -7,7 +7,7 @@ if ( !function_exists('mavf_button') ) {
     return;
 }
 
-printf('<div class="mav-btn-ctn" data-columns="2">');
+printf('<div class="mav-btn-ctn mav-padding" data-columns="2">');
     mavf_button(
         __( 'Quay lại trang trước', 'mavericktheme' ),
         'javascript:history.go(-1)',

@@ -43,17 +43,17 @@ printf(
                 // Intro
                 $mav_intro_content = ( $mav_post_type == 'page' ) ?  get_post_meta( get_the_ID(), 'mav_page_intro', true ) : get_the_excerpt();
 
-                printf( '<div class="%1$s-intro-wrapper">', $mav_name_space );
-                    printf( '<div class="%1$s-intro-ctn">', $mav_name_space );
-                        printf( '<p class="%1$s-intro mav-text--center">%2$s</p>', $mav_name_space, $mav_intro_content );
+                printf( '<div class="mav-intro-wrapper">' );
+                    printf( '<div class="mav-intro-ctn">' );
+                        printf( '<p class="mav-intro mav-text--center">%1$s</p>', $mav_intro_content );
                     echo '</div>';
                 echo '</div>';
 
                 // CTA Button
-                printf( '<footer class="%1$s-cta-wrapper">', $mav_name_space );
-                    printf( '<div class="%1$s-cta-ctn">', $mav_name_space );
+                printf( '<footer class="mav-cta-wrapper">' );
+                    printf( '<div class="mav-cta-ctn">' );
                         printf(
-                            '<button class="mav-btn-cta">
+                            '<button class="mav-btn-cta mav-btn__cta">
                                 <a href="%2$s" title="%3$s">%1$s</a>
                             </button>',
                             $mav_button_text, get_the_permalink(),

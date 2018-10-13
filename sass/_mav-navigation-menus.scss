@@ -49,7 +49,8 @@
     position: fixed; // for mobile menu
     width: 100%;
     background: var(--mav-color--primary);
-    z-index: $mav-layer-top;
+    // z-index: $mav-layer-top;
+    z-index: var(--mav-layer--top);
     @media #{$mav-desktop} {
         position: sticky;
         top: 0px; // Important for sticky position
@@ -68,6 +69,7 @@
         position: absolute;
         display: flex;
         align-items: center;
+
         .mav-sticky-logo {
             display: flex;
             position: relative;
@@ -85,6 +87,7 @@
                 }
             }
         }
+
         .show-logo {
             visibility: visible;
             max-height: 100vh;
@@ -117,7 +120,9 @@
         @media #{$mav-desktop} {
             flex-direction: row;
             background: var(--mav-color__header-menu--background);
+            font-size: 1rem;
         }
+
         li {
             @extend %mav-flex-column;
             margin-left: 0;
@@ -140,12 +145,6 @@
                 }
             }
             &.menu-item-home {
-                a:before {
-                    // @extend %mav-font-awesome-solid;
-                    // // @media #{$mav-desktop} {
-                    // //     content: '\f015';
-                    // // }
-                }
                 @media #{$mav-mobile} {
                     display: none!important;
                 }
@@ -199,6 +198,7 @@
                 }
             }
         }
+
         .mav-submenu-icon {
             cursor: pointer;
             margin: 0 var(--mav-gutter);
@@ -238,6 +238,7 @@
                 }
             }
         }
+
         .mav-sub-menu {
             max-height: 0;
             overflow: hidden;

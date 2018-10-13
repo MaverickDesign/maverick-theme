@@ -33,7 +33,7 @@
         <!-- Page Footer -->
         <footer id="mavid-page-footer" class="mav-page-footer mav-page-footer-wrapper">
             <?php
-                printf('<div class="mav-margin-bottom-xl">');
+                printf('<div class="mav-margin__bottom">');
                     // Back and Home Buttons
                     require TEMPLATE_DIR.'/template-parts/mav-button__back-and-home.php';
                 echo '</div>';

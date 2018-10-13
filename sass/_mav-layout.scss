@@ -15,14 +15,6 @@
     filter: blur(20px);
 }
 
-// .mav-wrapper, .mav-wrp {
-//     .mav-ctn {
-//         max-width: var(--mav-site--width);
-//         margin: 0 auto;
-//         padding: 0 var(--mav-gutter);
-//     }
-// }
-
 // Flex Column
 %mav-flex-column, .mav-flex-column {
     display: flex;
@@ -111,7 +103,7 @@
 // Desktop columns
 @media #{$mav-desktop} {
     @for $columns from 1 to 15 {
-        .#{$mavNS}-col__15--#{$columns} {
+        .mav-col__15--#{$columns} {
             max-width: calc((100%/15)*#{$columns});
         }
     }
@@ -120,7 +112,7 @@
 // Tablet columns
 @media #{$mav-desktop} {
     @for $columns from 1 to 12 {
-        .#{$mavNS}-col-#{$columns}-tablet {
+        .mav-col-#{$columns}-tablet {
             max-width: calc((100%/15)*#{$columns});
         }
     }
@@ -188,17 +180,17 @@
 }
 
 @each $direction in top,bottom,left,right {
-    .#{$mavNS}-margin-#{$direction} {
+    .mav-margin-#{$direction}, .mav-margin__#{$direction} {
         margin-#{$direction}: var(--mav-gutter);
     }
-    .#{$mavNS}-padding-#{$direction} {
+    .mav-padding-#{$direction} {
         padding-#{$direction}: var(--mav-gutter);
     }
     @each $size in xl,lg,sm,xs {
-        .#{$mavNS}-margin-#{$direction}-#{$size} {
+        .mav-margin-#{$direction}-#{$size} {
             margin-#{$direction}: var(--mav-gutter--#{$size});
         }
-        .#{$mavNS}-padding-#{$direction}-#{$size} {
+        .mav-padding-#{$direction}-#{$size} {
             padding-#{$direction}: var(--mav-gutter--#{$size});
         }
     }

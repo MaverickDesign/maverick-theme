@@ -61,12 +61,12 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                         // Featured image wrapper
                         printf('<div class="mav-card__post__thumbnail--wrp" %1$s>', $mav_background_logo);
                             // Featured image container
-                            printf( '<figure class="mav-card__post__thumbnail--ctn" data-message="%1$s">', __( 'Xem nội dung', 'mavericktheme' ) );
+                            printf( '<figure class="mav-card__post__thumbnail--ctn" >' );
                                 // Featured image
                                 if ( has_post_thumbnail() ) {
                                     printf(
-                                        '<a href="%2$s" title="%3$s"><div class="mav-card__post__thumbnail" %1$s></div></a>',
-                                        mavf_get_post_thumbnail_url( 'large' ), $mav_permalink, __('Xem nội dung '.$mav_title, 'mavericktheme')
+                                        '<a href="%2$s" title="%3$s" data-message="%4$s"><div class="mav-card__post__thumbnail" %1$s></div></a>',
+                                        mavf_get_post_thumbnail_url( 'large' ), $mav_permalink, __('Xem nội dung '.$mav_title, 'mavericktheme'), __( 'Xem nội dung', 'mavericktheme' )
                                     );
                                 }
                             echo '</figure>';
