@@ -288,7 +288,10 @@ function mavf_smooth_scroll(e) {
     return;
 }
 
-
+/**
+ * Post Tab
+ * @param {*} e
+ */
 function mavf_tab_view(e){
     const mavActiveItem = e;
     const mavItemsContainer = e.parentElement;
@@ -307,13 +310,13 @@ function mavf_tab_view(e){
  */
 
 function mavf_body_click_events(){
-    document.body.addEventListener('click',function(e){
+    document.body.addEventListener('click', function(e) {
         const mavTarget = e.target;
 
         /**
          * Accordion
          */
-        if (mavTarget.classList.contains('mav-accordion-trigger')){
+        if (mavTarget.classList.contains('mavjs-accordion__trigger')){
             mavf_accordion(mavTarget);
         }
         if (mavTarget.classList.contains('mav-accordion-trigger-title')){

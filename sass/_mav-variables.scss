@@ -120,10 +120,11 @@ $mav-color__header-menu--background--hover  : $mav-color--accent;
  * Media Queries
  */
 
-$mav-phone:   "only screen and (max-width: 480px)";
-$mav-tablet:  "only screen and (min-width: 768px) and (max-width: 1023px)";
-$mav-mobile:  "only screen and (max-width: 1023px)";
-$mav-desktop: "only screen and (min-width: 1024px)";
+$mav-phone:     "only screen and (max-width: 480px)";
+$mav-tablet:    "only screen and (min-width: 768px) and (max-width: 1023px)";
+$mav-mobile:    "only screen and (max-width: 1023px)";
+$mav-tablet-up: "only screen and (min-width: 768px)";
+$mav-desktop:   "only screen and (min-width: 1024px)";
 
 /**
  * SASS Variables
@@ -165,11 +166,14 @@ $mav-color--background: #fafafa;
     --mav-font__family--ibm-plex-sans   : 'IBM Plex Sans', Arial, sans-serif;
     --mav-font__family--ibm-plex-serif  : 'IBM Plex Serif', serif;
     --mav-font__family--montserrat      : 'Montserrat', sans-serif;
+    --mav-font__family--bai-jamjuree    : 'Bai Jamjuree', sans-serif;
 
     // Primary font
     --mav-font--primary     : var(--mav-font__family--ibm-plex-serif);
     // Secondary font
-    --mav-font--secondary   : var(--mav-font__family--exo);
+    --mav-font--secondary    : var(--mav-font__family--bai-jamjuree);
+
+    --mav-font--tertiary   : var(--mav-font__family--ibm-plex-sans);
 
     /**
      * ==================================================
@@ -215,16 +219,14 @@ $mav-color--background: #fafafa;
     --mav-color--highlight   : #{$mav-color--highlight};
 
     // Site background
-    --mav-color-site-background     : #{$mav-color-site-background};
     --mav-color__site--background   : #{$mav-color__site--background};
 
     //  Header background
-    --mav-color-site-header                 : var(--mav-color--primary);
-    --mav-color__site-header--background    : var(--mav-color--primary);
+    --mav-color__site__header--background    : white;
 
     //  Footer background
     --mav-color-site-footer                 : var(--mav-color--accent);
-    --mav-color__site-footer--background    : var(--mav-color--accent);
+    --mav-color__site__footer--background    : var(--mav-color--accent);
 
     --mav-color-header-menu-background          : var(--mav-color--primary);
     --mav-color-header-menu-background-hover    : rgba(0,0,0,.2);
@@ -265,11 +267,15 @@ $mav-color--background: #fafafa;
     --mav-font-size-sm: 0.8rem;
     --mav-font-size-xs: 0.6rem;
 
-    --mav-font__size--xl: 1.4rem;
-    --mav-font__size--lg: 1.2rem;
+    // --mav-font__size--xl: 1.4rem;
+    --mav-font__size--xl: x-large;
+    // --mav-font__size--lg: 1.2rem;
+    --mav-font__size--lg: large;
     --mav-font__size--nm: initial;
-    --mav-font__size--sm: 0.9rem;
-    --mav-font__size--xs: 0.7rem;
+    // --mav-font__size--sm: 0.9rem;
+    --mav-font__size--sm: small;
+    // --mav-font__size--xs: 0.7rem;
+    --mav-font__size--xs: x-small;
 
     --mav-font-size-subtitle-1: 16px;
     --mav-font-size-subtitle-2: 14px;

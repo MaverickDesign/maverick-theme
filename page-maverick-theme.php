@@ -15,6 +15,7 @@
         <!-- Nội dung chính của trang -->
         <div id="mavid-page-content" class="mav-page-body-wrapper">
             <div class="mav-page-body-ctn">
+
                 <!-- Giới thiệu -->
                 <section class="mav-sec-wrapper mav-pg-section">
                     <div class="mav-sec-ctn">
@@ -343,24 +344,22 @@
 
                 <!-- Tính năng: Accordion -->
                 <?php if ( function_exists( 'mavf_post_accordion' ) ) : ?>
-                    <section id="mavid-sec-accordion" class="mav-sec-wrapper mav-pg-section">
-                        <div class="mav-sec-ctn">
+                    <section id="mavid-sec-accordion" class="mav-sec-wrapper mav-pg-section mav-sec__wrp">
+                        <div class="mav-sec-ctn mav-sec__ctn">
                             <!-- Header -->
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
-                                            <h2 class="mav-sec-title">Accordion</h2>
+                            <header class="mav-sec-header-wrapper mav-sec__header--wrp">
+                                <div class="mav-sec-header-ctn mav-sec__header--ctn">
+                                    <div class="mav-sec-title-wrapper mav-sec__title--wrp">
+                                        <div class="mav-sec-title-ctn mav-sec__title--ctn">
+                                            <h2 class="mav-sec-title mav-sec__title">Accordion</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
                             <!-- Body -->
-                            <div class="mav-sec-body-wrapper">
+                            <div class="mav-sec-body-wrapper mav-sec__body--wrp">
                                 <div class="mav-sec-body-ctn">
-                                    <div class="mav-margin-bottom-xl">
-                                        <p class="mav-sub-heading-1">Q&A Style</p>
-                                        <?php
+                                    <?php
                                             $mav_args = array(
                                                 'query_args'        => array(
                                                                         'post_type'             => 'post',
@@ -372,9 +371,17 @@
                                                 'faq'               => true,
                                                 'removable'         => true
                                             );
+                                    ?>
+                                    <!-- Q&A Style -->
+                                    <div class="mav-margin-bottom-xl">
+                                        <p class="mav-sub-heading-1">Q&A Style</p>
+                                        <?php
+
                                             mavf_post_accordion( $mav_args );
                                         ?>
                                     </div>
+
+                                    <!-- Individual -->
                                     <div class="mav-margin-bottom-xl">
                                         <p class="mav-sub-heading-1">Individual</p>
                                         <?php
@@ -390,6 +397,8 @@
                                             mavf_post_accordion( $mav_args );
                                         ?>
                                     </div>
+
+                                    <!-- Collection -->
                                     <div>
                                         <p class="mav-sub-heading-1">Collection</p>
                                         <?php
@@ -408,7 +417,7 @@
                                 </div>
                             </div>
                             <!-- Footer -->
-                            <footer class="mav-sec-footer-wrapper">
+                            <footer class="mav-sec-footer-wrapper mav-sec__footer--wrp">
                                 <div class="mav-sec-footer-ctn">
                                     <?php
                                         if ( function_exists( 'mavf_button' ) ) {

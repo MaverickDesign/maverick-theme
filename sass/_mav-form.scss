@@ -49,10 +49,7 @@ form {
 .mav-site-search-icon {
     font-size: 1rem;
     width: 1rem;
-    color: var(--mav-color__text--primary--dark);
-    &:hover {
-        color: white;
-    }
+    color: inherit;
     @media #{$mav-desktop} {
         color: var(--mav-color__text--secondary);
         &:hover {

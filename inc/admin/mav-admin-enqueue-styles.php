@@ -50,13 +50,21 @@ function mavf_enqueue_styles()
     //     'all'
     // );
 
-    // wp_enqueue_style(
-    //     'mavcss-ibm-plex-sans',
-    //     'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese',
-    //     array(),
-    //     '1.0.0',
-    //     'all'
-    // );
+    wp_enqueue_style(
+        'mavcss-bai-jamjuree',
+        'https://fonts.googleapis.com/css?family=Bai+Jamjuree:300,300i,400,400i,500,500i,700,700i&subset=vietnamese',
+        array(),
+        '1.0.0',
+        'all'
+    );
+
+    wp_enqueue_style(
+        'mavcss-ibm-plex-sans',
+        'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese',
+        array(),
+        '1.0.0',
+        'all'
+    );
 
     wp_enqueue_style(
         'mavcss-ibm-plex-serif',

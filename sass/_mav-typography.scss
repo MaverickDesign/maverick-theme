@@ -30,7 +30,7 @@ a {
     }
 }
 
-%#{$mavNS}-link-reset {
+%mav-link-reset {
     a {
         box-shadow: none;
         font-weight: inherit;
@@ -104,7 +104,7 @@ body {
  */
 
 h1, h2, h3, h4, h5, h6,
-.#{$mavNS}-h1, .#{$mavNS}-h2, .#{$mavNS}-h3, .#{$mavNS}-h4, .#{$mavNS}-h5, .#{$mavNS}-h6 {
+.mav-h1, .mav-h2, .mav-h3, .mav-h4, .mav-h5, .mav-h6 {
     font-family: var(--mav-font--secondary);
     font-weight: var(--mav-font__weight--medium);
     b {
@@ -352,7 +352,7 @@ strong {
  * =========
  */
 
-.#{$mavNS}-text {
+.mav-text {
     // Text aligns
     @each $mavSide in (left, center, right, justify) {
         &--#{$mavSide} {

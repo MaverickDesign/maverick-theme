@@ -1,4 +1,4 @@
-.mav-accordion-ctn-wrapper {
+.mav-accordion-ctn-wrapper, .mav-accordion__wrp {
     overflow: hidden;
     transition: max-height .3s ease;
     overflow-y: auto;
@@ -106,4 +106,8 @@
             color: var(--mav-color__text--primary);
         }
     }
+}
+
+.mav-accordion__title {
+    font-family: var(--mav-font--tertiary);
 }

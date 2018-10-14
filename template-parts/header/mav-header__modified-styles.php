@@ -27,6 +27,12 @@ echo '<style>';
             echo "--mav-color--accent: $mav_color__accent;";
         }
 
+        // Site Header Background Color
+        $mav_color_site_header_background = esc_attr( get_option( 'mav_setting_color_site_header_background' ) );
+        if ( ! empty( $mav_color_site_header_background ) ) {
+            echo "--mav-color__site__header--background: $mav_color_site_header_background;";
+        }
+
     echo '}';
 echo '</style>';
 ?>

@@ -67,6 +67,12 @@
         input {
             box-shadow: none;
             padding: var(--mav-gutter--sm);
+            &[type="color"] {
+                padding: var(--mav-gutter--xs);
+                width: 100%;
+                height: 60px;
+                display: block;
+            }
         }
         .form-table {
             display: inline-grid;
@@ -148,10 +154,12 @@
             border: 1px solid var(--mav-color--border);
             @media #{$mav-desktop} {
                 max-width: 30vw;
-                // margin: 0 auto;
                 margin-left: auto;
             }
-            header {
+            @media #{$mav-phone} {
+                padding: var(--mav-gutter);
+            }
+            .mav-theme-info-header {
                 display: grid;
                 grid-template-columns: auto 1fr;
                 grid-gap: var(--mav-gutter);
@@ -159,6 +167,9 @@
                 margin-bottom: var(--mav-gutter--lg);
                 p {
                     margin: 0;
+                }
+                @media #{$mav-phone} {
+                    grid-template-columns: 1fr;
                 }
             }
             .mav-admin-maverick-logo {
@@ -170,12 +181,16 @@
                     width: 100%;
                     object-fit: contain;
                 }
+                @media #{$mav-phone} {
+                    width: auto;
+                    height: 50vw;
+                }
             }
         }
     }
 }
 
-.mav-admin-color-preview-box {
+.mav-admin-color-preview-box, .mav-admin__color__preview__box {
     margin-top: var(--mav-gutter--xs);
     display: inline-block;
     height: 40px;

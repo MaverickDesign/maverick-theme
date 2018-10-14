@@ -1,10 +1,9 @@
 .mav-site-sidebar-ctn {
-
     /**
      * Custom scroll bar
      */
     ::-webkit-scrollbar {
-        width: 10px;
+        width: var(--mav-gutter--sm);
     }
 
     ::-webkit-scrollbar-track {
@@ -24,7 +23,7 @@
     align-content: start;
     padding: var(--mav-gutter--xl) var(--mav-gutter) var(--mav-gutter--xl) var(--mav-gutter--lg);
     border-left: var(--mav-border);
-    @extend %mav-link-reset;
+    font-family: var(--mav-font--tertiary);
     a {
         text-decoration: none;
         &:hover {

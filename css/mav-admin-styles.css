@@ -42,8 +42,10 @@
   --mav-font__family--ibm-plex-sans: 'IBM Plex Sans', Arial, sans-serif;
   --mav-font__family--ibm-plex-serif: 'IBM Plex Serif', serif;
   --mav-font__family--montserrat: 'Montserrat', sans-serif;
+  --mav-font__family--bai-jamjuree: 'Bai Jamjuree', sans-serif;
   --mav-font--primary: var(--mav-font__family--ibm-plex-serif);
-  --mav-font--secondary: var(--mav-font__family--exo);
+  --mav-font--secondary: var(--mav-font__family--bai-jamjuree);
+  --mav-font--tertiary: var(--mav-font__family--ibm-plex-sans);
   /**
    * ==================================================
    * Layouts
@@ -73,12 +75,10 @@
   --mav-color--black: #464646;
   --mav-color--off-white: #fafafa;
   --mav-color--highlight: yellow;
-  --mav-color-site-background: #fafafa;
   --mav-color__site--background: #fbfbfb;
-  --mav-color-site-header: var(--mav-color--primary);
-  --mav-color__site-header--background: var(--mav-color--primary);
+  --mav-color__site__header--background: white;
   --mav-color-site-footer: var(--mav-color--accent);
-  --mav-color__site-footer--background: var(--mav-color--accent);
+  --mav-color__site__footer--background: var(--mav-color--accent);
   --mav-color-header-menu-background: var(--mav-color--primary);
   --mav-color-header-menu-background-hover: rgba(0,0,0,.2);
   --mav-color__header-menu--background: var(--mav-color--primary);
@@ -108,11 +108,11 @@
   --mav-font-size-nm: initial;
   --mav-font-size-sm: 0.8rem;
   --mav-font-size-xs: 0.6rem;
-  --mav-font__size--xl: 1.4rem;
-  --mav-font__size--lg: 1.2rem;
+  --mav-font__size--xl: x-large;
+  --mav-font__size--lg: large;
   --mav-font__size--nm: initial;
-  --mav-font__size--sm: 0.9rem;
-  --mav-font__size--xs: 0.7rem;
+  --mav-font__size--sm: small;
+  --mav-font__size--xs: x-small;
   --mav-font-size-subtitle-1: 16px;
   --mav-font-size-subtitle-2: 14px;
   --mav-font__size--subtitle-1: 16px;
@@ -213,6 +213,11 @@
     .mav-admin-page-wrapper form input {
       box-shadow: none;
       padding: var(--mav-gutter--sm); }
+      .mav-admin-page-wrapper form input[type="color"] {
+        padding: var(--mav-gutter--xs);
+        width: 100%;
+        height: 60px;
+        display: block; }
     .mav-admin-page-wrapper form .form-table {
       display: inline-grid;
       align-items: center;
@@ -271,14 +276,20 @@
       .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn {
         max-width: 30vw;
         margin-left: auto; } }
-    .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn header {
+    @media only screen and (max-width: 480px) {
+      .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn {
+        padding: var(--mav-gutter); } }
+    .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn .mav-theme-info-header {
       display: grid;
       grid-template-columns: auto 1fr;
       grid-gap: var(--mav-gutter);
       align-items: center;
       margin-bottom: var(--mav-gutter--lg); }
-      .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn header p {
+      .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn .mav-theme-info-header p {
         margin: 0; }
+      @media only screen and (max-width: 480px) {
+        .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn .mav-theme-info-header {
+          grid-template-columns: 1fr; } }
     .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn .mav-admin-maverick-logo {
       display: block;
       width: 90px;
@@ -287,8 +298,12 @@
         height: 100%;
         width: 100%;
         object-fit: contain; }
+      @media only screen and (max-width: 480px) {
+        .mav-admin-page-wrapper .mav-admin-theme-info-wrapper .mav-admin-theme-info-ctn .mav-admin-maverick-logo {
+          width: auto;
+          height: 50vw; } }
 
-.mav-admin-color-preview-box {
+.mav-admin-color-preview-box, .mav-admin__color__preview__box {
   margin-top: var(--mav-gutter--xs);
   display: inline-block;
   height: 40px; }

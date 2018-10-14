@@ -53,10 +53,10 @@
     }
 
     &__title {
-        font-family: var(--mav-font--primary);
-        font-weight: var(--mav-font__weight--regular);
-        line-height: 1.2;
+        font-family: var(--mav-font--secondary);
+        font-weight: var(--mav-font__weight--bold);
         margin: 0 auto;
+        line-height: 1.2;
         word-wrap: break-word;
         max-width: 640px;
         @media #{$mav-desktop} {
@@ -82,9 +82,10 @@
             }
             // Post excerpt
             .mav-post__excerpt {
+                font-family: var(--mav-font--tertiary);
                 font-weight: var(--mav-font__weight--light);
                 @media #{$mav-desktop} {
-                    font-size: var(--mav-font__size--lg);
+                    font-size: var(--mav-font__size--xl);
                 }
             }
         }
@@ -228,7 +229,7 @@
 }
 
 .mav-post-content, .mav-post__content {
-    padding: var(--mav-gutter--lg) 0;
+    padding: var(--mav-gutter--xl) 0;
     @media #{$mav-desktop} {
         >   pre {
             display: block;

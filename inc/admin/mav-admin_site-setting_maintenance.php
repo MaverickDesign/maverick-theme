@@ -6,7 +6,7 @@
 // Website maintenance section
 add_settings_section(
     'mavsec_site_setting_maintenance',
-    __('Bảo trì website','mavericktheme'),
+    __( 'Bảo trì website', 'mavericktheme' ),
     'mavf_site_setting_sec_maintenance',
     'mav_admin_page_site_setting'
 );
@@ -16,7 +16,10 @@ function mavf_site_setting_sec_maintenance() {
 }
 
 // Eneable maintenance mode
-register_setting( 'mavog_site_setting', 'mav_setting_maintenance' );
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_maintenance'
+);
 add_settings_field(
     'mavid_site_setting_maintenance',
     __( 'Kích hoạt chế độ bảo trì', 'mavericktheme' ),
@@ -26,9 +29,11 @@ add_settings_field(
 );
 
 function mavf_site_setting_maintenance() {
-    $mav_saved_value = esc_attr( get_option('mav_setting_maintenance') );
-    $mav_checked = ( @$mav_saved_value == 1 ? 'checked' : '');
-    printf('<label><input id="mavid-maintenance" type="checkbox" name="mav_setting_maintenance" value="1" %1$s/></label>',$mav_checked);
+    $mav_saved_value = esc_attr( get_option( 'mav_setting_maintenance' ) );
+    $mav_checked = ( @$mav_saved_value == 1 ? 'checked' : '' );
+    printf(
+        '<label><input id="mavid-maintenance" type="checkbox" name="mav_setting_maintenance" value="1" %1$s/></label>', $mav_checked
+    );
 }
 
 // Display logo
@@ -80,6 +85,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_maintenance_time'
 );
+
 add_settings_field(
     'mavid_site_setting_maintenance_time',
     __( 'Ngày kết thúc bảo trì', 'mavericktheme' ),
@@ -88,7 +94,7 @@ add_settings_field(
     'mavsec_site_setting_maintenance'
 );
 
-function mavf_site_setting_maintenance_time(){
+function mavf_site_setting_maintenance_time() {
     $mav_saved_value = esc_attr( get_option( 'mav_setting_maintenance_time' ) );
     printf( '<input id="mavid-maintenance-time" type="date" name="mav_setting_maintenance_time" value="%1$s" placeholder="dd/mm/yyyy" data-visual="short"/>', $mav_saved_value );
 }
