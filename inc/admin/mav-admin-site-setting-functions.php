@@ -3,6 +3,13 @@
  * @package mavericktheme
  */
 
+// Site Setting Page
+function mavf_admin_page_site_setting()
+{
+    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting.php';
+}
+
+// Site Setting Page Functions
 function mavf_admin_site_setting_options() {
 
     // Brand settings
@@ -29,8 +36,3 @@ function mavf_admin_site_setting_options() {
 
 }
 add_action( 'admin_init', 'mavf_admin_site_setting_options' );
-
-function mavf_admin_page_site_setting()
-{
-    include_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting.php';
-}

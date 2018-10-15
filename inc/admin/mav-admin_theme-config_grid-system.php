@@ -4,11 +4,12 @@
  */
 
 register_setting(
-    'mavog_theme_config', 'mav_setting_grid_system'
+    'mavog_theme_config',
+    'mav_setting_grid_system'
 );
 add_settings_field(
     'mavid_theme_config_grid_system',
-    __('Hệ thống lưới', 'mavericktheme'),
+    __( 'Hệ thống lưới', 'mavericktheme' ),
     'mavf_theme_config_grid_system',
     'mav_admin_page_theme_config',
     'mavsec_theme_config_theme_support'

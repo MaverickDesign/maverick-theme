@@ -17,7 +17,7 @@ add_settings_section(
 
 function mavf_theme_config_theme_setting()
 {
-    printf( '<p class="mav-sec-intro">%1$s</p>', __( 'Các thiết lập cho trang Blog', 'mavericktheme' ) );
+    printf( '<p>%1$s</p>', __( 'Các thiết lập cho trang Blog', 'mavericktheme' ) );
 }
 
 //  Blog Page - Load more posts with AJAX

@@ -84,8 +84,7 @@ add_action( 'admin_menu', 'mavf_admin_init' );
 /**
  * For admin panel
  */
-function mavf_enqueue_admin_scripts( $mavHook )
-{
+function mavf_enqueue_admin_scripts( $mavHook ) {
     /**
      * Admin panel css
      */
