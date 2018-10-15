@@ -3294,15 +3294,6 @@ form {
   font-size: var(--mav-font__size--sm);
   color: var(--mav-color__text--primary--dark); }
 
-#mavid-site-logo {
-  height: 40px; }
-  @media only screen and (min-width: 1024px) {
-    #mavid-site-logo {
-      height: 60px; } }
-  #mavid-site-logo img {
-    display: block;
-    height: 100%; }
-
 .mav-header-logo-wrapper, .mav-header__logo--wrp {
   background: var(--mav-color__site__header--background); }
 
@@ -3470,6 +3461,17 @@ form {
       .mav-header-menu-ctn ul .mav-sub-menu[data-state="close"] {
         max-height: 0;
         overflow: hidden; }
+
+#mavid-site-logo img {
+  display: block; }
+
+.mav-site__logo--ctn img {
+  max-width: 50vw;
+  max-height: 60px;
+  object-fit: contain; }
+  @media only screen and (max-width: 1023px) {
+    .mav-site__logo--ctn img {
+      max-height: 40px; } }
 
 .mav-accordion-ctn-wrapper, .mav-accordion__wrp {
   overflow: hidden;
