@@ -10,14 +10,13 @@ add_settings_section(
     'mav_admin_page_theme_config'
 );
 
-function mavf_theme_config_cpt()
-{
+function mavf_theme_config_cpt() {
     _e( 'Kích hoạt các chức năng mở rộng', 'mavericktheme' );
 }
 
-// Register setting
 register_setting(
-    'mavog_theme_config', 'mav_setting_custom_post_type'
+    'mavog_theme_config',
+    'mav_setting_custom_post_type'
 );
 
 add_settings_field(
@@ -28,9 +27,8 @@ add_settings_field(
     'mavsec_theme_config_cpt'
 );
 
-// Callback function
-function mavf_theme_config_theme_support_custom_post_type()
-{
+function mavf_theme_config_theme_support_custom_post_type() {
+
     $mav_saved_value = get_option( 'mav_setting_custom_post_type' );
 
     $mav_custom_post_types = array(

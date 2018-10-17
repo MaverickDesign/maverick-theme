@@ -6,8 +6,8 @@
 $mav_labels = array(
     'name'              => _x( 'Sản phẩm', 'mavericktheme' ),
     'singular_name'     => _x( 'Sản phẩm', 'mavericktheme' ),
-    'add_new'           => __( 'Thêm Sản phẩm mới', 'maverick-theme' ),
-    'all_items'         => __( 'Tất cả Sản phẩm', 'maverick-theme' ),
+    'add_new'           => __( 'Thêm Sản phẩm mới', 'mavericktheme' ),
+    'all_items'         => __( 'Tất cả Sản phẩm', 'mavericktheme' ),
 );
 
 $mav_args = array(

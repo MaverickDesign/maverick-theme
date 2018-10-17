@@ -90,22 +90,25 @@ function mavf_theme_config_blog_page_display_style()
 {
     $mav_saved_value = esc_attr( get_option( 'mav_setting_blog_page_display_style' ) );
 
-    $mavOptions = ['card','list'];
+    $mav_options = array(
+        'card',
+        'list'
+    );
 
     echo '<fieldset class="mav-grid">';
-        foreach ( $mavOptions as $mavOption ) {
-            $mavChecked = ( @$mav_saved_value == $mavOption ) ? 'checked' : '';
-            switch ($mavOption) {
+        foreach ( $mav_options as $mav_option ) {
+            $mavChecked = ( @$mav_saved_value == $mav_option ) ? 'checked' : '';
+            switch ( $mav_option ) {
                 case 'list' :
-                    $mavDispplayName = 'Dạng danh sách';
+                    $mav_dispplay_name = 'Dạng danh sách';
                     break;
                 case 'card' :
-                    $mavDispplayName = 'Dạng thẻ';
+                    $mav_dispplay_name = 'Dạng thẻ';
                     break;
             }
             printf(
                 '<label><input type="radio" name="mav_setting_blog_page_display_style" value="%1$s" %2$s>%3$s</label>',
-                $mavOption, $mavChecked, $mavDispplayName
+                $mav_option, $mavChecked, $mav_dispplay_name
             );
         }
     echo '</fieldset>';

@@ -72,8 +72,7 @@ add_theme_support(
  * @return void
  */
 
-function mavf_register_nav_menus()
-{
+function mavf_register_nav_menus() {
     register_nav_menu( 'primary_menu', __( 'Main menu/Header Menu', 'mavericktheme' ) );
     register_nav_menu( 'secondary_menu', __( 'Secondary/Footer menu', 'mavericktheme' ) );
 }
@@ -85,8 +84,7 @@ add_action( 'after_setup_theme', 'mavf_register_nav_menus' );
  * @return void
  */
 
-function mavf_register_sidebars()
-{
+function mavf_register_sidebars() {
     /**
     * Creates a sidebar
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
@@ -110,8 +108,7 @@ add_action( 'widgets_init', 'mavf_register_sidebars' );
  * Note: Remove this function in production site
  */
 
-function mailtrap( $phpmailer )
-{
+function mailtrap( $phpmailer ) {
     $phpmailer->isSMTP();
     $phpmailer->Host        = 'smtp.mailtrap.io';
     $phpmailer->SMTPAuth    = true;

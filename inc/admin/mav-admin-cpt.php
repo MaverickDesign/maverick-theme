@@ -4,8 +4,7 @@
  * Maverick Theme Custom Post Types
  */
 
-function mavf_cpt()
-{
+function mavf_cpt() {
     // Get option for CPTs in Theme Config
     $mavCPTs = get_option( 'mav_setting_custom_post_type' );
 
@@ -63,7 +62,6 @@ function mavf_cpt()
 add_action( 'init', 'mavf_cpt' );
 
 flush_rewrite_rules();
-
 
 /**
  * Show Custom Post Type in Archive Page

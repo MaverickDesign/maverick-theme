@@ -6,8 +6,8 @@
 $mav_labels = array(
     'name'              => _x( 'Portfolio', 'mavericktheme' ),
     'singular_name'     => _x( 'Portfolio', 'mavericktheme' ),
-    'add_new'           => __( 'Thêm Portfolio mới', 'maverick-theme' ),
-    'all_items'         => __( 'Tất cả Portfolio', 'maverick-theme' ),
+    'add_new'           => __( 'Thêm Portfolio mới', 'mavericktheme' ),
+    'all_items'         => __( 'Tất cả Portfolio', 'mavericktheme' ),
 );
 
 $mav_args = array(

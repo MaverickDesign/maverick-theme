@@ -59,6 +59,7 @@ printf( '<div class="%1$s">', $mav_section_class );
     $mav_args = array (
         'post_type'             => 'post',
         'post_status'           => 'publish',
+        'post_parent'           => 0,
         'ignore_sticky_posts'   => 1,
         'post_not__in'          => get_option( 'sticky_posts' ),
         'paged'                 => get_query_var( 'paged' ),

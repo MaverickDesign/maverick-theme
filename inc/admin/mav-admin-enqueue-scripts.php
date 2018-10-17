@@ -42,7 +42,7 @@ function mavf_enqueue_scripts()
 
     $mavMaintenance = esc_attr( get_option( 'mav_setting_maintenance' ) );
 
-    if (empty($mavMaintenance)) :
+    if ( empty( $mavMaintenance ) ) :
 
         // Type Writter
         wp_enqueue_script(

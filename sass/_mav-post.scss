@@ -68,7 +68,7 @@
     }
 
     // Post excerpt wrapper
-    .mav-post__excerpt--wrp {
+    &__excerpt--wrp {
         // Post excerpt container
         .mav-post__excerpt--ctn {
             max-width: 640px;
@@ -112,7 +112,7 @@
         }
     }
 
-    .mav-post-footer-wrapper, .mav-post__footer--wrp {
+    &-footer-wrapper, &__footer--wrp {
         background: var(--mav-color--off-white);
         .mav-post-footer-ctn, .mav-post__footer--ctn {
             max-width: var(--mav-site--width);

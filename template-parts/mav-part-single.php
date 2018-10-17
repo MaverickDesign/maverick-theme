@@ -17,8 +17,8 @@ printf(
     );
 
     // Header
-    printf('<header class="mav-post-header-wrapper mav-post__header--wrp">');
-        printf('<div class="mav-post-header-ctn mav-post__header--ctn">');
+    printf('<header class="mav-post__header--wrp">');
+        printf('<div class="mav-post__header--ctn">');
 
             // Feature image
             if ( is_single() && ! is_attachment() ) {
@@ -111,8 +111,8 @@ printf(
     echo '</header>';
 
     // Body
-    printf('<section class="mav-post-content-wrapper mav-post__content--wrp">');
-        echo '<div class="mav-post-content-ctn mav-post__content--ctn">';
+    printf('<section class="mav-post__content--wrp">');
+        echo '<div class="mav-post__content--ctn">';
 
             if ( function_exists( 'mavf_post_content_modifier' ) ) {
                 $mav_json_file = TEMPLATE_DIR . '/template-parts/mav-patterns.json';
@@ -120,7 +120,7 @@ printf(
                     mavf_post_content_modifier($mav_json_file);
                 }
             }
-            printf('<div class="mav-post-content">');
+            printf('<div class="mav-post__content">');
                 the_content();
             echo '</div>';
 
