@@ -8,7 +8,7 @@ button {
     color: inherit;
 
     font-family: var(--mav-font--secondary);
-    font-weight: var(--mav-font__weight--bold);
+    // font-weight: var(--mav-font__weight--bold);
 
     cursor: pointer;
 
@@ -38,15 +38,13 @@ button {
     cursor: pointer;
 
     @extend %mav-transition;
+    a {
+        @extend %mav-transition;
+    }
 }
 
 .mav-btn {
     @extend %mav-btn;
-    @extend %mav-transition;
-    &:hover {
-        @include text-contrast($mav-color--primary);
-        background: var(--mav-color--primary);
-    }
 }
 
 /**
@@ -62,31 +60,20 @@ button {
             padding: var(--mav-gutter--sm);
         }
         &:hover {
-            color: var(--mav-color__text--primary);
-            background: transparent;
+            a {
+                background: rgba(black,.3);
+            }
         }
+        // Large button
         &-lg, &--lg {
-            @extend .mav-btn-primary;
-            letter-spacing: 1px;
+            @extend .mav-btn__primary;
+            // letter-spacing: 1px;
             a {
                 padding: var(--mav-gutter);
             }
         }
-        &-dark, &--dark {
-            @extend .mav-btn__primary;
-            color: white;
-            &:hover {
-                border-color: transparent;
-                background: var(--mav-color--primary);
-                color: white;
-                a {
-                    background: rgba(#222, .3);
-                }
-            }
-        }
-
     }
-    &-secondary {
+    &-secondary, &__secondary {
         @extend .mav-btn;
         color: var(--mav-color__text--primary);
         a {

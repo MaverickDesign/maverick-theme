@@ -19,14 +19,26 @@
     background-repeat: no-repeat!important;
     filter: blur(20px);
     transform: scale(1.1);
+    z-index: var(--mav-layer--background);
     @media #{$mav-desktop} {
         background-attachment: fixed!important;
     }
 }
 
+
 // Page Title
 .mav-page-title-wrapper, .mav-page__title--wrp {
     position: relative;
+    &:before {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, var(--mav-color--primary) 0%, var(--mav-color--accent) 100%);
+        filter: opacity(.3);
+        content: '';
+        z-index: var(--mav-layer--background);
+    }
 }
 
 .mav-page-title-ctn, .mav-page__title--ctn {

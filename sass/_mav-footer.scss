@@ -2,46 +2,51 @@
  * Footer Social Links
  */
 
-.mav-footer-socials-wrapper {
+.mav-footer-socials-wrapper, .mav-footer__social--wrp {
     background: var(--mav-color--off-white);
-    border-top: 1px solid var(--mav-color--border);
     .mav-footer-socials-ctn {
+        border-top: 1px solid var(--mav-color--border);
         font-family: var(--mav-font--secondary);
         padding: var(--mav-gutter--lg) var(--mav-gutter);
         @extend %mav-flex-column;
         align-items: center;
         color: initial;
-        .mav-social-links {
-            display: flex;
+        display: grid;
+        grid-gap: var(--mav-gutter);
+        @media #{$mav-tablet-up} {
+            grid-template-columns: max-content max-content;
             justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-            margin-top: var(--mav-gutter--lg);
-            @extend %mav-link-reset;
-            .mav-social-icon {
-                @extend .mav-flex-center-all;
-                width: 50px;
-                height: 50px;
-                border: 1px solid var(--mav-color--accent);
-                font-size: var(--mav-font__size--lg);
-                margin-left: 0;
-                margin-right: var(--mav-gutter);
-                @extend %mav-transition;
-                &:hover {
-                    border-radius: 50%;
-                    @extend %mav-link-obj-accent;
-                }
-                &:last-child {
-                    margin-right: 0;
-                }
-                a {
-                    text-decoration: none;
-                }
-            }
         }
     }
 }
-
+.mav-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    @media #{$mav-phone} {
+        justify-content: center;
+    }
+    .mav-social-icon {
+        @extend .mav-flex-center-all;
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--mav-color--accent);
+        font-size: var(--mav-font__size--lg);
+        margin-left: 0;
+        margin-right: var(--mav-gutter);
+        @extend %mav-transition;
+        &:hover {
+            border-radius: 50%;
+            @extend %mav-link-obj-accent;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
 /**
  * Footer Menu
  */

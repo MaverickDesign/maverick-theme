@@ -76,11 +76,11 @@ function mavf_social_links( $mav_full = false, $mav_ul_class = "mav-social-links
      * Social Accounts
      */
 
-     global $mav_json;
+    global $mav_json;
 
-     foreach ( $mav_json["accounts"] as $mav_account ) {
-         $mav_account_name = esc_attr( get_option( $mav_account['option'] ) );
-         if ( !empty( $mav_account_name ) ) {
+    foreach ( $mav_json["accounts"] as $mav_account ) {
+        $mav_account_name = esc_attr( get_option( $mav_account['option'] ) );
+        if ( !empty( $mav_account_name ) ) {
             mavf_social_account(
                 $mav_account_name,
                 $mav_account['url'],
@@ -88,13 +88,12 @@ function mavf_social_links( $mav_full = false, $mav_ul_class = "mav-social-links
                 $mav_brand_name.$mav_account['name'],
                 $mav_account['icon']
             );
-         }
-     }
+        }
+    }
     echo '</ul>';
 }
 
-function mavf_social_links_name()
-{
+function mavf_social_links_name() {
     $mav_social_accounts = [];
     // Facebook
     $facebook_acc = esc_attr( get_option( 'mav_setting_social_account_facebook' ) );
@@ -112,8 +111,7 @@ function mavf_social_links_name()
 /**
  * Check social account settings
  */
-function mavf_check_social_accounts()
-{
+function mavf_check_social_accounts() {
     global $mav_json;
     $mav_has_accounts = false;
     if ( !empty( $mav_json ) ) {
