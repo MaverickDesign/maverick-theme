@@ -3,15 +3,6 @@
  * @package mavericktheme
  */
 
-// Vendor Functions
-function random_color_part() {
-    return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT);
-}
-
-function random_color() {
-    return random_color_part() . random_color_part() . random_color_part();
-}
-
 /**
  * Section: Theme Colors
  */
@@ -39,8 +30,7 @@ add_settings_field(
     'mavsec__theme_styles__theme_colors'
 );
 
-function mavf_theme_styles_color_primary()
-{
+function mavf_theme_styles_color_primary() {
     $mav_saved_value = esc_attr( get_option( 'mav_setting_color_primary' ) );
     printf(
         '<input type="text" name="mav_setting_color_primary" value="%1$s" placeholder="%2$s" data-visual="short"/>',

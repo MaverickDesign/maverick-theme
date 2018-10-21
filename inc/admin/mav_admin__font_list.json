@@ -1,0 +1,55 @@
+{
+    "roboto": {
+        "value": "roboto",
+        "name": "Roboto",
+        "id": "mavid-css-font-roboto",
+        "url": "https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=vietnamese",
+        "weights": ["100","300","300i","400","400i","500","700","900"]
+    },
+    "roboto_cond": {
+        "value": "roboto_cond",
+        "name": "Roboto Condensed",
+        "id": "mavid-css-font-roboto-condensed",
+        "url": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=vietnamese"
+    },
+    "roboto_slab": {
+        "value": "roboto_slab",
+        "name": "Roboto Slab",
+        "id": "mavid-css-font-roboto-slab",
+        "url": "https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=vietnamese",
+        "weights": ["100","300","400","700"]
+    },
+    "roboto_mono": {
+        "value": "roboto_mono",
+        "name": "Roboto Mono",
+        "id": "mavid-css-font-roboto-mono",
+        "url": "https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&amp;subset=vietnamese"
+    },
+    "alfa_slab_one": {
+        "value": "alfa_slab_one",
+        "name": "Alfa Slab One",
+        "id": "mavid-css-font-alfa-slab-one",
+        "url": "https://fonts.googleapis.com/css?family=Alfa+Slab+One&amp;subset=vietnamese"
+    },
+    "ibm_plex_sans": {
+        "value": "ibm_plex_sans",
+        "name": "IBM Plex Sans",
+        "id": "mavid-css-font-ibm-plex-sans",
+        "url": "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese",
+        "weights": ["100","100i","300","300i","400","400i","500","500i","700","700i"]
+    },
+    "ibm_plex_serif": {
+        "value": "ibm_plex_serif",
+        "name": "IBM Plex Serif",
+        "id": "mavid-css-font-ibm-plex-serif",
+        "url": "https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100,100i,300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese",
+        "weights": ["100","100i","300","300i","400","400i","500","500i","700","700i"]
+    },
+    "bai_jamjuree": {
+        "value": "bai_jamjuree",
+        "name": "Bai Jamjuree",
+        "id": "mavid-css-font-bai-jamjuree",
+        "url": "https://fonts.googleapis.com/css?family=Bai+Jamjuree:300,300i,400,400i,500,500i,700,700i&subset=vietnamese",
+        "weights": ["300","300i","400","400i","500","500i","700","700i"]
+    }
+}

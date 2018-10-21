@@ -159,21 +159,25 @@ $mav-color--background: #fafafa;
     --mav-font__family--awesome         : 'Font Awesome 5 Free';
     --mav-font__family--exo             : 'Exo', Arial, sans-serif;
     --mav-font__family--roboto          : 'Roboto', Arial, sans-serif;
-    --mav-font__family--roboto-cond     : 'Roboto Condensed', Arial, sans-serif;
-    --mav-font__family--roboto-slab     : 'Roboto Slab', serif;
-    --mav-font__family--roboto-mono     : 'Roboto Mono', monospace;
-    --mav-font__family--alfa-slab-one   : "Alfa Slab One", cursive;
-    --mav-font__family--ibm-plex-sans   : 'IBM Plex Sans', Arial, sans-serif;
-    --mav-font__family--ibm-plex-serif  : 'IBM Plex Serif', serif;
+    --mav-font__family--roboto_cond     : 'Roboto Condensed', Arial, sans-serif;
+    --mav-font__family--roboto_slab     : 'Roboto Slab', serif;
+    --mav-font__family--roboto_mono     : 'Roboto Mono', monospace;
+    --mav-font__family--alfa_slab_one   : "Alfa Slab One", cursive;
+    --mav-font__family--ibm_plex_sans   : 'IBM Plex Sans', Arial, sans-serif;
+    --mav-font__family--ibm_plex_serif  : 'IBM Plex Serif', serif;
     --mav-font__family--montserrat      : 'Montserrat', sans-serif;
-    --mav-font__family--bai-jamjuree    : 'Bai Jamjuree', sans-serif;
+    --mav-font__family--bai_jamjuree    : 'Bai Jamjuree', sans-serif;
 
     // Primary font
-    --mav-font--primary     : var(--mav-font__family--ibm-plex-serif);
+    --mav-font--primary         : var(--mav-font__family--ibm_plex_serif);
     // Secondary font
-    --mav-font--secondary    : var(--mav-font__family--bai-jamjuree);
-
-    --mav-font--tertiary   : var(--mav-font__family--ibm-plex-sans);
+    --mav-font--secondary       : var(--mav-font__family--bai_jamjuree);
+    // Tertiary font
+    --mav-font--tertiary        : var(--mav-font__family--ibm_plex_sans);
+    // Monospace font
+    --mav-font--monospace      : var(--mav-font__family--roboto_mono);
+    // Condensed font
+    --mav-font--condensed      : var(--mav-font__family--roboto_cond);
 
     /**
      * ==================================================
