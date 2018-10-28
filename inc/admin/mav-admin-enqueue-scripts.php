@@ -3,8 +3,7 @@
  * @package mavericktheme
  */
 
-function mavf_enqueue_scripts()
-{
+function mavf_enqueue_scripts() {
 
     /**
      * jQuery
@@ -40,9 +39,9 @@ function mavf_enqueue_scripts()
         true
     );
 
-    $mavMaintenance = esc_attr( get_option( 'mav_setting_maintenance' ) );
+    $mav_maintenance = esc_attr( get_option( 'mav_setting_maintenance' ) );
 
-    if ( empty( $mavMaintenance ) ) :
+    if ( empty( $mav_maintenance ) ) :
 
         // Type Writter
         wp_enqueue_script(

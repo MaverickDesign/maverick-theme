@@ -162,20 +162,22 @@
                     </a>
                 </div>
 
-                <!-- Header Social Links -->
-                <div class="mav-flex-row">
-                    <?php
-                        if( function_exists( 'mavf_social_links' ) && !empty( mavf_check_social_accounts() ) ):
-                            printf('<div id="mavid-header-socials" class="mav-header-social-links mav-header-socials-wrapper">');
-                                printf('<div class="mav-header-socials-ctn">');
-                                    mavf_social_links();
+                <div class="mav-header__utilities--wrp">
+                    <div class="mav-header__utilities--ctn">
+                        <!-- Header Social Links -->
+                        <?php
+                            if( function_exists( 'mavf_social_links' ) && !empty( mavf_check_social_accounts() ) ):
+                                printf('<div id="mavid-header-socials" class="mav-header-social-links mav-header-socials-wrapper">');
+                                    printf('<div class="mav-header-socials-ctn">');
+                                        mavf_social_links();
+                                    echo '</div>';
                                 echo '</div>';
-                            echo '</div>';
-                        endif;
-                    ?>
-                    <!-- Site Search Toggle Button -->
-                    <div>
-                        <button class="mav-site-search-icon fas fa-search" title="<?php _e( 'Tìm nội dung','mavericktheme' ); ?>"></button>
+                            endif;
+                        ?>
+                        <!-- Site Search Toggle Button -->
+                        <div class="mav-header__search__icon--wrp">
+                            <button class="mav-site-search-icon fas fa-search" title="<?php _e( 'Tìm nội dung','mavericktheme' ); ?>"></button>
+                        </div>
                     </div>
                 </div>
             </div>

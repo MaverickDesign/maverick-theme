@@ -1,12 +1,6 @@
-.mav-social-links, .mav-social__links {
+.mav-header__utilities--ctn {
     display: flex;
-    .mav-social-icon, .mav-social__icon {
-        font-size: 1rem;
-        color: var(--mav-color__text--primary);
-        &:hover {
-            color: var(--mav-color--accent);
-        }
-    }
+    align-items: center;
 }
 
 .mav-header-socials-wrapper, .mav-header__socials--wrp {
@@ -20,10 +14,22 @@
             li {
                 list-style-type: none;
                 margin-right: var(--mav-gutter);
+                border: none;
                 a {
                     text-decoration: none;
                 }
             }
+        }
+    }
+}
+
+.mav-social-links, .mav-social__links {
+    display: flex;
+    .mav-social-icon, .mav-social__icon {
+        font-size: 1rem;
+        color: var(--mav-color__text--primary);
+        &:hover {
+            color: var(--mav-color__text--primary--dark);
         }
     }
 }

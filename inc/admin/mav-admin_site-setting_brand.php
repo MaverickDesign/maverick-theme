@@ -28,8 +28,7 @@ add_settings_field(
     'mavsec_site_setting_brand'
 );
 
-function mavf_site_setting_brand_logo()
-{
+function mavf_site_setting_brand_logo() {
     printf('<div class="mav-brand-logo-buttons">');
         $mav_saved_value = esc_attr( get_option( 'mav_setting_brand_logo' ) );
         if ( empty( $mav_saved_value ) ) {
@@ -42,6 +41,36 @@ function mavf_site_setting_brand_logo()
             printf( '<input id="mavid-btn-upload-brand-logo" type="button" value="%1$s">', __( 'Thay đổi', 'mavericktheme' ) );
             printf( '<input id="mavid-btn-remove-brand-logo" type="button" value="%1$s">', __( 'Gỡ bỏ', 'mavericktheme') );
             printf( '<input id="mavid-brand-logo" type="hidden" name="mav_setting_brand_logo" value="%1$s">', $mav_saved_value );
+        }
+    echo '</div>';
+}
+
+// Brand Logo - Mobile version
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_brand_logo_mobile'
+);
+add_settings_field(
+    'mavid_site_setting_brand_logo_mobile',
+    __( 'Mobile logo', 'mavericktheme' ),
+    'mavf_site_setting_brand_logo_mobile',
+    'mav_admin_page_site_setting',
+    'mavsec_site_setting_brand'
+);
+
+function mavf_site_setting_brand_logo_mobile() {
+    printf('<div class="mav-brand-logo-buttons">');
+        $mav_saved_value = esc_attr( get_option( 'mav_setting_brand_logo_mobile' ) );
+        if ( empty( $mav_saved_value ) ) {
+            printf(
+                '<input id="mavid-btn-upload-brand-logo-mobile" type="button" value="%1$s">',
+                __( 'Thiết lập', 'mavericktheme' )
+            );
+            echo '<input id="mavid-brand-logo-mobile" type="hidden" name="mav_setting_brand_logo_mobile" value="">';
+        } else {
+            printf( '<input id="mavid-btn-upload-brand-logo-mobile" type="button" value="%1$s">', __( 'Thay đổi', 'mavericktheme' ) );
+            printf( '<input id="mavid-btn-remove-brand-logo-mobile" type="button" value="%1$s">', __( 'Gỡ bỏ', 'mavericktheme') );
+            printf( '<input id="mavid-brand-logo-mobile" type="hidden" name="mav_setting_brand_logo_mobile" value="%1$s">', $mav_saved_value );
         }
     echo '</div>';
 }

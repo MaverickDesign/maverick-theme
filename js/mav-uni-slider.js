@@ -428,7 +428,7 @@ function mavf_uni_slider(
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Maverick's Uni Slider loaded.");
+    // console.log("Maverick's Uni Slider loaded.");
     if ( typeof mavf_uni_slider === 'function' ) {
         mavf_uni_slider();
     }

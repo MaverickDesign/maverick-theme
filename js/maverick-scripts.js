@@ -8,7 +8,7 @@
     const mavStickyLogo = document.querySelector('.mav-sticky-logo');
     const mavStickyLogoImg = document.querySelector('#mavid-sticky-logo');
 
-    if (mavStickyLogo == null && mavStickyLogoImg == null) {
+    if ( mavStickyLogo == null || mavStickyLogoImg == null ) {
         return;
     }
 
@@ -381,10 +381,7 @@ function mavf_document_key(){
     });
 };
 
-document.addEventListener('DOMContentLoaded',function(){
-    mavf_body_click_events();
-    mavf_document_key();
-},false);
+
 
 // Blog Page List & Card View Toggle
 
@@ -446,3 +443,9 @@ function mavf_card_style( mav_args = {
         mavCard.dataset.style = mavView;
     }
 }
+
+// DOM content loaded functions
+document.addEventListener('DOMContentLoaded',function(){
+    mavf_body_click_events();
+    mavf_document_key();
+},false);
