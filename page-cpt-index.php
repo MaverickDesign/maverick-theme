@@ -45,7 +45,8 @@
                 'post_type'             => $mav_cpt_field,
                 'post_status'           => 'publish',
                 'ignore_sticky_posts'   => 1,
-                'paged'                 =>  get_query_var( 'paged' ),
+                'post_parent'           => 0,
+                'paged'                 => get_query_var( 'paged' ),
             );
 
             $mav_query = new WP_Query( $mav_args );

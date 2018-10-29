@@ -39,11 +39,11 @@
 }
 
 // Header sticky logo
-.mav-sticky-logo-wrapper {
+.mav-sticky-logo-wrapper, .mav-sticky__logo--wrp {
+    position: sticky;
     max-width: var(--mav-site--width);
     margin: 0 auto;
     padding: 0 var(--mav-gutter);
-    position: sticky;
     top: 0;
     height: 100%;
     .mav-sticky-logo-ctn {
@@ -75,6 +75,9 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    @media #{$mav-mobile} {
+        display: none;
     }
 }
 

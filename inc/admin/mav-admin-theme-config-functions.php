@@ -6,9 +6,7 @@
 function mavf_admin_theme_config_options()
 {
 
-    /**
-     * Section: Theme Supports
-     */
+    // Theme Supports
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_theme-supports.php';
 
     // Post formats
@@ -24,7 +22,7 @@ function mavf_admin_theme_config_options()
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_blog-page.php';
 
     // BreadCrumbs
-    include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_breadcrumbs.php';
+    include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_general.php';
 
 }
 add_action( 'admin_init', 'mavf_admin_theme_config_options' );
