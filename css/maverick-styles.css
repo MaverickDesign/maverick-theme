@@ -3420,9 +3420,11 @@ form {
           border-radius: 0 0 5px 5px; } }
       .mav-header-menu-ctn ul li ul.mav-sub-menu li, .mav-header__menu--ctn ul li ul.mav-sub-menu li {
         text-transform: initial; }
-        @media only screen and (max-width: 1023px) {
-          .mav-header-menu-ctn ul li ul.mav-sub-menu li a, .mav-header__menu--ctn ul li ul.mav-sub-menu li a {
-            padding-left: var(--mav-gutter); } }
+        .mav-header-menu-ctn ul li ul.mav-sub-menu li a, .mav-header__menu--ctn ul li ul.mav-sub-menu li a {
+          padding: var(--mav-gutter--sm) var(--mav-gutter); }
+          @media only screen and (max-width: 1023px) {
+            .mav-header-menu-ctn ul li ul.mav-sub-menu li a, .mav-header__menu--ctn ul li ul.mav-sub-menu li a {
+              padding-left: var(--mav-gutter); } }
       @media only screen and (min-width: 1024px) {
         .mav-header-menu-ctn ul li ul.mav-sub-menu ul, .mav-header__menu--ctn ul li ul.mav-sub-menu ul {
           position: relative;

@@ -149,6 +149,7 @@
                     @extend %mav-flex-column;
                     text-transform: initial;
                     a {
+                        padding: var(--mav-gutter--sm) var(--mav-gutter);
                         @media #{$mav-mobile} {
                             padding-left: var(--mav-gutter);
                         }
