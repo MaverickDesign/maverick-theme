@@ -47,11 +47,14 @@ function mavf_header_menu(){
         }
     });
 
-    function mavf_close_all_sub_menus(){
-        for (const mavSubMenuIcon of mavSubmenuIcons) {
+    function mavf_close_all_sub_menus()
+    {
+        for (const mavSubMenuIcon of mavSubmenuIcons)
+        {
             mavSubMenuIcon.dataset.state = 'close';
         }
-        for (const mavSubMenu of mavSubMenus) {
+        for (const mavSubMenu of mavSubMenus)
+        {
             mavSubMenu.classList.remove('open');
             mavSubMenu.dataset.state = 'close';
         }
@@ -66,4 +69,5 @@ function mavf_header_menu(){
         mavf_close_all_sub_menus();
     });
 };
+
 mavf_header_menu();

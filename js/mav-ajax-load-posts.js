@@ -13,6 +13,7 @@ if ( mavLoadMorePostButton != undefined ) {
         const mavCurrentPage = this.dataset.currentPage;
 
         let mavCurrentViewStyle;
+
         const mavCard = document.querySelector('.mavjs-card__content--ctn');
         if ( mavCard != undefined ) {
             mavCurrentViewStyle = mavCard.dataset.style;

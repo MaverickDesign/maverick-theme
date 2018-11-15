@@ -83,8 +83,6 @@
             border-radius: 10%;
         }
     }
-    &[data-row="footer"] {
-    }
     &[data-row="checked"] {
         &:before {
             @extend %mav-font-awesome;

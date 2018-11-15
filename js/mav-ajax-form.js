@@ -20,6 +20,7 @@ if (mavContactForm != undefined) {
 
         /* Get action callback */
         const mavAction = this.dataset.action;
+
         if (mavAction != undefined) {
             mavFormData.append('action',mavAction);
         }
@@ -27,19 +28,19 @@ if (mavContactForm != undefined) {
         /* Name */
         const mavName = this.querySelector('input[type="text"][name="name"]');
         if (mavName != undefined) {
-            mavFormData.append('name',mavName.value);
+            mavFormData.append('name', mavName.value);
         }
 
         /* Email */
         const mavEmail = this.querySelector('input[type="email"][name="email"]');
         if (mavEmail != undefined) {
-            mavFormData.append('email',mavEmail.value);
+            mavFormData.append('email', mavEmail.value);
         }
 
         /* Phone */
         const mavPhone = this.querySelector('input[type="phone"][name="phone"]');
         if (mavPhone != undefined) {
-            mavFormData.append('phone',mavPhone.value);
+            mavFormData.append('phone', mavPhone.value);
         }
 
         /* Message */
