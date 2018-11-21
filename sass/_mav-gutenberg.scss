@@ -22,3 +22,7 @@ p.has-drop-cap::first-letter {
     margin-top: var(--mav-gutter--lg);
     margin-bottom: var(--mav-gutter--lg);
 }
+
+.wp-block-embed__wrapper {
+    text-align: center;
+}

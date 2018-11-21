@@ -178,10 +178,10 @@ printf('<div class="mav-card__wrp" %1$s>', $mav_style );
                             get_template_part( 'template-parts/social-buttons/mav-btn__social--facebook' );
                             // Twitter share button
                             get_template_part( 'template-parts/social-buttons/mav-btn__social--twitter' );
-                            printf(
-                                '<li class="mav-social__btn" title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
-                                __( 'Sao chép liên kết', 'mavericktheme' )
-                            );
+                            // printf(
+                            //     '<li class="mav-social__btn" title="%1$s"><i class="mavjs-copy-link fas fa-link"></i><span data-hidden class="mavjs-copy-link-text"></span></li>',
+                            //     __( 'Sao chép liên kết', 'mavericktheme' )
+                            // );
                         echo '</u>';
 
                     echo '</div>';

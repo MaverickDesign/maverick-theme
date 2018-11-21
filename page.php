@@ -17,8 +17,8 @@
             <div class="mav-sec-ctn">
                 <div class="mav-sec-body-wrapper">
                     <div class="mav-sec-body-ctn">
-                        <div class="mav-post-content-wrapper">
-                            <div class="mav-post-content-ctn mav-post-content">
+                        <div class="mav-post__content--wrp">
+                            <div class="mav-post__content--ctn mav-post__content">
                                 <?php
                                     the_post();
                                     if ( function_exists( 'mavf_post_content_modifier' ) ) {

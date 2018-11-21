@@ -64,6 +64,7 @@
         }
         @media #{$mav-phone} {
             text-align: left;
+            font-size: 1.75rem;
         }
     }
 
@@ -179,7 +180,7 @@
     }
 }
 
-.mav-post-info, .mav-post__info {
+.mav-post__info {
     display: flex;
     &:before {
         display: inline-block;
@@ -211,9 +212,9 @@
  */
 
 // Post content wrapper
-.mav-post-content-wrapper, .mav-post__content--wrp {
+.mav-post__content--wrp {
     // Post content container
-    .mav-post-content-ctn, .mav-post__content--ctn {
+    .mav-post__content--ctn {
         max-width: var(--mav-site--width);
         margin: 0 auto;
         @media #{$mav-tablet} {
@@ -225,8 +226,8 @@
     }
 }
 
-.mav-post-content, .mav-post__content {
-    padding: var(--mav-gutter--xl) 0;
+.mav-post__content {
+    padding: var(--mav-gutter--lg) 0;
     @media #{$mav-desktop} {
         >   pre {
             display: block;
