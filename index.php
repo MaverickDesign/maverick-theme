@@ -52,7 +52,7 @@ $mav_card_style = ( get_option( 'mav_setting_blog_page_display_style' ) ) ? esc_
 // Get user setting to show sidebar in blog page
 $mav_not_show_sidebar = esc_attr( get_option( 'mav_setting_blog_page_sidebar' ) );
 
-$mav_section_class = !$mav_not_show_sidebar ? 'mav-has-sidebar' : 'mav-site-width';
+$mav_section_class = !$mav_not_show_sidebar ? 'mav-has-sidebar' : 'mav-site--width';
 
 printf( '<div class="%1$s">', $mav_section_class );
 

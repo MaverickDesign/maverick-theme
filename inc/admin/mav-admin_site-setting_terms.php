@@ -59,10 +59,13 @@ function mavf_site_setting_terms_page_term()
     printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Điều Khoản', 'mavericktheme' ) );
 }
 
-register_setting('mavog_site_setting', 'mav_setting_terms_page_condition');
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_terms_page_condition'
+);
 add_settings_field(
     'mavid_site_setting_page_condition',
-    __('Trang Điều Kiện', 'mavericktheme'),
+    __( 'Trang Điều Kiện', 'mavericktheme' ),
     'mavf_site_setting_terms_page_condition',
     'mav_admin_page_site_setting',
     'mavsec_site_setting_terms'
@@ -90,7 +93,8 @@ add_settings_field(
     'mavsec_site_setting_terms'
 );
 
-function mavf_site_setting_terms_page_policy() {
+function mavf_site_setting_terms_page_policy()
+{
     $mav_saved_value = esc_attr( get_option( 'mav_setting_terms_page_policy' ) );
     printf(
         '<input type="text" name="mav_setting_terms_page_policy" value="%1$s" placeholder="%2$s" data-visual="short"/>',

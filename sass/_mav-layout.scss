@@ -266,6 +266,10 @@
  * Page layouts
  */
 
+.mav-pg__wrp {
+    background: transparent;
+}
+
 .mav-pg-ctn, .mav-pg__ctn
 {
     max-width: var(--mav-site--width);
