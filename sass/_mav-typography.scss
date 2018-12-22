@@ -2,17 +2,20 @@
  * Anchor Tag
  */
 
-a {
+a
+{
     color: inherit;
     text-decoration: underline;
     text-decoration-color: var(--mav-color--border);
     text-underline-position: under;
-    &:hover {
+    &:hover
+    {
         text-decoration-color: var(--mav-color--accent);
     }
 }
 
-.mav-link {
+.mav-link
+{
     &[data-link="external"] {
         &:after {
             display: inline-block;

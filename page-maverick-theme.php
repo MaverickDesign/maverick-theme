@@ -7,20 +7,22 @@
 <?php get_header(); ?>
 
 <!-- Page content starts here -->
-<main id="mavid-page-main" class="mav-page-wrapper">
-    <div class="mav-page-ctn">
-        <!-- Tiêu đề trang -->
-        <?php get_template_part('/template-parts/mav-page__header'); ?>
+<main id="mavid-page-main" class="mav-page--wrp">
+
+    <!-- Tiêu đề trang -->
+    <?php get_template_part('/template-parts/mav-page__header'); ?>
+
+    <div class="mav-page--ctn">
 
         <!-- Nội dung chính của trang -->
-        <div id="mavid-page-content" class="mav-page-body-wrapper">
-            <div class="mav-page-body-ctn">
+        <div id="mavid-page-content" class="mav-page__body--wrp">
+            <div class="mav-page__body--ctn">
 
                 <!-- Giới thiệu -->
-                <section class="mav-sec-wrapper mav-pg-section">
-                    <div class="mav-sec-ctn">
-                        <header class="mav-sec-header-wrapper">
-                            <div class="mav-sec-header-ctn">
+                <section class="mav-sec--wrp mav-pg-section">
+                    <div class="mav-sec--ctn">
+                        <header class="mav-sec__header--wrp">
+                            <div class="mav-sec__header--ctn">
                                 <div class="mav-sec-title-wrapper">
                                     <div class="mav-sec-title-ctn">
                                         <h2 class="mav-sec-title">Giới thiệu</h2>
@@ -39,13 +41,15 @@
                     </div>
                 </section>
 
+                <div class="mav-divider"></div>
+
                 <!-- Các tính năng nổi bật: Item Grid -->
                 <?php
                     if ( function_exists( 'mavf_items_grid' ) ) : ?>
-                        <section class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <div class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
+                        <section class="mav-sec--wrp mav-pg-section">
+                            <div class="mav-sec--ctn">
+                                <div class="mav-sec__header--wrp">
+                                    <div class="mav-sec__header--ctn">
                                         <div class="mav-sec-title-wrapper">
                                             <div class="mav-sec-title-ctn">
                                                 <h2 class="mav-sec-title">Các tính năng nổi bật</h2>
@@ -69,13 +73,15 @@
                     endif;
                 ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Slider -->
                 <?php if ( function_exists( 'mavf_slider' ) ) : ?>
-                    <section id="mavid-sec-slider" class="mav-sec-wrapper mav-pg-section">
-                        <div class="mav-sec-ctn">
+                    <section id="mavid-sec-slider" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
                             <!-- Header -->
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
                                     <div class="mav-sec-title-wrapper">
                                         <div class="mav-sec-title-ctn">
                                             <h2 class="mav-sec-title">Sliders</h2>
@@ -122,10 +128,10 @@
 
                 <!-- Tính năng: Featured Post -->
                 <?php if ( function_exists( 'mavf_post_feature' ) ) : ?>
-                    <section id="mavid-sec-post-featured" class="mav-sec-wrapper mav-pg-section">
-                        <div class="mav-sec-ctn">
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
+                    <section id="mavid-sec-post-featured" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
                                     <div class="mav-sec-title-wrapper">
                                         <div class="mav-sec-title-ctn">
                                             <h2 class="mav-sec-title">Featured Post</h2>
@@ -163,10 +169,10 @@
 
                 <!-- Tính năng: Post Carousel -->
                 <?php if ( function_exists( 'mavf_carousel' ) ) : ?>
-                    <section id="mavid-sec-post-carousel" class="mav-sec-wrapper mav-pg-section">
-                        <div class="mav-sec-ctn">
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
+                    <section id="mavid-sec-post-carousel" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
                                     <div class="mav-sec-title-wrapper">
                                         <div class="mav-sec-title-ctn">
                                             <h2 class="mav-sec-title">Post Carousel</h2>
@@ -204,11 +210,11 @@
 
                 <!-- Tính năng: Post Grid -->
                 <?php if ( function_exists( 'mavf_post_grid' ) ) : ?>
-                    <section id="mavid-sec-post-grid" class="mav-sec-wrapper mav-pg-section">
-                        <div class="mav-sec-ctn">
+                    <section id="mavid-sec-post-grid" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
                             <!-- Header -->
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
                                     <div class="mav-sec-title-wrapper">
                                         <div class="mav-sec-title-ctn">
                                             <h2 class="mav-sec-title">Post Grid</h2>
@@ -246,11 +252,11 @@
 
                 <!-- Tính năng: Google Map -->
                 <?php if ( function_exists( 'mavf_google_map' ) && !empty( esc_attr( get_option( 'mav_setting_enable_google_map' ) ) ) ) : ?>
-                    <section id="mavid-sec-google-map" class="mav-sec-wrapper mav-pg-section">
-                        <div class="mav-sec-ctn">
+                    <section id="mavid-sec-google-map" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
                             <!-- Header -->
-                            <header class="mav-sec-header-wrapper">
-                                <div class="mav-sec-header-ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
                                     <div class="mav-sec-title-wrapper">
                                         <div class="mav-sec-title-ctn">
                                             <h2 class="mav-sec-title">Google Map</h2>
@@ -281,10 +287,10 @@
                 <?php endif; ?>
 
                 <!-- Tính năng: Lighbox Gallery -->
-                <section id="mavid-sec-lightbox" class="mav-sec-wrapper mav-pg-section">
-                    <div class="mav-sec-ctn">
-                        <header class="mav-sec-header-wrapper">
-                            <div class="mav-sec-header-ctn">
+                <section id="mavid-sec-lightbox" class="mav-sec--wrp mav-pg-section">
+                    <div class="mav-sec--ctn">
+                        <header class="mav-sec__header--wrp">
+                            <div class="mav-sec__header--ctn">
                                 <div class="mav-sec-title-wrapper">
                                     <div class="mav-sec-title-ctn">
                                         <h2 class="mav-sec-title">Lightbox Gallery</h2>
@@ -312,10 +318,10 @@
                 </section>
 
                 <!-- Tính năng: Countdown Timer -->
-                <section id="mavid-sec-countdown" class="mav-sec-wrapper mav-pg-section">
-                    <div class="mav-sec-ctn">
-                        <header class="mav-sec-header-wrapper">
-                            <div class="mav-sec-header-ctn">
+                <section id="mavid-sec-countdown" class="mav-sec--wrp mav-pg-section">
+                    <div class="mav-sec--ctn">
+                        <header class="mav-sec__header--wrp">
+                            <div class="mav-sec__header--ctn">
                                 <div class="mav-sec-title-wrapper">
                                     <div class="mav-sec-title-ctn">
                                         <h2 class="mav-sec-title">Countdown Timer</h2>
@@ -344,11 +350,11 @@
 
                 <!-- Tính năng: Accordion -->
                 <?php if ( function_exists( 'mavf_post_accordion' ) ) : ?>
-                    <section id="mavid-sec-accordion" class="mav-sec-wrapper mav-pg-section mav-sec__wrp">
-                        <div class="mav-sec-ctn mav-sec__ctn">
+                    <section id="mavid-sec-accordion" class="mav-sec--wrp mav-pg-section mav-sec__wrp">
+                        <div class="mav-sec--ctn mav-sec__ctn">
                             <!-- Header -->
-                            <header class="mav-sec-header-wrapper mav-sec__header--wrp">
-                                <div class="mav-sec-header-ctn mav-sec__header--ctn">
+                            <header class="mav-sec__header--wrp mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn mav-sec__header--ctn">
                                     <div class="mav-sec-title-wrapper mav-sec__title--wrp">
                                         <div class="mav-sec-title-ctn mav-sec__title--ctn">
                                             <h2 class="mav-sec-title mav-sec__title">Accordion</h2>
@@ -433,10 +439,10 @@
                 <!-- Tính năng: Tab View -->
                 <?php
                     if (function_exists('mavf_tabbed_posts')): ?>
-                        <section id="mavid-sec-tab-view" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
+                        <section id="mavid-sec-tab-view" class="mav-sec--wrp mav-pg-section">
+                            <div class="mav-sec--ctn">
+                                <header class="mav-sec__header--wrp">
+                                    <div class="mav-sec__header--ctn">
                                         <div class="mav-sec-title-wrapper">
                                             <div class="mav-sec-title-ctn">
                                                 <h2 class="mav-sec-title">Tab View</h2>
@@ -510,10 +516,10 @@
                 <!-- Tính năng: Message Box -->
                 <?php
                     if(function_exists('mavf_message_box')): ?>
-                        <section id="mavid-sec-message-box" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
+                        <section id="mavid-sec-message-box" class="mav-sec--wrp mav-pg-section">
+                            <div class="mav-sec--ctn">
+                                <header class="mav-sec__header--wrp">
+                                    <div class="mav-sec__header--ctn">
                                         <div class="mav-sec-title-wrapper">
                                             <div class="mav-sec-title-ctn">
                                                 <h2 class="mav-sec-title">Message Box</h2>
@@ -543,10 +549,10 @@
                 ?>
 
                 <!-- Tính năng: Javascript Modal Box -->
-                <section id="mavid-sec-modal-box" class="mav-sec-wrapper mav-pg-section">
-                    <div class="mav-sec-ctn">
-                        <header class="mav-sec-header-wrapper">
-                            <div class="mav-sec-header-ctn">
+                <section id="mavid-sec-modal-box" class="mav-sec--wrp mav-pg-section">
+                    <div class="mav-sec--ctn">
+                        <header class="mav-sec__header--wrp">
+                            <div class="mav-sec__header--ctn">
                                 <div class="mav-sec-title-wrapper">
                                     <div class="mav-sec-title-ctn">
                                         <h2 class="mav-sec-title">Javascript Modal Box</h2>
@@ -574,11 +580,11 @@
                 </section>
 
                 <!-- Tính năng: Price Table -->
-                <section id="mavid-sec-price-table" class="mav-sec-wrapper mav-pg-section">
-                    <div class="mav-sec-ctn">
+                <section id="mavid-sec-price-table" class="mav-sec--wrp mav-pg-section">
+                    <div class="mav-sec--ctn">
                         <!-- Header -->
-                        <header class="mav-sec-header-wrapper">
-                            <div class="mav-sec-header-ctn">
+                        <header class="mav-sec__header--wrp">
+                            <div class="mav-sec__header--ctn">
                                 <div class="mav-sec-title-wrapper">
                                     <div class="mav-sec-title-ctn">
                                         <h2 class="mav-sec-title">Price Table</h2>
@@ -643,10 +649,10 @@
                 <!-- Contact Form -->
                 <?php
                     if ( function_exists( 'mavf_contact_form' ) ): ?>
-                        <section id="mavid-sec-contact-form" class="mav-sec-wrapper mav-pg-section">
-                            <div class="mav-sec-ctn">
-                                <header class="mav-sec-header-wrapper">
-                                    <div class="mav-sec-header-ctn">
+                        <section id="mavid-sec-contact-form" class="mav-sec--wrp mav-pg-section">
+                            <div class="mav-sec--ctn">
+                                <header class="mav-sec__header--wrp">
+                                    <div class="mav-sec__header--ctn">
                                         <div class="mav-sec-title-wrapper">
                                             <div class="mav-sec-title-ctn">
                                                 <h2 class="mav-sec-title">Contact Form</h2>
@@ -681,10 +687,10 @@
                 ?>
 
                 <!-- Typography -->
-                <section id="mavid-sec-typography" class="mav-sec-wrapper mav-pg-section">
-                    <div class="mav-sec-ctn">
-                        <header class="mav-sec-header-wrapper">
-                            <div class="mav-sec-header-ctn">
+                <section id="mavid-sec-typography" class="mav-sec--wrp mav-pg-section">
+                    <div class="mav-sec--ctn">
+                        <header class="mav-sec__header--wrp">
+                            <div class="mav-sec__header--ctn">
                                 <div class="mav-sec-title-wrapper">
                                     <div class="mav-sec-title-ctn">
                                         <h2 class="mav-sec-title">Typography</h2>
@@ -817,6 +823,7 @@
                 </section>
             </div>
         </div>
+
     </div>
 </main>
 <!-- Page content ends here -->

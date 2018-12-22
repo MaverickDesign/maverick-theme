@@ -266,11 +266,11 @@
  * Page layouts
  */
 
-.mav-pg__wrp {
+.mav-pg__wrp, .mav-pg--wrp, .mav-page--wrp {
     background: transparent;
 }
 
-.mav-pg-ctn, .mav-pg__ctn
+.mav-pg-ctn, .mav-pg__ctn, .mav-pg--ctn, .mav-page--ctn
 {
     max-width: var(--mav-site--width);
     margin: 0 auto;
@@ -297,12 +297,12 @@
 /**
  * Section Styles
  */
-.mav-sec__wrp
+.mav-sec__wrp, .mav-sec--wrp
 {
     &[data-background-color="off-white"] {
         background: var(--mav-color--off-white);
     }
-    .mav-sec__ctn
+    .mav-sec__ctn, .mav-sec--ctn
     {
         max-width: var(--mav-site--width);
         margin: 0 auto;
@@ -360,14 +360,18 @@
 /**
  * Section intro
  */
-.mav-sec-intro-wrapper, .mav-sec__intro--wrapper, .mav-sec__intro--wrp {
-    .mav-sec-intro-ctn, .mav-sec__intro--ctn {
+.mav-sec-intro-wrapper, .mav-sec__intro--wrapper, .mav-sec__intro--wrp
+{
+
+    .mav-sec-intro-ctn, .mav-sec__intro--ctn
+    {
         padding-top: var(--mav-gutter--lg);
         text-align: center;
         max-width: 60vw;
         margin: 0 auto;
         @extend .mav-text__intro;
-        @media #{$mav-phone} {
+        @media #{$mav-phone}
+        {
             max-width: 90vw;
         }
     }
@@ -377,12 +381,16 @@
  * Section body
  */
 .mav-sec-body-wrapper, .mav-sec__body--wrp {
+
     .mav-sec-body-ctn, .mav-sec__body--ctn {
         padding: var(--mav-gutter--xl) 0;
-        @media #{$mav-phone} {
+
+        @media #{$mav-phone}
+        {
             padding: var(--mav-gutter--lg) 0;
         }
     }
+
 }
 /**
  * Section footer
@@ -398,29 +406,36 @@
  * Buttons Container
  */
 
-.mav-btn-ctn, .mav-btn__ctn {
+.mav-btn-ctn, .mav-btn__ctn, .mav-btn--ctn {
     display: grid;
     grid-gap: var(--mav-gutter);
     justify-content: center;
     justify-items: center;
-    &[data-columns="2"] {
+
+    &[data-columns="2"]
+    {
         grid-template-columns: repeat(2,max-content);
-        button {
+        button
+        {
             min-width: 20vw;
-            @media #{$mav-tablet} {
+            @media #{$mav-tablet}
+            {
                 min-width: 25vw;
             }
-            @media #{$mav-phone} {
+            @media #{$mav-phone}
+            {
                 min-width: 100%;
             }
         }
-        @media #{$mav-phone} {
+        @media #{$mav-phone}
+        {
             grid-template-columns: 1fr;
         }
     }
 }
 
-.mav-divider {
+.mav-divider
+{
     position: relative;
     display: block;
     height: 1px;
