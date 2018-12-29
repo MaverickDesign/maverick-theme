@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> data-maintenance>
 <head>
     <?php get_template_part('/template-parts/mav-header__google-analytics') ?>
 
@@ -15,22 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
 
-    <title>
-        <?php
-            if ( !is_front_page() ) {
-                wp_title('');
-                echo(' - ');
-                bloginfo( 'name' );
-            } else {
-                echo get_bloginfo( 'name' );
-            }
-        ?>
-    </title>
+    <title><?php echo get_bloginfo( 'name' ); ?></title>
 
     <?php wp_head(); ?>
 
     <?php get_template_part( '/template-parts/header/mav-header__modified-styles' ); ?>
 </head>
+
 <body class="mav-page-maintenance">
     <?php if ( empty( get_option( 'mav_setting_maintenance_display_logo' ) ) ) : ?>
         <header id="mavid-page-header">

@@ -18,7 +18,7 @@
     endif;
 ?>
 
-<footer id="mavid-page-footer" class="mav-pg-footer">
+<footer id="mavid-page-footer" class="mav-pg-footer mav-pg__footer">
     <!-- Footer Socials -->
     <?php
         if ( function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
@@ -28,7 +28,7 @@
 
     <!-- Footer Menu -->
     <?php if ( current_theme_supports( 'menus' ) && has_nav_menu( 'secondary_menu' ) ) : ?>
-        <section id="mavid-sec-footer-menu" class="mav-pg-ctn mav-footer-menu-wrapper mav-hide-on-mobile">
+        <section id="mavid-sec-footer-menu" class="mav-pg__ctn mav-footer-menu-wrapper mav-hide-on-mobile">
             <div class="mav-footer-menu-ctn">
                 <nav id="mavid-footer-menu" class="mav-footer-menu">
                     <?php

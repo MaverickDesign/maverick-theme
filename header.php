@@ -38,9 +38,10 @@
     ?>
 
     <?php
-        // Enable Google Tag Manager
+        // Get option - Enable Google Tag Manager
         $mav_egtm = esc_attr( get_option( 'mav_setting_enable_google_tag_manager' ) );
-        // Google Tag Manager ID
+
+        // Get option - Google Tag Manager ID
         $mav_gtm_id = esc_attr( get_option( 'mav_setting_google_tag_manager_id' ) );
 
         if ( ! empty( $mav_egtm ) && ! empty( $mav_gtm_id ) ) : ?>
@@ -54,9 +55,13 @@
     ?>
 
     <?php
-        /* Google AdSense */
+
+        // Get option - Eneable Google AdSense
         $mav_egas = esc_attr( get_option( 'mav_setting_enable_google_adsense' ) );
+        // Get option - Google AdSense ID
         $mav_gas_id = esc_attr( get_option( 'mav_setting_google_adsense_id' ) );
+
+        /* Google AdSense */
         if ( ! empty( $mav_egas ) && ! empty( $mav_gas_id ) ) : ?>
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <script>
@@ -79,10 +84,12 @@
     <meta property="og:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="<?php single_post_title(); ?>"/>
+
     <?php
         $mav_excerpt = has_excerpt() ? get_the_excerpt() : __( '', 'mavericktheme' );
         printf('<meta property="og:description" content="%1$s"/>', $mav_excerpt);
     ?>
+
     <?php if ( ! is_404() && has_post_thumbnail() ) : ?>
         <meta property="og:image" content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" />
     <?php endif; ?>
@@ -90,17 +97,20 @@
     <?php
         $mav_blog_desc = get_bloginfo( 'description' );
         $mav_title = get_bloginfo( 'name' );
+
         if ( ! is_front_page() )
-            {
-                $mav_title = get_the_title().' - '.get_bloginfo( 'name' );
-            }
+        {
+            $mav_title = get_the_title().' - '.get_bloginfo( 'name' );
+        }
         else
+        {
+            if ( ! empty( $mav_blog_desc ) )
             {
-                if ( ! empty( $mav_blog_desc ) ) {
-                    $mav_title = get_bloginfo( 'name' ).' - '.$mav_blog_desc;
-                }
+                $mav_title = get_bloginfo( 'name' ).' - '.$mav_blog_desc;
             }
+        }
     ?>
+
     <title><?php echo $mav_title; ?></title>
 
     <?php
@@ -124,8 +134,12 @@
     ?>
 
     <?php
+        // Get option Enable Facebook App
         $mav_efa  = esc_attr( get_option( 'mav_setting_enable_facebook_app' ) );
+
+        // Get option Facebook App ID
         $mav_faid = esc_attr( get_option( 'mav_setting_facebook_app_id' ) );
+
         if ( ! empty( $mav_efa ) && ! empty( $mav_faid ) ) : ?>
             <!-- Facebook Script -->
             <div id="fb-root"></div>
@@ -152,10 +166,13 @@
                 <div id="mavid-site-logo" class="mav-site-logo-wrapper mav-site__logo--wrp">
                     <a href="<?php  bloginfo('url') ;?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mav-site-logo-ctn mav-site__logo--ctn">
                         <?php
+                            // Get option brand logo
                             $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
+
                             if ( $mav_brand_logo ) {
                                 echo "<img src=\"$mav_brand_logo;\">";
-                            } else {
+                            }
+                            else {
                                 echo '<img src="'.TEMPLATE_URI.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
                             }
                         ?>
@@ -164,6 +181,7 @@
 
                 <div class="mav-header__utilities--wrp">
                     <div class="mav-header__utilities--ctn">
+
                         <!-- Header Social Links -->
                         <?php
                             if( function_exists( 'mavf_social_links' ) && !empty( mavf_check_social_accounts() ) ):
@@ -174,12 +192,16 @@
                                 echo '</div>';
                             endif;
                         ?>
+
                         <!-- Site Search Toggle Button -->
                         <div class="mav-header__search__icon--wrp">
-                            <button class="mav-site-search-icon fas fa-search" title="<?php _e( 'Tìm nội dung','mavericktheme' ); ?>"></button>
+                            <button class="mav-site-search-icon fas fa-search" title="<?php _e( 'Tìm nội dung' , 'mavericktheme' ); ?>">
+                            </button>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </section>
 

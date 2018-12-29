@@ -42,7 +42,7 @@
  */
 let mavToolTips = document.querySelectorAll('[data-tooltip]');
 
-if (mavToolTips.length > 0) {
+if ( mavToolTips.length > 0 ) {
     let mavToolTipElement = document.createElement('span');
     mavToolTipElement.classList.add('mav-tool-tip');
     document.body.appendChild(mavToolTipElement);
@@ -124,33 +124,48 @@ if (mavToolTips.length > 0) {
  * mavTitle: button hover title
  */
 
-function mavf_btn_scroll_to_top(mavEle = 'span', mavClass = 'mav-btn-top', mavTitle = 'Lên đầu trang'){
+function mavf_btn_scroll_to_top(
+    mavEle = 'span',
+    mavClass = 'mav-btn-top',
+    mavTitle = 'Lên đầu trang'
+    )
+{
     let mavElement = document.createElement(mavEle);
+
     mavElement.classList.add(mavClass);
+
     mavElement.setAttribute('title',mavTitle);
+
     const mavContainer = document.querySelector('.mav-bottom-container');
-    if (mavContainer === undefined) {
+
+    if (mavContainer === undefined)
+    {
         return;
     }
+
     mavContainer.appendChild(mavElement);
 
     const mavButtonTop = document.querySelector('.'+mavClass);
 
-    mavButtonTop.addEventListener('click',function(){
+    mavButtonTop.addEventListener( 'click' , function(){
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
     })
 
-    window.addEventListener('scroll',mavf_show_btn_to_top);
+    window.addEventListener( 'scroll' , mavf_show_btn_to_top );
 
-    function mavf_show_btn_to_top(){
-        if (window.pageYOffset > 200) {
+    function mavf_show_btn_to_top()
+    {
+        if ( window.pageYOffset > 200 )
+        {
             mavButtonTop.style.visibility = 'visible';
             mavButtonTop.style.opacity = 1;
             return;
-        } else {
+        }
+        else
+        {
             mavButtonTop.style.opacity = 0;
             mavButtonTop.style.visibility = 'hidden';
             return;
@@ -158,39 +173,50 @@ function mavf_btn_scroll_to_top(mavEle = 'span', mavClass = 'mav-btn-top', mavTi
     }
 }
 
-if (typeof mavf_btn_scroll_to_top === 'function') {
-    mavf_btn_scroll_to_top('span','mav-btn-top','Lên đầu trang');
+if ( typeof mavf_btn_scroll_to_top === 'function' )
+{
+    mavf_btn_scroll_to_top( 'span' , 'mav-btn-top' , 'Lên đầu trang');
 }
 
 /**
  * Go Back Button
  */
-function mavf_go_back_button(mavEle = 'span', mavClass = 'mav-btn-back', mavTitle = 'Trở lại trang trước') {
+function mavf_go_back_button(mavEle = 'span', mavClass = 'mav-btn-back', mavTitle = 'Trở lại trang trước')
+{
     const mavElement = document.createElement(mavEle);
+
     mavElement.classList.add(mavClass);
+
     mavElement.setAttribute('title',mavTitle);
+
     const mavContainer = document.querySelector('.mav-bottom-container');
-    if (mavContainer === undefined) {
+
+    if (mavContainer === undefined)
+    {
         return;
     }
+
     mavContainer.insertBefore(mavElement, mavContainer.childNodes[0]);
 
     const mavButtonBack = document.querySelector('.'+mavClass);
+
     mavButtonBack.addEventListener('click',function(){
         window.history.back();
-    })
+    });
 }
-if (typeof mavf_go_back_button === 'function') {
-    if (window.history.length > 2) {
-        mavf_go_back_button();
-    }
-}
+
+// if (typeof mavf_go_back_button === 'function') {
+//     if (window.history.length > 2) {
+//         mavf_go_back_button();
+//     }
+// }
 
 /**
  * Accordion
  */
 
-function mavf_accordion(e){
+function mavf_accordion(e)
+{
     const mavTrigger = e;
     // Get trigger current state
     const mavCurrentState = mavTrigger.dataset.state;
@@ -381,8 +407,6 @@ function mavf_document_key(){
     });
 };
 
-
-
 // Blog Page List & Card View Toggle
 
 function mavf_blog_page_view_style( mav_args = {
@@ -423,28 +447,34 @@ function mavf_blog_page_view_style( mav_args = {
 
 mavf_blog_page_view_style();
 
-function mavf_card_style( mav_args = {
-    // 'setting_container' : '.mavjs-setting-ctn',
-    'posts_container'   : '.mavjs-posts-container',
-    'card_container'    : '.mavjs-card__content--ctn',
-} ) {
-
+function mavf_card_style(
+    mav_args = {
+        // 'setting_container' : '.mavjs-setting-ctn',
+        'posts_container'   : '.mavjs-posts-container',
+        'card_container'    : '.mavjs-card__content--ctn',
+        }
+    )
+{
     // const mavSettingContainer = document.querySelector(mav_args['setting_container']);
     const mavPostContainer = document.querySelector(mav_args['posts_container']);
 
-    if ( mavPostContainer == undefined ) {
+    if ( mavPostContainer == undefined )
+    {
         return;
     }
+
     const mavView = mavPostContainer.dataset.displayStyle;
 
     // mavPostContainer.dataset.displayStyle = mavView;
     const mavCards = mavPostContainer.querySelectorAll(mav_args['card_container']);
-    for ( const mavCard of mavCards ) {
+
+    for ( const mavCard of mavCards )
+    {
         mavCard.dataset.style = mavView;
     }
 }
 
-// DOM content loaded functions
+/* DOM content loaded functions */
 document.addEventListener('DOMContentLoaded',function(){
     mavf_body_click_events();
     mavf_document_key();

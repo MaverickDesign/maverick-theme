@@ -9,12 +9,12 @@
 <?php get_header(); ?>
 <!-- Page content starts here -->
 
-<main id="mavid-page-main" class="mav-page-wrapper">
+<main id="mavid-page-main" class="mav-pg__wrp">
     <!-- Page Header -->
     <?php get_template_part( 'template-parts/mav-page__header' ); ?>
 
     <!-- Page Content -->
-    <div id="mavid-page-content" class="mav-pg-width">
+    <div id="mavid-page-content" class="mav-pg__width">
         <?php
 
             $mav_show_page_content = false;
@@ -25,8 +25,8 @@
 
             // Display page content
             if ( $mav_show_page_content ) {
-                printf('<div class="mav-pg-ctn mav-post-content-wrapper">');
-                    printf('<div class="mav-post-content-ctn mav-padding-top-xl">');
+                printf('<div class="mav-pg__ctn mav-post__content--wrp">');
+                    printf('<div class="mav-post__content--ctn mav-post__content">');
                         the_post();
                         the_content();
                     echo '</div>';
@@ -35,7 +35,7 @@
 
             if ( function_exists( 'get_field' ) ) {
                 // Custom post type
-                $mav_cpt_field = get_field('mavcf_page_cpt');
+                $mav_cpt_field = get_field( 'mavcf_page_cpt' );
             } else {
                 // Fallback to post
                 $mav_cpt_field = 'post';
@@ -51,7 +51,8 @@
 
             $mav_query = new WP_Query( $mav_args );
 
-            if ( $mav_query->have_posts() ) {
+            if ( $mav_query->have_posts() )
+            {
 
                 printf( '<section id="mavid-post-index" class="mav-post-index-wrapper">' );
 
@@ -65,12 +66,16 @@
                         '<div id="mavid-post-container" class="mav-post-index-ctn mav-grid-col-%1$s" style="grid-gap: var(--mav-gutter);">',
                         $mav_columns
                     );
-                        while ( $mav_query->have_posts() ) {
+
+                        while ( $mav_query->have_posts() )
+                        {
                             $mav_query->the_post();
                             get_template_part( 'template-parts/mav-card', get_post_type() );
                         }
+
                         // Reset post data
                         wp_reset_postdata();
+
                     echo '</div>';
 
                     if ( $mav_query->max_num_pages > 1 ) {
@@ -100,9 +105,6 @@
         ?>
     </div>
 
-    <!-- Page Footer -->
-    <!-- <footer id="mavid-page-footer" class="mav-page-footer mav-page-footer-wrapper">
-    </footer> -->
 </main>
 
 <!-- Page content ends here -->

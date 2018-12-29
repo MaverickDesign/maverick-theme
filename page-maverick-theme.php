@@ -23,15 +23,15 @@
                     <div class="mav-sec--ctn">
                         <header class="mav-sec__header--wrp">
                             <div class="mav-sec__header--ctn">
-                                <div class="mav-sec-title-wrapper">
-                                    <div class="mav-sec-title-ctn">
+                                <div class="mav-sec__title--wrp">
+                                    <div class="mav-sec__title--ctn">
                                         <h2 class="mav-sec-title">Giới thiệu</h2>
                                     </div>
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-post-content-wrapper">
-                            <div class="mav-post-content-ctn mav-post-content">
+                        <div class="mav-post__content--wrp">
+                            <div class="mav-post__content--ctn mav-post__content">
                                 <p><strong>Maverick's WordPress Theme</strong> (gọi tắt là <strong>Maverick Theme</strong>) là một bộ giao diện (Theme) cho <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">WordPress</a> - một trong những Hệ quản trị nội dung (<span class="mav-text__en">Content Management System - <abbr title="Content Management System">CMS</abbr></span>) được sử dụng rất nhiều trên thế giới - hiện nay chiếm khoảng <strong>31%</strong> số website trên thế giới (nguồn: <a href="http://www.wordpress.org" target="_blank" class="mav-link" data-link="external" title="Đến trang wordpress.org">wordpress.org</a>).</p>
                                 <p><span class="mav-theme__name">Maverick Theme</span> được phát triển bởi <strong class="mav-brand__name">Maverick Design</strong> theo các tiêu chuẩn công nghệ mới nhất cho nền tảng Web hiện nay như: <abbr title="Hypertext Markup Language">HTML5</abbr>, <abbr title="Cascading Style Sheet">CSS3</abbr>, <abbr title="ECMAScript 6">ES6</abbr>+ và <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> 7.0+.</p>
                                 <p><span class="mav-theme__name">Maverick Theme</span> tương thích tốt với màn hình máy tính để bàn (<span class="mav-text__en">Desktop Computer</span>), các thiết bị di động như: Điện thoại di động thông minh (<span class="mav-text__en">Smart Phone</span>) và máy tính bảng (<span class="mav-text__en">Tablet</span>) với tiêu chí phát triển "Ưu tiên cho di động" (<span class="mav-text__en">Mobile First</span>).</p>
@@ -44,34 +44,32 @@
                 <div class="mav-divider"></div>
 
                 <!-- Các tính năng nổi bật: Item Grid -->
-                <?php
-                    if ( function_exists( 'mavf_items_grid' ) ) : ?>
-                        <section class="mav-sec--wrp mav-pg-section">
-                            <div class="mav-sec--ctn">
-                                <div class="mav-sec__header--wrp">
-                                    <div class="mav-sec__header--ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Các tính năng nổi bật</h2>
-                                            </div>
+                <?php if ( function_exists( 'mavf_items_grid' ) ) : ?>
+                    <section class="mav-sec__wrp">
+                        <div class="mav-sec--ctn">
+                            <div class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
+                                            <h2 class="mav-sec-title">Các tính năng nổi bật</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <?php
-                                            $mav_args = array(
-                                                'columns'   => 4,
-                                                'items'     => file_get_contents( TEMPLATE_URI.'/mav-grid-array.json' )
-                                            );
-                                            mavf_items_grid( $mav_args );
-                                        ?>
-                                    </div>
+                            </div>
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
+                                    <?php
+                                        $mav_args = array(
+                                            'columns'   => 4,
+                                            'items'     => file_get_contents( TEMPLATE_URI.'/mav-grid-array.json' )
+                                        );
+                                        mavf_items_grid( $mav_args );
+                                    ?>
                                 </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                        </div>
+                    </section>
+                <?php endif; ?>
 
                 <div class="mav-divider"></div>
 
@@ -82,16 +80,16 @@
                             <!-- Header -->
                             <header class="mav-sec__header--wrp">
                                 <div class="mav-sec__header--ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
                                             <h2 class="mav-sec-title">Sliders</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
                             <!-- Body -->
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn">
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
                                     <div class="mav-margin-bottom-xl">
                                         <p class="mav-sub-heading-1 mav-margin-bottom">Slider Type 1</p>
                                         <?php
@@ -126,21 +124,23 @@
                     </section>
                 <?php endif; ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Featured Post -->
                 <?php if ( function_exists( 'mavf_post_feature' ) ) : ?>
                     <section id="mavid-sec-post-featured" class="mav-sec--wrp mav-pg-section">
                         <div class="mav-sec--ctn">
                             <header class="mav-sec__header--wrp">
                                 <div class="mav-sec__header--ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
                                             <h2 class="mav-sec-title">Featured Post</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn">
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
                                     <?php
                                     $mav_query_args = array(
                                         'post_type'     => 'page',
@@ -167,21 +167,23 @@
                     </section>
                 <?php endif; ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Post Carousel -->
                 <?php if ( function_exists( 'mavf_carousel' ) ) : ?>
                     <section id="mavid-sec-post-carousel" class="mav-sec--wrp mav-pg-section">
                         <div class="mav-sec--ctn">
                             <header class="mav-sec__header--wrp">
                                 <div class="mav-sec__header--ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
                                             <h2 class="mav-sec-title">Post Carousel</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn">
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
                                     <?php
                                         $mav_args = array(
                                             'query_args'    => array(
@@ -208,6 +210,8 @@
                     </section>
                 <?php endif; ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Post Grid -->
                 <?php if ( function_exists( 'mavf_post_grid' ) ) : ?>
                     <section id="mavid-sec-post-grid" class="mav-sec--wrp mav-pg-section">
@@ -215,16 +219,16 @@
                             <!-- Header -->
                             <header class="mav-sec__header--wrp">
                                 <div class="mav-sec__header--ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
                                             <h2 class="mav-sec-title">Post Grid</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
                             <!-- Body -->
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn">
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
                                     <?php
                                         $mav_args = array(
                                             'post_type'         => 'post',
@@ -250,6 +254,8 @@
                     </section>
                 <?php endif; ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Google Map -->
                 <?php if ( function_exists( 'mavf_google_map' ) && !empty( esc_attr( get_option( 'mav_setting_enable_google_map' ) ) ) ) : ?>
                     <section id="mavid-sec-google-map" class="mav-sec--wrp mav-pg-section">
@@ -257,16 +263,16 @@
                             <!-- Header -->
                             <header class="mav-sec__header--wrp">
                                 <div class="mav-sec__header--ctn">
-                                    <div class="mav-sec-title-wrapper">
-                                        <div class="mav-sec-title-ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
                                             <h2 class="mav-sec-title">Google Map</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
                             <!-- Body -->
-                            <div class="mav-sec-body-wrapper">
-                                <div class="mav-sec-body-ctn" data-full-width>
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn" data-full-width>
                                     <?php
                                         mavf_google_map( array( 'height' => '50vh' ) );
                                     ?>
@@ -286,20 +292,22 @@
                     </section>
                 <?php endif; ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Lighbox Gallery -->
                 <section id="mavid-sec-lightbox" class="mav-sec--wrp mav-pg-section">
                     <div class="mav-sec--ctn">
                         <header class="mav-sec__header--wrp">
                             <div class="mav-sec__header--ctn">
-                                <div class="mav-sec-title-wrapper">
-                                    <div class="mav-sec-title-ctn">
+                                <div class="mav-sec__title--wrp">
+                                    <div class="mav-sec__title--ctn">
                                         <h2 class="mav-sec-title">Lightbox Gallery</h2>
                                     </div>
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper">
-                            <div class="mav-sec-body-ctn">
+                        <div class="mav-sec__body--wrp">
+                            <div class="mav-sec__body--ctn">
                                 <?php
                                     echo do_shortcode('[gallery link="file" columns="4" size="medium" ids="231,232,233,234,235,236"]');
                                 ?>
@@ -317,20 +325,22 @@
                     </div>
                 </section>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Countdown Timer -->
                 <section id="mavid-sec-countdown" class="mav-sec--wrp mav-pg-section">
                     <div class="mav-sec--ctn">
                         <header class="mav-sec__header--wrp">
                             <div class="mav-sec__header--ctn">
-                                <div class="mav-sec-title-wrapper">
-                                    <div class="mav-sec-title-ctn">
+                                <div class="mav-sec__title--wrp">
+                                    <div class="mav-sec__title--ctn">
                                         <h2 class="mav-sec-title">Countdown Timer</h2>
                                     </div>
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper">
-                            <div class="mav-sec-body-ctn">
+                        <div class="mav-sec__body--wrp">
+                            <div class="mav-sec__body--ctn">
                                 <div class="mav-countdown-wrapper">
                                     <div class="mavjs-countdown mav-countdown-ctn" data-expired="01/16/2019"></div>
                                 </div>
@@ -348,6 +358,8 @@
                     </div>
                 </section>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Accordion -->
                 <?php if ( function_exists( 'mavf_post_accordion' ) ) : ?>
                     <section id="mavid-sec-accordion" class="mav-sec--wrp mav-pg-section mav-sec__wrp">
@@ -355,16 +367,16 @@
                             <!-- Header -->
                             <header class="mav-sec__header--wrp mav-sec__header--wrp">
                                 <div class="mav-sec__header--ctn mav-sec__header--ctn">
-                                    <div class="mav-sec-title-wrapper mav-sec__title--wrp">
-                                        <div class="mav-sec-title-ctn mav-sec__title--ctn">
+                                    <div class="mav-sec__title--wrp mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn mav-sec__title--ctn">
                                             <h2 class="mav-sec-title mav-sec__title">Accordion</h2>
                                         </div>
                                     </div>
                                 </div>
                             </header>
                             <!-- Body -->
-                            <div class="mav-sec-body-wrapper mav-sec__body--wrp">
-                                <div class="mav-sec-body-ctn">
+                            <div class="mav-sec__body--wrp mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
                                     <?php
                                             $mav_args = array(
                                                 'query_args'        => array(
@@ -436,132 +448,134 @@
                     </section>
                 <?php endif; ?>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Tab View -->
-                <?php
-                    if (function_exists('mavf_tabbed_posts')): ?>
-                        <section id="mavid-sec-tab-view" class="mav-sec--wrp mav-pg-section">
-                            <div class="mav-sec--ctn">
-                                <header class="mav-sec__header--wrp">
-                                    <div class="mav-sec__header--ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Tab View</h2>
-                                            </div>
+                <?php if (function_exists('mavf_tabbed_posts')): ?>
+                    <section id="mavid-sec-tab-view" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
+                                            <h2 class="mav-sec-title">Tab View</h2>
                                         </div>
                                     </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <div class="mav-sub-heading-1 mav-margin-bottom">Horizontal</div>
-                                        <?php
-                                            $mav_args = array(
-                                                'query_args'    => array(
-                                                    'post_type'             => 'post',
-                                                    'posts_per_page'        => 5,
-                                                    'post__not_in'          => get_option("sticky_posts"),
-                                                    'ignore_sticky_posts'   => true,
-                                                    'category__in'          => array(5)
-                                                ),
-                                            );
-                                            mavf_tabbed_posts($mav_args);
-                                        ?>
-                                    </div>
-                                    <div class="mav-sec-body-ctn">
-                                        <div class="mav-sub-heading-1 mav-margin-bottom">Vertical</div>
-                                        <?php
-                                            $mav_args = array(
-                                                'query_args'    => array(
-                                                    'post_type'             => 'post',
-                                                    'posts_per_page'        => 5,
-                                                    'post__not_in'          => get_option("sticky_posts"),
-                                                    'ignore_sticky_posts'   => true,
-                                                    'category__in'          => array(5)
-                                                ),
-                                                'vertical'      => true
-                                            );
-                                            mavf_tabbed_posts($mav_args);
-                                        ?>
-                                    </div>
-                                    <div class="mav-sec-body-ctn">
-                                        <div class="mav-sub-heading-1 mav-margin-bottom">Plain</div>
-                                        <?php
-                                            $mav_args = array(
-                                                'query_args'    => array(
-                                                    'post_type'             => 'post',
-                                                    'posts_per_page'        => 5,
-                                                    'post__not_in'          => get_option("sticky_posts"),
-                                                    'ignore_sticky_posts'   => true,
-                                                    'category__in'          => array(5)
-                                                ),
-                                                'plain'      => true
-                                            );
-                                            mavf_tabbed_posts($mav_args);
-                                        ?>
-                                    </div>
                                 </div>
-                                <footer class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
-                                        <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
-                                            }
-                                        ?>
-                                    </div>
-                                </footer>
+                            </header>
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
+                                    <div class="mav-sub-heading-1 mav-margin-bottom">Horizontal</div>
+                                    <?php
+                                        $mav_args = array(
+                                            'query_args'    => array(
+                                                'post_type'             => 'post',
+                                                'posts_per_page'        => 5,
+                                                'post__not_in'          => get_option("sticky_posts"),
+                                                'ignore_sticky_posts'   => true,
+                                                'category__in'          => array(5)
+                                            ),
+                                        );
+                                        mavf_tabbed_posts($mav_args);
+                                    ?>
+                                </div>
+                                <div class="mav-sec__body--ctn">
+                                    <div class="mav-sub-heading-1 mav-margin-bottom">Vertical</div>
+                                    <?php
+                                        $mav_args = array(
+                                            'query_args'    => array(
+                                                'post_type'             => 'post',
+                                                'posts_per_page'        => 5,
+                                                'post__not_in'          => get_option("sticky_posts"),
+                                                'ignore_sticky_posts'   => true,
+                                                'category__in'          => array(5)
+                                            ),
+                                            'vertical'      => true
+                                        );
+                                        mavf_tabbed_posts($mav_args);
+                                    ?>
+                                </div>
+                                <div class="mav-sec__body--ctn">
+                                    <div class="mav-sub-heading-1 mav-margin-bottom">Plain</div>
+                                    <?php
+                                        $mav_args = array(
+                                            'query_args'    => array(
+                                                'post_type'             => 'post',
+                                                'posts_per_page'        => 5,
+                                                'post__not_in'          => get_option("sticky_posts"),
+                                                'ignore_sticky_posts'   => true,
+                                                'category__in'          => array(5)
+                                            ),
+                                            'plain'      => true
+                                        );
+                                        mavf_tabbed_posts($mav_args);
+                                    ?>
+                                </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <footer class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
+                                        }
+                                    ?>
+                                </div>
+                            </footer>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <div class="mav-divider"></div>
 
                 <!-- Tính năng: Message Box -->
-                <?php
-                    if(function_exists('mavf_message_box')): ?>
-                        <section id="mavid-sec-message-box" class="mav-sec--wrp mav-pg-section">
-                            <div class="mav-sec--ctn">
-                                <header class="mav-sec__header--wrp">
-                                    <div class="mav-sec__header--ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Message Box</h2>
-                                            </div>
+                <?php if ( function_exists( 'mavf_message_box' ) ) : ?>
+                    <section id="mavid-sec-message-box" class="mav-sec--wrp mav-pg-section">
+                        <div class="mav-sec--ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
+                                            <h2 class="mav-sec-title">Message Box</h2>
                                         </div>
                                     </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <?php
-                                            mavf_message_box( __( 'Thông báo', 'mavericktheme' ) );
-                                        ?>
-                                    </div>
                                 </div>
-                                <footer class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
-                                        <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
-                                            }
-                                        ?>
-                                    </div>
-                                </footer>
+                            </header>
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
+                                    <?php
+                                        mavf_message_box( __( 'Thông báo', 'mavericktheme' ) );
+                                    ?>
+                                </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <footer class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
+                                        }
+                                    ?>
+                                </div>
+                            </footer>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <div class="mav-divider"></div>
 
                 <!-- Tính năng: Javascript Modal Box -->
                 <section id="mavid-sec-modal-box" class="mav-sec--wrp mav-pg-section">
                     <div class="mav-sec--ctn">
                         <header class="mav-sec__header--wrp">
                             <div class="mav-sec__header--ctn">
-                                <div class="mav-sec-title-wrapper">
-                                    <div class="mav-sec-title-ctn">
+                                <div class="mav-sec__title--wrp">
+                                    <div class="mav-sec__title--ctn">
                                         <h2 class="mav-sec-title">Javascript Modal Box</h2>
                                     </div>
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper">
-                            <div class="mav-sec-body-ctn">
+                        <div class="mav-sec__body--wrp">
+                            <div class="mav-sec__body--ctn">
                                 <div class="mav-flex-center-all">
                                     <button class="mav-btn-cta mav-padding" onclick="if( typeof mavf_create_modal_box === 'function' ){ typeof mavf_create_modal_box() } else { console.log('Modal function not found.') }"><?php _e( 'Nhấn để mở Modal Box' , 'mavericktheme' );?></button>
                                 </div>
@@ -579,22 +593,24 @@
                     </div>
                 </section>
 
+                <div class="mav-divider"></div>
+
                 <!-- Tính năng: Price Table -->
                 <section id="mavid-sec-price-table" class="mav-sec--wrp mav-pg-section">
                     <div class="mav-sec--ctn">
                         <!-- Header -->
                         <header class="mav-sec__header--wrp">
                             <div class="mav-sec__header--ctn">
-                                <div class="mav-sec-title-wrapper">
-                                    <div class="mav-sec-title-ctn">
+                                <div class="mav-sec__title--wrp">
+                                    <div class="mav-sec__title--ctn">
                                         <h2 class="mav-sec-title">Price Table</h2>
                                     </div>
                                 </div>
                             </div>
                         </header>
                         <!-- Body -->
-                        <div class="mav-sec-body-wrapper">
-                            <div class="mav-sec-body-ctn">
+                        <div class="mav-sec__body--wrp">
+                            <div class="mav-sec__body--ctn">
                                 <div class="mav-price-table-wrapper">
                                     <div class="mav-price-table-ctn">
                                         <ul class="mav-price-table" data-size="legend">
@@ -646,62 +662,65 @@
                     </div>
                 </section>
 
+                <div class="mav-divider"></div>
+
                 <!-- Contact Form -->
-                <?php
-                    if ( function_exists( 'mavf_contact_form' ) ): ?>
-                        <section id="mavid-sec-contact-form" class="mav-sec--wrp mav-pg-section">
-                            <div class="mav-sec--ctn">
-                                <header class="mav-sec__header--wrp">
-                                    <div class="mav-sec__header--ctn">
-                                        <div class="mav-sec-title-wrapper">
-                                            <div class="mav-sec-title-ctn">
-                                                <h2 class="mav-sec-title">Contact Form</h2>
-                                            </div>
+                <?php if ( function_exists( 'mavf_contact_form' ) ): ?>
+                    <section id="mavid-sec-contact-form" class="mav-sec--wrp">
+                        <div class="mav-sec--ctn">
+                            <header class="mav-sec__header--wrp">
+                                <div class="mav-sec__header--ctn">
+                                    <div class="mav-sec__title--wrp">
+                                        <div class="mav-sec__title--ctn">
+                                            <h2 class="mav-sec__title">Contact Form</h2>
                                         </div>
                                     </div>
-                                </header>
-                                <div class="mav-sec-body-wrapper">
-                                    <div class="mav-sec-body-ctn">
-                                        <?php
-                                            $mav_form_args = array(
-                                                'fields'        => array( 'name', 'email', 'phone', 'address', 'dob', 'message' ),
-                                                'form_title'    => __( 'Gửi thông tin liên hệ tới '.get_bloginfo( 'name' ) , 'mavericktheme' ),
-                                                'form_intro'    => __( 'Liên lạc với '.get_bloginfo( 'name' ).' qua email.' , 'mavericktheme' )
-                                            );
-                                            mavf_contact_form( $mav_form_args );
-                                        ?>
-                                    </div>
                                 </div>
-                                <div class="mav-sec-footer-wrapper">
-                                    <div class="mav-sec-footer-ctn">
-                                        <?php
-                                            if ( function_exists( 'mavf_button' ) ) {
-                                                mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
-                                            }
-                                        ?>
-                                    </div>
+                            </header>
+                            <div class="mav-sec__body--wrp">
+                                <div class="mav-sec__body--ctn">
+                                    <?php
+                                        $mav_form_args = array(
+                                            'fields'        => array( 'name', 'email', 'phone', 'address', 'dob', 'message' ),
+                                            'form_title'    => __( 'Gửi thông tin liên hệ tới '.get_bloginfo( 'name' ) , 'mavericktheme' ),
+                                            'form_intro'    => __( 'Liên lạc với '.get_bloginfo( 'name' ).' qua email.' , 'mavericktheme' )
+                                        );
+                                        mavf_contact_form( $mav_form_args );
+                                    ?>
                                 </div>
                             </div>
-                        </section> <?php
-                    endif;
-                ?>
+                            <div class="mav-sec-footer-wrapper">
+                                <div class="mav-sec-footer-ctn">
+                                    <?php
+                                        if ( function_exists( 'mavf_button' ) ) {
+                                            mavf_button( 'Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg' );
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <div class="mav-divider"></div>
 
                 <!-- Typography -->
-                <section id="mavid-sec-typography" class="mav-sec--wrp mav-pg-section">
+                <section id="mavid-sec-typography" class="mav-sec--wrp">
                     <div class="mav-sec--ctn">
                         <header class="mav-sec__header--wrp">
                             <div class="mav-sec__header--ctn">
-                                <div class="mav-sec-title-wrapper">
-                                    <div class="mav-sec-title-ctn">
+                                <div class="mav-sec__title--wrp">
+                                    <div class="mav-sec__title--ctn">
                                         <h2 class="mav-sec-title">Typography</h2>
                                     </div>
                                 </div>
                             </div>
                         </header>
-                        <div class="mav-sec-body-wrapper mav-post-content-wrapper">
-                            <div class="mav-sec-body-ctn mav-post-content-ctn">
+
+                        <div class="mav-sec__body--wrp mav-post__content--wrp">
+                            <div class="mav-sec__body--ctn mav-post__content--ctn">
                                 <!-- Headings -->
-                                <section>
+                                <section class="mav-post__content">
                                     <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Headings</h2>
                                     <ul class="mav-non-list">
                                         <li class="mav-h1 mav-padding-top-bottom"><span>H1</span> - <span>Heading 1</span></li>
@@ -714,7 +733,7 @@
                                 </section>
 
                                 <!-- Sub Headings -->
-                                <section class="mav-post-content">
+                                <section class="mav-post__content">
                                     <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Sub Headings</h2>
                                     <ul class="mav-non-list">
                                         <li class="mav-sub-heading-1 mav-padding-top-bottom">Sub Heading - Level 1</l>
@@ -724,7 +743,7 @@
                                 </section>
 
                                 <!-- Fonts Sizes -->
-                                <section class="mav-post-content">
+                                <section class="mav-post__content">
                                     <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">Font Sizes</h2>
                                     <ul class="mav-non-list mav-sec-typography-font-sizes">
                                         <li>
@@ -751,9 +770,9 @@
                                 </section>
 
                                 <!-- List Items -->
-                                <section class="mav-post-content">
-                                    <h2 class="mav-sub-heading-1 mav-margin-bottom-lg">List Items</h2>
-                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon data-state="open">Unorder List</h3>
+                                <section class="mav-post__content">
+                                    <h2 class="mav-sub-heading-1">List Items</h2>
+                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger" data-trigger-icon data-state="open">Unorder List</h3>
                                     <ul class="mav-accordion-ctn-wrapper mav-margin-bottom">
                                         <li>List item 1</li>
                                         <li>List item 2</li>
@@ -780,8 +799,8 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger mav-margin-bottom" data-trigger-icon data-state="open">Order List</h3>
-                                    <ol class="mav-accordion-ctn-wrapper mav-margin-bottom">
+                                    <h3 class="mav-sub-heading-2 mav-accordion-trigger" data-trigger-icon data-state="open">Order List</h3>
+                                    <ol class="mav-accordion-ctn-wrapper">
                                         <li>List item 1</li>
                                         <li>List item 2</li>
                                         <li>
@@ -810,10 +829,12 @@
                                 </section>
                             </div>
                         </div>
-                        <footer class="mav-sec-footer-wrapper">
-                            <div class="mav-sec-footer-ctn">
+
+                        <footer class="mav-sec__footer--wrp">
+                            <div class="mav-sec__footer--ctn">
                                 <?php
-                                    if ( function_exists( 'mavf_button' ) ) {
+                                    if ( function_exists( 'mavf_button' ) )
+                                    {
                                         mavf_button('Xem hướng dẫn sử dụng', '#' , 'mav-btn-primary-lg');
                                     }
                                 ?>
@@ -825,6 +846,7 @@
         </div>
 
     </div>
+
 </main>
 <!-- Page content ends here -->
 

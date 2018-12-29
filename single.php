@@ -45,16 +45,16 @@
         $categories = get_the_category();
 
         if ( function_exists( 'mavf_carousel' ) && ! empty( $categories ) && $categories[0]->count > 2 ) : ?>
-            <section id="mavid-sec-related-posts" class="mav-sec-wrapper">
-                <div class="mav-sec-ctn">
+            <section id="mavid-sec-related-posts" class="mav-sec--wrp">
+                <div class="mav-sec--ctn">
 
                     <!-- Header -->
-                    <header class="mav-sec-header-wrapper">
-                        <div class="mav-sec-header-ctn">
+                    <header class="mav-sec__header--wrp">
+                        <div class="mav-sec__header--ctn">
                             <!-- Title wrapper -->
-                            <div class="mav-sec-title-wrapper">
-                                <div class="mav-sec-title-ctn">
-                                    <h3 class="mav-sec-title">
+                            <div class="mav-sec__title--wrp">
+                                <div class="mav-sec__title--ctn">
+                                    <h3 class="mav-sec__title">
                                         <?php
                                             if ( ! empty( $categories ) ) {
                                                 printf(
@@ -73,8 +73,8 @@
                     </header>
 
                     <!-- Body -->
-                    <div class="mav-sec-body-wrapper">
-                        <div class="mav-sec-body-ctn">
+                    <div class="mav-sec__body--wrp">
+                        <div class="mav-sec__body--ctn">
                             <?php
                                 // Check if total post is greater than number of post to display
                                 $mav_number_of_posts_display = ($categories[0]->count > 4) ? 4 : $categories[0]->count - 1;
@@ -91,11 +91,11 @@
                     </div>
 
                     <!-- Footer -->
-                    <footer class="mav-sec-footer-wrapper">
-                        <div class="mav-sec-footer-ctn">
+                    <footer class="mav-sec__footer--wrp">
+                        <div class="mav-sec__footer--ctn">
                             <?php
                                 printf(
-                                    '<button class="mav-btn-primary-lg"><a href="%1$s" title="%3$s %2$s">%4$s</a></button>',
+                                    '<button class="mav-btn__primary--lg"><a href="%1$s" title="%3$s %2$s">%4$s</a></button>',
                                     esc_url( get_category_link( $categories[0]->term_id ) ),
                                     esc_html( $categories[0]->name ),
                                     __( 'Xem tất cả bài trong chuyên mục', 'mavericktheme' ),
