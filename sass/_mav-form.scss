@@ -1,15 +1,17 @@
 form {
     display: flex;
+
     label {
         cursor: pointer;
     }
-    input {
+
+    input, select {
         border: none;
-        // border-color: var(--mav-color--border);
         padding: var(--mav-gutter--sm);
         color: var(--mav-color__text--primary);
         font-size: inherit;
     }
+
     textarea {
         resize: none;
         border-color: var(--mav-color--border);
@@ -27,7 +29,7 @@ form {
  * Site search form
  */
 
-.mav-site-search-wrapper {
+.mav-site-search-wrapper, .mav-site__search--wrp {
     height: auto;
     max-height: 0;
     overflow: hidden;
@@ -35,7 +37,7 @@ form {
     @extend %mav-transition;
 }
 
-.mav-site-search-ctn {
+.mav-site-search-ctn, .mav-site__search--ctn {
     padding: var(--mav-gutter);
     display: flex;
     justify-content: center;
