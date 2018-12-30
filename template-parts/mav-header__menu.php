@@ -4,7 +4,7 @@
  */
 
 if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
-    <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile">
+    <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile mav-hide__on--mobile">
 
         <?php
             $mav_sticky_logo = esc_attr( get_option( 'mav_setting_sticky_logo' ) );

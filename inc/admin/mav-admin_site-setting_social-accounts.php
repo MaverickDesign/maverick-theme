@@ -21,6 +21,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_facebook'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_facebook',
     'Facebook',
@@ -42,6 +43,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_google_plus'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_google_plus',
     'Google+',
@@ -63,6 +65,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_twitter'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_twitter',
     'Twitter',
@@ -85,6 +88,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_youtube'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_youtube',
     'Youtube',
@@ -107,6 +111,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_linkedin'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_linkedin',
     'Linkedin',
@@ -129,6 +134,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_flickr'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_flickr',
     'Flickr',
@@ -151,6 +157,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_social_account_instagram'
 );
+
 add_settings_field(
     'mavid_site_setting_social_account_instagram',
     'Instagram',

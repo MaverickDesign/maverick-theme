@@ -4,7 +4,7 @@
     overflow-y: auto;
 }
 
-.mav-accordion-ctn {
+.mav-accordion-ctn, .mav-accordion__ctn {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12,48 +12,58 @@
     margin: var(--mav-gutter) 0;
 }
 
-.mav-accordion-trigger {
+.mav-accordion-trigger, .mav-accordion__trigger {
     position: relative;
     display: flex;
     align-items: center;
-    cursor: pointer;
     padding: var(--mav-gutter--sm) 0;
+    cursor: pointer;
     @extend %mav-transition;
+
     &:hover {
         background: rgba(black, 0.025);
         padding-left: var(--mav-gutter--sm);
     }
+
     &:before {
         @extend %mav-transition;
         @extend %mav-font-awesome-solid;
     }
+
     &[data-trigger-icon] {
+
         &:before {
             margin-right: var(--mav-gutter--sm);
             content: '\f078';
             transform: rotate(-90deg);
         }
     }
+
     &[data-trigger-icon="2"] {
+
         &:before {
             content: '\f067';
         }
     }
 
     &[data-state="close"] {
+
         + .mav-accordion-ctn-wrapper {
             max-height: 0vh;
         }
     }
 
     &[data-state="open"] {
+
         &:before {
             transform: rotate(0deg);
         }
-        + .mav-accordion-ctn-wrapper {
+
+        + .mav-accordion-ctn-wrapper, +.mav-accordion__ctn--wrp {
             margin-top: var(--mav-gutter);
             max-height: 100vh;
-            .mav-accordion-ctn {
+
+            .mav-accordion-ctn, .mav-accordion__ctn {
                 padding: 0;
             }
         }
@@ -68,6 +78,7 @@
         padding: var(--mav-gutter--sm);
         background: white;
         @extend %mav-transition;
+
         &:before {
             content: '\f128';
             display: inline-flex;
@@ -80,6 +91,7 @@
             @include text-contrast($mav-color--primary);
             transform: rotate(0deg);
         }
+
         &[data-state="open"] {
             padding-left: var(--mav-gutter);
             &:before {
@@ -87,6 +99,7 @@
                 background: var(--mav-color--accent);
             }
         }
+
         + .mav-accordion-ctn-wrapper {
             background: white;
             border: 1px solid var(--mav-color--border);
@@ -97,11 +110,13 @@
             }
         }
     }
+
     .mav-btn-close {
         position: absolute;
         right: 0;
         color: var(--mav-color__text--secondary);
         transform: translateX(-100%);
+
         &:hover {
             color: var(--mav-color__text--primary);
         }

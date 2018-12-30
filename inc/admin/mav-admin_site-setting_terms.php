@@ -41,6 +41,7 @@ function mavf_site_setting_enable_terms()
 register_setting(
     'mavog_site_setting', 'mav_setting_terms_page_term'
 );
+
 add_settings_field(
     'mavid_site_setting_page_term',
     __( 'Trang Điều Khoản', 'mavericktheme' ),
@@ -63,6 +64,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_terms_page_condition'
 );
+
 add_settings_field(
     'mavid_site_setting_page_condition',
     __( 'Trang Điều Kiện', 'mavericktheme' ),
@@ -85,6 +87,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_terms_page_policy'
 );
+
 add_settings_field(
     'mavid_site_setting_page_policy',
     __( 'Trang Chính Sách', 'mavericktheme' ),

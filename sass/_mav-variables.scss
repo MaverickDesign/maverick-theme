@@ -61,7 +61,6 @@ $mav-font__weight--black  : 900;
 
 // $maverick: rgb(179,23,5);
 $maverick: rgb(194,47,35);
-// $camnangluat: rgb(91,144,63);
 
 // THEME COLORS
 
@@ -132,6 +131,7 @@ $mav-desktop:   "only screen and (min-width: 1024px)";
 
 $mav-site-width: 1680px;
 $mav-site--width: 1680px;
+$mav-site__width: 1680px;
 
 $mav-gutter: 20px;
 
@@ -187,10 +187,10 @@ $mav-color--background: #fafafa;
 
     --mav-gutter       : #{$mav-gutter};
 
-    --mav-gutter-xl    : calc(var(--mav-gutter) * 4);
-    --mav-gutter-lg    : calc(var(--mav-gutter) * 2);
-    --mav-gutter-sm    : calc(var(--mav-gutter) / 2);
-    --mav-gutter-xs    : calc(var(--mav-gutter) / 4);
+    // --mav-gutter-xl    : calc(var(--mav-gutter) * 4);
+    // --mav-gutter-lg    : calc(var(--mav-gutter) * 2);
+    // --mav-gutter-sm    : calc(var(--mav-gutter) / 2);
+    // --mav-gutter-xs    : calc(var(--mav-gutter) / 4);
 
     --mav-gutter--xl    : calc(var(--mav-gutter) * 4);
     --mav-gutter--lg    : calc(var(--mav-gutter) * 2);
@@ -207,16 +207,10 @@ $mav-color--background: #fafafa;
     // ------------
 
     // Primary
-    // --mav-color-primary     : #{$mav-color-primary};
     --mav-color--primary    : #{$mav-color--primary};
 
     //  Accent
-    // --mav-color-accent      : #{$mav-color-accent};
     --mav-color--accent     : #{$mav-color--accent};
-
-    // --mav-color-black       : #464646;
-    // --mav-color-off-white   : #fafafa;
-    // --mav-color-highlight   : #{$mav-color-highlight};
 
     --mav-color--black       : #464646;
     --mav-color--off-white   : #fafafa;
@@ -261,24 +255,17 @@ $mav-color--background: #fafafa;
     --mav-font-size: 18px;
     --mav-font--size: 18px;
     --mav-font__size: 18px;
-    // @media #{$mav-phone} {
-    //     --mav-font-size: 18px;
-    // }
 
-    --mav-font-size-xl: 1.4rem;
-    --mav-font-size-lg: 1.2rem;
-    --mav-font-size-nm: initial;
-    --mav-font-size-sm: 0.8rem;
-    --mav-font-size-xs: 0.6rem;
+    // --mav-font-size-xl: 1.4rem;
+    // --mav-font-size-lg: 1.2rem;
+    // --mav-font-size-nm: initial;
+    // --mav-font-size-sm: 0.8rem;
+    // --mav-font-size-xs: 0.6rem;
 
-    // --mav-font__size--xl: 1.4rem;
     --mav-font__size--xl: x-large;
-    // --mav-font__size--lg: 1.2rem;
     --mav-font__size--lg: large;
     --mav-font__size--nm: initial;
-    // --mav-font__size--sm: 0.9rem;
     --mav-font__size--sm: small;
-    // --mav-font__size--xs: 0.7rem;
     --mav-font__size--xs: x-small;
 
     --mav-font-size-subtitle-1: 16px;
@@ -324,10 +311,12 @@ $mav-color--background: #fafafa;
 
 %mav-transition {
     transition: all .3s ease;
-    &--fast {
+
+    &--fast, &__fast {
         transition: all .15s ease;
     }
-    &--slow {
+
+    &--slow, &__slow {
         transition: all .6s ease;
     }
 }

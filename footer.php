@@ -28,8 +28,9 @@
 
     <!-- Footer Menu -->
     <?php if ( current_theme_supports( 'menus' ) && has_nav_menu( 'secondary_menu' ) ) : ?>
-        <section id="mavid-sec-footer-menu" class="mav-pg__ctn mav-footer-menu-wrapper mav-hide-on-mobile">
-            <div class="mav-footer-menu-ctn">
+        <section id="mavid-sec-footer-menu" class="mav-pg__ctn mav-footer__menu--wrp mav-hide__on--mobile">
+            <div class="mav-footer__menu--ctn">
+
                 <nav id="mavid-footer-menu" class="mav-footer-menu">
                     <?php
                     /**

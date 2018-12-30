@@ -17,7 +17,6 @@ function mavf_uni_slider(
     const mavAllSliders = document.querySelectorAll(`.${mavArgs['mavSliderClass']}`);
 
     if ( mavAllSliders.length == 0 ) {
-        console.log('No Uni Slider found.');
         return;
     }
 
@@ -71,7 +70,8 @@ function mavf_uni_slider(
          * Get slide item by number
          * @param {int} mavSlideNumber
          */
-        function mavf_get_slide(mavSlideNumber) {
+        function mavf_get_slide(mavSlideNumber)
+        {
             return mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-slide-number="${mavSlideNumber}"]`);
         }
 
@@ -79,7 +79,8 @@ function mavf_uni_slider(
          * Update slider nav buttons slide number attribute
          * @param {int} mavNewSlideNumber
          */
-        function mavf_update_nav_slide_number(mavNewSlideNumber) {
+        function mavf_update_nav_slide_number(mavNewSlideNumber)
+        {
             mavButtonNext.dataset.slideNumber = mavNewSlideNumber;
             mavButtonPrev.dataset.slideNumber = mavNewSlideNumber;
         }
@@ -87,7 +88,8 @@ function mavf_uni_slider(
         /**
          * Get active slide
          */
-        function mavf_get_active_slide() {
+        function mavf_get_active_slide()
+        {
             const mavCurrentActiveSlide = mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-active-slide]`);
             if (mavCurrentActiveSlide) {
                 return mavCurrentActiveSlide;
@@ -95,7 +97,8 @@ function mavf_uni_slider(
         }
 
         // Get active slide number
-        function mavf_get_active_slide_number() {
+        function mavf_get_active_slide_number()
+        {
             const mavCurrentActiveSlide = mavSlidesContainer.querySelector(`${mavArgs['mavSliderClassSlideItem']}[data-active-slide]`);
             if (mavCurrentActiveSlide) {
                 return mavCurrentActiveSlide.dataset.slideNumber;
@@ -106,7 +109,8 @@ function mavf_uni_slider(
          * Set active attribute to slide item by number
          * @param {int} mavSlideNumber
          */
-        function mavf_set_active_slide(mavSlideNumber) {
+        function mavf_set_active_slide(mavSlideNumber)
+        {
             if ( mavSlideNumber !== undefined ) {
                 const mavCurrentActiveSlide = mavf_get_active_slide();
                 if (mavCurrentActiveSlide) {
@@ -120,7 +124,8 @@ function mavf_uni_slider(
         /**
          * Translate slides container
          */
-        function mavf_translate_slides_container() {
+        function mavf_translate_slides_container()
+        {
             // let mavSlideNumber = mavButtonNext.dataset.slideNumber;
             let mavSlideNumber = mavf_get_active_slide_number();
             // Get current number of slides to display
@@ -137,7 +142,8 @@ function mavf_uni_slider(
         /**
          * Slider Nav Buttons Function
          */
-        function mavf_nav_button() {
+        function mavf_nav_button()
+        {
             event.stopPropagation;
 
             const mavButton = this;
@@ -195,19 +201,21 @@ function mavf_uni_slider(
                 mavPrevNumber = 1;
             }
 
-            // Button Next
+            /* Button Next */
             // Set thumbnail image
             mavButtonNext.querySelector(mavArgs['mavSliderClassNavArrowThumbnail']).src = mavf_get_dot_img_url(mavDotsContainer, mavNextNumber);
             // Set title
             mavButtonNext.querySelector(mavArgs['mavSliderClassNavArrowTitle']).innerHTML = mavf_get_dot_title(mavDotsContainer, mavNextNumber);
-            // Button Prev
+
+            /* Button Prev */
             // Set thumbnail image
             mavButtonPrev.querySelector(mavArgs['mavSliderClassNavArrowThumbnail']).src = mavf_get_dot_img_url(mavDotsContainer, mavPrevNumber);
             // Set title
             mavButtonPrev.querySelector(mavArgs['mavSliderClassNavArrowTitle']).innerHTML = mavf_get_dot_title(mavDotsContainer, mavPrevNumber);
         }
 
-        function mavf_toggle_nav(mavSlider) {
+        function mavf_toggle_nav(mavSlider)
+        {
             const mavSlideNumber = mavf_get_active_slide_number();
             const mavNext = mavSlider.querySelector('.mav-slider__nav__arrow--wrp[data-direction="next"]');
             // console.log('mavNext: ', mavNext);
@@ -242,22 +250,25 @@ function mavf_uni_slider(
          * Update active state for thumbnail dot
          * @param {obj} mavNavDotsContainer
          */
-        function mavf_update_active_dot(mavNavDotsContainer) {
+        function mavf_update_active_dot(mavNavDotsContainer)
+        {
             const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
             // const mavNewActiveSlide = mavf_get_active_slide();
             const mavSlideNumber = mavf_get_active_slide_number();
+
             for (const mavNavDot of mavNavDots) {
                 mavNavDot.dataset.active = '0';
             }
-            const mavActiveDot = mavNavDotsContainer.querySelector(`${mavArgs['mavSliderClassNavDot']}[data-slide-number="${mavSlideNumber}"]`)
-            // console.log('mavActiveDot: ', mavActiveDot);
+
+            const mavActiveDot = mavNavDotsContainer.querySelector(`${mavArgs['mavSliderClassNavDot']}[data-slide-number="${mavSlideNumber}"]`);
             mavActiveDot.dataset.active = '1';
         }
 
         /**
          * Slider dot function
          */
-        function mavf_nav_dot() {
+        function mavf_nav_dot()
+        {
             event.stopPropagation;
 
             const mavDot = this;
@@ -280,8 +291,8 @@ function mavf_uni_slider(
         /**
          * Start slider function
          */
-        function mavf_start_slide() {
-            console.log('Slider started.');
+        function mavf_start_slide()
+        {
             const mavIndicator = mavCurrentSlider.querySelector('.mavjs-slider__loading--indicator');
             mavf_set_slider_indicator();
 
@@ -289,12 +300,10 @@ function mavf_uni_slider(
             let mavDirection = 'next';
 
             // Start Slider
-            function mavf_start() {
-                // console.log('mavDirection: ', mavDirection);
+            function mavf_start()
+            {
                 // Get active slide number
-                // console.log(mavf_get_active_slide());
                 let mavCurrentSlideNumber = mavf_get_active_slide_number();
-                // console.log('mavCurrentSlideNumber: ', mavCurrentSlideNumber);
 
                 if ( mavCurrentSlideNumber == 1  && mavDirection == 'prev' ) {
                     mavDirection = 'next';
@@ -312,23 +321,28 @@ function mavf_uni_slider(
 
             // Pause Slider
             mavCurrentSlider.addEventListener('mouseover', mavf_pause);
-            function mavf_pause() {
+
+            function mavf_pause()
+            {
                 clearInterval(mavUniSlider);
                 mavIndicator.removeAttribute('data-animation');
             }
 
             // Resume Slider
             mavCurrentSlider.addEventListener('mouseleave', mavf_resume);
-            function mavf_resume() {
+            function mavf_resume()
+            {
                 mavUniSlider = setInterval(mavf_start, mavInterval);
                 mavf_set_slider_indicator();
             }
 
-            function mavf_set_slider_indicator() {
+            function mavf_set_slider_indicator()
+            {
                 mavIndicator.setAttribute('data-animation','');
                 mavIndicator.style.animationDuration = Number(mavInterval)/1000 + 's';
             }
         }
+
         // Start the slider
         if ( mavAutoSlide == 1 ) {
             mavf_start_slide();
@@ -341,7 +355,8 @@ function mavf_uni_slider(
      * @param {obj} mavDotsContainer
      * @param {int} mavDotNumber
      */
-    function mavf_get_nav_dot(mavDotsContainer, mavDotNumber) {
+    function mavf_get_nav_dot(mavDotsContainer, mavDotNumber)
+    {
         return mavDotsContainer.querySelector(`${mavArgs['mavSliderClassNavDot']}[data-slide-number="${mavDotNumber}"]`);
     }
 
@@ -350,7 +365,8 @@ function mavf_uni_slider(
      * @param {obj} mavDotsContainer
      * @param {int} mavDotNumber
      */
-    function mavf_get_dot_img_url(mavDotsContainer, mavDotNumber) {
+    function mavf_get_dot_img_url(mavDotsContainer, mavDotNumber)
+    {
         const mavDot = mavf_get_nav_dot(mavDotsContainer, mavDotNumber);
         return mavDot.querySelector('img').src;
     }
@@ -360,7 +376,8 @@ function mavf_uni_slider(
      * @param {obj} mavDotsContainer
      * @param {int} mavDotNumber
      */
-    function mavf_get_dot_title(mavDotsContainer, mavDotNumber) {
+    function mavf_get_dot_title(mavDotsContainer, mavDotNumber)
+    {
         const mavDot = mavf_get_nav_dot(mavDotsContainer, mavDotNumber);
         return mavDot.title;
     }
@@ -368,7 +385,8 @@ function mavf_uni_slider(
     /**
      * Update sliders width when resize window
      */
-    function mavf_screen_resize() {
+    function mavf_screen_resize()
+    {
         let mavMessage;
         window.addEventListener('resize', function(){
             // Clear setTimeout
@@ -379,9 +397,11 @@ function mavf_uni_slider(
             }, 300);
         });
     }
+
     mavf_screen_resize();
 
-    function mavf_update_slide_display(mavCurrentSlider) {
+    function mavf_update_slide_display(mavCurrentSlider)
+    {
         // Get slides container
         const mavSlidesContainer = mavCurrentSlider.querySelector(mavArgs['mavSliderClassSlidesContainer']);
 
@@ -418,7 +438,8 @@ function mavf_uni_slider(
     /**
      * Update all sliders width on the page
      */
-    function mavf_update_sliders_width() {
+    function mavf_update_sliders_width()
+    {
         for ( const mavCurrentSlider of mavAllSliders ) {
             mavf_update_slide_display(mavCurrentSlider);
             // Click next button for slide reposition
@@ -428,7 +449,6 @@ function mavf_uni_slider(
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // console.log("Maverick's Uni Slider loaded.");
     if ( typeof mavf_uni_slider === 'function' ) {
         mavf_uni_slider();
     }

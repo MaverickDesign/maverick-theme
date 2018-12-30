@@ -153,7 +153,7 @@
         <?php endif;
     ?>
 
-    <header id="mavid-site-header" class="mav-pg-header mav-pg-header-wrapper">
+    <header id="mavid-site-header" class="mav-pg-header mav-pg-header-wrapper mav-pg__header mav-pg__header--wrp">
 
         <!-- Header Logo -->
         <section id="mavid-sec-header-logo" class="mav-header-logo-wrapper mav-header__logo--wrp">

@@ -2,23 +2,26 @@
  * Footer Social Links
  */
 
-.mav-footer-socials-wrapper, .mav-footer__social--wrp {
+.mav-footer-socials-wrapper, .mav-footer__socials--wrp {
     background: var(--mav-color--off-white);
-    .mav-footer-socials-ctn {
-        border-top: 1px solid var(--mav-color--border);
-        font-family: var(--mav-font--secondary);
-        padding: var(--mav-gutter--lg) var(--mav-gutter);
-        @extend %mav-flex-column;
-        align-items: center;
-        color: initial;
+
+    .mav-footer-socials-ctn, .mav-footer__socials--ctn {
         display: grid;
         grid-gap: var(--mav-gutter);
+        align-items: center;
+        padding: var(--mav-gutter--lg) var(--mav-gutter);
+        border-top: 1px solid var(--mav-color--border);
+        font-family: var(--mav-font--secondary);
+        color: initial;
+        @extend %mav-flex-column;
+
         @media #{$mav-tablet-up} {
             grid-template-columns: max-content max-content;
             justify-content: center;
         }
     }
 }
+
 .mav-social-links {
     display: flex;
     flex-wrap: wrap;
@@ -47,21 +50,24 @@
 /**
  * Footer Menu
  */
-.mav-footer-menu-wrapper {
+.mav-footer-menu-wrapper, .mav-footer__menu--wrp {
     padding: var(--mav-gutter--lg) var(--mav-gutter);
 }
 
-.mav-footer-menu {
+.mav-footer-menu, .mav-footer__menu {
+
     ul { // lvl_1
         font-family: var(--mav-font--secondary);
         display: flex;
         margin-left: 0;
         padding-left: 0;
+
         li {
             margin-left: 0;
             list-style: none;
             line-height: 2;
             margin-right: var(--mav-gutter--lg);
+
             a {
                 display: inline-block;
                 font-weight: var(--mav-font__weight--bold);
@@ -73,19 +79,24 @@
                     box-shadow: 0 1px var(--mav-color--border);
                 }
             }
+
             ul { // lvl_2
                 @extend .mav-flex-column;
                 margin-top: var(--mav-gutter);
+
                 li {
                     margin-right: 0;
+
                     a {
                         text-transform: unset;
                         font-weight: initial;
+
                         &:hover {
                             transform: translateX(var(--mav-gutter--sm));
                         }
                     }
                 }
+
                 ul { // lvl_3
                     margin: var(--mav-gutter--sm) 0 var(--mav-gutter) var(--mav-gutter);
                 }

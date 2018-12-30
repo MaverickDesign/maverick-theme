@@ -54,10 +54,6 @@
    * ==================================================
    */
   --mav-gutter: 20px;
-  --mav-gutter-xl: calc(var(--mav-gutter) * 4);
-  --mav-gutter-lg: calc(var(--mav-gutter) * 2);
-  --mav-gutter-sm: calc(var(--mav-gutter) / 2);
-  --mav-gutter-xs: calc(var(--mav-gutter) / 4);
   --mav-gutter--xl: calc(var(--mav-gutter) * 4);
   --mav-gutter--lg: calc(var(--mav-gutter) * 2);
   --mav-gutter--sm: calc(var(--mav-gutter) / 2);
@@ -100,11 +96,6 @@
   --mav-font-size: 18px;
   --mav-font--size: 18px;
   --mav-font__size: 18px;
-  --mav-font-size-xl: 1.4rem;
-  --mav-font-size-lg: 1.2rem;
-  --mav-font-size-nm: initial;
-  --mav-font-size-sm: 0.8rem;
-  --mav-font-size-xs: 0.6rem;
   --mav-font__size--xl: x-large;
   --mav-font__size--lg: large;
   --mav-font__size--nm: initial;

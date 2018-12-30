@@ -77,24 +77,29 @@ function mavf_contact_form( $mav_args )
 
                     /* Form Header */
                     if ( ! empty( $mav_form_title ) || ! empty( $mav_form_intro ) ) :
-                        printf('<header class="mav-form-header-wrapper">');
-                            printf('<div class="mav-form-header-ctn">');
+                        printf('<header class="mav-form-header-wrapper mav-form__header--wrp">');
+                            printf('<div class="mav-form-header-ctn mav-form__header--ctn">');
+
                                 /* Form Title */
-                                if ( ! empty( $mav_form_title ) ) {
+                                if ( ! empty( $mav_form_title ) )
+                                {
                                     printf('<div class="mav-form-title-wrapper">');
                                         printf('<div class="mav-form-title-ctn">');
-                                            printf( '<h3 class="mav-form-title">%1$s</h3>', $mav_form_title );
+                                            printf( '<h4 class="mav-form-title mav-form__title">%1$s</h4>', $mav_form_title );
                                         echo '</div>';
                                     echo '</div>';
                                 }
+
                                 /* Form Intro */
-                                if ( ! empty( $mav_form_intro ) ) {
+                                if ( ! empty( $mav_form_intro ) )
+                                {
                                     printf('<div class="mav-form-intro-wrapper">');
                                         printf('<div class="mav-form-intro-ctn">');
                                             printf( '<p class="mav-form-intro">%1$s</p>', $mav_form_intro );
                                         echo '</div>';
                                     echo '</div>';
                                 }
+
                             echo '</div>';
                         echo '<header>';
                     endif;

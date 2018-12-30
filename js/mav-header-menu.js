@@ -1,14 +1,16 @@
-function mavf_header_menu(){
+function mavf_header_menu()
+{
 
     const mavMobileMenuIcon     = document.querySelector('#mavid-mobile-menu-icon');
     const mavHeaderMenuSection  = document.querySelector('#mavid-sec-header-menu');
+
     // Select header menu
-    const mavHeaderMenu         = document.querySelector('.mav-header-menu');
+    const mavHeaderMenu         = document.querySelector('.mav-header__menu');
     const mavSubmenuIcons       = mavHeaderMenu.querySelectorAll('.mav-submenu-icon');
     const mavSubMenus           = mavHeaderMenu.querySelectorAll('.mav-sub-menu');
 
-    const mavHeaderBreadcrumbs  = document.querySelector('.mav-breadcrumbs-ctn');
-    const mavPageMainContent    = document.querySelector('#mavid-page-main-content');
+    // const mavHeaderBreadcrumbs  = document.querySelector('.mav-breadcrumbs-ctn');
+    // const mavPageMainContent    = document.querySelector('#mavid-page-main-content');
 
     for (const mavSubmenuIcon of mavSubmenuIcons) {
         if (mavSubmenuIcon.dataset.lvl == 2 || window.innerWidth < 1024) {
@@ -35,7 +37,7 @@ function mavf_header_menu(){
     }
 
     mavMobileMenuIcon.addEventListener('click',function(){
-        mavHeaderMenuSection.classList.toggle('mav-hide-on-mobile');
+        mavHeaderMenuSection.classList.toggle('mav-hide__on--mobile');
         if (this.dataset.state == 'close') {
             this.dataset.state = 'open';
             this.classList.remove('fa-bars');
