@@ -193,7 +193,7 @@
             }
             @media #{$mav-desktop} {
                 margin: 0;
-                margin-left: var(--mav-gutter-sm);
+                margin-left: var(--mav-gutter--xs);
             }
             &:after {
                 display: block;

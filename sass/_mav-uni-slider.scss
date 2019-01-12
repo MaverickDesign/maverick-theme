@@ -25,7 +25,7 @@
 .mav-slider__slides--ctn {
     position: relative;
     display: grid;
-    transition: all 1.5s ease-in-out;
+    transition: all 1s ease-in-out;
     @media #{$mav-tablet} {
         max-height: 50vh;
     }
@@ -89,6 +89,7 @@
     background: rgba(white, .25);
     padding: var(--mav-gutter--sm);
     @extend %mav-transition;
+
     &[data-direction="prev"] {
         padding-left: 0;
         .mav-slider__nav--icon {
@@ -269,7 +270,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    // display: none;
 }
 
 // Slide Title Container
@@ -281,6 +281,7 @@
     background: linear-gradient(to top, rgba(#222, .5) 0%, rgba(0,0,0,0) 100%);
     height: 100%;
 }
+
 // Slide Title
 .mav-slider__slide--title {
     position: absolute;
@@ -291,12 +292,15 @@
     margin-bottom: var(--mav-gutter--sm);
     font-size: 3rem;
     line-height: 1.2;
+
     @media #{$mav-desktop} {
         max-width: 30%;
     }
+
     @media #{$mav-tablet} {
         max-width: 60%;
     }
+
     @media #{$mav-phone} {
         max-width: 80%;
         font-size: 1.5rem;
@@ -323,5 +327,4 @@
 
 .mav-slider__button--wrp {
     position: relative;
-    // height: 10%;
 }

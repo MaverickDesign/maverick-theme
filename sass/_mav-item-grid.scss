@@ -2,39 +2,44 @@
  * Item Grid
  */
 
-.mav-items-grid-ctn {
+.mav-items-grid-ctn, .mav-items__grid--ctn {
     display: grid;
     position: relative;
     grid-template-columns: repeat(4,1fr);
+
     @media #{$mav-phone} {
         grid-template-columns: repeat(1,1fr)!important;
     }
 }
 
-.mav-items-grid-item-ctn {
+.mav-items-grid-item-ctn, .mav-items__grid__item--ctn {
     display: flex;
     flex-direction: column;
     padding: var(--mav-gutter--lg);
-    border-left: 1px solid var(--mav-color--border);
+    border-left: var(--mav-border);
+
     &[data-row="top"] {
-        border-bottom: 1px solid var(--mav-color--border);
+        border-bottom: var(--mav-border);
     }
+
     &[data-row="middle"] {
-        border-bottom: 1px solid var(--mav-color--border);
+        border-bottom: var(--mav-border);
     }
+
     &[data-column="left"] {
         border-left: 0;
     }
+
     @media #{$mav-phone} {
         padding: var(--mav-gutter);
         border: 0px!important;
-        border-bottom: 1px solid var(--mav-color--border)!important;
+        border-bottom: var(--mav-border)!important;
         &:last-child {
             border-bottom: 0!important;
         }
     }
 }
 
-.mav-item-grid-title {
+.mav-item-grid-title, .mav-item__grid--title {
     font-size: var(--mav-font__size--lg);
 }

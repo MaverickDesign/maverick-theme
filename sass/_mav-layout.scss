@@ -16,13 +16,13 @@
 }
 
 // Flex Column
-%mav-flex-column, .mav-flex-column {
+%mav-flex-column, .mav-flex-column, .mav-flex__column {
     display: flex;
     flex-direction: column;
 }
 
 // Flex Row
-%mav-flex-row, .mav-flex-row {
+%mav-flex-row, .mav-flex-row, .mav-flex__row {
     display: flex;
     flex-direction: row;
 }
@@ -64,7 +64,7 @@
 // Grid Columns
 @media #{$mav-desktop} {
     @for $columns from 1 to 15 {
-        .#{$mavNS}-grid-col-#{$columns}, .#{$mavNS}-grid__col--#{$columns} {
+        .mav-grid-col-#{$columns}, .mav-grid__col--#{$columns} {
             grid-template-columns: repeat($columns, 1fr)!important;
         }
     }
@@ -82,21 +82,10 @@
 .mav-grid__gap {
     grid-gap: var(--mav-gutter);
 
-    &--xs {
-        grid-gap: var(--mav-gutter--xs);
-    }
-
-    &--sm {
-        grid-gap: var(--mav-gutter--sm);
-    }
-
-    &--lg {
-        grid-gap: var(--mav-gutter--lg);
-    }
-
-    &--xl {
-        grid-gap: var(--mav-gutter--xl);
-    }
+    &--xs { grid-gap: var(--mav-gutter--xs); }
+    &--sm { grid-gap: var(--mav-gutter--sm); }
+    &--lg { grid-gap: var(--mav-gutter--lg); }
+    &--xl { grid-gap: var(--mav-gutter--xl); }
 }
 
 .mav-center, .mav--center, [data-center] {
@@ -152,6 +141,12 @@
 
     &--tablet {
         @media #{$mav-tablet} {
+            display: none!important;
+        }
+    }
+
+    &--tablet--up {
+        @media #{$mav-tablet-up} {
             display: none!important;
         }
     }
@@ -270,11 +265,11 @@
  * Page layouts
  */
 
-.mav-pg__wrp, .mav-pg--wrp, .mav-page--wrp {
+.mav-pg__wrp {
     background: transparent;
 }
 
-.mav-pg-ctn, .mav-pg__ctn, .mav-pg--ctn, .mav-page--ctn {
+.mav-pg__ctn {
     max-width: var(--mav-site--width);
     margin: 0 auto;
     padding: 0 var(--mav-gutter);
@@ -334,8 +329,7 @@
         position: relative;
 
         .mav-sec__title {
-            padding: var(--mav-gutter-sm);
-            padding-top: 0;
+            padding: 0 var(--mav-gutter--sm) var(--mav-gutter--xs) var(--mav-gutter--sm);
             box-shadow: inset 0 -3px var(--mav-color--primary);
             border-radius: var(--mav-gutter--sm);
             border: 1px solid transparent;

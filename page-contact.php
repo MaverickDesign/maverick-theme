@@ -19,7 +19,7 @@
             <div class="mav-sec__ctn">
                 <div class="mav-sec__body--wrp">
                     <div class="mav-sec__body--ctn">
-                        <div class="mav-page-contact-wrapper mav-page__contact--wrp">
+                        <div class="mav-page__contact--wrp">
                             <!-- Contact Form -->
                             <?php
                                 if ( function_exists( 'mavf_contact_form' ) )
@@ -35,8 +35,8 @@
                             <!-- Social links -->
                             <?php
                                 if ( function_exists( 'mavf_social_links' ) ) : ?>
-                                    <div class="mav-contact-socials-wrapper mav-contact__socials--wrp">
-                                        <div class="mav-contact-socials-ctn mav-contact__socials--ctn">
+                                    <div class="mav-contact__socials--wrp">
+                                        <div class="mav-contact__socials--ctn">
                                             <?php
                                                 printf(
                                                     '<h4 class="mav-margin__bottom--lg mav-text--center">%1$s <strong class="mav-no-break">%2$s</strong> %3$s</h4>',
@@ -52,8 +52,8 @@
                             ?>
 
                             <!-- Physical Address -->
-                            <div class="mav-contact-wrapper mav-contact__wrp">
-                                <div class="mav-contact-ctn mav-contact__ctn">
+                            <div class="mav-contact__wrp">
+                                <div class="mav-contact__ctn">
                                     <h4 class="mav-margin__bottom--lg mav-text--center"><?php _e( 'Liên hệ trực tiếp với' , 'mavericktheme' ); ?> <strong class="mav-no-break"><?php echo get_bloginfo('name'); ?></strong></h4>
                                     <?php
                                         get_template_part('/template-parts/mav-contact-info');

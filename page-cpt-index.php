@@ -54,7 +54,7 @@
             if ( $mav_query->have_posts() )
             {
 
-                printf( '<section id="mavid-post-index" class="mav-post-index-wrapper">' );
+                printf( '<section id="mavid-post-index" class="mav-post-index-wrapper mav-post__index--wrp">' );
 
                     if ( function_exists( 'get_field' ) ) {
                         $mav_columns = get_field( 'mavcf_page_cpt_layout_columns' );
@@ -63,7 +63,7 @@
                     }
 
                     printf(
-                        '<div id="mavid-post-container" class="mav-post-index-ctn mav-grid-col-%1$s" style="grid-gap: var(--mav-gutter);">',
+                        '<div id="mavid-post-container" class="mav-post-index-ctn mav-post__index--ctn mav-grid__col--%1$s" style="grid-gap: var(--mav-gutter);">',
                         $mav_columns
                     );
 
