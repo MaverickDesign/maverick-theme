@@ -38,6 +38,7 @@ function mavf_post_content_modifier( $mav_json_file ) {
     }
 
     $mav_args = [$mavPatterns, $mavReplaces];
+
     add_filter( 'the_content',
         function ( $content ) use ( $mav_args )
         {

@@ -146,7 +146,7 @@ $mav-color--background: #fafafa;
  */
 :root {
 
-    // Z-Index
+    /* Z-Index */
     --mav-layer--top:          1000;
     --mav-layer--overlay:       100;
     --mav-layer--image:          10;
@@ -167,13 +167,16 @@ $mav-color--background: #fafafa;
     --mav-font__family--ibm_plex_serif  : 'IBM Plex Serif', serif;
     --mav-font__family--montserrat      : 'Montserrat', sans-serif;
     --mav-font__family--bai_jamjuree    : 'Bai Jamjuree', sans-serif;
+    --mav-font__family--source_sans_pro : 'Source Sans Pro', sans-serif;
+    --mav-font__family--noto_serif      : 'Noto Serif', serif;
+
 
     // Primary font
-    --mav-font--primary         : var(--mav-font__family--ibm_plex_serif);
+    --mav-font--primary         : var(--mav-font__family--roboto);
     // Secondary font
-    --mav-font--secondary       : var(--mav-font__family--bai_jamjuree);
+    --mav-font--secondary       : var(--mav-font__family--roboto);
     // Tertiary font
-    --mav-font--tertiary        : var(--mav-font__family--ibm_plex_sans);
+    --mav-font--tertiary        : var(--mav-font__family--roboto);
     // Monospace font
     --mav-font--monospace      : var(--mav-font__family--roboto_mono);
     // Condensed font
@@ -186,11 +189,6 @@ $mav-color--background: #fafafa;
      */
 
     --mav-gutter       : #{$mav-gutter};
-
-    // --mav-gutter-xl    : calc(var(--mav-gutter) * 4);
-    // --mav-gutter-lg    : calc(var(--mav-gutter) * 2);
-    // --mav-gutter-sm    : calc(var(--mav-gutter) / 2);
-    // --mav-gutter-xs    : calc(var(--mav-gutter) / 4);
 
     --mav-gutter--xl    : calc(var(--mav-gutter) * 4);
     --mav-gutter--lg    : calc(var(--mav-gutter) * 2);
@@ -255,12 +253,6 @@ $mav-color--background: #fafafa;
     --mav-font-size: 18px;
     --mav-font--size: 18px;
     --mav-font__size: 18px;
-
-    // --mav-font-size-xl: 1.4rem;
-    // --mav-font-size-lg: 1.2rem;
-    // --mav-font-size-nm: initial;
-    // --mav-font-size-sm: 0.8rem;
-    // --mav-font-size-xs: 0.6rem;
 
     --mav-font__size--xl: x-large;
     --mav-font__size--lg: large;

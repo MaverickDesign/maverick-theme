@@ -101,6 +101,7 @@ table {
  * CSS Variables
  */
 :root {
+  /* Z-Index */
   --mav-layer--top: 1000;
   --mav-layer--overlay: 100;
   --mav-layer--image: 10;
@@ -120,9 +121,11 @@ table {
   --mav-font__family--ibm_plex_serif: 'IBM Plex Serif', serif;
   --mav-font__family--montserrat: 'Montserrat', sans-serif;
   --mav-font__family--bai_jamjuree: 'Bai Jamjuree', sans-serif;
-  --mav-font--primary: var(--mav-font__family--ibm_plex_serif);
-  --mav-font--secondary: var(--mav-font__family--bai_jamjuree);
-  --mav-font--tertiary: var(--mav-font__family--ibm_plex_sans);
+  --mav-font__family--source_sans_pro: 'Source Sans Pro', sans-serif;
+  --mav-font__family--noto_serif: 'Noto Serif', serif;
+  --mav-font--primary: var(--mav-font__family--roboto);
+  --mav-font--secondary: var(--mav-font__family--roboto);
+  --mav-font--tertiary: var(--mav-font__family--roboto);
   --mav-font--monospace: var(--mav-font__family--roboto_mono);
   --mav-font--condensed: var(--mav-font__family--roboto_cond);
   /**

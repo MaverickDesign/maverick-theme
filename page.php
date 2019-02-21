@@ -7,14 +7,14 @@
 <?php get_header(); ?>
 <!-- Page content starts here -->
 
-<main id="mavid-page-main" class="mav-page-wrapper">
-    <div class="mav-page-ctn">
+<main id="mavid-page-main" class="mav-page-wrapper mav-pg__wrp">
+    <div class="mav-page-ctn mav-pg__ctn">
         <!-- Page Header -->
         <?php get_template_part( 'template-parts/mav-page__header' ); ?>
 
         <!-- Page Content -->
-        <section id="mavid-page-content" class="mav-sec-wrapper">
-            <div class="mav-sec-ctn">
+        <section id="mavid-page-content" class="mav-sec-wrapper mav-sec__wrp">
+            <div class="mav-sec-ctn mav-sec__ctn">
                 <div class="mav-sec-body-wrapper">
                     <div class="mav-sec-body-ctn">
                         <div class="mav-post__content--wrp">

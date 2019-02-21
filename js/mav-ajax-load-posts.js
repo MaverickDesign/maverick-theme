@@ -7,8 +7,10 @@ if ( mavLoadMorePostButton != undefined ) {
 
         // Get WordPress Ajax Url
         const mavAjaxUrl = this.dataset.ajaxUrl;
+
         // Get action callback
         const mavAction = this.dataset.action;
+
         // Get current page
         const mavCurrentPage = this.dataset.currentPage;
 
