@@ -24,6 +24,8 @@ function mavf_admin_theme_config_options()
     // BreadCrumbs
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_general.php';
 
+    include_once TEMPLATE_DIR.'/inc/admin/mav-admin_theme-config_features.php';
+
 }
 add_action( 'admin_init', 'mavf_admin_theme_config_options' );
 

@@ -89,12 +89,10 @@ $mav-color__text--primary--dark  : #fafafa;
 $mav-color__text--secondary--dark  : #ddd;
 $mav-color__text--hint--dark  : #aaa;
 
-$mav-link-color: #b4e7f8;
-$mav-color--link: #b4e7f8;
+$mav-color__link: dodgerblue;
 
 $mav-color-border: #ddd;
 $mav-color--border: #ddd;
-$mavc-border: #ddd;
 
 $mav-color-highlight: yellow;
 $mavc-highlight: yellow;
@@ -231,6 +229,8 @@ $mav-color--background: #fafafa;
 
     --mav-color-border: #{$mav-color-border};
     --mav-color--border: #{$mav-color--border};
+
+    --mav-color__link: #{$mav-color__link};
 
     /**
      * Typography

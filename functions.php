@@ -19,8 +19,7 @@ remove_action( 'wp_head', 'wp_generator' );
 /**
  * Vendors
  */
-if ( file_exists( TEMPLATE_DIR.'/vendor/Mobile_Detect.php' ) )
-{
+if ( file_exists( TEMPLATE_DIR.'/vendor/Mobile_Detect.php' ) ) {
 
     include_once TEMPLATE_DIR.'/vendor/Mobile_Detect.php';
 
@@ -77,41 +76,45 @@ require TEMPLATE_DIR. '/inc/mav-post-query.php';
 // Google Map
 require TEMPLATE_DIR. '/inc/mav-google-map.php';
 
-// Sliders
-if ( file_exists( TEMPLATE_DIR.'/inc/mav-slider.php' ) )
-{
-    include TEMPLATE_DIR.'/inc/mav-slider.php';
+
+$mav_theme_features = get_option('mav_setting_theme_features');
+
+if ( !empty($mav_theme_features) ) {
+    foreach ( $mav_theme_features as $slug=>$mav_theme_feature ) {
+        if ( file_exists( TEMPLATE_DIR.'/inc/mav-'.$slug.'.php' ) ) {
+            include TEMPLATE_DIR.'/inc/mav-'.$slug.'.php';
+        }
+    }
 }
 
-// Uni Sliders
-if ( file_exists( TEMPLATE_DIR.'/inc/mav-uni-slider.php' ) )
-{
-    include TEMPLATE_DIR.'/inc/mav-uni-slider.php';
-}
+// // Uni Sliders
+// if ( file_exists( TEMPLATE_DIR.'/inc/mav-uni-slider.php' ) && @$mav_theme_features['Uni Slider'] ) {
+//     include TEMPLATE_DIR.'/inc/mav-uni-slider.php';
+// }
 
 // Carousel
-require TEMPLATE_DIR.'/inc/mav-carousel.php';
+// require TEMPLATE_DIR.'/inc/mav-carousel.php';
 
 // Post Grid
-require TEMPLATE_DIR. '/inc/mav-post-grid.php';
+// require TEMPLATE_DIR. '/inc/mav-post-grid.php';
 
 // Featured Post
-require TEMPLATE_DIR. '/inc/mav-post-feature.php';
+// require TEMPLATE_DIR. '/inc/mav-post-feature.php';
 
 require TEMPLATE_DIR. '/inc/mav-items-grid.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-form.php';
 
 // Post Accordion
-require TEMPLATE_DIR. '/inc/mav-post-accordion.php';
+// require TEMPLATE_DIR. '/inc/mav-post-accordion.php';
 
 // Post Modal
-require TEMPLATE_DIR. '/inc/mav-post-modal.php';
+// require TEMPLATE_DIR. '/inc/mav-post-modal.php';
 
 // Post Tab View
-require TEMPLATE_DIR. '/inc/mav-tab-view.php';
+// require TEMPLATE_DIR. '/inc/mav-tab-view.php';
 
-require TEMPLATE_DIR. '/inc/mav-content-modify.php';
+// require TEMPLATE_DIR. '/inc/mav-content-modify.php';
 
 require TEMPLATE_DIR. '/inc/mav-form.php';
 

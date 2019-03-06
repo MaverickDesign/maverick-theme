@@ -54,7 +54,7 @@
         /**
          * Sidebar widgets
          */
-        if (!$mavSidebar) {
+        if ( !$mavSidebar ) {
             get_sidebar();
         }
         echo '</section>';
