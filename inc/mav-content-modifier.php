@@ -27,7 +27,6 @@ function mavf_post_content_modifier( $mav_json_file ) {
     $mavJSON = json_decode( file_get_contents( $mav_json_file ), true );
 
     $mavPatterns = array();
-
     foreach ( $mavJSON['patterns'] as $mavPattern ) {
         $mavPatterns[] = $mavPattern['pattern'];
     }

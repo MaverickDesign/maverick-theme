@@ -18,7 +18,7 @@ add_settings_field(
 function mavf_theme_config_grid_system() {
     $mav_saved_value = esc_attr( get_option( 'mav_setting_grid_system' ) );
 
-    $mavGrids = [960,1200,1400,1680];
+    $mavGrids = [960,1200,1400,1680,1920];
 
     echo '<fieldset class="mav-grid">';
         foreach ($mavGrids as $mavGrid) {
@@ -31,7 +31,7 @@ function mavf_theme_config_grid_system() {
     echo '</fieldset>';
 
     printf(
-        '<span class="mav-admin-desc">%1$s</span>',
+        '<span class="mav-admin-desc mav-admin__desc">%1$s</span>',
         __( 'Chiều rộng tối đa của website, đơn vị pixel.', 'mavericktheme' )
     );
 }

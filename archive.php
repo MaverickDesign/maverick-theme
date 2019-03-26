@@ -24,7 +24,7 @@
         if ( have_posts() ) {
             printf('<section id="mavid-post-index" class="mav-post-index-wrapper">');
                 printf(
-                    '<div class="mav-post-index-ctn mav-grid-col-%1$s">',
+                    '<div class="mav-post-index-ctn mav-post__index--ctn mav-grid-col-%1$s">',
                     esc_attr( get_option( 'mav_setting_blog_page_columns' ) )
                 );
                     while ( have_posts() ) {
