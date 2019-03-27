@@ -9,7 +9,7 @@
         display: grid;
         grid-gap: var(--mav-gutter);
         align-items: center;
-        padding: var(--mav-gutter--lg) var(--mav-gutter);
+        padding: var(--mav-gutter);
         border-top: 1px solid var(--mav-color--border);
         font-family: var(--mav-font--secondary);
         color: initial;
@@ -22,7 +22,7 @@
     }
 }
 
-.mav-social-links {
+.mav-social-links, .mav-social__links {
     display: flex;
     flex-wrap: wrap;
     @media #{$mav-phone} {
@@ -50,11 +50,11 @@
 /**
  * Footer Menu
  */
-.mav-footer-menu-wrapper, .mav-footer__menu--wrp {
+.mav-footer__menu--wrp {
     padding: var(--mav-gutter--lg) var(--mav-gutter);
 }
 
-.mav-footer-menu, .mav-footer__menu {
+.mav-footer__menu {
 
     ul { // lvl_1
         font-family: var(--mav-font--secondary);

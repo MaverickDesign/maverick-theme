@@ -380,7 +380,7 @@
         flex-direction: column;
         margin-top: var(--mav-gutter--lg);
         margin-bottom: var(--mav-gutter--lg);
-        padding: var(--mav-gutter--sm) var(--mav-gutter-lg);
+        padding: var(--mav-gutter--sm) var(--mav-gutter--lg);
         box-shadow: inset var(--mav-gutter--sm) 0 var(--mav-color--accent);
 
         p {
@@ -409,7 +409,7 @@
             display: block;
             @extend %mav-font-awesome-solid;
             color: var(--mav-color--accent);
-            background: var(--mav-color--off-white);
+            background: white;
             margin: 0 auto;
             padding: var(--mav-gutter--sm);
             width: 1.5em;

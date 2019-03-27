@@ -10,8 +10,8 @@
      */
     $mav_breadcrumbs = get_option( 'mav_setting_breadcrumbs' );
     if ( isset( $mav_breadcrumbs['footer'] ) && ! is_front_page() && ! is_home() && ! is_attachment() && function_exists( 'mavf_breadcrumbs') ) :
-        printf('<section class="mav-breadcrumbs-wrapper">');
-            printf('<div class="mav-breadcrumbs-ctn">');
+        printf('<section class="mav-breadcrumbs-wrapper mav-breadcrumbs__wrp">');
+            printf('<div class="mav-breadcrumbs-ctn mav-breadcrumbs__ctn">');
                 mavf_breadcrumbs('mavid-footer-breadcrumbs');
             echo '</div>';
         echo '</section>';
@@ -31,7 +31,7 @@
         <section id="mavid-sec-footer-menu" class="mav-pg__ctn mav-footer__menu--wrp mav-hide__on--mobile">
             <div class="mav-footer__menu--ctn">
 
-                <nav id="mavid-footer-menu" class="mav-footer-menu">
+                <nav id="mavid-footer-menu" class="mav-footer__menu">
                     <?php
                     /**
                      * Displays a navigation menu
