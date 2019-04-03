@@ -14,34 +14,33 @@ function post_slug($str) {
   array('', '-', ''), remove_accent($str)));
 }
 
-function mavf_modify_content( $mavContent, $mav_args ) {
+function mavf_modify_content( $mavContent, $mav_args )
+{
     $mav_modified_content = preg_replace( $mav_args[0], $mav_args[1], $mavContent );
     return $mav_modified_content;
 }
 
-function mavf_post_content_modifier( $mav_json_file ) {
-
+function mavf_post_content_modifier( $mav_json_file )
+{
     $mavJSON = json_decode( file_get_contents( $mav_json_file ), true );
 
     $mavPatterns = array();
-    foreach ( $mavJSON['patterns'] as $mavPattern ) {
+    foreach ( $mavJSON['patterns'] as $mavPattern )
+    {
         $mavPatterns[] = $mavPattern['pattern'];
     }
 
     $mavReplaces = array();
-    foreach ( $mavJSON['patterns'] as $mavReplace ) {
+    foreach ( $mavJSON['patterns'] as $mavReplace )
+    {
         $mavReplaces[] = $mavReplace['replace'];
     }
 
     $mav_args = [$mavPatterns, $mavReplaces];
 
     add_filter( 'the_content',
-        function ( $content ) use ( $mav_args ) {
-            return mavf_modify_content( $content, $mav_args );
-        }
-    );
-    add_filter( 'get_the_content',
-        function ( $content ) use ( $mav_args ) {
+        function ( $content ) use ( $mav_args )
+        {
             return mavf_modify_content( $content, $mav_args );
         }
     );
