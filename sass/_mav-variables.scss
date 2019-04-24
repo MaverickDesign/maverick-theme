@@ -25,8 +25,6 @@ $mav-layer--bottom:      -1000;
  * Font Stacks
  */
 
-// Available weights: 100, 300, 400, 500, 700, 900
-
 $font-roboto            : 'Roboto', Arial, sans-serif;
 $font-roboto-cond       : 'Roboto Condensed', Arial, sans-serif;
 $font-roboto-slab       : 'Roboto Slab', serif;
@@ -74,8 +72,8 @@ $mav-color-text-primary     : #222;
 $mav-color-text-secondary   : #aaa;
 $mav-color-text-hint        : #ababad;
 
-$mavc-text__primary     : #222;
-$mavc-text__secondary   : #aaa;
+// $mavc-text__primary     : #222;
+// $mavc-text__secondary   : #aaa;
 
 $mav-color__text--primary: #222;
 $mav-color__text--secondary: #aaa;
@@ -118,8 +116,8 @@ $mav-color__header-menu--background--hover  : $mav-color--accent;
  */
 
 $mav-phone:     "only screen and (max-width: 480px)";
-$mav-tablet:    "only screen and (min-width: 768px) and (max-width: 1023px)";
-$mav-mobile:    "only screen and (max-width: 1023px)";
+$mav-tablet:    "only screen and (min-width: 768px) and (max-width: 1024px)";
+$mav-mobile:    "only screen and (max-width: 1024px)";
 $mav-tablet-up: "only screen and (min-width: 768px)";
 $mav-desktop:   "only screen and (min-width: 1024px)";
 

@@ -14,10 +14,10 @@
         font-family: var(--mav-font--secondary);
         color: initial;
         @extend %mav-flex-column;
-
         @media #{$mav-tablet-up} {
             grid-template-columns: max-content max-content;
             justify-content: center;
+            font-size: var(--mav-font__size--xl);
         }
     }
 }

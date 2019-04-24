@@ -243,14 +243,6 @@
     .mav-post__content--ctn {
         max-width: var(--mav-site--width);
         margin: 0 auto;
-
-        @media #{$mav-tablet} {
-            max-width: 640px;
-        }
-
-        @media #{$mav-phone} {
-            padding: 0 var(--mav-gutter);
-        }
     }
 }
 
@@ -273,7 +265,6 @@
             pre,
             form,
             twitterwidget {
-                max-width: 640px;
                 margin-left: auto;
                 margin-right: auto;
             }
