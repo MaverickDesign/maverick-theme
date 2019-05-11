@@ -2,39 +2,40 @@
 /**
  * @package mavericktheme
  */
-?>
 
-<?php get_header(); ?>
+get_header(); ?>
 <!-- Page content starts here -->
 
-<main id="mavid-page-main" class="mav-page__wrp">
-    <div class="mav-page__ctn">
-        <!-- Page Header -->
-        <?php get_template_part( 'template-parts/mav-page__header' ); ?>
+<main id="mavid-page-main">
+    <div class="mav-page__wrp">
+        <div class="mav-page__ctn">
+            <!-- Page Header -->
+            <?php get_template_part( 'template-parts/mav-page__header' ); ?>
 
-        <!-- Page Content -->
-        <section id="mavid-page-content" class="mav-sec__wrp">
-            <div class="mav-sec__ctn">
-                <div class="mav-sec-body-wrapper">
-                    <div class="mav-sec-body-ctn">
-                        <div class="mav-post__content--wrp">
-                            <div class="mav-post__content--ctn mav-post__content">
-                                <?php
-                                    the_post();
-                                    if ( function_exists( 'mavf_post_content_modifier' ) ) {
-                                        $mav_json_file = TEMPLATE_DIR . '/template-parts/mav-patterns.json';
-                                        if ( file_exists( $mav_json_file ) ) {
-                                            mavf_post_content_modifier($mav_json_file);
+            <!-- Page Content -->
+            <section class="mav-sec__wrp">
+                <div class="mav-sec__ctn">
+
+                    <div class="mav-post__content--wrp">
+                        <div class="mav-post__content--ctn">
+                            <div class="mav-post__content">
+                                    <?php
+                                        the_post();
+                                        if ( function_exists( 'mavf_post_content_modifier' ) ) {
+                                            $mav_json_file = TEMPLATE_DIR . '/template-parts/mav-patterns.json';
+                                            if ( file_exists( $mav_json_file ) ) {
+                                                mavf_post_content_modifier($mav_json_file);
+                                            }
                                         }
-                                    }
-                                    the_content();
-                                ?>
+                                        the_content();
+                                    ?>
+                                </div>
                             </div>
-                        </div>
                     </div>
+
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </main>
 
