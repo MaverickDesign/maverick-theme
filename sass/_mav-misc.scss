@@ -127,12 +127,11 @@
     }
 }
 
-.mav-posts-wrapper {
+.mav-posts-wrapper, .mav-posts__wrp {
     position: relative;
-}
-
-.mav-posts-ctn {
-    position: relative;
-    max-width: var(--mav-site--width);
-    margin: 0 auto;
+    .mav-posts-ctn, .mav-posts__ctn {
+        position: relative;
+        max-width: var(--mav-site--width);
+        margin: 0 auto;
+    }
 }

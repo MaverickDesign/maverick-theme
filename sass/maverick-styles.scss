@@ -90,3 +90,10 @@
  * Styles specific for Maverick Theme Page Demo
  */
 @import "mav-page-theme";
+
+.mav-brand {
+    font-weight: var(--mav-font__weight--bold);
+    &[data-name] {
+        color: var(--mav-color--primary);
+    }
+}

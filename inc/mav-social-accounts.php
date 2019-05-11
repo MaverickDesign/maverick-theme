@@ -39,7 +39,7 @@ function mavf_social_account( $mav_account, $mav_href, $mav_class, $mav_title , 
  * @param string $mav_class
  * @return void
  */
-function mavf_social_links( $mav_full = false, $mav_ul_class = "mav-social-links", $mav_class = "mav-social-icon" )
+function mavf_social_links( $mav_full = false, $mav_ul_class = "mav-social__links", $mav_class = "mav-social-icon" )
 {
     printf( '<ul class="%1$s">', $mav_ul_class );
     /**

@@ -66,6 +66,19 @@
         position: relative;
         height: 25vh;
         overflow: hidden;
+        border: 1px solid transparent;
+        @media #{$mav-desktop} {
+            &:hover {
+                border-color: var(--mav-color--border);
+            }
+        }
+        @media #{$mav-phone} {
+            height: 100%;
+
+            .mav-card__post__thumbnail {
+                height: 30vh;
+            }
+        }
 
         a {
             display: block;
@@ -74,41 +87,41 @@
             height: 100%;
             @extend %mav-transition;
 
-            &:after, &:before {
-                position: absolute;
-                top: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                color: var(--mav-color__text--secondary--dark);
-                cursor: pointer;
-                @extend %mav-transition;
-            }
+            // &:after, &:before {
+            //     position: absolute;
+            //     top: 0;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     width: 100%;
+            //     height: 100%;
+            //     opacity: 0;
+            //     color: var(--mav-color__text--secondary--dark);
+            //     cursor: pointer;
+            //     @extend %mav-transition;
+            // }
 
-            &:before {
-                font-family: var(--mav-font--secondary);
-                font-size: var(--mav-font__size--xs);
-                margin-top: 2em;
-                content: attr(data-message);
-                z-index: var(--mav-layer--image);
-                text-transform: uppercase;
-            }
+            // &:before {
+            //     font-family: var(--mav-font--secondary);
+            //     font-size: var(--mav-font__size--xs);
+            //     margin-top: 2em;
+            //     content: attr(data-message);
+            //     z-index: var(--mav-layer--image);
+            //     text-transform: uppercase;
+            // }
 
-            &:after {
-                @extend %mav-font-awesome-solid;
-                content: '\f002';
-                // background: radial-gradient(ellipse at center, rgba(0,0,0,0.90) 0%,rgba(0,0,0,.70) 100%);
-                background: rgba(0,0,0,.333);
-                color: var(--mav-color__text--primary--dark);
-            }
+            // &:after {
+            //     @extend %mav-font-awesome-solid;
+            //     content: '\f002';
+            //     // background: radial-gradient(ellipse at center, rgba(0,0,0,0.90) 0%,rgba(0,0,0,.70) 100%);
+            //     background: rgba(0,0,0,.333);
+            //     color: var(--mav-color__text--primary--dark);
+            // }
 
             &:hover {
-                &:after, &:before {
-                    opacity: 1;
-                }
+                // &:after, &:before {
+                //     opacity: 1;
+                // }
             }
         }
         // Post thumbnail
@@ -120,13 +133,6 @@
             background-repeat: no-repeat!important;
         }
 
-        @media #{$mav-phone} {
-            height: 100%;
-
-            .mav-card__post__thumbnail {
-                height: 30vh;
-            }
-        }
     }
 }
 
@@ -240,7 +246,7 @@
             li {
                 list-style: none;
                 text-align: center;
-                padding: var(--mav-gutter);
+                padding: var(--mav-gutter--sm) var(--mav-gutter);
                 border-left: var(--mav-border);
                 cursor: pointer;
                 @extend %mav-transition;
@@ -322,12 +328,11 @@
 .mav-card__post__thumbnail--ctn {
     &[data-cpt*="portfolio"], &[data-cpt*="client"] {
         @media #{$mav-desktop} {
-            height: 30vh;
+            height: 25vh;
         }
-
         .mav-card__post__thumbnail {
             background-size: contain!important;
-            transform: scale(0.8);
+            transform: scale(0.9);
         }
     }
 }

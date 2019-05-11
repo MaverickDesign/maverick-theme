@@ -2,9 +2,9 @@
  * Feature post
  */
 
-.mav-post-feature-wrapper {
+.mav-post-feature-wrapper, .mav-post__feature--wrp {
     overflow: hidden;
-    margin-bottom: var(--mav-gutter--xl);
+    // margin-bottom: var(--mav-gutter--xl);
     &:last-child, &:only-child {
         margin-bottom: 0;
     }
@@ -15,12 +15,19 @@
     }
 }
 
-.mav-post-feature-ctn {
+.mav-post-feature-ctn, .mav-post__feature--ctn {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     overflow: hidden;
+
+    @media #{$mav-desktop} {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas:
+        "left middle right";
+    }
 
     @media #{$mav-tablet} {
         display: grid;
@@ -28,15 +35,10 @@
         grid-template-areas:
         "left right";
     }
-    @media #{$mav-desktop} {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-areas:
-        "left middle right";
-    }
+
 }
 
-.mav-post-feature-figure-wrapper {
+.mav-post-feature-figure-wrapper, .mav-post__feature__figure--wrp {
     width: 100%;
     min-height: 100%;
     @media #{$mav-desktop} {
@@ -44,7 +46,7 @@
     }
 }
 
-.mav-post-feature-figure-ctn {
+.mav-post-feature-figure-ctn, .mav-post__feature__figure--ctn {
     display: grid;
     height: 100%;
     figure {
@@ -55,24 +57,34 @@
     }
 }
 
-.mav-post-feature-info-wrapper {
+.mav-post-feature-info-wrapper, .mav-post__feature__info--wrp {
     grid-area: right;
+    .mav-post-feature-info-ctn, .mav-post__feature__info--ctn {
+        display: grid;
+        grid-gap: var(--mav-gutter);
+        padding: var(--mav-gutter--lg);
+        background: var(--mav-color--off-white);
+        height: 100%;
+    }
 }
 
-.mav-post-feature-info-ctn {
-    display: grid;
-    grid-gap: var(--mav-gutter);
-    padding: var(--mav-gutter--lg);
-    background: var(--mav-color--off-white);
-    height: 100%;
-}
+
 
 // Title
-.mav-post-feature-title {
+.mav-post__feature__title {
     font-size: 2rem;
     text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
 }
-
-.mav-post-feature-cta-ctn {
-    @extend .mav-flex-center;
+.mav-post__feature__intro--wrp {
+    .mav-post__feature__intro--ctn {
+        font-family: var(--mav-font--secondary);
+        font-size: 1.2rem;
+        font-weight: 300;        
+        text-align: center;
+    }
 }
+// .mav-post-feature-cta-ctn {
+//     @extend .mav-flex-center;
+// }

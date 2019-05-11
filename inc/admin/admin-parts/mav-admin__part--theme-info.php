@@ -14,7 +14,7 @@
             </div>
             <div>
                 <p><strong><a href="http://www.maverick.vn/maverick-theme/" title="Đến trang Maverick Theme">Maverick WordPress Theme</a></strong></p>
-                <p>Bản quyền &copy; 2018 của <a href="http://www.maverick.vn" title="Đến trang maverick.vn">Maverick Design</a></p>
+                <p>Bản quyền &copy; 2018-<?php echo date('Y') ?> của <a href="http://www.maverick.vn" title="Đến trang maverick.vn">Maverick Design</a></p>
                 <p>Phát triển bởi: <strong>Đoàn Công Minh</strong></p>
                 <p><a href="mailto:minh@maverick.vn" title="Gửi email tới minh@maverick.vn">minh@maverick.vn</a> / <a href="tel:+84909096464" title="Gọi số 090-909-6464">090-909-MINH (6464)</a></p>
             </div>

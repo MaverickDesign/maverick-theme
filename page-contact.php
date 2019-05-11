@@ -9,21 +9,22 @@
 <?php get_header(); ?>
 
 <!-- Page content starts here -->
-<main id="mavid-page-main-content" class="mav-pg__wrp">
+<main id="mavid-page-main-content" class="mav-page__wrp">
     <!-- Page Header -->
     <?php get_template_part('/template-parts/mav-page__header'); ?>
 
-    <div class="mav-pg__ctn">
+    <div class="mav-page__ctn">
         <!-- Page Content -->
         <section class="mav-sec__wrp">
             <div class="mav-sec__ctn">
+
                 <div class="mav-sec__body--wrp">
                     <div class="mav-sec__body--ctn">
+
                         <div class="mav-page__contact--wrp">
                             <!-- Contact Form -->
                             <?php
-                                if ( function_exists( 'mavf_contact_form' ) )
-                                {
+                                if ( function_exists( 'mavf_contact_form' ) ) {
                                     $mav_form_args = array(
                                         'fields'        => array( 'name', 'email', 'phone', 'message' ),
                                         'form_title'    => __( 'Gửi thông tin liên hệ tới <strong>'.get_bloginfo('name').'</strong>' , 'mavericktheme' ),
@@ -67,8 +68,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </section>
     </div>

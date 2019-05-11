@@ -129,15 +129,15 @@ printf(
 
     // Footer
     if ( ( has_tag() ) || ( wp_count_posts()->publish > 1) ) :
-        printf('<footer class="mav-post-footer mav-post-footer-wrapper">');
-            printf('<div class="mav-post-footer-ctn">');
+        printf('<footer class="mav-post__footer--wrp">');
+            printf('<div class="mav-post__footer--ctn">');
 
                 if ( has_tag() ) :
                     // Post Tags
-                    printf('<div class="mav-post-tags-wrapper">');
-                        printf('<div class="mav-post-tags-ctn">');
-                            printf('<h4 class="mav-margin-bottom-sm">%1$s</h4>', __( 'Thẻ liên kết', 'mavericktheme' ) );
-                            the_tags('<ul id="mavid-tag-list" class="mav-tag-list"><li>', '</li><li>', '</li></ul>');
+                    printf('<div class="mav-post__tags--wrp">');
+                        printf('<div class="mav-post__tags--ctn">');
+                            printf('<h4>%1$s</h4>', __('Thẻ liên kết', 'mavericktheme'));
+                            the_tags('<ul id="mavid-tag-list" class="mav-tag__list"><li>', '</li><li>', '</li></ul>');
                         echo '</div>';
                     echo '</div>';
                 endif;
@@ -166,4 +166,3 @@ printf(
     endif;
 
 echo '</article>';
-?>

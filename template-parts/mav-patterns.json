@@ -1,11 +1,11 @@
 {
     "patterns" : [
         {
-            "pattern" : "/(Maverick Design)/i",
-            "replace" : "<span class=\"mav-brand-name\">$0</span>"
+            "pattern" : "/(Maverick Design)/ui",
+            "replace" : "<span class=\"mav-brand\" data-name>$0</span>"
         },
         {
-            "pattern" : "/(Maverick Theme)/i",
+            "pattern" : "/(Maverick Theme)/ui",
             "replace" : "<strong>$0</strong>"
         }
     ]
