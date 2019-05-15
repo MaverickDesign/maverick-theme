@@ -87,34 +87,9 @@ if ( !empty($mav_theme_features) ) {
     }
 }
 
-// // Uni Sliders
-// if ( file_exists( TEMPLATE_DIR.'/inc/mav-uni-slider.php' ) && @$mav_theme_features['Uni Slider'] ) {
-//     include TEMPLATE_DIR.'/inc/mav-uni-slider.php';
-// }
-
-// Carousel
-// require TEMPLATE_DIR.'/inc/mav-carousel.php';
-
-// Post Grid
-// require TEMPLATE_DIR. '/inc/mav-post-grid.php';
-
-// Featured Post
-// require TEMPLATE_DIR. '/inc/mav-post-feature.php';
-
 require TEMPLATE_DIR. '/inc/mav-items-grid.php';
 
 require TEMPLATE_DIR. '/inc/mav-ajax-form.php';
-
-// Post Accordion
-// require TEMPLATE_DIR. '/inc/mav-post-accordion.php';
-
-// Post Modal
-// require TEMPLATE_DIR. '/inc/mav-post-modal.php';
-
-// Post Tab View
-// require TEMPLATE_DIR. '/inc/mav-tab-view.php';
-
-// require TEMPLATE_DIR. '/inc/mav-content-modify.php';
 
 require TEMPLATE_DIR. '/inc/mav-form.php';
 

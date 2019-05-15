@@ -27,7 +27,7 @@
 
 
 // Page Title
-.mav-page-title-wrapper, .mav-page__title--wrp {
+.mav-page__title--wrp {
     position: relative;
     &:before {
         position: absolute;
@@ -39,38 +39,53 @@
         content: '';
         z-index: var(--mav-layer--background);
     }
+    .mav-page__title--ctn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media #{$mav-phone} {
+            padding: var(--mav-gutter--lg) var(--mav-gutter);
+        }
+        @media #{$mav-tablet} {
+            padding: var(--mav-gutter--xl) var(--mav-gutter);
+        }
+        @media #{$mav-desktop} {
+            padding: var(--mav-gutter--xl) var(--mav-gutter);
+        }
+        .mav-page__title {
+            font-weight: var(--mav-font__weight--bold);
+            color: rgba(255,255,255,.99)!important;
+            line-height: 1.2em;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(0,0,0,.25);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            @media #{$mav-phone} {
+                font-size: 2rem;
+            }
+            @media #{$mav-tablet} {
+                font-size: 3rem;
+            }
+            @media #{$mav-desktop} {
+                font-size: 4rem;
+            }
+        }
+        .mav-page__intro--wrp {
+            margin-top: var(--mav-gutter--lg);
+            .mav-page__intro--ctn {
+                .mav-page__intro {
+                    max-width: var(--mav-site--width);
+                    font-size: 1.3rem;
+                    font-family: var(--mav-font--secondary);
+                    font-weight: 300;
+                    color: var(--mav-color__text--primary--dark);
+                    // background: rgba(#000,.2);
+                    padding: var(--mav-gutter--xs) var(--mav-gutter--sm);
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 
-.mav-page-title-ctn, .mav-page__title--ctn {
-    @extend .mav-flex-center-all;
-    @media #{$mav-phone} {
-        padding: var(--mav-gutter--lg) var(--mav-gutter);
-    }
-    @media #{$mav-tablet} {
-        padding: var(--mav-gutter--xl) var(--mav-gutter);
-    }
-    @media #{$mav-desktop} {
-        padding: var(--mav-gutter--xl) var(--mav-gutter);
-    }
-}
-
-.mav-page-title, .mav-page__title {
-    font-weight: var(--mav-font__weight--bold);
-    color: rgba(255,255,255,.99)!important;
-    line-height: 1.2em;
-    text-align: center;
-    text-shadow: 0 0 5px rgba(0,0,0,.25);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    @media #{$mav-phone} {
-        font-size: 2rem;
-    }
-    @media #{$mav-tablet} {
-        font-size: 3rem;
-        max-width: 80vw;
-    }
-    @media #{$mav-desktop} {
-        font-size: 4rem;
-        max-width: 60vw;
-    }
-}

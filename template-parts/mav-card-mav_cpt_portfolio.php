@@ -26,8 +26,12 @@ printf( '<div class="mav-card__wrp">' );
                         printf( '<figure class="mav-card__post__thumbnail--ctn" data-cpt="%1$s" data-message="%2$s">', $mav_post_type, __( 'Nhấn để xem', 'mavericktheme' ) );
                             // Featured image
                             if ( has_post_thumbnail() ) {
+                                // printf(
+                                //     '<a href="%2$s" title="%3$s"><div class="mav-card__post__thumbnail"  %1$s></div></a>',
+                                //     mavf_get_post_thumbnail_url( 'large' ), $mav_permalink, __('Xem nội dung '.$mav_title, 'mavericktheme')
+                                // );
                                 printf(
-                                    '<a href="%2$s" title="%3$s"><div class="mav-card__post__thumbnail"  %1$s></div></a>',
+                                    '<div class="mav-card__post__thumbnail"  %1$s></div>',
                                     mavf_get_post_thumbnail_url( 'large' ), $mav_permalink, __('Xem nội dung '.$mav_title, 'mavericktheme')
                                 );
                             }

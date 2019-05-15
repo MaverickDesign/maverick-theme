@@ -5,7 +5,7 @@
  */
 
 (function(){
-    const mavStickyLogo = document.querySelector('.mav-sticky-logo');
+    const mavStickyLogo = document.querySelector('.mavjs-sticky__logo');
     const mavStickyLogoImg = document.querySelector('#mavid-sticky-logo');
 
     if ( mavStickyLogo == null || mavStickyLogoImg == null ) {

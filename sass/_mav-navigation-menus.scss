@@ -26,7 +26,7 @@
  * Header Menu
  */
 
-.mav-sec-header-menu, .mav-sec__header__menu {
+.mav-sec__header__menu {
     display: block;
     position: fixed; // for mobile menu
     width: 100%;
@@ -39,19 +39,19 @@
 }
 
 // Header sticky logo
-.mav-sticky-logo-wrapper, .mav-sticky__logo--wrp {
+.mav-sticky__logo--wrp {
     position: sticky;
     max-width: var(--mav-site--width);
     margin: 0 auto;
     padding: 0 var(--mav-gutter);
     top: 0;
     height: 100%;
-    .mav-sticky-logo-ctn, .mav-sticky__logo--ctn {
+    .mav-sticky__logo--ctn {
         position: absolute;
         display: flex;
         align-items: center;
 
-        .mav-sticky-logo, .mav-sticky__logo {
+        .mav-sticky__logo {
             display: flex;
             position: relative;
             visibility: hidden;
@@ -71,7 +71,7 @@
 
         .show-logo {
             visibility: visible;
-            max-height: 100vh;
+            max-height: 150px;
             opacity: 1;
             transform: translateY(0);
         }
@@ -93,17 +93,17 @@
     }
 }
 
-.mav-header-menu-ctn, .mav-header__menu--ctn {
+.mav-header__menu--ctn {
     display: block;
     overflow-y: auto;
     ul { // lvl_1
+        background: var(--mav-color__header-menu--background);
         font-family: var(--mav-font--secondary);
         @extend %mav-flex-column;
         margin: 0;
         padding-left: 0;
         @media #{$mav-desktop} {
             flex-direction: row;
-            background: var(--mav-color__header-menu--background);
             font-size: 1rem;
         }
 
@@ -184,7 +184,7 @@
             }
         }
 
-        .mav-submenu-icon {
+        .mav-submenu-icon, .mav-submenu__icon {
             cursor: pointer;
             margin: 0 var(--mav-gutter);
             @include text-contrast($mav-color__header-menu--background);
@@ -224,7 +224,7 @@
             }
         }
 
-        .mav-sub-menu {
+        .mav-sub-menu, .mav-sub__menu {
             max-height: 0;
             overflow: hidden;
             &.open, &[data-state="open"] {

@@ -43,7 +43,7 @@ class Mav_Walker_Nav_Primary extends Walker_Nav_Menu
         $classes[] = ( $item->current || $item->current_item_ancestor ) ? 'active' : '';
         $classes[] = 'menu-item-' . $item->ID;
         if ( $depth && $args->walker->has_children ) {
-            $classes[] = 'mav-dropdown-submenu';
+            $classes[] = 'mav-dropdown-submenu mav-dropdown__submenu';
         }
 
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
@@ -65,7 +65,7 @@ class Mav_Walker_Nav_Primary extends Walker_Nav_Menu
         $item_output  = $args->before;
         $item_output .= '<a' . $attributes . '>';
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-        $item_output .= ( $depth >= 0 && $args->walker->has_children ) ? '<span class="mav-submenu-icon" data-state="close" data-lvl="'.$depth_number.'"></span></a>' : '</a>';
+        $item_output .= ( $depth >= 0 && $args->walker->has_children ) ? '<span class="mav-submenu-icon mav-submenu__icon" data-state="close" data-lvl="'.$depth_number.'"></span></a>' : '</a>';
         $item_output .= $args->after;
 
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output , $item, $depth, $args );

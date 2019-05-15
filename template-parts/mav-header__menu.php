@@ -4,15 +4,15 @@
  */
 
 if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
-    <section id="mavid-sec-header-menu" class="mav-sec-header-menu mav-hide-on-mobile mav-hide__on--mobile">
+    <section id="mavid-sec-header-menu" class="mav-sec__header__menu mav-hide__on--mobile">
 
         <?php
             $mav_sticky_logo = esc_attr( get_option( 'mav_setting_sticky_logo' ) );
-            if (empty($mav_sticky_logo)): ?>
+            if ( empty( $mav_sticky_logo ) ) : ?>
             <!-- Sticky logo -->
-            <div class="mav-sticky-logo-wrapper mav-sticky__logo--wrp">
-                <div class="mav-sticky-logo-ctn mav-sticky__logo--ctn">
-                    <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mav-sticky-logo">
+            <div class="mav-sticky__logo--wrp">
+                <div class="mav-sticky__logo--ctn">
+                    <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mavjs-sticky__logo mav-sticky__logo">
                         <?php
                             $mav_brand_logo = get_option( 'mav_setting_brand_logo_mobile' ) ? esc_attr( get_option( 'mav_setting_brand_logo_mobile' ) ) : esc_attr( get_option( 'mav_setting_brand_logo' ) );
                             if ( $mav_brand_logo ) {
@@ -45,7 +45,7 @@ if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
                         'after'             => '',
                         'link_before'       => '',
                         'link_after'        => '',
-                        'items_wrap'        => '<ul id="mavid-header-menu" class="mav-header-menu mav-header__menu">%3$s</u>',
+                        'items_wrap'        => '<ul id="mavid-header-menu" class="mav-header__menu">%3$s</u>',
                         'depth'             => 0,
                         'walker'            => new Mav_Walker_Nav_Primary()
                     );

@@ -76,7 +76,10 @@ function mavf_site_setting_brand_logo_mobile() {
 }
 
 // Brand Name
-register_setting( 'mavog_site_setting', 'mav_setting_brand_name' );
+register_setting(
+    'mavog_site_setting',
+    'mav_setting_brand_name'
+);
 add_settings_field(
     'mavid_site_setting_brand_name',
     __( 'Tên thương hiệu', 'mavericktheme' ),
