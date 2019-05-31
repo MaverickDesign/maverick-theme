@@ -1027,13 +1027,11 @@ abbr, acronym {
 /**
  * Section Styles
  */
-.mav-sec__wrp {
-  margin: var(--mav-gutter) auto; }
-  .mav-sec__wrp[data-background-color="off-white"] {
-    background: var(--mav-color--off-white); }
-  .mav-sec__wrp .mav-sec__ctn {
-    max-width: var(--mav-site--width);
-    margin: 0 auto; }
+.mav-sec__wrp[data-background-color="off-white"] {
+  background: var(--mav-color--off-white); }
+.mav-sec__wrp .mav-sec__ctn {
+  max-width: var(--mav-site--width);
+  margin: 0 auto; }
 
 /**
  * Section header

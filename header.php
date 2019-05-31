@@ -101,8 +101,8 @@ printf('<!DOCTYPE html>');
         wp_head();
 
 
-    /* Modified Theme Styles */
-    get_template_part( '/template-parts/header/mav-header__modified-styles' );
+        /* Modified Theme Styles */
+        get_template_part( '/template-parts/header/mav-header__modified-styles' );
     ?>
 
 </head>
@@ -152,7 +152,6 @@ printf('<!DOCTYPE html>');
                         <?php
                             // Get option brand logo
                             $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
-
                             if ( $mav_brand_logo ) {
                                 echo "<img src=\"$mav_brand_logo;\">";
                             }

@@ -14,8 +14,8 @@ if ( current_theme_supports( 'menus' ) && has_nav_menu( 'primary_menu' ) ) : ?>
                 <div class="mav-sticky__logo--ctn">
                     <a href="<?php  bloginfo( 'url' ); ?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mavjs-sticky__logo mav-sticky__logo">
                         <?php
-                            $mav_brand_logo = get_option( 'mav_setting_brand_logo_mobile' ) ? esc_attr( get_option( 'mav_setting_brand_logo_mobile' ) ) : esc_attr( get_option( 'mav_setting_brand_logo' ) );
-                            if ( $mav_brand_logo ) {
+                            $mav_brand_logo = get_option( 'mav_setting_brand_logo_sticky' ) ? esc_attr( get_option( 'mav_setting_brand_logo_sticky' ) ) : esc_attr( get_option( 'mav_setting_brand_logo' ) );
+                            if ( !empty( $mav_brand_logo ) ) {
                                 printf(' <img id="mavid-sticky-logo" src="%1$s">', $mav_brand_logo );
                             } else {
                                 echo '<img id="mavid-sticky-logo" src="' . get_template_directory_uri() . '/assets/brand-logo.php?back=193,49,34,0&mark=255,255,255,1&typo=255,255,255,0">';

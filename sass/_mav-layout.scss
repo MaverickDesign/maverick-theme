@@ -292,7 +292,7 @@
  * Section Styles
  */
 .mav-sec__wrp {
-    margin: var(--mav-gutter) auto;
+    // margin: var(--mav-gutter) auto;
     &[data-background-color="off-white"] {
         background: var(--mav-color--off-white);
     }
