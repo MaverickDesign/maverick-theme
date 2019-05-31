@@ -2,14 +2,9 @@ button {
     margin: 0;
     padding: 0;
     border: none;
-
     background: transparent;
-
     color: inherit;
-
     font-family: var(--mav-font--secondary);
-    // font-weight: var(--mav-font__weight--bold);
-
     cursor: pointer;
 
     a {
@@ -56,6 +51,8 @@ button {
         @extend .mav-btn;
         background: var(--mav-color--primary);
         color: white;
+        font-weight: var(--mav-font__weight--bold);
+        font-size: 1rem;
         a {
             padding: var(--mav-gutter--sm);
         }
@@ -65,9 +62,8 @@ button {
             }
         }
         // Large button
-        &-lg, &--lg {
+        &--lg {
             @extend .mav-btn__primary;
-            // letter-spacing: 1px;
             a {
                 padding: var(--mav-gutter);
             }
@@ -75,11 +71,17 @@ button {
     }
     &-secondary, &__secondary {
         @extend .mav-btn;
-        color: var(--mav-color__text--primary);
+        font-size: 1rem;
+        font-weight: var(--mav-font__weight--bold);
         a {
             padding: var(--mav-gutter--sm);
         }
-        &-lg {
+        &:hover {
+            a {
+                color: var(--mav-color--primary);
+            }
+        }
+        &--lg {
             @extend .mav-btn-secondary;
             letter-spacing: 1px;
             a {

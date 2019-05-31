@@ -45,16 +45,16 @@
         justify-content: center;
         align-items: center;
         @media #{$mav-phone} {
-            padding: var(--mav-gutter--lg) var(--mav-gutter);
+            padding: var(--mav-gutter--sm) var(--mav-gutter);
         }
         @media #{$mav-tablet} {
-            padding: var(--mav-gutter--xl) var(--mav-gutter);
+            padding: var(--mav-gutter) var(--mav-gutter);
         }
         @media #{$mav-desktop} {
-            padding: var(--mav-gutter--xl) var(--mav-gutter);
+            padding: var(--mav-gutter--lg) var(--mav-gutter);
         }
         .mav-page__title {
-            font-weight: var(--mav-font__weight--bold);
+            font-weight: var(--mav-font__weight--black);
             color: rgba(255,255,255,.99)!important;
             line-height: 1.2em;
             text-align: center;
@@ -62,28 +62,30 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             @media #{$mav-phone} {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             @media #{$mav-tablet} {
-                font-size: 3rem;
+                font-size: 2rem;
             }
             @media #{$mav-desktop} {
-                font-size: 4rem;
+                font-size: 3rem;
             }
         }
+
         .mav-page__intro--wrp {
             margin-top: var(--mav-gutter--lg);
             .mav-page__intro--ctn {
+
                 .mav-page__intro {
                     max-width: var(--mav-site--width);
                     font-size: 1.3rem;
                     font-family: var(--mav-font--secondary);
                     font-weight: 300;
                     color: var(--mav-color__text--primary--dark);
-                    // background: rgba(#000,.2);
                     padding: var(--mav-gutter--xs) var(--mav-gutter--sm);
                     text-align: center;
                 }
+
             }
         }
     }

@@ -28,7 +28,8 @@ add_settings_field(
     'mavsec_theme_config_sec_general'
 );
 
-function mavf_theme_config_breadcrumbs() {
+function mavf_theme_config_breadcrumbs()
+{
     $mav_saved_value = get_option( 'mav_setting_breadcrumbs' );
     $mav_positions = array(
         'header',
@@ -58,7 +59,8 @@ add_settings_field(
     'mavsec_theme_config_sec_general'
 );
 
-function mavf_theme_config_sticky_logo() {
+function mavf_theme_config_sticky_logo()
+{
     $mav_saved_value = esc_attr( get_option( 'mav_setting_sticky_logo' ) );
     $mav_checked = ( @$mav_saved_value == 1 ? 'checked' : '' );
     printf(

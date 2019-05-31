@@ -247,7 +247,8 @@ function mavf_accordion(e)
 /**
  * Close Button
  */
-function mavf_close_btn(mavElement, mavElementToClose = '.mavjs-close'){
+function mavf_close_btn(mavElement, mavElementToClose = '.mavjs-close')
+{
     // Delete element from the DOM
     mavElement.closest(mavElementToClose).remove();
     return;
@@ -257,7 +258,7 @@ function mavf_close_btn(mavElement, mavElementToClose = '.mavjs-close'){
  * Modal Box
  */
 
-function mavf_create_modal_box(mavArgs= {
+function mavf_create_modal_box(mavArgs = {
     header      : '<p class="mav-modal-title">Modal Header</p>',
     body        : '<p>Modal Body</p>',
     footer      : '<p>Modal Footer</p>',
@@ -335,7 +336,8 @@ function mavf_tab_view(e){
  * Click events on body element
  */
 
-function mavf_body_click_events(){
+function mavf_body_click_events()
+{
     document.body.addEventListener('click', function(e) {
         const mavTarget = e.target;
 
@@ -397,7 +399,8 @@ function mavf_body_click_events(){
     })
 };
 
-function mavf_document_key(){
+function mavf_document_key()
+{
     document.addEventListener('keydown',function(mavKey){
         switch (mavKey.keyCode) {
             case 27:
@@ -445,37 +448,32 @@ function mavf_blog_page_view_style( mav_args = {
     }
 }
 
-mavf_blog_page_view_style();
+
 
 function mavf_card_style(
     mav_args = {
-        // 'setting_container' : '.mavjs-setting-ctn',
         'posts_container'   : '.mavjs-posts-container',
         'card_container'    : '.mavjs-card__content--ctn',
         }
     )
 {
-    // const mavSettingContainer = document.querySelector(mav_args['setting_container']);
     const mavPostContainer = document.querySelector(mav_args['posts_container']);
 
-    if ( mavPostContainer == undefined )
-    {
+    if ( mavPostContainer == undefined ) {
         return;
     }
 
     const mavView = mavPostContainer.dataset.displayStyle;
-
-    // mavPostContainer.dataset.displayStyle = mavView;
     const mavCards = mavPostContainer.querySelectorAll(mav_args['card_container']);
 
-    for ( const mavCard of mavCards )
-    {
+    for ( const mavCard of mavCards ) {
         mavCard.dataset.style = mavView;
     }
 }
 
 /* DOM content loaded functions */
-document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded', function() {
     mavf_body_click_events();
+    mavf_blog_page_view_style();
     mavf_document_key();
 },false);

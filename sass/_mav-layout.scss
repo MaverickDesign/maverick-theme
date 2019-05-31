@@ -28,13 +28,13 @@
 }
 
 // Flex Center Horizontal
-.mav-flex-center, .mav-flex__center {
+.mav-flex__center {
     @extend %mav-flex-row;
     justify-content: center;
 }
 
 // Flex Center Horizontal & Vertical
-.mav-flex-center-all, .mav-flex__center--all  {
+.mav-flex-center-all, .mav-flex__center--all {
     @extend %mav-flex-row;
     justify-content: center;
     align-items: center;
@@ -94,10 +94,8 @@
 }
 
 // Desktop columns
-@media #{$mav-desktop}
-{
-    @for $columns from 1 to 15
-    {
+@media #{$mav-desktop} {
+    @for $columns from 1 to 15 {
         .mav-col__15--#{$columns} {
             max-width: calc( (100% / 15) * #{$columns} );
         }
@@ -293,13 +291,13 @@
 /**
  * Section Styles
  */
-.mav-sec__wrp, .mav-sec--wrp {
-
+.mav-sec__wrp {
+    margin: var(--mav-gutter) auto;
     &[data-background-color="off-white"] {
         background: var(--mav-color--off-white);
     }
 
-    .mav-sec__ctn, .mav-sec--ctn {
+    .mav-sec__ctn {
         max-width: var(--mav-site--width);
         margin: 0 auto;
     }
@@ -373,20 +371,16 @@
 .mav-sec__body--wrp {
 
     .mav-sec__body--ctn {
-        padding: var(--mav-gutter--lg) 0;
-
-        @media #{$mav-phone} {
-            padding: var(--mav-gutter) 0;
-        }
+        padding: var(--mav-gutter) 0;
     }
 
 }
 /**
  * Section footer
  */
-.mav-sec-footer-wrapper, .mav-sec__footer--wrp {
+.mav-sec__footer--wrp {
 
-    .mav-sec-footer-ctn, .mav-sec__footer--ctn {
+    .mav-sec__footer--ctn {
         @extend .mav-flex-center-all;
         padding: var(--mav-gutter) 0 var(--mav-gutter--xl);
     }
@@ -402,8 +396,7 @@
     justify-content: center;
     justify-items: center;
 
-    &[data-columns="2"]
-    {
+    &[data-columns="2"] {
         grid-template-columns: repeat(2,max-content);
 
         button {
@@ -424,8 +417,7 @@
     }
 }
 
-.mav-divider
-{
+.mav-divider {
     position: relative;
     display: block;
     height: 1px;
@@ -477,4 +469,14 @@
     }
 
     background-color: var(--mav-divider__color);
+}
+
+.mav-page__wrp {
+    .mav-page__ctn {
+
+        .mav-page__header--wrp {
+            margin-bottom: var(--mav-gutter--lg);
+        }
+
+    }
 }

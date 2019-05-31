@@ -19,7 +19,7 @@
 
             $mav_show_page_content = false;
 
-            if ( function_exists('get_field') && ! empty( get_field( 'mavcf_page_cpt_content' ) ) ) {
+            if ( function_exists('get_field') && ! empty( get_field( 'mavcf_page_cpt_content' ) ) && ! empty( get_the_content() ) ) {
                 $mav_show_page_content = true;
             }
 

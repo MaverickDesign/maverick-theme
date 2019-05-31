@@ -1,7 +1,7 @@
 const mavContactForm = document.querySelector('.mavjs-form-contact');
 
-if (mavContactForm != undefined) {
-    mavContactForm.addEventListener('submit',function(e){
+if ( mavContactForm != undefined ) {
+    mavContactForm.addEventListener('submit', function(e) {
 
         e.preventDefault();
 

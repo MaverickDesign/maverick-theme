@@ -30,7 +30,7 @@
     display: block;
     position: fixed; // for mobile menu
     width: 100%;
-    background: var(--mav-color--primary);
+    background: var(--mav-color__header-menu--background);
     z-index: var(--mav-layer--top);
     @media #{$mav-desktop} {
         position: sticky;
@@ -142,7 +142,7 @@
                 @media #{$mav-desktop} {
                     box-shadow: none;
                     position: absolute;
-                    margin-top: 64px;
+                    margin-top: 44px;
                     border-radius: 0 0 5px 5px;
                 }
                 li {
@@ -169,9 +169,10 @@
                     }
                 }
             }
+
             a {
                 display: flex;
-                padding: var(--mav-gutter);
+                padding: var(--mav-gutter--sm) var(--mav-gutter);
                 text-decoration: none;
                 box-shadow: none;
                 &:hover {
@@ -182,6 +183,7 @@
                     justify-content: space-between;
                 }
             }
+
         }
 
         .mav-submenu-icon, .mav-submenu__icon {
@@ -239,13 +241,8 @@
 }
 
 #mavid-site-logo {
-    // height: 40px;
-    @media #{$mav-desktop} {
-        // height: 60px;
-    }
     img {
         display: block;
-        // height: 100%;
     }
 }
 

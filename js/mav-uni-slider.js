@@ -12,7 +12,8 @@ function mavf_uni_slider(
         'mavSliderClassNavArrowTitle'       : '.mavjs-title',
         'mavSliderClassNavArrowThumbnail'   : '.mavjs-featured-image',
     }
-) {
+)
+{
     // Query all sliders on page
     const mavAllSliders = document.querySelectorAll(`${mavArgs['mavSliderClass']}`);
 
@@ -139,8 +140,9 @@ function mavf_uni_slider(
 
             mavSlidesContainer.style.transform = `translateX(-${mavTranslateAmount}%)`;
 
+            // Toggle navigation
             mavf_toggle_nav(mavCurrentSlider);
-
+            // Updated active dot
             mavf_update_active_dot(mavNavDotsContainer);
         }
 
@@ -157,7 +159,6 @@ function mavf_uni_slider(
             const mavDirection = mavButton.dataset.direction;
 
             // Get current slide number
-            // const mavCurrentSlideNumber = Number(mavButton.dataset.slideNumber);
             const mavCurrentSlideNumber = Number(mavf_get_active_slide_number());
 
             // Next Button
@@ -263,10 +264,9 @@ function mavf_uni_slider(
         function mavf_update_active_dot(mavNavDotsContainer)
         {
             const mavNavDots = mavNavDotsContainer.querySelectorAll(mavArgs['mavSliderClassNavDot']);
-            // const mavNewActiveSlide = mavf_get_active_slide();
             const mavSlideNumber = mavf_get_active_slide_number();
 
-            for (const mavNavDot of mavNavDots) {
+            for ( const mavNavDot of mavNavDots ) {
                 mavNavDot.dataset.active = '0';
             }
 
@@ -408,7 +408,6 @@ function mavf_uni_slider(
             }, 300);
         });
     }
-
     mavf_screen_resize();
 
     function mavf_update_slide_display(mavCurrentSlider)
@@ -459,7 +458,7 @@ function mavf_uni_slider(
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     if ( typeof mavf_uni_slider === 'function' ) {
         mavf_uni_slider();
     }

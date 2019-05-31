@@ -236,6 +236,10 @@
     }
 }
 
+/**
+ * Post content
+ */
+
 .mav-post__content {
     @media #{$mav-desktop} {
 
@@ -259,7 +263,7 @@
 
         p, h1, h2, h3, h4, h5, h6,
         ul, ol, dl, table, form, pre, hr, address, blockquote {
-            max-width: 1000px;
+            // max-width: 1000px;
             max-width: var(--mav-content__width--max);
         }
 
@@ -282,6 +286,14 @@
         font-weight: 500;
     }
 
+    h2, h3,
+    .mav-h2, .mav-h3 {
+        margin: 1em auto .5em auto;
+        + p {
+            margin-top: 0;
+        }
+    }
+
     p {
         margin: 1em auto;
         line-height: 1.75;
@@ -298,10 +310,6 @@
             margin: 0;
         }
 
-        // Wordpress class
-        // &.attachment {
-        //     @extend .mav-flex-center-all;
-        // }
     }
 
     ol, ul {
@@ -322,28 +330,6 @@
         margin: var(--mav-gutter) auto;
     }
 
-    .aligncenter {
-        margin: 0 auto;
-    }
-
-    .alignleft {
-        float: left;
-        margin-right: var(--mav-gutter--lg);
-    }
-
-    .alignright {
-        float: right;
-        margin-left: var(--mav-gutter--lg);
-    }
-
-    .aligncenter {
-        margin: 0 auto;
-    }
-    .alignwide {
-        iframe {
-            width: 100%;
-        }
-    }
     iframe {
         max-width: 100%;
     }
@@ -351,6 +337,7 @@
     /**
      * Block Quote
      */
+
     blockquote {
         display: flex;
         flex-direction: column;
@@ -370,6 +357,36 @@
         }
         cite {
             margin-top: var(--mav-gutter);
+        }
+    }
+
+    cite {
+        font-family: var(--mav-font--secondary);
+        font-weight: var(--mav-font__weight--bold);
+        white-space: nowrap;
+    }
+        
+    .aligncenter {
+        margin: 0 auto;
+    }
+
+    .alignleft {
+        float: left;
+        margin-right: var(--mav-gutter--lg);
+    }
+
+    .alignright {
+        float: right;
+        margin-left: var(--mav-gutter--lg);
+    }
+
+    .aligncenter {
+        margin: 0 auto;
+    }
+
+    .alignwide {
+        iframe {
+            width: 100%;
         }
     }
 
@@ -405,22 +422,6 @@
         }
     }
 
-    // WordPress Gutenberg Style
-    .wp-block-pullquote {
-        blockquote {
-            @extend .mav-pullquote;
-            p {
-                font-size: 1.5rem;
-            }
-        }
-    }
-
-    cite {
-        font-family: var(--mav-font--secondary);
-        font-weight: var(--mav-font__weight--bold);
-        white-space: nowrap;
-    }
-
     /**
      * Definition Lists
      */
@@ -445,6 +446,14 @@
         border-left: 3px solid var(--mav-color--accent);
     }
 
+    .gallery {
+        figure.gallery-item {
+            max-width: unset;
+            margin: 0;
+        }
+    }
+
+    // WordPress Gutenberg Style
     .wp-block-gallery {
         figure {
             max-width: 100%;
@@ -452,10 +461,12 @@
         }
     }
 
-    .gallery {
-        figure.gallery-item {
-            max-width: unset;
-            margin: 0;
+    .wp-block-pullquote {
+        blockquote {
+            @extend .mav-pullquote;
+            p {
+                font-size: 1.5rem;
+            }
         }
     }
 }

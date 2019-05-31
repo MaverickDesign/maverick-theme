@@ -108,7 +108,7 @@
 /* Footer - Copyright */
 
 .mav-footer__copyright--wrp {
-    background: var(--mav-color--accent);
+    background: var(--mav-color__site__footer__copyright--background);
     .mav-footer__copyright--ctn {
         display: grid;
         grid-gap: var(--mav-gutter--xs);

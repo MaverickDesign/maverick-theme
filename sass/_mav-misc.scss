@@ -127,9 +127,10 @@
     }
 }
 
-.mav-posts-wrapper, .mav-posts__wrp {
+.mav-posts__wrp {
     position: relative;
-    .mav-posts-ctn, .mav-posts__ctn {
+    margin: var(--mav-gutter);
+    .mav-posts__ctn {
         position: relative;
         max-width: var(--mav-site--width);
         margin: 0 auto;

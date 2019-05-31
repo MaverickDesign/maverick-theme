@@ -2,9 +2,9 @@
  * Feature post
  */
 
-.mav-post-feature-wrapper, .mav-post__feature--wrp {
+.mav-post__feature--wrp {
     overflow: hidden;
-    // margin-bottom: var(--mav-gutter--xl);
+    margin-bottom: var(--mav-gutter--lg);
     &:last-child, &:only-child {
         margin-bottom: 0;
     }
@@ -81,7 +81,7 @@
     .mav-post__feature__intro--ctn {
         font-family: var(--mav-font--secondary);
         font-size: 1.2rem;
-        font-weight: 300;        
+        font-weight: 300;
         text-align: center;
     }
 }

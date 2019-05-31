@@ -3,7 +3,6 @@
  */
 
 @import "mav-mixins";
-
 @import "mav-variables";
 
 #wpcontent {
@@ -13,15 +12,11 @@
     }
 }
 
-.mav-admin-page-wrapper {
-    font-size: 16px;
+.mav-admin-page-wrapper, .mav-admin__page--wrp {
     display: grid;
     max-width: 100%;
     overflow: hidden;
-    p {
-        font-size: 1rem;
-    }
-    .mav-admin-page-container {
+    .mav-admin-page-container, .mav-admin__page--ctn {
         margin-top: var(--mav-gutter--lg);
         display: grid;
         grid-gap: var(--mav-gutter);
@@ -49,9 +44,10 @@
         }
     }
 
-    .mav-brand-logo-buttons {
+    .mav-brand-logo-buttons, .mav-brand__logo__buttons {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        grid-template-columns: repeat(3,1fr);
         grid-gap: var(--mav-gutter--sm);
     }
 
@@ -190,8 +186,17 @@
     }
 }
 
-.mav-admin-color-preview-box, .mav-admin__color__preview__box {
+.mav-admin__color__preview__box {
     margin-top: var(--mav-gutter--xs);
     display: inline-block;
     height: 40px;
+    border: var(--mav-border);
+}
+
+.mav-brand__logo__preview--ctn {
+    img {
+        max-width: 80px;
+        height: auto;
+        object-fit: contain;
+    }
 }

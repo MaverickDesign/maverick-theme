@@ -3,15 +3,15 @@
  * @package mavericktheme
  */
 
-// Site Setting Page
+/* Site Setting Page */
 function mavf_admin_page_site_setting()
 {
     include_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting.php';
 }
 
-// Site Setting Page Functions
-function mavf_admin_site_setting_options() {
-
+/* Site Setting Page Functions */
+function mavf_admin_site_setting_options()
+{
     // Brand settings
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_brand.php';
 
@@ -33,6 +33,5 @@ function mavf_admin_site_setting_options() {
 
     // Terms and Conditions
     include_once TEMPLATE_DIR.'/inc/admin/mav-admin_site-setting_terms.php';
-
 }
 add_action( 'admin_init', 'mavf_admin_site_setting_options' );

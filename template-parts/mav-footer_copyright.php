@@ -2,17 +2,27 @@
 /**
  * @package mavericktheme
  */
-?>
 
-<section id="mavid-sec-footer-copyright" class="mav-footer-copyright-wrapper mav-footer__copyright--wrp">
-    <div class="mav-footer-copyright-ctn mav-footer__copyright--ctn">
-        <!-- Copyright -->
-        <div>
-            <?php _e( 'Bản quyền', 'mavericktheme' ); ?> &copy; <strong><?php echo get_the_date( 'Y' ); ?></strong> <?php _e( 'của', 'mavericktheme' ); ?> <a href="<?php bloginfo( 'url' );?>" target="_blank" class="mav-link--dark"><strong><?php bloginfo( 'title' ); ?></strong></a>. <?php _e( 'Bảo lưu mọi quyền hạn.', 'mavericktheme' ); ?>
-        </div>
-        <!-- Theme info -->
-        <div class="<?php if ( get_option( 'mav_setting_theme_info' ) ) { echo 'mav-hide'; } ?>">
-            <?php _e( 'Website xây dựng bằng', 'mavericktheme' ); ?> <a href="http://www.maverick.vn/mavericktheme/" target="_blank" class="mav-link--dark"><strong>Maverick Theme</strong></a> <?php _e( 'phát triển bởi', 'mavericktheme' ); ?> <a href="http://www.maverick.vn" target="_blank" class="mav-link--dark"><strong>Maverick Design</strong></a>.
-        </div>
-    </div>
-</section>
+printf('<section id="mavid-sec-footer-copyright" class="mav-footer__copyright--wrp">');
+    printf('<div class="mav-footer__copyright--ctn">');
+
+        /* Copyright */
+        echo '<div>';
+            printf(
+                '%1$s &copy; <strong>%2$s</strong> %3$s <a href="%4$s" target="_blank" class="mav-link--dark"><strong>%5$s</strong></a>. %6$s',
+                __('Bản quyền','mavericktheme'), get_the_date( 'Y' ), __('của', 'mavericktheme'), get_bloginfo('url'), get_bloginfo('title'), __('Bảo lưu mọi quyền hạn.','mavericktheme')
+            );
+        echo '</div>';
+
+        /* Theme info */
+        if ( ! get_option( 'mav_setting_theme_info' ) ) {
+            printf('<div>');
+                printf(
+                    '%1$s <a href="http://www.maverick.vn/maverick-theme/" target="_blank" class="mav-link--dark" title="%3$s"><strong>Maverick Theme</strong></a> %2$s <a href="http://www.maverick.vn/" target="_blank" class="mav-link--dark" title="%4$s"><strong>Maverick Design</strong>.</a>',
+                    __( 'Website được xây dựng bằng', 'mavericktheme' ), __( 'phát triển bởi', 'mavericktheme' ), __( 'Đến trang Maverick Theme của Maverick Design', 'mavericktheme' ), __( 'Đến trang Maverick Design', 'mavericktheme' )
+                );
+            echo '</div>';
+        }
+
+    echo '</div>';
+echo '</section>';
