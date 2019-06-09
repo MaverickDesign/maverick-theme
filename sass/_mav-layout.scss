@@ -330,16 +330,20 @@
             border-radius: var(--mav-gutter--sm);
             border: 1px solid transparent;
             text-align: center;
-            font-size: 1.75rem;
+            font-size: 2rem;
             text-transform: uppercase;
             font-weight: 900;
             @extend %mav-transition;
             a {
                 text-decoration: none;
             }
-            &:hover {
-                box-shadow: inset 0 -3px var(--mav-color--accent);
+
+            @media #{$mav-desktop} {
+                &:hover {
+                    box-shadow: inset 0 -3px var(--mav-color--accent);
+                }
             }
+
             @media #{$mav-phone} {
                 font-size: 1.25rem;
             }
@@ -353,7 +357,7 @@
 .mav-sec__intro--wrp {
     .mav-sec__intro--ctn {
         max-width: 1000px;
-        margin: 0 auto;
+        margin: 0 var(--mav-gutter);
         padding: var(--mav-gutter--lg) 0;
         font-family: var(--mav-font--secondary);
         font-size: 1.5rem;
@@ -361,6 +365,7 @@
         text-align: center;
         @media #{$mav-phone} {
             padding: var(--mav-gutter);
+            font-size: 1rem;
         }
     }
 }
@@ -369,20 +374,17 @@
  * Section body
  */
 .mav-sec__body--wrp {
-
     .mav-sec__body--ctn {
         padding: var(--mav-gutter) 0;
     }
-
 }
 /**
  * Section footer
  */
 .mav-sec__footer--wrp {
-
     .mav-sec__footer--ctn {
         @extend .mav-flex-center-all;
-        padding: var(--mav-gutter) 0 var(--mav-gutter--xl);
+        padding: var(--mav-gutter) 0 var(--mav-gutter--lg);
     }
 }
 

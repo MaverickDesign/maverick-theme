@@ -133,6 +133,6 @@ jQuery(document).ready(function($){
 
 });
 
-document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded',function() {
     console.log('Admin page loaded.');
 },false);

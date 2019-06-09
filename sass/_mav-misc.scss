@@ -1,6 +1,8 @@
 .mav-brand__name {
-    font-weight: var(--mav-font__weight--bold)
+    font-weight: var(--mav-font__weight--bold);
+    white-space: nowrap;
 }
+
 .mav-theme__name, .mav-text__en {
     // font-family: var(--mav-font--secondary);
     font-weight: var(--mav-font__weight--medium)
@@ -35,31 +37,30 @@
  * Message Box
  */
 
-.mav-message-box-wrapper {
+.mav-message-box-wrapper, .mav-nessage__box--wrp {
     margin: var(--mav-gutter--sm) 0;
-}
-
-.mav-message-box-ctn {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    grid-gap: var(--mav-gutter--sm);
-    width: 100%;
-    padding: var(--mav-gutter--xs) var(--mav-gutter);
-    box-shadow: inset 3px 0px var(--mav-color-accent);
-    border: 1px solid var(--mav-color--border);
-    background: white;
-    span {
-        color: var(--mav-color__text--primary);
-        &.mav-btn-close {
-            &:hover {
-                color: var(--mav-color--accent);
+    .mav-message-box-ctn, .mav-message__box--ctn {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        grid-gap: var(--mav-gutter--sm);
+        width: 100%;
+        padding: var(--mav-gutter--xs) var(--mav-gutter);
+        box-shadow: inset 3px 0px var(--mav-color-accent);
+        border: 1px solid var(--mav-color--border);
+        background: white;
+        span {
+            color: var(--mav-color__text--primary);
+            &.mav-btn-close {
+                &:hover {
+                    color: var(--mav-color--accent);
+                }
             }
         }
-    }
-    @media #{$mav-desktop} {
-        max-width: var(--mav-site--width);
-        margin: 0 auto;
+        @media #{$mav-desktop} {
+            max-width: var(--mav-site--width);
+            margin: 0 auto;
+        }
     }
 }
 
@@ -67,7 +68,7 @@
  * Mobile container
  */
 
-.mav-mobile-ctn {
+.mav-mobile-ctn, .mav-mobile__ctn {
     @media #{$mav-phone} {
         max-height: 75vh;
         overflow-y: hidden;

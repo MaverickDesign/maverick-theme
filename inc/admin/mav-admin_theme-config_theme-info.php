@@ -20,6 +20,7 @@ register_setting(
     'mavog_theme_info',
     'mav_setting_theme_info'
 );
+
 add_settings_field(
     'mavid_theme_info_display_theme_info',
     __( 'Không hiển thị ở chân trang', 'mavericktheme' ),

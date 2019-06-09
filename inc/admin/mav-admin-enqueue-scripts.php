@@ -3,8 +3,8 @@
  * @package mavericktheme
  */
 
-function mavf_enqueue_scripts() {
-
+function mavf_enqueue_scripts()
+{
     /**
      * jQuery
      */

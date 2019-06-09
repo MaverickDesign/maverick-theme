@@ -112,11 +112,12 @@ $mav-color__header-menu--background--hover  : $mav-color--accent;
  * Media Queries
  */
 
-$mav-phone:     "only screen and (max-width: 480px)";
-$mav-tablet:    "only screen and (min-width: 768px) and (max-width: 1024px)";
-$mav-mobile:    "only screen and (max-width: 1024px)";
-$mav-tablet-up: "only screen and (min-width: 768px)";
-$mav-desktop:   "only screen and (min-width: 1024px)";
+@import "_mav-media-queries";
+// $mav-phone:     "only screen and (max-width: 480px)";
+// $mav-tablet:    "only screen and (min-width: 768px) and (max-width: 1024px)";
+// $mav-mobile:    "only screen and (max-width: 1024px)";
+// $mav-tablet-up: "only screen and (min-width: 768px)";
+// $mav-desktop:   "only screen and (min-width: 1024px)";
 
 /**
  * SASS Variables

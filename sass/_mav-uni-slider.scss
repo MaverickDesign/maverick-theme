@@ -280,29 +280,16 @@
         height: 100%;
         // Slide Title
         .mav-slider__slide--title {
-            // position: absolute;
             color: var(--mav-color__text--primary--dark);
             text-align: center;
             text-shadow: 0 0 10px rgba(black, .8);
             font-weight: var(--mav-font__weight--bold);
-            // margin-bottom: var(--mav-gutter--sm);
-            font-size: 4rem;
-            // line-height: 1.2;
+            font-size: 3rem;
+            margin: 0 var(--mav-gutter);
 
-            // @media #{$mav-desktop} {
-            //     max-width: 30%;
-            // }
-
-            // @media #{$mav-tablet} {
-            //     max-width: 60%;
-            // }
-
-            // @media #{$mav-phone} {
-            //     max-width: 80%;
-            //     font-size: 1.5rem;
-            //     background: transparent;
-            //     padding: 0;
-            // }
+            @media #{$mav-phone} {
+                font-size: 2rem;
+            }
         }
     }
 }

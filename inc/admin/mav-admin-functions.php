@@ -28,10 +28,10 @@ function mavf_admin_init()
         'mav_admin_page_site_setting',
         'mavf_admin_page_site_setting'
     );
-    // Site Setting Functions
+    /* Site Setting Functions */
     include_once TEMPLATE_DIR . '/inc/admin/mav-admin-site-setting-functions.php';
 
-    // Add Theme Config Submenu Page
+    /* Add Theme Config Submenu Page */
     add_submenu_page(
         'mav_admin_page_site_setting',
         'Theme Config',
@@ -40,10 +40,10 @@ function mavf_admin_init()
         'mav_admin_page_theme_config',
         'mavf_admin_page_theme_config'
     );
-    // Theme Config Functions
+    /* Theme Config Functions */
     include_once TEMPLATE_DIR . '/inc/admin/mav-admin-theme-config-functions.php';
 
-    // Theme Styles - Submenu Page
+    /* Theme Styles - Submenu Page */
     add_submenu_page(
         'mav_admin_page_site_setting',
         'Theme Styles',
@@ -52,7 +52,7 @@ function mavf_admin_init()
         'mav_admin__setting_section__theme_styles',
         'mavf_admin__theme_styles__page'
     );
-    // Theme Styles Functions
+    /* Theme Styles Functions */
     include_once TEMPLATE_DIR . '/inc/admin/mav_admin__theme_styles__functions.php';
 
     /**
@@ -75,7 +75,9 @@ add_action( 'admin_menu', 'mavf_admin_init' );
 /**
  * For admin panel
  */
-function mavf_enqueue_admin_scripts( $mavHook ) {
+
+function mavf_enqueue_admin_scripts( $mavHook )
+{
     /**
      * Admin panel css
      */
@@ -83,7 +85,7 @@ function mavf_enqueue_admin_scripts( $mavHook ) {
         'mav_admin_css',
         TEMPLATE_URI.'/css/mav-admin-styles.css',
         array(),
-        '1.0.0',
+        '',
         'all'
     );
     wp_enqueue_style( 'mav_admin_css' );
@@ -95,12 +97,10 @@ function mavf_enqueue_admin_scripts( $mavHook ) {
         'mav_admin_script',
         TEMPLATE_URI.'/js/mav-admin-scripts.js',
         array('jquery'),
-        '1.0.0',
+        '',
         true
     );
     wp_enqueue_script( 'mav_admin_script' );
-
     wp_enqueue_media();
 }
-
 add_action( 'admin_enqueue_scripts', 'mavf_enqueue_admin_scripts' );
