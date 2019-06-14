@@ -292,7 +292,6 @@
  * Section Styles
  */
 .mav-sec__wrp {
-    // margin: var(--mav-gutter) auto;
     &[data-background-color="off-white"] {
         background: var(--mav-color--off-white);
     }
@@ -323,7 +322,9 @@
  * Section title
  */
 .mav-sec__title--wrp {
+
     .mav-sec__title--ctn {
+
         .mav-sec__title {
             padding: 0 var(--mav-gutter--sm) var(--mav-gutter--xs) var(--mav-gutter--sm);
             box-shadow: inset 0 -3px var(--mav-color--primary);
@@ -348,25 +349,32 @@
                 font-size: 1.25rem;
             }
         }
+
     }
+
 }
 
 /**
  * Section intro
  */
 .mav-sec__intro--wrp {
+    display: flex;
+    justify-content: center;
     .mav-sec__intro--ctn {
-        max-width: 1000px;
         margin: 0 var(--mav-gutter);
         padding: var(--mav-gutter--lg) 0;
         font-family: var(--mav-font--secondary);
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 300;
         text-align: center;
+        @media #{$mav-desktop} {
+            max-width: 1000px;
+        }
         @media #{$mav-phone} {
             padding: var(--mav-gutter);
             font-size: 1rem;
         }
+
     }
 }
 
@@ -374,9 +382,11 @@
  * Section body
  */
 .mav-sec__body--wrp {
+
     .mav-sec__body--ctn {
         padding: var(--mav-gutter) 0;
     }
+
 }
 /**
  * Section footer

@@ -64,9 +64,7 @@ button {
         // Large button
         &--lg {
             @extend .mav-btn__primary;
-            a {
-                padding: var(--mav-gutter);
-            }
+            padding: var(--mav-gutter);
         }
     }
     &-secondary, &__secondary {

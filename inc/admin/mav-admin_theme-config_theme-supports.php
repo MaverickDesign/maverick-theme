@@ -12,5 +12,5 @@ add_settings_section(
 
 function mavf_theme_config_theme_support()
 {
-	_e( 'Thiết lập các tính năng cho Maverick Theme', 'mavericktheme' );
+	_e( '<p>Thiết lập các tính năng cho Maverick Theme</p>', 'mavericktheme' );
 }

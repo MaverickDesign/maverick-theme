@@ -4,18 +4,17 @@
  * Template Name: Contact Page
  * Template Post Type: page
  */
-?>
 
-<?php get_header(); ?>
-
+get_header(); ?>
 <!-- Page content starts here -->
+
 <main id="mavid-page-main-content" class="mav-page__wrp">
     <!-- Page Header -->
     <?php get_template_part('/template-parts/mav-page__header'); ?>
 
     <div class="mav-page__ctn">
         <!-- Page Content -->
-        <section class="mav-sec__wrp">
+        <section class="mav-sec__wrp" data-background-color="off-white">
             <div class="mav-sec__ctn">
 
                 <div class="mav-sec__body--wrp">
@@ -76,6 +75,6 @@
         </section>
     </div>
 </main>
-<!-- Page content ends here -->
 
+<!-- Page content ends here -->
 <?php get_footer(); ?>

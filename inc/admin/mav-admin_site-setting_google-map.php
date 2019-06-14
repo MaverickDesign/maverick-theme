@@ -12,7 +12,7 @@ add_settings_section(
 
 function mavf_site_setting_google_map()
 {
-    _e( 'Các thiết lập cho Google Map','mavericktheme' );
+    _e( '<p>Các thiết lập cho Google Map</p>','mavericktheme' );
 }
 
 register_setting(

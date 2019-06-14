@@ -12,7 +12,7 @@ add_settings_section(
 
 function mavf_site_setting_sec_social_sharing()
 {
-    _e( 'Thiết lập chia sẻ Mạng Xã Hội - Social Sharing', 'mavericktheme' );
+    _e( '<p>Thiết lập chia sẻ Mạng Xã Hội</p>', 'mavericktheme' );
 }
 
 register_setting(

@@ -15,13 +15,14 @@ add_settings_field(
     'mavsec_theme_config_theme_support'
 );
 
-function mavf_theme_config_grid_system() {
+function mavf_theme_config_grid_system()
+{
     $mav_saved_value = esc_attr( get_option( 'mav_setting_grid_system' ) );
 
     $mavGrids = [960,1200,1400,1680,1920];
 
-    echo '<fieldset class="mav-grid">';
-        foreach ($mavGrids as $mavGrid) {
+    echo '<fieldset class="mav-grid" data-grid-gap>';
+        foreach ( $mavGrids as $mavGrid ) {
             $mav_checked = ( @$mav_saved_value == $mavGrid ) ? 'checked' : '';
             printf(
                 '<label><input type="radio" name="mav_setting_grid_system" value="%1$d" %2$s>%1$d px</label>',

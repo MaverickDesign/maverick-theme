@@ -13,7 +13,7 @@ add_settings_section(
 
 function mavf_site_setting_social_account()
 {
-    _e( 'Thiết lập thông tin tài khoản mạng xã hội', 'mavericktheme' );
+    _e( '<p>Thông tin tài khoản mạng xã hội</p>', 'mavericktheme' );
 }
 
 // Facebook

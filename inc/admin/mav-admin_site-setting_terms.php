@@ -12,7 +12,7 @@ add_settings_section(
 
 function mavf_site_setting_sec_terms()
 {
-    _e( 'Thiết lập thỏa thuận người dùng', 'mavericktheme' );
+    _e( '<p>Thiết lập thỏa thuận người dùng</p>', 'mavericktheme' );
 }
 
 register_setting(
@@ -57,7 +57,7 @@ function mavf_site_setting_terms_page_term()
         '<input type="text" name="mav_setting_terms_page_term" value="%1$s" placeholder="%2$s" data-visual="short"/>',
         $mav_saved_value, __('Ví dụ: '.rand(100, 200).'', 'mavericktheme')
     );
-    printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Điều Khoản', 'mavericktheme' ) );
+    // printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Điều Khoản', 'mavericktheme' ) );
 }
 
 register_setting(
@@ -80,7 +80,7 @@ function mavf_site_setting_terms_page_condition()
         '<input type="text" name="mav_setting_terms_page_condition" value="%1$s" placeholder="%2$s" data-visual="short"/>',
         $mav_saved_value, __('Ví dụ: '.rand(100, 200).'', 'mavericktheme')
     );
-    printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Điều Kiện', 'mavericktheme' ) );
+    // printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Điều Kiện', 'mavericktheme' ) );
 }
 
 register_setting(
@@ -103,5 +103,5 @@ function mavf_site_setting_terms_page_policy()
         '<input type="text" name="mav_setting_terms_page_policy" value="%1$s" placeholder="%2$s" data-visual="short"/>',
         $mav_saved_value, __( 'Ví dụ: '.rand(100, 200).'', 'mavericktheme' )
     );
-    printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Chính Sách', 'mavericktheme' ) );
+    // printf( '<span class="mav-admin-desc">%1$s</a>', __( 'ID trang Chính Sách', 'mavericktheme' ) );
 }

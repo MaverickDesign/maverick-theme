@@ -32,12 +32,12 @@ function mavf_theme_config_theme_support_post_format()
         'chat'
     );
 
-    echo '<div class="mav-grid" data-grid-gap="">';
+    echo '<fieldset class="mav-grid">';
     $mavOutput = '';
     foreach ($mavPostFormats as $mavPostFormat) {
         $mavChecked = (@$mav_saved_value[$mavPostFormat] == 1 ? 'checked' : '');
         $mavOutput .= '<label><input type="checkbox" id="mavid-post-format-'.$mavPostFormat.'" name="mav_setting_post_format['.$mavPostFormat.']" value="1" '.$mavChecked.'/> '.ucfirst($mavPostFormat).'</label>';
     }
     echo $mavOutput;
-    echo '</div>';
+    echo '</fieldset>';
 }

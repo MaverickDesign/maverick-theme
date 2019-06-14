@@ -13,7 +13,7 @@ add_settings_section(
 
 function mavf_theme_config_sec_dev_mode()
 {
-    _e( 'Kích hoạt chế độ đang phát triển website', 'mavericktheme' );
+    _e( '<p>Kích hoạt chế độ đang phát triển website</p>', 'mavericktheme' );
 }
 
 register_setting(

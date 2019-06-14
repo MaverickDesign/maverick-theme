@@ -12,7 +12,7 @@ add_settings_section(
 
 function mavf_site_setting_facebook_app()
 {
-    _e( 'Thiết lập cho Facebook App', 'mavericktheme' );
+    _e( '<p>Thiết lập cho Facebook App</p>', 'mavericktheme' );
 }
 
 // Enable Facebook App

@@ -86,13 +86,6 @@ form {
  * Contact Form
  */
 
-.mav-contact-form-ctn, .mav-contact__form--ctn {
-    width: 100%;
-    background: white;
-    padding: var(--mav-gutter);
-    border: 1px solid var(--mav-color--border);
-}
-
 .mav-contact-form, .mav-contact__form {
     width: 100%;
     display: grid;
@@ -142,13 +135,13 @@ form {
 }
 
 /* Contact Form Header */
-.mav-form-header-wrapper {
-    .mav-form-header-ctn {
+.mav-form__header--wrp {
+    .mav-form__header--ctn {
         padding-bottom: var(--mav-gutter--lg);
         display: grid;
         grid-gap: var(--mav-gutter);
-        .mav-form-title-wrapper {
-            .mav-form-title-ctn {
+        .mav-form__title--wrp {
+            .mav-form__title--ctn {
                 text-align: center;
                 font-size: 2rem;
             }

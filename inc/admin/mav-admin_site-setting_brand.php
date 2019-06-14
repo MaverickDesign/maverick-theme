@@ -12,7 +12,7 @@ add_settings_section(
 
 function mavf_site_setting_brand()
 {
-    printf( '<p class="mav-desc">%1$s</p>', __( 'Thiết lập các thông tin thương hiệu', 'mavericktheme' ) );
+    printf( '<p>%1$s</p>', __( 'Thiết lập các thông tin thương hiệu', 'mavericktheme' ) );
 }
 
 /* Brand Logo */

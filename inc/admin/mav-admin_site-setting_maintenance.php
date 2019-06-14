@@ -11,8 +11,9 @@ add_settings_section(
     'mav_admin_page_site_setting'
 );
 
-function mavf_site_setting_sec_maintenance() {
-    _e( 'Thiết lập bảo trì website', 'mavericktheme' );
+function mavf_site_setting_sec_maintenance()
+{
+    _e( '<p>Thiết lập bảo trì website</p>', 'mavericktheme' );
 }
 
 // Eneable maintenance mode
@@ -20,6 +21,7 @@ register_setting(
     'mavog_site_setting',
     'mav_setting_maintenance'
 );
+
 add_settings_field(
     'mavid_site_setting_maintenance',
     __( 'Kích hoạt chế độ bảo trì', 'mavericktheme' ),
@@ -28,7 +30,8 @@ add_settings_field(
     'mavsec_site_setting_maintenance'
 );
 
-function mavf_site_setting_maintenance() {
+function mavf_site_setting_maintenance()
+{
     $mav_saved_value = esc_attr( get_option( 'mav_setting_maintenance' ) );
     $mav_checked = ( @$mav_saved_value == 1 ? 'checked' : '' );
     printf(

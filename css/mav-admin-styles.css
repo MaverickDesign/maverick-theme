@@ -173,6 +173,8 @@
   max-width: 100%;
   overflow: hidden;
   /* Theme Info */ }
+  .mav-admin-page-wrapper p, .mav-admin__page--wrp p {
+    font-size: 1rem; }
   .mav-admin-page-wrapper .mav-admin-page-container, .mav-admin-page-wrapper .mav-admin__page--ctn, .mav-admin__page--wrp .mav-admin-page-container, .mav-admin__page--wrp .mav-admin__page--ctn {
     margin-top: var(--mav-gutter--lg);
     display: grid;
@@ -191,7 +193,7 @@
   .mav-admin-page-wrapper .mav-grid, .mav-admin__page--wrp .mav-grid {
     display: grid; }
     .mav-admin-page-wrapper .mav-grid[data-grid-gap], .mav-admin__page--wrp .mav-grid[data-grid-gap] {
-      grid-gap: var(--mav-gutter--sm); }
+      grid-gap: var(--mav-gutter); }
   .mav-admin-page-wrapper .mav-brand-logo-buttons, .mav-admin-page-wrapper .mav-brand__logo__buttons, .mav-admin__page--wrp .mav-brand-logo-buttons, .mav-admin__page--wrp .mav-brand__logo__buttons {
     display: grid;
     align-items: center;
@@ -203,8 +205,6 @@
     @media only screen and (min-width: 1024px) {
       .mav-admin-page-wrapper form, .mav-admin__page--wrp form {
         max-width: 50vw; } }
-    .mav-admin-page-wrapper form label, .mav-admin__page--wrp form label {
-      max-width: max-content; }
     .mav-admin-page-wrapper form input, .mav-admin__page--wrp form input {
       box-shadow: none;
       padding: var(--mav-gutter--sm); }
@@ -214,13 +214,13 @@
         height: 60px;
         display: block; }
     .mav-admin-page-wrapper form .form-table, .mav-admin__page--wrp form .form-table {
-      display: inline-grid;
+      display: grid;
       align-items: center;
-      background: #fafafa;
+      background: rgba(255, 255, 255, 0.5);
       margin-top: var(--mav-gutter);
       border: 1px solid var(--mav-color--border);
       box-sizing: border-box;
-      box-shadow: inset 4px 0 var(--mav-color--border); }
+      box-shadow: inset 4px 0 var(--mav-color--primary); }
       .mav-admin-page-wrapper form .form-table tbody, .mav-admin__page--wrp form .form-table tbody {
         padding: var(--mav-gutter);
         max-width: 100%; }

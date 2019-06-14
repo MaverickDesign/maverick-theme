@@ -67,25 +67,25 @@ function mavf_contact_form( $mav_args )
     $mav_class_form_input = 'mav-form-input';
 
     if ( ! empty( $mav_display_fields ) ) {
-        printf('<div class="mav-form-contact-wrapper">');
-            printf('<div class="mav-form-contact-ctn">');
+        printf('<div class="mav-form__contact--wrp">');
+            printf('<div class="mav-form__contact--ctn">');
                 /* The Form */
                 printf(
                     '<form id="mavid-form-%1$s" method="POST" class="mavjs-form mavjs-form-contact mav-form mav-form-contact" data-unique="%1$s" data-ajax-url="%2$s" data-action="mavf_ajax_form">',
                     $mav_unique_number, admin_url('admin-ajax.php')
-                );
+                    );
 
                     /* Form Header */
                     if ( ! empty( $mav_form_title ) || ! empty( $mav_form_intro ) ) :
-                        printf('<header class="mav-form-header-wrapper mav-form__header--wrp">');
-                            printf('<div class="mav-form-header-ctn mav-form__header--ctn">');
+                        printf('<header class="mav-form__header--wrp">');
+                            printf('<div class="mav-form__header--ctn">');
 
                                 /* Form Title */
                                 if ( ! empty( $mav_form_title ) )
                                 {
-                                    printf('<div class="mav-form-title-wrapper">');
-                                        printf('<div class="mav-form-title-ctn">');
-                                            printf( '<h4 class="mav-form-title mav-form__title">%1$s</h4>', $mav_form_title );
+                                    printf('<div class="mav-form__title--wrp">');
+                                        printf('<div class="mav-form__title--ctn">');
+                                            printf( '<h4 class="mav-form__title">%1$s</h4>', $mav_form_title );
                                         echo '</div>';
                                     echo '</div>';
                                 }
@@ -105,13 +105,13 @@ function mavf_contact_form( $mav_args )
                     endif;
 
                     /* Form Body */
-                    printf('<div class="mav-form-fields-wrapper">');
-                        printf('<div class="mav-form-fields-ctn">');
+                    printf('<div class="mav-form-fields-wrapper mav-form__fields--wrp">');
+                        printf('<div class="mav-form-fields-ctn mav-form__fields--ctn">');
                             for ( $i = 0; $i < count( $mav_display_fields ); $i++ ) {
 
                                 $mav_current_field = $mav_display_fields[$i];
 
-                                printf('<div class="mav-form-input-ctn">');
+                                printf('<div class="mav-form-input-ctn mav-form__input--ctn">');
                                     foreach ( $mav_fields as $mav_field => $mav_field_args ) {
                                         if ( $mav_current_field === $mav_field ) :
 
@@ -159,19 +159,23 @@ function mavf_contact_form( $mav_args )
                     echo '</div>';
 
                     // Form Footer
-                    printf('<footer class="mav-form-footer mav-form-footer-wrapper">');
-                        printf('<div class="mav-form-footer-ctn">');
+                    printf('<footer class="mav-form__footer--wrp">');
+                        printf('<div class="mav-form__footer--ctn">');
 
-                            // Submit Button
-                            printf('<div class="mav-form-submit-ctn">');
+                            /* Submit Button */
+                            printf('<div class="mav-form-submit-ctn mav-form__submit--ctn">');
                                 printf(
-                                    '<button id="mavid-form-submit-%1$s" type="submit" class="mavjs-form-submit mav-btn-primary-lg" data-full-width style="padding: var(--mav-gutter);">%2$s</button>',
+                                    '<button id="mavid-form-submit-%1$s" type="submit" class="mavjs-form-submit mav-btn__primary--lg" data-full-width>%2$s</button>',
                                     $mav_unique_number, __( 'Gửi thông tin liên hệ', 'mavericktheme' )
                                 );
                             echo '</div>';
 
                             // Form Feedback
-                            printf('<div class="mav-form-status-wrapper"><div class="mav-form-status-ctn"></div></div>');
+                            printf(
+                                '<div class="mav-form-status-wrapper mav-form__status--wrp">
+                                    <div class="mav-form-status-ctn mav-form__status--ctn"></div>
+                                </div>'
+                            );
 
                         echo '</div>';
                     echo '</footer>';

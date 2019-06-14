@@ -100,13 +100,14 @@ add_settings_field(
     'mavsec__theme_styles__theme_fonts'
 );
 
-function mavf_theme_styles_font_condensed() {
+function mavf_theme_styles_font_condensed()
+{
     mavf_theme_style_input_font_select('condensed');
 }
 
 // Output font select dropdown list
-function mavf_theme_style_input_font_select( $mav_value ) {
-
+function mavf_theme_style_input_font_select( $mav_value )
+{
     $mav_saved_value = esc_attr( get_option( "mav_setting_font_$mav_value" ) );
     printf(
         '<select name="mav_setting_font_%3$s" value="%1$s"/>',
@@ -118,16 +119,20 @@ function mavf_theme_style_input_font_select( $mav_value ) {
 
     if ( ! empty( mavf_get_font_list( $mav_saved_value )["weights"] ) ) {
         $mav_weights = mavf_get_font_list( $mav_saved_value )["weights"];
-        printf('Available weights: ');
+        printf(
+            '<p>%1$s',
+            __('Available weights: ', 'mavericktheme')
+        );
         foreach ( $mav_weights as $mav_weight ) {
             echo $mav_weight.' ';
         }
+        echo '</p>';
     }
 }
 
 // Get font list from json file
-function mavf_get_font_list( $mav_font = '' ) {
-
+function mavf_get_font_list( $mav_font = '' )
+{
     $mav_font_list = TEMPLATE_DIR . '/inc/admin/mav_admin__font_list.json';
 
     if ( file_exists( $mav_font_list ) ) {
@@ -141,16 +146,18 @@ function mavf_get_font_list( $mav_font = '' ) {
     } else {
         return $mav_fonts;
     }
-
 }
 
 // Output font list options
-function mavf_theme_styles_font_options( $mav_value ) {
-
+function mavf_theme_styles_font_options( $mav_value )
+{
     $mav_fonts = mavf_get_font_list();
 
     foreach ( $mav_fonts as $mav_font ) {
         $mav_checked = ( $mav_font["value"] == $mav_value ) ? 'selected' : '';
-        printf('<option value="%1$s" %3$s>%2$s</option>', $mav_font["value"], $mav_font["name"], $mav_checked);
+        printf(
+            '<option value="%1$s" %3$s>%2$s</option>',
+            $mav_font["value"], $mav_font["name"], $mav_checked
+        );
     }
 }

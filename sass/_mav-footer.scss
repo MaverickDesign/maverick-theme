@@ -10,7 +10,8 @@
         grid-gap: var(--mav-gutter);
         align-items: center;
         padding: var(--mav-gutter);
-        border-top: 1px solid var(--mav-color--border);
+        border-top: var(--mav-border);
+        border-bottom: var(--mav-border);
         font-family: var(--mav-font--secondary);
         color: initial;
         @extend %mav-flex-column;
@@ -114,6 +115,7 @@
 
 .mav-footer__copyright--wrp {
     background: var(--mav-color__site__footer__copyright--background);
+
     .mav-footer__copyright--ctn {
         display: grid;
         grid-gap: var(--mav-gutter--xs);
@@ -124,4 +126,5 @@
         font-size: var(--mav-font__size--sm);
         color: var(--mav-color__text--primary--dark);
     }
+
 }

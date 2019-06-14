@@ -16,6 +16,11 @@
     display: grid;
     max-width: 100%;
     overflow: hidden;
+
+    p {
+        font-size: 1rem;
+    }
+
     .mav-admin-page-container, .mav-admin__page--ctn {
         margin-top: var(--mav-gutter--lg);
         display: grid;
@@ -24,6 +29,7 @@
             grid-template-columns: 1fr 1fr;
         }
     }
+
     h1 {
         font-size: 2rem;
         line-height: 1.2;
@@ -40,7 +46,7 @@
     .mav-grid {
         display: grid;
         &[data-grid-gap] {
-            grid-gap: var(--mav-gutter--sm);
+            grid-gap: var(--mav-gutter);
         }
     }
 
@@ -54,12 +60,15 @@
     form {
         display: grid;
         max-width: 100%;
+
         @media #{$mav-desktop} {
             max-width: 50vw;
         }
+
         label {
-            max-width: max-content;
+            // max-width: max-content;
         }
+
         input {
             box-shadow: none;
             padding: var(--mav-gutter--sm);
@@ -70,14 +79,15 @@
                 display: block;
             }
         }
+
         .form-table {
-            display: inline-grid;
+            display: grid;
             align-items: center;
-            background: #fafafa;
+            background: rgba(#fff, .5);
             margin-top: var(--mav-gutter);
             border: 1px solid var(--mav-color--border);
             box-sizing: border-box;
-            box-shadow: inset 4px 0 var(--mav-color--border);
+            box-shadow: inset 4px 0 var(--mav-color--primary);
             tbody {
                 padding: var(--mav-gutter);
                 max-width: 100%;

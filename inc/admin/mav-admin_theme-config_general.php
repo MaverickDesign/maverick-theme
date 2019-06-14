@@ -11,7 +11,7 @@ add_settings_section(
 );
 
 function mavf_theme_config_sec_general() {
-    _e( 'Các thiết lập chung cho website', 'mavericktheme' );
+    _e( '<p>Các thiết lập chung cho website</p>', 'mavericktheme' );
 }
 
 // Breadcrumbs
@@ -31,13 +31,15 @@ add_settings_field(
 function mavf_theme_config_breadcrumbs()
 {
     $mav_saved_value = get_option( 'mav_setting_breadcrumbs' );
+
     $mav_positions = array(
         'header',
         'footer'
     );
+
     echo '<div class="mav-grid" data-grid-gap>';
         $mav_output = '';
-        foreach ($mav_positions as $mav_position) {
+        foreach ( $mav_positions as $mav_position ) {
             $mav_checked = ( @$mav_saved_value[$mav_position] == 1 ? 'checked' : '');
             $mav_output .= '<label><input type="checkbox" id="mavid-breadcrumbs-'.$mav_position.'" name="mav_setting_breadcrumbs['.$mav_position.']" value="1" '.$mav_checked.'/> '.ucfirst($mav_position).'</label>';
         }
