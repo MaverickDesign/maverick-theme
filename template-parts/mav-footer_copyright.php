@@ -5,8 +5,9 @@
 
 printf('<section id="mavid-sec-footer-copyright" class="mav-footer__copyright--wrp">');
     printf('<div class="mav-footer__copyright--ctn">');
-
-        /* Copyright */
+        /**
+         * Copyright info
+         */
         echo '<div>';
             printf(
                 '%1$s &copy; <strong>%2$s</strong> %3$s <a href="%4$s" target="_blank" class="mav-link--dark"><strong>%5$s</strong></a>. %6$s',
@@ -14,7 +15,9 @@ printf('<section id="mavid-sec-footer-copyright" class="mav-footer__copyright--w
             );
         echo '</div>';
 
-        /* Theme info */
+        /**
+         * Theme info
+         */
         if ( ! get_option( 'mav_setting_theme_info' ) ) {
             printf('<div>');
                 printf(

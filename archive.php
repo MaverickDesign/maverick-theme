@@ -11,7 +11,7 @@
         // Get user setting to show sidebar in blog page
         $mavSidebar = esc_attr( get_option( 'mav_setting_blog_page_sidebar' ) );
 
-        $mavSectionClass = !$mavSidebar ? 'mav-has-sidebar' : 'mav-site-width';
+        $mavSectionClass = !$mavSidebar ? 'mav-has-sidebar' : 'mav-site--width';
 
         printf('<section class="%1$s">', $mavSectionClass);
 

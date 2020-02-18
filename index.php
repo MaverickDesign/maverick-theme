@@ -3,9 +3,8 @@
  * @package mavericktheme
  * Index Page
  */
-?>
 
-<?php get_header(); ?>
+get_header(); ?>
 
 <!-- Page content starts here -->
 <main id="mavid-page-main-content">
@@ -21,9 +20,7 @@
     if ( !$mav_display_sticky_post_section ) :
 
         $mav_sticky_posts = get_option( 'sticky_posts' ) ;
-
-        if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_carousel' ) )
-        {
+        if ( is_home() && count( $mav_sticky_posts ) > 0 && function_exists( 'mavf_carousel' ) ) {
             $mav_sticky_args = array(
                 'post_type'             => 'post',
                 'post__in'              => get_option( 'sticky_posts' ),
@@ -50,6 +47,7 @@
      * Main Post Loop
      * ==============
      */
+
     // Get display style option for blog page
     $mav_card_style = ( get_option( 'mav_setting_blog_page_display_style' ) ) ? esc_attr( get_option( 'mav_setting_blog_page_display_style' ) ) : 'card';
 

@@ -6,7 +6,9 @@
 /**
  * Footer Breadcrumb Section
  **/
+
 $mav_breadcrumbs = get_option( 'mav_setting_breadcrumbs' );
+
 if ( isset( $mav_breadcrumbs['footer'] ) && ! is_front_page() && ! is_home() && ! is_attachment() && function_exists( 'mavf_breadcrumbs') ) :
     printf('<section class="mav-breadcrumbs__wrp">');
         printf('<div class="mav-breadcrumbs__ctn">');
@@ -19,13 +21,13 @@ endif;
 /**
  * Footer section
  **/
+
 printf('<footer id="mavid-page-footer" class="mav-pg-footer mav-pg__footer">');
 
     /* Footer Socials */
     if ( function_exists( 'mavf_social_links' ) && ! empty( mavf_check_social_accounts() ) ) :
         include_once TEMPLATE_DIR . '/template-parts/mav-footer_social-links.php';
     endif;
-
 
     /* Footer Menu section*/
     if ( current_theme_supports( 'menus' ) && has_nav_menu( 'secondary_menu' ) ) :

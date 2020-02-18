@@ -1230,7 +1230,7 @@ button {
     padding: var(--mav-gutter--sm); }
   .mav-btn-primary:hover a, .mav-site-sidebar-ctn .widget_search form.search-form .search-submit:hover a, .mav-btn__primary:hover a, .mav-btn-primary--lg:hover a, .mav-btn__primary--lg:hover a {
     background: rgba(0, 0, 0, 0.3); }
-  .mav-btn-primary--lg, .mav-btn__primary--lg {
+  .mav-btn-primary--lg a, .mav-btn__primary--lg a {
     padding: var(--mav-gutter); }
 .mav-btn-secondary, .mav-btn-secondary--lg, .mav-btn__secondary--lg, .mav-btn__secondary {
   font-size: 1rem;
@@ -3270,7 +3270,7 @@ form {
     font-size: var(--mav-font__size--sm);
     color: var(--mav-color__text--primary--dark); }
 
-.mav-header-logo-wrapper, .mav-header__logo--wrp {
+.mav-header__logo--wrp {
   background: var(--mav-color__site__header--background); }
 
 .mav-header-logo-ctn, .mav-header__logo--ctn {
@@ -3341,7 +3341,7 @@ form {
  * Header Menu
  */
 @media only screen and (min-width: 1024px) {
-  .mav-header-menu-wrapper, .mav-header__menu--wrp {
+  .mav-header__menu--wrp {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3352,10 +3352,10 @@ form {
   display: block;
   overflow-y: auto; }
   .mav-header__menu--ctn ul {
-    background: var(--mav-color__header-menu--background);
-    font-family: var(--mav-font--secondary);
     margin: 0;
-    padding-left: 0; }
+    padding-left: 0;
+    background: var(--mav-color__header-menu--background);
+    font-family: var(--mav-font--secondary); }
     @media only screen and (min-width: 1024px) {
       .mav-header__menu--ctn ul {
         flex-direction: row;

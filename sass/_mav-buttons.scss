@@ -64,7 +64,9 @@ button {
         // Large button
         &--lg {
             @extend .mav-btn__primary;
-            padding: var(--mav-gutter);
+            a {
+                padding: var(--mav-gutter);
+            }
         }
     }
     &-secondary, &__secondary {
@@ -87,7 +89,7 @@ button {
             }
         }
     }
-    &-cta {
+    &-cta, &__cta {
         @extend .mav-btn;
         width: 100%;
         margin: 0 auto;
@@ -102,7 +104,7 @@ button {
             padding: var(--mav-gutter);
         }
     }
-    &-close {
+    &-close, &__close {
         cursor: pointer;
         &:after {
             content: "×";
@@ -112,9 +114,9 @@ button {
 }
 
 .mav-btn-top, .mav-btn-back {
+    @extend .mav-flex-center-all;
     width: 40px;
     height: 40px;
-    @extend .mav-flex-center-all;
     background: var(--mav-color--accent);
     animation: mav-brand-color-transition 5s infinite;
     border-radius: 50%;
