@@ -153,7 +153,7 @@ printf('<!DOCTYPE html>');
                             // Get option brand logo
                             $mav_brand_logo = esc_attr( get_option( 'mav_setting_brand_logo' ) );
                             if ( $mav_brand_logo ) {
-                                echo "<img src=\"$mav_brand_logo;\">";
+                                echo "<img src=\"$mav_brand_logo\">";
                             }
                             else {
                                 echo '<img src="'.TEMPLATE_URI.'/assets/brand-logo.php?back=193,49,34,1&mark=255,255,255,1&typo=255,255,255,0">';
