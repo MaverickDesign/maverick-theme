@@ -4,108 +4,82 @@
  */
 
 // Redirect to homepage when in maintenace mode
-if ( !is_home() && get_option( 'mav_setting_maintenance' ) ) {
-    wp_redirect(home_url());
-    exit;
-}
+get_template_part( '/template-parts/header/mav-header__redirect' );
 
-// Detect device
-if ( function_exists( 'mavf_mobile_detect' ) ) {
-    $mav_device = mavf_mobile_detect();
-} else {
-    $mav_device = '';
-}
+printf( '<!DOCTYPE html>' );
 
-$mav_site__width = esc_attr(get_option('mav_setting_grid_system'));
+/**
+ * HTML Tag
+ * ========
+ */
 
-// session_start();
-// if (!isset($_SESSION['mavs_id'])) {
-//     $_SESSION['mavs_id']        = mavf_unique(16);
-//     $_SESSION['mavs_start']     = $_SERVER['REQUEST_TIME'];
-// }
-// $mavSessionID = $_SESSION['mavs_id'];
+// Check for development mode is enabled
+$mav_dev_mode = get_option( 'mav_setting_dev_mode' ) ? 'data-dev-mode' : '';
+printf(
+    '<html %1$s %2$s>',
+    get_language_attributes(), $mav_dev_mode
+);
 
-printf('<!DOCTYPE html>');
-?>
-<html <?php language_attributes(); ?> <?php if (get_option('mav_setting_dev_mode')) {echo 'data-dev-mode';} ?>>
-<head>
+/**
+ * Head Tag
+ * ========
+ */
 
-    <?php
-        /* Google Analytics */
-        get_template_part( '/template-parts/mav-header__google-analytics' );
+printf('<head>');
 
-        /* Google Tag Manager */
-        // Get option - Enable Google Tag Manager
-        $mav_egtm = esc_attr( get_option( 'mav_setting_enable_google_tag_manager' ) );
-        // Get option - Google Tag Manager ID
-        $mav_gtm_id = esc_attr( get_option( 'mav_setting_google_tag_manager_id' ) );
-        if ( !empty($mav_egtm) && !empty($mav_gtm_id) ) : ?>
-            <!-- Google Tag Manager -->
-            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','<?php echo $mav_gtm_id ?>');</script>
-        <?php endif;
+    /* Google Analytics */
+    get_template_part( '/template-parts/mav-header__google-analytics' );
 
-        /* Google AdSense */
-        // Get option - Eneable Google AdSense
-        $mav_egas = esc_attr( get_option( 'mav_setting_enable_google_adsense' ) );
-        // Get option - Google AdSense ID
-        $mav_gas_id = esc_attr( get_option( 'mav_setting_google_adsense_id' ) );
-        if ( !empty($mav_egas) && !empty($mav_gas_id)) : ?>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({
-                    google_ad_client: "<?php echo $mav_gas_id ?>",
-                    enable_page_level_ads: true
-                });
-            </script>
-        <?php endif;
-    ?>
+    /* Google Tag Manager */
+    get_template_part( '/template-parts/header/mav-header__google-tag-manager' );
 
-    <!-- Meta -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php
-        echo (has_excerpt() && is_single()) ? get_the_excerpt() : get_bloginfo('description');
-    ?>">
+    /* Google AdSense */
+    get_template_part( '/template-parts/header/mav-header__google-adsense' );
 
-    <!-- Open Graph Data -->
-    <meta property="og:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="<?php single_post_title(); ?>"/>
+    /*
+     * Site Meta
+     * =========
+     */
+    get_template_part( 'template-parts/header/mav-header__meta' );
 
-    <?php
-        $mav_excerpt = has_excerpt() ? get_the_excerpt() : __( '', 'mavericktheme' );
-        printf('<meta property="og:description" content="%1$s"/>', $mav_excerpt);
+    get_template_part( 'template-parts/header/mav-header__open-graph' );
 
-        if (!is_404() && has_post_thumbnail()) :
-            printf('<meta property="og:image" content="%1$s"/>', get_the_post_thumbnail_url(get_the_ID(), 'full'));
-        endif;
+    /* Site Title */
 
-        $mav_blog_desc = get_bloginfo( 'description' );
-        $mav_title = get_bloginfo( 'name' );
+    $mav_blog_desc = get_bloginfo( 'description' );
+    $mav_title = get_bloginfo( 'name' );
 
-        if ( !is_front_page() ) {
-            $mav_title = get_the_title().' - '.get_bloginfo('name');
+    if ( !is_front_page() ) {
+        $mav_title = get_the_title().' - '.get_bloginfo('name');
+    } else {
+        if (!empty($mav_blog_desc)) {
+            $mav_title = get_bloginfo('name').' - '.$mav_blog_desc;
         } else {
-            if (!empty($mav_blog_desc)) {
-                $mav_title = get_bloginfo('name').' - '.$mav_blog_desc;
-            } else {
-                $mav_title = get_bloginfo('name');
-            }
+            $mav_title = get_bloginfo('name');
         }
-        printf('<title>%1$s</title>', $mav_title);
-        // Wordpress Heads
-        wp_head();
+    }
 
+    printf( '<title>%1$s</title>', $mav_title );
 
-        /* Modified Theme Styles */
-        get_template_part( '/template-parts/header/mav-header__modified-styles' );
-    ?>
+    // Wordpress Heads
+    wp_head();
 
-</head>
+    /* Modified Theme Styles */
+    get_template_part( '/template-parts/header/mav-header__modified-styles' );
+
+echo '</head>';
+
+    // Detect device
+    if ( function_exists( 'mavf_mobile_detect' ) ) {
+        $mav_device = mavf_mobile_detect();
+    } else {
+        $mav_device = '';
+    }
+
+    // Get option Grid System
+    $mav_site__width = esc_attr( get_option( 'mav_setting_grid_system' ) );
+
+?>
 
 <body data-device="<?php echo $mav_device; ?>" data-site-width="<?php echo $mav_site__width; ?>">
 
@@ -147,7 +121,7 @@ printf('<!DOCTYPE html>');
                 <button id="mavid-mobile-menu-icon" class="mav-mobile-menu-icon fas fa-bars" data-state="close" title="<?php _e( 'Nhấn để mở','mavericktheme' ); ?>"></button>
 
                 <!-- Site Logo -->
-                <div id="mavid-site-logo" class="mav-site-logo-wrapper mav-site__logo--wrp">
+                <div id="mavid-site-logo" class="mav-site__logo--wrp">
                     <a href="<?php  bloginfo('url') ;?>" title="<?php _e( 'Về trang chủ', 'mavericktheme' ); ?>" class="mav-site-logo-ctn mav-site__logo--ctn">
                         <?php
                             // Get option brand logo

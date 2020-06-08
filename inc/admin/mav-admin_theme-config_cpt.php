@@ -10,8 +10,7 @@ add_settings_section(
     'mav_admin_page_theme_config'
 );
 
-function mavf_theme_config_cpt()
-{
+function mavf_theme_config_cpt() {
     _e( '<p>Các chức năng mở rộng</p>', 'mavericktheme' );
 }
 

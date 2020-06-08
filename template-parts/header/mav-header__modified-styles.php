@@ -45,4 +45,3 @@ echo '<style>';
 
     echo '}';
 echo '</style>';
-?>

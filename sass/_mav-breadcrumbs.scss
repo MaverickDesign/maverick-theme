@@ -1,28 +1,37 @@
-.mav-breadcrumbs-wrapper, .mav-breadcrumbs__wrp {
+/*
+ * Breadcrumbs styles
+ */
+
+// Breadscrumbs wrapper
+.mav-breadcrumbs__wrp {
     font-family: var(--mav-font--secondary);
-    box-shadow: 0 1px var(--mav-color--border);
+    // box-shadow: 0 1px var(--mav-color--border);
+    background-color: var(--mav-color--off-white);
+
     @media #{$mav-mobile} {
         display: none;
     }
-}
 
-.mav-breadcrumbs-ctn, .mav-breadcrumbs__ctn {
-    max-width: var(--mav-site--width);
-    padding: var(--mav-gutter);
-    margin: 0 auto;
-}
+    // Breadcrumbs container
+    .mav-breadcrumbs__ctn {
+        max-width: var(--mav-site--width);
+        padding: var(--mav-gutter);
+        margin: 0 auto;
 
-.mav-breadcrumbs {
-    display: flex;
-    li {
-        list-style-type: none;
-        margin-left: 0;
-        margin-right: var(--mav-gutter--sm);
-        &:last-child {
-            margin-right: 0;
+        // The Breadcrumbs
+        .mav-breadcrumbs {
+            display: flex;
+            li {
+                list-style-type: none;
+                margin-left: 0;
+                margin-right: var(--mav-gutter--sm);
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            .item-current, .item-home {
+                color: var(--mav-color__text--primary);
+            }
         }
-    }
-    .item-current, .item-home {
-        color: var(--mav-color__text--primary);
     }
 }

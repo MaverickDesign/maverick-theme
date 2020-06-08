@@ -3,15 +3,15 @@
  */
 
 .mav-footer__socials--wrp {
-    background: var(--mav-color--off-white);
+    background: var(--mav-color--accent);
 
     .mav-footer__socials--ctn {
         display: grid;
         grid-gap: var(--mav-gutter);
         align-items: center;
-        padding: var(--mav-gutter);
-        border-top: var(--mav-border);
-        border-bottom: var(--mav-border);
+        padding: var(--mav-gutter--lg) var(--mav-gutter);
+        // border-top: var(--mav-border);
+        // border-bottom: var(--mav-border);
         font-family: var(--mav-font--secondary);
         color: initial;
         @extend %mav-flex-column;
@@ -48,6 +48,7 @@
         }
     }
 }
+
 /**
  * Footer Menu
  */

@@ -227,9 +227,9 @@
     // Post content container
     .mav-post__content--ctn {
         display: grid;
+        max-width: var(--mav-site--width);
         margin: 0 auto;
         padding: var(--mav-gutter) var(--mav-gutter);
-        max-width: var(--mav-site--width);
         @media #{$mav-desktop} {
             padding: var(--mav-gutter--xl) var(--mav-gutter);
         }
@@ -365,7 +365,7 @@
         font-weight: var(--mav-font__weight--bold);
         white-space: nowrap;
     }
-        
+
     .aligncenter {
         margin: 0 auto;
     }
