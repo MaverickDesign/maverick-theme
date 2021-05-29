@@ -5,7 +5,7 @@
  * Author: ─Éo├án C├┤ng Minh
  * URI: www.maverick.vn
  */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -133,7 +133,8 @@ table {
    * Layouts
    * ==================================================
    */
-  --mav-gutter: 20px;
+  --mav-baseline: 16px;
+  --mav-gutter: 16px;
   --mav-gutter--xl: calc(var(--mav-gutter) * 4);
   --mav-gutter--lg: calc(var(--mav-gutter) * 2);
   --mav-gutter--sm: calc(var(--mav-gutter) / 2);
@@ -1531,8 +1532,7 @@ button {
     .mav-post__content .mav-h2 + p, .mav-post__content .mav-h3 + p {
       margin-top: 0; }
   .mav-post__content p {
-    margin: 1em auto;
-    line-height: 1.75; }
+    margin: 1em auto; }
     .mav-post__content p:first-child, .mav-post__content p:only-child {
       margin-top: 0; }
     .mav-post__content p:last-child, .mav-post__content p:only-child {
@@ -2312,15 +2312,15 @@ form {
     .mav-site-sidebar-ctn .widget_search form.search-form .search-submit {
       font-size: var(--mav-font__size--sm); }
 
-.mav-page-ctn, .mav-page__ctn {
+.mav-page-ctn, .mav-page__ctn, .mav-page--ctn {
   margin: 0 auto; }
 
-.mav-page-header-wrapper, .mav-page__header--wrp {
+.mav-page__header--wrp {
   display: block;
   position: relative;
   overflow: hidden; }
 
-.mav-page-header-ctn, .mav-page__feature__image {
+.mav-page-header-ctn, .mav-page__header--ctn, .mav-page__feature__image {
   position: absolute;
   display: block;
   width: 100%;
@@ -2332,7 +2332,7 @@ form {
   transform: scale(1.1);
   z-index: var(--mav-layer--background); }
   @media only screen and (min-width: 1024px) {
-    .mav-page-header-ctn, .mav-page__feature__image {
+    .mav-page-header-ctn, .mav-page__header--ctn, .mav-page__feature__image {
       background-attachment: fixed !important; } }
 
 .mav-page__title--wrp {

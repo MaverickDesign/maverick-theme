@@ -98,8 +98,10 @@
             }
         }
     }
+
     &__info--wrp {
     }
+
     &__info--ctn {
         display: flex;
         flex-wrap: wrap;
@@ -296,7 +298,7 @@
 
     p {
         margin: 1em auto;
-        line-height: 1.75;
+        // line-height: 1.75;
 
         &:first-child, &:only-child {
             margin-top: 0;

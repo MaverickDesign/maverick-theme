@@ -1,15 +1,15 @@
-.mav-page-ctn, .mav-page__ctn {
+.mav-page-ctn, .mav-page__ctn, .mav-page--ctn {
     margin: 0 auto;
 }
 
 // Page Header
-.mav-page-header-wrapper, .mav-page__header--wrp {
+.mav-page__header--wrp {
     display: block;
     position: relative;
     overflow: hidden;
 }
 
-.mav-page-header-ctn, .mav-page__feature__image {
+.mav-page-header-ctn, .mav-page__header--ctn, .mav-page__feature__image {
     position: absolute;
     display: block;
     width: 100%;
@@ -90,4 +90,3 @@
         }
     }
 }
-

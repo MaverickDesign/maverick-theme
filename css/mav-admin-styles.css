@@ -56,7 +56,8 @@
    * Layouts
    * ==================================================
    */
-  --mav-gutter: 20px;
+  --mav-baseline: 16px;
+  --mav-gutter: 16px;
   --mav-gutter--xl: calc(var(--mav-gutter) * 4);
   --mav-gutter--lg: calc(var(--mav-gutter) * 2);
   --mav-gutter--sm: calc(var(--mav-gutter) / 2);
