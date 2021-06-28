@@ -32,6 +32,7 @@ function mavf_theme_styles_font_primary() {
     mavf_theme_style_input_font_select('primary');
 }
 
+
 // Secondary Font
 register_setting(
     'mavog_theme_styles',
@@ -100,14 +101,12 @@ add_settings_field(
     'mavsec__theme_styles__theme_fonts'
 );
 
-function mavf_theme_styles_font_condensed()
-{
+function mavf_theme_styles_font_condensed() {
     mavf_theme_style_input_font_select('condensed');
 }
 
 // Output font select dropdown list
-function mavf_theme_style_input_font_select( $mav_value )
-{
+function mavf_theme_style_input_font_select( $mav_value ) {
     $mav_saved_value = esc_attr( get_option( "mav_setting_font_$mav_value" ) );
     printf(
         '<select name="mav_setting_font_%3$s" value="%1$s"/>',
@@ -130,9 +129,9 @@ function mavf_theme_style_input_font_select( $mav_value )
     }
 }
 
+
 // Get font list from json file
-function mavf_get_font_list( $mav_font = '' )
-{
+function mavf_get_font_list( $mav_font = '' ) {
     $mav_font_list = TEMPLATE_DIR . '/inc/admin/mav_admin__font_list.json';
 
     if ( file_exists( $mav_font_list ) ) {
@@ -149,8 +148,7 @@ function mavf_get_font_list( $mav_font = '' )
 }
 
 // Output font list options
-function mavf_theme_styles_font_options( $mav_value )
-{
+function mavf_theme_styles_font_options( $mav_value ) {
     $mav_fonts = mavf_get_font_list();
 
     foreach ( $mav_fonts as $mav_font ) {

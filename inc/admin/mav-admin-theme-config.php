@@ -3,8 +3,8 @@
  * @package mavericktheme
  */
 
-printf('<div class="mav-admin-page-wrapper">');
-    printf('<header>');
+printf( '<div class="mav-admin-page-wrapper">' );
+    printf( '<header>' );
         printf( '<h1>%1$s</h1>', __( 'Cấu hình Maverick Theme', 'mavericktheme' ) );
         printf( '<p class="mav-desc">%1$s</p>', __( 'Tùy chỉnh các chức năng', 'mavericktheme' ) );
     echo '</header>';
